@@ -8,51 +8,64 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before, blockquote:after {
   content: '';
-  content: none; }
+  content: none;
+}
 
 q:before, q:after {
   content: '';
-  content: none; }
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 @font-face {
   font-family: notoSans;
-  src: url("../../fonts/NotoSansCJKtc-Thin.otf"); }
+  src: url("../../fonts/NotoSansCJKtc-Thin.otf");
+}
 
 @font-face {
   font-family: notoSans_r;
-  src: url("../../fonts/NotoSansCJKtc-Regular.otf"); }
+  src: url("../../fonts/NotoSansCJKtc-Regular.otf");
+}
 
 @font-face {
   font-family: notoSans_b;
-  src: url("../../fonts/NotoSansCJKtc-Black.otf"); }
+  src: url("../../fonts/NotoSansCJKtc-Black.otf");
+}
 
 body {
   font-family: notoSans;
-  letter-spacing: 3px; }
+  letter-spacing: 3px;
+}
 
 header {
   background-color: #fff;
@@ -60,55 +73,80 @@ header {
   height: 100vh;
   position: fixed;
   padding-left: 15px;
-  box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315); }
-  header .logo {
-    position: relative;
-    top: 70px;
-    width: 180px;
-    text-align: center; }
-    header .logo a {
-      text-decoration: none;
-      color: #333; }
-    header .logo img {
-      width: 90%; }
-  header ul {
-    position: absolute;
-    bottom: 180px; }
-    header ul li {
-      margin: 1px 0;
-      position: relative; }
-      header ul li:hover {
-        background-color: #EAAF88;
-        transition: .3s; }
-      header ul li:hover a {
-        color: #fff;
-        transition: .3s; }
-      header ul li a {
-        width: 185px;
-        display: block;
-        color: #333;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 15px 20px; }
-  header .icons {
-    width: 180px;
-    display: flex;
-    padding: 15px;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 70px; }
-    header .icons #like {
-      font-size: 12px;
-      text-align: center;
-      line-height: 20px;
-      display: block;
-      width: 15px;
-      height: 15px;
-      position: relative;
-      color: #d33;
-      top: -17px;
-      right: -25px;
-      font-family: notoSans_b; }
-    header .icons a {
-      text-decoration: none;
-      color: #333; }
+  box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+}
+
+header .logo {
+  position: relative;
+  top: 70px;
+  width: 180px;
+  text-align: center;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: #333;
+}
+
+header .logo img {
+  width: 90%;
+}
+
+header ul {
+  position: absolute;
+  bottom: 180px;
+}
+
+header ul li {
+  margin: 1px 0;
+  position: relative;
+}
+
+header ul li:hover {
+  background-color: #EAAF88;
+  transition: .3s;
+}
+
+header ul li:hover a {
+  color: #fff;
+  transition: .3s;
+}
+
+header ul li a {
+  width: 185px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 20px;
+}
+
+header .icons {
+  width: 180px;
+  display: flex;
+  padding: 15px;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 70px;
+}
+
+header .icons #like {
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  color: #d33;
+  top: -17px;
+  right: -25px;
+  font-family: notoSans_b;
+}
+
+header .icons a {
+  text-decoration: none;
+  color: #333;
+}
+
+/*# sourceMappingURL=header.css.map */
