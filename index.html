@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        window.addEventListener('load', function () {
+            var pages = ['member','header','footer']; //此處新增文件名字 var pages = ['file1','file2','file..n'];
+            var fragment = document.createDocumentFragment();
+            for (const page of pages) {
+                let li = document.createElement('li');
+                let link = document.createElement('a');
+                link.addEventListener('mouseenter', function (e) { e.target.style.color = '#369'; });
+                link.addEventListener('mouseleave', function (e) { e.target.style.color = '#fff'; });
+                Object.assign(link, {
+                    textContent: page,
+                    href: '/html/' + page + '.html',
+                    style: 'font-size: 26px;\
+                    text-decoration: none;\
+                    color: #fff;\
+                    transition: .3s'
+                });
+                li.appendChild(link);
+                fragment.appendChild(li);
+            }
+            document.querySelector('ul').appendChild(fragment);
+        });
+    </script>
+</body>
+
+</html>
