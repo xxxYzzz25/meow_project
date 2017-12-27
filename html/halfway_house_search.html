@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
+    <link rel="stylesheet" href="../assets/css/halfway_house_search.css">
+    <title>halfway_house_search</title>
+</head>
+
+<body>
+    <div class="left"></div>
+    <div class="right">
+        <div class="back"></div>
+        <h2>中途之家</h2>
+
+        <div class="searchsection">
+            <div class="dropholder">
+                <p>Select</p>
+                <div class="dropdown">
+                    <p>
+                        <i class="fa fa-foursquare"></i> Please Rate</p>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <i class="fa fa-star"></i>北部</li>
+                    <li>
+                        <i class="fa fa-star"></i>中部</li>
+                    <li>
+                        <i class="fa fa-star"></i>南部</li>
+                    <li>
+                        <i class="fa fa-star"></i>東部</li>
+                    <li>
+                        <i class="fa fa-star"></i>離島</li>
+                </ul>
+            </div>
+            <script>
+                $(".dropdown").click(function () {
+                    $(".menu").toggleClass("showMenu");
+                    $(".menu > li").click(function () {
+                        $(".dropdown > p").html($(this).html());
+                        $(".menu").removeClass("showMenu");
+                    });
+                });
+            </script>
+            <form id="content">
+                <input type="text" name="input" class="input">
+                <button type="reset" class="search"></button>
+            </form>
+        </div>
+        <script>
+            function expand() {
+                $(".search").toggleClass("close");
+                $(".input").toggleClass("square");
+                if ($('.search').hasClass('close')) {
+                    $('input').focus();
+                } else {
+                    $('input').blur();
+                }
+            }
+            $('button').on('click', expand);
+        </script>
+
+        <div class="item">
+            <div class="text">
+                <h4>野喵中途咖啡</h4>
+                <br> ADD：新北市三重區集英路65號
+                <br> TEL：02-2857-8282
+                <br> TIME：12:00～21:00（周一公休）
+            </div>
+            <div class="pic">
+                <img src="../images/33056773491_55f7a3e1e1_o.jpg" alt="">
+            </div>
+            <div class="bg bg1"></div>
+        </div>
+        <div class="item">
+            <div class="text">
+                <h4>野喵中途咖啡</h4>
+                <br> ADD：新北市三重區集英路65號
+                <br> TEL：02-2857-8282
+                <br> TIME：12:00～21:00（周一公休）
+            </div>
+            <div class="pic">
+                <img src="../images/33184665385_f00176040f_o.jpg" alt="">
+            </div>
+            <div class="bg bg2"></div>
+        </div>
+        <div class="item">
+            <div class="text">
+                <h4>野喵中途咖啡</h4>
+                <br> ADD：新北市三重區集英路65號
+                <br> TEL：02-2857-8282
+                <br> TIME：12:00～21:00（周一公休）
+            </div>
+            <div class="pic">
+                <img src="../images/33184672765_a14d959f8b_o.jpg" alt="">
+            </div>
+            <div class="bg bg3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
