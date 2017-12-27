@@ -140,9 +140,9 @@ footer {
         margin: 15px; }
         footer nav ul li a {
           text-align: center;
-          border: 1px solid #000;
+          border: 1px solid #333;
           text-decoration: none;
-          color: #000;
+          color: #333;
           display: block;
           width: 100%;
           padding: 15px; }
@@ -158,7 +158,7 @@ header {
   height: 100vh;
   position: fixed;
   padding-left: 15px;
-  box-shadow: 2px 0 10px rgba(53, 53, 53, 0.315); }
+  box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315); }
   header .logo {
     position: relative;
     top: 70px;
@@ -166,7 +166,7 @@ header {
     text-align: center; }
     header .logo a {
       text-decoration: none;
-      color: #000; }
+      color: #333; }
     header .logo img {
       width: 90%; }
   header ul {
@@ -176,7 +176,7 @@ header {
       margin: 1px 0;
       position: relative; }
       header ul li:hover {
-        background-color: #769eaf;
+        background-color: #EAAF88;
         transition: .3s; }
       header ul li:hover a {
         color: #fff;
@@ -212,7 +212,7 @@ header {
       color: #369; }
 
 header ul li:nth-child(5) {
-  background-color: #769eaf; }
+  background-color: #EAAF88; }
 
 header ul li:nth-child(5) a {
   color: #fff;
@@ -224,7 +224,7 @@ header ul li:nth-child(5):after {
   display: block;
   width: 34px;
   height: 34px;
-  background-color: #769eaf;
+  background-color: #EAAF88;
   position: absolute;
   top: 7px;
   right: -17px;
