@@ -54,6 +54,104 @@ body {
   font-family: notoSans;
   letter-spacing: 3px; }
 
+.btns .btn {
+  font-size: 30px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  line-height: 50px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  transition: .35s;
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+  padding-left: 3px;
+  padding-bottom: 3px;
+  z-index: 1; }
+  .btns .btn:hover:before {
+    transition: .35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    top: -10%;
+    left: -10%; }
+  .btns .btn:before {
+    content: '';
+    display: block;
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 90%;
+    left: -110%;
+    z-index: -1; }
+
+.btns .fa {
+  vertical-align: middle; }
+
+.btns .btn.facebook {
+  color: #3b5998; }
+  .btns .btn.facebook:before {
+    background-color: #3b5998; }
+  .btns .btn.facebook:hover {
+    color: #fff; }
+
+.btns .btn.twitter {
+  color: #3cf; }
+  .btns .btn.twitter:before {
+    background-color: #3cf; }
+  .btns .btn.twitter:hover {
+    color: #fff; }
+
+.btns .btn.google {
+  color: #dc4a38; }
+  .btns .btn.google:before {
+    background-color: #dc4a38; }
+  .btns .btn.google:hover {
+    color: #fff; }
+
+.btns .btn.youtube {
+  color: #f00; }
+  .btns .btn.youtube:before {
+    background-color: #f00; }
+  .btns .btn.youtube:hover {
+    color: #fff; }
+
+.container {
+  max-width: 991px;
+  margin: 0 auto; }
+
+footer {
+  background-color: #f5eae3;
+  margin-left: 200px;
+  padding: 15px; }
+  footer .follow {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  footer nav {
+    margin: auto; }
+    footer nav ul {
+      display: flex;
+      justify-content: space-around; }
+      footer nav ul li {
+        width: 20%;
+        margin: 15px; }
+        footer nav ul li a {
+          text-align: center;
+          border: 1px solid #333;
+          text-decoration: none;
+          color: #333;
+          display: block;
+          width: 100%;
+          padding: 15px; }
+  footer span {
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    padding: 10px; }
+
 header {
   background-color: #EAAF88;
   width: 200px;

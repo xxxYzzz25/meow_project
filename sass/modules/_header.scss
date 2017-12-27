@@ -1,5 +1,5 @@
 header{
-    background-color: #fff;
+    background-color: $navColor;
     width: 200px;
     height: 100vh;
     position: fixed;
@@ -12,7 +12,7 @@ header{
         text-align: center;
         a{
             text-decoration: none;
-            color: #333;
+            color: #fff;
         }
         img{
             width: 90%;
@@ -25,40 +25,23 @@ header{
             margin: 1px 0;
             position: relative;
             &:hover{
-                background-color: $navColor;
+                background-color: #fff;
+                box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
                 transition: .3s;
             }
             &:hover a{
-                color: #fff;
+                color: #000;
                 transition: .3s;
             }
             a{
                 width: 185px;
                 display: block;
-                color:#333;
+                color:#fff;
                 text-decoration: none;
                 font-size: 18px;
                 padding: 15px 20px;
             }
-            // &:nth-child(2){
-            //     background-color: $navColor;
-            // }
-            // &:nth-child(2) a{
-            //     color: #fff;
-            //     font-family: notoSans_r;
-            // }     
-            // &:nth-child(2):after{
-            //     z-index: -1;    
-            //     content: '';
-            //     display: block;
-            //     width: 34px;
-            //     height: 34px;
-            //     background-color: $navColor;
-            //     position: absolute;
-            //     top: 7px;
-            //     right: -17px;
-            //     transform: rotate(45deg);
-            // }
+            // @include navNow(nth);  第幾頁就輸入多少(nth)
         }
     }
     .icons{
@@ -83,7 +66,7 @@ header{
         }
         a{
             text-decoration: none;
-            color:#333;
+            color:#fff;
         }
     }
 
