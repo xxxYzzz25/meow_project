@@ -184,7 +184,7 @@ header {
       header ul li a {
         width: 185px;
         display: block;
-        color: #369;
+        color: #333;
         text-decoration: none;
         font-size: 18px;
         padding: 15px 20px; }
@@ -209,7 +209,7 @@ header {
       font-family: notoSans_b; }
     header .icons a {
       text-decoration: none;
-      color: #369; }
+      color: #333; }
 
 header ul li:nth-child(5) {
   background-color: #EAAF88; }
