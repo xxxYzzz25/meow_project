@@ -228,7 +228,7 @@ header {
 
 .pick-kit .pick-title h3, .shelter h3, .shop .shop-title h3 {
   color: #333;
-  background-color: rgba(144, 143, 143, 0.537);
+  background-color: rgba(255, 255, 255, 0.537);
   padding: 10px 30px;
   border: 2px solid #333;
   margin: 15px 0; }
@@ -418,7 +418,7 @@ header {
     margin-top: 15vh; }
   .shop .prod-list {
     padding: 60px 40px;
-    background-color: rgba(144, 143, 143, 0.537);
+    background-color: rgba(255, 255, 255, 0.537);
     border: 2px solid #fff;
     margin-top: 60px; }
     .shop .prod-list li {
