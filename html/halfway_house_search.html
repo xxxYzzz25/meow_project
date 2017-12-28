@@ -55,7 +55,6 @@
         </div>
     </header>
     <div class="right">
-        <div class="back"></div>
         <h2>中途之家</h2>
 
         <div class="searchsection">
@@ -78,20 +77,20 @@
                         <i class="fa fa-star"></i>離島</li>
                 </ul>
             </div>
-            <script>
-                $(".dropdown").click(function () {
-                    $(".menu").toggleClass("showMenu");
-                    $(".menu > li").click(function () {
-                        $(".dropdown > p").html($(this).html());
-                        $(".menu").removeClass("showMenu");
-                    });
-                });
-            </script>
             <form id="content">
                 <input type="text" name="input" class="input">
                 <button type="reset" class="search"></button>
             </form>
         </div>
+        <script>
+            $(".dropdown").click(function () {
+                $(".menu").toggleClass("showMenu");
+                $(".menu > li").click(function () {
+                    $(".dropdown > p").html($(this).html());
+                    $(".menu").removeClass("showMenu");
+                });
+            });
+        </script>
         <script>
             function expand() {
                 $(".search").toggleClass("close");
@@ -104,8 +103,8 @@
             }
             $('button').on('click', expand);
         </script>
-
-        <div class="item">
+        
+        <div class="item item1">
             <div class="text">
                 <h4>野喵中途咖啡</h4>
                 <br> ADD：新北市三重區集英路65號

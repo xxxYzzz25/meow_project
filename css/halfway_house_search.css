@@ -163,26 +163,28 @@ body {
 }
 
 .right {
-  height: 300vh;
   position: relative;
   margin-left: 200px;
-  background-color: #D3DAE2;
+  padding-bottom: 200px;
+  background-image: url(../../images/marble.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 0;
 }
 
 .right .searchsection {
-  width: 34%;
+  width: 50%;
   background-color: rgba(90, 107, 126, 0.767);
   position: absolute;
   top: 8%;
-  left: 38%;
+  left: 25%;
   z-index: 0;
 }
 
 .right .searchsection .dropholder {
-  width: 337.5px;
+  width: 322px;
   height: 60px;
-  margin: 130px 0 100px 60px;
+  margin: 130px 0 250px 30%;
   padding: 0 0 0 20px;
   border-radius: 60px;
   font: 18px arial;
@@ -201,7 +203,7 @@ body {
   height: 5px;
   background: transparent;
   display: block;
-  top: 100px;
+  top: 250px;
   left: 37px;
   margin: auto;
   border-radius: 50%;
@@ -212,6 +214,7 @@ body {
 .right .searchsection .dropholder p {
   float: left;
   line-height: 60px;
+  font-size: 14px;
 }
 
 .right .searchsection .dropholder:hover,
@@ -220,7 +223,7 @@ body {
 }
 
 .right .searchsection .dropdown > p {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .right .searchsection .dropdown,
@@ -231,11 +234,11 @@ body {
 .right .searchsection .dropdown {
   margin-left: 20px;
   float: left;
-  width: 225px;
+  width: 221px;
   padding: 0 0 0 20px;
   border-radius: 0 60px 60px 0;
   cursor: pointer;
-  height: 58px;
+  height: 57px;
   border-left: 2px solid #fff;
   position: relative;
 }
@@ -335,8 +338,8 @@ body {
   z-index: 999;
   height: 40px;
   width: 300px;
-  top: 25%;
-  left: 100%;
+  top: 20%;
+  left: 80%;
   margin-left: 8%;
   transform: translate(-50%, -50%);
 }
@@ -356,7 +359,7 @@ body {
   border-radius: 50%;
   background: none;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   outline: none;
   transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
@@ -432,7 +435,7 @@ body {
   background: none;
   color: #fff;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   outline: 0;
   transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
@@ -441,32 +444,22 @@ body {
 }
 
 .right h2 {
-  font-size: 36px;
+  font-size: 30px;
   text-align: center;
   padding-top: 5%;
-  color: #fff;
-}
-
-.right .back {
-  background-color: #2C3849;
-  width: 34%;
-  height: 300vh;
-  position: absolute;
-  left: 33%;
-  z-index: -5;
+  color: #ccc;
 }
 
 .right .item {
   width: 70%;
-  margin: 600px auto 50px auto;
-  margin-left: 20%;
+  margin: 300px 0 0 23%;
   position: relative;
 }
 
 .right .item .text {
   width: 40%;
   background-color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 30px;
   padding-left: 5%;
   padding-bottom: 5%;
@@ -507,6 +500,10 @@ body {
 
 .right .item .bg3 {
   background-color: rgba(139, 105, 73, 0.767);
+}
+
+.right .item1 {
+  margin-top: 580px;
 }
 
 header {
