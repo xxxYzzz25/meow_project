@@ -309,7 +309,7 @@ header .icons a:hover {
 
 .pick-kit .pick-title h3, .shelter h3, .shop .shop-title h3 {
   color: #333;
-  background-color: rgba(144, 143, 143, 0.537);
+  background-color: rgba(255, 255, 255, 0.537);
   padding: 10px 30px;
   border: 2px solid #333;
   margin: 15px 0;
@@ -545,6 +545,41 @@ header .icons a:hover {
   margin-left: 200px;
   height: 100vh;
   overflow: hidden;
+<<<<<<< HEAD
+  background-image: url(../../images/wood.jpg); }
+  .shop .container {
+    text-align: center;
+    display: flex;
+    justify-content: space-around; }
+    .shop .container:after {
+      content: '';
+      display: block;
+      clear: both; }
+  .shop .shop-left, .shop .shop-right {
+    position: relative;
+    top: -600px;
+    float: left; }
+    .shop .shop-left img, .shop .shop-right img {
+      display: block;
+      margin: 10px; }
+  .shop .shop-right {
+    top: -300px; }
+  .shop .shop-title {
+    margin-top: 15vh; }
+  .shop .prod-list {
+    padding: 60px 40px;
+    background-color: rgba(255, 255, 255, 0.537);
+    border: 2px solid #fff;
+    margin-top: 60px; }
+    .shop .prod-list li {
+      position: relative; }
+      .shop .prod-list li a {
+        text-decoration: none;
+        color: #222;
+        font-weight: bolder;
+        padding: 15px;
+        display: block; }
+=======
   background-image: url(../../images/wood.jpg);
 }
 
@@ -599,3 +634,4 @@ header .icons a:hover {
 }
 
 /*# sourceMappingURL=index.css.map */
+>>>>>>> b39c2c0d8d4a68999253933b4d69c1e66c8daac7
