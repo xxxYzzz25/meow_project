@@ -1,0 +1,115 @@
+body{
+	letter-spacing: 3px;
+	background-color: #eee; 
+	font-size: 14px;
+}
+.wrap{
+	margin-left: 200px;
+}
+
+.wrapCenter{
+	width: 80%;
+	margin: auto;
+}
+
+.title{
+	text-align: center;
+	padding: 3%;
+	font-size: 34px;
+	letter-spacing: 15px;
+}
+
+.menu{
+	/*background-color: #ccc;*/
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+	border: 2px solid #333;
+	
+}
+
+.menuTitle{
+	text-decoration: none;
+	color: #333;
+	margin: 2% 1%;
+	cursor: pointer;
+	padding: 5px 30px;
+	border-radius: 30px;
+	border: 1px solid transparent;
+}
+
+.menuNow{
+	color: #fff;
+	background-color: #EAAF88;
+	border: 1px solid #EAAF88;
+}
+
+.menuTitle:hover{
+	color: #fff;
+	background-color: #EAAF88;
+	border: 1px solid #EAAF88;
+}
+
+.menuTitle{
+	display: inline-block;
+}
+
+.banner{
+	/*background-color: #cfc;*/
+	width: 100%;
+	text-align: center;
+}
+
+.banner img{
+	margin: 3% 0;
+	width: 100%;
+}
+
+.select{
+	float: left;
+}
+
+.search{
+	
+	float: right;
+}
+
+.search input{
+	border: 2px solid #333;
+	padding: 5px 30px;
+	border-radius: 30px;
+}
+
+.product{
+	float: left;
+	width: 20%;
+	background-color: #fff;
+	margin-top: 1%;
+	text-align: center;
+	margin-bottom: 4%;
+}
+
+.pic:hover{
+	transform: scale(1.1);
+}
+
+.pic{
+	box-sizing: border-box;
+	padding: 15% 15% 0 15%;
+	transition: 0.5s all ease-in-out;
+}
+
+.pic img {
+	width: 80%;
+}
+
+.text{
+	text-align: center;
+	box-sizing: border-box;
+	padding: 15%;
+	height: 100px;
+}
+
+.cost{
+	height: 50px;
+}
