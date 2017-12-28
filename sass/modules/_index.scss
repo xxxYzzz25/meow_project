@@ -4,4 +4,51 @@
     background-image: url(../../images/AdobeStock_112482963.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .find{
+        text-align: center;
+        padding: $gap;
+        font-weight: bolder;
+        font-size: $font-size-large;
+        img{            
+            width: 40px;
+            height: 60px;
+            vertical-align: middle;
+        }
+    }
+    .wait{
+        @extend .find;
+    }
+    .search{
+        position: relative;
+        input{
+            margin: $gap auto;
+            display: block;
+            background-color: rgba(153, 153, 153, 0.493);
+            border: 3px solid #fff;
+            border-radius: 40px;
+            width: 150%;
+            position: relative;
+            left: -25%;
+            padding: 10px $gap*2;
+            font-size: $font-size-h4;
+            &:-moz-placeholder{
+                color: #111;
+            }
+            &::-webkit-input-placeholder{
+                color: #111;
+            }
+            &:-ms-input-placeholder{
+                color: #111;
+            }
+        }
+        .fa-search{
+            color: #555;
+            position: absolute;
+            right: -70px;
+            top: 6px;
+        }
+    }
 }

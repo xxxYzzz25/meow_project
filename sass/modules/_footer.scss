@@ -16,6 +16,10 @@ footer{
             li{
                 width: 20%;
                 margin: $gap;
+                &:hover{
+                    transform: translateY(-3px);
+                    transition: .35s;
+                }
                 a{
                     text-align: center;
                     border: 1px solid #333;

@@ -138,6 +138,9 @@ footer {
       footer nav ul li {
         width: 20%;
         margin: 15px; }
+        footer nav ul li:hover {
+          transform: translateY(-3px);
+          transition: .35s; }
         footer nav ul li a {
           text-align: center;
           border: 1px solid #333;
@@ -217,4 +220,40 @@ header {
   height: 100vh;
   background-image: url(../../images/AdobeStock_112482963.jpeg);
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .banner .find, .banner .wait {
+    text-align: center;
+    padding: 15px;
+    font-weight: bolder;
+    font-size: 18px; }
+    .banner .find img, .banner .wait img {
+      width: 40px;
+      height: 60px;
+      vertical-align: middle; }
+  .banner .search {
+    position: relative; }
+    .banner .search input {
+      margin: 15px auto;
+      display: block;
+      background-color: rgba(153, 153, 153, 0.493);
+      border: 3px solid #fff;
+      border-radius: 40px;
+      width: 150%;
+      position: relative;
+      left: -25%;
+      padding: 10px 30px;
+      font-size: 18px; }
+      .banner .search input:-moz-placeholder {
+        color: #111; }
+      .banner .search input::-webkit-input-placeholder {
+        color: #111; }
+      .banner .search input:-ms-input-placeholder {
+        color: #111; }
+    .banner .search .fa-search {
+      color: #555;
+      position: absolute;
+      right: -70px;
+      top: 6px; }
