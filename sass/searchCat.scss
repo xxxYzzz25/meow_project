@@ -14,7 +14,7 @@
 @import 'respond/_desktop.scss';
 @import "base/btn";
 @import "base/genderIcon";
-@include navNow(1); 
+@include navNow(1);
 .right {
     margin-left: 200px;
     .container1 {
@@ -26,12 +26,12 @@
         }
         h1 {
             text-align: center;
-            font-size: 40px;
+            font-size: $font-size-h1;
             margin-top: 10px;
             margin-bottom: 20px;
             line-height: 26px;
             small {
-                font-size: 14px;
+                font-size: $font-size-small;
                 color: #666
             }
         }
@@ -95,7 +95,7 @@
                 text-align: left;
             }
             .selectTitle {
-                font-size: 24px;
+                font-size: $font-size-base;
                 vertical-align: middle;
             }
             .toMiddle:before {
@@ -113,14 +113,14 @@
                     width: 260px;
                     height: 30px;
                     border-radius: 4px;
-                    font-size: 16px;
+                    font-size: $font-size-base;
                     text-indent: 4px;
                     margin-right: 6px;
                     &:focus {
                         outline: none;
                     }
                     &:-webkit-input-placeholder {
-                        font-size: 16px;
+                        font-size: $font-size-base;
                         line-height: 30px;
                         text-align: center;
                     }
@@ -135,9 +135,11 @@
                     cursor: pointer;
                     margin: 6px;
                     outline: none;
+                    transition: .3s all;
                     &:hover {
-                        background-color: #ff0000;
+                        background-color: #EAAF88;
                         color: #fff;
+                        border: 1px solid #EAAF88;
                     }
                 }
                 .condition1 {
@@ -159,7 +161,7 @@
                 a {
                     box-sizing: border-box;
                     width: 200px;
-                    font-size: 16px;
+                    font-size: $font-size-base;
                     text-align: center;
                     line-height: 1.2em;
                     display: inline-block;
@@ -190,7 +192,7 @@
                     right: 12px;
                     top: 12px;
                     color: rgb(250, 55, 55);
-                    font-size: 30px;
+                    font-size: $font-size-h2;
                     z-index: 3;
                 }
                 .catContent {
@@ -250,19 +252,19 @@
                     text-transform: uppercase;
                     color: #fff;
                     text-align: center;
-                    font-size: 17px;
+                    font-size: $font-size-large;
                     z-index: 2;
                     border: none;
                     outline: none;
                 }
                 figure {
-                    font-size: 16px;
+                    font-size: $font-size-base;
                     line-height: 1.5em;
                     color: #000000;
                     padding-left: 20px;
                     margin-top: 6px;
                     h3 {
-                        font-size: 20px;
+                        font-size: $font-size-h3;
                         margin-left: -10px;
                     }
                 }
