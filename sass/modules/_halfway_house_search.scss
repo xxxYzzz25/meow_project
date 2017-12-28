@@ -1,26 +1,18 @@
-.left {
-    width: 20%;
-    height: 100vh;
-    position: fixed;
-    background-color: rgb(245, 197, 225);
-}
-
 .right {
-    width: 80%;
-    height: 250vh;
+    height: 300vh;
     position: relative;
-    left: 20%;
+    margin-left: 200px;
     background-color: #D3DAE2;
     z-index: 0;
     .searchsection{
-        width: 33%;
+        width: 34%;
         background-color: rgba(90, 107, 126, 0.767);
         position: absolute;
         top: 8%;
         left: 38%;
         z-index: 0;
         .dropholder {
-            width: 319.1px;
+            width: 337.5px;
             height: 60px;
             margin: 130px 0 100px 60px;
             padding: 0 0 0 20px;
@@ -283,7 +275,7 @@
     .back {
         background-color: #2C3849;
         width: 34%;
-        height: 250vh;
+        height: 300vh;
         position: absolute;
         left: 33%;
         z-index: -5;
@@ -295,11 +287,11 @@
         position: relative;
         .text {
             width: 40%;
-            height: 200px;
             background-color: #fff;
             font-size: 18px;
             line-height: 30px;
             padding-left: 5%;
+            padding-bottom: 5%;
             h4 {
                 font-size: 18px;
                 padding-top: 8%;
