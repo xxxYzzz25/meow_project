@@ -1,3 +1,17 @@
+%h2-btn{
+    font-size: $font-size-h4;
+    color: #fff;
+    background-color: #333;
+    padding: 15px 30px;
+    margin: $gap 0;
+}
+%h3-btn{
+    color: #333;
+    background-color: rgba(144, 143, 143, 0.537);
+    padding: 10px 30px;
+    border: 2px solid #333;
+    margin: $gap 0;
+}
 .banner{
     margin-left: 200px;
     height: 100vh;
@@ -52,37 +66,19 @@
         }
     }
 }
-.shop{
+.pick-kit{
     margin-left: 200px;
+    text-align: center;
     height: 100vh;
-    overflow: hidden;
-    .container{
-        @include afterClear();
-        text-align: center;
+    position: relative;
+    .pick-title{
+        height: 20vh;
         display: flex;
-        justify-content: space-around;
-    }
-    .shop-left{
-        position: relative;
-        top: -600px;
-        float: left;
-        img{
-            display: block;
-            margin: 10px;
-        }
-    }
-    .shop-right{
-        @extend .shop-left;
-        top: -300px;
-    }
-    .shop-title{
-        margin-top: 15vh;
+        align-items: center;
         h2{
-            color: #fff;
-            background-color: #333;
-            padding: 15px 30px;
-            margin: $gap 0;
-            font-size: $font-size-h4;
+            @extend %h2-btn;
+            height: 40px;
+            line-height: 10px;
         }
         h3{
             color: #333;
@@ -92,39 +88,6 @@
             margin: $gap 0;
         }
     }
-    .prod-list{
-        padding: 60px 40px;
-        background-color: rgba(144, 143, 143, 0.537);
-        border: 2px solid #fff;
-        margin-top: 60px;
-        li{
-            position: relative;
-            a{
-                text-decoration: none;
-                color: #333;
-                padding: $gap;
-                display: block;
-            }
-            &:hover:after{
-                position: absolute;
-                content: '';
-                bottom:0;
-                left: 10px;
-                display: block;
-                width: 105px;
-                height: 2px;
-                background-color: #369;
-                opacity: 0.7;
-                transition: .3s;
-            }
-        }
-    }
-}
-.pick-kit{
-    margin-left: 200px;
-    text-align: center;
-    height: 100vh;
-    position: relative;
     ul{
         width: 100%;
         height: 80vh;
@@ -178,6 +141,81 @@
                 background-image: url(../../images/貓貓_171228_0012.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
+            }
+        }
+    }
+    .arrow{
+        width: 50px;
+        height: 60px;
+        background-color: rgba(248, 252, 255, 0.719);
+        position: absolute;
+        top: 57vh;
+        z-index: 999;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .right-arrow{
+        right: 0;
+    }
+}
+.shop{
+    margin-left: 200px;
+    height: 100vh;
+    overflow: hidden;
+    .container{
+        @include afterClear();
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    .shop-left{
+        position: relative;
+        top: -600px;
+        float: left;
+        img{
+            display: block;
+            margin: 10px;
+        }
+    }
+    .shop-right{
+        @extend .shop-left;
+        top: -300px;
+    }
+    .shop-title{
+        margin-top: 15vh;
+        h2{
+            @extend %h2-btn;
+        }
+        h3{
+            @extend %h3-btn;
+        }
+    }
+    .prod-list{
+        padding: 60px 40px;
+        background-color: rgba(144, 143, 143, 0.537);
+        border: 2px solid #fff;
+        margin-top: 60px;
+        li{
+            position: relative;
+            a{
+                text-decoration: none;
+                color: #333;
+                padding: $gap;
+                display: block;
+            }
+            &:hover:after{
+                position: absolute;
+                content: '';
+                bottom:0;
+                left: 10px;
+                display: block;
+                width: 105px;
+                height: 2px;
+                background-color: #369;
+                opacity: 0.7;
+                transition: .3s;
             }
         }
     }
