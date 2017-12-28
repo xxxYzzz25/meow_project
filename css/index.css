@@ -260,3 +260,27 @@ header {
       position: absolute;
       right: -70px;
       top: 6px; }
+
+.shop {
+  margin-left: 200px;
+  height: 100vh;
+  overflow: hidden; }
+  .shop .container {
+    text-align: center;
+    display: flex;
+    justify-content: space-around; }
+    .shop .container:after {
+      content: '';
+      display: block;
+      clear: both; }
+  .shop .shop-left, .shop .shop-right {
+    position: relative;
+    top: -600px;
+    float: left; }
+    .shop .shop-left img, .shop .shop-right img {
+      display: block;
+      margin: 10px; }
+  .shop .shop-right {
+    top: -300px; }
+  .shop .shop-title {
+    float: left; }

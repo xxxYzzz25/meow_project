@@ -52,3 +52,30 @@
         }
     }
 }
+.shop{
+    margin-left: 200px;
+    height: 100vh;
+    overflow: hidden;
+    .container{
+        @include afterClear();
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    .shop-left{
+        position: relative;
+        top: -600px;
+        float: left;
+        img{
+            display: block;
+            margin: 10px;
+        }
+    }
+    .shop-right{
+        @extend .shop-left;
+        top: -300px;
+    }
+    .shop-title{
+        float: left;
+    }
+}
