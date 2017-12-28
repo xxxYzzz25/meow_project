@@ -1,0 +1,146 @@
+@import 'base/_reset.scss';
+@import 'base/_var.scss';
+@import 'base/_boxsizing.scss';
+@import 'mixins/_afterClear.scss';
+@import 'base/_font.scss';
+@import 'modules/_btns.scss';
+@import './layout/_container.scss';
+@import 'modules/_footer.scss';
+@import './modules/_header.scss';
+@import 'mixins/_rwd.scss';
+@import 'mixins/_navNow.scss';
+@import 'respond/_small.scss';
+@import 'respond/_medium.scss';
+@import 'respond/_desktop.scss';
+@import "base/btn";
+@import "base/genderIcon";
+@include navNow(1);
+.navTest {
+    width: 20vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: pink;
+    position: fixed;
+}
+
+.right {
+    margin-left: 200px;
+    .container1 {
+        width: calc(100% - 200px);
+        position: relative;
+        margin-bottom: 100px;
+        padding-top: 60px;
+        &,
+        & * {
+            box-sizing: border-box;
+            outline: none;
+        }
+        .catItem {
+            display: block;
+            position: relative;
+            .favorite {
+                position: absolute;
+                top: 20px;
+                left: 250px;
+                color: rgb(250, 55, 55);
+                font-size: 30px;
+                z-index: 3;
+            }
+            .img {
+                width: 300px;
+                height: auto;
+                border: 8px #fff solid;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+                overflow: hidden;
+            }
+            .img,
+            figure {
+                display: inline-block;
+            }
+            figure {
+                vertical-align: top;
+                line-height: 1.5em;
+                padding-top: 20px;
+                padding-left: 10px;
+                position: relative;
+                width: calc(100% - 310px);
+                height: 400px;
+                h1 {
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+                .btn {
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    bottom: 0; // button {
+                    //     width: 140px;
+                    //     height: 40px;
+                    //     font-size: 20px;
+                    //     display: inline-block;
+                    //     border: 2px solid rgb(255, 196, 0);
+                    //     border-radius: 2px;
+                    //     background-color: rgb(242, 201, 66);
+                    //     color: #fff;
+                    //     float: left;
+                    //     outline: none;
+                    //     &:first-child {
+                    //         margin-left: 10px;
+                    //         margin-right: 10px;
+                    //     }
+                    // }
+                }
+            }
+        }
+        .donateForm {
+            width: 500px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.5em;
+            margin-left: 320px;
+            margin-top: 50px;
+            table {
+                height: 200px;
+                width: 100%;
+                border: 1px solid #000;
+                td {
+                    vertical-align: middle;
+                    border: 1px solid #000;
+                    &:last-child {
+                        width: 30%;
+                    }
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        font-size: 18px;
+                        line-height: 2em;
+                        outline: none;
+                        border: none;
+                        text-align: center;
+                        &::-webkit-input-placeholder {
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+            input[type=submit] {
+                margin-top: 20px;
+            }
+        }
+        .introduction {
+            letter-spacing: 2px;
+            line-height: 1.5em;
+            font-size: 18px;
+            .title {
+                display: block;
+                margin-top: 30px;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            small {
+                font-size: 14px;
+                padding-left: 20px;
+            }
+        }
+    }
+}
