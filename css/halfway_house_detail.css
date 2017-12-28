@@ -152,6 +152,15 @@ body {
 .btns .btn.youtube {
   color: #f00;
 }
+<<<<<<< HEAD
+
+.btns .btn.youtube:before {
+  background-color: #f00;
+}
+
+.btns .btn.youtube:hover {
+  color: #fff;
+=======
 
 .btns .btn.youtube:before {
   background-color: #f00;
@@ -161,10 +170,22 @@ body {
   color: #fff;
 }
 
+.left {
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  background-color: #f5c5e1;
+>>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
+}
+
 .right {
   background-color: #D3DAE2;
   position: relative;
+<<<<<<< HEAD
   margin-left: 200px;
+=======
+  left: 20%;
+>>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
 }
 
 .right .banner {
@@ -175,10 +196,16 @@ body {
 }
 
 .right .banner .text {
+<<<<<<< HEAD
   color: #000;
   font-size: 100px;
   width: 100%;
   padding-top: 5%;
+=======
+  color: #fff;
+  font-size: 100px;
+  width: 100%;
+>>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
   text-align: center;
 }
 
@@ -264,6 +291,7 @@ body {
   font-size: 50px;
 }
 
+<<<<<<< HEAD
 .right .cat .container {
   display: flex;
   justify-content: space-around;
@@ -271,16 +299,62 @@ body {
 }
 
 .right .cat .container .text {
+=======
+.right .cat .catup {
+  width: 60%;
+  margin: 3% auto;
+}
+
+.right .cat .catup .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.right .cat .catup .container .text {
   font-size: 20px;
   line-height: 30px;
 }
 
-.right .cat .container .text h3 {
+.right .cat .catup .container .text h3 {
   font-size: 30px;
   font-weight: bold;
 }
 
+.right .cat .catup img {
+  width: 350px;
+}
+
+.right .cat .catdown {
+  width: 60%;
+  margin: 3% auto;
+  padding-bottom: 5%;
+}
+
+.right .cat .catdown .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.right .cat .catdown .container .text {
+>>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
+  font-size: 20px;
+  line-height: 30px;
+}
+
+<<<<<<< HEAD
+.right .cat .container .text h3 {
+=======
+.right .cat .catdown .container .text h3 {
+>>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
+  font-size: 30px;
+  font-weight: bold;
+}
+
+<<<<<<< HEAD
 .right .cat img {
+=======
+.right .cat .catdown img {
+>>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
   width: 250px;
 }
 
@@ -367,6 +441,7 @@ body {
   border-bottom: 1px dashed #fff;
 }
 
+<<<<<<< HEAD
 header {
   background-color: #EAAF88;
   width: 200px;
@@ -504,4 +579,6 @@ footer span {
   padding: 10px;
 }
 
+=======
+>>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
 /*# sourceMappingURL=halfway_house_detail.css.map */
