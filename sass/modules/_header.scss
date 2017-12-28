@@ -49,9 +49,10 @@ header{
         width: 180px;
         display: flex;
         padding: $gap;
+        padding-right: 20px;
         justify-content: space-around;
         position: absolute;
-        bottom: 70px;
+        bottom: 40px;
         #like{
             font-size: $font-size-h6;
             text-align: center;
