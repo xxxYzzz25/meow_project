@@ -217,6 +217,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+  z-index: 99999999999999999999;
 }
 
 header .logo {
@@ -366,14 +367,14 @@ ul li:nth-child(1):after {
 
 .right .container1 h1 {
   text-align: center;
-  font-size: 40px;
+  font-size: 36px;
   margin-top: 10px;
   margin-bottom: 20px;
   line-height: 26px;
 }
 
 .right .container1 h1 small {
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
 }
 
@@ -449,7 +450,7 @@ ul li:nth-child(1):after {
 }
 
 .right .container1 .selectForm .selectTitle {
-  font-size: 24px;
+  font-size: 14px;
   vertical-align: middle;
 }
 
@@ -471,7 +472,7 @@ ul li:nth-child(1):after {
   width: 260px;
   height: 30px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
   text-indent: 4px;
   margin-right: 6px;
 }
@@ -481,7 +482,7 @@ ul li:nth-child(1):after {
 }
 
 .right .container1 .selectForm .formInsert .searchBar:-webkit-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 30px;
   text-align: center;
 }
@@ -496,11 +497,13 @@ ul li:nth-child(1):after {
   cursor: pointer;
   margin: 6px;
   outline: none;
+  transition: .3s all;
 }
 
 .right .container1 .selectForm .formInsert .condition:hover {
-  background-color: #ff0000;
+  background-color: #EAAF88;
   color: #fff;
+  border: 1px solid #EAAF88;
 }
 
 .right .container1 .selectForm .formInsert .condition1 {
@@ -526,7 +529,7 @@ ul li:nth-child(1):after {
 .right .container1 .catPic .sort a {
   box-sizing: border-box;
   width: 200px;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   line-height: 1.2em;
   display: inline-block;
@@ -626,14 +629,14 @@ ul li:nth-child(1):after {
   text-transform: uppercase;
   color: #fff;
   text-align: center;
-  font-size: 17px;
+  font-size: 18px;
   z-index: 2;
   border: none;
   outline: none;
 }
 
 .right .container1 .catPic .catItem figure {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5em;
   color: #000000;
   padding-left: 20px;
@@ -641,7 +644,7 @@ ul li:nth-child(1):after {
 }
 
 .right .container1 .catPic .catItem figure h3 {
-  font-size: 20px;
+  font-size: 24px;
   margin-left: -10px;
 }
 

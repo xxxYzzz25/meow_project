@@ -43,7 +43,7 @@
                 top: 20px;
                 left: 250px;
                 color: rgb(250, 55, 55);
-                font-size: 30px;
+                font-size: $font-size-h2;
                 z-index: 3;
             }
             .img {
@@ -66,36 +66,21 @@
                 width: calc(100% - 310px);
                 height: 400px;
                 h1 {
-                    font-size: 30px;
+                    font-size: $font-size-h2;
                     font-weight: bold;
                 }
                 .btn {
                     position: absolute;
                     display: block;
                     width: 100%;
-                    bottom: 0; // button {
-                    //     width: 140px;
-                    //     height: 40px;
-                    //     font-size: 20px;
-                    //     display: inline-block;
-                    //     border: 2px solid rgb(255, 196, 0);
-                    //     border-radius: 2px;
-                    //     background-color: rgb(242, 201, 66);
-                    //     color: #fff;
-                    //     float: left;
-                    //     outline: none;
-                    //     &:first-child {
-                    //         margin-left: 10px;
-                    //         margin-right: 10px;
-                    //     }
-                    // }
+                    bottom: 0;
                 }
             }
         }
         .donateForm {
             width: 500px;
             text-align: center;
-            font-size: 16px;
+            font-size: $font-size-base;
             line-height: 1.5em;
             margin-left: 320px;
             margin-top: 50px;
@@ -112,13 +97,14 @@
                     input {
                         width: 100%;
                         height: 100%;
-                        font-size: 18px;
+                        font-size: $font-size-base;
                         line-height: 2em;
                         outline: none;
                         border: none;
                         text-align: center;
                         &::-webkit-input-placeholder {
                             font-style: italic;
+                            font-size: $font-size-base;
                         }
                     }
                 }
@@ -130,7 +116,7 @@
         .introduction {
             letter-spacing: 2px;
             line-height: 1.5em;
-            font-size: 18px;
+            font-size: $font-size-base;
             .title {
                 display: block;
                 margin-top: 30px;
@@ -138,7 +124,7 @@
                 font-weight: bold;
             }
             small {
-                font-size: 14px;
+                font-size: $font-size-small;
                 padding-left: 20px;
             }
         }

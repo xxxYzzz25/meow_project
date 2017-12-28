@@ -217,6 +217,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+  z-index: 99999999999999999999;
 }
 
 header .logo {
@@ -427,7 +428,7 @@ ul li:nth-child(1):after {
 .right .container1 .donateForm {
   width: 500px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5em;
   margin-left: 320px;
   margin-top: 50px;
@@ -451,7 +452,7 @@ ul li:nth-child(1):after {
 .right .container1 .donateForm table td input {
   width: 100%;
   height: 100%;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 2em;
   outline: none;
   border: none;
@@ -460,6 +461,7 @@ ul li:nth-child(1):after {
 
 .right .container1 .donateForm table td input::-webkit-input-placeholder {
   font-style: italic;
+  font-size: 14px;
 }
 
 .right .container1 .donateForm input[type=submit] {
@@ -469,7 +471,7 @@ ul li:nth-child(1):after {
 .right .container1 .introduction {
   letter-spacing: 2px;
   line-height: 1.5em;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .right .container1 .introduction .title {
@@ -480,7 +482,7 @@ ul li:nth-child(1):after {
 }
 
 .right .container1 .introduction small {
-  font-size: 14px;
+  font-size: 12px;
   padding-left: 20px;
 }
 

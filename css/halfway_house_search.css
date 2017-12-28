@@ -162,6 +162,33 @@ body {
   color: #fff;
 }
 
+header
+ul li:nth-child(2) {
+  background-color: #fff;
+  box-shadow: -2px 3px 5px rgba(63, 62, 62, 0.199);
+}
+
+header
+ul li:nth-child(2) a {
+  color: #333;
+  font-family: notoSans_r;
+}
+
+header
+ul li:nth-child(2):after {
+  z-index: -1;
+  content: '';
+  display: block;
+  width: 34px;
+  height: 34px;
+  background-color: #fff;
+  position: absolute;
+  top: 7px;
+  right: -17px;
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
+}
+
 .right {
   position: relative;
   margin-left: 200px;
@@ -513,6 +540,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+  z-index: 99999999999999999999;
 }
 
 header .logo {
