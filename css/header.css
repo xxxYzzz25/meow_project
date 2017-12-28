@@ -113,3 +113,6 @@ header {
     header .icons a {
       text-decoration: none;
       color: #fff; }
+      header .icons a:hover {
+        transform: scale(1.15);
+        transition: .3s; }

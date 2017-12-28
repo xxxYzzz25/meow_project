@@ -214,6 +214,9 @@ header {
     header .icons a {
       text-decoration: none;
       color: #fff; }
+      header .icons a:hover {
+        transform: scale(1.15);
+        transition: .3s; }
 
 header ul li:nth-child(5) {
   background-color: #EAAF88; }

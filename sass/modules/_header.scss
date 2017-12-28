@@ -65,6 +65,10 @@ header{
             font-family: notoSans_b;
         }
         a{
+            &:hover{
+                transform: scale(1.15);
+                transition: .3s;
+            }
             text-decoration: none;
             color:#fff;
         }
