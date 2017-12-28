@@ -153,7 +153,6 @@ body {
 .btns .btn.youtube {
   color: #f00;
 }
-<<<<<<< HEAD
 
 .btns .btn.youtube:before {
   background-color: #f00;
@@ -161,22 +160,6 @@ body {
 
 .btns .btn.youtube:hover {
   color: #fff;
-=======
-
-.btns .btn.youtube:before {
-  background-color: #f00;
-}
-
-.btns .btn.youtube:hover {
-  color: #fff;
-}
-
-.left {
-  width: 20%;
-  height: 100vh;
-  position: fixed;
-  background-color: #f5c5e1;
->>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
 }
 
 .right {
@@ -188,11 +171,7 @@ body {
 }
 
 .right .searchsection {
-<<<<<<< HEAD
   width: 34%;
-=======
-  width: 33%;
->>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
   background-color: rgba(90, 107, 126, 0.767);
   position: absolute;
   top: 8%;
@@ -201,11 +180,7 @@ body {
 }
 
 .right .searchsection .dropholder {
-<<<<<<< HEAD
   width: 337.5px;
-=======
-  width: 319.1px;
->>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
   height: 60px;
   margin: 130px 0 100px 60px;
   padding: 0 0 0 20px;
@@ -475,11 +450,7 @@ body {
 .right .back {
   background-color: #2C3849;
   width: 34%;
-<<<<<<< HEAD
   height: 300vh;
-=======
-  height: 250vh;
->>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
   position: absolute;
   left: 33%;
   z-index: -5;
@@ -487,25 +458,18 @@ body {
 
 .right .item {
   width: 70%;
-  margin: 500px auto;
+  margin: 600px auto 50px auto;
   margin-left: 20%;
   position: relative;
 }
 
 .right .item .text {
   width: 40%;
-<<<<<<< HEAD
-=======
-  height: 200px;
->>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
   background-color: #fff;
   font-size: 18px;
   line-height: 30px;
   padding-left: 5%;
-<<<<<<< HEAD
   padding-bottom: 5%;
-=======
->>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
 }
 
 .right .item .text h4 {
@@ -545,7 +509,6 @@ body {
   background-color: rgba(139, 105, 73, 0.767);
 }
 
-<<<<<<< HEAD
 header {
   background-color: #EAAF88;
   width: 200px;
@@ -683,6 +646,4 @@ footer span {
   padding: 10px;
 }
 
-=======
->>>>>>> f2814e8f30f339965f95f9f194b8508fc21d8f2f
 /*# sourceMappingURL=halfway_house_search.css.map */
