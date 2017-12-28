@@ -127,9 +127,10 @@ header .icons {
   width: 180px;
   display: flex;
   padding: 15px;
+  padding-right: 20px;
   justify-content: space-around;
   position: absolute;
-  bottom: 70px;
+  bottom: 40px;
 }
 
 header .icons #like {
