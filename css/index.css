@@ -40,15 +40,15 @@ table {
 
 @font-face {
   font-family: notoSans;
-  src: url("../../fonts/NotoSansCJKtc-Thin.otf"); }
+  src: url("../fonts/NotoSansCJKtc-Thin.otf"); }
 
 @font-face {
   font-family: notoSans_r;
-  src: url("../../fonts/NotoSansCJKtc-Regular.otf"); }
+  src: url("../fonts/NotoSansCJKtc-Regular.otf"); }
 
 @font-face {
   font-family: notoSans_b;
-  src: url("../../fonts/NotoSansCJKtc-Black.otf"); }
+  src: url("../fonts/NotoSansCJKtc-Black.otf"); }
 
 body {
   font-family: notoSans;
@@ -237,7 +237,7 @@ header {
 .banner {
   margin-left: 200px;
   height: 100vh;
-  background-image: url(../../images/AdobeStock_112482963.jpeg);
+  background-image: url(../images/AdobeStock_112482963.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -282,7 +282,7 @@ header {
   text-align: center;
   height: 100vh;
   position: relative;
-  background-image: url(../../images/marble.jpg); }
+  background-image: url(../images/marble.jpg); }
   .pick-kit .pick-title {
     height: 20vh;
     display: flex;
@@ -323,17 +323,17 @@ header {
         position: relative;
         top: 10%; }
       .pick-kit ul a:nth-child(1) li {
-        background-image: url(../../images/catcat_171225_0011.jpg);
+        background-image: url(../images/catcat_171225_0011.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; }
       .pick-kit ul a:nth-child(2) li {
-        background-image: url(../../images/catcat_171225_0010.jpg);
+        background-image: url(../images/catcat_171225_0010.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; }
       .pick-kit ul a:nth-child(3) li {
-        background-image: url(../../images/catcat_171228_0012.jpg);
+        background-image: url(../images/catcat_171228_0012.jpg);
         background-repeat: no-repeat;
         background-size: cover; }
   .pick-kit .arrow {
@@ -351,7 +351,7 @@ header {
 
 .shelter {
   margin-left: 200px;
-  background-image: url(../../images/marble.jpg);
+  background-image: url(../images/marble.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
   .shelter .shelter-title {
@@ -373,9 +373,9 @@ header {
       background-position: center;
       position: relative; }
       .shelter .shelter-home .figure:nth-child(1) {
-        background-image: url(../../images/half_1.jpg); }
+        background-image: url(../images/half_1.jpg); }
       .shelter .shelter-home .figure:nth-child(2) {
-        background-image: url(../../images/half_2.jpg);
+        background-image: url(../images/half_2.jpg);
         margin-top: 6vh; }
     .shelter .shelter-home .homeContext {
       position: absolute;
@@ -397,7 +397,7 @@ header {
   margin-left: 200px;
   height: 100vh;
   overflow: hidden;
-  background-image: url(../../images/wood.jpg); }
+  background-image: url(../images/wood.jpg); }
   .shop .container {
     text-align: center;
     display: flex;

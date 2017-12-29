@@ -3,7 +3,7 @@
         ul li{
             &:nth-child(#{$nth}){
                 background-color: #fff;
-                box-shadow: -2px 3px 5px rgba(63, 62, 62, 0.199);
+                box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
             }
             &:nth-child(#{$nth}) a{
                 color: #333;

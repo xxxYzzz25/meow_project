@@ -15,7 +15,7 @@
 .banner{
     margin-left: 200px;
     height: 100vh;
-    background-image: url(../../images/AdobeStock_112482963.jpeg);
+    background-image: url(../images/AdobeStock_112482963.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -71,7 +71,7 @@
     text-align: center;
     height: 100vh;
     position: relative;
-    background-image: url(../../images/marble.jpg);
+    background-image: url(../images/marble.jpg);
     .pick-title{
         height: 20vh;
         display: flex;
@@ -123,19 +123,19 @@
                 top:10%;
             }
             &:nth-child(1) li{
-                background-image: url(../../images/catcat_171225_0011.jpg);
+                background-image: url(../images/catcat_171225_0011.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
             }
             &:nth-child(2) li{
-                background-image: url(../../images/catcat_171225_0010.jpg);
+                background-image: url(../images/catcat_171225_0010.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
             }
             &:nth-child(3) li{
-                background-image: url(../../images/catcat_171228_0012.jpg);
+                background-image: url(../images/catcat_171228_0012.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -159,7 +159,7 @@
 }
 .shelter{
     margin-left: 200px;
-    background-image: url(../../images/marble.jpg);
+    background-image: url(../images/marble.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     .shelter-title{
@@ -187,10 +187,10 @@
             background-position: center;
             position: relative;
             &:nth-child(1){
-                background-image: url(../../images/half_1.jpg);
+                background-image: url(../images/half_1.jpg);
             }
             &:nth-child(2){
-                background-image: url(../../images/half_2.jpg);
+                background-image: url(../images/half_2.jpg);
                 margin-top: 6vh;
             }
         }
@@ -218,7 +218,7 @@
     margin-left: 200px;
     height: 100vh;
     overflow: hidden;
-    background-image: url(../../images/wood.jpg);
+    background-image: url(../images/wood.jpg);
     .container{
         @include afterClear();
         text-align: center;
