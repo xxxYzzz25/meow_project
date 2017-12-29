@@ -58,29 +58,31 @@
         <h2>中途之家</h2>
 
         <div class="searchsection">
-            <div class="dropholder">
-                <p>Select</p>
-                <div class="dropdown">
-                    <p>
-                        <i class="fa fa-foursquare"></i> Please Rate</p>
+            <div class="container">
+                <form id="content">
+                    <input type="text" name="input" class="input">
+                    <button type="reset" class="search"></button>
+                </form>
+                <div class="dropholder">
+                    <p>Select</p>
+                    <div class="dropdown">
+                        <p>
+                            <i class="fa fa-foursquare"></i> Please Rate</p>
+                    </div>
+                    <ul class="menu">
+                        <li>
+                            <i class="fa fa-star"></i>北部</li>
+                        <li>
+                            <i class="fa fa-star"></i>中部</li>
+                        <li>
+                            <i class="fa fa-star"></i>南部</li>
+                        <li>
+                            <i class="fa fa-star"></i>東部</li>
+                        <li>
+                            <i class="fa fa-star"></i>離島</li>
+                    </ul>
                 </div>
-                <ul class="menu">
-                    <li>
-                        <i class="fa fa-star"></i>北部</li>
-                    <li>
-                        <i class="fa fa-star"></i>中部</li>
-                    <li>
-                        <i class="fa fa-star"></i>南部</li>
-                    <li>
-                        <i class="fa fa-star"></i>東部</li>
-                    <li>
-                        <i class="fa fa-star"></i>離島</li>
-                </ul>
             </div>
-            <form id="content">
-                <input type="text" name="input" class="input">
-                <button type="reset" class="search"></button>
-            </form>
         </div>
         <script>
             $(".dropdown").click(function () {
@@ -103,8 +105,8 @@
             }
             $('button').on('click', expand);
         </script>
-        
-        <div class="item item1">
+
+        <div class="item">
             <div class="text">
                 <h4>野喵中途咖啡</h4>
                 <br> ADD：新北市三重區集英路65號
