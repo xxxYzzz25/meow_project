@@ -200,13 +200,6 @@ ul li:nth-child(2):after {
 }
 
 .right .searchsection {
-<<<<<<< HEAD
-  width: 50%;
-  background-color: rgba(90, 107, 126, 0.767);
-  position: absolute;
-  top: 8%;
-  left: 25%;
-=======
   padding: 50px;
   width: 60%;
   margin: auto;
@@ -214,18 +207,13 @@ ul li:nth-child(2):after {
   position: relative;
   top: 0;
   left: 0;
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
   z-index: 0;
 }
 
 .right .searchsection .dropholder {
   width: 322px;
   height: 60px;
-<<<<<<< HEAD
-  margin: 130px 0 250px 30%;
-=======
   margin: 80px auto 250px auto;
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
   padding: 0 0 0 20px;
   border-radius: 60px;
   font: 18px arial;
@@ -375,16 +363,6 @@ ul li:nth-child(2):after {
 }
 
 .right .searchsection #content {
-<<<<<<< HEAD
-  position: absolute;
-  z-index: 999;
-  height: 40px;
-  width: 300px;
-  top: 20%;
-  left: 80%;
-  margin-left: 8%;
-  transform: translate(-50%, -50%);
-=======
   position: relative;
   z-index: 999;
   height: 40px;
@@ -393,7 +371,6 @@ ul li:nth-child(2):after {
   left: 50%;
   margin-left: 25px;
   transform: translate(50%, 50%);
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
 }
 
 .right .searchsection #content.on {
@@ -422,11 +399,7 @@ ul li:nth-child(2):after {
 .right .searchsection .search {
   background: none;
   position: absolute;
-<<<<<<< HEAD
-  top: 0px;
-=======
   top: 0;
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
   left: 0;
   height: 50px;
   width: 50px;
@@ -502,21 +475,13 @@ ul li:nth-child(2):after {
 .right h2 {
   font-size: 30px;
   text-align: center;
-<<<<<<< HEAD
-  padding-top: 5%;
-=======
   padding: 50px 0;
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
   color: #ccc;
 }
 
 .right .item {
   width: 70%;
-<<<<<<< HEAD
-  margin: 300px 0 0 23%;
-=======
   margin: 100px auto 300px 23%;
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
   position: relative;
 }
 
@@ -536,22 +501,13 @@ ul li:nth-child(2):after {
 
 .right .item .pic {
   position: absolute;
-<<<<<<< HEAD
-  top: -18%;
-  left: 35%;
-  width: 60%;
-=======
   top: -30px;
   left: 35%;
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
 }
 
 .right .item .pic img {
   width: 65%;
-<<<<<<< HEAD
-=======
   min-width: 400px;
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
 }
 
 .right .item .bg {
@@ -559,11 +515,7 @@ ul li:nth-child(2):after {
   top: 13%;
   left: 5%;
   width: 75%;
-<<<<<<< HEAD
-  height: 130%;
-=======
   height: 300px;
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
   z-index: -3;
 }
 
@@ -578,13 +530,6 @@ ul li:nth-child(2):after {
 .right .item .bg3 {
   background-color: rgba(139, 105, 73, 0.767);
 }
-<<<<<<< HEAD
-
-.right .item1 {
-  margin-top: 580px;
-}
-=======
->>>>>>> a2d7f6907a666c52c374702c5480e48220484c5a
 
 header {
   background-color: #EAAF88;
