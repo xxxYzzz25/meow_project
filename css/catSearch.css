@@ -352,11 +352,12 @@ header ul li:nth-child(1):after {
 }
 
 .right {
+  width: calc(100% - 200px);
   margin-left: 200px;
 }
 
 .right .container1 {
-  width: calc(100% - 200px);
+  width: 100%;
   position: relative;
   padding-top: 40px;
   margin-bottom: 40px;
@@ -552,7 +553,6 @@ header ul li:nth-child(1):after {
   margin-right: 10px;
   margin-bottom: 30px;
   position: relative;
-  position: relative;
 }
 
 .right .container1 .catPic .catItem .favorite {
@@ -578,6 +578,7 @@ header ul li:nth-child(1):after {
   -moz-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
   z-index: -1;
+  position: relative;
 }
 
 .right .container1 .catPic .catItem .catContent .img img {
@@ -658,6 +659,43 @@ header ul li:nth-child(1):after {
   line-height: 1.5em;
   display: inline-block;
   text-align: center;
+}
+
+@media all and (max-width: 767px) {
+  header {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    margin: 0;
+  }
+  .right .container1 .catPic .catItem {
+    display: block;
+    margin: 0 auto;
+  }
+  footer {
+    margin-left: 0;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  header {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    margin: 0;
+  }
+  .right .container1 .catPic .catItem {
+    display: block;
+    margin: 0 auto;
+  }
+  .right .container1 .catPic .catItem .catContent, .right .container1 .catPic .catItem figure {
+    display: inline-block;
+  }
+  footer {
+    margin-left: 0;
+  }
 }
 
 /*# sourceMappingURL=catSearch.css.map */
