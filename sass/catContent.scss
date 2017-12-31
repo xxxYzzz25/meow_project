@@ -9,7 +9,6 @@
 @import './modules/_header.scss';
 @import 'mixins/_rwd.scss';
 @import 'mixins/_navNow.scss';
-
 @import "base/btn";
 @import "base/genderIcon";
 @include navNow(1);
@@ -22,12 +21,13 @@
 }
 
 .right {
+    width: calc(100% - 200px);
     margin-left: 200px;
     .container1 {
-        width: calc(100% - 200px);
+        width: 100%;
         position: relative;
         margin-bottom: 100px;
-        padding-top: 60px;
+        padding: 60px 50px 0;
         &,
         & * {
             outline: none;
@@ -35,20 +35,21 @@
         .catItem {
             display: block;
             position: relative;
-            .favorite {
-                position: absolute;
-                top: 20px;
-                left: 250px;
-                color: rgb(250, 55, 55);
-                font-size: $font-size-h2;
-                z-index: 3;
-            }
             .img {
                 width: 300px;
                 height: auto;
                 border: 8px #fff solid;
                 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
                 overflow: hidden;
+                position: relative;
+                .favorite {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    color: rgb(250, 55, 55);
+                    font-size: $font-size-h2;
+                    z-index: 3;
+                }
             }
             .img,
             figure {
@@ -127,5 +128,6 @@
         }
     }
 }
+
 @import 'respond/_catContentSmall.scss';
 @import 'respond/_catContentMedium.scss';
