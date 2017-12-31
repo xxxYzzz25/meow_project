@@ -9,9 +9,8 @@
 @import './modules/_header.scss';
 @import 'mixins/_rwd.scss';
 @import 'mixins/_navNow.scss';
-@import 'respond/_small.scss';
-@import 'respond/_medium.scss';
-@import 'respond/_desktop.scss';
+@import 'respond/_catSearchSmall.scss';
+@import 'respond/_catSearchMedium.scss';
 @import "base/btn";
 @import "base/genderIcon";
 @include navNow(1);

@@ -302,6 +302,12 @@ header .icons a:hover {
   transition: .3s;
 }
 
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .catItem figure {
+    display: block;
+  }
+}
+
 .defaultBtn {
   font-size: 16px;
   border: #333 1px solid;
