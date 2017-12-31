@@ -45,6 +45,8 @@ table {
 
 * {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 @font-face {
@@ -373,7 +375,6 @@ ul li:nth-child(1):after {
 
 .right .container1,
 .right .container1 * {
-  box-sizing: border-box;
   outline: none;
 }
 

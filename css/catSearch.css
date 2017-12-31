@@ -45,6 +45,8 @@ table {
 
 * {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 @font-face {
@@ -529,7 +531,6 @@ ul li:nth-child(1):after {
 }
 
 .right .container1 .catPic .sort a {
-  box-sizing: border-box;
   width: 200px;
   font-size: 14px;
   text-align: center;
@@ -554,9 +555,6 @@ ul li:nth-child(1):after {
   margin-right: 10px;
   margin-bottom: 30px;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   position: relative;
 }
 
@@ -665,4 +663,4 @@ ul li:nth-child(1):after {
   text-align: center;
 }
 
-/*# sourceMappingURL=searchCat.css.map */
+/*# sourceMappingURL=catSearch.css.map */
