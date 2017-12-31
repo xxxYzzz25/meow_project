@@ -1,0 +1,7 @@
+@include respond-to(medium) {
+    .catItem{
+        figure{
+            display: block;
+        }
+    }
+}

@@ -2,22 +2,29 @@
 .right {
     position: relative;
     margin-left: 200px;
+<<<<<<< HEAD
     padding-bottom: 200px;
     background-image: url(../images/marble.jpg);
+=======
+    padding-bottom: 50px;
+    background-image: url(../../images/marble.jpg);
+>>>>>>> d2d7505a2a8b082d8e05029762bec8ef4bda7471
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
     .searchsection{
-        width: 50%;
+        padding: 50px;
+        width: 60%;  
+        margin: auto;
         background-color: rgba(90, 107, 126, 0.767);
-        position: absolute;
-        top: 8%;
-        left: 25%;
+        position: relative;
+        top: 0;
+        left: 0;
         z-index: 0;
         .dropholder {
             width: 322px;
             height: 60px;
-            margin: 130px 0 250px 30%;
+            margin: 80px auto 250px auto;
             padding: 0 0 0 20px;
             border-radius: 60px;
             font: 18px arial;
@@ -161,14 +168,14 @@
         }
 
         #content {
-            position: absolute;
+            position: relative;
             z-index: 999;
             height: 40px;
             width: 300px;
-            top: 20%;
-            left: 80%;
-            margin-left: 8%;
-            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            margin-left: 25px;
+            transform: translate(50%, 50%);
         }
 
         #content.on {
@@ -197,7 +204,7 @@
         .search {
             background: none;
             position: absolute;
-            top: 0px;
+            top: 0;
             left: 0;
             height: 50px;
             width: 50px;
@@ -273,12 +280,12 @@
     h2 {
         font-size: $font-size-h2;
         text-align: center;
-        padding-top: 5%;
+        padding: 50px 0;
         color: #ccc;
     }
     .item {
         width: 70%;
-        margin: 300px 0 0 23%;
+        margin: 100px auto 300px 23%;
         position: relative;
         .text {
             width: 40%;
@@ -294,11 +301,11 @@
         }
         .pic {
             position: absolute;
-            top: -18%;
+            top: -30px;
             left: 35%;
-            width: 60%;
             img {
                 width: 65%;
+                min-width: 400px;
             }
         }
         .bg {
@@ -306,7 +313,7 @@
             top: 13%;
             left: 5%;
             width: 75%;
-            height: 130%;
+            height: 300px;
             z-index: -3;
         }
         .bg1 {
@@ -318,8 +325,5 @@
         .bg3 {
             background-color: rgba(139, 105, 73, 0.767);
         }
-    }
-    .item1 {
-        margin-top: 580px;
     }
 }
