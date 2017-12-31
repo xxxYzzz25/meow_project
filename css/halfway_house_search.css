@@ -347,7 +347,7 @@ header ul li:nth-child(2):after {
 
 .right .searchsection {
   padding: 50px;
-  width: 60%;
+  width: 70%;
   margin: auto;
   background-color: rgba(90, 107, 126, 0.767);
   position: relative;
@@ -513,10 +513,8 @@ header ul li:nth-child(2):after {
   z-index: 999;
   height: 40px;
   width: 300px;
-  top: 50%;
-  left: 50%;
-  margin-left: 25px;
-  transform: translate(50%, 50%);
+  top: 60%;
+  left: 70%;
 }
 
 .right .searchsection #content.on {
@@ -618,6 +616,10 @@ header ul li:nth-child(2):after {
   transform: translate(-100%, -50%);
 }
 
+.right #selectBox {
+  display: none;
+}
+
 .right h2 {
   font-size: 30px;
   text-align: center;
@@ -628,17 +630,18 @@ header ul li:nth-child(2):after {
 
 .right .item {
   width: 70%;
-  margin: 100px auto 300px 23%;
+  margin: 100px auto 200px 15%;
   position: relative;
 }
 
 .right .item .text {
-  width: 40%;
+  width: 50%;
   background-color: #fff;
   font-size: 14px;
   line-height: 30px;
-  padding-left: 5%;
-  padding-bottom: 5%;
+  padding-left: 3%;
+  padding-bottom: 3%;
+  box-shadow: 12px 10px 20px -10px #333;
 }
 
 .right .item .text h3 {
@@ -649,26 +652,27 @@ header ul li:nth-child(2):after {
 
 .right .item .pic {
   position: absolute;
-  top: -30px;
-  left: 38%;
+  top: -15px;
+  left: 48%;
+  box-shadow: 12px 10px 20px -10px #333;
 }
 
 .right .item .pic img {
-  width: 70%;
-  min-width: 250px;
+  width: 100%;
 }
 
 .right .item .bg {
   position: absolute;
   top: 13%;
   left: 5%;
-  width: 75%;
-  height: 300px;
+  width: 100%;
+  height: 120%;
+  box-shadow: 12px 10px 10px -4px #aaa;
   z-index: -3;
 }
 
 .right .item .bg1 {
-  background-color: rgba(173, 177, 70, 0.767);
+  background-color: rgba(66, 136, 115, 0.767);
 }
 
 .right .item .bg2 {
@@ -677,6 +681,81 @@ header ul li:nth-child(2):after {
 
 .right .item .bg3 {
   background-color: rgba(139, 105, 73, 0.767);
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .right .item {
+    width: 80%;
+    margin: 50px auto 180px auto;
+  }
+  .right .item:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .right .item .text {
+    position: absolute;
+    top: 80%;
+    left: 45%;
+    width: 60%;
+    color: #ddd;
+  }
+  .right .item .tx1 {
+    background-color: rgba(66, 136, 115, 0.767);
+  }
+  .right .item .tx2 {
+    background-color: rgba(199, 79, 73, 0.767);
+  }
+  .right .item .tx3 {
+    background-color: rgba(139, 105, 73, 0.767);
+  }
+  .right .item .pic {
+    position: static;
+  }
+  .right .item .bg {
+    display: none;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .right .searchsection #selectBox {
+    display: block;
+  }
+  .right #content,
+  .right .dropholder {
+    display: none;
+  }
+  .right .item {
+    width: 80%;
+    margin: 80px auto 180px auto;
+  }
+  .right .item:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .right .item .text {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    width: 70%;
+    color: #ddd;
+  }
+  .right .item .tx1 {
+    background-color: rgba(66, 136, 115, 0.767);
+  }
+  .right .item .tx2 {
+    background-color: rgba(199, 79, 73, 0.767);
+  }
+  .right .item .tx3 {
+    background-color: rgba(139, 105, 73, 0.767);
+  }
+  .right .item .pic {
+    position: static;
+  }
+  .right .item .bg {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=halfway_house_search.css.map */

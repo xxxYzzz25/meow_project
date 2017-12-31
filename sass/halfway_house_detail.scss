@@ -10,7 +10,9 @@
 @import 'modules/_header.scss';
 @import 'modules/_footer.scss';
 @import 'modules/_btns.scss';
-@import 'respond/_small.scss';
-@import 'respond/_medium.scss';
-@import 'respond/_desktop.scss';
 @import 'modules/_halfway_house_detail.scss';
+@import 'respond/_halfwayHouseDetailMedium.scss';
+@import 'respond/_halfwayHouseDetailSmall.scss';
+// * {
+//     outline: 1px solid red;
+// }
