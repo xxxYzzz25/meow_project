@@ -276,7 +276,8 @@
         font-size: $font-size-h2;
         text-align: center;
         padding: 50px 0;
-        color: #ccc;
+        letter-spacing: 15px;
+        font-weight: bold;
     }
     .item {
         width: 70%;
@@ -289,18 +290,19 @@
             line-height: 30px;
             padding-left: 5%;
             padding-bottom: 5%;
-            h4 {
-                font-size: $font-size-h4;
+            h3 {
+                font-size: $font-size-h3;
                 padding-top: 8%;
+                letter-spacing: 10px;
             }
         }
         .pic {
             position: absolute;
             top: -30px;
-            left: 35%;
+            left: 38%;
             img {
-                width: 65%;
-                min-width: 400px;
+                width: 70%;
+                min-width: 250px;
             }
         }
         .bg {

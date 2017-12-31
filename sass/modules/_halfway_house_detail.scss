@@ -5,16 +5,18 @@
     background-size: cover;
     position: relative;
     margin-left: 200px;
-    padding-top: 100px;
+    padding-top: 60px;
     .banner {
         background-image: url(../../images/halfdetail1.jpg);
         background-position: 50%;
         background-repeat: no-repeat;
         width: 90%;
-        height: 700px;
+        height: 650px;
         margin: auto;
         position: relative;
         h2 {
+            font-weight: bold;
+            letter-spacing: 15px;
             background-color: rgba(rgb(34, 103, 182), .7);
             color: #000;
             font-size: $font-size-h2;
@@ -28,29 +30,31 @@
         .intro {
             width: 55%;
             position: absolute;
-            top: 400px;
+            top: 330px;
             left: -3%;
             font-size: $font-size-large;
             line-height: $line-height-base*1.4;
             padding: 20px;
             background-color: rgba(rgb(35, 204, 204), .7);
             z-index: 1;
+            color: #111;
         }
         .contact {
             width: 30%;
             position: absolute;
-            top: 450px;
+            top: 400px;
             left: 73%;
             font-size: $font-size-large;
             line-height: $line-height-base*1.4;
             padding: 20px;
             background-color: rgba(#096, .7);
             z-index: 1;
+            color: #111;
         }
     }
 
     .halfwaypic {
-        margin: 5% auto;
+        margin: 60px auto;
         .container {
             display: flex;
             justify-content: space-around;
@@ -65,8 +69,8 @@
     }
 
     .cat {
-        background-image: url(../../images/catbg.jpeg);
-        background-position: bottom 50%;
+        background-image: url(../../images/catbg2.jpeg);
+        background-position: bottom 80%;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
@@ -92,6 +96,8 @@
             }
         }
         h2 {
+            font-weight: bold;
+            letter-spacing: 15px;
             width: 90%;
             margin: auto;
             padding: 5%;
@@ -132,7 +138,9 @@
         margin: auto;
         padding-bottom: 5%;
         h2 {
+            font-weight: bold;
             width: 90%;
+            letter-spacing: 15px;           
             margin: auto;
             padding: 5%;
             text-align: center;
@@ -153,6 +161,8 @@
             margin: 0 auto;
             @include clear;
             h2 {
+                font-weight: bold;
+                letter-spacing: 15px;
                 width: 90%;
                 margin: auto;
                 padding: 5%;

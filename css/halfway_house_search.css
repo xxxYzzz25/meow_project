@@ -70,9 +70,156 @@ body {
   letter-spacing: 3px;
 }
 
+.fa-mars {
+  color: deepskyblue;
+}
+
+.fa-venus {
+  color: #fc516d;
+}
+
 .container {
   max-width: 991px;
   margin: 0 auto;
+}
+
+header {
+  background-color: #EAAF88;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  padding-left: 15px;
+  box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+  z-index: 99999999999999999999;
+}
+
+header .logo {
+  position: relative;
+  top: 70px;
+  width: 180px;
+  text-align: center;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header .logo img {
+  width: 90%;
+}
+
+header ul {
+  position: absolute;
+  bottom: 180px;
+}
+
+header ul li {
+  margin: 1px 0;
+  position: relative;
+}
+
+header ul li:hover {
+  background-color: #fff;
+  box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
+  transition: .3s;
+}
+
+header ul li:hover a {
+  color: #000;
+  transition: .3s;
+}
+
+header ul li a {
+  width: 185px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 20px;
+}
+
+header .icons {
+  width: 180px;
+  display: flex;
+  padding: 15px;
+  padding-right: 20px;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 40px;
+}
+
+header .icons #like {
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  color: #d33;
+  top: -17px;
+  right: -25px;
+  font-family: notoSans_b;
+}
+
+header .icons a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header .icons a:hover {
+  transform: scale(1.15);
+  transition: .3s;
+}
+
+footer {
+  background-color: #f5eae3;
+  margin-left: 200px;
+  padding: 15px;
+}
+
+footer .follow {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer nav {
+  margin: auto;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer nav ul li {
+  width: 20%;
+  margin: 15px;
+}
+
+footer nav ul li:hover {
+  transform: translateY(-3px);
+  transition: .35s;
+}
+
+footer nav ul li a {
+  text-align: center;
+  border: 1px solid #333;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+
+footer span {
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  padding: 10px;
 }
 
 .btns .btn {
@@ -478,7 +625,8 @@ ul li:nth-child(2):after {
   font-size: 30px;
   text-align: center;
   padding: 50px 0;
-  color: #ccc;
+  letter-spacing: 15px;
+  font-weight: bold;
 }
 
 .right .item {
@@ -496,20 +644,21 @@ ul li:nth-child(2):after {
   padding-bottom: 5%;
 }
 
-.right .item .text h4 {
-  font-size: 18px;
+.right .item .text h3 {
+  font-size: 24px;
   padding-top: 8%;
+  letter-spacing: 10px;
 }
 
 .right .item .pic {
   position: absolute;
   top: -30px;
-  left: 35%;
+  left: 38%;
 }
 
 .right .item .pic img {
-  width: 65%;
-  min-width: 400px;
+  width: 70%;
+  min-width: 250px;
 }
 
 .right .item .bg {
@@ -531,145 +680,6 @@ ul li:nth-child(2):after {
 
 .right .item .bg3 {
   background-color: rgba(139, 105, 73, 0.767);
-}
-
-header {
-  background-color: #EAAF88;
-  width: 200px;
-  height: 100vh;
-  position: fixed;
-  padding-left: 15px;
-  box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-  z-index: 99999999999999999999;
-}
-
-header .logo {
-  position: relative;
-  top: 70px;
-  width: 180px;
-  text-align: center;
-}
-
-header .logo a {
-  text-decoration: none;
-  color: #fff;
-}
-
-header .logo img {
-  width: 90%;
-}
-
-header ul {
-  position: absolute;
-  bottom: 180px;
-}
-
-header ul li {
-  margin: 1px 0;
-  position: relative;
-}
-
-header ul li:hover {
-  background-color: #fff;
-  box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
-  transition: .3s;
-}
-
-header ul li:hover a {
-  color: #000;
-  transition: .3s;
-}
-
-header ul li a {
-  width: 185px;
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 15px 20px;
-}
-
-header .icons {
-  width: 180px;
-  display: flex;
-  padding: 15px;
-  padding-right: 20px;
-  justify-content: space-around;
-  position: absolute;
-  bottom: 40px;
-}
-
-header .icons #like {
-  font-size: 12px;
-  text-align: center;
-  line-height: 20px;
-  display: block;
-  width: 15px;
-  height: 15px;
-  position: relative;
-  color: #d33;
-  top: -17px;
-  right: -25px;
-  font-family: notoSans_b;
-}
-
-header .icons a {
-  text-decoration: none;
-  color: #fff;
-}
-
-header .icons a:hover {
-  transform: scale(1.15);
-  transition: .3s;
-}
-
-footer {
-  background-color: #f5eae3;
-  margin-left: 200px;
-  padding: 15px;
-}
-
-footer .follow {
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer nav {
-  margin: auto;
-}
-
-footer nav ul {
-  display: flex;
-  justify-content: space-around;
-}
-
-footer nav ul li {
-  width: 20%;
-  margin: 15px;
-}
-
-footer nav ul li:hover {
-  transform: translateY(-3px);
-  transition: .35s;
-}
-
-footer nav ul li a {
-  text-align: center;
-  border: 1px solid #333;
-  text-decoration: none;
-  color: #333;
-  display: block;
-  width: 100%;
-  padding: 15px;
-}
-
-footer span {
-  display: inline-block;
-  position: relative;
-  top: -20px;
-  padding: 10px;
 }
 
 /*# sourceMappingURL=halfway_house_search.css.map */
