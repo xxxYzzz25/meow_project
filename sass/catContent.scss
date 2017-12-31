@@ -9,8 +9,7 @@
 @import './modules/_header.scss';
 @import 'mixins/_rwd.scss';
 @import 'mixins/_navNow.scss';
-@import 'respond/_catContentSmall.scss';
-@import 'respond/_catContentMedium.scss';
+
 @import "base/btn";
 @import "base/genderIcon";
 @include navNow(1);
@@ -128,3 +127,5 @@
         }
     }
 }
+@import 'respond/_catContentSmall.scss';
+@import 'respond/_catContentMedium.scss';
