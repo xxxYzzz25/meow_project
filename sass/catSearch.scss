@@ -87,7 +87,7 @@
                 }
                 &:checked~div {
                     // display: block;
-                    height: 396px;
+                    height: 400px;
                 }
             }
             .advanceSearchItem {
@@ -180,14 +180,15 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 margin-bottom: 30px;
-                position: relative;.favorite {
-                            position: absolute;
-                            right: 12px;
-                            top: 12px;
-                            color: rgb(250, 55, 55);
-                            font-size: $font-size-h2;
-                            z-index: 3;
-                        }
+                position: relative;
+                .favorite {
+                    position: absolute;
+                    right: 12px;
+                    top: 12px;
+                    color: rgb(250, 55, 55);
+                    font-size: $font-size-h2;
+                    z-index: 3;
+                }
                 .catContent {
                     position: relative;
                     width: 300px;
@@ -201,7 +202,6 @@
                         transition: all 0.35s ease-in-out;
                         z-index: -1;
                         position: relative;
-                        
                         img {
                             width: 100%;
                         }
