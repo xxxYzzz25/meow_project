@@ -222,6 +222,9 @@ footer span {
   padding: 10px;
 }
 
+input, select {
+  outline: none; }
+
 .btns .btn {
   font-size: 30px;
   display: inline-block;

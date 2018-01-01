@@ -7,10 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>尋喵啟事</title>
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../plugin/jquery.fullPage.css">
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="../plugin/jquery.fullPage.js"></script>
 </head>
 
 <body>
+    <div id="loading">
+        <img src="../images/loading.svg" id="loadingCat" alt="loading">
+    </div>
     <!-- header -->
     <header>
         <div class="logo">
@@ -52,148 +59,211 @@
             </a>
         </div>
     </header>
-    <!-- banner -->
-    <div class="banner">
-        <div class="container">
-            <div class="find">
-                <img src="../images/number0.png" alt="0">
-                <img src="../images/number8.png" alt="8">
-                <img src="../images/number7.png" alt="7"> 隻喵喵已經找到牠的主人
-            </div>
-            <div class="wait">
-                <img src="../images/number7.png" alt="7">
-                <img src="../images/number7.png" alt="7">
-                <img src="../images/number7.png" alt="7"> 隻喵喵還在等待牠的主人
-            </div>
-            <div class="search">
-                <input type="text" placeholder="搜尋中途之家 or 心儀喵喵">
-                <a href="#">
-                    <i class="fa fa-search fa-2x" title="跳轉至搜尋結果" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- 尋喵 -->
-    <div class="pick-kit">
-        <div class="pick-title">
-            <h2>尋喵</h2>
-            <h3>Pick Up My Kittens</h3>
-        </div>
-        <div class="left-arrow arrow">
-            <a href="#">
-                <img src="../images/cat-print-white.png" alt="cat paws">
-            </a>
-        </div>
-        <div class="right-arrow arrow">
-            <a href="#">
-                <img src="../images/cat-print-white.png" alt="cat paws">
-            </a>
-        </div>
-        <ul>
-            <a href="#">
-                <li>
-                    <span class="bubble">
-                        <span class="kit-name">薛薛</span>
-                        <span class="kit-age">兩個月</span>
-                        <span class="kit-address">台中市</span>
-                        <span class="kit-home">CACA中途之家</span>
-                    </span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <span class="bubble">
-                        <span class="kit-name">書書</span>
-                        <span class="kit-age">三個月</span>
-                        <span class="kit-address">台南市</span>
-                        <span class="kit-home">喃喃中途之家</span>
-                    </span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <span class="bubble">
-                        <span class="kit-name">泡泡</span>
-                        <span class="kit-age">五個月</span>
-                        <span class="kit-address">台北市</span>
-                        <span class="kit-home">閩閩中途之家</span>
-                    </span>
-                </li>
-            </a>
-        </ul>
-    </div>
-    <!-- 中途之家 -->
-    <div class="shelter">
-        <div class="shelter-title">
-            <h2>中途之家</h2>
-            <h3>Animal Shelter</h3>
-        </div>
-        <div class="shelter-home">
-            <div class="figure">
-                <div class="homeContext">
-                    <span class="shelter-name">貓貓別哭 中途咖啡廳</span>
-                    <span class="shelter-address">台北市信義區信義路四段88號</span>
-                    <span class="shelter-tel">02-2777-6666</span>
-                    <span class="shelter-time">營業時間 : 10:00~20:00</span>
-                </div>
-            </div>
-            <div class="figure">
-                <div class="homeContext">
-                    <span class="shelter-name">貓貓別哭 中途咖啡廳</span>
-                    <span class="shelter-address">台北市信義區信義路四段88號</span>
-                    <span class="shelter-tel">02-2777-6666</span>
-                    <span class="shelter-time">營業時間 : 10:00~20:00</span>
+    <div id="fullpages">
+        <div class="section">
+            <!-- banner -->
+            <div class="banner">
+                <div class="container">
+                    <div class="find">
+                        <img src="../images/number0.png" alt="0">
+                        <img src="../images/number8.png" alt="8">
+                        <img src="../images/number7.png" alt="7"> 隻喵喵已經找到牠的主人
+                    </div>
+                    <div class="wait">
+                        <img src="../images/number7.png" alt="7">
+                        <img src="../images/number7.png" alt="7">
+                        <img src="../images/number7.png" alt="7"> 隻喵喵還在等待牠的主人
+                    </div>
+                    <hr>
+                    <h2>尋找您未來的喵喵</h2>
+                    <div class="search">
+                        <select name="" id="">
+                            <option value="">毛色</option>
+                            <option value="">--請選擇--</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">性別</option>
+                            <option value="">--請選擇--</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">地區</option>
+                            <option value="">--請選擇--</option>
+                            <option value="">北部</option>
+                            <option value="">中部</option>
+                            <option value="">南部</option>
+                            <option value="">東部</option>
+                            <option value="">離島</option>
+                        </select>
+                        <input type="text" placeholder="還有什麼喵喵的線索嗎?">
+                        <a href="#">
+                            <i class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        <!-- 商城 -->
+        <div class="section">
+            <!-- 尋喵 -->
+            <div class="pick-kit">
+                <div class="pick-title">
+                    <h2>尋喵</h2>
+                    <h3>Pick Up My Kittens</h3>
+                </div>
+                <div class="left-arrow arrow">
+                    <a href="#">
+                        <img src="../images/cat-print-white.png" alt="cat paws">
+                    </a>
+                </div>
+                <div class="right-arrow arrow">
+                    <a href="#">
+                        <img src="../images/cat-print-white.png" alt="cat paws">
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <!-- 中途之家 -->
+        <div class="half">
+                <div class="half-title">
+                    <h2>中途之家</h2>
+                    <h3>Animal Shelter</h3>
+                </div>
+                <div class="half-item">
+                    <div class="half-qty">
+                        <img src="../images/number5.png" alt="5">
+                        <img src="../images/number8.png" alt="8"> 隻喵喵
+                    </div>
+                    <div class="half-pic"></div>
+                    <div class="half-text">
+                        <span class="half-name">貓貓別哭 中途咖啡廳</span>
+                        <span class="half-address">台北市信義區信義路四段88號</span>
+                        <span class="half-tel">02-2777-6666</span>
+                        <span class="half-time">營業時間 : 10:00~20:00</span>
+                    </div>
+                </div>
+                <div class="half-item">
+                    <div class="half-qty">
+                        <img src="../images/number5.png" alt="5">
+                        <img src="../images/number8.png" alt="8"> 隻喵喵
+                    </div>
+                    <div class="half-pic"></div>
+                    <div class="half-text">
+                        <span class="half-name">貓貓別哭 中途咖啡廳</span>
+                        <span class="half-address">台北市信義區信義路四段88號</span>
+                        <span class="half-tel">02-2777-6666</span>
+                        <span class="half-time">營業時間 : 10:00~20:00</span>
+                    </div>
+                </div>
+                <div class="half-item">
+                    <div class="half-qty">
+                        <img src="../images/number5.png" alt="5">
+                        <img src="../images/number8.png" alt="8"> 隻喵喵
+                    </div>
+                    <div class="half-pic"></div>
+                    <div class="half-text">
+                        <span class="half-name">貓貓別哭 中途咖啡廳</span>
+                        <span class="half-address">台北市信義區信義路四段88號</span>
+                        <span class="half-tel">02-2777-6666</span>
+                        <span class="half-time">營業時間 : 10:00~20:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <!-- 商城 -->
         <div class="shop">
-            <div class="container">
-                <div class="shop-left">
-                    <img src="../images/storeProduct_1.jpg" alt="product">
-                    <img src="../images/storeProduct_2.jpg" alt="product">
-                    <img src="../images/storeProduct_1.jpg" alt="product">
-                    <img src="../images/storeProduct_2.jpg" alt="product">
-                    <img src="../images/storeProduct_1.jpg" alt="product">
-                    <img src="../images/storeProduct_2.jpg" alt="product">
-                    <img src="../images/storeProduct_1.jpg" alt="product">
-                    <img src="../images/storeProduct_2.jpg" alt="product">
-                </div>
-                <div class="shop-title">
-                    <h2>商城</h2>
-                    <h3>Shopping Store</h3>
-                    <ul class="prod-list">
-                        <li>
-                            <a href="#">喵喵肚子餓</a>
-                        </li>
-                        <li>
-                            <a href="#">喵喵待在家</a>
-                        </li>
-                        <li>
-                            <a href="#">精選喵草</a>
-                        </li>
-                        <li>
-                            <a href="#">喵喵愛玩耍</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="shop-right">
-                    <img src="../images/storeProduct_1.jpg" alt="product">
-                    <img src="../images/storeProduct_2.jpg" alt="product">
-                    <img src="../images/storeProduct_1.jpg" alt="product">
-                    <img src="../images/storeProduct_2.jpg" alt="product">
-                    <img src="../images/storeProduct_1.jpg" alt="product">
-                    <img src="../images/storeProduct_2.jpg" alt="product">
-                    <img src="../images/storeProduct_1.jpg" alt="product">
-                    <img src="../images/storeProduct_2.jpg" alt="product">
+                <div class="container">
+                    <div class="shop-left">
+                        <img src="../images/storeProduct_1.jpg" alt="product">
+                        <img src="../images/storeProduct_2.jpg" alt="product">
+                        <img src="../images/storeProduct_1.jpg" alt="product">
+                        <img src="../images/storeProduct_2.jpg" alt="product">
+                        <img src="../images/storeProduct_1.jpg" alt="product">
+                        <img src="../images/storeProduct_2.jpg" alt="product">
+                        <img src="../images/storeProduct_1.jpg" alt="product">
+                        <img src="../images/storeProduct_2.jpg" alt="product">
+                    </div>
+                    <div class="shop-title">
+                        <h2>商城</h2>
+                        <h3>Shopping Store</h3>
+                        <ul class="prod-list">
+                            <li>
+                                <a href="#">喵喵肚子餓</a>
+                            </li>
+                            <li>
+                                <a href="#">喵喵待在家</a>
+                            </li>
+                            <li>
+                                <a href="#">精選喵草</a>
+                            </li>
+                            <li>
+                                <a href="#">喵喵愛玩耍</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="shop-right">
+                        <img src="../images/storeProduct_1.jpg" alt="product">
+                        <img src="../images/storeProduct_2.jpg" alt="product">
+                        <img src="../images/storeProduct_1.jpg" alt="product">
+                        <img src="../images/storeProduct_2.jpg" alt="product">
+                        <img src="../images/storeProduct_1.jpg" alt="product">
+                        <img src="../images/storeProduct_2.jpg" alt="product">
+                        <img src="../images/storeProduct_1.jpg" alt="product">
+                        <img src="../images/storeProduct_2.jpg" alt="product">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- footer -->
-        <footer>
-            <div class="container">
-                <!-- <nav>
+        </div>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <!-- <nav>
                     <ul>
                         <li>
                             <a href="#">尋喵</a>
@@ -212,25 +282,38 @@
                         </li>
                     </ul>
                 </nav> -->
-                <div class="follow">
-                    <div class="btns">
-                        <span>follow us on</span>
-                        <a href="#" class="btn facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="#" class="btn youtube">
-                            <i class="fa fa-youtube"></i>
-                        </a>
-                        <a href="#" class="btn twitter">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="#" class="btn google">
-                            <i class="fa fa-google"></i>
-                        </a>
-                    </div>
+            <div class="follow">
+                <div class="btns">
+                    <span>follow us on</span>
+                    <a href="#" class="btn facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" class="btn youtube">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                    <a href="#" class="btn twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn google">
+                        <i class="fa fa-google"></i>
+                    </a>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('load', function () {
+            $('#fullpages').fullpage({
+                'navigation': true,
+            });
+            window.setTimeout(function () {
+                let loading = document.getElementById('loading');
+                Object.assign(loading, {
+                    'style': 'opacity:0;z-index:-1;'
+                });
+            }, 300);
+        });
+    </script>
 </body>
 
 </html>

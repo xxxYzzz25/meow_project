@@ -163,6 +163,9 @@ body {
   margin: 0 auto;
 }
 
+input, select {
+  outline: none; }
+
 footer {
   background-color: #f5eae3;
   margin-left: 200px;
