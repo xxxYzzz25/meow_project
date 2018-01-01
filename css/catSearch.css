@@ -448,7 +448,7 @@ header ul li:nth-child(1):after {
 }
 
 .right .container1 .selectForm #advanced:checked ~ div {
-  height: 396px;
+  height: 400px;
 }
 
 .right .container1 .selectForm .advanceSearchItem {
@@ -673,9 +673,52 @@ header ul li:nth-child(1):after {
     width: 100%;
     margin: 0;
   }
+  .right .container1 .selectForm {
+    width: 100%;
+  }
+  .right .container1 .selectForm .formInsert {
+    width: 100%;
+  }
+  .right .container1 .selectForm .formInsert .searchBar {
+    width: 80%;
+    margin-left: 0;
+  }
+  .right .container1 .selectForm .formInsert .defaultBtn {
+    padding: 4px 14px;
+  }
+  .right .container1 .selectForm .advanceSearch {
+    right: 5%;
+  }
+  .right .container1 .selectForm #advanced:checked ~ div {
+    height: 400px;
+  }
+  .right .container1 .selectForm .advanceSearchItem {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .right .container1 .selectForm .advanceSearchItem .condition {
+    padding: 3px 8px;
+    margin: 2px;
+  }
+  .right .container1 .catPic .sort {
+    width: 100%;
+  }
+  .right .container1 .catPic .sort a {
+    padding: 4px 20px;
+    width: 140px;
+  }
+  .right .container1 .catPic .sort a .fa-angle-down {
+    position: absolute;
+    line-height: 1.2em;
+    right: 12px;
+  }
   .right .container1 .catPic .catItem {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 100px;
+  }
+  .right .container1 .catPic .catItem .catContent,
+  .right .container1 .catPic .catItem figure {
+    display: inline-block;
   }
   footer {
     margin-left: 0;
@@ -690,12 +733,21 @@ header ul li:nth-child(1):after {
     width: 100%;
     margin: 0;
   }
-  .right .container1 .catPic .catItem {
-    display: block;
-    margin: 0 auto;
+  .right .container1 .selectForm .advanceSearch {
+    right: 14%;
   }
-  .right .container1 .catPic .catItem .catContent, .right .container1 .catPic .catItem figure {
+  .right .container1 .catPic .catItem {
+    width: 80%;
+    display: block;
+    margin: 0 auto 100px;
+  }
+  .right .container1 .catPic .catItem .catContent,
+  .right .container1 .catPic .catItem figure {
     display: inline-block;
+    vertical-align: top;
+  }
+  .right .container1 .catPic .catItem figure {
+    padding-top: 60px;
   }
   footer {
     margin-left: 0;
