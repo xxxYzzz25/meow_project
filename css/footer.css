@@ -164,7 +164,8 @@ body {
 }
 
 input, select {
-  outline: none; }
+  outline: none;
+}
 
 footer {
   background-color: #f5eae3;

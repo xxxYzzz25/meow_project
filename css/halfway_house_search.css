@@ -83,6 +83,10 @@ body {
   margin: 0 auto;
 }
 
+input, select {
+  outline: none;
+}
+
 header {
   background-color: #EAAF88;
   width: 200px;
@@ -90,7 +94,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-  z-index: 99999999999999999999;
+  z-index: 9999999;
 }
 
 header .logo {
@@ -221,9 +225,6 @@ footer span {
   top: -20px;
   padding: 10px;
 }
-
-input, select {
-  outline: none; }
 
 .btns .btn {
   font-size: 30px;
