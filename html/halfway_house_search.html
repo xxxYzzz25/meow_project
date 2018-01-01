@@ -93,27 +93,8 @@
                 <option>離島</option>
                 <select>
         </div>
-        <script>
-            $(".dropdown").click(function () {
-                $(".menu").toggleClass("showMenu");
-                $(".menu > li").click(function () {
-                    $(".dropdown > p").html($(this).html());
-                    $(".menu").removeClass("showMenu");
-                });
-            });
-        </script>
-        <script>
-            function expand() {
-                $(".search").toggleClass("close");
-                $(".input").toggleClass("square");
-                if ($('.search').hasClass('close')) {
-                    $('input').focus();
-                } else {
-                    $('input').blur();
-                }
-            }
-            $('button').on('click', expand);
-        </script>
+        <script src="../js/halfway/dropdown.js"></script>
+        <script src="../js/halfway/expand.js"></script>
 
         <div class="result">
             <div class="container">
