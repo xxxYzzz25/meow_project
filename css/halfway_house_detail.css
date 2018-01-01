@@ -340,7 +340,7 @@ header ul li:nth-child(2):after {
   background-size: cover;
   position: relative;
   margin-left: 200px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .right .banner {
@@ -348,14 +348,15 @@ header ul li:nth-child(2):after {
   background-position: 50%;
   background-repeat: no-repeat;
   width: 85%;
-  height: 480px;
+  padding-top: 35%;
   margin: auto;
   position: relative;
 }
 
 .right .banner h2 {
-  letter-spacing: 15px;
-  background-color: rgba(34, 103, 182, 0.7);
+  color: #333;
+  letter-spacing: 10px;
+  background-color: rgba(241, 209, 146, 0.815);
   color: #000;
   font-size: 30px;
   width: 30%;
@@ -363,18 +364,18 @@ header ul li:nth-child(2):after {
   position: absolute;
   top: -20px;
   left: 50%;
-  padding: 20px;
+  line-height: 6vw;
 }
 
 .right .banner .intro {
-  width: 55%;
+  width: 70%;
   position: absolute;
-  top: 280px;
+  top: 55%;
   left: -3%;
   font-size: 14px;
   line-height: 2.0;
   padding: 20px;
-  background-color: rgba(35, 204, 204, 0.7);
+  background-color: rgba(241, 232, 214, 0.815);
   z-index: 1;
   color: #111;
 }
@@ -382,18 +383,53 @@ header ul li:nth-child(2):after {
 .right .banner .contact {
   width: 35%;
   position: absolute;
-  top: 300px;
+  top: 25%;
   left: 70%;
   font-size: 14px;
-  line-height: 2.0;
+  line-height: 2.28571;
   padding: 20px;
-  background-color: rgba(0, 153, 102, 0.7);
+  background-color: rgba(241, 232, 214, 0.815);
   z-index: 1;
   color: #111;
 }
 
+.right .banner .rating {
+  width: 35%;
+  position: absolute;
+  top: 90%;
+  left: 70%;
+  padding: 20px;
+  background-color: rgba(241, 209, 146, 0.815);
+}
+
+.right .banner .rating:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.right .banner .rating .star {
+  width: 60%;
+  float: left;
+  font-size: 18px;
+}
+
+.right .banner .rating .star .fa-star-o:hover {
+  color: #f00;
+}
+
+.right .banner .rating .text {
+  width: 40%;
+  float: left;
+  text-align: center;
+}
+
+.right .smallintro {
+  display: none;
+}
+
 .right .halfwaypic {
-  margin: 50px auto;
+  margin: 6% auto;
 }
 
 .right .halfwaypic .container {
@@ -412,7 +448,8 @@ header ul li:nth-child(2):after {
 
 .right .cat {
   background-image: url(../../images/catbg2.jpeg);
-  background-position: bottom 80%;
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -420,7 +457,7 @@ header ul li:nth-child(2):after {
 }
 
 .right .cat .flycat {
-  width: 5%;
+  width: 70px;
   overflow: hidden;
   animation: aa 10s linear infinite;
 }
@@ -428,13 +465,13 @@ header ul li:nth-child(2):after {
 .right .cat .flycat:nth-child(2) {
   position: absolute;
   top: -2%;
-  left: 10%;
+  left: 5%;
 }
 
 .right .cat .flycat:nth-child(3) {
   position: absolute;
   top: -2%;
-  left: 85%;
+  left: 90%;
 }
 
 @keyframes aa {
@@ -444,6 +481,7 @@ header ul li:nth-child(2):after {
 }
 
 .right .cat h2 {
+  color: #333;
   font-weight: bold;
   letter-spacing: 15px;
   width: 90%;
@@ -455,44 +493,53 @@ header ul li:nth-child(2):after {
 
 .right .cat .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  padding-bottom: 5%;
 }
 
-.right .cat .container .threecat {
+.right .cat .container .catitem {
   position: relative;
+  margin: 0 15px 30px 15px;
+  width: 25%;
 }
 
-.right .cat .container .threecat .favorite {
+.right .cat .container .catitem .favorite {
   position: absolute;
-  top: 5px;
-  right: 33px;
+  top: 10px;
+  right: 10px;
   color: #fa3737;
   font-size: 30px;
   z-index: 3;
 }
 
-.right .cat .container .threecat img {
-  width: 90%;
+.right .cat .container .catitem img {
+  width: 100%;
 }
 
-.right .cat .container .threecat .text {
+.right .cat .container .catitem .text {
   font-size: 14px;
   line-height: 1.71429;
+  padding: 10px;
 }
 
-.right .cat .container .threecat .text h3 {
+.right .cat .container .catitem .text h3 {
   font-size: 24px;
   font-weight: bold;
 }
 
 .right .map {
-  width: 60%;
+  width: 80%;
   margin: auto;
   padding-bottom: 5%;
 }
 
+.right .map #map {
+  width: 100%;
+  height: 450px;
+}
+
 .right .map h2 {
+  color: #333;
   font-weight: bold;
   width: 90%;
   letter-spacing: 15px;
@@ -508,9 +555,9 @@ header ul li:nth-child(2):after {
 
 .right .talk {
   background-image: url(../../images/talk.jpg);
-  background-position: bottom;
+  background-attachment: fixed;
+  background-position: 20%;
   background-repeat: no-repeat;
-  background-size: cover;
   padding-bottom: 3%;
 }
 
@@ -526,6 +573,7 @@ header ul li:nth-child(2):after {
 }
 
 .right .talk .container h2 {
+  color: #333;
   font-weight: bold;
   letter-spacing: 15px;
   width: 90%;
@@ -560,7 +608,6 @@ header ul li:nth-child(2):after {
   border-right: none;
   border-radius: 20px;
   color: #ddd;
-  min-height: 40px;
   position: relative;
   padding: 10px;
   font-size: 14px;
@@ -585,7 +632,7 @@ header ul li:nth-child(2):after {
   width: 12px;
   height: 12px;
   position: absolute;
-  background: #58a;
+  background: rgba(85, 136, 170, 0.692);
   transform: rotate(45deg);
   bottom: -12px;
   left: 100px;
@@ -597,6 +644,122 @@ header ul li:nth-child(2):after {
   bottom: -7px;
   border-right: 1px dashed #fff;
   border-bottom: 1px dashed #fff;
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .right {
+    padding: 0;
+  }
+  .right .banner {
+    width: 100%;
+    padding-top: 80vh;
+    animation: bb 20s linear infinite;
+  }
+  .right .banner h2 {
+    top: 3%;
+    left: 3%;
+    width: 60%;
+    line-height: 8vw;
+  }
+  .right .banner .intro {
+    display: none;
+  }
+  .right .banner .contact {
+    width: 60%;
+    top: 30vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .right .banner .rating {
+    width: 60%;
+    top: 55vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  @keyframes bb {
+    20% {
+      background-image: url(../images/halfdetail7_resized.jpg);
+    }
+    40% {
+      background-image: url(../images/halfdetail5.jpg);
+    }
+    60% {
+      background-image: url(../images/halfdetail6.jpg);
+    }
+    80% {
+      background-image: url(../images/halfdetail4.jpg);
+    }
+  }
+  .right .smallintro {
+    display: block;
+    background-color: #F1E8D6;
+    padding: 30px 30px;
+    font-size: 14px;
+    line-height: 2.0;
+  }
+  .right .halfwaypic {
+    display: none;
+  }
+  .right .cat .flycat {
+    display: none;
+  }
+  .right .cat .container .catitem {
+    width: 40%;
+  }
+  .right .talk .container .article {
+    width: 100%;
+    float: left;
+    margin-bottom: 10%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .right {
+    padding: 0;
+  }
+  .right .banner {
+    width: 100%;
+    padding-top: 80vh;
+  }
+  .right .banner h2 {
+    top: 3%;
+    left: 3%;
+    width: 60%;
+    line-height: 8vw;
+  }
+  .right .banner .intro {
+    display: none;
+  }
+  .right .banner .contact {
+    width: 60%;
+    top: 30vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .right .banner .rating {
+    width: 60%;
+    top: 55vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .right .halfwaypic {
+    display: none;
+  }
+  .right .cat .flycat {
+    display: none;
+  }
+  .right .cat .container .catitem {
+    width: 70%;
+  }
+  .right .talk .container .article {
+    width: 100%;
+    float: left;
+    margin-bottom: 10%;
+  }
 }
 
 /*# sourceMappingURL=halfway_house_detail.css.map */

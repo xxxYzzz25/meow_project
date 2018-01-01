@@ -5,18 +5,19 @@
     background-size: cover;
     position: relative;
     margin-left: 200px;
-    padding-top: 50px;
+    padding-top: 30px;
     .banner {
         background-image: url(../../images/halfdetail1.jpg);
         background-position: 50%;
         background-repeat: no-repeat;
         width: 85%;
-        height: 480px;
+        padding-top: 35%;
         margin: auto;
         position: relative;
         h2 {
-            letter-spacing: 15px;
-            background-color: rgba(rgb(34, 103, 182), .7);
+            color: #333;
+            letter-spacing: 10px;
+            background-color: rgba(241, 209, 146, 0.815);
             color: #000;
             font-size: $font-size-h2;
             width: 30%;
@@ -24,36 +25,62 @@
             position: absolute;
             top: -20px;
             left: 50%;
-            padding: 20px;
+            line-height: 6vw;
         }
         .intro {
-            width: 55%;
+            width: 70%;
             position: absolute;
-            top: 280px;
+            top: 55%;
             left: -3%;
             font-size: $font-size-base;
             line-height: $line-height-base*1.4;
             padding: 20px;
-            background-color: rgba(rgb(35, 204, 204), .7);
+            background-color: rgba(#F1E8D6, 0.815);
             z-index: 1;
             color: #111;
         }
         .contact {
             width: 35%;
             position: absolute;
-            top: 300px;
+            top: 25%;
             left: 70%;
             font-size: $font-size-base;
-            line-height: $line-height-base*1.4;
+            line-height: $line-height-base*1.6;
             padding: 20px;
-            background-color: rgba(#096, .7);
+            background-color: rgba(#F1E8D6, 0.815);
             z-index: 1;
             color: #111;
         }
+        .rating{
+            width: 35%;
+            position: absolute;
+            top: 90%;
+            left: 70%;
+            padding: 20px;
+            background-color: rgba(241, 209, 146, 0.815);
+            @include clear;
+            .star{
+                width: 60%;
+                float: left;
+                font-size: $font-size-large;
+                .fa-star-o {
+                    &:hover{
+                        color: #f00;
+                    }
+                }
+            }
+            .text{
+                width: 40%;
+                float: left;
+                text-align: center;
+            }
+        }
     }
-
+    .smallintro{
+        display: none;
+    }
     .halfwaypic {
-        margin: 50px auto;
+        margin: 6% auto;
         .container {
             display: flex;
             justify-content: space-around;
@@ -66,27 +93,27 @@
             }
         }
     }
-
     .cat {
         background-image: url(../../images/catbg2.jpeg);
-        background-position: bottom 80%;
+        background-attachment: fixed;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
         overflow: hidden;
         .flycat {
-            width: 5%;
+            width: 70px;
             overflow: hidden;
             animation: aa 10s linear infinite;
             &:nth-child(2) {
                 position: absolute;
                 top: -2%;
-                left: 10%;
+                left: 5%;
             }
             &:nth-child(3) {
                 position: absolute;
                 top: -2%;
-                left: 85%;
+                left: 90%;
             }
         }
         @keyframes aa {
@@ -95,6 +122,7 @@
             }
         }
         h2 {
+            color: #333;
             font-weight: bold;
             letter-spacing: 15px;
             width: 90%;
@@ -105,24 +133,27 @@
         }
         .container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
-            padding-bottom: 5%;
-            .threecat {
+            .catitem {
                 position: relative;
+                margin: 0 15px 30px 15px;
+                width: 25%;
                 .favorite {
                     position: absolute;
-                    top: 5px;
-                    right: 33px;
+                    top: 10px;
+                    right: 10px;
                     color: rgb(250, 55, 55);
                     font-size: $font-size-h2;
                     z-index: 3;
                 }
                 img {
-                    width: 90%;
+                    width: 100%;
                 }
                 .text {
                     font-size: $font-size-base;
                     line-height: $line-height-base*1.2;
+                    padding: 10px;
                     h3 {
                         font-size: $font-size-h3;
                         font-weight: bold;
@@ -131,15 +162,19 @@
             }
         }
     }
-
     .map {
-        width: 60%;
+        width: 80%;
         margin: auto;
         padding-bottom: 5%;
+        #map {
+            width: 100%;
+            height: 450px;
+        }
         h2 {
+            color: #333;
             font-weight: bold;
             width: 90%;
-            letter-spacing: 15px;           
+            letter-spacing: 15px;
             margin: auto;
             padding: 5%;
             text-align: center;
@@ -151,15 +186,16 @@
     }
     .talk {
         background-image: url(../../images/talk.jpg);
-        background-position: bottom;
+        background-attachment: fixed;
+        background-position: 20%;
         background-repeat: no-repeat;
-        background-size: cover;
         padding-bottom: 3%;
         .container {
             width: 70%;
             margin: 0 auto;
             @include clear;
             h2 {
+                color: #333;
                 font-weight: bold;
                 letter-spacing: 15px;
                 width: 90%;
@@ -179,7 +215,7 @@
                 &:nth-child(5) {
                     float: right;
                 }
-                h3{
+                h3 {
                     font-size: $font-size-h3;
                     color: #EAAF88;
                     padding: 10px;
@@ -189,8 +225,7 @@
                     border-left: none;
                     border-right: none;
                     border-radius: 20px;
-                    color: #ddd;
-                    min-height: 40px;
+                    color: #ddd; // min-height: 40px;
                     position: relative;
                     padding: 10px;
                     font-size: $font-size-base;
@@ -212,7 +247,7 @@
                     width: 12px;
                     height: 12px;
                     position: absolute;
-                    background: #58a;
+                    background: rgba(85, 136, 170, 0.692);
                     transform: rotate(45deg);
                     bottom: -12px;
                     left: 100px;

@@ -1,0 +1,57 @@
+@include respond-to(small) {
+    .right {
+        padding: 0;
+        .banner {
+            width: 100%;
+            padding-top: 80vh; // position: static;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            h2 {
+                top: 3%;
+                left: 3%;
+                width: 60%;
+                line-height: 8vw; // position: static;
+            }
+            .intro {
+                display: none;
+            }
+            .contact {
+                width: 60%;
+                top: 30vh;
+                left: 0;
+                right: 0;
+                margin: auto; // position: static;
+            }
+            .rating {
+                width: 60%;
+                top: 55vh;
+                left: 0;
+                right: 0;
+                margin: auto; // position: static;
+            }
+        }
+        .halfwaypic {
+            display: none;
+        }
+        .cat {
+            .flycat {
+                display: none;
+            }
+            .container {
+                .catitem {
+                    width: 70%;
+                }
+            }
+        }
+        .talk {
+            .container {
+                .article {
+                    width: 100%;
+                    float: left;
+                    margin-bottom: 10%;
+                }
+            }
+        }
+    }
+}
