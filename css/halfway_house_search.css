@@ -61,6 +61,9 @@ body {
   max-width: 991px;
   margin: 0 auto; }
 
+input, select {
+  outline: none; }
+
 .btns .btn {
   font-size: 30px;
   display: inline-block;
@@ -413,7 +416,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-  z-index: 99999999999999999999; }
+  z-index: 9999999; }
   header .logo {
     position: relative;
     top: 70px;
