@@ -63,16 +63,17 @@
                 width: 60%;
                 float: left;
                 font-size: $font-size-large;
-                .fa-star-o {
-                    &:hover{
-                        color: #f00;
-                    }
+                .fa-star{
+                    color: rgb(243, 40, 74);
                 }
             }
             .text{
                 width: 40%;
                 float: left;
                 text-align: center;
+                span{
+                    font-size: $font-size-large*1.5;
+                }
             }
         }
     }

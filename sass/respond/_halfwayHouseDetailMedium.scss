@@ -1,6 +1,10 @@
 @include respond-to(medium) {
+    header{
+        display: none;
+    }
     .right {
         padding: 0;
+        margin: 0;
         .banner {
             width: 100%;
             padding-top: 80vh; 

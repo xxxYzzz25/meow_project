@@ -1,5 +1,15 @@
 @include respond-to(medium) {
+    header {
+        display: none;
+    }
     .right {
+        margin: 0;
+        .searchsection{
+            .flycat{
+                width: 100px;
+                top: 75%;
+            }
+        }
         .item {
             width: 80%;
             margin: 50px auto 180px auto;

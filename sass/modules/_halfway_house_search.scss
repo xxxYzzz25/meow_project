@@ -12,6 +12,7 @@
         width: 70%;  
         margin: auto;
         background-color:#FEF2E6;
+        box-shadow: 12px 10px 20px -10px #333;
         position: relative;
         top: 0;
         left: 0;
@@ -20,7 +21,7 @@
             width: 160px;
             position: absolute;
             top: 60%;
-            left: 80%;
+            left: 70%;
         }
         .dropholder {
             width: 322px;
@@ -294,13 +295,22 @@
             background-color: #fff;
             font-size: $font-size-base;
             line-height: 30px;
-            padding-left: 3%;
-            padding-bottom: 3%;
+            padding: 0 0 3% 5%;
             box-shadow: 12px 10px 20px -10px #333;
             h3 {
                 font-size: $font-size-h3;
-                padding-top: 8%;
+                padding: 8% 0;
                 letter-spacing: 10px;
+            }
+            a {
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 25px;
+                text-decoration: none;
+                color: #EAAF88;
+                &:hover {
+                    color: #333;
+                }
             }
         }
         .pic {

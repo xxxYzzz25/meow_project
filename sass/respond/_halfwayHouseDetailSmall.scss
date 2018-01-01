@@ -1,9 +1,15 @@
 @include respond-to(small) {
+    header {
+        display: none;
+    }
     .right {
         padding: 0;
+        margin: 0;
         .banner {
             width: 100%;
-            padding-top: 80vh; // position: static;
+            padding-top: 80vh; 
+            animation: bb 20s linear infinite;
+            // position: static;
             // display: flex;
             // justify-content: center;
             // align-items: center;
@@ -11,7 +17,8 @@
                 top: 3%;
                 left: 3%;
                 width: 60%;
-                line-height: 8vw; // position: static;
+                line-height: 8vw; 
+                // position: static;
             }
             .intro {
                 display: none;
@@ -21,14 +28,30 @@
                 top: 30vh;
                 left: 0;
                 right: 0;
-                margin: auto; // position: static;
+                margin: auto; 
+                // position: static;
             }
             .rating {
                 width: 60%;
                 top: 55vh;
                 left: 0;
                 right: 0;
-                margin: auto; // position: static;
+                margin: auto; 
+                // position: static;
+            }
+        }
+        @keyframes bb {
+            20% {
+                background-image: url(../images/halfdetail7_resized.jpg);
+            }
+            40% {
+                background-image: url(../images/halfdetail5.jpg);
+            }
+            60% {
+                background-image: url(../images/halfdetail6.jpg);
+            }
+            80% {
+                background-image: url(../images/halfdetail4.jpg);
             }
         }
         .halfwaypic {
@@ -40,7 +63,7 @@
             }
             .container {
                 .catitem {
-                    width: 70%;
+                    width: 50%;
                 }
             }
         }

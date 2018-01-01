@@ -418,14 +418,18 @@ header ul li:nth-child(2):after {
   font-size: 18px;
 }
 
-.right .banner .rating .star .fa-star-o:hover {
-  color: #f00;
+.right .banner .rating .star .fa-star {
+  color: #f3284a;
 }
 
 .right .banner .rating .text {
   width: 40%;
   float: left;
   text-align: center;
+}
+
+.right .banner .rating .text span {
+  font-size: 27px;
 }
 
 .right .smallintro {
@@ -651,8 +655,12 @@ header ul li:nth-child(2):after {
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {
+  header {
+    display: none;
+  }
   .right {
     padding: 0;
+    margin: 0;
   }
   .right .banner {
     width: 100%;
@@ -720,12 +728,17 @@ header ul li:nth-child(2):after {
 }
 
 @media all and (max-width: 767px) {
+  header {
+    display: none;
+  }
   .right {
     padding: 0;
+    margin: 0;
   }
   .right .banner {
     width: 100%;
     padding-top: 80vh;
+    animation: bb 20s linear infinite;
   }
   .right .banner h2 {
     top: 3%;
@@ -750,6 +763,20 @@ header ul li:nth-child(2):after {
     right: 0;
     margin: auto;
   }
+  @keyframes bb {
+    20% {
+      background-image: url(../images/halfdetail7_resized.jpg);
+    }
+    40% {
+      background-image: url(../images/halfdetail5.jpg);
+    }
+    60% {
+      background-image: url(../images/halfdetail6.jpg);
+    }
+    80% {
+      background-image: url(../images/halfdetail4.jpg);
+    }
+  }
   .right .halfwaypic {
     display: none;
   }
@@ -757,7 +784,7 @@ header ul li:nth-child(2):after {
     display: none;
   }
   .right .cat .container .catitem {
-    width: 70%;
+    width: 50%;
   }
   .right .talk .container .article {
     width: 100%;
