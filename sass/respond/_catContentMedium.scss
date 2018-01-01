@@ -1,10 +1,59 @@
 @include respond-to(medium) {
-    .catItem{
-        figure{
-            display: block;
+    header {
+        display: none;
+    }
+    .right {
+        width: 100%;
+        margin: 0;
+        .container1 {
+            padding-left: 50px;
+            padding-right: 50px;
+            .catItem {
+                .img,
+                figure {
+                    display: block;
+                    margin: 0 auto;
+                }
+                figure {
+                    height: auto;
+                    padding-left: 0;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+                div.btn {
+                    position: relative;
+                    bottom: auto;
+                    margin: 20px auto 0;
+                    font-size: 0;
+                    width: 60%;
+                    button.defaultBtn {
+                        display: block;
+                        float: right;
+                        width: 48%;
+                        max-width: 200px;
+                        &:first-child {
+                            margin-right: 10px;
+                            float: left;
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        clear: both;
+                        display: block;
+                    }
+                }
+            }
+            .donateForm {
+                width: 60%;
+                margin: 20px auto 0;
+            }
+            .introduction {
+                margin-top: 40px;
+            }
         }
     }
-    footer .follow span{
-        color: red;
+    footer {
+        margin-left: 0;
+        width: 100%;
     }
 }

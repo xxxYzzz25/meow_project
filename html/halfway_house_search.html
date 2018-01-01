@@ -10,6 +10,7 @@
     </script>
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <link rel="stylesheet" href="../css/halfway_house_search.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>halfway_house_search</title>
 </head>
 
@@ -55,7 +56,7 @@
         </div>
     </header>
     <div class="right">
-        <h2>中途之家</h2>
+        <h2>搜尋中途之家</h2>
 
         <div class="searchsection">
             <div class="container">
@@ -83,66 +84,61 @@
                     </ul>
                 </div>
             </div>
+            <select id="selectBox">
+                <option>請選擇你想搜尋的中途之家地區</option>
+                <option>北部</option>
+                <option>中部</option>
+                <option>南部</option>
+                <option>東部</option>
+                <option>離島</option>
+                <select>
         </div>
-        <script>
-            $(".dropdown").click(function () {
-                $(".menu").toggleClass("showMenu");
-                $(".menu > li").click(function () {
-                    $(".dropdown > p").html($(this).html());
-                    $(".menu").removeClass("showMenu");
-                });
-            });
-        </script>
-        <script>
-            function expand() {
-                $(".search").toggleClass("close");
-                $(".input").toggleClass("square");
-                if ($('.search').hasClass('close')) {
-                    $('input').focus();
-                } else {
-                    $('input').blur();
-                }
-            }
-            $('button').on('click', expand);
-        </script>
+        <script src="../js/halfway/dropdown.js"></script>
+        <script src="../js/halfway/expand.js"></script>
 
-        <div class="item">
-            <div class="text">
-                <h4>野喵中途咖啡</h4>
-                <br> ADD：新北市三重區集英路65號
-                <br> TEL：02-2857-8282
-                <br> TIME：12:00～21:00（周一公休）
+        <div class="result">
+            <div class="container">
+                <div class="item">
+                    <div class="pic">
+                        <img src="../images/halfdetail3.jpg" alt="">
+                    </div>
+                    <div class="text tx1">
+                        <h3>野喵中途咖啡</h3>
+                        <br> ADD：新北市三重區集英路65號
+                        <br> TEL：02-2857-8282
+                        <br> TIME：12:00～21:00（周一公休）
+                    </div>
+                    <div class="bg bg1"></div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="../images/halfdetail2.jpg" alt="">
+                    </div>
+                    <div class="text tx2">
+                        <h3>野喵中途咖啡</h3>
+                        <br> ADD：新北市三重區集英路65號
+                        <br> TEL：02-2857-8282
+                        <br> TIME：12:00～21:00（周一公休）
+                    </div>
+                    <div class="bg bg2"></div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="../images/halfdetail3.jpg" alt="">
+                    </div>
+                    <div class="text tx3">
+                        <h3>野喵中途咖啡</h3>
+                        <br> ADD：新北市三重區集英路65號
+                        <br> TEL：02-2857-8282
+                        <br> TIME：12:00～21:00（周一公休）
+                    </div>
+                    <div class="bg bg3"></div>
+                </div>
             </div>
-            <div class="pic">
-                <img src="../images/33184672765_a14d959f8b_o.jpg" alt="">
-            </div>
-            <div class="bg bg1"></div>
-        </div>
-        <div class="item">
-            <div class="text">
-                <h4>野喵中途咖啡</h4>
-                <br> ADD：新北市三重區集英路65號
-                <br> TEL：02-2857-8282
-                <br> TIME：12:00～21:00（周一公休）
-            </div>
-            <div class="pic">
-                <img src="../images/33184672765_a14d959f8b_o.jpg" alt="">
-            </div>
-            <div class="bg bg2"></div>
-        </div>
-        <div class="item">
-            <div class="text">
-                <h4>野喵中途咖啡</h4>
-                <br> ADD：新北市三重區集英路65號
-                <br> TEL：02-2857-8282
-                <br> TIME：12:00～21:00（周一公休）
-            </div>
-            <div class="pic">
-                <img src="../images/33184672765_a14d959f8b_o.jpg" alt="">
-            </div>
-            <div class="bg bg3"></div>
         </div>
     </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="follow">

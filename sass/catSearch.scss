@@ -9,15 +9,14 @@
 @import './modules/_header.scss';
 @import 'mixins/_rwd.scss';
 @import 'mixins/_navNow.scss';
-@import 'respond/_catSearchSmall.scss';
-@import 'respond/_catSearchMedium.scss';
 @import "base/btn";
 @import "base/genderIcon";
 @include navNow(1);
 .right {
+    width: calc(100% - 200px);
     margin-left: 200px;
     .container1 {
-        width: calc(100% - 200px);
+        width: 100%;
         position: relative;
         padding-top: 40px;
         margin-bottom: 40px;
@@ -181,16 +180,14 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 margin-bottom: 30px;
-                position: relative;
-                position: relative;
-                .favorite {
-                    position: absolute;
-                    right: 12px;
-                    top: 12px;
-                    color: rgb(250, 55, 55);
-                    font-size: $font-size-h2;
-                    z-index: 3;
-                }
+                position: relative;.favorite {
+                            position: absolute;
+                            right: 12px;
+                            top: 12px;
+                            color: rgb(250, 55, 55);
+                            font-size: $font-size-h2;
+                            z-index: 3;
+                        }
                 .catContent {
                     position: relative;
                     width: 300px;
@@ -203,6 +200,8 @@
                         -moz-transition: all 0.35s ease-in-out;
                         transition: all 0.35s ease-in-out;
                         z-index: -1;
+                        position: relative;
+                        
                         img {
                             width: 100%;
                         }
@@ -281,3 +280,6 @@
         }
     }
 }
+
+@import 'respond/_catSearchSmall.scss';
+@import 'respond/_catSearchMedium.scss';
