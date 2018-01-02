@@ -800,4 +800,14 @@ header ul li:nth-child(1):after {
   }
 }
 
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  footer span {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=catSearch.css.map */
