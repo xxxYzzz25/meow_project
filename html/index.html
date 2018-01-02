@@ -179,10 +179,10 @@
                     <div class="half-qty">
                         <img src="../images/number5.png" alt="5">
                         <img src="../images/number8.png" alt="8"> 隻喵喵
-                    </div>
+                    </div></a>
                     <div class="half-pic"></div>
                     <div class="half-text">
-                        <span class="half-name">貓貓別哭 中途咖啡廳</span>
+                        <a href="../html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡廳</a>
                         <span class="half-address">台北市信義區信義路四段88號</span>
                         <span class="half-tel">02-2777-6666</span>
                         <span class="half-time">營業時間 : 10:00~20:00</span>
@@ -195,7 +195,7 @@
                     </div>
                     <div class="half-pic"></div>
                     <div class="half-text">
-                        <span class="half-name">貓貓別哭 中途咖啡廳</span>
+                        <a href="../html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡廳</a>
                         <span class="half-address">台北市信義區信義路四段88號</span>
                         <span class="half-tel">02-2777-6666</span>
                         <span class="half-time">營業時間 : 10:00~20:00</span>
@@ -208,7 +208,7 @@
                     </div>
                     <div class="half-pic"></div>
                     <div class="half-text">
-                        <span class="half-name">貓貓別哭 中途咖啡廳</span>
+                        <a href="../html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡廳</a>
                         <span class="half-address">台北市信義區信義路四段88號</span>
                         <span class="half-tel">02-2777-6666</span>
                         <span class="half-time">營業時間 : 10:00~20:00</span>
@@ -264,6 +264,63 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            $(function () {
+                    // 先取得必要的元素並用 jQuery 包裝
+                    // 再來取得 $slides 的高度及設定動畫時間
+                    var $block = $('.shop-right'),
+                        $slides = $('#player ul.list', $block),
+                        _height = $slides.find('li').height(),
+                        $li = $('li', $slides),
+                        _animateSpeed = 400,
+                        timer, _speed = 4000;
+
+                    // 產生 li 選項
+                    var _str = '';
+                    for (var i = 0, j = $li.length; i < j; i++) {
+                        // 每一個 li 都有自己的 className = playerControl_號碼
+                        _str += '<li class="playerControl_' + (i + 1) + '">' + (i + 1) + '</li>';
+                    }
+
+                    // 產生 ul 並把 li 選項加到其中
+                    // 並幫 li 加上 mouseover 事件
+                    var $controlLi = $('<ul class="playerControl"></ul>').html(_str).appendTo($slides.parent()).find('li');
+                    $controlLi.mouseover(function () {
+                        clearTimeout(timer);
+
+                        var $this = $(this);
+                        $this.addClass('current').siblings('.current').removeClass('current');
+                        // 移動位置到相對應的號碼
+                        $slides.stop().animate({
+                            top: _height * $this.index() * -1
+                        }, _animateSpeed, function () {
+                            if (!_isOver) timer = setTimeout(moveNext, _speed);
+                        });
+
+                        return false;
+                    }).eq(0).mouseover();
+
+                    // 當滑鼠移到 $block 時則停止輪播
+                    // 移出時則繼續輪播
+                    var _isOver = false;
+                    $block.mouseenter(function () {
+                        clearTimeout(timer);
+                        _isOver = true;
+                    }).mouseleave(function () {
+                        _isOver = false;
+                        timer = setTimeout(moveNext, _speed);
+                    });
+
+                    // 用來控制移動的函式
+                    function moveNext() {
+                        var _now = $controlLi.filter('.current').index();
+                        $controlLi.eq((_now + 1) % $controlLi.length).mouseover();
+                    }
+                });
+
+        </script>
+
         <div class="section">
             <!-- 快速註冊 -->
             <div class="quick-signUp">
