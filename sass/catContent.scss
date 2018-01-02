@@ -111,6 +111,23 @@
                 margin-top: 20px;
             }
         }
+        .donateInfo {
+            letter-spacing: 2px;
+            line-height: 1.5em;
+            padding-left: 4px;
+            margin: 20px;
+            span {
+                color: rgb(255, 159, 86);
+            }
+            h2{
+                font-size: $font-size-h4;
+                text-align: center;
+            }
+            #canvas {
+                display: block;
+                margin: 0 auto;
+            }
+        }
         .introduction {
             letter-spacing: 2px;
             line-height: 1.5em;
@@ -124,6 +141,20 @@
             small {
                 font-size: $font-size-small;
                 padding-left: 20px;
+            }
+            ol{
+                .cost{
+                    color:rgb(105, 105, 240);
+                    margin-top: 10px;
+                    font-size: $font-family-serif;
+                    font-weight: bold;
+                }
+                p{
+                    padding-left: 86px;
+                    span{
+                        color: #fa9c29;
+                    }
+                }
             }
         }
     }
