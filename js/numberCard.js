@@ -2,7 +2,7 @@ function createCard() {
     let find = document.getElementById('find');
     let wait = document.getElementById('wait');
     let findQty = '678';
-    let waitQty = '190';
+    let waitQty = '769';
     console.log(findQty);
     for (const iterator of findQty) {
         createNumber(find, iterator);
