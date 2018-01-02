@@ -13,6 +13,16 @@
     border: 2px solid #333;
     margin: $gap 0;
 }
+.more{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 15vh;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .banner {
     margin-left: 200px;
     height: 100vh;
@@ -88,9 +98,9 @@
     position: relative;
     background-image: url(../images/wood.jpg);
     .pick-title {
-        height: 20vh;
+        height: 15vh;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         h2 {
             @extend %h2-btn;
             height: 40px;
@@ -103,11 +113,9 @@
     ul {
         width: 100%;
         position: absolute;
-        bottom: 0;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding-bottom: 10vh;
         li {
             width: 28%;
             float: left;
@@ -175,7 +183,7 @@
         height: 60px;
         background-color: rgba(0, 0, 0, 0.411);
         position: absolute;
-        top: 50vh;
+        top: 40vh;
         z-index: 666;
         img {
             width: 100%;
@@ -193,8 +201,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    position: relative;
     .half-title {
-        height: 20vh;
+        height: 10vh;
         display: flex;
         align-items: center;
         h2 {
@@ -308,5 +317,19 @@
             //     transition: .3s;
             // }
         }
+    }
+}
+.section{
+    .quick-signUp{
+        height: 80vh;
+        width: 100%;
+        margin-left: 200px;
+    }
+    position: relative;
+    footer{
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
