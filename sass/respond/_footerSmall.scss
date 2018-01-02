@@ -1,0 +1,10 @@
+@include respond-to(small) {
+    footer {
+        margin-left: 0;
+        width: 100%;
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+}

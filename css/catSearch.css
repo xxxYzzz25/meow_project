@@ -308,7 +308,7 @@ header .icons a:hover {
 
 .defaultBtn {
   font-size: 16px;
-  border: #333 1px solid;
+  border: #333 2px solid;
   border-radius: 24px;
   color: #333;
   padding: 4px 30px;
@@ -399,6 +399,10 @@ header ul li:nth-child(1):after {
   right: -17px;
   transform: rotate(45deg);
   box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
+}
+
+body {
+  background-image: url("../images/marble.jpg");
 }
 
 .right {
@@ -501,6 +505,10 @@ header ul li:nth-child(1):after {
   text-align: left;
 }
 
+.right .container1 .selectForm .advanceSearchItem label {
+  font-family: '../fonts/NotoSansCJKtc-Regular.otf';
+}
+
 .right .container1 .selectForm .selectTitle {
   font-size: 14px;
   vertical-align: middle;
@@ -523,7 +531,8 @@ header ul li:nth-child(1):after {
 .right .container1 .selectForm .formInsert .searchBar {
   width: 260px;
   height: 30px;
-  border-radius: 4px;
+  border-radius: 100px;
+  border: 2px solid black;
   font-size: 14px;
   text-indent: 4px;
   margin-right: 6px;
@@ -533,28 +542,52 @@ header ul li:nth-child(1):after {
   outline: none;
 }
 
-.right .container1 .selectForm .formInsert .searchBar:-webkit-input-placeholder {
+.right .container1 .selectForm .formInsert .searchBar:-ms-input-placeholder {
   font-size: 14px;
   line-height: 30px;
-  text-align: center;
+  letter-spacing: 4px;
+  padding: 5px 15px;
+}
+
+.right .container1 .selectForm .formInsert .searchBar:-moz-placeholder {
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 4px;
+  padding: 5px 15px;
+}
+
+.right .container1 .selectForm .formInsert .searchBar::-moz-placeholder {
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 4px;
+  padding: 5px 15px;
+}
+
+.right .container1 .selectForm .formInsert .searchBar::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 4px;
+  padding: 5px 15px;
 }
 
 .right .container1 .selectForm .formInsert .condition {
   padding: 5px 10px;
-  border: 1px solid #ccc;
-  background-color: transparent;
-  color: #000000;
+  border: 1px solid transparent;
+  font-family: '../fonts/NotoSansCJKtc-Thin.otf';
+  background-color: #fff;
+  color: #333;
   line-height: 20px;
   border-radius: 4px;
   cursor: pointer;
   margin: 6px;
   outline: none;
   transition: .3s all;
+  letter-spacing: 1.5px;
 }
 
 .right .container1 .selectForm .formInsert .condition:hover {
-  background-color: #EAAF88;
-  color: #fff;
+  background-color: #fefefe;
+  color: #EAAF88;
   border: 1px solid #EAAF88;
 }
 
@@ -563,8 +596,13 @@ header ul li:nth-child(1):after {
 }
 
 .right .container1 .selectForm .formInsert .conditionSelected {
-  background-color: #ff0000;
+  background-color: #EAAF88;
   color: #ffffff;
+  border: 1px solid #EAAF88;
+}
+
+.right .container1 .selectForm .formInsert .forRWD {
+  display: none;
 }
 
 .right .container1 .catPic {
@@ -593,6 +631,10 @@ header ul li:nth-child(1):after {
   position: absolute;
   line-height: 1.2em;
   right: 20%;
+}
+
+.right .container1 .catPic .sort a:first-child {
+  margin-right: 10px;
 }
 
 .right .container1 .catPic .catItem {
@@ -662,11 +704,11 @@ header ul li:nth-child(1):after {
   visibility: hidden;
   height: 60px;
   line-height: 60px;
-  background: #1a4a72;
+  background: #EAAF88;
   opacity: 0;
-  -webkit-transition: all 0.35s ease-in-out;
-  -moz-transition: all 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   -webkit-transform: translateY(100%);
   -moz-transform: translateY(100%);
   -ms-transform: translateY(100%);
@@ -702,6 +744,7 @@ header ul li:nth-child(1):after {
 }
 
 .right .container1 .page .pageNo {
+  border-width: 1px;
   border-radius: 0px;
   padding: 2px;
   padding-left: 5px;
@@ -736,15 +779,22 @@ header ul li:nth-child(1):after {
     right: 5%;
   }
   .right .container1 .selectForm #advanced:checked ~ div {
-    height: 400px;
+    height: 710px;
   }
   .right .container1 .selectForm .advanceSearchItem {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .right .container1 .selectForm .advanceSearchItem .selectTitle {
+    display: block;
+    margin-top: 20px;
   }
   .right .container1 .selectForm .advanceSearchItem .condition {
     padding: 3px 8px;
-    margin: 2px;
+    margin: 4px 2px;
+  }
+  .right .container1 .selectForm .advanceSearchItem .forRWD {
+    display: block;
   }
   .right .container1 .catPic .sort {
     width: 100%;
@@ -797,6 +847,17 @@ header ul li:nth-child(1):after {
   }
   footer {
     margin-left: 0;
+  }
+}
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  footer span {
+    display: block;
+    text-align: center;
   }
 }
 
