@@ -314,15 +314,31 @@
     </div>
     <script>
         window.addEventListener('load', function () {
-            $('#fullpages').fullpage({
-                'navigation': true,
-            });
-            window.setTimeout(function () {
-                let loading = document.getElementById('loading');
-                Object.assign(loading, {
-                    'style': 'opacity:0;z-index:-1;'
+            let list = document.getElementById('kit-list');
+            let len = $(list).children('li').length;
+            $('.left-arrow').on('click', moveL);
+            $('.right-arrow').on('click', moveR);
+            let count = 0;
+
+            function moveL() {
+                count--;
+                if (count < 0) {
+                    count = len - 3;
+                }
+                $(list).stop().animate({
+                    left: (count * -33.333333) + '%'
                 });
-            }, 300);
+            }
+
+            function moveR() {
+                count++;
+                if (count >= len-2) {
+                    count = 0;
+                }
+                $(list).stop().animate({
+                    left: (count * -33.333333) + '%'
+                });
+            }
         });
     </script>
 </body>
