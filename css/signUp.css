@@ -349,7 +349,7 @@ header ul li:nth-child(5):after {
 }
 
 .signUpLightboxBlack {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -400,6 +400,11 @@ header ul li:nth-child(5):after {
   outline: none;
   color: rgba(245, 245, 245, 0.7);
   font-size: 30px;
+}
+
+.signUpLightboxBlack .signUpLightbox .formShape .chioce button:hover {
+  color: #fff;
+  border-bottom: 1px solid #eaaf88;
 }
 
 .signUpLightboxBlack .signUpLightbox .formShape .chioce .selected {
