@@ -25,19 +25,25 @@
             }
             .contact {
                 width: 60%;
-                top: 30vh;
+                top: 20vh;
                 left: 0;
                 right: 0;
                 margin: auto; 
                 // position: static;
             }
-            .rating {
+            .star{
                 width: 60%;
                 top: 55vh;
                 left: 0;
                 right: 0;
-                margin: auto; 
-                // position: static;
+                margin: auto;
+                .rating{
+                    font-size: $font-size-large*1.4;
+                    margin: 0 auto;
+                }
+                .text{
+                    width: 100%;
+                }
             }
         }
         @keyframes bb {

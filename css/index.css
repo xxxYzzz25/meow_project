@@ -124,7 +124,7 @@ body {
 
 .defaultBtn {
   font-size: 16px;
-  border: #333 1px solid;
+  border: #333 2px solid;
   border-radius: 24px;
   color: #333;
   padding: 4px 30px;
@@ -481,6 +481,13 @@ header {
     flex-direction: column;
     justify-content: center;
     padding-left: 5%; }
+    .half .half-text a {
+      text-decoration: none;
+      transition: .3s all;
+      color: #333;
+      margin: 10px 0; }
+      .half .half-text a:hover {
+        color: #EAAF88; }
     .half .half-text .half-name {
       font-family: notoSans_r;
       font-size: 18px; }

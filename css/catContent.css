@@ -230,7 +230,7 @@ header {
 
 .defaultBtn {
   font-size: 16px;
-  border: #333 1px solid;
+  border: #333 2px solid;
   border-radius: 24px;
   color: #333;
   padding: 4px 30px;
@@ -389,6 +389,19 @@ header ul li:nth-child(1):after {
               font-size: 14px; }
       .right .container1 .donateForm input[type=submit] {
         margin-top: 20px; }
+    .right .container1 .donateInfo {
+      letter-spacing: 2px;
+      line-height: 1.5em;
+      padding-left: 4px;
+      margin: 20px; }
+      .right .container1 .donateInfo span {
+        color: #ff9f56; }
+      .right .container1 .donateInfo h2 {
+        font-size: 18px;
+        text-align: center; }
+      .right .container1 .donateInfo #canvas {
+        display: block;
+        margin: 0 auto; }
     .right .container1 .introduction {
       letter-spacing: 2px;
       line-height: 1.5em;
@@ -401,6 +414,15 @@ header ul li:nth-child(1):after {
       .right .container1 .introduction small {
         font-size: 12px;
         padding-left: 20px; }
+      .right .container1 .introduction ol .cost {
+        color: #6969f0;
+        margin-top: 10px;
+        font-size: Georgia, "Times New Roman", Times, serif;
+        font-weight: bold; }
+      .right .container1 .introduction ol p {
+        padding-left: 86px; }
+        .right .container1 .introduction ol p span {
+          color: #fa9c29; }
 
 @media all and (max-width: 767px) {
   header {
@@ -444,6 +466,8 @@ header ul li:nth-child(1):after {
       .right .container1 .donateForm {
         width: 60%;
         margin: 20px auto 0; }
+      .right .container1 .donateInfo #canvas {
+        width: 100%; }
       .right .container1 .introduction {
         margin-top: 40px; }
   footer {
@@ -494,3 +518,11 @@ header ul li:nth-child(1):after {
   footer {
     margin-left: 0;
     width: 100%; } }
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%; }
+    footer span {
+      display: block;
+      text-align: center; } }
