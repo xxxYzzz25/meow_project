@@ -8,10 +8,12 @@
     <title>尋喵啟事</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../plugin/jquery.fullPage.css">
+    <link rel="stylesheet" href="../css/number.css">
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="../plugin/jquery.fullPage.js"></script>
+    <script src="../js/numberCard.js"></script>
 </head>
 
 <body>
@@ -64,15 +66,11 @@
             <!-- banner -->
             <div class="banner">
                 <div class="container">
-                    <div class="find">
-                        <img src="../images/number0.png" alt="0">
-                        <img src="../images/number8.png" alt="8">
-                        <img src="../images/number7.png" alt="7"> 隻喵喵已經找到牠的主人
+                    <div class="find" id="find">
+                        隻喵喵已經找到牠的主人
                     </div>
-                    <div class="wait">
-                        <img src="../images/number7.png" alt="7">
-                        <img src="../images/number7.png" alt="7">
-                        <img src="../images/number7.png" alt="7"> 隻喵喵還在等待牠的主人
+                    <div class="wait" id="wait">
+                        隻喵喵還在等待牠的主人
                     </div>
                     <hr>
                     <h2>尋找您未來的喵喵</h2>
@@ -119,7 +117,49 @@
                         <img src="../images/cat-print-white.png" alt="cat paws">
                     </a>
                 </div>
-                <ul>
+                <ul id="kit-list">
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
                     <li>
                         <div class="cat_list_bg">
                             <a href="#">
@@ -179,7 +219,8 @@
                     <div class="half-qty">
                         <img src="../images/number5.png" alt="5">
                         <img src="../images/number8.png" alt="8"> 隻喵喵
-                    </div></a>
+                    </div>
+                    </a>
                     <div class="half-pic"></div>
                     <div class="half-text">
                         <a href="../html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡廳</a>
@@ -215,7 +256,7 @@
                     </div>
                 </div>
                 <div class="more">
-                        <a href="#" class="btn-more">More</a>
+                    <a href="#" class="btn-more">More</a>
                 </div>
             </div>
         </div>
@@ -332,7 +373,7 @@
 
             function moveR() {
                 count++;
-                if (count >= len-2) {
+                if (count >= len - 2) {
                     count = 0;
                 }
                 $(list).stop().animate({
