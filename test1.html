@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .qq {
+            background-color: #ffc;
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 0 50px;
+        }
+
+        .flipper {
+            transition: 1s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        /* hide back of pane during swap */
+
+        .front,
+        .back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 0;
+        }
+
+        .front {
+            z-index: 2;
+            /* for firefox 31 */
+            transform: rotateY(0deg);
+            background-color: #ffc;
+        }
+        /* back, initially hidden pane */
+
+        .back {
+            background-color: #cff;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h3 id="question">第一題</h3>
+    <div class="qq">
+        <div class="flipper">
+            <div class="front">
+                123
+            </div>
+            <div class="back">
+                圈圈
+            </div>
+        </div>
+    </div>
+    <div class="qq">
+        <div class="flipper">
+            <div class="front">
+                456
+            </div>
+            <div class="back">
+                叉叉
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let question = new Array['第一題','第二題','第三題'];
+    let selectl = new Array['111','222','333'];
+    let selectr = new Array['11','22','33'];
+    let qq = document.getElementsByClassName('qq');
+    qq[0].addEventListener('click', function () {
+        let flipper = document.getElementsByClassName('flipper');
+        for (let i = 0; i < flipper.length; i++) {
+            flipper[i].style.transform = "rotateY(180deg)";
+        }
+        alert("答對ㄌ +10分");
+        let a = document.createElement("button");
+        a.innerHTML = "下一題";
+        a.setAttribute('id','btn');
+        document.body.appendChild(a);
+    });
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click',function(){
+        let question = getElementById('question'); 
+    })
+    // qq[1].addEventListener('click', function () {
+    //     let flipper = document.getElementsByClassName('flipper');
+    //     for (let i = 0; i < flipper.length; i++) {
+    //         flipper[i].style.transform = "rotateY(180deg)";
+    //     }
+    //     alert("答錯ㄌ 不加分");
+    //     let a = document.createElement("button");
+    //     a.innerHTML = "下一題"
+    //     document.body.appendChild(a);
+    // });
+</script>
+
+</html>
