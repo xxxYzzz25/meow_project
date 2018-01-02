@@ -317,7 +317,11 @@ header {
     text-align: center;
     padding: 15px;
     font-weight: bolder;
-    font-size: 18px; }
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
     .banner .find img, .banner .wait img {
       width: 40px;
       height: 55px;
