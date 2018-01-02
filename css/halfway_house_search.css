@@ -65,6 +65,10 @@ table {
   src: url("../fonts/NotoSansCJKtc-Black.otf");
 }
 
+input, select {
+  font-family: notoSans_r;
+}
+
 body {
   font-family: notoSans;
   letter-spacing: 3px;
@@ -88,7 +92,7 @@ input, select {
 }
 
 header {
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   width: 200px;
   height: 100vh;
   position: fixed;

@@ -64,6 +64,10 @@ table {
   src: url("../fonts/NotoSansCJKtc-Black.otf");
 }
 
+input, select {
+  font-family: notoSans_r;
+}
+
 body {
   font-family: notoSans;
   letter-spacing: 3px;
@@ -280,7 +284,7 @@ footer span {
 }
 
 header {
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   width: 200px;
   height: 100vh;
   position: fixed;
@@ -413,6 +417,10 @@ header .icons a:hover {
   padding: 15px;
   font-weight: bolder;
   font-size: 18px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .banner .find img, .banner .wait img {
@@ -432,19 +440,19 @@ header .icons a:hover {
 }
 
 .banner .search select {
-  background-color: rgba(153, 153, 153, 0.493);
+  background-color: rgba(255, 255, 255, 0.308);
   border: 3px solid #fff;
   border-radius: 40px;
   text-align-last: center;
   padding: 10px 0;
   font-size: 18px;
-  color: #fff;
+  color: #333;
   cursor: pointer;
 }
 
 .banner .search input {
   margin: 15px auto;
-  background-color: rgba(153, 153, 153, 0.493);
+  background-color: rgba(255, 255, 255, 0.308);
   border: 3px solid #fff;
   letter-spacing: 2px;
   border-radius: 40px;
@@ -453,15 +461,15 @@ header .icons a:hover {
 }
 
 .banner .search input:-moz-placeholder {
-  color: #fff;
+  color: #333;
 }
 
 .banner .search input::-webkit-input-placeholder {
-  color: #fff;
+  color: #333;
 }
 
 .banner .search input:-ms-input-placeholder {
-  color: #fff;
+  color: #333;
 }
 
 .banner .search .fa-search {
@@ -491,7 +499,7 @@ header .icons a:hover {
 }
 
 .pick-kit ul {
-  width: 100%;
+  width: 200%;
   position: absolute;
   display: flex;
   justify-content: space-around;
@@ -539,22 +547,15 @@ header .icons a:hover {
   padding: 5px;
 }
 
-.pick-kit ul li:nth-child(1) .cat_list_bg a .cat_list {
+.pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list {
   background-image: url(../images/catcat_171225_0011.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.pick-kit ul li:nth-child(2) .cat_list_bg a .cat_list {
+.pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list {
   background-image: url(../images/catcat_171225_0010.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.pick-kit ul li:nth-child(3) .cat_list_bg a .cat_list {
-  background-image: url(../images/catcat_171228_0012.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -748,7 +749,7 @@ header .icons a:hover {
   width: 100%;
   height: 100vh;
   z-index: 999999999999999999999999999999;
-  background-color: rgba(44, 44, 44, 0.856);
+  background-color: #eaaf88;
   transition: .3s;
 }
 

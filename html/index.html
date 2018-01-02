@@ -8,10 +8,12 @@
     <title>尋喵啟事</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../plugin/jquery.fullPage.css">
+    <link rel="stylesheet" href="../css/number.css">
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="../plugin/jquery.fullPage.js"></script>
+    <script src="../js/numberCard.js"></script>
 </head>
 
 <body>
@@ -64,15 +66,17 @@
             <!-- banner -->
             <div class="banner">
                 <div class="container">
-                    <div class="find">
-                        <img src="../images/number0.png" alt="0">
+                    <div class="find" id="find">
+                        <!-- <img src="../images/number0.png" alt="0">
                         <img src="../images/number8.png" alt="8">
-                        <img src="../images/number7.png" alt="7"> 隻喵喵已經找到牠的主人
+                        <img src="../images/number7.png" alt="7">  -->
+                        隻喵喵已經找到牠的主人
                     </div>
-                    <div class="wait">
+                    <div class="wait" id="wait">
+                        <!-- <img src="../images/number7.png" alt="7">
                         <img src="../images/number7.png" alt="7">
-                        <img src="../images/number7.png" alt="7">
-                        <img src="../images/number7.png" alt="7"> 隻喵喵還在等待牠的主人
+                        <img src="../images/number7.png" alt="7">  -->
+                        隻喵喵還在等待牠的主人
                     </div>
                     <hr>
                     <h2>尋找您未來的喵喵</h2>
@@ -80,10 +84,18 @@
                         <select name="" id="">
                             <option value="">毛色</option>
                             <option value="">--請選擇--</option>
+                            <option value="">虎斑</option>
+							<option value="">豹紋</option>
+							<option value="">三花</option>
+							<option value="">玳瑁</option>
+							<option value="">純色</option>
+
                         </select>
                         <select name="" id="">
                             <option value="">性別</option>
                             <option value="">--請選擇--</option>
+                            <option value="">男孩</option>
+                            <option value="">女孩</option>
                         </select>
                         <select name="" id="">
                             <option value="">地區</option>
@@ -94,7 +106,7 @@
                             <option value="">東部</option>
                             <option value="">離島</option>
                         </select>
-                        <input type="text" placeholder="還有什麼喵喵的線索嗎?">
+                        <input type="text" placeholder="或加入喵喵的名字搜尋">
                         <a href="#">
                             <i class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
                         </a>
@@ -119,7 +131,49 @@
                         <img src="../images/cat-print-white.png" alt="cat paws">
                     </a>
                 </div>
-                <ul>
+                <ul id="kit-list">
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_list_bg">
+                            <a href="#">
+                                <div class="cat_list">
+                                    <div class="bubble">
+                                        <span class="kit-name">書書</span>
+                                        <span class="kit-age">三個月</span>
+                                        <span class="kit-address">台南市</span>
+                                        <span class="kit-home">喃喃中途之家</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
                     <li>
                         <div class="cat_list_bg">
                             <a href="#">
@@ -215,7 +269,7 @@
                     </div>
                 </div>
                 <div class="more">
-                        <a href="#" class="btn-more">More</a>
+                    <a href="#" class="btn-more">More</a>
                 </div>
             </div>
         </div>
@@ -380,6 +434,35 @@
                     'style': 'opacity:0;z-index:-1;'
                 });
             }, 300);
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            let list = document.getElementById('kit-list');
+            let len = $(list).children('li').length;
+            $('.left-arrow').on('click', moveL);
+            $('.right-arrow').on('click', moveR);
+            let count = 0;
+
+            function moveL() {
+                count--;
+                if (count < 0) {
+                    count = len - 3;
+                }
+                $(list).stop().animate({
+                    left: (count * -33.333333) + '%'
+                });
+            }
+
+            function moveR() {
+                count++;
+                if (count >= len-2) {
+                    count = 0;
+                }
+                $(list).stop().animate({
+                    left: (count * -33.333333) + '%'
+                });
+            }
         });
     </script>
 </body>
