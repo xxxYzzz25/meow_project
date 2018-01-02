@@ -404,7 +404,6 @@ header ul li:nth-child(5):after {
 
 .signUpLightboxBlack .signUpLightbox .formShape .chioce button:hover {
   color: #fff;
-  border-bottom: 1px solid #eaaf88;
 }
 
 .signUpLightboxBlack .signUpLightbox .formShape .chioce .selected {
@@ -432,6 +431,7 @@ header ul li:nth-child(5):after {
 
 .signUpLightboxBlack .signUpLightbox .formShape form label small {
   font-size: 12px;
+  color: rgba(245, 245, 245, 0.7);
 }
 
 .signUpLightboxBlack .signUpLightbox .formShape form .formBtn {
