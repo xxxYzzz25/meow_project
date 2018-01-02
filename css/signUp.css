@@ -8,70 +8,56 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before, blockquote:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 q:before, q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
+  -moz-box-sizing: border-box; }
 
 @font-face {
   font-family: notoSans;
-  src: url("../fonts/NotoSansCJKtc-Thin.otf");
-}
+  src: url("../fonts/NotoSansCJKtc-Thin.otf"); }
 
 @font-face {
   font-family: notoSans_r;
-  src: url("../fonts/NotoSansCJKtc-Regular.otf");
-}
+  src: url("../fonts/NotoSansCJKtc-Regular.otf"); }
 
 @font-face {
   font-family: notoSans_b;
-  src: url("../fonts/NotoSansCJKtc-Black.otf");
-}
+  src: url("../fonts/NotoSansCJKtc-Black.otf"); }
 
 input, select {
-  font-family: notoSans_r;
-}
+  font-family: notoSans_r; }
 
 body {
   font-family: notoSans;
-  letter-spacing: 3px;
-}
+  letter-spacing: 3px; }
 
 .btns .btn {
   font-size: 30px;
@@ -88,137 +74,94 @@ body {
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
   padding-left: 3px;
   padding-bottom: 3px;
-  z-index: 1;
-}
-
-.btns .btn:hover:before {
-  transition: .35s;
-  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-  top: -10%;
-  left: -10%;
-}
-
-.btns .btn:before {
-  content: '';
-  display: block;
-  width: 120%;
-  height: 120%;
-  position: absolute;
-  transform: rotate(45deg);
-  top: 90%;
-  left: -110%;
-  z-index: -1;
-}
+  z-index: 1; }
+  .btns .btn:hover:before {
+    transition: .35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    top: -10%;
+    left: -10%; }
+  .btns .btn:before {
+    content: '';
+    display: block;
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 90%;
+    left: -110%;
+    z-index: -1; }
 
 .btns .fa {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 .btns .btn.facebook {
-  color: #3b5998;
-}
-
-.btns .btn.facebook:before {
-  background-color: #3b5998;
-}
-
-.btns .btn.facebook:hover {
-  color: #fff;
-}
+  color: #3b5998; }
+  .btns .btn.facebook:before {
+    background-color: #3b5998; }
+  .btns .btn.facebook:hover {
+    color: #fff; }
 
 .btns .btn.twitter {
-  color: #3cf;
-}
-
-.btns .btn.twitter:before {
-  background-color: #3cf;
-}
-
-.btns .btn.twitter:hover {
-  color: #fff;
-}
+  color: #3cf; }
+  .btns .btn.twitter:before {
+    background-color: #3cf; }
+  .btns .btn.twitter:hover {
+    color: #fff; }
 
 .btns .btn.google {
-  color: #dc4a38;
-}
-
-.btns .btn.google:before {
-  background-color: #dc4a38;
-}
-
-.btns .btn.google:hover {
-  color: #fff;
-}
+  color: #dc4a38; }
+  .btns .btn.google:before {
+    background-color: #dc4a38; }
+  .btns .btn.google:hover {
+    color: #fff; }
 
 .btns .btn.youtube {
-  color: #f00;
-}
-
-.btns .btn.youtube:before {
-  background-color: #f00;
-}
-
-.btns .btn.youtube:hover {
-  color: #fff;
-}
+  color: #f00; }
+  .btns .btn.youtube:before {
+    background-color: #f00; }
+  .btns .btn.youtube:hover {
+    color: #fff; }
 
 .container {
   max-width: 991px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 input, select {
-  outline: none;
-}
+  outline: none; }
 
 footer {
   background-color: #f5eae3;
   margin-left: 200px;
-  padding: 15px;
-}
-
-footer .follow {
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer nav {
-  margin: auto;
-}
-
-footer nav ul {
-  display: flex;
-  justify-content: space-around;
-}
-
-footer nav ul li {
-  width: 20%;
-  margin: 15px;
-}
-
-footer nav ul li:hover {
-  transform: translateY(-3px);
-  transition: .35s;
-}
-
-footer nav ul li a {
-  text-align: center;
-  border: 1px solid #333;
-  text-decoration: none;
-  color: #333;
-  display: block;
-  width: 100%;
-  padding: 15px;
-}
-
-footer span {
-  display: inline-block;
-  position: relative;
-  top: -20px;
-  padding: 10px;
-}
+  padding: 15px; }
+  footer .follow {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  footer nav {
+    margin: auto; }
+    footer nav ul {
+      display: flex;
+      justify-content: space-around; }
+      footer nav ul li {
+        width: 20%;
+        margin: 15px; }
+        footer nav ul li:hover {
+          transform: translateY(-3px);
+          transition: .35s; }
+        footer nav ul li a {
+          text-align: center;
+          border: 1px solid #333;
+          text-decoration: none;
+          color: #333;
+          display: block;
+          width: 100%;
+          padding: 15px; }
+  footer span {
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    padding: 10px; }
 
 header {
   background-color: #eaaf88;
@@ -227,97 +170,70 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-  z-index: 9999999;
-}
-
-header .logo {
-  position: relative;
-  top: 70px;
-  width: 180px;
-  text-align: center;
-}
-
-header .logo a {
-  text-decoration: none;
-  color: #fff;
-}
-
-header .logo img {
-  width: 90%;
-}
-
-header ul {
-  position: absolute;
-  bottom: 180px;
-}
-
-header ul li {
-  margin: 1px 0;
-  position: relative;
-}
-
-header ul li:hover {
-  background-color: #fff;
-  box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
-  transition: .3s;
-}
-
-header ul li:hover a {
-  color: #000;
-  transition: .3s;
-}
-
-header ul li a {
-  width: 185px;
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 15px 20px;
-}
-
-header .icons {
-  width: 180px;
-  display: flex;
-  padding: 15px;
-  padding-right: 20px;
-  justify-content: space-around;
-  position: absolute;
-  bottom: 40px;
-}
-
-header .icons #like {
-  font-size: 12px;
-  text-align: center;
-  line-height: 20px;
-  display: block;
-  width: 15px;
-  height: 15px;
-  position: relative;
-  color: #d33;
-  top: -17px;
-  right: -25px;
-  font-family: notoSans_b;
-}
-
-header .icons a {
-  text-decoration: none;
-  color: #fff;
-}
-
-header .icons a:hover {
-  transform: scale(1.15);
-  transition: .3s;
-}
+  z-index: 9999999; }
+  header .logo {
+    position: relative;
+    top: 70px;
+    width: 180px;
+    text-align: center; }
+    header .logo a {
+      text-decoration: none;
+      color: #fff; }
+    header .logo img {
+      width: 90%; }
+  header ul {
+    position: absolute;
+    bottom: 180px; }
+    header ul li {
+      margin: 1px 0;
+      position: relative; }
+      header ul li:hover {
+        background-color: #fff;
+        box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
+        transition: .3s; }
+      header ul li:hover a {
+        color: #000;
+        transition: .3s; }
+      header ul li a {
+        width: 185px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 15px 20px; }
+  header .icons {
+    width: 180px;
+    display: flex;
+    padding: 15px;
+    padding-right: 20px;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 40px; }
+    header .icons #like {
+      font-size: 12px;
+      text-align: center;
+      line-height: 20px;
+      display: block;
+      width: 15px;
+      height: 15px;
+      position: relative;
+      color: #d33;
+      top: -17px;
+      right: -25px;
+      font-family: notoSans_b; }
+    header .icons a {
+      text-decoration: none;
+      color: #fff; }
+      header .icons a:hover {
+        transform: scale(1.15);
+        transition: .3s; }
 
 header ul li:nth-child(5) {
-  background-color: #eaaf88;
-}
+  background-color: #eaaf88; }
 
 header ul li:nth-child(5) a {
   color: #fff;
-  font-family: notoSans_r;
-}
+  font-family: notoSans_r; }
 
 header ul li:nth-child(5):after {
   z-index: -1;
@@ -329,173 +245,125 @@ header ul li:nth-child(5):after {
   position: absolute;
   top: 7px;
   right: -17px;
-  transform: rotate(45deg);
-}
+  transform: rotate(45deg); }
 
 .c1 {
   height: 50vh;
-  background-color: #666;
-}
-
-.c1 .c11 {
-  height: 30vh;
-  background-color: #226;
-}
+  background-color: #666; }
+  .c1 .c11 {
+    height: 30vh;
+    background-color: #226; }
 
 .c2 {
   width: 300px;
   height: 300px;
-  background-color: #339;
-}
+  background-color: #339; }
 
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 999999999999;
-}
-
-.signUpLightboxBlack .signUpLightbox {
-  width: 800px;
-  height: 600px;
-  position: fixed;
-}
-
-.signUpLightboxBlack .signUpLightbox .bgImg {
-  width: 400px;
-  height: 600px;
-  float: left;
-  background-color: #333;
-  border-radius: 10px 0 0 10px;
-  background-image: url("../images/memberBG.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape {
-  background-color: #91989f;
-  width: 400px;
-  height: 600px;
-  float: left;
-  border-radius: 0 10px 10px 0;
-  position: relative;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape .chioce {
-  text-align: center;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape .chioce:last-child {
-  margin-top: 20px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape .chioce button {
-  background-color: transparent;
-  border: none;
-  display: inline-block;
-  line-height: 2em;
-  transition: .1s;
-  outline: none;
-  color: rgba(245, 245, 245, 0.7);
-  font-size: 30px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape .chioce .selected {
-  border-bottom: 1px solid #eaaf88;
-  color: #fff;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form {
-  padding: 50px;
-  margin: 0 auto;
-  color: #fff;
-  font-family: '../fonts/NotoSansCJKtc-Thin.otf';
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form label {
-  margin-top: 10px;
-  margin-bottom: 4px;
-  display: block;
-  font-size: 18px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form label:first-child {
-  margin-top: 0;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form label small {
-  font-size: 12px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form .formBtn {
-  width: 200px;
-  border: 1px solid #333;
-  display: block;
-  line-height: 1.5em;
-  text-align: center;
-  border-radius: 1000px;
-  letter-spacing: 1px;
-  transition: .3s;
-  color: #333;
-  margin: 0 auto 30px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form .formBtn:hover {
-  background-color: #eaaf88;
-  border: 1px solid #eaaf88;
-  color: #fff;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form input {
-  border: none;
-  background-color: transparent;
-  border-bottom: 1px solid rgba(245, 245, 245, 0.7);
-  width: 100%;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form input:-ms-input-placeholder {
-  line-height: 1em;
-  padding: 5px 15px;
-  color: rgba(245, 245, 245, 0.7);
-  font-style: italic;
-  font-size: 12px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form input:-moz-placeholder {
-  line-height: 1em;
-  padding: 5px 15px;
-  color: rgba(245, 245, 245, 0.7);
-  font-style: italic;
-  font-size: 12px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form input::-moz-placeholder {
-  line-height: 1em;
-  padding: 5px 15px;
-  color: rgba(245, 245, 245, 0.7);
-  font-style: italic;
-  font-size: 12px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form input::-webkit-input-placeholder {
-  line-height: 1em;
-  padding: 5px 15px;
-  color: rgba(245, 245, 245, 0.7);
-  font-style: italic;
-  font-size: 12px;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form #userPhoto {
-  display: none;
-}
-
-.signUpLightboxBlack .signUpLightbox .formShape form .formSubmitBtn {
-  display: inline-block;
-  width: 100px;
-  font-size: 14px;
-  border-width: 2px;
-}
-
-/*# sourceMappingURL=signUp.css.map */
+  z-index: 999999999999; }
+  .signUpLightboxBlack .signUpLightbox {
+    width: 800px;
+    height: 600px;
+    position: fixed; }
+    .signUpLightboxBlack .signUpLightbox .bgImg {
+      width: 400px;
+      height: 600px;
+      float: left;
+      background-color: #333;
+      border-radius: 10px 0 0 10px;
+      background-image: url("../images/memberBG.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat; }
+    .signUpLightboxBlack .signUpLightbox .formShape {
+      background-color: #91989f;
+      width: 400px;
+      height: 600px;
+      float: left;
+      border-radius: 0 10px 10px 0;
+      position: relative; }
+      .signUpLightboxBlack .signUpLightbox .formShape .chioce {
+        text-align: center; }
+        .signUpLightboxBlack .signUpLightbox .formShape .chioce:last-child {
+          margin-top: 20px; }
+        .signUpLightboxBlack .signUpLightbox .formShape .chioce button {
+          background-color: transparent;
+          border: none;
+          display: inline-block;
+          line-height: 2em;
+          transition: .1s;
+          outline: none;
+          color: rgba(245, 245, 245, 0.7);
+          font-size: 30px; }
+        .signUpLightboxBlack .signUpLightbox .formShape .chioce .selected {
+          border-bottom: 1px solid #eaaf88;
+          color: #fff; }
+      .signUpLightboxBlack .signUpLightbox .formShape form {
+        padding: 50px;
+        margin: 0 auto;
+        color: #fff;
+        font-family: '../fonts/NotoSansCJKtc-Thin.otf'; }
+        .signUpLightboxBlack .signUpLightbox .formShape form label {
+          margin-top: 10px;
+          margin-bottom: 4px;
+          display: block;
+          font-size: 18px; }
+          .signUpLightboxBlack .signUpLightbox .formShape form label:first-child {
+            margin-top: 0; }
+          .signUpLightboxBlack .signUpLightbox .formShape form label small {
+            font-size: 12px; }
+        .signUpLightboxBlack .signUpLightbox .formShape form .formBtn {
+          width: 200px;
+          border: 1px solid #333;
+          display: block;
+          line-height: 1.5em;
+          text-align: center;
+          border-radius: 1000px;
+          letter-spacing: 1px;
+          transition: .3s;
+          color: #333;
+          margin: 0 auto 30px; }
+          .signUpLightboxBlack .signUpLightbox .formShape form .formBtn:hover {
+            background-color: #eaaf88;
+            border: 1px solid #eaaf88;
+            color: #fff; }
+        .signUpLightboxBlack .signUpLightbox .formShape form input {
+          border: none;
+          background-color: transparent;
+          border-bottom: 1px solid rgba(245, 245, 245, 0.7);
+          width: 100%; }
+          .signUpLightboxBlack .signUpLightbox .formShape form input:-ms-input-placeholder {
+            line-height: 1em;
+            padding: 5px 15px;
+            color: rgba(245, 245, 245, 0.7);
+            font-style: italic;
+            font-size: 12px; }
+          .signUpLightboxBlack .signUpLightbox .formShape form input:-moz-placeholder {
+            line-height: 1em;
+            padding: 5px 15px;
+            color: rgba(245, 245, 245, 0.7);
+            font-style: italic;
+            font-size: 12px; }
+          .signUpLightboxBlack .signUpLightbox .formShape form input::-moz-placeholder {
+            line-height: 1em;
+            padding: 5px 15px;
+            color: rgba(245, 245, 245, 0.7);
+            font-style: italic;
+            font-size: 12px; }
+          .signUpLightboxBlack .signUpLightbox .formShape form input::-webkit-input-placeholder {
+            line-height: 1em;
+            padding: 5px 15px;
+            color: rgba(245, 245, 245, 0.7);
+            font-style: italic;
+            font-size: 12px; }
+        .signUpLightboxBlack .signUpLightbox .formShape form #userPhoto {
+          display: none; }
+        .signUpLightboxBlack .signUpLightbox .formShape form .formSubmitBtn {
+          display: inline-block;
+          width: 100px;
+          font-size: 14px;
+          border-width: 2px; }
