@@ -248,6 +248,15 @@
         flex-direction: column;
         justify-content: center;
         padding-left: 5%;
+        a{
+            text-decoration: none;
+            transition: .3s all;
+            color: #333;
+            margin: 10px 0;
+            &:hover {
+                color: #EAAF88;
+            }
+        }
         .half-name{
             font-family: notoSans_r;
             font-size: $font-size-h4;

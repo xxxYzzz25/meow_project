@@ -647,6 +647,17 @@ header .icons a:hover {
   padding-left: 5%;
 }
 
+.half .half-text a {
+  text-decoration: none;
+  transition: .3s all;
+  color: #333;
+  margin: 10px 0;
+}
+
+.half .half-text a:hover {
+  color: #EAAF88;
+}
+
 .half .half-text .half-name {
   font-family: notoSans_r;
   font-size: 18px;
