@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+    // 以下是切換form action
     let mem = document.getElementById('member');
     let halfMem = document.getElementById('halfMember');
     let signUpForm = document.getElementById('signUpForm');
@@ -14,6 +15,7 @@ window.addEventListener('load', function () {
     })
 });
 $(document).ready(function () {
+    // 以下是燈箱置中
     moveCenter();
     $(window).resize(function () {
         moveCenter();
@@ -29,19 +31,24 @@ $(document).ready(function () {
             top: (winHeight - divHeight) / 2
         });
     }
+
+    // 以下是燈箱出現與隱藏
     $('.login').click(function (e) {
         e.preventDefault();
         $('.signUpLightboxBlack').css('display', 'block');
+        $('#loginBox').css('display', 'block');
     });
-    // $('.signUpLightboxBlack').click(function () {
-        // $('.signUpLightboxBlack').css('display', 'none');
-        // $('#loginBox').css('display', 'none');
-        // $('#menuControl').prop("checked", false);
-    // });
+    $('.signUpLightboxBlack').click(function () {
+        $('.signUpLightboxBlack').css('display', 'none');
+        $('#loginBox').css('display', 'none');
+        $('#menuControl').prop("checked", false);
+    });
     $('.cancel').click(function () {
         $('.signUpLightboxBlack').css('display', 'none');
+        $('#loginBox').css('display', 'none');
     });
     $('#signUpForm').submit(function () {
         $('.signUpLightboxBlack').css('display', 'none');
+        $('#loginBox').css('display', 'none');
     });
 });

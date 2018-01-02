@@ -11,6 +11,7 @@
 @import 'mixins/_navNow.scss';
 @import "base/btn";
 @import "base/genderIcon";
+@import "./modules/_signUp.scss";
 @include navNow(1);
 body {
     background-image: url('../images/marble.jpg');
@@ -178,7 +179,7 @@ body {
                     color: #ffffff;
                     border: 1px solid #EAAF88
                 }
-                .forRWD{
+                .forRWD {
                     display: none;
                 }
             }

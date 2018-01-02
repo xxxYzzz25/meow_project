@@ -1,148 +1,143 @@
-@import 'base/_reset.scss';
-@import 'base/_var.scss';
-@import 'base/_boxsizing.scss';
-@import 'mixins/_afterClear.scss';
-@import './mixins/_navNow.scss';
-@import 'base/_font.scss';
-@import 'modules/_btns.scss';
-@import './layout/_container.scss';
-@import 'modules/_footer.scss';
-@import './modules/_header.scss';
-@import './modules/_member.scss';
-@import 'mixins/_rwd.scss';
 $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
 .signUpLightboxBlack {
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .8);
     width: 100vw;
     height: 100vh;
     position: fixed;
-    z-index: 999999999999;
-    .signUpLightbox {
-        width: 800px;
-        height: 600px;
+    z-index: 1000;
+    display: none;
+}
+
+.signUpLightbox {
+    width: 800px;
+    height: 600px;
+    z-index: 1001;
+    position: fixed;
+    display: none;
+    .cancel {
         position: absolute;
-        .bgImg {
-            width: 400px;
-            height: 600px;
-            float: left;
-            background-color: #333;
-            border-radius: 10px 0 0 10px;
-            background-image: url('../images/memberBG.jpg');
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        .formShape {
-            background-color: rgb(145, 152, 159);
-            width: 400px;
-            height: 600px;
-            float: left;
-            border-radius: 0 10px 10px 0;
-            position: relative;
-            .chioce {
-                text-align: center;
-                &:last-child {
-                    margin-top: 20px;
-                }
-                button {
-                    background-color: transparent;
-                    border: none;
-                    display: inline-block;
-                    line-height: 2em;
-                    transition: .1s;
-                    outline: none;
-                    color: $colorPlaceholder;
-                    font-size: $font-size-h2;
-                    &:hover {
-                        color: #fff;
-                    }
-                }
-                .selected {
-                    border-bottom: 1px solid $navColor;
+        top: 5px;
+        right: 5px;
+        font-size: 20px;
+        z-index: 1002;
+    }
+    .bgImg {
+        width: 400px;
+        height: 600px;
+        float: left;
+        background-color: #333;
+        border-radius: 10px 0 0 10px;
+        background-image: url('../images/memberBG.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .formShape {
+        background-color: rgb(145, 152, 159);
+        width: 400px;
+        height: 600px;
+        float: left;
+        border-radius: 0 10px 10px 0;
+        position: relative;
+        .chioce {
+            text-align: center;
+            &:last-child {
+                margin-top: 20px;
+            }
+            button {
+                background-color: transparent;
+                border: none;
+                display: inline-block;
+                line-height: 2em;
+                transition: .1s;
+                outline: none;
+                color: $colorPlaceholder;
+                font-size: $font-size-h2;
+                &:hover {
                     color: #fff;
                 }
             }
-            form {
-                padding: 50px;
-                margin: 0 auto;
+            .selected {
+                border-bottom: 1px solid $navColor;
                 color: #fff;
-                font-family: '../fonts/NotoSansCJKtc-Thin.otf';
-                label {
-                    margin-top: 10px;
-                    margin-bottom: 4px;
-                    display: block;
-                    font-size: $font-size-large;
-                    &:first-child {
-                        margin-top: 0;
-                    }
-                    small {
-                        font-size: $font-size-small;
-                        color: $colorPlaceholder;
-                    }
+            }
+        }
+        form {
+            padding: 50px;
+            margin: 0 auto;
+            color: #fff;
+            font-family: '../fonts/NotoSansCJKtc-Thin.otf';
+            label {
+                margin-top: 10px;
+                margin-bottom: 4px;
+                display: block;
+                font-size: $font-size-large;
+                &:first-child {
+                    margin-top: 0;
                 }
-                .formBtn {
-                    width: 200px;
-                    border: 1px solid #333;
-                    display: block;
-                    line-height: 1.5em;
-                    text-align: center;
-                    border-radius: 1000px;
-                    letter-spacing: 1px;
-                    transition: .3s;
-                    color: #333;
-                    margin: 0 auto 30px;
-                    &:hover {
-                        background-color: $navColor;
-                        border: 1px solid $navColor;
-                        color: #fff;
-                    }
+                small {
+                    font-size: $font-size-small;
+                    color: $colorPlaceholder;
                 }
-                input {
-                    border: none;
-                    background-color: transparent;
-                    border-bottom: 1px solid $colorPlaceholder;
-                    width: 100%;
-                    &:-ms-input-placeholder {
-                        line-height: 1em;
-                        padding: 5px 15px;
-                        color: $colorPlaceholder;
-                        font-style: italic;
-                        font-size: $font-size-small;
-                    }
-                    &:-moz-placeholder {
-                        line-height: 1em;
-                        padding: 5px 15px;
-                        color: $colorPlaceholder;
-                        font-style: italic;
-                        font-size: $font-size-small;
-                    }
-                    &::-moz-placeholder {
-                        line-height: 1em;
-                        padding: 5px 15px;
-                        color: $colorPlaceholder;
-                        font-style: italic;
-                        font-size: $font-size-small;
-                    }
-                    &::-webkit-input-placeholder {
-                        line-height: 1em;
-                        padding: 5px 15px;
-                        color: $colorPlaceholder;
-                        font-style: italic;
-                        font-size: $font-size-small;
-                    }
+            }
+            .formBtn {
+                width: 240px;
+                border: 1px solid #333;
+                display: block;
+                line-height: 1.5em;
+                text-align: center;
+                border-radius: 1000px;
+                letter-spacing: 1px;
+                transition: .3s;
+                color: #333;
+                margin: 0 auto 30px;
+                &:hover {
+                    background-color: $navColor;
+                    border: 1px solid $navColor;
+                    color: #fff;
                 }
-                #userPhoto {
-                    display: none;
+            }
+            input {
+                border: none;
+                background-color: transparent;
+                border-bottom: 1px solid $colorPlaceholder;
+                width: 100%;
+                &:-ms-input-placeholder {
+                    line-height: 1em;
+                    padding: 5px 15px;
+                    color: $colorPlaceholder;
+                    font-style: italic;
+                    font-size: $font-size-small;
                 }
-                .formSubmitBtn {
-                    display: inline-block;
-                    width: 100px;
-                    font-size: $font-size-base;
-                    border-width: 2px;
-                    &:hover {
-                        border: 2px solid $navColor;
-                    }
+                &:-moz-placeholder {
+                    line-height: 1em;
+                    padding: 5px 15px;
+                    color: $colorPlaceholder;
+                    font-style: italic;
+                    font-size: $font-size-small;
                 }
+                &::-moz-placeholder {
+                    line-height: 1em;
+                    padding: 5px 15px;
+                    color: $colorPlaceholder;
+                    font-style: italic;
+                    font-size: $font-size-small;
+                }
+                &::-webkit-input-placeholder {
+                    line-height: 1em;
+                    padding: 5px 15px;
+                    color: $colorPlaceholder;
+                    font-style: italic;
+                    font-size: $font-size-small;
+                }
+            }
+            #userPhoto {
+                display: none;
+            }
+            .formSubmitBtn {
+                display: inline-block;
+                width: 100px;
+                font-size: $font-size-base;
             }
         }
     }
