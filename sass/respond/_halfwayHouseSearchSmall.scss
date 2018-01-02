@@ -1,12 +1,17 @@
 @include respond-to(small) {
+    header {
+        display: none;
+    }
     .right {
+        margin: 0;
         .searchsection {
             #selectBox {
                 display: block;
             }
         }
         #content,
-        .dropholder {
+        .dropholder,
+        .flycat {
             display: none;
         }
         .item {

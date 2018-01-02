@@ -1,23 +1,34 @@
-@include respond-to(medium) {
-    header {
-        display: none;
-    }
-    .right {
-        width: 100%;
-        margin: 0;
-        .container1 {
-            .catPic {
-                .catItem {
-                    display: block;
-                    margin: 0 auto;
-                    .catContent, figure{
-                        display: inline-block;
+        @include respond-to(medium) {
+            header {
+                display: none;
+            }
+            .right {
+                width: 100%;
+                margin: 0;
+                .container1 {
+                    .selectForm {
+                        .advanceSearch {
+                            right: 14%
+                        }
+                    }
+                    .catPic {
+                        .catItem {
+                            width: 80%;
+                            display: block;
+                            margin: 0 auto 100px;
+                            .catContent,
+                            figure {
+                                display: inline-block;
+                                vertical-align: top;
+                            }
+                            figure{
+                                padding-top: 60px;
+                            }
+                        }
                     }
                 }
             }
+            footer {
+                margin-left: 0;
+            }
         }
-    }
-    footer {
-        margin-left: 0;
-    }
-}

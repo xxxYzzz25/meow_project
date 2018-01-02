@@ -1,3 +1,87 @@
 @include respond-to(medium) {
-    
+    header{
+        display: none;
+    }
+    .right {
+        padding: 0;
+        margin: 0;
+        .banner {
+            width: 100%;
+            padding-top: 80vh; 
+            animation: bb 20s linear infinite;
+            // position: static;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            h2 {
+                top: 3%;
+                left: 3%;
+                width: 60%;
+                line-height: 8vw; 
+                // position: static;
+            }
+            .intro {
+                display: none;
+            }
+            .contact {
+                width: 60%;
+                top: 30vh;
+                left: 0;
+                right: 0;
+                margin: auto; 
+                // position: static;
+            }
+            .rating {
+                width: 60%;
+                top: 55vh;
+                left: 0;
+                right: 0;
+                margin: auto; 
+                // position: static;
+            }
+        }
+        @keyframes bb {
+            20% {
+                background-image: url(../images/halfdetail7_resized.jpg);
+            }
+            40% {
+                background-image: url(../images/halfdetail5.jpg);
+            }
+            60% {
+                background-image: url(../images/halfdetail6.jpg);
+            }
+            80% {
+                background-image: url(../images/halfdetail4.jpg);
+            }
+        }
+        .smallintro {
+            display: block;
+            background-color: #F1E8D6;
+            padding: 30px 30px;
+            font-size: $font-size-base;
+            line-height: $line-height-base*1.4;
+        }
+        .halfwaypic {
+            display: none;
+        }
+        .cat {
+            .flycat {
+                display: none;
+            }
+            .container {
+                .catitem {
+                    width: 40%;
+                }
+            }
+        }
+        .talk {
+            .container {
+                .article {
+                    width: 100%;
+                    float: left;
+                    margin-bottom: 10%;
+                }
+            }
+        }
+    }
 }
