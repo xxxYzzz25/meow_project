@@ -64,6 +64,10 @@ table {
   src: url("../fonts/NotoSansCJKtc-Black.otf");
 }
 
+input, select {
+  font-family: notoSans_r;
+}
+
 body {
   font-family: notoSans;
   letter-spacing: 3px;
@@ -217,7 +221,7 @@ footer span {
 }
 
 header {
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   width: 200px;
   height: 100vh;
   position: fixed;
@@ -307,7 +311,7 @@ header .icons a:hover {
 }
 
 header ul li:nth-child(5) {
-  background-color: #EAAF88;
+  background-color: #eaaf88;
 }
 
 header ul li:nth-child(5) a {
@@ -321,7 +325,7 @@ header ul li:nth-child(5):after {
   display: block;
   width: 34px;
   height: 34px;
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   position: absolute;
   top: 7px;
   right: -17px;
@@ -399,7 +403,7 @@ header ul li:nth-child(5):after {
 }
 
 .signUpLightboxBlack .signUpLightbox .formShape .chioce .selected {
-  border-bottom: 1px solid #EAAF88;
+  border-bottom: 1px solid #eaaf88;
   color: #fff;
 }
 
@@ -439,8 +443,8 @@ header ul li:nth-child(5):after {
 }
 
 .signUpLightboxBlack .signUpLightbox .formShape form .formBtn:hover {
-  background-color: #EAAF88;
-  border: 1px solid #EAAF88;
+  background-color: #eaaf88;
+  border: 1px solid #eaaf88;
   color: #fff;
 }
 
