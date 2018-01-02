@@ -2,11 +2,35 @@ body{
 	letter-spacing: 3px;
 	background-color: #eee; 
 	font-size: 14px;
+	background-image: url(../img/marble.jpg);
+	
 }
+
+@media only screen and (max-width: 768px){
+    header{
+        visibility: hidden;
+    }
+}
+
 .wrap{
-	width: 80%;
 	margin-left: 200px;
 }
+
+.wrapCenter{
+	width: 80%;
+	margin: auto;
+}
+
+@media only screen and (max-width: 768px){
+    .wrap{
+        margin-left: 0;
+    }
+
+    .wrapCenter{
+        width: 95%;
+	}
+}
+
 .title{
 	text-align: center;
 	padding: 3%;
@@ -20,10 +44,10 @@ body{
 	text-align: center;
 	box-sizing: border-box;
 	border: 2px solid #333;
-	
+
 }
 
-.menu a{
+.menuTitle{
 	text-decoration: none;
 	color: #333;
 	margin: 2% 1%;
@@ -31,7 +55,12 @@ body{
 	padding: 5px 30px;
 	border-radius: 30px;
 	border: 1px solid transparent;
+	
 }
+/* 
+.menu a{
+	cursor: url(../img/cursor.png),auto;
+} */
 
 .menu a:hover{
 	color: #fff;
@@ -41,6 +70,22 @@ body{
 
 .menuTitle{
 	display: inline-block;
+}
+
+@media only screen and (max-width: 768px){
+	.menuTitle{
+		display: block;
+	}
+
+	form{
+		display: none;
+	}
+}
+
+.menuNow{
+	color: #fff;
+	background-color: #EAAF88;
+	border: 1px solid #EAAF88;
 }
 
 .banner{
@@ -67,15 +112,6 @@ body{
 	border: 2px solid #333;
 	padding: 5px 30px;
 	border-radius: 30px;
-}	
-
-.hr{
-	height: 2px;
-	background-color: #333;
-}
-
-.hr2{
-	margin-bottom: 2%;
 }
 
 .allTitle{
@@ -84,18 +120,16 @@ body{
 }
 
 .allProduct{
-	background-color: #ccc;
-}
-
-.type1{
-	width: 100%;
+	/* background-color: #ccc; */
+	margin-top: 1%;
 }
 
 .typeName{
 	float: left;
 	background-color: #fff;
-	width: 19%;
+	width: 29%;
 	padding: 4.8%;
+	box-sizing: border-box;
 	text-align: center;
 	margin-right: 1%;
 }
@@ -103,10 +137,46 @@ body{
 .typeBanner{
 	float: left;
 	background-color: #caa;
-	width: 60%;
+	width: 70%;
+	box-sizing: border-box;
 	padding: 5%;	
 	background-size: cover;
 	font-size: 10px;
+}
+
+.typeBannerRWD{
+	display: none;
+}
+
+@media only screen and (max-width: 768px){
+	.title span{
+		margin-top: 20px;
+		display: block;
+		font-size: 15px;
+	}
+
+	.typeName{
+		float: none;
+		width: 100%;
+		background-color: #EAAF88;
+		color: #fff;
+	}
+
+	.typeBanner{
+		display: none;
+	}
+
+	.typeBannerRWD{
+		display: block;
+		float: none;
+		width: 100%;
+		text-align: center;
+		margin: 0 0 50px 0;
+	}
+
+	.allProduct{
+		margin-top: 5%;
+	}
 }
 
 .typeBanner1{
@@ -133,6 +203,16 @@ body{
 	border-radius: 30px;
 }
 
+.typeBannerRWD a{
+	text-decoration: none;
+	color: #333;
+	background-color: rgba(255,255,255,0.7);
+	padding: 5px 30px;
+	border: 2px solid #333;
+	border-radius: 30px;
+}
+
+
 .typeBanner a:hover{
 	color: #fff;
 	background-color: #EAAF88;
@@ -146,6 +226,26 @@ body{
 	margin-top: 1%;
 	text-align: center;
 	margin-bottom: 4%;
+}
+
+@media only screen and (max-width: 768px){
+
+	.typeBanner a{
+		background-color: rgba(255,255,255, 0.7);
+	}
+	
+	.rwd{
+		display: none;
+	}
+
+	.rwd img{
+		display: none;
+	}
+
+	.product{
+		width: 50%;
+	}
+
 }
 
 .pic:hover{
