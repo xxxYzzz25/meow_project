@@ -20,7 +20,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
     .signUpLightbox {
         width: 800px;
         height: 600px;
-        position: fixed;
+        position: absolute;
         .bgImg {
             width: 400px;
             height: 600px;
@@ -139,6 +139,9 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                     width: 100px;
                     font-size: $font-size-base;
                     border-width: 2px;
+                    &:hover {
+                        border: 2px solid $navColor;
+                    }
                 }
             }
         }
