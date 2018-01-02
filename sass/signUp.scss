@@ -55,7 +55,6 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                     font-size: $font-size-h2;
                     &:hover {
                         color: #fff;
-                        border-bottom: 1px solid $navColor;
                     }
                 }
                 .selected {
@@ -78,6 +77,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                     }
                     small {
                         font-size: $font-size-small;
+                        color:$colorPlaceholder;
                     }
                 }
                 .formBtn {

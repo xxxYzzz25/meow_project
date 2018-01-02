@@ -8,12 +8,10 @@
     <title>尋喵啟事</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../plugin/jquery.fullPage.css">
-    <link rel="stylesheet" href="../css/number.css">
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="../plugin/jquery.fullPage.js"></script>
-    <script src="../js/numberCard.js"></script>
 </head>
 
 <body>
@@ -66,17 +64,15 @@
             <!-- banner -->
             <div class="banner">
                 <div class="container">
-                    <div class="find" id="find">
-                        <!-- <img src="../images/number0.png" alt="0">
+                    <div class="find">
+                        <img src="../images/number0.png" alt="0">
                         <img src="../images/number8.png" alt="8">
-                        <img src="../images/number7.png" alt="7">  -->
-                        隻喵喵已經找到牠的主人
+                        <img src="../images/number7.png" alt="7"> 隻喵喵已經找到牠的主人
                     </div>
-                    <div class="wait" id="wait">
-                        <!-- <img src="../images/number7.png" alt="7">
+                    <div class="wait">
                         <img src="../images/number7.png" alt="7">
-                        <img src="../images/number7.png" alt="7">  -->
-                        隻喵喵還在等待牠的主人
+                        <img src="../images/number7.png" alt="7">
+                        <img src="../images/number7.png" alt="7"> 隻喵喵還在等待牠的主人
                     </div>
                     <hr>
                     <h2>尋找您未來的喵喵</h2>
@@ -84,18 +80,10 @@
                         <select name="" id="">
                             <option value="">毛色</option>
                             <option value="">--請選擇--</option>
-                            <option value="">虎斑</option>
-							<option value="">豹紋</option>
-							<option value="">三花</option>
-							<option value="">玳瑁</option>
-							<option value="">純色</option>
-
                         </select>
                         <select name="" id="">
                             <option value="">性別</option>
                             <option value="">--請選擇--</option>
-                            <option value="">男孩</option>
-                            <option value="">女孩</option>
                         </select>
                         <select name="" id="">
                             <option value="">地區</option>
@@ -106,7 +94,7 @@
                             <option value="">東部</option>
                             <option value="">離島</option>
                         </select>
-                        <input type="text" placeholder="或加入喵喵的名字搜尋">
+                        <input type="text" placeholder="還有什麼喵喵的線索嗎?">
                         <a href="#">
                             <i class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
                         </a>
@@ -131,49 +119,7 @@
                         <img src="../images/cat-print-white.png" alt="cat paws">
                     </a>
                 </div>
-                <ul id="kit-list">
-                    <li>
-                        <div class="cat_list_bg">
-                            <a href="#">
-                                <div class="cat_list">
-                                    <div class="bubble">
-                                        <span class="kit-name">書書</span>
-                                        <span class="kit-age">三個月</span>
-                                        <span class="kit-address">台南市</span>
-                                        <span class="kit-home">喃喃中途之家</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cat_list_bg">
-                            <a href="#">
-                                <div class="cat_list">
-                                    <div class="bubble">
-                                        <span class="kit-name">書書</span>
-                                        <span class="kit-age">三個月</span>
-                                        <span class="kit-address">台南市</span>
-                                        <span class="kit-home">喃喃中途之家</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cat_list_bg">
-                            <a href="#">
-                                <div class="cat_list">
-                                    <div class="bubble">
-                                        <span class="kit-name">書書</span>
-                                        <span class="kit-age">三個月</span>
-                                        <span class="kit-address">台南市</span>
-                                        <span class="kit-home">喃喃中途之家</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
+                <ul>
                     <li>
                         <div class="cat_list_bg">
                             <a href="#">
@@ -269,7 +215,7 @@
                     </div>
                 </div>
                 <div class="more">
-                    <a href="#" class="btn-more">More</a>
+                        <a href="#" class="btn-more">More</a>
                 </div>
             </div>
         </div>
@@ -318,63 +264,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            $(function () {
-                    // 先取得必要的元素並用 jQuery 包裝
-                    // 再來取得 $slides 的高度及設定動畫時間
-                    var $block = $('.shop-right'),
-                        $slides = $('#player ul.list', $block),
-                        _height = $slides.find('li').height(),
-                        $li = $('li', $slides),
-                        _animateSpeed = 400,
-                        timer, _speed = 4000;
-
-                    // 產生 li 選項
-                    var _str = '';
-                    for (var i = 0, j = $li.length; i < j; i++) {
-                        // 每一個 li 都有自己的 className = playerControl_號碼
-                        _str += '<li class="playerControl_' + (i + 1) + '">' + (i + 1) + '</li>';
-                    }
-
-                    // 產生 ul 並把 li 選項加到其中
-                    // 並幫 li 加上 mouseover 事件
-                    var $controlLi = $('<ul class="playerControl"></ul>').html(_str).appendTo($slides.parent()).find('li');
-                    $controlLi.mouseover(function () {
-                        clearTimeout(timer);
-
-                        var $this = $(this);
-                        $this.addClass('current').siblings('.current').removeClass('current');
-                        // 移動位置到相對應的號碼
-                        $slides.stop().animate({
-                            top: _height * $this.index() * -1
-                        }, _animateSpeed, function () {
-                            if (!_isOver) timer = setTimeout(moveNext, _speed);
-                        });
-
-                        return false;
-                    }).eq(0).mouseover();
-
-                    // 當滑鼠移到 $block 時則停止輪播
-                    // 移出時則繼續輪播
-                    var _isOver = false;
-                    $block.mouseenter(function () {
-                        clearTimeout(timer);
-                        _isOver = true;
-                    }).mouseleave(function () {
-                        _isOver = false;
-                        timer = setTimeout(moveNext, _speed);
-                    });
-
-                    // 用來控制移動的函式
-                    function moveNext() {
-                        var _now = $controlLi.filter('.current').index();
-                        $controlLi.eq((_now + 1) % $controlLi.length).mouseover();
-                    }
-                });
-
-        </script>
-
         <div class="section">
             <!-- 快速註冊 -->
             <div class="quick-signUp">

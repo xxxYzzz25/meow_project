@@ -16,13 +16,13 @@
             <div class="bgImg"></div>
             <div class="formShape">
                 <div class="chioce">
-                    <button>中途之家會員</button>
-                    <button class="selected">一般會員</button>
+                    <button id="halfMember">中途之家會員</button>
+                    <button id="member" class="selected">一般會員</button>
                 </div>
-                <form action="#">
+                <form action="#1" id="signUpForm">
                     <label for="userName">會員暱稱
                         <br>
-                        <small>不得多於4個中文字元/8個英文字元</small>
+                        <small>不得多於8個中/英文字元</small>
                     </label>
                     <input type="text" id="userName" placeholder="請輸入您的暱稱" required>
                     <br>
@@ -68,6 +68,7 @@
             </div>
         </div>
     </div>
+    <script src="../js/signUp.js"></script>
 </body>
 
 </html>
