@@ -59,4 +59,15 @@ function createCard() {
         obj.insertBefore(stage,obj.firstChild);
     }
 }
-window.addEventListener('load', createCard);
+window.addEventListener('load', function () {
+    $('#fullpages').fullpage({
+        'navigation': true,
+    });
+    window.setTimeout(function () {
+        let loading = document.getElementById('loading');
+        Object.assign(loading, {
+            'style': 'opacity:0;z-index:-1;'
+        });
+        createCard();
+    }, 300);
+});

@@ -425,19 +425,6 @@
     </div>
     <script>
         window.addEventListener('load', function () {
-            $('#fullpages').fullpage({
-                'navigation': true,
-            });
-            window.setTimeout(function () {
-                let loading = document.getElementById('loading');
-                Object.assign(loading, {
-                    'style': 'opacity:0;z-index:-1;'
-                });
-            }, 300);
-        });
-    </script>
-    <script>
-        window.addEventListener('load', function () {
             let list = document.getElementById('kit-list');
             let len = $(list).children('li').length;
             $('.left-arrow').on('click', moveL);
