@@ -22,14 +22,21 @@
                     right: 5%
                 }
                 #advanced:checked~div {
-                    height: 400px;
+                    height: 710px;
                 }
                 .advanceSearchItem {
-                    padding-left: 4px;
-                    padding-right: 4px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    .selectTitle{
+                        display: block;
+                        margin-top: 20px;
+                    }
                     .condition {
                         padding: 3px 8px;
-                        margin: 2px;
+                        margin: 4px 2px;
+                    }
+                    .forRWD{
+                        display: block;
                     }
                 }
             }
