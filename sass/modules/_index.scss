@@ -55,31 +55,31 @@
     .search {
         position: relative;
         select {
-            background-color: rgba(153, 153, 153, 0.493);
+            background-color: rgba(255, 255, 255, 0.308);
             border: 3px solid #fff;
             border-radius: 40px;
             text-align-last: center;
             padding: 10px 0;
             font-size: $font-size-h4;
-            color: #fff;
+            color: #333;
             cursor: pointer;
         }
         input {
             margin: $gap auto;
-            background-color: rgba(153, 153, 153, 0.493);
+            background-color: rgba(255, 255, 255, 0.308);
             border: 3px solid #fff;
             letter-spacing: 2px;
             border-radius: 40px;
             padding: 10px $gap*2.5 10px $gap;
             font-size: $font-size-h4;
             &:-moz-placeholder {
-                color: #fff;
+                color: #333;
             }
             &::-webkit-input-placeholder {
-                color: #fff;
+                color: #333;
             }
             &:-ms-input-placeholder {
-                color: #fff;
+                color: #333;
             }
         }
         .fa-search {
@@ -111,7 +111,7 @@
         }
     }
     ul {
-        width: 100%;
+        width: 200%;
         position: absolute;
         display: flex;
         justify-content: space-around;
@@ -150,20 +150,14 @@
                     }
                 }
             }
-            &:nth-child(1) .cat_list_bg a .cat_list {
+            &:nth-child(odd) .cat_list_bg a .cat_list {
                 background-image: url(../images/catcat_171225_0011.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
             }
-            &:nth-child(2) .cat_list_bg a .cat_list {
+            &:nth-child(even) .cat_list_bg a .cat_list {
                 background-image: url(../images/catcat_171225_0010.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-            }
-            &:nth-child(3) .cat_list_bg a .cat_list {
-                background-image: url(../images/catcat_171228_0012.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;

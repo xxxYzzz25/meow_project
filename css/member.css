@@ -52,6 +52,9 @@ table {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
 
+input, select {
+  font-family: notoSans_r; }
+
 body {
   font-family: notoSans;
   letter-spacing: 3px; }
@@ -161,7 +164,7 @@ footer {
     padding: 10px; }
 
 header {
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   width: 200px;
   height: 100vh;
   position: fixed;
@@ -226,7 +229,7 @@ header {
         transition: .3s; }
 
 header ul li:nth-child(5) {
-  background-color: #EAAF88; }
+  background-color: #eaaf88; }
 
 header ul li:nth-child(5) a {
   color: #fff;
@@ -238,7 +241,7 @@ header ul li:nth-child(5):after {
   display: block;
   width: 34px;
   height: 34px;
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   position: absolute;
   top: 7px;
   right: -17px;

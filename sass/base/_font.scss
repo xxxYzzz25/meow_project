@@ -10,6 +10,9 @@
     font-family: notoSans_b;
     src: url('../fonts/NotoSansCJKtc-Black.otf');
 }
+input,select{
+    font-family: notoSans_r;    
+}
 body{
     font-family: notoSans;
     letter-spacing: 3px;
