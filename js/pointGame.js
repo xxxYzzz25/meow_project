@@ -50,8 +50,61 @@ window.addEventListener('load', function () {
 
 
 window.addEventListener('load', function () {
+    document.getElementById('correct').addEventListener('click', correct);
+    document.getElementById('err').addEventListener('click', err);
+
     let moveArea = document.getElementById('gamePointBottom');
-    let res = window.getComputedStyle(moveArea).width;
+    let people = document.getElementById('people');
+    let hug = document.getElementById('hug');
+    let bingo = 1;
+    let width;
+    let peopleWidth = window.getComputedStyle(people).width.replace('px', '');
+    let hugWidth = window.getComputedStyle(hug).width.replace('px', '');
+
+    peopleWidth = Math.floor(peopleWidth);
+    hugWidth = Math.floor(hugWidth);
+
+    let res = window.getComputedStyle(moveArea).width.replace('px', '');
+    res = Math.floor(res);
+
+    let qq = function () {
+        res /= 2;
+        width = Math.ceil(res / 9);
+    }
+    qq();
     window.addEventListener('resize', function () {
+        res = window.getComputedStyle(moveArea).width.replace('px', '');
+        res = Math.floor(res);
+        qq();
     });
+
+    function correct() {
+        bingo++;
+        if(bingo%2 === 1){
+            Object.assign(people, {
+                style: 'left:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform: rotate(-25deg)'
+            });
+        }else{
+            Object.assign(people, {
+                style: 'left:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform: rotate(0)'
+            });
+        }
+        Object.assign(hug, {
+            style: 'right:' + ((width * bingo) - (peopleWidth / 2)) + 'px;'
+        });
+    }
+
+    function err() {
+        bingo--;
+        if (bingo <= 0) {
+            bingo = 1;
+        } else {
+            Object.assign(people, {
+                style: 'left:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform'
+            });
+            Object.assign(hug, {
+                style: 'right:' + ((width * bingo) - (peopleWidth / 2)) + 'px;'
+            });
+        }
+    }
 });

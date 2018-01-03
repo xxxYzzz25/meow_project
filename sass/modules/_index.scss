@@ -420,20 +420,22 @@
         padding-bottom: 20px;
         .people {
             position: relative;
-            left: 40%;
+            bottom: 20px;
             z-index: 2;
             width: 100px;
             height: 105px;
+            left:0;
         }
         .option-area {
             align-self: flex-start;
         }
         .hug {
             position: relative;
-            right: 40%;
+            bottom: 20px;
             width: 50px;
             height: 90px;
             z-index: 1;
+            right:0;
         }
     }
 }
