@@ -35,7 +35,7 @@ $(document).ready(function () {
     // 以下是燈箱出現與隱藏
     $('.login').click(function (e) {
         e.preventDefault();
-        $('.signUpLightboxBlack').css('display', 'block');
+        $('.signUpLightboxBlack').css({'display': 'block','top': '0'});
         $('#loginBox').css('display', 'block');
     });
     $('.signUpLightboxBlack').click(function () {
