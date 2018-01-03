@@ -481,6 +481,7 @@ header ul li:nth-child(5):after {
   height: 100vh;
   position: fixed;
   z-index: 1000;
+  display: none;
 }
 
 .signUpLightbox {
@@ -488,6 +489,7 @@ header ul li:nth-child(5):after {
   height: 600px;
   z-index: 1001;
   position: fixed;
+  display: none;
 }
 
 .signUpLightbox .cancel {
