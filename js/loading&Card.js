@@ -1,4 +1,4 @@
-function createCard() {
+let  createCard = function() {
     let find = document.getElementById('find');
     let wait = document.getElementById('wait');
     let findQty = '678';
