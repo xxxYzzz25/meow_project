@@ -220,6 +220,24 @@ footer span {
   padding: 10px;
 }
 
+@media all and (min-width: 768px) and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  footer span {
+    display: block;
+    text-align: center;
+  }
+}
+
 header {
   background-color: #eaaf88;
   width: 200px;
@@ -371,6 +389,36 @@ header .icons a:hover {
   top: 50%;
   right: 18px;
   content: "";
+}
+
+.breadcrumbs {
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.breadcrumbs a {
+  font-size: 14px;
+  text-decoration: none;
+  border-width: 1px;
+  padding: 4px 10px;
+  text-align: center;
+}
+
+@media all and (max-width: 767px) {
+  .breadcrumbs {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .breadcrumbs a {
+    border: none;
+    padding: 0;
+  }
+  .breadcrumbs a:hover {
+    color: #333;
+    background-color: transparent;
+    border-color: transparent;
+  }
 }
 
 .fa-mars {
@@ -789,8 +837,8 @@ header ul li:nth-child(1):after {
   }
   .right .container1 {
     padding-top: 0;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .right .container1 .catItem .img,
   .right .container1 .catItem figure {
@@ -898,17 +946,6 @@ header ul li:nth-child(1):after {
   footer {
     margin-left: 0;
     width: 100%;
-  }
-}
-
-@media all and (max-width: 767px) {
-  footer {
-    margin-left: 0;
-    width: 100%;
-  }
-  footer span {
-    display: block;
-    text-align: center;
   }
 }
 

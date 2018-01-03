@@ -1,3 +1,9 @@
+@include respond-to(medium){
+    footer{
+        margin-left: 0;
+        width: 100%;
+    }
+}
 @include respond-to(small) {
     footer {
         margin-left: 0;

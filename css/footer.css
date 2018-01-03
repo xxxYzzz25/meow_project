@@ -220,4 +220,40 @@ footer span {
   padding: 10px;
 }
 
+@media all and (min-width: 768px) and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  footer span {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  footer span {
+    display: block;
+    text-align: center;
+  }
+}
+
 /*# sourceMappingURL=footer.css.map */
