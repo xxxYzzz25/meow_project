@@ -621,18 +621,13 @@ header {
       width: 100px;
       height: 105px;
       left: 0; }
-    .game-point .game-point-bottom .option-area {
+    .game-point .game-point-bottom #optionA, .game-point .game-point-bottom #optionB {
       align-self: flex-start;
       width: 30%;
       height: 250px;
-      position: relative; }
-    .game-point .game-point-bottom .option-a-front, .game-point .game-point-bottom .option-a-backed, .game-point .game-point-bottom .option-b-front, .game-point .game-point-bottom .option-b-backed {
+      position: relative;
       background-color: #369;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0; }
+      text-align: center; }
     .game-point .game-point-bottom .hug {
       position: relative;
       width: 50px;

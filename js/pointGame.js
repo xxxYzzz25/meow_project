@@ -1,57 +1,77 @@
 window.addEventListener('load', function () {
+    let option = [];
+    option.push(document.getElementById('optionA'));
+    option.push(document.getElementById('optionB'));
+    let questionsBlock = document.getElementById('questions');
     let count = 1; //第幾題
     let subject = {
         questions: [{
                 question: '第一題',
-                option: ['A', 'B'],
-                answer: 1
+                choice: ['第一題A', '第一題B'],
+                answer: 0
             }, {
                 question: '第二題',
-                option: ['A', 'B'],
-                answer: 2
+                choice: ['第二題A', '第二題B'],
+                answer: 1
             }, {
                 question: '第三題',
-                option: ['A', 'B'],
-                answer: 2
+                choice: ['第三題A', '第三題B'],
+                answer: 1
             },
             {
                 question: '第四題',
-                option: ['A', 'B'],
-                answer: 1
+                choice: ['第四題A', '第四題B'],
+                answer: 0
             }, {
                 question: '第五題',
-                option: ['A', 'B'],
-                answer: 2
+                choice: ['第五題A', '第五題B'],
+                answer: 1
             }, {
                 question: '第六題',
-                option: ['A', 'B'],
-                answer: 2
+                choice: ['第六題A', '第六題B'],
+                answer: 1
             }, {
                 question: '第七題',
-                option: ['A', 'B'],
-                answer: 1
+                choice: ['第七題A', '第七題B'],
+                answer: 0
             }, {
                 question: '第八題',
-                option: ['A', 'B'],
-                answer: 1
+                choice: ['第八題A', '第八題B'],
+                answer: 0
             }
         ],
     };
 
     function showData(obj) {
-        obj.questions[count - 1].question; //問題
-        obj.questions[count - 1].option[0]; //選項一
-        obj.questions[count - 1].option[1]; //選項二
-        obj.questions[count - 1].answer; //答案
-        count++;
+        if (count <= 8) {
+            questionsBlock.textContent = obj.questions[count - 1].question; //問題
+            option[0].textContent = obj.questions[count - 1].choice[0]; //選項一
+            option[1].textContent = obj.questions[count - 1].choice[1]; //選項二
+            if (obj.questions[count - 1].answer === 0) { //答案
+                option[0].dataset.answer = 'true';
+                option[1].dataset.answer = '';
+            } else {
+                option[0].dataset.answer = '';
+                option[1].dataset.answer = 'true';
+            }
+            count++;
+        } else {
+            count = 1;
+        }
     }
     showData(subject);
-});
 
-
-window.addEventListener('load', function () {
-    document.getElementById('correct').addEventListener('click', correct);
-    document.getElementById('err').addEventListener('click', err);
+    function adjudge() {
+        if (this.dataset.answer === 'true') {
+            correct();
+        } else {
+            err();
+        }
+        showData(subject);
+    }
+    // =========================
+    option[0].addEventListener('click', adjudge);
+    option[1].addEventListener('click', adjudge);
 
     let moveArea = document.getElementById('gamePointBottom');
     let people = document.getElementById('people');
@@ -99,11 +119,11 @@ window.addEventListener('load', function () {
                 style: 'left:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform: rotate(0)'
             });
         }
-        if(bingo > 8){
+        if (bingo > 8) {
             Object.assign(hug, {
                 style: 'right:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform: rotate(-35deg) translateY(-15px);'
             });
-        }else{
+        } else {
             Object.assign(hug, {
                 style: 'right:' + ((width * bingo) - (peopleWidth / 2)) + 'px;'
             });

@@ -423,19 +423,13 @@
             height: 105px;
             left:0;
         }
-        .option-area {
+        #optionA,#optionB {
             align-self: flex-start;
             width: 30%;
             height: 250px;
             position: relative;
-        }
-        .option-a-front,.option-a-backed,.option-b-front,.option-b-backed{
             background-color: #369;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+            text-align: center;
         }
         .hug {
             position: relative;
