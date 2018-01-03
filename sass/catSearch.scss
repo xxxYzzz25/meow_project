@@ -33,12 +33,16 @@ body {
         h2 {
             text-align: center;
             font-size: $font-size-h1;
+            font-weight: bold;
             margin-top: 10px;
             margin-bottom: 20px;
             line-height: 26px;
+            letter-spacing: 15px;
+            text-align: center;
             small {
-                font-size: $font-size-small;
-                color: #666
+                font-size: $font-size-base;
+                color: #666;
+                letter-spacing: 30px;
             }
         }
         .selectForm {
