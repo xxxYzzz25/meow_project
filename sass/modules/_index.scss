@@ -13,7 +13,8 @@
     border: 2px solid #333;
     margin: $gap 0;
 }
-.more{
+
+.more {
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -23,6 +24,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .banner {
     margin-left: 200px;
     height: 100vh;
@@ -134,7 +136,7 @@
                     .cat_list {
                         height: 100%;
                         background: #369;
-                        box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.76),-1px -1px 6px rgba(0, 0, 0, 0.555);
+                        box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.76), -1px -1px 6px rgba(0, 0, 0, 0.555);
                         .bubble {
                             width: 200px;
                             height: 200px;
@@ -155,22 +157,22 @@
                 }
             }
             &:nth-child(odd) .cat_list_bg a .cat_list {
-                background-image: url(../images/catcat_171225_0011.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-            }
-            &:nth-child(even) .cat_list_bg a .cat_list {
                 background-image: url(../images/catcat_171225_0010.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
             }
-            &:nth-child(odd) .cat_list_bg a .cat_list .bubble {
+            &:nth-child(even) .cat_list_bg a .cat_list {
+                background-image: url(../images/catcat_171225_0011.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            &:nth-child(even) .cat_list_bg a .cat_list .bubble {
                 position: relative;
                 top: 50%;
             }
-            &:nth-child(even) .cat_list_bg a .cat_list .bubble {
+            &:nth-child(odd) .cat_list_bg a .cat_list .bubble {
                 position: relative;
                 top: 10%;
             }
@@ -181,7 +183,7 @@
         height: 60px;
         background-color: rgba(0, 0, 0, 0.411);
         position: absolute;
-        top: 40vh;
+        top: 70vh;
         z-index: 666;
         img {
             width: 100%;
@@ -213,26 +215,26 @@
             @extend %h3-btn;
         }
     }
-    .half-item{
+    .half-item {
         padding: $gap/2 $gap;
         height: 25vh;
         margin: 0.84vh 0;
         display: flex;
         background-color: #fff;
     }
-    .half-qty{
+    .half-qty {
         width: 20%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        img{
+        img {
             width: 40px;
             height: 55px;
             margin: 0 5px;
         }
     }
-    .half-pic{
+    .half-pic {
         width: 50%;
         height: 100%;
         background-image: url(../images/half_1.jpg);
@@ -240,13 +242,13 @@
         background-position: center;
         background-size: cover;
     }
-    .half-text{
+    .half-text {
         width: 25%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding-left: 5%;
-        a{
+        a {
             text-decoration: none;
             transition: .3s all;
             color: #333;
@@ -255,15 +257,15 @@
                 color: #EAAF88;
             }
         }
-        .read-more{
+        .read-more {
             align-self: flex-end;
             text-decoration: underline;
         }
-        .half-name{
+        .half-name {
             font-family: notoSans_r;
             font-size: $font-size-h4;
         }
-        span{
+        span {
             margin: 10px 0;
         }
     }
@@ -319,26 +321,28 @@
         }
     }
 }
-.section{
-    .quick-signUp{
+
+.section {
+    .quick-signUp {
         height: 80vh;
         width: 100%;
         margin-left: 200px;
     }
     position: relative;
-    footer{
+    footer {
         height: 20vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 }
-.game-point{
+
+.game-point {
     height: 100vh;
     background-color: #EAAF88;
     margin-left: 200px;
-    box-shadow: 20px 20px #333 inset,-20px -20px #333 inset;
-    .game-point-title{
+    box-shadow: 20px 20px #333 inset, -20px -20px #333 inset;
+    .game-point-title {
         height: 20vh;
         display: flex;
         align-items: flex-end;
@@ -352,38 +356,59 @@
     h3 {
         @extend %h3-btn;
     }
-    .game-point-top{
+    .game-point-top {
         width: 80%;
         margin: auto;
         height: 35vh;
         border-bottom: 3px solid #fff;
         position: relative;
-        .askBox{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 60px;
+        .askBox {
             position: relative;
-            height: 35vh;
-            .askBorder{
+            height: 30vh;
+            display: flex;
+            padding: 50px;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #fff;
+            border-radius: 20% 60% 30% 60%;
+            background-color: #EAAF88;
+            &:after{
+                content: '';
+                display: block;
                 position: absolute;
-                right: 190px;
-                top: 50px;
-                width: 350px;
-                height: 130px;
+                width: 20px;
+                height: 20px;
+                border-radius: 60% 40% 50% 60%;
+                border: 3px solid #fff;
+                right: -40px;
+                top: 50%;
             }
-            span{
+            &:before{
+                content: '';
+                display: block;
                 position: absolute;
-                top: 110px;
-                right: 350px;
+                width: 13px;
+                height: 13px;
+                border-radius: 60% 40% 50% 60%;
+                border: 3px solid #fff;
+                right: -55px;
+                top: 35%;
             }
         }
-        
-        .cat-ask{
-            position: absolute;
-            right: 50px;
-            bottom: 0;
+        .cat-ask {
+            // position: absolute;
+            // right: 50px;
+            // bottom: 0;
             max-width: 80%;
             max-height: 80%;
+            align-self: flex-end;
+            margin-left: 60px;
         }
     }
-    .game-point-bottom{
+    .game-point-bottom {
         position: relative;
         width: 90%;
         margin: auto;
@@ -393,17 +418,17 @@
         align-items: flex-end;
         padding-top: 100px;
         padding-bottom: 20px;
-        .people{
+        .people {
             position: relative;
             left: 40%;
             z-index: 2;
             width: 100px;
             height: 105px;
         }
-        .option-btn{
+        .option-area {
             align-self: flex-start;
         }
-        .hug{
+        .hug {
             position: relative;
             right: 40%;
             width: 50px;

@@ -76,15 +76,22 @@
                     <hr>
                     <h2>尋找您未來的喵喵</h2>
                     <div class="search">
-                        <select name="" id="">
+                        <select name="searchColor" id="searchColor">
                             <option value="">毛色</option>
                             <option value="">--請選擇--</option>
+                            <option value="">虎斑</option>
+                            <option value="">豹紋</option>
+                            <option value="">三花</option>
+                            <option value="">玳瑁</option>
+                            <option value="">純色</option>
                         </select>
-                        <select name="" id="">
+                        <select name="searchGender" id="searchGender">
                             <option value="">性別</option>
                             <option value="">--請選擇--</option>
+                            <option value="">男孩</option>
+                            <option value="">女孩</option>
                         </select>
-                        <select name="" id="">
+                        <select name="searchLoc" id="searchLoc">
                             <option value="">地區</option>
                             <option value="">--請選擇--</option>
                             <option value="">北部</option>
@@ -93,7 +100,7 @@
                             <option value="">東部</option>
                             <option value="">離島</option>
                         </select>
-                        <input type="text" placeholder="還有什麼喵喵的線索嗎?">
+                        <input type="text" placeholder="或輸入喵喵的名字">
                         <a href="#">
                             <i class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
                         </a>
@@ -110,15 +117,20 @@
                 </div>
                 <div class="game-point-top">
                     <div class="askBox">
-                        <img class="askBorder" src="../images/cat_askBorder.png" alt="askBorder">
                         <span id="questions">好好好 你咕咕咕咕咕咕咕咕雞雞叫</span>
                     </div>
                     <img class="cat-ask" src="../images/cat_ask.png" alt="cat ask">
                 </div>
                 <div class="game-point-bottom">
                     <img class="people" src="../images/cat_ask_people.png" alt="cat ask people">
-                    <button class="option-btn" id="option-btn-a"></button>
-                    <button class="option-btn" id="option-btn-b"></button>
+                    <div class="option-area option-area-a">
+                        <!-- <div class="option-a-front"></div>
+                        <div class="option-a-backed"></div> -->
+                    </div>
+                    <div class="option-area option-area-b">
+                        <!-- <div class="option-b-front"></div>
+                        <div class="option-b-backed"></div> -->
+                    </div>
                     <img class="hug" src="../images/cat_cat.png" alt="hug cat">
                 </div>
             </div>
@@ -255,8 +267,8 @@
                 </div>
                 <div class="half-item">
                     <div class="half-qty">
-                        <img src="../images/number5.png" alt="5">
-                        <img src="../images/number8.png" alt="8"> 隻喵喵
+                        <img src="../images/number3.png" alt="3">
+                        <img src="../images/number6.png" alt="6"> 隻喵喵
                     </div>
                     <div class="half-pic"></div>
                     <div class="half-text">
@@ -269,7 +281,7 @@
                 </div>
                 <div class="half-item">
                     <div class="half-qty">
-                        <img src="../images/number5.png" alt="5">
+                        <img src="../images/number2.png" alt="2">
                         <img src="../images/number8.png" alt="8"> 隻喵喵
                     </div>
                     <div class="half-pic"></div>
@@ -334,7 +346,10 @@
         <div class="section">
             <!-- 快速註冊 -->
             <div class="quick-signUp">
-
+                <form action="#" method="post">
+                    <table>
+                    </table>
+                </form>
             </div>
             <!-- footer -->
             <footer>
