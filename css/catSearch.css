@@ -678,14 +678,18 @@ body {
 .right .container1 h2 {
   text-align: center;
   font-size: 36px;
+  font-weight: bold;
   margin-top: 10px;
   margin-bottom: 20px;
   line-height: 26px;
+  letter-spacing: 15px;
+  text-align: center;
 }
 
 .right .container1 h2 small {
-  font-size: 12px;
+  font-size: 14px;
   color: #666;
+  letter-spacing: 30px;
 }
 
 .right .container1 .selectForm {
