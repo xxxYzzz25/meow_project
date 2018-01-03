@@ -4,39 +4,32 @@
     }
     .right {
         margin: 0;
-        .searchsection{
-            .flycat{
-                width: 100px;
-                top: 75%;
-            }
-        }
-        .item {
-            width: 80%;
-            margin: 50px auto 180px auto;
-            @include clear;
-            .text {
-                position: absolute;
-                top: 80%;
-                left: 45%;
-                width: 60%;
-                color: #ddd;
-            }
-            .tx1 {
-                background-color: rgba(66, 136, 115, 0.767);
-            }
-
-            .tx2 {
-                background-color: rgba(199, 79, 73, 0.767);
-            }
-
-            .tx3 {
-                background-color: rgba(139, 105, 73, 0.767);
-            }
-            .pic {
-                position: static;
-            }
-            .bg{
-                display: none;
+        .result {
+            .container {
+                .item {
+                    width: 80%;
+                    margin: 50px auto 100px auto;
+                    @include clear;
+                    .text {
+                        width: 100%;
+                        color: #ddd;
+                    }
+                    .tx1 {
+                        background-color: rgba(66, 136, 115, 0.767);
+                    }
+                    .tx2 {
+                        background-color: rgba(199, 79, 73, 0.767);
+                    }
+                    .tx3 {
+                        background-color: rgba(139, 105, 73, 0.767);
+                    }
+                    .pic {
+                        position: static;
+                    }
+                    .bg {
+                        display: none;
+                    }
+                }
             }
         }
     }

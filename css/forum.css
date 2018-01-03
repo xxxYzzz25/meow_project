@@ -20,27 +20,8 @@ time, mark, audio, video {
   vertical-align: top;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-=======
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
->>>>>>> 33894e628664098a6239e463647934bc5b626e6f
-=======
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   display: block;
 }
 
@@ -48,8 +29,6 @@ body {
   line-height: 1;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ol, ul {
   list-style: none;
 }
@@ -60,29 +39,6 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-=======
-ol,
-ul {
-=======
-ol, ul {
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-<<<<<<< HEAD
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
->>>>>>> 33894e628664098a6239e463647934bc5b626e6f
-=======
-blockquote:before, blockquote:after,
-q:before, q:after {
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   content: '';
   content: none;
 }
@@ -99,14 +55,7 @@ table {
 a {
   text-decoration: none;
 }
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
->>>>>>> 33894e628664098a6239e463647934bc5b626e6f
-
-=======
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 /* */
 header {
   background-color: #EAAF88;
@@ -388,38 +337,4 @@ td a span {
   }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /*# sourceMappingURL=forum.css.map */
-=======
-nav ul {
-  text-align: left;
-}
-
-header ul li:nth-child(5) {
-  background-color: #fff;
-  box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
-}
-
-header ul li:nth-child(5) a {
-  color: #333;
-  font-family: notoSans_r;
-}
-
-header ul li:nth-child(5):after {
-  z-index: -1;
-  content: '';
-  display: block;
-  width: 34px;
-  height: 34px;
-  background-color: #fff;
-  position: absolute;
-  top: 7px;
-  right: -17px;
-  transform: rotate(45deg);
-  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
-}
->>>>>>> 33894e628664098a6239e463647934bc5b626e6f
-=======
-/*# sourceMappingURL=forum.css.map */
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035

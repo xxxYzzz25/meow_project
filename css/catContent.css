@@ -219,8 +219,6 @@ footer span {
   top: -20px;
   padding: 10px;
 }
-<<<<<<< HEAD
-=======
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   footer {
@@ -239,7 +237,6 @@ footer span {
     text-align: center;
   }
 }
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 
 header {
   background-color: #eaaf88;
@@ -393,8 +390,6 @@ header .icons a:hover {
   right: 18px;
   content: "";
 }
-<<<<<<< HEAD
-=======
 
 .breadcrumbs {
   margin-bottom: 40px;
@@ -425,7 +420,6 @@ header .icons a:hover {
     border-color: transparent;
   }
 }
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 
 .fa-mars {
   color: deepskyblue;
@@ -843,13 +837,8 @@ header ul li:nth-child(1):after {
   }
   .right .container1 {
     padding-top: 0;
-<<<<<<< HEAD
-    padding-left: 50px;
-    padding-right: 50px;
-=======
     padding-left: 30px;
     padding-right: 30px;
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   }
   .right .container1 .catItem .img,
   .right .container1 .catItem figure {
@@ -960,18 +949,4 @@ header ul li:nth-child(1):after {
   }
 }
 
-<<<<<<< HEAD
-@media all and (max-width: 767px) {
-  footer {
-    margin-left: 0;
-    width: 100%;
-  }
-  footer span {
-    display: block;
-    text-align: center;
-  }
-}
-
-=======
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 /*# sourceMappingURL=catContent.css.map */

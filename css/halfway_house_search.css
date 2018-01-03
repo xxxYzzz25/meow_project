@@ -80,8 +80,6 @@ body {
 .fa-venus {
   color: #fc516d;
 }
-<<<<<<< HEAD
-=======
 
 .defaultBtn {
   font-size: 16px;
@@ -175,7 +173,6 @@ body {
     border-color: transparent;
   }
 }
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 
 .container {
   max-width: 991px;
@@ -324,8 +321,6 @@ footer span {
   top: -20px;
   padding: 10px;
 }
-<<<<<<< HEAD
-=======
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   footer {
@@ -344,7 +339,6 @@ footer span {
     text-align: center;
   }
 }
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 
 .btns .btn {
   font-size: 30px;
@@ -469,285 +463,6 @@ header ul li:nth-child(2):after {
   z-index: 0;
 }
 
-<<<<<<< HEAD
-.right .searchsection {
-  padding: 50px;
-  width: 70%;
-  margin: auto;
-  background-color: #FEF2E6;
-  box-shadow: 12px 10px 20px -10px #333;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-.right .searchsection .flycat {
-  width: 160px;
-  position: absolute;
-  top: 60%;
-  left: 70%;
-}
-
-.right .searchsection .dropholder {
-  width: 322px;
-  height: 60px;
-  margin: 80px auto 250px auto;
-  padding: 0 0 0 20px;
-  border-radius: 60px;
-  font: 18px arial;
-  color: #333;
-  position: relative;
-  box-sizing: border-box;
-  border: 2px solid #333;
-  animation: move 3s ease-in-out infinite;
-  position: relative;
-}
-
-.right .searchsection .dropholder:after {
-  content: "";
-  position: absolute;
-  width: 250px;
-  height: 5px;
-  background: transparent;
-  display: block;
-  top: 250px;
-  left: 37px;
-  margin: auto;
-  border-radius: 50%;
-  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
-  animation: moveShadow 3s ease-in-out infinite;
-}
-
-.right .searchsection .dropholder p {
-  float: left;
-  line-height: 60px;
-  font-size: 14px;
-}
-
-.right .searchsection .dropholder:hover,
-.right .searchsection .dropholder:hover:after {
-  animation-play-state: paused;
-}
-
-.right .searchsection .dropdown > p {
-  font-size: 14px;
-}
-
-.right .searchsection .dropdown,
-.right .searchsection .dropholder {
-  background-color: transparent;
-}
-
-.right .searchsection .dropdown {
-  margin-left: 20px;
-  float: left;
-  width: 221px;
-  padding: 0 0 0 20px;
-  border-radius: 0 60px 60px 0;
-  cursor: pointer;
-  height: 57px;
-  border-left: 2px solid #333;
-  position: relative;
-}
-
-.right .searchsection .dropdown:hover {
-  background-color: rgba(253, 222, 191, 0.9);
-  color: #333;
-}
-
-.right .searchsection .dropdown:after {
-  content: "▾";
-  font-size: 18px;
-  position: absolute;
-  right: 20px;
-  top: 18px;
-  display: block;
-}
-
-.right .searchsection .menu {
-  position: absolute;
-  right: 20px;
-  top: 70px;
-  width: 200px;
-  cursor: pointer;
-  opacity: 0;
-  transform-style: preserve-3d;
-  transform: rotatey(100deg) rotateX(5deg);
-  backface-visibility: hidden;
-  background-color: transparent;
-  border: 2px solid #333;
-  border-radius: 5px;
-  transition: all 0.8s;
-  z-index: 5;
-  overflow: hidden;
-}
-
-.right .searchsection .menu li {
-  padding: 10px 10px;
-  color: #333;
-  transition: all 0.3s;
-}
-
-.right .searchsection .menu li:hover {
-  background-color: rgba(253, 222, 191, 0.9);
-  color: #333;
-  padding-left: 20px;
-}
-
-.right .searchsection .menu li:last-child {
-  border: none;
-}
-
-.right .searchsection .showMenu {
-  opacity: 1;
-  transform: rotateX(0deg) translatey(0px);
-}
-
-.right .searchsection li > i {
-  float: left;
-  padding-top: 3px;
-  padding-right: 8px;
-}
-
-.right .searchsection p > i {
-  position: relative;
-  top: 2px;
-}
-
-.right .searchsection i {
-  opacity: 0.7;
-}
-
-@keyframes move {
-  0%,
-  100% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes moveShadow {
-  0%,
-  100% {
-    transform: translateY(10px);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.right .searchsection #content {
-  position: relative;
-  z-index: 999;
-  height: 40px;
-  width: 300px;
-  top: 60%;
-  left: 70%;
-}
-
-.right .searchsection #content.on {
-  animation-name: in-out;
-  animation-duration: 0.7s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-}
-
-.right .searchsection input {
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  border: 4px solid #333;
-  border-radius: 50%;
-  background: none;
-  color: #333;
-  font-size: 14px;
-  font-weight: 400;
-  outline: none;
-  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
-  transition-delay: 0.4s;
-  transform: translate(-100%, -50%);
-}
-
-.right .searchsection .search {
-  background: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  padding: 0;
-  border-radius: 100%;
-  outline: 0;
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-  transform: translate(-100%, -50%);
-}
-
-.right .searchsection .search:before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 4px;
-  background-color: #333;
-  transform: rotate(45deg);
-  margin-top: 26px;
-  margin-left: 17px;
-  transition: 0.2s ease-in-out;
-}
-
-.right .searchsection .close {
-  transition: 0.4s ease-in-out;
-  transition-delay: 0.4s;
-}
-
-.right .searchsection .close:before {
-  content: "";
-  position: absolute;
-  width: 27px;
-  height: 4px;
-  margin-top: -1px;
-  margin-left: -13px;
-  background-color: #333;
-  transform: rotate(45deg);
-  transition: 0.2s ease-in-out;
-}
-
-.right .searchsection .close:after {
-  content: "";
-  position: absolute;
-  width: 27px;
-  height: 4px;
-  background-color: #333;
-  margin-top: -1px;
-  margin-left: -13px;
-  cursor: pointer;
-  transform: rotate(-45deg);
-}
-
-.right .searchsection .square {
-  box-sizing: border-box;
-  padding: 0 40px 0 10px;
-  width: 350px;
-  height: 50px;
-  border-radius: 40px;
-  border: 2px solid #333;
-  background: none;
-  color: #333;
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: 400;
-  outline: 0;
-  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
-  transition-delay: 0.4s, 0s, 0.4s;
-  transform: translate(-100%, -50%);
-=======
 .right h2 {
   font-size: 36px;
   text-align: center;
@@ -814,38 +529,15 @@ header ul li:nth-child(2):after {
   line-height: 30px;
   letter-spacing: 4px;
   padding: 5px 15px;
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 }
 
-.right #selectBox {
-  display: none;
-}
-
-<<<<<<< HEAD
-.right h2 {
-  font-size: 30px;
-  text-align: center;
-  padding: 50px 0;
-  letter-spacing: 15px;
-  font-weight: bold;
-}
-
-.right .item {
-  width: 70%;
-  margin: 100px auto 200px 15%;
-  position: relative;
-}
-
-.right .item .text {
-=======
-.right .result .item {
-  width: 100%;
+.right .result .container .item {
+  width: 90%;
   margin: 200px auto 150px auto;
   position: relative;
 }
 
-.right .result .item .text {
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
+.right .result .container .item .text {
   width: 50%;
   background-color: #fff;
   font-size: 14px;
@@ -854,21 +546,13 @@ header ul li:nth-child(2):after {
   box-shadow: 12px 10px 20px -10px #333;
 }
 
-<<<<<<< HEAD
-.right .item .text h3 {
-=======
-.right .result .item .text h3 {
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
+.right .result .container .item .text h3 {
   font-size: 24px;
   padding: 8% 0;
   letter-spacing: 10px;
 }
 
-<<<<<<< HEAD
-.right .item .text a {
-=======
-.right .result .item .text a {
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
+.right .result .container .item .text a {
   display: flex;
   justify-content: flex-end;
   margin-right: 25px;
@@ -876,41 +560,22 @@ header ul li:nth-child(2):after {
   color: #EAAF88;
 }
 
-<<<<<<< HEAD
-.right .item .text a:hover {
+.right .result .container .item .text a:hover {
   color: #333;
 }
 
-.right .item .pic {
-  position: absolute;
-  top: -15px;
-  left: 48%;
-  box-shadow: 12px 10px 20px -10px #333;
-}
-
-.right .item .pic img {
-  width: 100%;
-}
-
-.right .item .bg {
-=======
-.right .result .item .text a:hover {
-  color: #333;
-}
-
-.right .result .item .pic {
+.right .result .container .item .pic {
   position: absolute;
   top: -40px;
   left: 50%;
   box-shadow: 12px 10px 20px -10px #333;
 }
 
-.right .result .item .pic img {
+.right .result .container .item .pic img {
   width: 100%;
 }
 
-.right .result .item .bg {
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
+.right .result .container .item .bg {
   position: absolute;
   top: 13%;
   left: 5%;
@@ -920,27 +585,15 @@ header ul li:nth-child(2):after {
   z-index: -3;
 }
 
-<<<<<<< HEAD
-.right .item .bg1 {
+.right .result .container .item .bg1 {
   background-color: rgba(66, 136, 115, 0.767);
 }
 
-.right .item .bg2 {
+.right .result .container .item .bg2 {
   background-color: rgba(199, 79, 73, 0.767);
 }
 
-.right .item .bg3 {
-=======
-.right .result .item .bg1 {
-  background-color: rgba(66, 136, 115, 0.767);
-}
-
-.right .result .item .bg2 {
-  background-color: rgba(199, 79, 73, 0.767);
-}
-
-.right .result .item .bg3 {
->>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
+.right .result .container .item .bg3 {
   background-color: rgba(139, 105, 73, 0.767);
 }
 
@@ -951,39 +604,32 @@ header ul li:nth-child(2):after {
   .right {
     margin: 0;
   }
-  .right .searchsection .flycat {
-    width: 100px;
-    top: 75%;
-  }
-  .right .item {
+  .right .result .container .item {
     width: 80%;
-    margin: 50px auto 180px auto;
+    margin: 50px auto 100px auto;
   }
-  .right .item:after {
+  .right .result .container .item:after {
     content: '';
     display: block;
     clear: both;
   }
-  .right .item .text {
-    position: absolute;
-    top: 80%;
-    left: 45%;
-    width: 60%;
+  .right .result .container .item .text {
+    width: 100%;
     color: #ddd;
   }
-  .right .item .tx1 {
+  .right .result .container .item .tx1 {
     background-color: rgba(66, 136, 115, 0.767);
   }
-  .right .item .tx2 {
+  .right .result .container .item .tx2 {
     background-color: rgba(199, 79, 73, 0.767);
   }
-  .right .item .tx3 {
+  .right .result .container .item .tx3 {
     background-color: rgba(139, 105, 73, 0.767);
   }
-  .right .item .pic {
+  .right .result .container .item .pic {
     position: static;
   }
-  .right .item .bg {
+  .right .result .container .item .bg {
     display: none;
   }
 }
@@ -995,43 +641,43 @@ header ul li:nth-child(2):after {
   .right {
     margin: 0;
   }
-  .right .searchsection #selectBox {
+  .right h2 {
+    padding: 30px 0;
+  }
+  .right .searchsection .container .formInsert {
+    margin: 25px 0;
+  }
+  .right .searchsection .container .formInsert .select {
     display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
   }
-  .right #content,
-  .right .dropholder,
-  .right .flycat {
-    display: none;
-  }
-  .right .item {
+  .right .result .container .item {
     width: 80%;
-    margin: 80px auto 180px auto;
+    margin: 50px auto 100px auto;
   }
-  .right .item:after {
+  .right .result .container .item:after {
     content: '';
     display: block;
     clear: both;
   }
-  .right .item .text {
-    position: absolute;
-    top: 60%;
-    left: 40%;
-    width: 70%;
+  .right .result .container .item .text {
+    width: 100%;
     color: #ddd;
   }
-  .right .item .tx1 {
+  .right .result .container .item .tx1 {
     background-color: rgba(66, 136, 115, 0.767);
   }
-  .right .item .tx2 {
+  .right .result .container .item .tx2 {
     background-color: rgba(199, 79, 73, 0.767);
   }
-  .right .item .tx3 {
+  .right .result .container .item .tx3 {
     background-color: rgba(139, 105, 73, 0.767);
   }
-  .right .item .pic {
+  .right .result .container .item .pic {
     position: static;
   }
-  .right .item .bg {
+  .right .result .container .item .bg {
     display: none;
   }
 }
