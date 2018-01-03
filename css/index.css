@@ -173,6 +173,29 @@ body {
     right: 18px;
     content: ""; }
 
+.breadcrumbs {
+  margin-bottom: 40px;
+  font-size: 18px; }
+  .breadcrumbs a {
+    font-size: 14px;
+    text-decoration: none;
+    border-width: 1px;
+    padding: 4px 10px;
+    text-align: center; }
+
+@media all and (max-width: 767px) {
+  .breadcrumbs {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center; }
+    .breadcrumbs a {
+      border: none;
+      padding: 0; }
+      .breadcrumbs a:hover {
+        color: #333;
+        background-color: transparent;
+        border-color: transparent; } }
+
 .container {
   max-width: 991px;
   margin: 0 auto; }
@@ -213,6 +236,19 @@ footer {
     position: relative;
     top: -20px;
     padding: 10px; }
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%; } }
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%; }
+    footer span {
+      display: block;
+      text-align: center; } }
 
 header {
   background-color: #eaaf88;
