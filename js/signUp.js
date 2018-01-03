@@ -13,3 +13,35 @@ window.addEventListener('load', function () {
         signUpForm.action = "#321";
     })
 });
+$(document).ready(function () {
+    moveCenter();
+    $(window).resize(function () {
+        moveCenter();
+    });
+    function moveCenter() {
+        winWidth = $(window).width();
+        winHeight = $(window).height();
+        divWidth = $('#loginBox').width();
+        divHeight = $('#loginBox').height();
+
+        $('#loginBox').css({
+            left: (winWidth - divWidth) / 2,
+            top: (winHeight - divHeight) / 2
+        });
+    }
+    $('.login').click(function (e) {
+        e.preventDefault();
+        $('.signUpLightboxBlack').css('display', 'block');
+    });
+    // $('.signUpLightboxBlack').click(function () {
+        // $('.signUpLightboxBlack').css('display', 'none');
+        // $('#loginBox').css('display', 'none');
+        // $('#menuControl').prop("checked", false);
+    // });
+    $('.cancel').click(function () {
+        $('.signUpLightboxBlack').css('display', 'none');
+    });
+    $('#signUpForm').submit(function () {
+        $('.signUpLightboxBlack').css('display', 'none');
+    });
+});

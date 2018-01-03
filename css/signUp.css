@@ -227,7 +227,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-  z-index: 9999999;
+  z-index: 999;
 }
 
 header .logo {
@@ -311,11 +311,12 @@ header .icons a:hover {
 }
 
 header ul li:nth-child(5) {
-  background-color: #eaaf88;
+  background-color: #fff;
+  box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
 }
 
 header ul li:nth-child(5) a {
-  color: #fff;
+  color: #333;
   font-family: notoSans_r;
 }
 
@@ -325,27 +326,135 @@ header ul li:nth-child(5):after {
   display: block;
   width: 34px;
   height: 34px;
-  background-color: #eaaf88;
+  background-color: #fff;
   position: absolute;
   top: 7px;
   right: -17px;
   transform: rotate(45deg);
+  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
 }
 
-.c1 {
-  height: 50vh;
-  background-color: #666;
+.right {
+  margin-left: 200px;
 }
 
-.c1 .c11 {
-  height: 30vh;
-  background-color: #226;
+.right:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
-.c2 {
-  width: 300px;
-  height: 300px;
-  background-color: #339;
+.right h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 50px 0;
+}
+
+.right .leftselect {
+  width: 30%;
+  float: left;
+  padding-left: 50px;
+}
+
+.right .leftselect .leftlist {
+  width: 207px;
+}
+
+.right .leftselect .leftlist li {
+  list-style: none;
+  margin: 0 10px 0 10px;
+  padding: 10px 0 10px 10px;
+  font-size: 14px;
+  border-bottom: 1px dotted #999999;
+  color: #c2740f;
+  cursor: pointer;
+}
+
+.right .leftselect .leftlist li:hover {
+  color: #0f71c2;
+}
+
+.right .leftselect .leftbottom {
+  margin-bottom: 260px;
+}
+
+.right .content {
+  width: 60%;
+  float: left;
+  margin-bottom: 50px;
+}
+
+.right .content h4 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.right .content .memInfo form {
+  width: 80%;
+  margin: auto;
+}
+
+.right .content .memInfo form tr {
+  width: 100%;
+  text-align: center;
+}
+
+.right .content .memInfo form th {
+  width: 35%;
+  text-align: right;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.right .content .memInfo form td {
+  width: 63%;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.right .content .memOrderlist h5 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.right .content .memOrderlist p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.right .content .memOrderlist span {
+  color: #eb2f2f;
+  font-size: 14px;
+}
+
+.right .content .memOrderlist form {
+  width: 60%;
+  margin: 30px auto;
+  font-size: 14px;
+}
+
+.right .content .memOrderlist form tr {
+  text-align: center;
+}
+
+.right .content .memOrderlist form th {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.right .content .memOrderlist form td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.right .content .memOrderlist form td .fa-trash {
+  font-size: 16.8px;
+  color: firebrick;
+  cursor: pointer;
 }
 
 .signUpLightboxBlack {
@@ -353,13 +462,21 @@ header ul li:nth-child(5):after {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 999999999999;
+  z-index: 1000;
 }
 
 .signUpLightboxBlack .signUpLightbox {
   width: 800px;
   height: 600px;
-  position: fixed;
+  z-index: 1001;
+  position: absolute;
+}
+
+.signUpLightboxBlack .signUpLightbox .cancel {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
 }
 
 .signUpLightboxBlack .signUpLightbox .bgImg {
@@ -435,7 +552,7 @@ header ul li:nth-child(5):after {
 }
 
 .signUpLightboxBlack .signUpLightbox .formShape form .formBtn {
-  width: 200px;
+  width: 240px;
   border: 1px solid #333;
   display: block;
   line-height: 1.5em;
@@ -500,7 +617,6 @@ header ul li:nth-child(5):after {
   display: inline-block;
   width: 100px;
   font-size: 14px;
-  border-width: 2px;
 }
 
 /*# sourceMappingURL=signUp.css.map */
