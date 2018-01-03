@@ -1,26 +1,27 @@
-footer{
+@import '../mixins/_rwd.scss';
+footer {
     background-color: #f5eae3;
     margin-left: 200px;
     padding: $gap;
-    .follow{
+    .follow {
         padding: $gap;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    nav{
+    nav {
         margin: auto;
-        ul{
+        ul {
             display: flex;
             justify-content: space-around;
-            li{
+            li {
                 width: 20%;
                 margin: $gap;
-                &:hover{
+                &:hover {
                     transform: translateY(-3px);
                     transition: .35s;
                 }
-                a{
+                a {
                     text-align: center;
                     border: 1px solid #333;
                     text-decoration: none;
@@ -32,10 +33,11 @@ footer{
             }
         }
     }
-    span{
+    span {
         display: inline-block;
         position: relative;
         top: -20px;
         padding: 10px;
     }
 }
+@import '../respond/_footerSmall.scss';

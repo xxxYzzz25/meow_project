@@ -224,6 +224,39 @@ body {
   right: 18px;
   content: "";
 }
+<<<<<<< HEAD
+=======
+
+.breadcrumbs {
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.breadcrumbs a {
+  font-size: 14px;
+  text-decoration: none;
+  border-width: 1px;
+  padding: 4px 10px;
+  text-align: center;
+}
+
+@media all and (max-width: 767px) {
+  .breadcrumbs {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .breadcrumbs a {
+    border: none;
+    padding: 0;
+  }
+  .breadcrumbs a:hover {
+    color: #333;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 
 .container {
   max-width: 991px;
@@ -282,6 +315,27 @@ footer span {
   top: -20px;
   padding: 10px;
 }
+<<<<<<< HEAD
+=======
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  footer span {
+    display: block;
+    text-align: center;
+  }
+}
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 
 header {
   background-color: #eaaf88;
@@ -548,25 +602,41 @@ header .icons a:hover {
 }
 
 .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list {
+<<<<<<< HEAD
   background-image: url(../images/catcat_171225_0011.jpg);
+=======
+  background-image: url(../images/catcat_171225_0010.jpg);
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list {
+<<<<<<< HEAD
   background-image: url(../images/catcat_171225_0010.jpg);
+=======
+  background-image: url(../images/catcat_171225_0011.jpg);
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+<<<<<<< HEAD
 .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
+=======
+.pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   position: relative;
   top: 50%;
 }
 
+<<<<<<< HEAD
 .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
+=======
+.pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   position: relative;
   top: 10%;
 }
@@ -576,7 +646,11 @@ header .icons a:hover {
   height: 60px;
   background-color: rgba(0, 0, 0, 0.411);
   position: absolute;
+<<<<<<< HEAD
   top: 40vh;
+=======
+  top: 70vh;
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   z-index: 666;
 }
 
@@ -751,11 +825,19 @@ header .icons a:hover {
   height: 100vh;
   background-color: #EAAF88;
   margin-left: 200px;
+<<<<<<< HEAD
   box-shadow: 20px 20px #333 inset,-20px -20px #333 inset;
 }
 
 .game-point .game-point-title {
   height: 20vh;
+=======
+  box-shadow: 20px 20px #333 inset, -20px -20px #333 inset;
+}
+
+.game-point .game-point-title {
+  height: 15vh;
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -769,13 +851,23 @@ header .icons a:hover {
 .game-point .game-point-top {
   width: 80%;
   margin: auto;
+<<<<<<< HEAD
   height: 35vh;
   border-bottom: 3px solid #fff;
   position: relative;
+=======
+  height: 30vh;
+  border-bottom: 3px solid #fff;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 }
 
 .game-point .game-point-top .askBox {
   position: relative;
+<<<<<<< HEAD
   height: 35vh;
 }
 
@@ -799,6 +891,48 @@ header .icons a:hover {
   bottom: 0;
   max-width: 80%;
   max-height: 80%;
+=======
+  height: 30vh;
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #fff;
+  border-radius: 20% 60% 30% 60%;
+  background-color: #EAAF88;
+  bottom: 20px;
+}
+
+.game-point .game-point-top .askBox:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 60% 40% 50% 60%;
+  border: 3px solid #fff;
+  right: -40px;
+  top: 50%;
+}
+
+.game-point .game-point-top .askBox:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 60% 40% 50% 60%;
+  border: 3px solid #fff;
+  right: -55px;
+  top: 35%;
+}
+
+.game-point .game-point-top .cat-ask {
+  max-width: 80%;
+  max-height: 80%;
+  align-self: flex-end;
+  margin-left: 60px;
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 }
 
 .game-point .game-point-bottom {
@@ -806,15 +940,23 @@ header .icons a:hover {
   width: 90%;
   margin: auto;
   display: flex;
+<<<<<<< HEAD
   height: 45vh;
   justify-content: space-between;
   align-items: flex-end;
   padding-top: 100px;
+=======
+  height: 55vh;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 40px;
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
   padding-bottom: 20px;
 }
 
 .game-point .game-point-bottom .people {
   position: relative;
+<<<<<<< HEAD
   left: 40%;
   z-index: 2;
   width: 100px;
@@ -823,14 +965,36 @@ header .icons a:hover {
 
 .game-point .game-point-bottom .option-btn {
   align-self: flex-start;
+=======
+  z-index: 2;
+  width: 100px;
+  height: 105px;
+  left: 0;
+}
+
+.game-point .game-point-bottom #optionA, .game-point .game-point-bottom #optionB {
+  align-self: flex-start;
+  width: 30%;
+  height: 250px;
+  position: relative;
+  background-color: #369;
+  text-align: center;
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 }
 
 .game-point .game-point-bottom .hug {
   position: relative;
+<<<<<<< HEAD
   right: 40%;
   width: 50px;
   height: 90px;
   z-index: 1;
+=======
+  width: 50px;
+  height: 90px;
+  z-index: 1;
+  right: 0;
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 }
 
 #loading {
@@ -851,4 +1015,209 @@ header .icons a:hover {
   left: calc(50% - 100px);
 }
 
+<<<<<<< HEAD
+=======
+.signUpLightboxBlack {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  display: none;
+}
+
+.signUpLightbox {
+  z-index: 1001;
+  position: fixed;
+  display: none;
+}
+
+.signUpLightbox .cancel {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  z-index: 1002;
+  cursor: pointer;
+}
+
+.signUpLightbox .bgImg {
+  width: 400px;
+  height: 600px;
+  float: left;
+  background-color: #333;
+  border-radius: 10px 0 0 10px;
+  background-image: url("../images/memberBG.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.signUpLightbox .formShape {
+  background-color: #91989f;
+  width: 400px;
+  height: 600px;
+  float: left;
+  border-radius: 0 10px 10px 0;
+  position: relative;
+}
+
+.signUpLightbox .formShape .chioce {
+  text-align: center;
+}
+
+.signUpLightbox .formShape .chioce:last-child {
+  margin-top: 20px;
+}
+
+.signUpLightbox .formShape .chioce button {
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  line-height: 2em;
+  transition: .1s;
+  outline: none;
+  color: rgba(245, 245, 245, 0.7);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.signUpLightbox .formShape .chioce button:hover {
+  color: #fff;
+}
+
+.signUpLightbox .formShape .chioce .selected {
+  border-bottom: 1px solid #eaaf88;
+  color: #fff;
+}
+
+.signUpLightbox .formShape form {
+  padding: 50px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: '../fonts/NotoSansCJKtc-Thin.otf';
+}
+
+.signUpLightbox .formShape form label {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  display: block;
+  font-size: 18px;
+}
+
+.signUpLightbox .formShape form label:first-child {
+  margin-top: 0;
+}
+
+.signUpLightbox .formShape form label small {
+  font-size: 12px;
+  color: rgba(245, 245, 245, 0.7);
+}
+
+.signUpLightbox .formShape form .formBtn {
+  width: 240px;
+  border: 1px solid #333;
+  display: block;
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 1000px;
+  letter-spacing: 1px;
+  transition: .3s;
+  color: #333;
+  margin: 0 auto 30px;
+}
+
+.signUpLightbox .formShape form .formBtn:hover {
+  background-color: #eaaf88;
+  border: 1px solid #eaaf88;
+  color: #fff;
+}
+
+.signUpLightbox .formShape form input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.7);
+  width: 100%;
+}
+
+.signUpLightbox .formShape form input:-ms-input-placeholder {
+  line-height: 1em;
+  padding: 5px 15px;
+  color: rgba(245, 245, 245, 0.7);
+  font-style: italic;
+  font-size: 12px;
+}
+
+.signUpLightbox .formShape form input:-moz-placeholder {
+  line-height: 1em;
+  padding: 5px 15px;
+  color: rgba(245, 245, 245, 0.7);
+  font-style: italic;
+  font-size: 12px;
+}
+
+.signUpLightbox .formShape form input::-moz-placeholder {
+  line-height: 1em;
+  padding: 5px 15px;
+  color: rgba(245, 245, 245, 0.7);
+  font-style: italic;
+  font-size: 12px;
+}
+
+.signUpLightbox .formShape form input::-webkit-input-placeholder {
+  line-height: 1em;
+  padding: 5px 15px;
+  color: rgba(245, 245, 245, 0.7);
+  font-style: italic;
+  font-size: 12px;
+}
+
+.signUpLightbox .formShape form #userPhoto {
+  display: none;
+}
+
+.signUpLightbox .formShape form .formSubmitBtn {
+  display: inline-block;
+  width: 100px;
+  font-size: 14px;
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .signUpLightbox .bgImg {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  .signUpLightbox .formShape {
+    border-radius: 10px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .signUpLightbox .bgImg {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  .signUpLightbox .formShape {
+    width: 300px;
+    border-radius: 10px;
+  }
+  .signUpLightbox .formShape .chioce button {
+    font-size: 14px;
+  }
+  .signUpLightbox .formShape form .formBtn {
+    width: 180px;
+    font-size: 14px;
+  }
+  .signUpLightbox .formShape form .formSubmitBtn {
+    display: inline-block;
+    width: 80px;
+    font-size: 14px;
+  }
+}
+
+>>>>>>> 22b3feac623e334b1e3ff9161f88910418e0f035
 /*# sourceMappingURL=index.css.map */

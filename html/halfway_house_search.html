@@ -34,10 +34,10 @@
                     <a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="./member.html">討論區</a>
+                    <a href="./forum.html">討論區</a>
                 </li>
                 <li>
-                    <a href="./forum.html">會員專區</a>
+                    <a href="./member.html">會員專區</a>
                 </li>
             </ul>
         </nav>
@@ -59,42 +59,23 @@
 
         <div class="searchsection">
             <div class="container">
-                <img src="../images/giphy2.gif" alt="flycat" class="flycat">
-                <form id="content">
-                    <input type="text" name="input" class="input">
-                    <button type="reset" class="search"></button>
-                </form>
-                <div class="dropholder">
-                    <p>Select</p>
-                    <div class="dropdown">
-                        <p>
-                            <i class="fa fa-foursquare"></i> Please Rate</p>
-                    </div>
-                    <ul class="menu">
-                        <li>
-                            <i class="fa fa-star"></i>北部</li>
-                        <li>
-                            <i class="fa fa-star"></i>中部</li>
-                        <li>
-                            <i class="fa fa-star"></i>南部</li>
-                        <li>
-                            <i class="fa fa-star"></i>東部</li>
-                        <li>
-                            <i class="fa fa-star"></i>離島</li>
-                    </ul>
+                <div class="formInsert">
+                    <select name="searchLoc" class="select defaultBtn">
+                        <option value="">地區</option>
+                        <option value="">--請選擇--</option>
+                        <option value="">北部</option>
+                        <option value="">中部</option>
+                        <option value="">南部</option>
+                        <option value="">東部</option>
+                        <option value="">離島</option>
+                    </select>
+                    <input type="text" class="searchBar condition1" placeholder="你知道心儀喵喵的名字嗎？">
+                    <button type="submit" class="searchBtn defaultBtn">
+                        <i class="fa fa-search " aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
-            <select id="selectBox">
-                <option>請選擇你想搜尋的中途之家地區</option>
-                <option>北部</option>
-                <option>中部</option>
-                <option>南部</option>
-                <option>東部</option>
-                <option>離島</option>
-                <select>
         </div>
-        <script src="../js/halfway/dropdown.js"></script>
-        <script src="../js/halfway/expand.js"></script>
 
         <div class="result">
             <div class="container">
