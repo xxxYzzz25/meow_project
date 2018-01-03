@@ -420,7 +420,6 @@
         padding-bottom: 20px;
         .people {
             position: relative;
-            bottom: 20px;
             z-index: 2;
             width: 100px;
             height: 105px;
@@ -428,10 +427,18 @@
         }
         .option-area {
             align-self: flex-start;
+            height: 150px;
+            position: relative;
+        }
+        .option-a-front,.option-a-backed,.option-b-front,.option-b-backed{
+            padding: 60px;
+            background-color: #369;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         .hug {
             position: relative;
-            bottom: 20px;
             width: 50px;
             height: 90px;
             z-index: 1;

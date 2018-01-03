@@ -80,18 +80,34 @@ window.addEventListener('load', function () {
 
     function correct() {
         bingo++;
-        if(bingo%2 === 1){
+        if (bingo % 2 === 1) {
+            if (bingo > 8) {
+                Object.assign(people, {
+                    style: 'left:' + ((width * bingo) - (peopleWidth)) + 'px;transform: rotate(0)'
+                });
+            } else {
+                Object.assign(people, {
+                    style: 'left:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform: rotate(-25deg)'
+                });
+            }
+        } else if (bingo > 8) {
             Object.assign(people, {
-                style: 'left:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform: rotate(-25deg)'
+                style: 'left:' + ((width * bingo) - (peopleWidth)) + 'px;transform: rotate(0)'
             });
-        }else{
+        } else {
             Object.assign(people, {
                 style: 'left:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform: rotate(0)'
             });
         }
-        Object.assign(hug, {
-            style: 'right:' + ((width * bingo) - (peopleWidth / 2)) + 'px;'
-        });
+        if(bingo > 8){
+            Object.assign(hug, {
+                style: 'right:' + ((width * bingo) - (peopleWidth / 2)) + 'px;transform: rotate(-35deg) translateY(-15px);'
+            });
+        }else{
+            Object.assign(hug, {
+                style: 'right:' + ((width * bingo) - (peopleWidth / 2)) + 'px;'
+            });
+        }
     }
 
     function err() {

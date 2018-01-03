@@ -616,16 +616,22 @@ header {
     padding-bottom: 20px; }
     .game-point .game-point-bottom .people {
       position: relative;
-      bottom: 20px;
       z-index: 2;
       width: 100px;
       height: 105px;
       left: 0; }
     .game-point .game-point-bottom .option-area {
-      align-self: flex-start; }
+      align-self: flex-start;
+      height: 150px;
+      position: relative; }
+    .game-point .game-point-bottom .option-a-front, .game-point .game-point-bottom .option-a-backed, .game-point .game-point-bottom .option-b-front, .game-point .game-point-bottom .option-b-backed {
+      padding: 60px;
+      background-color: #369;
+      position: absolute;
+      top: 0;
+      left: 0; }
     .game-point .game-point-bottom .hug {
       position: relative;
-      bottom: 20px;
       width: 50px;
       height: 90px;
       z-index: 1;
