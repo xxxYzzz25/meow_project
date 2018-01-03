@@ -230,6 +230,17 @@ footer span {
   padding: 10px;
 }
 
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  footer span {
+    display: block;
+    text-align: center;
+  }
+}
+
 .btns .btn {
   font-size: 30px;
   display: inline-block;

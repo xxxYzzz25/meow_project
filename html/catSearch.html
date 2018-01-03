@@ -112,10 +112,10 @@
 	</header>
 	<div class="right">
 		<div class="container container1">
-			<h1>尋喵
+			<h2>尋喵
 				<br>
 				<small class="selectTitle">搜尋你的喵喵</small>
-			</h1>
+			</h2>
 			<form method="POST" action="#" class='selectForm'>
 				<div>
 					<div class="formInsert">
@@ -213,15 +213,11 @@
 			</form>
 			<script src="../js/cat/advanceSearch_JQuery.js"></script>
 			<div class="catPic">
-				<div class="sort">
-					<a href="#" class="defaultBtn">最新刊登
-						<i class="fa fa-angle-down" aria-hidden="true"></i>
-					</a>
-					<a href="#" class="defaultBtn">評價最高
-						<i class="fa fa-angle-down" aria-hidden="true"></i>
-					</a>
-				</div>
-
+				<select name="sortCat" id="sortCat">
+					<option value="0"><--排列依序--></option>
+					<option value="1">刊登日期從新到舊</option>
+					<option value="2">刊登日期從舊到新</option>
+				</select>
 				<picture class="catItem catItem_1">
 					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
 					<div class="catContent">
@@ -236,6 +232,7 @@
 					</div>
 					<figure>
 						<h3>喵航航</h3>
+						<br>新北市
 						<br>約2017/09月份出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -256,6 +253,7 @@
 					</div>
 					<figure>
 						<h3>喵辛巴</h3>
+						<br>新北市
 						<br>約2015年出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -276,6 +274,7 @@
 					</div>
 					<figure>
 						<h3>喵芽芽</h3>
+						<br>臺北市
 						<br>約2017/09月份出生
 						<br>女生
 						<i class="fa fa-venus" aria-hidden="true"></i>
@@ -296,6 +295,7 @@
 					</div>
 					<figure>
 						<h3>喵蝦米</h3>
+						<br>新竹市
 						<br>約2017/01月份出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -316,6 +316,7 @@
 					</div>
 					<figure>
 						<h3>喵絨絨</h3>
+						<br>桃園市
 						<br>約2017/02月份出生
 						<br>女生
 						<i class="fa fa-venus" aria-hidden="true"></i>
@@ -336,6 +337,7 @@
 					</div>
 					<figure>
 						<h3>喵咪醬</h3>
+						<br>高雄市
 						<br>約2017/05月份出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -356,6 +358,7 @@
 					</div>
 					<figure>
 						<h3>喵皮皮</h3>
+						<br>台南市
 						<br>約2015年出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -376,6 +379,7 @@
 					</div>
 					<figure>
 						<h3>喵默默</h3>
+						<br>台東縣
 						<br>約2017/09月份出生
 						<br>女生
 						<i class="fa fa-venus" aria-hidden="true"></i>
@@ -396,6 +400,7 @@
 					</div>
 					<figure>
 						<h3>喵追風</h3>
+						<br>連江縣
 						<br>約2015/出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
