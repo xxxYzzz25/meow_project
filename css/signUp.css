@@ -463,23 +463,26 @@ header ul li:nth-child(5):after {
   height: 100vh;
   position: fixed;
   z-index: 1000;
+  display: none;
 }
 
-.signUpLightboxBlack .signUpLightbox {
+.signUpLightbox {
   width: 800px;
   height: 600px;
   z-index: 1001;
-  position: absolute;
+  position: fixed;
+  display: none;
 }
 
-.signUpLightboxBlack .signUpLightbox .cancel {
+.signUpLightbox .cancel {
   position: absolute;
   top: 5px;
   right: 5px;
   font-size: 20px;
+  z-index: 1002;
 }
 
-.signUpLightboxBlack .signUpLightbox .bgImg {
+.signUpLightbox .bgImg {
   width: 400px;
   height: 600px;
   float: left;
@@ -491,7 +494,7 @@ header ul li:nth-child(5):after {
   background-repeat: no-repeat;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape {
+.signUpLightbox .formShape {
   background-color: #91989f;
   width: 400px;
   height: 600px;
@@ -500,15 +503,15 @@ header ul li:nth-child(5):after {
   position: relative;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape .chioce {
+.signUpLightbox .formShape .chioce {
   text-align: center;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape .chioce:last-child {
+.signUpLightbox .formShape .chioce:last-child {
   margin-top: 20px;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape .chioce button {
+.signUpLightbox .formShape .chioce button {
   background-color: transparent;
   border: none;
   display: inline-block;
@@ -519,39 +522,39 @@ header ul li:nth-child(5):after {
   font-size: 30px;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape .chioce button:hover {
+.signUpLightbox .formShape .chioce button:hover {
   color: #fff;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape .chioce .selected {
+.signUpLightbox .formShape .chioce .selected {
   border-bottom: 1px solid #eaaf88;
   color: #fff;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form {
+.signUpLightbox .formShape form {
   padding: 50px;
   margin: 0 auto;
   color: #fff;
   font-family: '../fonts/NotoSansCJKtc-Thin.otf';
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form label {
+.signUpLightbox .formShape form label {
   margin-top: 10px;
   margin-bottom: 4px;
   display: block;
   font-size: 18px;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form label:first-child {
+.signUpLightbox .formShape form label:first-child {
   margin-top: 0;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form label small {
+.signUpLightbox .formShape form label small {
   font-size: 12px;
   color: rgba(245, 245, 245, 0.7);
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form .formBtn {
+.signUpLightbox .formShape form .formBtn {
   width: 240px;
   border: 1px solid #333;
   display: block;
@@ -564,20 +567,20 @@ header ul li:nth-child(5):after {
   margin: 0 auto 30px;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form .formBtn:hover {
+.signUpLightbox .formShape form .formBtn:hover {
   background-color: #eaaf88;
   border: 1px solid #eaaf88;
   color: #fff;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form input {
+.signUpLightbox .formShape form input {
   border: none;
   background-color: transparent;
   border-bottom: 1px solid rgba(245, 245, 245, 0.7);
   width: 100%;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form input:-ms-input-placeholder {
+.signUpLightbox .formShape form input:-ms-input-placeholder {
   line-height: 1em;
   padding: 5px 15px;
   color: rgba(245, 245, 245, 0.7);
@@ -585,7 +588,7 @@ header ul li:nth-child(5):after {
   font-size: 12px;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form input:-moz-placeholder {
+.signUpLightbox .formShape form input:-moz-placeholder {
   line-height: 1em;
   padding: 5px 15px;
   color: rgba(245, 245, 245, 0.7);
@@ -593,7 +596,7 @@ header ul li:nth-child(5):after {
   font-size: 12px;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form input::-moz-placeholder {
+.signUpLightbox .formShape form input::-moz-placeholder {
   line-height: 1em;
   padding: 5px 15px;
   color: rgba(245, 245, 245, 0.7);
@@ -601,7 +604,7 @@ header ul li:nth-child(5):after {
   font-size: 12px;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form input::-webkit-input-placeholder {
+.signUpLightbox .formShape form input::-webkit-input-placeholder {
   line-height: 1em;
   padding: 5px 15px;
   color: rgba(245, 245, 245, 0.7);
@@ -609,11 +612,11 @@ header ul li:nth-child(5):after {
   font-size: 12px;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form #userPhoto {
+.signUpLightbox .formShape form #userPhoto {
   display: none;
 }
 
-.signUpLightboxBlack .signUpLightbox .formShape form .formSubmitBtn {
+.signUpLightbox .formShape form .formSubmitBtn {
   display: inline-block;
   width: 100px;
   font-size: 14px;

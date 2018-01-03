@@ -1,0 +1,340 @@
+/* rest css  */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: top;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* */
+header {
+  background-color: #EAAF88;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  padding-left: 15px;
+  box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+  z-index: 9999999;
+}
+
+header .logo {
+  position: relative;
+  top: 70px;
+  width: 180px;
+  text-align: center;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header .logo img {
+  width: 90%;
+}
+
+header ul {
+  position: absolute;
+  bottom: 180px;
+}
+
+header ul li {
+  margin: 1px 0;
+  position: relative;
+}
+
+header ul li:hover {
+  background-color: #fff;
+  box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
+  transition: .3s;
+}
+
+header ul li:hover a {
+  color: #000;
+  transition: .3s;
+}
+
+header ul li a {
+  width: 185px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 20px;
+}
+
+header ul .action a {
+  color: #000;
+}
+
+header .icons {
+  width: 180px;
+  display: flex;
+  padding: 15px;
+  padding-right: 20px;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 40px;
+}
+
+header .icons #like {
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  color: #d33;
+  top: -17px;
+  right: -25px;
+  font-family: notoSans_b;
+}
+
+header .icons a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header .icons a:hover {
+  transform: scale(1.15);
+  transition: .3s;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+body {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  min-height: 100%;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.action {
+  background-color: #fff;
+}
+
+.action::after {
+  z-index: -1;
+  content: '';
+  display: block;
+  width: 34px;
+  height: 34px;
+  background-color: #fff;
+  position: absolute;
+  top: 7px;
+  right: -17px;
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
+}
+
+.container {
+  max-width: 991px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container-right {
+  margin-top: 50px;
+}
+
+.container-table {
+  padding: 20px 30px;
+}
+
+.forum-title {
+  margin-left: 200px;
+}
+
+.forum-title li {
+  padding: 5px 5px;
+  border: 2px solid #eee;
+  background-color: rgba(241, 209, 146, 0.815);
+  width: 30%;
+  display: inline-block;
+}
+
+table {
+  display: none;
+  table-layout: fixed;
+  margin-left: 200px;
+  width: 77%;
+  text-align: left;
+  border: 1px solid rgba(241, 209, 146, 0.815);
+}
+
+tr {
+  border-bottom: 1px #ccc dashed;
+  background-color: #fff;
+}
+
+td {
+  width: 28%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  white-space: nowrap;
+  display: inline-block;
+  padding: 5px;
+}
+
+td a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td a span {
+  margin-right: 10px;
+}
+
+.t-post {
+  width: 41%;
+}
+
+.dplay {
+  display: inline-table;
+}
+
+.postfrom {
+  margin-left: 235px;
+  width: 72.5%;
+  background-color: red;
+  text-align: left;
+  background-color: #eee;
+  border: 1px solid rgba(241, 209, 146, 0.815);
+}
+
+.postfrom p {
+  padding: 5px;
+  background-color: #ccc;
+}
+
+.post-select {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.post-select input {
+  width: 87.5%;
+}
+
+.text-tar {
+  padding: 5px;
+}
+
+.text-tar textarea {
+  resize: none;
+  width: 99.9%;
+}
+
+.btns {
+  padding: 5px;
+}
+
+@media screen and (max-width: 991px) {
+  header {
+    display: none;
+  }
+  table {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .forum-title {
+    margin: 0 auto;
+  }
+  .forum-title li {
+    width: 25%;
+  }
+  .postfrom {
+    margin: 0 auto;
+    width: 75%;
+  }
+  .post-select input {
+    margin-top: 5px;
+    width: 87.5%;
+  }
+}
+
+@media screen and (max-width: 658px) {
+  h2 {
+    font-size: 16px;
+  }
+  table {
+    width: 85%;
+  }
+  td {
+    width: 30%;
+    text-align: right;
+  }
+  .t-post {
+    text-align: left;
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  table {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=forum.css.map */
