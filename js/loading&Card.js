@@ -3,13 +3,10 @@ let  createCard = function() {
     let wait = document.getElementById('wait');
     let findQty = '678';
     let waitQty = '769';
-    for (const iterator of findQty) {
-        createNumber(find, iterator);
-    }
-    for (const iterator of waitQty) {
-        createNumber(wait, iterator);
-    }
-
+    findQty = findQty.split('');
+    waitQty = waitQty.split('');
+    findQty.reverse();
+    waitQty.reverse();
     function createNumber(obj, qty) { //stage > content > (ul)icon > (li)stage-1-icon-$ > (span*2)stage-1-icon-top&bottom
         let stage = document.createElement('div');
         let content = document.createElement('div');
@@ -56,6 +53,12 @@ let  createCard = function() {
         content.appendChild(icon);
         stage.appendChild(content);
         obj.insertBefore(stage,obj.firstChild);
+    }
+    for (const iterator of findQty) {
+        createNumber(find, iterator);
+    }
+    for (const iterator of waitQty) {
+        createNumber(wait, iterator);
     }
 }
 window.addEventListener('load', function () {
