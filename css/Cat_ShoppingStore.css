@@ -3,10 +3,7 @@ body {
 	background-color: #eee;
 	font-size: 14px;
 	background-image: url(../img/marble.jpg);
-<<<<<<< HEAD
 	line-height: 22px;
-=======
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 }
 
 @media only screen and (max-width: 768px) {

@@ -61,6 +61,7 @@ table {
 
 @font-face {
   font-family: notoSans_b;
+<<<<<<< HEAD
   src: url("../fonts/NotoSansCJKtc-Black.otf");
 }
 
@@ -72,6 +73,16 @@ body {
   font-family: notoSans;
   letter-spacing: 3px;
 }
+=======
+  src: url("../fonts/NotoSansCJKtc-Black.otf"); }
+
+input, select {
+  font-family: notoSans_r; }
+
+body {
+  font-family: notoSans;
+  letter-spacing: 3px; }
+>>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 .container {
   max-width: 991px;
@@ -231,6 +242,7 @@ footer span {
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
+<<<<<<< HEAD
     width: 100%;
   }
   footer span {
@@ -238,6 +250,12 @@ footer span {
     text-align: center;
   }
 }
+=======
+    width: 100%; }
+    footer span {
+      display: block;
+      text-align: center; } }
+>>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 .btns .btn {
   font-size: 30px;
@@ -300,6 +318,7 @@ footer span {
   background-color: #3cf;
 }
 
+<<<<<<< HEAD
 .btns .btn.twitter:hover {
   color: #fff;
 }
@@ -327,6 +346,14 @@ footer span {
 .btns .btn.youtube:hover {
   color: #fff;
 }
+=======
+.btns .btn.youtube {
+  color: #f00; }
+  .btns .btn.youtube:before {
+    background-color: #f00; }
+  .btns .btn.youtube:hover {
+    color: #fff; }
+>>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 header ul li:nth-child(5) {
   background-color: #fff;
@@ -335,8 +362,12 @@ header ul li:nth-child(5) {
 
 header ul li:nth-child(5) a {
   color: #333;
+<<<<<<< HEAD
   font-family: notoSans_r;
 }
+=======
+  font-family: notoSans_r; }
+>>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 header ul li:nth-child(5):after {
   z-index: -1;
@@ -353,6 +384,7 @@ header ul li:nth-child(5):after {
 }
 
 .right {
+<<<<<<< HEAD
   margin-left: 200px;
 }
 
@@ -476,3 +508,83 @@ header ul li:nth-child(5):after {
 }
 
 /*# sourceMappingURL=member.css.map */
+=======
+  margin-left: 200px; }
+  .right:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .right h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 50px 0; }
+  .right .leftselect {
+    width: 30%;
+    float: left;
+    padding-left: 50px; }
+    .right .leftselect .leftlist {
+      width: 207px; }
+      .right .leftselect .leftlist li {
+        list-style: none;
+        margin: 0 10px 0 10px;
+        padding: 10px 0 10px 10px;
+        font-size: 14px;
+        border-bottom: 1px dotted #999999;
+        color: #c2740f;
+        cursor: pointer; }
+        .right .leftselect .leftlist li:hover {
+          color: #0f71c2; }
+    .right .leftselect .leftbottom {
+      margin-bottom: 260px; }
+  .right .content {
+    width: 60%;
+    float: left;
+    margin-bottom: 50px; }
+    .right .content h4 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 30px; }
+    .right .content .memInfo form {
+      width: 80%;
+      margin: auto; }
+      .right .content .memInfo form tr {
+        width: 100%;
+        text-align: center; }
+      .right .content .memInfo form th {
+        width: 35%;
+        text-align: right;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 5px; }
+      .right .content .memInfo form td {
+        width: 63%;
+        border: 1px solid #ccc;
+        padding: 5px; }
+    .right .content .memOrderlist h5 {
+      margin-bottom: 20px;
+      font-size: 18px; }
+    .right .content .memOrderlist p {
+      margin-bottom: 20px;
+      font-size: 14px; }
+    .right .content .memOrderlist span {
+      color: #eb2f2f;
+      font-size: 14px; }
+    .right .content .memOrderlist form {
+      width: 100%;
+      margin: 30px auto;
+      font-size: 14px; }
+      .right .content .memOrderlist form tr {
+        text-align: center; }
+      .right .content .memOrderlist form th {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 5px; }
+      .right .content .memOrderlist form td {
+        border: 1px solid #ccc;
+        padding: 5px; }
+        .right .content .memOrderlist form td .fa-trash {
+          font-size: 16.8px;
+          color: firebrick;
+          cursor: pointer; }
+>>>>>>> 4c2384511f2928a243ad7624145f00524188142a
