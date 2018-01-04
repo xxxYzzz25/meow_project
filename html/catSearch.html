@@ -12,30 +12,85 @@
 </head>
 
 <body>
+	<div class="signUpLightboxBlack"></div>
+	<div class="signUpLightbox" id="loginBox">
+		<i class="fa fa-times cancel"></i>
+		<div class="bgImg"></div>
+		<div class="formShape">
+			<div class="chioce">
+				<button id="halfMember">中途之家會員</button>
+				<button id="member" class="selected">一般會員</button>
+			</div>
+			<form action="#1" id="signUpForm">
+				<label for="userName">會員名稱
+					<br>
+					<small>不得多於8個中/英文字元</small>
+				</label>
+				<input type="text" id="userName" placeholder="請輸入您的名稱" required>
+				<br>
+				<label for="userId">會員帳號
+					<br>
+					<small>請輸入您的電子郵件</small>
+				</label>
+				<input type="email" id="userId" placeholder="請輸入您的電子郵件" required>
+				<br>
+				<label for="userPsw">會員密碼
+					<br>
+					<small>請輸入6~10碼英數字</small>
+				</label>
+				<input type="password" id="userPsw" placeholder="請輸入您的密碼" required>
+				<br>
+				<label for="userTel">聯絡電話
+					<br>
+				</label>
+				<input type="tel" id="userTel" placeholder="請輸入您的手機號碼" required>
+				<br>
+				<label for="userBirth">會員生日
+					<br>
+				</label>
+				<input type="text" id="userBirth" placeholder="ex:19900101" required>
+				<br>
+				<label for="userAddress">通訊地址
+					<br>
+				</label>
+				<input type="text" id="userAddress" placeholder="請輸入您的地址" required>
+				<br>
+				<div class="chioce">
+					<label for="userPhoto" class="formBtn" id="userPhotoLabel">
+						點我上傳您的大頭貼
+					</label>
+					<input type="file" id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
+					<input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
+					<input type="reset" class="formBtn formSubmitBtn" value="清除重填">
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="../js/signUp.js"></script>
 	<header>
 		<div class="logo">
 			<a href="index.html">
 				<h1>
-					<img src="../images/logo_white.png" alt="尋喵啟事">
+					<img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
 				</h1>
 			</a>
 		</div>
 		<nav>
 			<ul>
 				<li>
-					<a href="catSearch.html">尋喵</a>
+					<a href="./catSearch.html">尋喵</a>
 				</li>
 				<li>
-					<a href="halfway_house_search.html">中途之家</a>
+					<a href="./halfway_house_search.html">中途之家</a>
 				</li>
 				<li>
-					<a href="Cat_ShoppingStore.html">商城</a>
+					<a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
 				</li>
 				<li>
-					<a href="#">討論區</a>
+					<a href="./forum.html">討論區</a>
 				</li>
 				<li>
-					<a href="#">會員專區</a>
+					<a href="./member.html">會員專區</a>
 				</li>
 			</ul>
 		</nav>
@@ -44,7 +99,7 @@
 				<i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
 			</a>
 			<a href="#">
-				<i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+				<i class="fa fa-user-circle-o fa-2x login" aria-hidden="true"></i>
 			</a>
 			<a href="#">
 				<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
@@ -54,8 +109,10 @@
 	</header>
 	<div class="right">
 		<div class="container container1">
-			<h1>尋喵<br><small class="selectTitle">搜尋你的喵喵</small>
-			</h1>
+			<h2>尋喵
+				<br>
+				<small class="selectTitle">搜尋你的喵喵</small>
+			</h2>
 			<form method="POST" action="#" class='selectForm'>
 				<div>
 					<div class="formInsert">
@@ -153,21 +210,17 @@
 			</form>
 			<script src="../js/cat/advanceSearch_JQuery.js"></script>
 			<div class="catPic">
-				<div class="sort">
-					<a href="#" class="defaultBtn">最新刊登
-						<i class="fa fa-angle-down" aria-hidden="true"></i>
-					</a>
-					<a href="#" class="defaultBtn">評價最高
-						<i class="fa fa-angle-down" aria-hidden="true"></i>
-					</a>
-				</div>
-
+				<select name="sortCat" id="sortCat">
+					<option value="0"><--排列依序--></option>
+					<option value="1">刊登日期從新到舊</option>
+					<option value="2">刊登日期從舊到新</option>
+				</select>
 				<picture class="catItem catItem_1">
 					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_1_resized.jpg" alt="喵航航">
+								<img src="../images/catUpload/album_img_1_resized.jpg" alt="喵航航">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -176,6 +229,7 @@
 					</div>
 					<figure>
 						<h3>喵航航</h3>
+						<br>新北市
 						<br>約2017/09月份出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -187,7 +241,7 @@
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_2_resized.jpg" alt="喵辛巴">
+								<img src="../images/catUpload/album_img_2_resized.jpg" alt="喵辛巴">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -196,6 +250,7 @@
 					</div>
 					<figure>
 						<h3>喵辛巴</h3>
+						<br>新北市
 						<br>約2015年出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -207,7 +262,7 @@
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_3_resized.jpg" alt="喵芽芽">
+								<img src="../images/catUpload/album_img_3_resized.jpg" alt="喵芽芽">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -216,6 +271,7 @@
 					</div>
 					<figure>
 						<h3>喵芽芽</h3>
+						<br>臺北市
 						<br>約2017/09月份出生
 						<br>女生
 						<i class="fa fa-venus" aria-hidden="true"></i>
@@ -227,7 +283,7 @@
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_4_resized.jpg" alt="喵蝦米">
+								<img src="../images/catUpload/album_img_4_resized.jpg" alt="喵蝦米">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -236,6 +292,7 @@
 					</div>
 					<figure>
 						<h3>喵蝦米</h3>
+						<br>新竹市
 						<br>約2017/01月份出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -247,7 +304,7 @@
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_5_resized.jpg" alt="喵絨絨">
+								<img src="../images/catUpload/album_img_5_resized.jpg" alt="喵絨絨">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -256,6 +313,7 @@
 					</div>
 					<figure>
 						<h3>喵絨絨</h3>
+						<br>桃園市
 						<br>約2017/02月份出生
 						<br>女生
 						<i class="fa fa-venus" aria-hidden="true"></i>
@@ -267,7 +325,7 @@
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_6_resized.jpg" alt="喵咪醬">
+								<img src="../images/catUpload/album_img_6_resized.jpg" alt="喵咪醬">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -276,6 +334,7 @@
 					</div>
 					<figure>
 						<h3>喵咪醬</h3>
+						<br>高雄市
 						<br>約2017/05月份出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -287,7 +346,7 @@
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_7_resized.jpg" alt="喵皮皮">
+								<img src="../images/catUpload/album_img_7_resized.jpg" alt="喵皮皮">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -296,6 +355,7 @@
 					</div>
 					<figure>
 						<h3>喵皮皮</h3>
+						<br>台南市
 						<br>約2015年出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>
@@ -307,7 +367,7 @@
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_8_resized.jpg" alt="喵默默">
+								<img src="../images/catUpload/album_img_8_resized.jpg" alt="喵默默">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -316,6 +376,7 @@
 					</div>
 					<figure>
 						<h3>喵默默</h3>
+						<br>台東縣
 						<br>約2017/09月份出生
 						<br>女生
 						<i class="fa fa-venus" aria-hidden="true"></i>
@@ -327,7 +388,7 @@
 					<div class="catContent">
 						<a href="catContent.html">
 							<div class="img">
-								<img src="../../images/catUpload/album_img_9_resized.jpg" alt="喵追風">
+								<img src="../images/catUpload/album_img_9_resized.jpg" alt="喵追風">
 							</div>
 						</a>
 						<button type="button" class="quickView">
@@ -336,6 +397,7 @@
 					</div>
 					<figure>
 						<h3>喵追風</h3>
+						<br>連江縣
 						<br>約2015/出生
 						<br>男生
 						<i class="fa fa-mars" aria-hidden="true"></i>

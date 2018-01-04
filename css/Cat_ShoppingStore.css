@@ -1,53 +1,54 @@
-body{
+body {
 	letter-spacing: 3px;
-	background-color: #eee; 
+	background-color: #eee;
 	font-size: 14px;
 	background-image: url(../img/marble.jpg);
+<<<<<<< HEAD
 	line-height: 22px;
+=======
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 }
 
-@media only screen and (max-width: 768px){
-    header{
-        visibility: hidden;
-    }
+@media only screen and (max-width: 768px) {
+	header {
+		visibility: hidden;
+	}
 }
 
-.wrap{
+.wrap {
 	margin-left: 200px;
 }
 
-.wrapCenter{
+.wrapCenter {
 	width: 80%;
 	margin: auto;
 }
 
-@media only screen and (max-width: 768px){
-    .wrap{
-        margin-left: 0;
-    }
-
-    .wrapCenter{
-        width: 95%;
+@media only screen and (max-width: 768px) {
+	.wrap {
+		margin-left: 0;
+	}
+	.wrapCenter {
+		width: 95%;
 	}
 }
 
-.title{
+.title {
 	text-align: center;
 	padding: 3%;
 	font-size: 34px;
 	letter-spacing: 15px;
 }
 
-.menu{
+.menu {
 	/*background-color: #ccc;*/
 	width: 100%;
 	text-align: center;
 	box-sizing: border-box;
 	border: 2px solid #333;
-
 }
 
-.menuTitle{
+.menuTitle {
 	text-decoration: none;
 	color: #333;
 	margin: 2% 1%;
@@ -55,76 +56,75 @@ body{
 	padding: 5px 30px;
 	border-radius: 30px;
 	border: 1px solid transparent;
-	
 }
+
+
 /* 
 .menu a{
 	cursor: url(../img/cursor.png),auto;
 } */
 
-.menu a:hover{
+.menu a:hover {
 	color: #fff;
 	background-color: #EAAF88;
 	border: 1px solid #EAAF88;
 }
 
-.menuTitle{
+.menuTitle {
 	display: inline-block;
 }
 
-@media only screen and (max-width: 768px){
-	.menuTitle{
+@media only screen and (max-width: 768px) {
+	.menuTitle {
 		display: block;
 	}
-
-	form{
+	form {
 		display: none;
 	}
 }
 
-.menuNow{
+.menuNow {
 	color: #fff;
 	background-color: #EAAF88;
 	border: 1px solid #EAAF88;
 }
 
-.banner{
+.banner {
 	/*background-color: #cfc;*/
 	width: 100%;
 	text-align: center;
 }
 
-.banner img{
+.banner img {
 	margin: 3% 0;
 	width: 100%;
 }
 
-.select{
+.select {
 	float: left;
 }
 
-.search{
-	
+.search {
 	float: right;
 }
 
-.search input{
+.search input {
 	border: 2px solid #333;
 	padding: 5px 30px;
 	border-radius: 30px;
 }
 
-.allTitle{
+.allTitle {
 	text-align: center;
 	padding: 2%;
 }
 
-.allProduct{
+.allProduct {
 	/* background-color: #ccc; */
 	margin-top: 1%;
 }
 
-.typeName{
+.typeName {
 	float: left;
 	background-color: #fff;
 	width: 29%;
@@ -134,68 +134,64 @@ body{
 	margin-right: 1%;
 }
 
-.typeBanner{
+.typeBanner {
 	float: left;
 	background-color: #caa;
 	width: 70%;
 	box-sizing: border-box;
-	padding: 5%;	
+	padding: 5%;
 	background-size: cover;
 	font-size: 10px;
 }
 
-.typeBannerRWD{
+.typeBannerRWD {
 	display: none;
 }
 
-@media only screen and (max-width: 768px){
-	.title span{
+@media only screen and (max-width: 768px) {
+	.title span {
 		margin-top: 20px;
 		display: block;
 		font-size: 15px;
 	}
-
-	.typeName{
+	.typeName {
 		float: none;
 		width: 100%;
 		background-color: #EAAF88;
 		color: #fff;
 	}
-
-	.typeBanner{
+	.typeBanner {
 		display: none;
 	}
-
-	.typeBannerRWD{
+	.typeBannerRWD {
 		display: block;
 		float: none;
 		width: 100%;
 		text-align: center;
 		margin: 0 0 50px 0;
 	}
-
-	.allProduct{
+	.allProduct {
 		margin-top: 5%;
 	}
 }
 
-.typeBanner1{
+.typeBanner1 {
 	background-image: url(../img/eatBanner.jpg);
 }
 
-.typeBanner2{
+.typeBanner2 {
 	background-image: url(../img/homeBanner.jpg);
 }
 
-.typeBanner3{
+.typeBanner3 {
 	background-image: url(../img/grassBanner.jpg);
 }
 
-.typeBanner4{
+.typeBanner4 {
 	background-image: url(../img/playBanner.jpg);
 }
 
-.typeBanner a{
+.typeBanner a {
 	text-decoration: none;
 	color: #333;
 	padding: 5px 30px;
@@ -203,23 +199,22 @@ body{
 	border-radius: 30px;
 }
 
-.typeBannerRWD a{
+.typeBannerRWD a {
 	text-decoration: none;
 	color: #333;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255, 255, 255, 0.7);
 	padding: 5px 30px;
 	border: 2px solid #333;
 	border-radius: 30px;
 }
 
-
-.typeBanner a:hover{
+.typeBanner a:hover {
 	color: #fff;
 	background-color: #EAAF88;
 	border: 1px solid #EAAF88;
 }
 
-.product{
+.product {
 	float: left;
 	width: 20%;
 	background-color: #fff;
@@ -228,31 +223,26 @@ body{
 	margin-bottom: 4%;
 }
 
-@media only screen and (max-width: 768px){
-
-	.typeBanner a{
-		background-color: rgba(255,255,255, 0.7);
+@media only screen and (max-width: 768px) {
+	.typeBanner a {
+		background-color: rgba(255, 255, 255, 0.7);
 	}
-	
-	.rwd{
+	.rwd {
 		display: none;
 	}
-
-	.rwd img{
+	.rwd img {
 		display: none;
 	}
-
-	.product{
+	.product {
 		width: 50%;
 	}
-
 }
 
-.pic:hover{
+.pic:hover {
 	transform: scale(1.1);
 }
 
-.pic{
+.pic {
 	box-sizing: border-box;
 	padding: 15% 15% 0 15%;
 	transition: 0.5s all ease-in-out;
@@ -262,13 +252,37 @@ body{
 	width: 80%;
 }
 
-.text{
+.text {
 	text-align: center;
 	box-sizing: border-box;
 	padding: 15%;
 	height: 100px;
 }
 
-.cost{
+.cost {
 	height: 50px;
+}
+
+header ul li:nth-child(3) {
+	background-color: #fff;
+	box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
+}
+
+header ul li:nth-child(3) a {
+	color: #333;
+	font-family: notoSans_r;
+}
+
+header ul li:nth-child(3):after {
+	z-index: -1;
+	content: '';
+	display: block;
+	width: 34px;
+	height: 34px;
+	background-color: #fff;
+	position: absolute;
+	top: 7px;
+	right: -17px;
+	transform: rotate(45deg);
+	box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
 }

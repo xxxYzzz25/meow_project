@@ -51,6 +51,12 @@ table {
 @font-face {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
+<<<<<<< HEAD
+=======
+
+input, select {
+  font-family: notoSans_r; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 body {
   font-family: notoSans;
@@ -169,6 +175,32 @@ body {
     top: 50%;
     right: 18px;
     content: ""; }
+<<<<<<< HEAD
+=======
+
+.breadcrumbs {
+  margin-bottom: 40px;
+  font-size: 18px; }
+  .breadcrumbs a {
+    font-size: 14px;
+    text-decoration: none;
+    border-width: 1px;
+    padding: 4px 10px;
+    text-align: center; }
+
+@media all and (max-width: 767px) {
+  .breadcrumbs {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center; }
+    .breadcrumbs a {
+      border: none;
+      padding: 0; }
+      .breadcrumbs a:hover {
+        color: #333;
+        background-color: transparent;
+        border-color: transparent; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 .container {
   max-width: 991px;
@@ -210,15 +242,35 @@ footer {
     position: relative;
     top: -20px;
     padding: 10px; }
+<<<<<<< HEAD
+=======
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%; } }
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%; }
+    footer span {
+      display: block;
+      text-align: center; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 header {
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   width: 200px;
   height: 100vh;
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+<<<<<<< HEAD
   z-index: 9999999; }
+=======
+  z-index: 999; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   header .logo {
     position: relative;
     top: 70px;
@@ -276,14 +328,18 @@ header {
         transform: scale(1.15);
         transition: .3s; }
 
+<<<<<<< HEAD
 .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2 {
+=======
+.pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2 {
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   font-size: 18px;
   color: #fff;
   background-color: #333;
   padding: 15px 30px;
   margin: 15px 0; }
 
-.pick-kit .pick-title h3, .half .half-title h3, .shop .shop-title h3 {
+.pick-kit .pick-title h3, .half .half-title h3, .shop .shop-title h3, .game-point h3 {
   color: #333;
   background-color: rgba(255, 255, 255, 0.537);
   padding: 10px 30px;
@@ -314,7 +370,15 @@ header {
     text-align: center;
     padding: 15px;
     font-weight: bolder;
+<<<<<<< HEAD
     font-size: 18px; }
+=======
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .banner .find img, .banner .wait img {
       width: 40px;
       height: 55px;
@@ -326,6 +390,7 @@ header {
   .banner .search {
     position: relative; }
     .banner .search select {
+<<<<<<< HEAD
       background-color: rgba(153, 153, 153, 0.493);
       border: 3px solid #fff;
       border-radius: 40px;
@@ -348,6 +413,30 @@ header {
         color: #fff; }
       .banner .search input:-ms-input-placeholder {
         color: #fff; }
+=======
+      background-color: rgba(255, 255, 255, 0.308);
+      border: 3px solid #fff;
+      border-radius: 40px;
+      text-align-last: center;
+      padding: 3px 0;
+      font-size: 18px;
+      color: #333;
+      cursor: pointer; }
+    .banner .search input {
+      margin: 15px auto;
+      background-color: rgba(255, 255, 255, 0.308);
+      border: 3px solid #fff;
+      letter-spacing: 2px;
+      border-radius: 40px;
+      padding: 5px 37.5px 5px 15px;
+      font-size: 18px; }
+      .banner .search input:-moz-placeholder {
+        color: #333; }
+      .banner .search input::-webkit-input-placeholder {
+        color: #333; }
+      .banner .search input:-ms-input-placeholder {
+        color: #333; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .banner .search .fa-search {
       color: #fff;
       position: absolute;
@@ -368,7 +457,11 @@ header {
       height: 40px;
       line-height: 10px; }
   .pick-kit ul {
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 200%;
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     position: absolute;
     display: flex;
     justify-content: space-around;
@@ -402,16 +495,21 @@ header {
               .pick-kit ul li .cat_list_bg a .cat_list .bubble span {
                 display: block;
                 padding: 5px; }
+<<<<<<< HEAD
       .pick-kit ul li:nth-child(1) .cat_list_bg a .cat_list {
         background-image: url(../images/catcat_171225_0011.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; }
       .pick-kit ul li:nth-child(2) .cat_list_bg a .cat_list {
+=======
+      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list {
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
         background-image: url(../images/catcat_171225_0010.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; }
+<<<<<<< HEAD
       .pick-kit ul li:nth-child(3) .cat_list_bg a .cat_list {
         background-image: url(../images/catcat_171228_0012.jpg);
         background-repeat: no-repeat;
@@ -421,6 +519,17 @@ header {
         position: relative;
         top: 50%; }
       .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
+=======
+      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list {
+        background-image: url(../images/catcat_171225_0011.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; }
+      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
+        position: relative;
+        top: 50%; }
+      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
         position: relative;
         top: 10%; }
   .pick-kit .arrow {
@@ -428,7 +537,11 @@ header {
     height: 60px;
     background-color: rgba(0, 0, 0, 0.411);
     position: absolute;
+<<<<<<< HEAD
     top: 40vh;
+=======
+    top: 70vh;
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     z-index: 666; }
     .pick-kit .arrow img {
       width: 100%;
@@ -479,6 +592,19 @@ header {
     flex-direction: column;
     justify-content: center;
     padding-left: 5%; }
+<<<<<<< HEAD
+=======
+    .half .half-text a {
+      text-decoration: none;
+      transition: .3s all;
+      color: #333;
+      margin: 10px 0; }
+      .half .half-text a:hover {
+        color: #EAAF88; }
+    .half .half-text .read-more {
+      align-self: flex-end;
+      text-decoration: underline; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .half .half-text .half-name {
       font-family: notoSans_r;
       font-size: 18px; }
@@ -534,6 +660,97 @@ header {
     display: flex;
     justify-content: center;
     align-items: center; }
+<<<<<<< HEAD
+=======
+
+.game-point {
+  height: 100vh;
+  background-color: #EAAF88;
+  margin-left: 200px;
+  box-shadow: 20px 20px #333 inset, -20px -20px #333 inset; }
+  .game-point .game-point-title {
+    height: 15vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start; }
+  .game-point h2 {
+    height: 40px;
+    line-height: 10px; }
+  .game-point .game-point-top {
+    width: 80%;
+    margin: auto;
+    height: 30vh;
+    border-bottom: 3px solid #fff;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px; }
+    .game-point .game-point-top .askBox {
+      position: relative;
+      height: 30vh;
+      display: flex;
+      padding: 50px;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid #fff;
+      border-radius: 20% 60% 30% 60%;
+      background-color: #EAAF88;
+      bottom: 20px; }
+      .game-point .game-point-top .askBox:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 60% 40% 50% 60%;
+        border: 3px solid #fff;
+        right: -40px;
+        top: 50%; }
+      .game-point .game-point-top .askBox:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 60% 40% 50% 60%;
+        border: 3px solid #fff;
+        right: -55px;
+        top: 35%; }
+    .game-point .game-point-top .cat-ask {
+      max-width: 80%;
+      max-height: 80%;
+      align-self: flex-end;
+      margin-left: 60px; }
+  .game-point .game-point-bottom {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    height: 55vh;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 40px;
+    padding-bottom: 20px; }
+    .game-point .game-point-bottom .people {
+      position: relative;
+      z-index: 2;
+      width: 100px;
+      height: 105px;
+      left: 0; }
+    .game-point .game-point-bottom #optionA, .game-point .game-point-bottom #optionB {
+      align-self: flex-start;
+      width: 30%;
+      height: 250px;
+      position: relative;
+      background-color: #369;
+      text-align: center; }
+    .game-point .game-point-bottom .hug {
+      position: relative;
+      width: 50px;
+      height: 90px;
+      z-index: 1;
+      right: 0; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 #loading {
   position: fixed;
@@ -542,10 +759,166 @@ header {
   width: 100%;
   height: 100vh;
   z-index: 999999999999999999999999999999;
+<<<<<<< HEAD
   background-color: rgba(44, 44, 44, 0.856);
+=======
+  background-color: #eaaf88;
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   transition: .3s; }
   #loading #loadingCat {
     position: absolute;
     display: block;
     top: calc(50% - 100px);
     left: calc(50% - 100px); }
+<<<<<<< HEAD
+=======
+
+.signUpLightboxBlack {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  display: none; }
+
+.signUpLightbox {
+  z-index: 1001;
+  position: fixed;
+  display: none; }
+  .signUpLightbox .cancel {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    z-index: 1002;
+    cursor: pointer; }
+  .signUpLightbox .bgImg {
+    width: 400px;
+    height: 600px;
+    float: left;
+    background-color: #333;
+    border-radius: 10px 0 0 10px;
+    background-image: url("../images/memberBG.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; }
+  .signUpLightbox .formShape {
+    background-color: #91989f;
+    width: 400px;
+    height: 600px;
+    float: left;
+    border-radius: 0 10px 10px 0;
+    position: relative; }
+    .signUpLightbox .formShape .chioce {
+      text-align: center; }
+      .signUpLightbox .formShape .chioce:last-child {
+        margin-top: 20px; }
+      .signUpLightbox .formShape .chioce button {
+        background-color: transparent;
+        border: none;
+        display: inline-block;
+        line-height: 2em;
+        transition: .1s;
+        outline: none;
+        color: rgba(245, 245, 245, 0.7);
+        font-size: 30px;
+        cursor: pointer; }
+        .signUpLightbox .formShape .chioce button:hover {
+          color: #fff; }
+      .signUpLightbox .formShape .chioce .selected {
+        border-bottom: 1px solid #eaaf88;
+        color: #fff; }
+    .signUpLightbox .formShape form {
+      padding: 50px;
+      margin: 0 auto;
+      color: #fff;
+      font-family: '../fonts/NotoSansCJKtc-Thin.otf'; }
+      .signUpLightbox .formShape form label {
+        margin-top: 10px;
+        margin-bottom: 4px;
+        display: block;
+        font-size: 18px; }
+        .signUpLightbox .formShape form label:first-child {
+          margin-top: 0; }
+        .signUpLightbox .formShape form label small {
+          font-size: 12px;
+          color: rgba(245, 245, 245, 0.7); }
+      .signUpLightbox .formShape form .formBtn {
+        width: 240px;
+        border: 1px solid #333;
+        display: block;
+        line-height: 1.5em;
+        text-align: center;
+        border-radius: 1000px;
+        letter-spacing: 1px;
+        transition: .3s;
+        color: #333;
+        margin: 0 auto 30px; }
+        .signUpLightbox .formShape form .formBtn:hover {
+          background-color: #eaaf88;
+          border: 1px solid #eaaf88;
+          color: #fff; }
+      .signUpLightbox .formShape form input {
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid rgba(245, 245, 245, 0.7);
+        width: 100%; }
+        .signUpLightbox .formShape form input:-ms-input-placeholder {
+          line-height: 1em;
+          padding: 5px 15px;
+          color: rgba(245, 245, 245, 0.7);
+          font-style: italic;
+          font-size: 12px; }
+        .signUpLightbox .formShape form input:-moz-placeholder {
+          line-height: 1em;
+          padding: 5px 15px;
+          color: rgba(245, 245, 245, 0.7);
+          font-style: italic;
+          font-size: 12px; }
+        .signUpLightbox .formShape form input::-moz-placeholder {
+          line-height: 1em;
+          padding: 5px 15px;
+          color: rgba(245, 245, 245, 0.7);
+          font-style: italic;
+          font-size: 12px; }
+        .signUpLightbox .formShape form input::-webkit-input-placeholder {
+          line-height: 1em;
+          padding: 5px 15px;
+          color: rgba(245, 245, 245, 0.7);
+          font-style: italic;
+          font-size: 12px; }
+      .signUpLightbox .formShape form #userPhoto {
+        display: none; }
+      .signUpLightbox .formShape form .formSubmitBtn {
+        display: inline-block;
+        width: 100px;
+        font-size: 14px; }
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .signUpLightbox .bgImg {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+  .signUpLightbox .formShape {
+    border-radius: 10px; } }
+
+@media all and (max-width: 767px) {
+  .signUpLightbox .bgImg {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+  .signUpLightbox .formShape {
+    width: 300px;
+    border-radius: 10px; }
+    .signUpLightbox .formShape .chioce button {
+      font-size: 14px; }
+    .signUpLightbox .formShape form .formBtn {
+      width: 180px;
+      font-size: 14px; }
+    .signUpLightbox .formShape form .formSubmitBtn {
+      display: inline-block;
+      width: 80px;
+      font-size: 14px; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215

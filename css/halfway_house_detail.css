@@ -51,6 +51,12 @@ table {
 @font-face {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
+<<<<<<< HEAD
+=======
+
+input, select {
+  font-family: notoSans_r; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 body {
   font-family: notoSans;
@@ -61,6 +67,83 @@ body {
 
 .fa-venus {
   color: #fc516d; }
+<<<<<<< HEAD
+=======
+
+.defaultBtn {
+  font-size: 16px;
+  border: #333 2px solid;
+  border-radius: 24px;
+  color: #333;
+  padding: 4px 30px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: .3s all; }
+  .defaultBtn:hover {
+    color: white;
+    background-color: #EAAF88;
+    border-color: #EAAF88; }
+
+.btn-more {
+  width: 160px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  font-family: notoSans_r; }
+  .btn-more:hover {
+    color: #fff; }
+  .btn-more:before {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: -100%;
+    background-color: transparent;
+    transition: .3s;
+    z-index: -1; }
+  .btn-more:hover:before {
+    left: 0;
+    background-color: #333; }
+  .btn-more:after {
+    margin-top: -7px;
+    width: 7px;
+    height: 13px;
+    background: url(../images/icon01.png) no-repeat right center;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    content: ""; }
+
+.breadcrumbs {
+  margin-bottom: 40px;
+  font-size: 18px; }
+  .breadcrumbs a {
+    font-size: 14px;
+    text-decoration: none;
+    border-width: 1px;
+    padding: 4px 10px;
+    text-align: center; }
+
+@media all and (max-width: 767px) {
+  .breadcrumbs {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center; }
+    .breadcrumbs a {
+      border: none;
+      padding: 0; }
+      .breadcrumbs a:hover {
+        color: #333;
+        background-color: transparent;
+        border-color: transparent; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 .container {
   max-width: 991px;
@@ -70,13 +153,17 @@ input, select {
   outline: none; }
 
 header {
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   width: 200px;
   height: 100vh;
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+<<<<<<< HEAD
   z-index: 9999999; }
+=======
+  z-index: 999; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   header .logo {
     position: relative;
     top: 70px;
@@ -167,6 +254,22 @@ footer {
     position: relative;
     top: -20px;
     padding: 10px; }
+<<<<<<< HEAD
+=======
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%; } }
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%; }
+    footer span {
+      display: block;
+      text-align: center; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 .btns .btn {
   font-size: 30px;
@@ -253,11 +356,12 @@ header ul li:nth-child(2):after {
   box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199); }
 
 .right {
-  background-image: url(../../images/marble.jpg);
+  background-image: url(../images/marble.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   margin-left: 200px;
+<<<<<<< HEAD
   padding-top: 30px; }
   .right .banner {
     background-image: url(../../images/halfdetail1.jpg);
@@ -353,6 +457,104 @@ header ul li:nth-child(2):after {
     display: none; }
   .right .halfwaypic {
     margin: 6% auto; }
+=======
+  padding-top: 50px; }
+  .right .breadcrumbs {
+    margin-left: 50px;
+    margin-bottom: 0; }
+  .right .banner {
+    margin: auto; }
+    .right .banner:after {
+      content: '';
+      display: block;
+      clear: both; }
+    .right .banner h2 {
+      background-color: rgba(241, 209, 146, 0.7);
+      color: #111;
+      padding: 10px 15px;
+      font-size: 18px;
+      line-height: 2.0;
+      background-color: transparent;
+      letter-spacing: 10px;
+      font-size: 36px;
+      text-align: center;
+      padding: 15px 15px 5px 15px;
+      width: 80%;
+      margin: auto; }
+    .right .banner .contact {
+      background-color: rgba(241, 209, 146, 0.7);
+      color: #111;
+      padding: 10px 15px;
+      font-size: 18px;
+      line-height: 2.0;
+      background-color: transparent;
+      text-align: center;
+      width: 80%;
+      margin: auto; }
+    .right .banner .container {
+      display: flex;
+      justify-content: space-around; }
+      .right .banner .container .bigpic {
+        width: 65%;
+        margin: 15px;
+        margin-top: 50px;
+        background-image: url(../images/halfdetail1.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat; }
+      .right .banner .container .text {
+        width: 50%;
+        margin: 15px; }
+        .right .banner .container .text .intro {
+          background-color: rgba(241, 209, 146, 0.7);
+          color: #111;
+          padding: 10px 15px;
+          font-size: 18px;
+          line-height: 2.0;
+          padding-top: 30px; }
+        .right .banner .container .text .star {
+          background-color: rgba(241, 209, 146, 0.7);
+          color: #111;
+          padding: 10px 15px;
+          font-size: 18px;
+          line-height: 2.0;
+          /****** Style Star Rating Widget *****/
+          /***** CSS Magic to Highlight Stars on Hover *****/
+          /* hover previous stars in list */ }
+          .right .banner .container .text .star .rating {
+            border: none; }
+          .right .banner .container .text .star .rating > input {
+            display: none; }
+          .right .banner .container .text .star .rating > label:before {
+            margin: 5px;
+            font-size: 1.25em;
+            font-family: FontAwesome;
+            display: inline-block;
+            content: "\f005"; }
+          .right .banner .container .text .star .rating > .half:before {
+            content: "\f089";
+            position: absolute; }
+          .right .banner .container .text .star .rating > label {
+            color: #fff;
+            float: right; }
+          .right .banner .container .text .star .rating > input:checked ~ label,
+          .right .banner .container .text .star .rating:not(:checked) > label:hover,
+          .right .banner .container .text .star .rating:not(:checked) > label:hover ~ label {
+            color: #f3284a; }
+          .right .banner .container .text .star .rating > input:checked + label:hover,
+          .right .banner .container .text .star .rating > input:checked ~ label:hover,
+          .right .banner .container .text .star .rating > label:hover ~ input:checked ~ label,
+          .right .banner .container .text .star .rating > input:checked ~ label:hover ~ label {
+            color: #f3284a; }
+          .right .banner .container .text .star .ratingtext {
+            padding: 15px;
+            text-align: right;
+            font-size: 18px;
+            vertical-align: middle; }
+            .right .banner .container .text .star .ratingtext span {
+              font-size: 27px; }
+  .right .halfwaypic {
+    margin: 20px auto 50px auto; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .halfwaypic .container {
       display: flex;
       justify-content: space-around; }
@@ -362,7 +564,11 @@ header ul li:nth-child(2):after {
         .right .halfwaypic .container .picture img {
           width: 100%; }
   .right .cat {
+<<<<<<< HEAD
     background-image: url(../../images/catbg2.jpeg);
+=======
+    background-image: url(../images/catbg2.jpeg);
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -437,7 +643,11 @@ header ul li:nth-child(2):after {
     .right .map img {
       width: 100%; }
   .right .talk {
+<<<<<<< HEAD
     background-image: url(../../images/talk.jpg);
+=======
+    background-image: url(../images/talk.jpg);
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     background-attachment: fixed;
     background-position: 20%;
     background-repeat: no-repeat;
@@ -512,6 +722,7 @@ header ul li:nth-child(2):after {
   .right {
     padding: 0;
     margin: 0; }
+<<<<<<< HEAD
     .right .banner {
       width: 100%;
       padding-top: 80vh;
@@ -532,6 +743,10 @@ header ul li:nth-child(2):after {
       .right .banner .star {
         left: 60%;
         top: 63vh; }
+=======
+    .right .banner .container .bigpic {
+      animation: bb 20s linear infinite; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   @keyframes bb {
     20% {
       background-image: url(../images/halfdetail7_resized.jpg); }
@@ -541,6 +756,7 @@ header ul li:nth-child(2):after {
       background-image: url(../images/halfdetail6.jpg); }
     80% {
       background-image: url(../images/halfdetail4.jpg); } }
+<<<<<<< HEAD
     .right .smallintro {
       display: block;
       background-color: #F1E8D6;
@@ -551,6 +767,10 @@ header ul li:nth-child(2):after {
       display: none; }
     .right .cat .flycat {
       display: none; }
+=======
+    .right .halfwaypic {
+      display: none; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .cat .container .catitem {
       width: 40%; }
     .right .talk .container .article {
@@ -564,6 +784,7 @@ header ul li:nth-child(2):after {
   .right {
     padding: 0;
     margin: 0; }
+<<<<<<< HEAD
     .right .banner {
       width: 100%;
       padding-top: 80vh;
@@ -592,6 +813,21 @@ header ul li:nth-child(2):after {
           margin: 0 auto; }
         .right .banner .star .text {
           width: 100%; }
+=======
+    .right .banner h2 {
+      width: 70%;
+      background-color: transparent; }
+    .right .banner .contact {
+      width: 70%;
+      background-color: transparent; }
+    .right .banner .container {
+      display: block; }
+      .right .banner .container .bigpic {
+        width: 100%;
+        padding-top: 65%;
+        margin: 0;
+        animation: bb 20s linear infinite; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   @keyframes bb {
     20% {
       background-image: url(../images/halfdetail7_resized.jpg); }
@@ -601,10 +837,19 @@ header ul li:nth-child(2):after {
       background-image: url(../images/halfdetail6.jpg); }
     80% {
       background-image: url(../images/halfdetail4.jpg); } }
+<<<<<<< HEAD
     .right .halfwaypic {
       display: none; }
     .right .cat .flycat {
       display: none; }
+=======
+      .right .banner .container .text {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 50px; }
+    .right .halfwaypic {
+      display: none; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .cat .container .catitem {
       width: 50%; }
     .right .talk .container .article {

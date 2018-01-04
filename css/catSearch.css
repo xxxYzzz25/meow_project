@@ -51,6 +51,12 @@ table {
 @font-face {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
+<<<<<<< HEAD
+=======
+
+input, select {
+  font-family: notoSans_r; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 body {
   font-family: notoSans;
@@ -159,15 +165,35 @@ footer {
     position: relative;
     top: -20px;
     padding: 10px; }
+<<<<<<< HEAD
+=======
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%; } }
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%; }
+    footer span {
+      display: block;
+      text-align: center; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 header {
-  background-color: #EAAF88;
+  background-color: #eaaf88;
   width: 200px;
   height: 100vh;
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+<<<<<<< HEAD
   z-index: 9999999; }
+=======
+  z-index: 999; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   header .logo {
     position: relative;
     top: 70px;
@@ -275,12 +301,190 @@ header {
     top: 50%;
     right: 18px;
     content: ""; }
+<<<<<<< HEAD
+=======
+
+.breadcrumbs {
+  margin-bottom: 40px;
+  font-size: 18px; }
+  .breadcrumbs a {
+    font-size: 14px;
+    text-decoration: none;
+    border-width: 1px;
+    padding: 4px 10px;
+    text-align: center; }
+
+@media all and (max-width: 767px) {
+  .breadcrumbs {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center; }
+    .breadcrumbs a {
+      border: none;
+      padding: 0; }
+      .breadcrumbs a:hover {
+        color: #333;
+        background-color: transparent;
+        border-color: transparent; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 .fa-mars {
   color: deepskyblue; }
 
 .fa-venus {
   color: #fc516d; }
+<<<<<<< HEAD
+=======
+
+.signUpLightboxBlack {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  display: none; }
+
+.signUpLightbox {
+  z-index: 1001;
+  position: fixed;
+  display: none; }
+  .signUpLightbox .cancel {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    z-index: 1002;
+    cursor: pointer; }
+  .signUpLightbox .bgImg {
+    width: 400px;
+    height: 600px;
+    float: left;
+    background-color: #333;
+    border-radius: 10px 0 0 10px;
+    background-image: url("../images/memberBG.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; }
+  .signUpLightbox .formShape {
+    background-color: #91989f;
+    width: 400px;
+    height: 600px;
+    float: left;
+    border-radius: 0 10px 10px 0;
+    position: relative; }
+    .signUpLightbox .formShape .chioce {
+      text-align: center; }
+      .signUpLightbox .formShape .chioce:last-child {
+        margin-top: 20px; }
+      .signUpLightbox .formShape .chioce button {
+        background-color: transparent;
+        border: none;
+        display: inline-block;
+        line-height: 2em;
+        transition: .1s;
+        outline: none;
+        color: rgba(245, 245, 245, 0.7);
+        font-size: 30px;
+        cursor: pointer; }
+        .signUpLightbox .formShape .chioce button:hover {
+          color: #fff; }
+      .signUpLightbox .formShape .chioce .selected {
+        border-bottom: 1px solid #eaaf88;
+        color: #fff; }
+    .signUpLightbox .formShape form {
+      padding: 50px;
+      margin: 0 auto;
+      color: #fff;
+      font-family: '../fonts/NotoSansCJKtc-Thin.otf'; }
+      .signUpLightbox .formShape form label {
+        margin-top: 10px;
+        margin-bottom: 4px;
+        display: block;
+        font-size: 18px; }
+        .signUpLightbox .formShape form label:first-child {
+          margin-top: 0; }
+        .signUpLightbox .formShape form label small {
+          font-size: 12px;
+          color: rgba(245, 245, 245, 0.7); }
+      .signUpLightbox .formShape form .formBtn {
+        width: 240px;
+        border: 1px solid #333;
+        display: block;
+        line-height: 1.5em;
+        text-align: center;
+        border-radius: 1000px;
+        letter-spacing: 1px;
+        transition: .3s;
+        color: #333;
+        margin: 0 auto 30px; }
+        .signUpLightbox .formShape form .formBtn:hover {
+          background-color: #eaaf88;
+          border: 1px solid #eaaf88;
+          color: #fff; }
+      .signUpLightbox .formShape form input {
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid rgba(245, 245, 245, 0.7);
+        width: 100%; }
+        .signUpLightbox .formShape form input:-ms-input-placeholder {
+          line-height: 1em;
+          padding: 5px 15px;
+          color: rgba(245, 245, 245, 0.7);
+          font-style: italic;
+          font-size: 12px; }
+        .signUpLightbox .formShape form input:-moz-placeholder {
+          line-height: 1em;
+          padding: 5px 15px;
+          color: rgba(245, 245, 245, 0.7);
+          font-style: italic;
+          font-size: 12px; }
+        .signUpLightbox .formShape form input::-moz-placeholder {
+          line-height: 1em;
+          padding: 5px 15px;
+          color: rgba(245, 245, 245, 0.7);
+          font-style: italic;
+          font-size: 12px; }
+        .signUpLightbox .formShape form input::-webkit-input-placeholder {
+          line-height: 1em;
+          padding: 5px 15px;
+          color: rgba(245, 245, 245, 0.7);
+          font-style: italic;
+          font-size: 12px; }
+      .signUpLightbox .formShape form #userPhoto {
+        display: none; }
+      .signUpLightbox .formShape form .formSubmitBtn {
+        display: inline-block;
+        width: 100px;
+        font-size: 14px; }
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .signUpLightbox .bgImg {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+  .signUpLightbox .formShape {
+    border-radius: 10px; } }
+
+@media all and (max-width: 767px) {
+  .signUpLightbox .bgImg {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+  .signUpLightbox .formShape {
+    width: 300px;
+    border-radius: 10px; }
+    .signUpLightbox .formShape .chioce button {
+      font-size: 14px; }
+    .signUpLightbox .formShape form .formBtn {
+      width: 180px;
+      font-size: 14px; }
+    .signUpLightbox .formShape form .formSubmitBtn {
+      display: inline-block;
+      width: 80px;
+      font-size: 14px; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 header ul li:nth-child(1) {
   background-color: #fff;
@@ -316,6 +520,7 @@ body {
     margin-bottom: 40px; }
     .right .container1 a {
       text-decoration: none; }
+<<<<<<< HEAD
     .right .container1 h1 {
       text-align: center;
       font-size: 36px;
@@ -325,6 +530,21 @@ body {
       .right .container1 h1 small {
         font-size: 12px;
         color: #666; }
+=======
+    .right .container1 h2 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      line-height: 26px;
+      letter-spacing: 15px;
+      text-align: center; }
+      .right .container1 h2 small {
+        font-size: 14px;
+        color: #666;
+        letter-spacing: 30px; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .container1 .selectForm {
       user-select: none;
       margin-left: 10px;
@@ -335,7 +555,11 @@ body {
       text-align: center; }
       .right .container1 .selectForm .advanceSearch {
         position: absolute;
+<<<<<<< HEAD
         right: 0;
+=======
+        right: 64px;
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
         top: 50px;
         cursor: pointer; }
       .right .container1 .selectForm .fa-angle-down {
@@ -444,6 +668,7 @@ body {
       width: 100%;
       margin: 60px auto 0;
       position: relative; }
+<<<<<<< HEAD
       .right .container1 .catPic .sort {
         text-align: center;
         font-size: 0; }
@@ -462,6 +687,15 @@ body {
             right: 20%; }
           .right .container1 .catPic .sort a:first-child {
             margin-right: 10px; }
+=======
+      .right .container1 .catPic #sortCat {
+        position: absolute;
+        top: -46px;
+        left: 30px;
+        border: solid #333 1px;
+        background-color: #fffffb;
+        text-align: center; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
       .right .container1 .catPic .catItem {
         width: 300px;
         background-size: 100%;
@@ -517,6 +751,10 @@ body {
           line-height: 60px;
           background: #EAAF88;
           opacity: 0;
+<<<<<<< HEAD
+=======
+          cursor: pointer;
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
           -webkit-transition: all 0.3s ease-in-out;
           -moz-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
@@ -586,6 +824,7 @@ body {
           margin: 4px 2px; }
         .right .container1 .selectForm .advanceSearchItem .forRWD {
           display: block; }
+<<<<<<< HEAD
     .right .container1 .catPic .sort {
       width: 100%; }
       .right .container1 .catPic .sort a {
@@ -595,6 +834,8 @@ body {
           position: absolute;
           line-height: 1.2em;
           right: 12px; }
+=======
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .container1 .catPic .catItem {
       display: block;
       margin: 0 auto 100px; }
@@ -612,6 +853,11 @@ body {
     margin: 0; }
     .right .container1 .selectForm .advanceSearch {
       right: 14%; }
+<<<<<<< HEAD
+=======
+    .right .container1 .catPic #sortCat {
+      left: 100px; }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .container1 .catPic .catItem {
       width: 80%;
       display: block;
@@ -622,6 +868,7 @@ body {
         vertical-align: top; }
       .right .container1 .catPic .catItem figure {
         padding-top: 60px; }
+<<<<<<< HEAD
   footer {
     margin-left: 0; } }
 
@@ -632,3 +879,7 @@ body {
     footer span {
       display: block;
       text-align: center; } }
+=======
+  footer {
+    margin-left: 0; } }
+>>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215

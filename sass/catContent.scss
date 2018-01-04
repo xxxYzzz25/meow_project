@@ -11,6 +11,7 @@
 @import 'mixins/_navNow.scss';
 @import "base/btn";
 @import "base/genderIcon";
+@import "./modules/_signUp.scss";
 @include navNow(1);
 .navTest {
     width: 20vw;
@@ -59,7 +60,7 @@
                 vertical-align: top;
                 line-height: 1.5em;
                 padding-top: 20px;
-                padding-left: 10px;
+                padding-left: 60px;
                 position: relative;
                 width: calc(100% - 310px);
                 height: 400px;
@@ -119,7 +120,7 @@
             span {
                 color: rgb(255, 159, 86);
             }
-            h2{
+            h2 {
                 font-size: $font-size-h4;
                 text-align: center;
             }
@@ -142,16 +143,16 @@
                 font-size: $font-size-small;
                 padding-left: 20px;
             }
-            ol{
-                .cost{
-                    color:rgb(105, 105, 240);
+            ol {
+                .cost {
+                    color: rgb(105, 105, 240);
                     margin-top: 10px;
                     font-size: $font-family-serif;
                     font-weight: bold;
                 }
-                p{
+                p {
                     padding-left: 86px;
-                    span{
+                    span {
                         color: #fa9c29;
                     }
                 }
@@ -162,4 +163,3 @@
 
 @import 'respond/_catContentSmall.scss';
 @import 'respond/_catContentMedium.scss';
-@import 'respond/_footerSmall.scss';

@@ -11,9 +11,12 @@
 @import 'mixins/_navNow.scss';
 @import "base/btn";
 @import "base/genderIcon";
+@import "./modules/_signUp.scss";
 @include navNow(1);
 body {
     background-image: url('../images/marble.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
 }
 
 .right {
@@ -27,15 +30,19 @@ body {
         a {
             text-decoration: none;
         }
-        h1 {
+        h2 {
             text-align: center;
             font-size: $font-size-h1;
+            font-weight: bold;
             margin-top: 10px;
             margin-bottom: 20px;
             line-height: 26px;
+            letter-spacing: 15px;
+            text-align: center;
             small {
-                font-size: $font-size-small;
-                color: #666
+                font-size: $font-size-base;
+                color: #666;
+                letter-spacing: 30px;
             }
         }
         .selectForm {
@@ -48,7 +55,7 @@ body {
             text-align: center;
             .advanceSearch {
                 position: absolute;
-                right: 0;
+                right: 64px;
                 top: 50px;
                 cursor: pointer;
             }
@@ -178,7 +185,7 @@ body {
                     color: #ffffff;
                     border: 1px solid #EAAF88
                 }
-                .forRWD{
+                .forRWD {
                     display: none;
                 }
             }
@@ -187,27 +194,13 @@ body {
             width: 100%;
             margin: 60px auto 0;
             position: relative;
-            .sort {
+            #sortCat{
+                position: absolute;
+                top: -46px;
+                left: 30px;
+                border:solid #333 1px;
+                background-color: #fffffb;
                 text-align: center;
-                font-size: 0;
-                a {
-                    width: 200px;
-                    font-size: $font-size-base;
-                    text-align: center;
-                    line-height: 1.2em;
-                    display: inline-block;
-                    margin-bottom: 20px;
-                    letter-spacing: 4px;
-                    position: relative;
-                    .fa-angle-down {
-                        position: absolute;
-                        line-height: 1.2em;
-                        right: 20%;
-                    }
-                    &:first-child {
-                        margin-right: 10px;
-                    }
-                }
             }
             .catItem {
                 width: 300px;
@@ -270,6 +263,7 @@ body {
                     line-height: 60px;
                     background: #EAAF88;
                     opacity: 0;
+                    cursor: pointer;
                     -webkit-transition: all 0.3s ease-in-out;
                     -moz-transition: all 0.3s ease-in-out;
                     transition: all 0.3s ease-in-out;
@@ -320,4 +314,3 @@ body {
 
 @import 'respond/_catSearchSmall.scss';
 @import 'respond/_catSearchMedium.scss';
-@import 'respond/_footerSmall.scss';
