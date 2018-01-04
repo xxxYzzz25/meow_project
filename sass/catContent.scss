@@ -13,14 +13,6 @@
 @import "base/genderIcon";
 @import "./modules/_signUp.scss";
 @include navNow(1);
-.navTest {
-    width: 20vw;
-    height: 100vh;
-    display: inline-block;
-    background-color: pink;
-    position: fixed;
-}
-
 .right {
     width: calc(100% - 200px);
     margin-left: 200px;
