@@ -51,12 +51,9 @@ table {
 @font-face {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
-<<<<<<< HEAD
-=======
 
 input, select {
   font-family: notoSans_r; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 body {
   font-family: notoSans;
@@ -165,8 +162,6 @@ footer {
     position: relative;
     top: -20px;
     padding: 10px; }
-<<<<<<< HEAD
-=======
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   footer {
@@ -180,7 +175,6 @@ footer {
     footer span {
       display: block;
       text-align: center; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 header {
   background-color: #eaaf88;
@@ -189,11 +183,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-<<<<<<< HEAD
-  z-index: 9999999; }
-=======
   z-index: 999; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   header .logo {
     position: relative;
     top: 70px;
@@ -301,8 +291,6 @@ header {
     top: 50%;
     right: 18px;
     content: ""; }
-<<<<<<< HEAD
-=======
 
 .breadcrumbs {
   margin-bottom: 40px;
@@ -326,15 +314,12 @@ header {
         color: #333;
         background-color: transparent;
         border-color: transparent; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 .fa-mars {
   color: deepskyblue; }
 
 .fa-venus {
   color: #fc516d; }
-<<<<<<< HEAD
-=======
 
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);
@@ -484,7 +469,6 @@ header {
       display: inline-block;
       width: 80px;
       font-size: 14px; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 header ul li:nth-child(1) {
   background-color: #fff;
@@ -549,11 +533,7 @@ header ul li:nth-child(1):after {
         vertical-align: top;
         line-height: 1.5em;
         padding-top: 20px;
-<<<<<<< HEAD
-        padding-left: 10px;
-=======
         padding-left: 60px;
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
         position: relative;
         width: calc(100% - 310px);
         height: 400px; }
@@ -637,13 +617,8 @@ header ul li:nth-child(1):after {
     margin: 0; }
     .right .container1 {
       padding-top: 0;
-<<<<<<< HEAD
-      padding-left: 50px;
-      padding-right: 50px; }
-=======
       padding-left: 30px;
       padding-right: 30px; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
       .right .container1 .catItem .img,
       .right .container1 .catItem figure {
         display: block;
@@ -728,14 +703,3 @@ header ul li:nth-child(1):after {
   footer {
     margin-left: 0;
     width: 100%; } }
-<<<<<<< HEAD
-
-@media all and (max-width: 767px) {
-  footer {
-    margin-left: 0;
-    width: 100%; }
-    footer span {
-      display: block;
-      text-align: center; } }
-=======
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215

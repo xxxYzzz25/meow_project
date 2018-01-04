@@ -51,12 +51,9 @@ table {
 @font-face {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
-<<<<<<< HEAD
-=======
 
 input, select {
   font-family: notoSans_r; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 body {
   font-family: notoSans;
@@ -67,8 +64,6 @@ body {
 
 .fa-venus {
   color: #fc516d; }
-<<<<<<< HEAD
-=======
 
 .defaultBtn {
   font-size: 16px;
@@ -143,7 +138,6 @@ body {
         color: #333;
         background-color: transparent;
         border-color: transparent; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 .container {
   max-width: 991px;
@@ -159,11 +153,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-<<<<<<< HEAD
-  z-index: 9999999; }
-=======
   z-index: 999; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   header .logo {
     position: relative;
     top: 70px;
@@ -254,8 +244,6 @@ footer {
     position: relative;
     top: -20px;
     padding: 10px; }
-<<<<<<< HEAD
-=======
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   footer {
@@ -269,7 +257,6 @@ footer {
     footer span {
       display: block;
       text-align: center; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 .btns .btn {
   font-size: 30px;
@@ -361,103 +348,6 @@ header ul li:nth-child(2):after {
   background-size: cover;
   position: relative;
   margin-left: 200px;
-<<<<<<< HEAD
-  padding-top: 30px; }
-  .right .banner {
-    background-image: url(../../images/halfdetail1.jpg);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    width: 85%;
-    padding-top: 35%;
-    margin: auto;
-    position: relative; }
-    .right .banner h2 {
-      color: #333;
-      letter-spacing: 10px;
-      background-color: rgba(241, 209, 146, 0.815);
-      color: #000;
-      font-size: 36px;
-      font-weight: bolder;
-      width: 30%;
-      text-align: center;
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      line-height: 6vw; }
-    .right .banner .intro {
-      width: 70%;
-      position: absolute;
-      top: 55%;
-      left: -3%;
-      font-size: 18px;
-      line-height: 2.0;
-      padding: 20px;
-      background-color: rgba(241, 232, 214, 0.815);
-      z-index: 1;
-      color: #111; }
-    .right .banner .contact {
-      width: 35%;
-      position: absolute;
-      top: 25%;
-      left: 70%;
-      font-size: 18px;
-      line-height: 2.28571;
-      padding: 20px;
-      background-color: rgba(241, 232, 214, 0.815);
-      z-index: 1;
-      color: #111; }
-    .right .banner .star {
-      width: 38%;
-      position: absolute;
-      top: 90%;
-      left: 65%;
-      padding: 20px;
-      background-color: rgba(241, 209, 146, 0.815);
-      /****** Style Star Rating Widget *****/
-      /***** CSS Magic to Highlight Stars on Hover *****/
-      /* hover previous stars in list */ }
-      .right .banner .star:after {
-        content: '';
-        display: block;
-        clear: both; }
-      .right .banner .star .rating {
-        border: none;
-        float: left; }
-      .right .banner .star .rating > input {
-        display: none; }
-      .right .banner .star .rating > label:before {
-        margin: 5px;
-        font-size: 1.25em;
-        font-family: FontAwesome;
-        display: inline-block;
-        content: "\f005"; }
-      .right .banner .star .rating > .half:before {
-        content: "\f089";
-        position: absolute; }
-      .right .banner .star .rating > label {
-        color: #fff;
-        float: right; }
-      .right .banner .star .rating > input:checked ~ label,
-      .right .banner .star .rating:not(:checked) > label:hover,
-      .right .banner .star .rating:not(:checked) > label:hover ~ label {
-        color: #f3284a; }
-      .right .banner .star .rating > input:checked + label:hover,
-      .right .banner .star .rating > input:checked ~ label:hover,
-      .right .banner .star .rating > label:hover ~ input:checked ~ label,
-      .right .banner .star .rating > input:checked ~ label:hover ~ label {
-        color: #f3284a; }
-      .right .banner .star .text {
-        width: 68%;
-        float: left;
-        text-align: center;
-        font-size: 18px; }
-        .right .banner .star .text span {
-          font-size: 27px; }
-  .right .smallintro {
-    display: none; }
-  .right .halfwaypic {
-    margin: 6% auto; }
-=======
   padding-top: 50px; }
   .right .breadcrumbs {
     margin-left: 50px;
@@ -554,7 +444,6 @@ header ul li:nth-child(2):after {
               font-size: 27px; }
   .right .halfwaypic {
     margin: 20px auto 50px auto; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .halfwaypic .container {
       display: flex;
       justify-content: space-around; }
@@ -564,11 +453,7 @@ header ul li:nth-child(2):after {
         .right .halfwaypic .container .picture img {
           width: 100%; }
   .right .cat {
-<<<<<<< HEAD
-    background-image: url(../../images/catbg2.jpeg);
-=======
     background-image: url(../images/catbg2.jpeg);
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -643,11 +528,7 @@ header ul li:nth-child(2):after {
     .right .map img {
       width: 100%; }
   .right .talk {
-<<<<<<< HEAD
-    background-image: url(../../images/talk.jpg);
-=======
     background-image: url(../images/talk.jpg);
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     background-attachment: fixed;
     background-position: 20%;
     background-repeat: no-repeat;
@@ -722,31 +603,8 @@ header ul li:nth-child(2):after {
   .right {
     padding: 0;
     margin: 0; }
-<<<<<<< HEAD
-    .right .banner {
-      width: 100%;
-      padding-top: 80vh;
-      animation: bb 20s linear infinite; }
-      .right .banner h2 {
-        top: 3%;
-        left: 3%;
-        width: 60%;
-        line-height: 8vw; }
-      .right .banner .intro {
-        display: none; }
-      .right .banner .contact {
-        width: 60%;
-        top: 30vh;
-        left: 0;
-        right: 0;
-        margin: auto; }
-      .right .banner .star {
-        left: 60%;
-        top: 63vh; }
-=======
     .right .banner .container .bigpic {
       animation: bb 20s linear infinite; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   @keyframes bb {
     20% {
       background-image: url(../images/halfdetail7_resized.jpg); }
@@ -756,21 +614,8 @@ header ul li:nth-child(2):after {
       background-image: url(../images/halfdetail6.jpg); }
     80% {
       background-image: url(../images/halfdetail4.jpg); } }
-<<<<<<< HEAD
-    .right .smallintro {
-      display: block;
-      background-color: #F1E8D6;
-      padding: 30px 30px;
-      font-size: 14px;
-      line-height: 2.0; }
     .right .halfwaypic {
       display: none; }
-    .right .cat .flycat {
-      display: none; }
-=======
-    .right .halfwaypic {
-      display: none; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .cat .container .catitem {
       width: 40%; }
     .right .talk .container .article {
@@ -784,36 +629,6 @@ header ul li:nth-child(2):after {
   .right {
     padding: 0;
     margin: 0; }
-<<<<<<< HEAD
-    .right .banner {
-      width: 100%;
-      padding-top: 80vh;
-      animation: bb 20s linear infinite; }
-      .right .banner h2 {
-        top: 3%;
-        left: 3%;
-        width: 60%;
-        line-height: 8vw; }
-      .right .banner .intro {
-        display: none; }
-      .right .banner .contact {
-        width: 60%;
-        top: 20vh;
-        left: 0;
-        right: 0;
-        margin: auto; }
-      .right .banner .star {
-        width: 60%;
-        top: 55vh;
-        left: 0;
-        right: 0;
-        margin: auto; }
-        .right .banner .star .rating {
-          font-size: 25.2px;
-          margin: 0 auto; }
-        .right .banner .star .text {
-          width: 100%; }
-=======
     .right .banner h2 {
       width: 70%;
       background-color: transparent; }
@@ -827,7 +642,6 @@ header ul li:nth-child(2):after {
         padding-top: 65%;
         margin: 0;
         animation: bb 20s linear infinite; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   @keyframes bb {
     20% {
       background-image: url(../images/halfdetail7_resized.jpg); }
@@ -837,19 +651,12 @@ header ul li:nth-child(2):after {
       background-image: url(../images/halfdetail6.jpg); }
     80% {
       background-image: url(../images/halfdetail4.jpg); } }
-<<<<<<< HEAD
-    .right .halfwaypic {
-      display: none; }
-    .right .cat .flycat {
-      display: none; }
-=======
       .right .banner .container .text {
         width: 100%;
         margin: 0;
         margin-bottom: 50px; }
     .right .halfwaypic {
       display: none; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .right .cat .container .catitem {
       width: 50%; }
     .right .talk .container .article {

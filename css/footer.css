@@ -51,12 +51,9 @@ table {
 @font-face {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
-<<<<<<< HEAD
-=======
 
 input, select {
   font-family: notoSans_r; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 body {
   font-family: notoSans;
@@ -165,8 +162,6 @@ footer {
     position: relative;
     top: -20px;
     padding: 10px; }
-<<<<<<< HEAD
-=======
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   footer {
@@ -193,4 +188,3 @@ footer {
     footer span {
       display: block;
       text-align: center; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215

@@ -51,12 +51,9 @@ table {
 @font-face {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
-<<<<<<< HEAD
-=======
 
 input, select {
   font-family: notoSans_r; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 body {
   font-family: notoSans;
@@ -69,11 +66,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-<<<<<<< HEAD
-  z-index: 9999999; }
-=======
   z-index: 999; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   header .logo {
     position: relative;
     top: 70px;

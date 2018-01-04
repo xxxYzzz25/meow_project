@@ -51,12 +51,9 @@ table {
 @font-face {
   font-family: notoSans_b;
   src: url("../fonts/NotoSansCJKtc-Black.otf"); }
-<<<<<<< HEAD
-=======
 
 input, select {
   font-family: notoSans_r; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 body {
   font-family: notoSans;
@@ -175,8 +172,6 @@ body {
     top: 50%;
     right: 18px;
     content: ""; }
-<<<<<<< HEAD
-=======
 
 .breadcrumbs {
   margin-bottom: 40px;
@@ -200,7 +195,6 @@ body {
         color: #333;
         background-color: transparent;
         border-color: transparent; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 .container {
   max-width: 991px;
@@ -242,8 +236,6 @@ footer {
     position: relative;
     top: -20px;
     padding: 10px; }
-<<<<<<< HEAD
-=======
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   footer {
@@ -257,7 +249,6 @@ footer {
     footer span {
       display: block;
       text-align: center; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 header {
   background-color: #eaaf88;
@@ -266,11 +257,7 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-<<<<<<< HEAD
-  z-index: 9999999; }
-=======
   z-index: 999; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   header .logo {
     position: relative;
     top: 70px;
@@ -328,11 +315,7 @@ header {
         transform: scale(1.15);
         transition: .3s; }
 
-<<<<<<< HEAD
-.pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2 {
-=======
 .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2 {
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   font-size: 18px;
   color: #fff;
   background-color: #333;
@@ -370,15 +353,11 @@ header {
     text-align: center;
     padding: 15px;
     font-weight: bolder;
-<<<<<<< HEAD
-    font-size: 18px; }
-=======
     font-size: 18px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .banner .find img, .banner .wait img {
       width: 40px;
       height: 55px;
@@ -390,30 +369,6 @@ header {
   .banner .search {
     position: relative; }
     .banner .search select {
-<<<<<<< HEAD
-      background-color: rgba(153, 153, 153, 0.493);
-      border: 3px solid #fff;
-      border-radius: 40px;
-      text-align-last: center;
-      padding: 10px 0;
-      font-size: 18px;
-      color: #fff;
-      cursor: pointer; }
-    .banner .search input {
-      margin: 15px auto;
-      background-color: rgba(153, 153, 153, 0.493);
-      border: 3px solid #fff;
-      letter-spacing: 2px;
-      border-radius: 40px;
-      padding: 10px 37.5px 10px 15px;
-      font-size: 18px; }
-      .banner .search input:-moz-placeholder {
-        color: #fff; }
-      .banner .search input::-webkit-input-placeholder {
-        color: #fff; }
-      .banner .search input:-ms-input-placeholder {
-        color: #fff; }
-=======
       background-color: rgba(255, 255, 255, 0.308);
       border: 3px solid #fff;
       border-radius: 40px;
@@ -436,7 +391,6 @@ header {
         color: #333; }
       .banner .search input:-ms-input-placeholder {
         color: #333; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .banner .search .fa-search {
       color: #fff;
       position: absolute;
@@ -457,11 +411,7 @@ header {
       height: 40px;
       line-height: 10px; }
   .pick-kit ul {
-<<<<<<< HEAD
-    width: 100%;
-=======
     width: 200%;
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     position: absolute;
     display: flex;
     justify-content: space-around;
@@ -495,31 +445,11 @@ header {
               .pick-kit ul li .cat_list_bg a .cat_list .bubble span {
                 display: block;
                 padding: 5px; }
-<<<<<<< HEAD
-      .pick-kit ul li:nth-child(1) .cat_list_bg a .cat_list {
-        background-image: url(../images/catcat_171225_0011.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center; }
-      .pick-kit ul li:nth-child(2) .cat_list_bg a .cat_list {
-=======
       .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list {
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
         background-image: url(../images/catcat_171225_0010.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; }
-<<<<<<< HEAD
-      .pick-kit ul li:nth-child(3) .cat_list_bg a .cat_list {
-        background-image: url(../images/catcat_171228_0012.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center; }
-      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
-        position: relative;
-        top: 50%; }
-      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
-=======
       .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list {
         background-image: url(../images/catcat_171225_0011.jpg);
         background-repeat: no-repeat;
@@ -529,7 +459,6 @@ header {
         position: relative;
         top: 50%; }
       .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
         position: relative;
         top: 10%; }
   .pick-kit .arrow {
@@ -537,11 +466,7 @@ header {
     height: 60px;
     background-color: rgba(0, 0, 0, 0.411);
     position: absolute;
-<<<<<<< HEAD
-    top: 40vh;
-=======
     top: 70vh;
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     z-index: 666; }
     .pick-kit .arrow img {
       width: 100%;
@@ -592,8 +517,6 @@ header {
     flex-direction: column;
     justify-content: center;
     padding-left: 5%; }
-<<<<<<< HEAD
-=======
     .half .half-text a {
       text-decoration: none;
       transition: .3s all;
@@ -604,7 +527,6 @@ header {
     .half .half-text .read-more {
       align-self: flex-end;
       text-decoration: underline; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
     .half .half-text .half-name {
       font-family: notoSans_r;
       font-size: 18px; }
@@ -660,8 +582,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center; }
-<<<<<<< HEAD
-=======
 
 .game-point {
   height: 100vh;
@@ -750,7 +670,6 @@ header {
       height: 90px;
       z-index: 1;
       right: 0; }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
 
 #loading {
   position: fixed;
@@ -759,19 +678,13 @@ header {
   width: 100%;
   height: 100vh;
   z-index: 999999999999999999999999999999;
-<<<<<<< HEAD
-  background-color: rgba(44, 44, 44, 0.856);
-=======
   background-color: #eaaf88;
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
   transition: .3s; }
   #loading #loadingCat {
     position: absolute;
     display: block;
     top: calc(50% - 100px);
     left: calc(50% - 100px); }
-<<<<<<< HEAD
-=======
 
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);
@@ -921,4 +834,3 @@ header {
       display: inline-block;
       width: 80px;
       font-size: 14px; } }
->>>>>>> 29cf21ea1a63a5f572d52c99a6da8e641981d215
