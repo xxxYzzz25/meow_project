@@ -17,35 +17,44 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: top; }
+  vertical-align: top;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none; }
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /* */
 header {
@@ -55,37 +64,45 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-  z-index: 9999999; }
+  z-index: 9999999;
+}
 
 header .logo {
   position: relative;
   top: 70px;
   width: 180px;
-  text-align: center; }
+  text-align: center;
+}
 
 header .logo a {
   text-decoration: none;
-  color: #fff; }
+  color: #fff;
+}
 
 header .logo img {
-  width: 90%; }
+  width: 90%;
+}
 
 header ul {
   position: absolute;
-  bottom: 180px; }
+  bottom: 180px;
+}
 
 header ul li {
   margin: 1px 0;
-  position: relative; }
+  position: relative;
+}
 
 header ul li:hover {
   background-color: #fff;
   box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
-  transition: .3s; }
+  transition: .3s;
+}
 
 header ul li:hover a {
   color: #000;
-  transition: .3s; }
+  transition: .3s;
+}
 
 header ul li a {
   width: 185px;
@@ -93,10 +110,12 @@ header ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
-  padding: 15px 20px; }
+  padding: 15px 20px;
+}
 
 header ul .action a {
-  color: #000; }
+  color: #000;
+}
 
 header .icons {
   width: 180px;
@@ -105,7 +124,8 @@ header .icons {
   padding-right: 20px;
   justify-content: space-around;
   position: absolute;
-  bottom: 40px; }
+  bottom: 40px;
+}
 
 header .icons #like {
   font-size: 12px;
@@ -118,18 +138,22 @@ header .icons #like {
   color: #d33;
   top: -17px;
   right: -25px;
-  font-family: notoSans_b; }
+  font-family: notoSans_b;
+}
 
 header .icons a {
   text-decoration: none;
-  color: #fff; }
+  color: #fff;
+}
 
 header .icons a:hover {
   transform: scale(1.15);
-  transition: .3s; }
+  transition: .3s;
+}
 
 h2 {
-  font-size: 20px; }
+  font-size: 20px;
+}
 
 body {
   position: relative;
@@ -138,44 +162,54 @@ body {
   width: 100%;
   min-height: 100%;
   font-weight: 400;
-  font-size: 16px; }
+  font-size: 16px;
+}
 
 .action {
-  background-color: #fff; }
-  .action::after {
-    z-index: -1;
-    content: '';
-    display: block;
-    width: 34px;
-    height: 34px;
-    background-color: #fff;
-    position: absolute;
-    top: 7px;
-    right: -17px;
-    transform: rotate(45deg);
-    box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199); }
+  background-color: #fff;
+}
+
+.action::after {
+  z-index: -1;
+  content: '';
+  display: block;
+  width: 34px;
+  height: 34px;
+  background-color: #fff;
+  position: absolute;
+  top: 7px;
+  right: -17px;
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
+}
 
 .container {
   max-width: 991px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .container-right {
-  margin-top: 50px; }
+  margin-top: 50px;
+}
 
 .container-table {
-  padding: 20px 30px; }
+  padding: 20px 30px;
+}
 
 .forum-title {
-  margin-left: 200px; }
-  .forum-title li {
-    padding: 5px 5px;
-    border: 2px solid #eee;
-    background-color: rgba(241, 209, 146, 0.815);
-    width: 30%;
-    display: inline-block; }
+  margin-left: 200px;
+}
+
+.forum-title li {
+  padding: 5px 5px;
+  border: 2px solid #eee;
+  background-color: rgba(241, 209, 146, 0.815);
+  width: 30%;
+  display: inline-block;
+}
 
 table {
   display: none;
@@ -183,11 +217,13 @@ table {
   margin-left: 200px;
   width: 77%;
   text-align: left;
-  border: 1px solid rgba(241, 209, 146, 0.815); }
+  border: 1px solid rgba(241, 209, 146, 0.815);
+}
 
 tr {
   border-bottom: 1px #ccc dashed;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 td {
   width: 28%;
@@ -196,19 +232,26 @@ td {
   word-break: keep-all;
   white-space: nowrap;
   display: inline-block;
-  padding: 5px; }
-  td a {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-    td a span {
-      margin-right: 10px; }
+  padding: 5px;
+}
+
+td a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td a span {
+  margin-right: 10px;
+}
 
 .t-post {
-  width: 41%; }
+  width: 41%;
+}
 
 .dplay {
-  display: inline-table; }
+  display: inline-table;
+}
 
 .postfrom {
   margin-left: 235px;
@@ -216,56 +259,82 @@ td {
   background-color: red;
   text-align: left;
   background-color: #eee;
-  border: 1px solid rgba(241, 209, 146, 0.815); }
-  .postfrom p {
-    padding: 5px;
-    background-color: #ccc; }
+  border: 1px solid rgba(241, 209, 146, 0.815);
+}
+
+.postfrom p {
+  padding: 5px;
+  background-color: #ccc;
+}
 
 .post-select {
   padding: 5px;
-  margin-top: 5px; }
-  .post-select input {
-    width: 87.5%; }
+  margin-top: 5px;
+}
+
+.post-select input {
+  width: 87.5%;
+}
 
 .text-tar {
-  padding: 5px; }
-  .text-tar textarea {
-    resize: none;
-    width: 99.9%; }
+  padding: 5px;
+}
+
+.text-tar textarea {
+  resize: none;
+  width: 99.9%;
+}
 
 .btns {
-  padding: 5px; }
+  padding: 5px;
+}
 
 @media screen and (max-width: 991px) {
   header {
-    display: none; }
+    display: none;
+  }
   table {
     margin: 0 auto;
-    width: 80%; }
+    width: 80%;
+  }
   .forum-title {
-    margin: 0 auto; }
-    .forum-title li {
-      width: 25%; }
+    margin: 0 auto;
+  }
+  .forum-title li {
+    width: 25%;
+  }
   .postfrom {
     margin: 0 auto;
-    width: 75%; }
+    width: 75%;
+  }
   .post-select input {
     margin-top: 5px;
-    width: 87.5%; } }
+    width: 87.5%;
+  }
+}
 
 @media screen and (max-width: 658px) {
   h2 {
-    font-size: 16px; }
+    font-size: 16px;
+  }
   table {
-    width: 85%; }
+    width: 85%;
+  }
   td {
     width: 30%;
-    text-align: right; }
+    text-align: right;
+  }
   .t-post {
     text-align: left;
-    width: 30%; } }
+    width: 30%;
+  }
+}
 
 @media screen and (max-width: 400px) {
   table {
     font-size: 14px;
-    width: 100%; } }
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=forum.css.map */
