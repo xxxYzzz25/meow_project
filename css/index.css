@@ -329,6 +329,9 @@ header {
   border: 2px solid #333;
   margin: 15px 0; }
 
+.margin-200 {
+  margin-left: 200px; }
+
 .more {
   width: 100%;
   position: absolute;
@@ -340,7 +343,6 @@ header {
   align-items: center; }
 
 .banner {
-  margin-left: 200px;
   height: 100vh;
   background-image: url(../images/AdobeStock_112482963.jpeg);
   background-repeat: no-repeat;
@@ -378,6 +380,8 @@ header {
       color: #333;
       cursor: pointer; }
     .banner .search input {
+      -moz-appearance: none;
+      -webkit-appearance: none;
       margin: 15px auto;
       background-color: rgba(255, 255, 255, 0.308);
       border: 3px solid #fff;
@@ -398,7 +402,6 @@ header {
       top: 30px; }
 
 .pick-kit {
-  margin-left: 200px;
   text-align: center;
   height: 100vh;
   position: relative;
@@ -467,15 +470,16 @@ header {
     background-color: rgba(0, 0, 0, 0.411);
     position: absolute;
     top: 70vh;
-    z-index: 666; }
-    .pick-kit .arrow img {
-      width: 100%;
-      height: 100%; }
+    z-index: 666;
+    cursor: pointer; }
+    .pick-kit .arrow i {
+      color: #fff;
+      position: relative;
+      top: 12px; }
   .pick-kit .right-arrow {
     right: 0; }
 
 .half {
-  margin-left: 200px;
   background-image: url(../images/wood.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -491,11 +495,12 @@ header {
   .half .half-item {
     padding: 7.5px 15px;
     height: 25vh;
-    margin: 0.84vh 0;
+    margin: 0.84vh auto;
     display: flex;
-    background-color: #fff; }
+    background-color: #fff;
+    width: 80%; }
   .half .half-qty {
-    width: 20%;
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -505,18 +510,16 @@ header {
       height: 55px;
       margin: 0 5px; }
   .half .half-pic {
-    width: 50%;
+    width: 35%;
     height: 100%;
     background-image: url(../images/half_1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; }
   .half .half-text {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 5%; }
+    width: 35%;
+    padding: 15px;
+    position: relative; }
     .half .half-text a {
       text-decoration: none;
       transition: .3s all;
@@ -525,16 +528,18 @@ header {
       .half .half-text a:hover {
         color: #EAAF88; }
     .half .half-text .read-more {
-      align-self: flex-end;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
       text-decoration: underline; }
     .half .half-text .half-name {
       font-family: notoSans_r;
       font-size: 18px; }
     .half .half-text span {
-      margin: 10px 0; }
+      margin: 10px 0;
+      display: block; }
 
 .shop {
-  margin-left: 200px;
   height: 100vh;
   overflow: hidden;
   background-image: url(../images/wood.jpg); }
@@ -556,7 +561,11 @@ header {
   .shop .shop-right {
     top: -300px; }
   .shop .shop-title {
-    margin-top: 15vh; }
+    height: 10vh;
+    display: flex;
+    align-items: center; }
+    .shop .shop-title h2 {
+      height: 40px; }
   .shop .prod-list {
     padding: 60px 40px;
     background-color: rgba(255, 255, 255, 0.537);
@@ -575,18 +584,17 @@ header {
   position: relative; }
   .section .quick-signUp {
     height: 80vh;
-    width: 100%;
-    margin-left: 200px; }
+    width: 100%; }
   .section footer {
     height: 20vh;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    margin-left: 0; }
 
 .game-point {
   height: 100vh;
   background-color: #EAAF88;
-  margin-left: 200px;
   box-shadow: 20px 20px #333 inset, -20px -20px #333 inset; }
   .game-point .game-point-title {
     height: 15vh;
@@ -657,7 +665,8 @@ header {
       width: 100px;
       height: 105px;
       left: 0; }
-    .game-point .game-point-bottom #optionA, .game-point .game-point-bottom #optionB {
+    .game-point .game-point-bottom #optionA,
+    .game-point .game-point-bottom #optionB {
       align-self: flex-start;
       width: 30%;
       height: 250px;
