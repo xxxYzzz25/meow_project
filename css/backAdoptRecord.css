@@ -656,7 +656,7 @@ header ul li:nth-child(6):after {
 }
 
 header {
-  background-color: #92e9d2;
+  background-color: #c2eaeb;
 }
 
 .right {
@@ -706,7 +706,8 @@ header {
   border-bottom: 1px solid #333;
 }
 
-.right .container1 .adoptInfomation table tr th, .right .container1 .adoptInfomation table tr td {
+.right .container1 .adoptInfomation table tr th,
+.right .container1 .adoptInfomation table tr td {
   padding-top: 16px;
   padding-bottom: 8px;
   font-size: 14px;
