@@ -408,21 +408,26 @@ header .icons a:hover {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-    text-align: center; }
-    .breadcrumbs a {
-      border: none;
-      padding: 0; }
-      .breadcrumbs a:hover {
-        color: #333;
-        background-color: transparent;
-        border-color: transparent; } }
+    text-align: center;
+  }
+  .breadcrumbs a {
+    border: none;
+    padding: 0;
+  }
+  .breadcrumbs a:hover {
+    color: #333;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
 
 .fa-mars {
   color: deepskyblue;
 }
 
 .fa-venus {
-  color: #fc516d; }
+  color: #fc516d;
+}
 
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);
@@ -940,4 +945,8 @@ header ul li:nth-child(1):after {
   }
   footer {
     margin-left: 0;
-    width: 100%; } 
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=catContent.css.map */

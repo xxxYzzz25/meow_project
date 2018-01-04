@@ -61,19 +61,12 @@ table {
 
 @font-face {
   font-family: notoSans_b;
-<<<<<<< HEAD
   src: url("../fonts/NotoSansCJKtc-Black.otf");
 }
 
 input, select {
   font-family: notoSans_r;
 }
-=======
-  src: url("../fonts/NotoSansCJKtc-Black.otf"); }
-
-input, select {
-  font-family: notoSans_r; }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 body {
   font-family: notoSans;
@@ -85,12 +78,8 @@ body {
 }
 
 .fa-venus {
-<<<<<<< HEAD
   color: #fc516d;
 }
-=======
-  color: #fc516d; }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 .defaultBtn {
   font-size: 16px;
@@ -172,7 +161,6 @@ body {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-<<<<<<< HEAD
     text-align: center;
   }
   .breadcrumbs a {
@@ -185,16 +173,6 @@ body {
     border-color: transparent;
   }
 }
-=======
-    text-align: center; }
-    .breadcrumbs a {
-      border: none;
-      padding: 0; }
-      .breadcrumbs a:hover {
-        color: #333;
-        background-color: transparent;
-        border-color: transparent; } }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 .container {
   max-width: 991px;
@@ -212,7 +190,6 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-<<<<<<< HEAD
   z-index: 999;
 }
 
@@ -295,70 +272,10 @@ header .icons a:hover {
   transform: scale(1.15);
   transition: .3s;
 }
-=======
-  z-index: 999; }
-  header .logo {
-    position: relative;
-    top: 70px;
-    width: 180px;
-    text-align: center; }
-    header .logo a {
-      text-decoration: none;
-      color: #fff; }
-    header .logo img {
-      width: 90%; }
-  header ul {
-    position: absolute;
-    bottom: 180px; }
-    header ul li {
-      margin: 1px 0;
-      position: relative; }
-      header ul li:hover {
-        background-color: #fff;
-        box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
-        transition: .3s; }
-      header ul li:hover a {
-        color: #000;
-        transition: .3s; }
-      header ul li a {
-        width: 185px;
-        display: block;
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 15px 20px; }
-  header .icons {
-    width: 180px;
-    display: flex;
-    padding: 15px;
-    padding-right: 20px;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 40px; }
-    header .icons #like {
-      font-size: 12px;
-      text-align: center;
-      line-height: 20px;
-      display: block;
-      width: 15px;
-      height: 15px;
-      position: relative;
-      color: #d33;
-      top: -17px;
-      right: -25px;
-      font-family: notoSans_b; }
-    header .icons a {
-      text-decoration: none;
-      color: #fff; }
-      header .icons a:hover {
-        transform: scale(1.15);
-        transition: .3s; }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 footer {
   background-color: #f5eae3;
   margin-left: 200px;
-<<<<<<< HEAD
   padding: 15px;
 }
 
@@ -404,38 +321,6 @@ footer span {
   top: -20px;
   padding: 10px;
 }
-=======
-  padding: 15px; }
-  footer .follow {
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-  footer nav {
-    margin: auto; }
-    footer nav ul {
-      display: flex;
-      justify-content: space-around; }
-      footer nav ul li {
-        width: 20%;
-        margin: 15px; }
-        footer nav ul li:hover {
-          transform: translateY(-3px);
-          transition: .35s; }
-        footer nav ul li a {
-          text-align: center;
-          border: 1px solid #333;
-          text-decoration: none;
-          color: #333;
-          display: block;
-          width: 100%;
-          padding: 15px; }
-  footer span {
-    display: inline-block;
-    position: relative;
-    top: -20px;
-    padding: 10px; }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   footer {
@@ -447,7 +332,6 @@ footer span {
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
-<<<<<<< HEAD
     width: 100%;
   }
   footer span {
@@ -455,12 +339,6 @@ footer span {
     text-align: center;
   }
 }
-=======
-    width: 100%; }
-    footer span {
-      display: block;
-      text-align: center; } }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 .btns .btn {
   font-size: 30px;
@@ -582,7 +460,6 @@ header ul li:nth-child(2):after {
   background-image: url(../images/marble.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-<<<<<<< HEAD
   z-index: 0;
 }
 
@@ -719,106 +596,12 @@ header ul li:nth-child(2):after {
 .right .result .container .item .bg3 {
   background-color: rgba(139, 105, 73, 0.767);
 }
-=======
-  z-index: 0; }
-  .right h2 {
-    font-size: 36px;
-    text-align: center;
-    padding: 50px 0;
-    letter-spacing: 15px;
-    font-weight: bold; }
-  .right .searchsection {
-    margin: 40px 0; }
-    .right .searchsection .formInsert {
-      text-align: center; }
-      .right .searchsection .formInsert .select:hover {
-        color: #000;
-        background-color: #fff;
-        border-color: #000; }
-      .right .searchsection .formInsert .searchBtn {
-        height: 38px; }
-      .right .searchsection .formInsert .searchBar {
-        width: 260px;
-        height: 38px;
-        border-radius: 100px;
-        border: 2px solid black;
-        font-size: 14px;
-        text-indent: 4px;
-        margin-right: 6px; }
-        .right .searchsection .formInsert .searchBar:focus {
-          outline: none; }
-        .right .searchsection .formInsert .searchBar:-ms-input-placeholder {
-          font-size: 14px;
-          line-height: 30px;
-          letter-spacing: 4px;
-          padding: 5px 15px; }
-        .right .searchsection .formInsert .searchBar:-moz-placeholder {
-          font-size: 14px;
-          line-height: 30px;
-          letter-spacing: 4px;
-          padding: 5px 15px; }
-        .right .searchsection .formInsert .searchBar::-moz-placeholder {
-          font-size: 14px;
-          line-height: 30px;
-          letter-spacing: 4px;
-          padding: 5px 15px; }
-        .right .searchsection .formInsert .searchBar::-webkit-input-placeholder {
-          font-size: 14px;
-          line-height: 30px;
-          letter-spacing: 4px;
-          padding: 5px 15px; }
-  .right .result .container .item {
-    width: 90%;
-    margin: 200px auto 150px auto;
-    position: relative; }
-    .right .result .container .item .text {
-      width: 50%;
-      background-color: #fff;
-      font-size: 14px;
-      line-height: 30px;
-      padding: 0 0 3% 5%;
-      box-shadow: 12px 10px 20px -10px #333; }
-      .right .result .container .item .text h3 {
-        font-size: 24px;
-        padding: 8% 0;
-        letter-spacing: 10px; }
-      .right .result .container .item .text a {
-        display: flex;
-        justify-content: flex-end;
-        margin-right: 25px;
-        text-decoration: none;
-        color: #EAAF88; }
-        .right .result .container .item .text a:hover {
-          color: #333; }
-    .right .result .container .item .pic {
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      box-shadow: 12px 10px 20px -10px #333; }
-      .right .result .container .item .pic img {
-        width: 100%; }
-    .right .result .container .item .bg {
-      position: absolute;
-      top: 13%;
-      left: 5%;
-      width: 100%;
-      height: 120%;
-      box-shadow: 12px 10px 10px -4px #aaa;
-      z-index: -3; }
-    .right .result .container .item .bg1 {
-      background-color: rgba(66, 136, 115, 0.767); }
-    .right .result .container .item .bg2 {
-      background-color: rgba(199, 79, 73, 0.767); }
-    .right .result .container .item .bg3 {
-      background-color: rgba(139, 105, 73, 0.767); }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   header {
     display: none;
   }
   .right {
-<<<<<<< HEAD
     margin: 0;
   }
   .right .result .container .item {
@@ -850,36 +633,12 @@ header ul li:nth-child(2):after {
     display: none;
   }
 }
-=======
-    margin: 0; }
-    .right .result .container .item {
-      width: 80%;
-      margin: 50px auto 100px auto; }
-      .right .result .container .item:after {
-        content: '';
-        display: block;
-        clear: both; }
-      .right .result .container .item .text {
-        width: 100%;
-        color: #ddd; }
-      .right .result .container .item .tx1 {
-        background-color: rgba(66, 136, 115, 0.767); }
-      .right .result .container .item .tx2 {
-        background-color: rgba(199, 79, 73, 0.767); }
-      .right .result .container .item .tx3 {
-        background-color: rgba(139, 105, 73, 0.767); }
-      .right .result .container .item .pic {
-        position: static; }
-      .right .result .container .item .bg {
-        display: none; } }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
 
 @media all and (max-width: 767px) {
   header {
     display: none;
   }
   .right {
-<<<<<<< HEAD
     margin: 0;
   }
   .right h2 {
@@ -924,34 +683,3 @@ header ul li:nth-child(2):after {
 }
 
 /*# sourceMappingURL=halfway_house_search.css.map */
-=======
-    margin: 0; }
-    .right h2 {
-      padding: 30px 0; }
-    .right .searchsection .container .formInsert {
-      margin: 25px 0; }
-      .right .searchsection .container .formInsert .select {
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 30px; }
-    .right .result .container .item {
-      width: 80%;
-      margin: 50px auto 100px auto; }
-      .right .result .container .item:after {
-        content: '';
-        display: block;
-        clear: both; }
-      .right .result .container .item .text {
-        width: 100%;
-        color: #ddd; }
-      .right .result .container .item .tx1 {
-        background-color: rgba(66, 136, 115, 0.767); }
-      .right .result .container .item .tx2 {
-        background-color: rgba(199, 79, 73, 0.767); }
-      .right .result .container .item .tx3 {
-        background-color: rgba(139, 105, 73, 0.767); }
-      .right .result .container .item .pic {
-        position: static; }
-      .right .result .container .item .bg {
-        display: none; } }
->>>>>>> 4c2384511f2928a243ad7624145f00524188142a
