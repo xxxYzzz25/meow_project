@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/backEmpManage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" title="">會員權限管理</a>
+                </li>
+                <li>
+                    <a href="#" title="">員工權限管理</a>
+                </li>
+                <li>
+                    <a href="#" title="">中途之家審核</a>
+                </li>
+                <li>
+                    <a href="#" title="">檢舉審核</a>
+                </li>
+                <li>
+                    <a href="#" title="">訂單管理</a>
+                </li>
+                <li>
+                    <a href="#" title="">查詢領養紀錄</a>
+                </li>
+                <li>
+                    <a href="#" title="">查詢銷售紀錄</a>
+                </li>
+                <li>
+                    <a href="#" title="">寵物商品上下架</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="right">
+        <div class="container container1">
+            <div class="bigImg">
+                <img src="../images/back/catAdoptRecord.jpg" alt="">
+            </div>
+            <div class="empManage">
+                <button id="newEmp" class="defaultBtn">新增員工帳號</button>
+                <from>
+                    <table>
+                        <tr class="newEmpTR newEmpTROff" id="abc">
+                            <th>員工帳號</th>
+                            <th>員工密碼</th>
+                            <th>員工職位</th>
+                            <th>確認新增</th>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
+                            <td>
+                                <input type="text" id="empIdNew">
+                            </td>
+                            <td>
+                                <input type="password" name="empPsw" id="empPswNew">
+                            </td>
+                            <td>
+                                <select name="EmpOffice" id="EmpOfficeNew">
+                                    <option value="">Supper Admin</option>
+                                    <option value="">Sales</option>
+                                    <option value="">RD</option>
+                                </select>
+                            </td>
+                            <td>
+                                <i class="fa fa-circle-o" aria-hidden="true" id="ensureBtn"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>員工帳號</th>
+                            <th>員工密碼</th>
+                            <th>員工職位</th>
+                            <th>員工帳號刪除</th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="text" id="empId1">
+                            </td>
+                            <td>
+                                <input type="password" name="empPsw" id="empPsw1">
+                            </td>
+                            <td>
+                                <select name="EmpOffice" id="EmpOffice1">
+                                    <option value="">Supper Admin</option>
+                                    <option value="">Sales</option>
+                                    <option value="">RD</option>
+                                </select>
+                            </td>
+                            <td>
+                                <i class="fa fa-times cancel"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="empId2">
+                            </td>
+                            <td>
+                                <input type="password" name="empPsw" id="empPsw2">
+                            </td>
+                            <td>
+                                <select name="EmpOffice" id="EmpOffice2">
+                                    <option value="">Supper Admin</option>
+                                    <option value="">Sales</option>
+                                    <option value="">RD</option>
+                                </select>
+                            </td>
+                            <td>
+                                <i class="fa fa-times cancel"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="empId3">
+                            </td>
+                            <td>
+                                <input type="password" name="empPsw" id="empPsw3">
+                            </td>
+                            <td>
+                                <select name="EmpOffice" id="EmpOffice3">
+                                    <option value="">Supper Admin</option>
+                                    <option value="">Sales</option>
+                                    <option value="">RD</option>
+                                </select>
+                            </td>
+                            <td>
+                                <i class="fa fa-times cancel"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="empId4">
+                            </td>
+                            <td>
+                                <input type="password" name="empPsw" id="empPsw4">
+                            </td>
+                            <td>
+                                <select name="EmpOffice" id="EmpOffice4">
+                                    <option value="">Supper Admin</option>
+                                    <option value="">Sales</option>
+                                    <option value="">RD</option>
+                                </select>
+                            </td>
+                            <td>
+                                <i class="fa fa-times cancel"></i>
+                            </td>
+                        </tr>
+                        <tr id="trLast">
+                            <td>
+                                <input type="text" id="empId5">
+                            </td>
+                            <td>
+                                <input type="password" name="empPsw" id="empPsw5">
+                            </td>
+                            <td>
+                                <select name="EmpOffice" id="EmpOffice5">
+                                    <option value="">Supper Admin</option>
+                                    <option value="">Sales</option>
+                                    <option value="">RD</option>
+                                </select>
+                            </td>
+                            <td>
+                                <i class="fa fa-times cancel"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </from>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            const newEmp = document.getElementById('newEmp');
+            newEmp.addEventListener('click', function newEmp() {
+                const newEmp = document.getElementById('newEmp');
+                const tr = document.getElementsByClassName('newEmpTR');
+                if (tr[0].className.match('newEmpTROff') && tr[1].className.match('newEmpTROff')) {
+                    tr[0].className =
+                        tr[0].className.replace
+                            ('newEmpTROff', 'newEmpTROn')
+                    tr[1].className =
+                        tr[1].className.replace
+                            ('newEmpTROff', 'newEmpTROn')
+                    newEmp.innerText = '取消新增';
+                } else {
+                    tr[0].className =
+                        tr[0].className.replace
+                            ('newEmpTROn', 'newEmpTROff')
+                    tr[1].className =
+                        tr[1].className.replace
+                            ('newEmpTROn', 'newEmpTROff')
+                    newEmp.innerText = '新增員工帳號';
+                }
+            })
+            const ensureBtn = document.getElementById('ensureBtn')
+            ensureBtn.addEventListener('click', function () {
+                confirm('您確定要新增嗎?')
+            })
+            
+        })
+    </script>
+</body>
+
+</html>

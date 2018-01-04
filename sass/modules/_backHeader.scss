@@ -1,0 +1,79 @@
+header{
+    background-color: $navBackColor;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    padding-left: 15px;
+    box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
+    z-index: 999;
+    .logo{
+        position: relative;
+        top: 70px;
+        width: 180px;
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: $navBackFontColor;
+        }
+        img{
+            width: 90%;
+        }
+    }
+    ul{
+        position: absolute;
+        bottom: 180px;
+        li{
+            margin: 1px 0;
+            position: relative;
+            &:hover{
+                background-color: #fff;
+                box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
+                transition: .3s;
+            }
+            &:hover a{
+                color: #000;
+                transition: .3s;
+            }
+            a{
+                width: 185px;
+                display: block;
+                color:$navBackFontColor;
+                text-decoration: none;
+                font-size: 18px;
+                padding: 15px 20px;
+            }
+            // @include navNow(nth);  第幾頁就輸入多少(nth)
+        }
+    }
+    .icons{
+        width: 180px;
+        display: flex;
+        padding: $gap;
+        padding-right: 20px;
+        justify-content: space-around;
+        position: absolute;
+        bottom: 40px;
+        #like{
+            font-size: $font-size-h6;
+            text-align: center;
+            line-height: 20px;
+            display: block;
+            width: 15px;
+            height: 15px;
+            position: relative;
+            color: #d33;
+            top: -17px;
+            right: -25px;
+            font-family: notoSans_b;
+        }
+        a{
+            &:hover{
+                transform: scale(1.15);
+                transition: .3s;
+            }
+            text-decoration: none;
+            color:#fff;
+        }
+    }
+
+}

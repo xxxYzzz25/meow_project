@@ -345,17 +345,17 @@ header .icons a:hover {
   }
 }
 
-header ul li:nth-child(6) {
+header ul li:nth-child(2) {
   background-color: #fff;
   box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
 }
 
-header ul li:nth-child(6) a {
+header ul li:nth-child(2) a {
   color: #333;
   font-family: notoSans_r;
 }
 
-header ul li:nth-child(6):after {
+header ul li:nth-child(2):after {
   z-index: -1;
   content: '';
   display: block;
@@ -402,44 +402,45 @@ header {
   max-width: 1000px;
 }
 
-.right .container1 .adoptInfomation {
+.right .container1 .empManage {
   width: 80%;
   margin: 100px auto 100px;
 }
 
-.right .container1 .adoptInfomation select {
+.right .container1 .empManage button {
   display: block;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-.right .container1 .adoptInfomation table {
+.right .container1 .empManage table {
   width: 100%;
   margin: 40px auto 60px;
 }
 
-.right .container1 .adoptInfomation table tr {
+.right .container1 .empManage table .newEmpTROff {
+  display: none;
+}
+
+.right .container1 .empManage table .newEmpTROn {
+  display: table-row;
+}
+
+.right .container1 .empManage table tr {
   border-bottom: 1px solid #333;
 }
 
-.right .container1 .adoptInfomation table tr th,
-.right .container1 .adoptInfomation table tr td {
+.right .container1 .empManage table tr th,
+.right .container1 .empManage table tr td {
   padding-top: 16px;
   padding-bottom: 8px;
   font-size: 14px;
 }
 
-.right .container1 .adoptInfomation table tr th {
+.right .container1 .empManage table tr th {
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: bold;
 }
 
-.right .container1 .adoptInfomation a {
-  text-align: center;
-  text-decoration: none;
-  padding: 2px;
-  border-radius: 0px;
-  border-width: 1px;
-  padding-left: 5px;
-}
-
-/*# sourceMappingURL=backAdoptRecord.css.map */
+/*# sourceMappingURL=backEmpManage.css.map */
