@@ -1,0 +1,86 @@
+@import 'base/_reset.scss';
+@import 'base/_var.scss';
+@import 'base/_boxsizing.scss';
+@import 'base/_font.scss';
+@import 'modules/_btns.scss';
+@import './modules/_backHeader.scss';
+@import 'mixins/_navNow.scss';
+@import "base/btn";
+@include navNow(3);
+header {
+    background-color: rgb(194, 234, 235);
+}
+
+.right {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+    color: #222;
+    .container1 {
+        width: 100%;
+        position: relative;
+        padding: 0 50px;
+        max-width: 3000px;
+        text-align: center;
+        &,
+        & * {
+            outline: none;
+        }
+        .bigImg {
+            // width: 60%;
+            background-size: cover;
+            margin: 0 auto;
+            img {
+                width: 100%;
+                max-width: 1000px;
+            }
+        }
+        .adoptInfomation {
+            width: 80%;
+            margin: 100px auto 100px;
+            select {
+                display: block;
+            }
+            table {
+                width: 100%;
+                margin: 40px auto 60px;
+                tr {
+                    border-bottom: 1px solid #333;
+                    th,
+                    td {
+                        padding-top: 16px;
+                        padding-bottom: 8px;
+                        font-size: $font-size-base;
+                        .fa-trash {
+                            font-size: $font-size-base*1.2;
+                            color: firebrick;
+                            cursor: pointer;
+                        }
+                        .fa-circle-o{
+                            font-size: $font-size-base*1.2;
+                            color: dodgerblue;
+                            cursor: pointer;
+                        }
+                        .fa-times{
+                            font-size: $font-size-base*1.2;
+                            color: crimson;
+                            cursor: pointer;
+                        }
+                    }
+                    th {
+                        font-size: $font-size-large;
+                        letter-spacing: 2px;
+                        font-weight: bold;
+                    }
+                }
+            }
+            a {
+                text-align: center;
+                text-decoration: none;
+                padding: 2px;
+                border-radius: 0px;
+                border-width: 1px;
+                padding-left: 5px;
+            }
+        }
+    }
+}

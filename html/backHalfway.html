@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>查詢領養紀錄</title>
-    <link rel="stylesheet" href="../css/backAdoptRecord.css">
+    <title>中途之家審核</title>
+    <link rel="stylesheet" href="../css/backHalfway.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="" title="">會員帳號管理</a>
+                    <a href="#" title="">會員帳號管理</a>
                 </li>
                 <li>
                     <a href="#" title="">員工帳號管理</a>
@@ -49,45 +49,49 @@
             </div>
             <div class="adoptInfomation">
                 <select name="sort" id="adobtSort">
-                    <option value="1">領養日期從新到舊</option>
-                    <option value="2">領養日期從舊到新</option>
+                    <option value="1">案件編號從舊到新</option>
+                    <option value="2">案件編號從新到舊</option>
                 </select>
                 <table>
                     <tr>
-                        <th>喵小孩編號</th>
-                        <th>領養者</th>
-                        <th>領養時間</th>
+                        <th>案件編號</th>
+                        <th>申請者帳號</th>
+                        <th>申請之中途之家名稱</th>
+                        <th>申請時間</th>
                         <th>審核狀態</th>
+                        <th>審核領養案件</th>
                     </tr>
                     <tr>
                         <td>001</td>
-                        <td>abc@gmail.com</td>
+                        <td>qqq88877</td>
+                        <td>安安安安安</td>
                         <td>2017/12/18</td>
                         <td>成功</td>
+                        <td>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </td>
                     </tr>
                     <tr>
                         <td>002</td>
-                        <td>abc@gmail.com</td>
+                        <td>www7788</td>
+                        <td>喔喔喔喔喔</td>
                         <td>2017/12/27</td>
-                        <td>成功</td>
+                        <td>失敗</td>
+                        <td>
+                            <i class="fa fa-circle-o" aria-hidden="true" id="ensureBtn"></i>
+                            <i class="fa fa-times cancel"></i>
+                        </td>
                     </tr>
                     <tr>
                         <td>003</td>
-                        <td>abc@gmail.com</td>
+                        <td>eee8787</td>
+                        <td>天ㄚㄚㄚㄚ</td>
                         <td>2018/1/2</td>
-                        <td>成功</td>
-                    </tr>
-                    <tr>
-                        <td>004</td>
-                        <td>abc@gmail.com</td>
-                        <td>2018/1/8</td>
-                        <td>待審核</td>
-                    </tr>
-                    <tr>
-                        <td>005</td>
-                        <td>abc@gmail.com</td>
-                        <td>2018/1/20</td>
-                        <td>待審核</td>
+                        <td>未審核</td>
+                        <td>
+                            <i class="fa fa-circle-o" aria-hidden="true" id="ensureBtn"></i>
+                            <i class="fa fa-times cancel"></i>
+                        </td>
                     </tr>
                 </table>
                 <a href="#" class="defaultBtn">1</a>
