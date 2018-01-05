@@ -1,0 +1,13 @@
+@include respond-to(medium) {
+    header {
+        display: none;
+    }
+    .right {
+        margin: 0;
+        .leftselect {
+            width: 25%;
+            float: left;
+            margin: 0 20px;
+        }
+    }
+}

@@ -21,7 +21,7 @@
             .select {
                 &:hover {
                     color: #000;
-                    background-color: #fff;
+                    background-color: transparent;
                     border-color: #000;
                 }
             }
@@ -36,6 +36,7 @@
                 font-size: $font-size-base;
                 text-indent: 4px;
                 margin-right: 6px;
+                background-color: transparent;
                 &:focus {
                     outline: none;
                 }

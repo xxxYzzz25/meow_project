@@ -8,6 +8,7 @@
     background-color: transparent; // transition: 1s all ease;
     cursor: pointer;
     transition: .3s all;
+    outline: none;
     &:hover {
         color: white;
         background-color: #EAAF88;
