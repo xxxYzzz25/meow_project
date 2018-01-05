@@ -346,17 +346,17 @@ header .icons a:hover {
   }
 }
 
-header ul li:nth-child(4) {
+header ul li:nth-child(8) {
   background-color: #fff;
   box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
 }
 
-header ul li:nth-child(4) a {
+header ul li:nth-child(8) a {
   color: #333;
   font-family: notoSans_r;
 }
 
-header ul li:nth-child(4):after {
+header ul li:nth-child(8):after {
   z-index: -1;
   content: '';
   display: block;
@@ -404,13 +404,23 @@ header ul li:nth-child(4):after {
   margin: 100px auto 100px;
 }
 
-.right .container1 .adoptInfomation select {
+.right .container1 .adoptInfomation button {
   display: block;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .right .container1 .adoptInfomation table {
   width: 100%;
   margin: 40px auto 60px;
+}
+
+.right .container1 .adoptInfomation table .newEmpTROff {
+  display: none;
+}
+
+.right .container1 .adoptInfomation table .newEmpTROn {
+  display: table-row;
 }
 
 .right .container1 .adoptInfomation table tr {
@@ -431,17 +441,10 @@ header ul li:nth-child(4):after {
   cursor: pointer;
 }
 
-.right .container1 .adoptInfomation table tr th .fa-circle-o,
-.right .container1 .adoptInfomation table tr td .fa-circle-o {
+.right .container1 .adoptInfomation table tr th .fa-thumbs-o-up,
+.right .container1 .adoptInfomation table tr td .fa-thumbs-o-up {
   font-size: 16.8px;
   color: dodgerblue;
-  cursor: pointer;
-}
-
-.right .container1 .adoptInfomation table tr th .fa-times,
-.right .container1 .adoptInfomation table tr td .fa-times {
-  font-size: 16.8px;
-  color: crimson;
   cursor: pointer;
 }
 
@@ -460,4 +463,4 @@ header ul li:nth-child(4):after {
   padding-left: 5px;
 }
 
-/*# sourceMappingURL=backReport.css.map */
+/*# sourceMappingURL=backProduct.css.map */

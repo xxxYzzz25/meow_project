@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>查詢領養紀錄</title>
-    <link rel="stylesheet" href="../css/backAdoptRecord.css">
+    <title>寵物商品上下架</title>
+    <link rel="stylesheet" href="../css/backProduct.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -48,48 +48,69 @@
                 <img src="../images/back/catAdoptRecord.jpg" alt="">
             </div>
             <div class="adoptInfomation">
-                <select name="sort" id="adobtSort">
-                    <option value="1">領養日期從新到舊</option>
-                    <option value="2">領養日期從舊到新</option>
-                </select>
-                <table>
-                    <tr>
-                        <th>喵小孩編號</th>
-                        <th>領養者</th>
-                        <th>領養時間</th>
-                        <th>審核狀態</th>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>abc@gmail.com</td>
-                        <td>2017/12/18</td>
-                        <td>成功</td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>abc@gmail.com</td>
-                        <td>2017/12/27</td>
-                        <td>成功</td>
-                    </tr>
-                    <tr>
-                        <td>003</td>
-                        <td>abc@gmail.com</td>
-                        <td>2018/1/2</td>
-                        <td>成功</td>
-                    </tr>
-                    <tr>
-                        <td>004</td>
-                        <td>abc@gmail.com</td>
-                        <td>2018/1/8</td>
-                        <td>待審核</td>
-                    </tr>
-                    <tr>
-                        <td>005</td>
-                        <td>abc@gmail.com</td>
-                        <td>2018/1/20</td>
-                        <td>待審核</td>
-                    </tr>
-                </table>
+                <button id="newEmp" class="defaultBtn">新增商品</button>
+                <form action="#">
+                    <table>
+                        <tr class="newEmpTR newEmpTROff">
+                            <th>商品名稱</th>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
+                            <th>商品價錢</th>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
+                            <th>商品特色</th>
+                            <td><textarea name="" id="" cols="40" rows="10"></textarea></td>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
+                            <th>商品成分</th>
+                            <td><textarea name="" id="" cols="40" rows="10"></textarea></td>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
+                            <th>商品規格</th>
+                            <td><textarea name="" id="" cols="40" rows="10"></textarea></td>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
+                            <th>商品敘述</th>
+                            <td><textarea name="" id="" cols="40" rows="10"></textarea></td>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
+                            <th>商品圖片</th>
+                            <td><input type="file" multiple></td>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
+                            <td colspan="2">
+                                <input type="submit" value="確認上架">
+                                <input type="reset" value="清除內容">
+                            </td>
+                        </tr>
+                </form>
+                <form action="#">
+                    <table>
+                        <tr>
+                            <th>商品編號</th>
+                            <th>商品名稱</th>
+                            <th>商品價錢</th>
+                            <th>商品狀態</th>
+                            <th>管理商品狀態</th>
+                        </tr>
+                        <tr>
+                            <td>001</td>
+                            <td>
+                                <input type="text" placeholder="Friskies 雞肉罐頭">
+                            </td>
+                            <td>
+                                <input type="text" placeholder="$500">
+                            </td>
+                            <td>已上架</td>
+                            <td>
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
                 <a href="#" class="defaultBtn">1</a>
                 <a href="#" class="defaultBtn">2</a>
                 <a href="#" class="defaultBtn">3</a>
@@ -99,7 +120,56 @@
         </div>
 
     </div>
-
+    <script>
+        window.addEventListener('load', function () {
+            const newEmp = document.getElementById('newEmp');
+            newEmp.addEventListener('click', function newEmp() {
+                const newEmp = document.getElementById('newEmp')
+                const tr = document.getElementsByClassName('newEmpTR')
+                if (tr[0].className.match('newEmpTROff') && tr[1].className.match('newEmpTROff')) {
+                    tr[0].className =
+                        tr[0].className.replace('newEmpTROff', 'newEmpTROn')
+                    tr[1].className =
+                        tr[1].className.replace('newEmpTROff', 'newEmpTROn')
+                    tr[2].className =
+                        tr[2].className.replace('newEmpTROff', 'newEmpTROn')
+                    tr[3].className =
+                        tr[3].className.replace('newEmpTROff', 'newEmpTROn')
+                    tr[4].className =
+                        tr[4].className.replace('newEmpTROff', 'newEmpTROn')
+                    tr[5].className =
+                        tr[5].className.replace('newEmpTROff', 'newEmpTROn')
+                    tr[6].className =
+                        tr[6].className.replace('newEmpTROff', 'newEmpTROn')
+                    tr[7].className =
+                        tr[7].className.replace('newEmpTROff', 'newEmpTROn')
+                    newEmp.innerText = '取消上架商品'
+                } else {
+                    tr[0].className =
+                        tr[0].className.replace('newEmpTROn', 'newEmpTROff')
+                    tr[1].className =
+                        tr[1].className.replace('newEmpTROn', 'newEmpTROff')
+                    tr[2].className =
+                        tr[2].className.replace('newEmpTROn', 'newEmpTROff')
+                    tr[3].className =
+                        tr[3].className.replace('newEmpTROn', 'newEmpTROff')
+                    tr[4].className =
+                        tr[4].className.replace('newEmpTROn', 'newEmpTROff')
+                    tr[5].className =
+                        tr[5].className.replace('newEmpTROn', 'newEmpTROff')
+                    tr[6].className =
+                        tr[6].className.replace('newEmpTROn', 'newEmpTROff')
+                    tr[7].className =
+                        tr[7].className.replace('newEmpTROn', 'newEmpTROff')
+                    newEmp.innerText = '上架商品'
+                }
+            })
+            // const ensureBtn = document.getElementById('ensureBtn')
+            // ensureBtn.addEventListener('click', function () {
+            //     confirm('您確定要新增嗎?')
+            // })
+        })
+    </script>
 </body>
 
 </html>
