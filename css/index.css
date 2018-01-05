@@ -438,6 +438,9 @@ header .icons a:hover {
   margin: 15px 0;
 }
 
+.margin-200 {
+  margin-left: 200px; }
+
 .more {
   width: 100%;
   position: absolute;
@@ -450,7 +453,6 @@ header .icons a:hover {
 }
 
 .banner {
-  margin-left: 200px;
   height: 100vh;
   background-image: url(../images/AdobeStock_112482963.jpeg);
   background-repeat: no-repeat;
@@ -458,6 +460,7 @@ header .icons a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   color: #fff;
 }
 
@@ -527,12 +530,64 @@ header .icons a:hover {
   right: 10px;
   top: 30px;
 }
+=======
+  color: #fff; }
+  .banner .find, .banner .wait {
+    text-align: center;
+    padding: 15px;
+    font-weight: bolder;
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .banner .find img, .banner .wait img {
+      width: 40px;
+      height: 55px;
+      vertical-align: middle; }
+  .banner h2 {
+    text-align: center;
+    font-size: 24px;
+    padding: 15px; }
+  .banner .search {
+    position: relative; }
+    .banner .search select {
+      background-color: rgba(255, 255, 255, 0.308);
+      border: 3px solid #fff;
+      border-radius: 40px;
+      text-align-last: center;
+      padding: 3px 0;
+      font-size: 18px;
+      color: #333;
+      cursor: pointer; }
+    .banner .search input {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      margin: 15px auto;
+      background-color: rgba(255, 255, 255, 0.308);
+      border: 3px solid #fff;
+      letter-spacing: 2px;
+      border-radius: 40px;
+      padding: 5px 37.5px 5px 15px;
+      font-size: 18px; }
+      .banner .search input:-moz-placeholder {
+        color: #333; }
+      .banner .search input::-webkit-input-placeholder {
+        color: #333; }
+      .banner .search input:-ms-input-placeholder {
+        color: #333; }
+    .banner .search .fa-search {
+      color: #fff;
+      position: absolute;
+      right: 10px;
+      top: 30px; }
+>>>>>>> 863b7b3f948dc97a3561b2edfa417fb5a67fadb3
 
 .pick-kit {
-  margin-left: 200px;
   text-align: center;
   height: 100vh;
   position: relative;
+<<<<<<< HEAD
   background-image: url(../images/wood.jpg);
 }
 
@@ -637,13 +692,88 @@ header .icons a:hover {
 .pick-kit .right-arrow {
   right: 0;
 }
+=======
+  background-image: url(../images/wood.jpg); }
+  .pick-kit .pick-title {
+    height: 15vh;
+    display: flex;
+    align-items: flex-start; }
+    .pick-kit .pick-title h2 {
+      height: 40px;
+      line-height: 10px; }
+  .pick-kit ul {
+    width: 200%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .pick-kit ul li {
+      width: 28%;
+      float: left; }
+      .pick-kit ul li .cat_list_bg {
+        width: 100%;
+        height: 70vh;
+        background-color: #fff;
+        padding: 10px; }
+        .pick-kit ul li .cat_list_bg a {
+          text-decoration: none;
+          color: #333; }
+          .pick-kit ul li .cat_list_bg a .cat_list {
+            height: 100%;
+            background: #369;
+            box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.76), -1px -1px 6px rgba(0, 0, 0, 0.555); }
+            .pick-kit ul li .cat_list_bg a .cat_list .bubble {
+              width: 200px;
+              height: 200px;
+              border-radius: 50%;
+              display: block;
+              background-color: rgba(255, 255, 255, 0.687);
+              margin: 0 auto;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center; }
+              .pick-kit ul li .cat_list_bg a .cat_list .bubble span {
+                display: block;
+                padding: 5px; }
+      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list {
+        background-image: url(../images/catcat_171225_0010.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; }
+      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list {
+        background-image: url(../images/catcat_171225_0011.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; }
+      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
+        position: relative;
+        top: 50%; }
+      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
+        position: relative;
+        top: 10%; }
+  .pick-kit .arrow {
+    width: 50px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.411);
+    position: absolute;
+    top: 70vh;
+    z-index: 666;
+    cursor: pointer; }
+    .pick-kit .arrow i {
+      color: #fff;
+      position: relative;
+      top: 12px; }
+  .pick-kit .right-arrow {
+    right: 0; }
+>>>>>>> 863b7b3f948dc97a3561b2edfa417fb5a67fadb3
 
 .half {
-  margin-left: 200px;
   background-image: url(../images/wood.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+<<<<<<< HEAD
   position: relative;
 }
 
@@ -721,11 +851,67 @@ header .icons a:hover {
 .half .half-text span {
   margin: 10px 0;
 }
+=======
+  position: relative; }
+  .half .half-title {
+    height: 10vh;
+    display: flex;
+    align-items: center; }
+    .half .half-title h2 {
+      height: 40px;
+      line-height: 10px; }
+  .half .half-item {
+    padding: 7.5px 15px;
+    height: 25vh;
+    margin: 0.84vh auto;
+    display: flex;
+    background-color: #fff;
+    width: 80%; }
+  .half .half-qty {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .half .half-qty img {
+      width: 40px;
+      height: 55px;
+      margin: 0 5px; }
+  .half .half-pic {
+    width: 35%;
+    height: 100%;
+    background-image: url(../images/half_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+  .half .half-text {
+    width: 35%;
+    padding: 15px;
+    position: relative; }
+    .half .half-text a {
+      text-decoration: none;
+      transition: .3s all;
+      color: #333;
+      margin: 10px 0; }
+      .half .half-text a:hover {
+        color: #EAAF88; }
+    .half .half-text .read-more {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      text-decoration: underline; }
+    .half .half-text .half-name {
+      font-family: notoSans_r;
+      font-size: 18px; }
+    .half .half-text span {
+      margin: 10px 0;
+      display: block; }
+>>>>>>> 863b7b3f948dc97a3561b2edfa417fb5a67fadb3
 
 .shop {
-  margin-left: 200px;
   height: 100vh;
   overflow: hidden;
+<<<<<<< HEAD
   background-image: url(../images/wood.jpg);
 }
 
@@ -795,10 +981,62 @@ header .icons a:hover {
   justify-content: center;
   align-items: center;
 }
+=======
+  background-image: url(../images/wood.jpg); }
+  .shop .container {
+    text-align: center;
+    display: flex;
+    justify-content: space-around; }
+    .shop .container:after {
+      content: '';
+      display: block;
+      clear: both; }
+  .shop .shop-left, .shop .shop-right {
+    position: relative;
+    top: -600px;
+    float: left; }
+    .shop .shop-left img, .shop .shop-right img {
+      display: block;
+      margin: 10px; }
+  .shop .shop-right {
+    top: -300px; }
+  .shop .shop-title {
+    height: 10vh;
+    display: flex;
+    align-items: center; }
+    .shop .shop-title h2 {
+      height: 40px; }
+  .shop .prod-list {
+    padding: 60px 40px;
+    background-color: rgba(255, 255, 255, 0.537);
+    border: 2px solid #fff;
+    margin-top: 60px; }
+    .shop .prod-list li {
+      position: relative; }
+      .shop .prod-list li a {
+        text-decoration: none;
+        color: #222;
+        font-weight: bolder;
+        padding: 15px;
+        display: block; }
+
+.section {
+  position: relative; }
+  .section .quick-signUp {
+    height: 80vh;
+    width: 100%; }
+  .section footer {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0; }
+>>>>>>> 863b7b3f948dc97a3561b2edfa417fb5a67fadb3
 
 .game-point {
   height: 100vh;
   background-color: #EAAF88;
+<<<<<<< HEAD
   margin-left: 200px;
   box-shadow: 20px 20px #333 inset, -20px -20px #333 inset;
 }
@@ -906,6 +1144,92 @@ header .icons a:hover {
   z-index: 1;
   right: 0;
 }
+=======
+  box-shadow: 20px 20px #333 inset, -20px -20px #333 inset; }
+  .game-point .game-point-title {
+    height: 15vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start; }
+  .game-point h2 {
+    height: 40px;
+    line-height: 10px; }
+  .game-point .game-point-top {
+    width: 80%;
+    margin: auto;
+    height: 30vh;
+    border-bottom: 3px solid #fff;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px; }
+    .game-point .game-point-top .askBox {
+      position: relative;
+      height: 30vh;
+      display: flex;
+      padding: 50px;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid #fff;
+      border-radius: 20% 60% 30% 60%;
+      background-color: #EAAF88;
+      bottom: 20px; }
+      .game-point .game-point-top .askBox:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 60% 40% 50% 60%;
+        border: 3px solid #fff;
+        right: -40px;
+        top: 50%; }
+      .game-point .game-point-top .askBox:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 60% 40% 50% 60%;
+        border: 3px solid #fff;
+        right: -55px;
+        top: 35%; }
+    .game-point .game-point-top .cat-ask {
+      max-width: 80%;
+      max-height: 80%;
+      align-self: flex-end;
+      margin-left: 60px; }
+  .game-point .game-point-bottom {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    height: 55vh;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 40px;
+    padding-bottom: 20px; }
+    .game-point .game-point-bottom .people {
+      position: relative;
+      z-index: 2;
+      width: 100px;
+      height: 105px;
+      left: 0; }
+    .game-point .game-point-bottom #optionA,
+    .game-point .game-point-bottom #optionB {
+      align-self: flex-start;
+      width: 30%;
+      height: 250px;
+      position: relative;
+      background-color: #369;
+      text-align: center; }
+    .game-point .game-point-bottom .hug {
+      position: relative;
+      width: 50px;
+      height: 90px;
+      z-index: 1;
+      right: 0; }
+>>>>>>> 863b7b3f948dc97a3561b2edfa417fb5a67fadb3
 
 #loading {
   position: fixed;
