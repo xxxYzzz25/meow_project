@@ -53,6 +53,7 @@
     </header>
 
     <div class="right">
+        <div class="bigImg"></div>
         <div class="container">
             <h2>我的中途之家會員專區</h2>
             <div class="leftselect">
@@ -83,9 +84,27 @@
                 </div>
             </div>
 
-            <div class="content" id="content">
-
+            <div class="smalllist">
+                <ul>
+                    <li onclick="getData('halfMeminfo.html');" class="li">
+                        編輯中途之家資料
+                    </li>
+                    <li onclick="getData('halfMemCat.html');" class="li">
+                        編輯喵小孩資料
+                    </li>
+                    <li onclick="getData('halfMemCatHome.html');" class="li">
+                        編輯喵喵找到家
+                    </li>
+                    <li onclick="getData('halfMemAdopt.html');" class="li">
+                        審核領養案件
+                    </li>
+                    <li onclick="getData('halfMemSupport.html');" class="li">
+                        編輯助養資訊
+                    </li>
+                </ul>
             </div>
+
+            <div class="content" id="content"></div>
         </div>
     </div>
 
@@ -128,11 +147,11 @@
         xhr.open("get", url, true);
         xhr.send(null);
     }
-</script>    
+</script>
 <script>
     let li = document.getElementsByClassName('li');
     for (let i = 0; i < li.length; i++) {
-        li[i].addEventListener('click',function(){
+        li[i].addEventListener('click', function () {
             for (let i = 0; i < li.length; i++) {
                 li[i].style.color = "#c2740f";
             }
@@ -140,4 +159,5 @@
         });
     }
 </script>
+
 </html>
