@@ -7,10 +7,6 @@
 @import 'mixins/_navNow.scss';
 @import "base/btn";
 @include navNow(6);
-header {
-    background-color: rgb(194, 234, 235);
-}
-
 .right {
     width: calc(100% - 200px);
     margin-left: 200px;

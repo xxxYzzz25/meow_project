@@ -6,7 +6,7 @@
 @import './modules/_backHeader.scss';
 @import 'mixins/_navNow.scss';
 @import "base/btn";
-@include navNow(2);
+@include navNow(1);
 .right {
     width: calc(100% - 200px);
     margin-left: 200px;
