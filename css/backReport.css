@@ -346,17 +346,17 @@ header .icons a:hover {
   }
 }
 
-header ul li:nth-child(5) {
+header ul li:nth-child(4) {
   background-color: #fff;
   box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
 }
 
-header ul li:nth-child(5) a {
+header ul li:nth-child(4) a {
   color: #333;
   font-family: notoSans_r;
 }
 
-header ul li:nth-child(5):after {
+header ul li:nth-child(4):after {
   z-index: -1;
   content: '';
   display: block;
@@ -424,6 +424,27 @@ header ul li:nth-child(5):after {
   font-size: 14px;
 }
 
+.right .container1 .adoptInfomation table tr th .fa-trash,
+.right .container1 .adoptInfomation table tr td .fa-trash {
+  font-size: 16.8px;
+  color: firebrick;
+  cursor: pointer;
+}
+
+.right .container1 .adoptInfomation table tr th .fa-circle-o,
+.right .container1 .adoptInfomation table tr td .fa-circle-o {
+  font-size: 16.8px;
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.right .container1 .adoptInfomation table tr th .fa-times,
+.right .container1 .adoptInfomation table tr td .fa-times {
+  font-size: 16.8px;
+  color: crimson;
+  cursor: pointer;
+}
+
 .right .container1 .adoptInfomation table tr th {
   font-size: 18px;
   letter-spacing: 2px;
@@ -439,4 +460,4 @@ header ul li:nth-child(5):after {
   padding-left: 5px;
 }
 
-/*# sourceMappingURL=backOrderlist.css.map */
+/*# sourceMappingURL=backReport.css.map */

@@ -6,7 +6,7 @@
 @import './modules/_backHeader.scss';
 @import 'mixins/_navNow.scss';
 @import "base/btn";
-@include navNow(5);
+@include navNow(4);
 .right {
     width: calc(100% - 200px);
     margin-left: 200px;
@@ -46,6 +46,21 @@
                         padding-top: 16px;
                         padding-bottom: 8px;
                         font-size: $font-size-base;
+                        .fa-trash {
+                            font-size: $font-size-base*1.2;
+                            color: firebrick;
+                            cursor: pointer;
+                        }
+                        .fa-circle-o{
+                            font-size: $font-size-base*1.2;
+                            color: dodgerblue;
+                            cursor: pointer;
+                        }
+                        .fa-times{
+                            font-size: $font-size-base*1.2;
+                            color: crimson;
+                            cursor: pointer;
+                        }
                     }
                     th {
                         font-size: $font-size-large;
