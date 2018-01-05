@@ -354,7 +354,7 @@ header ul li:nth-child(5):after {
 
 .right {
   margin-left: 200px;
-  background-image: url(../../images/marble.jpg);
+  background-image: url(../images/marble.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -363,6 +363,14 @@ header ul li:nth-child(5):after {
   content: '';
   display: block;
   clear: both;
+}
+
+.right .bigImg {
+  height: 40vh;
+  background-image: url(../images/cutecatbg3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .right h2 {
@@ -408,10 +416,14 @@ header ul li:nth-child(5):after {
   margin-bottom: 260px;
 }
 
+.right .smalllist {
+  display: none;
+}
+
 .right .content {
   width: 65%;
   float: left;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .right .content h4 {
