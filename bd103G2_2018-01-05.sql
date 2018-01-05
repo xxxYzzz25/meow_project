@@ -20,6 +20,96 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
+# Dump of table HALFWAY_MEMBER
+# ------------------------------------------------------------
+
+CREATE TABLE `HALFWAY_MEMBER` (
+  `HALF_NO` int(5) NOT NULL AUTO_INCREMENT COMMENT '自動產生會員編號',
+  `HALF_ID` varchar(50) NOT NULL DEFAULT '',
+  `HALF_PSW` varchar(10) NOT NULL DEFAULT '',
+  `HALF_NAME` varchar(8) NOT NULL DEFAULT '',
+  `HALF_HEAD` varchar(5) NOT NULL DEFAULT '',
+  `HALF_TEL` varchar(10) NOT NULL DEFAULT '',
+  `HALF_ADDRESS` varchar(40) NOT NULL DEFAULT '',
+  `HALF_AUDIT_STATUS` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=審核中/ 1=審核成功/ 2=審核失敗',
+  `HALF_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
+  `HALF_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
+  PRIMARY KEY (`HALF_NO`),
+  UNIQUE KEY `HALF_ID` (`HALF_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table MEMBER
+# ------------------------------------------------------------
+
+CREATE TABLE `MEMBER` (
+  `MEM_NO` int(5) NOT NULL AUTO_INCREMENT COMMENT '自動產生會員編號',
+  `MEM_ID` varchar(50) NOT NULL DEFAULT '',
+  `MEM_PSW` varchar(10) NOT NULL DEFAULT '',
+  `MEM_NAME` varchar(8) NOT NULL DEFAULT '',
+  `MEM_BIRTHDAY` date NOT NULL,
+  `MEM_TEL` varchar(10) NOT NULL DEFAULT '',
+  `MEM_ADDRESS` varchar(40) NOT NULL DEFAULT '',
+  `MEM_SCORE` int(3) DEFAULT NULL,
+  `MEM_PIC` varchar(40) DEFAULT NULL,
+  `MEM_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
+  `MEM_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
+  PRIMARY KEY (`MEM_NO`),
+  UNIQUE KEY `MEM_ID` (`MEM_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table PRODUCT
+# ------------------------------------------------------------
+
+CREATE TABLE `PRODUCT` (
+  `PRODUCT_NO` int(10) NOT NULL AUTO_INCREMENT,
+  `PRODUCT_NAME` varchar(30) NOT NULL DEFAULT '',
+  `PRODUCT_PRICE` int(5) NOT NULL,
+  `PRODUCT_DETAIL` text NOT NULL,
+  `PRODUCT_STATUS` tinyint(1) NOT NULL COMMENT '0=上架中/ 1=停售中',
+  PRIMARY KEY (`PRODUCT_NO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table EMP
+# ------------------------------------------------------------
+
+CREATE TABLE `EMP` (
+  `EMP_NO` int(5) NOT NULL AUTO_INCREMENT,
+  `EMP_ID` varchar(50) NOT NULL DEFAULT '',
+  `EMP_PSW` varchar(10) NOT NULL DEFAULT '',
+  `EMP_POST` varchar(10) NOT NULL DEFAULT '',
+  PRIMARY KEY (`EMP_NO`),
+  UNIQUE KEY `EMP_ID` (`EMP_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table CAT
+# ------------------------------------------------------------
+
+CREATE TABLE `CAT` (
+  `CAT_NO` int(6) NOT NULL AUTO_INCREMENT,
+  `HALF_NO` int(5) NOT NULL,
+  `CAT_NAME` varchar(10) NOT NULL DEFAULT '',
+  `ADOPT_STATUS` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=待領養/ 1=審核中/ 2=已領養',
+  `CAT_SEX` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=男生/ 1=女生',
+  `CAT_NARRATIVE` text NOT NULL COMMENT '喵小孩敘述',
+  `CAT_DATE` char(6) NOT NULL DEFAULT '' COMMENT '出生年月(西元)',
+  `CAT_VACCINE` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未打疫苗/ 1=已打疫苗',
+  `CAT_COLOR` varchar(5) NOT NULL DEFAULT '' COMMENT '顏色敘述',
+  `CAT_LIGATION` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未結紮/ 1=已結紮',
+  PRIMARY KEY (`CAT_NO`),
+  KEY `HALF_NO` (`HALF_NO`),
+  CONSTRAINT `cat_ibfk_1` FOREIGN KEY (`HALF_NO`) REFERENCES `HALFWAY_MEMBER` (`HALF_NO`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 # Dump of table ADOPTION
 # ------------------------------------------------------------
 
@@ -88,27 +178,6 @@ CREATE TABLE `ARTICLE_REPORT` (
 
 
 
-# Dump of table CAT
-# ------------------------------------------------------------
-
-CREATE TABLE `CAT` (
-  `CAT_NO` int(6) NOT NULL AUTO_INCREMENT,
-  `HALF_NO` int(5) NOT NULL,
-  `CAT_NAME` varchar(10) NOT NULL DEFAULT '',
-  `ADOPT_STATUS` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=待領養/ 1=審核中/ 2=已領養',
-  `CAT_SEX` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=男生/ 1=女生',
-  `CAT_NARRATIVE` text NOT NULL COMMENT '喵小孩敘述',
-  `CAT_DATE` char(6) NOT NULL DEFAULT '' COMMENT '出生年月(西元)',
-  `CAT_VACCINE` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未打疫苗/ 1=已打疫苗',
-  `CAT_COLOR` varchar(5) NOT NULL DEFAULT '' COMMENT '顏色敘述',
-  `CAT_LIGATION` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未結紮/ 1=已結紮',
-  PRIMARY KEY (`CAT_NO`),
-  KEY `HALF_NO` (`HALF_NO`),
-  CONSTRAINT `cat_ibfk_1` FOREIGN KEY (`HALF_NO`) REFERENCES `HALFWAY_MEMBER` (`HALF_NO`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
 # Dump of table CAT_PIC
 # ------------------------------------------------------------
 
@@ -139,20 +208,6 @@ CREATE TABLE `DONATE` (
 
 
 
-# Dump of table EMP
-# ------------------------------------------------------------
-
-CREATE TABLE `EMP` (
-  `EMP_NO` int(5) NOT NULL AUTO_INCREMENT,
-  `EMP_ID` varchar(50) NOT NULL DEFAULT '',
-  `EMP_PSW` varchar(10) NOT NULL DEFAULT '',
-  `EMP_POST` varchar(10) NOT NULL DEFAULT '',
-  PRIMARY KEY (`EMP_NO`),
-  UNIQUE KEY `EMP_ID` (`EMP_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
 # Dump of table FAVORITE
 # ------------------------------------------------------------
 
@@ -178,47 +233,6 @@ CREATE TABLE `HALF_PIC` (
   PRIMARY KEY (`HALF_PIC_NO`),
   KEY `HALF_NO` (`HALF_NO`),
   CONSTRAINT `half_pic_ibfk_1` FOREIGN KEY (`HALF_NO`) REFERENCES `HALFWAY_MEMBER` (`HALF_NO`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table HALFWAY_MEMBER
-# ------------------------------------------------------------
-
-CREATE TABLE `HALFWAY_MEMBER` (
-  `HALF_NO` int(5) NOT NULL AUTO_INCREMENT COMMENT '自動產生會員編號',
-  `HALF_ID` varchar(50) NOT NULL DEFAULT '',
-  `HALF_PSW` varchar(10) NOT NULL DEFAULT '',
-  `HALF_NAME` varchar(8) NOT NULL DEFAULT '',
-  `HALF_HEAD` varchar(5) NOT NULL DEFAULT '',
-  `HALF_TEL` varchar(10) NOT NULL DEFAULT '',
-  `HALF_ADDRESS` varchar(40) NOT NULL DEFAULT '',
-  `HALF_AUDIT_STATUS` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=審核中/ 1=審核成功/ 2=審核失敗',
-  `HALF_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
-  `HALF_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
-  PRIMARY KEY (`HALF_NO`),
-  UNIQUE KEY `HALF_ID` (`HALF_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table MEMBER
-# ------------------------------------------------------------
-
-CREATE TABLE `MEMBER` (
-  `MEM_NO` int(5) NOT NULL AUTO_INCREMENT COMMENT '自動產生會員編號',
-  `MEM_ID` varchar(50) NOT NULL DEFAULT '',
-  `MEM_PSW` varchar(10) NOT NULL DEFAULT '',
-  `MEM_NAME` varchar(8) NOT NULL DEFAULT '',
-  `MEM_BIRTHDAY` date NOT NULL,
-  `MEM_TEL` varchar(10) NOT NULL DEFAULT '',
-  `MEM_ADDRESS` varchar(40) NOT NULL DEFAULT '',
-  `MEM_SCORE` int(3) DEFAULT NULL,
-  `MEM_PIC` varchar(40) DEFAULT NULL,
-  `MEM_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
-  `MEM_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
-  PRIMARY KEY (`MEM_NO`),
-  UNIQUE KEY `MEM_ID` (`MEM_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -304,20 +318,6 @@ CREATE TABLE `ORDERLIST_DETAILS` (
   KEY `PRODUCT_NO` (`PRODUCT_NO`),
   CONSTRAINT `orderlist_details_ibfk_3` FOREIGN KEY (`ORDER_NO`) REFERENCES `ORDERLIST` (`ORDER_NO`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `orderlist_details_ibfk_4` FOREIGN KEY (`PRODUCT_NO`) REFERENCES `PRODUCT` (`PRODUCT_NO`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table PRODUCT
-# ------------------------------------------------------------
-
-CREATE TABLE `PRODUCT` (
-  `PRODUCT_NO` int(10) NOT NULL AUTO_INCREMENT,
-  `PRODUCT_NAME` varchar(30) NOT NULL DEFAULT '',
-  `PRODUCT_PRICE` int(5) NOT NULL,
-  `PRODUCT_DETAIL` text NOT NULL,
-  `PRODUCT_STATUS` tinyint(1) NOT NULL COMMENT '0=上架中/ 1=停售中',
-  PRIMARY KEY (`PRODUCT_NO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
