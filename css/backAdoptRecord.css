@@ -370,10 +370,6 @@ header ul li:nth-child(6):after {
   box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
 }
 
-header {
-  background-color: #c2eaeb;
-}
-
 .right {
   width: calc(100% - 200px);
   margin-left: 200px;
