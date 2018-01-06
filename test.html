@@ -7,82 +7,88 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #chaoverscroll_box{
-            height: 50px;
+        #rightbox,
+        #leftbox {
+            width: 600px;
+            height: 800px;
+            border: 2px dotted darkslategrey;
+            display: inline-block;
+            margin: 50px;
         }
-        .chaoverscroll {
-            overflow: hidden;
-            height: 20px;
+
+        #rightbox .item,
+        #leftbox .item {
+            display: inline-block;
+            margin-top: 20px;
+            width: 190px;
+            height: 190px;
+            border: 2px solid darkred;
         }
     </style>
 </head>
 
 <body>
-    <div id="chaoverscroll_box" class="chaoverscroll">
-        <div class="chaoverscroll">
-            <a href="exp01.php">exp01</a>
-        </div>
-        <div class="chaoverscroll">
-            <a href="exp02.php">exp02</a>
-        </div>
-        <div class="chaoverscroll">
-            <a href="exp03.php">exp03</a>
-        </div>
-        <div class="chaoverscroll">
-            <a href="exp04.php">exp04</a>
-        </div>
-        <div class="chaoverscroll">
-            <a href="exp05.php">exp05</a>
-        </div>
+    <div id="leftbox">
+        <img src="./images/noticeGame/refrigerator.png" alt="">
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+    </div>
+    <div id="rightbox">
+        <img src="./images/noticeGame/garbage.png" alt="">
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+        <div class="item" data-role="drag-drop-container"></div>
+    </div>
+    <div class="imgbox">
+        <img src="./images/noticeGame/banana.png" draggable="true">
+        <img src="./images/noticeGame/cookie.png" draggable="true">
+        <img src="./images/noticeGame/egg.png" draggable="true">
+        <img src="./images/noticeGame/milk.png" draggable="true">
+        <img src="./images/noticeGame/watermelon.png" draggable="true">
     </div>
 </body>
+
 <script>
-    function slideLine(box, stf, delay, speed, h) {
-        //取得id
-        var slideBox = document.getElementById(box);
-        //預設值 delay:幾毫秒滾動一次(1000毫秒=1秒)
-        // speed:數字越小越快，h:高度
-        var delay = delay || 1000,
-            speed = speed || 20,
-            h = h || 20;
-        var tid = null,
-            pause = false;
-        //setInterval跟setTimeout的用法可以咕狗研究一下~
-        var s = function () {
-            tid = setInterval(slide, speed);
+    function doFirst() {
+        let image = document.querySelectorAll('[draggable="true"]');
+        image.forEach(image => {
+            image.addEventListener('dragstart', startDrag);
+            image.addEventListener('dragend', endDrag);
+        })
+
+        let box = document.querySelectorAll('[data-role="drag-drop-container"]')
+        box.forEach(box => {
+            box.addEventListener('drop', dropped)
+            box.addEventListener('dragenter', function (e) {
+                e.preventDefault();
+            })
+            box.addEventListener('dragover', function (e) {
+                e.preventDefault();
+            })
+        })
+
+        function startDrag(e) {
+            let data = '<img src="' + e.target.src + '">';
+            e.dataTransfer.setData('image/jpeg', data);
         }
-        //主要動作的地方
-        var slide = function () {
-            //當滑鼠移到上面的時候就會暫停
-            if (pause) return;
-            //滾動條往下滾動 數字越大會越快但是看起來越不連貫，所以這邊用1
-            slideBox.scrollTop += 1;
-            //滾動到一個高度(h)的時候就停止
-            if (slideBox.scrollTop % h == 0) {
-                //跟setInterval搭配使用的
-                clearInterval(tid);
-                //將剛剛滾動上去的前一項加回到整列的最後一項
-                slideBox.appendChild(slideBox.getElementsByTagName(stf)[0]);
-                //再重設滾動條到最上面
-                slideBox.scrollTop = 0;
-                //延遲多久再執行一次
-                setTimeout(s, delay);
-            }
+
+        function endDrag(e) {
+            e.target.style.visibility = 'hidden';
         }
-        //滑鼠移上去會暫停 移走會繼續動
-        slideBox.onmouseover = function () {
-            pause = true;
+
+        function dropped(e) {
+            e.preventDefault();
+            e.target.innerHTML = e.dataTransfer.getData('image/jpeg');
         }
-        slideBox.onmouseout = function () {
-            pause = false;
-        }
-        //起始的地方，沒有這個就不會動囉
-        setTimeout(s, delay);
     }
-    //網頁load完會執行一次
-    //五個屬性各別是：外面div的id名稱、包在裡面的標籤類型
-    //延遲毫秒數、速度、高度
-    slideLine('chaoverscroll_box', 'div', 2000, 25, 20);
+    window.addEventListener('load', doFirst);
 </script>
 
 </html>
