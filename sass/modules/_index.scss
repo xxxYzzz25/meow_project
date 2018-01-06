@@ -32,10 +32,16 @@
     background-image: url(../images/AdobeStock_112482963.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: left center;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
+    .findBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .find {
         text-align: center;
         padding: $gap;
@@ -50,6 +56,9 @@
             height: 55px;
             vertical-align: middle;
         }
+    }
+    .waitBox{
+        @extend .findBox;
     }
     .wait {
         @extend .find;
@@ -70,6 +79,10 @@
             font-size: $font-size-h4;
             color: #333;
             cursor: pointer;
+        }
+        .go{
+            display: inline-block;
+            position: relative;
         }
         input {
             -moz-appearance: none;
@@ -95,7 +108,7 @@
             color: #fff;
             position: absolute;
             right: 10px;
-            top: 30px;
+            top: 28px;
         }
     }
 }
@@ -376,13 +389,13 @@
             position: relative;
             height: 30vh;
             display: flex;
-            padding: 50px;
+            padding: 30px 50px;
             justify-content: center;
             align-items: center;
             border: 3px solid #fff;
             border-radius: 20% 60% 30% 60%;
             background-color: #EAAF88;
-            bottom: 20px;
+            bottom: 10px;
             &:after {
                 content: '';
                 display: block;

@@ -21,7 +21,11 @@
     <div id="loading">
         <img src="../images/loading.svg" id="loadingCat" alt="loading">
     </div>
-
+    <div class="hamburger" id="hamburger-6">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
     <!-- header -->
     <header>
         <div class="logo">
@@ -69,18 +73,22 @@
                 <!-- banner -->
                 <div class="banner">
                     <div class="container">
-                        <div class="find" id="find">
-                            隻喵喵已經找到牠的主人
+                        <div class="findBox">
+                            <div class="find" id="find">
+                            </div>
+                            <span>隻喵喵已經找到牠的主人</span>
                         </div>
-                        <div class="wait" id="wait">
-                            隻喵喵還在等待牠的主人
+                        <div class="waitBox">
+                            <div class="wait" id="wait">
+                            </div>
+                            <span>隻喵喵還在等待牠的主人</span>
                         </div>
                         <hr>
                         <h2>尋找您未來的喵喵</h2>
                         <div class="search">
                             <select name="searchColor" id="searchColor">
                                 <option value="">毛色</option>
-                                <option value="">--請選擇--</option>
+                                <option value="">-請選擇-</option>
                                 <option value="">虎斑</option>
                                 <option value="">豹紋</option>
                                 <option value="">三花</option>
@@ -89,23 +97,25 @@
                             </select>
                             <select name="searchGender" id="searchGender">
                                 <option value="">性別</option>
-                                <option value="">--請選擇--</option>
+                                <option value="">-請選擇-</option>
                                 <option value="">男孩</option>
                                 <option value="">女孩</option>
                             </select>
                             <select name="searchLoc" id="searchLoc">
                                 <option value="">地區</option>
-                                <option value="">--請選擇--</option>
+                                <option value="">-請選擇-</option>
                                 <option value="">北部</option>
                                 <option value="">中部</option>
                                 <option value="">南部</option>
                                 <option value="">東部</option>
                                 <option value="">離島</option>
                             </select>
-                            <input type="text" placeholder="或輸入喵喵的名字">
-                            <a href="#">
-                                <i class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
-                            </a>
+                            <div class="go">
+                                <input type="text" placeholder="或輸入喵喵的名字">
+                                <a href="#">
+                                    <i class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,7 +140,7 @@
                         </div>
                         <div class="option-area option-area-b" id="optionB">
                         </div>
-                        <img class="hug" id="hug" src="../images/cat_cat.png" alt="hug cat">
+                        <img class="hug" id="hug" src="../images/runningCat_1357.png" alt="hug cat">
                     </div>
                 </div>
             </div>
@@ -396,6 +406,14 @@
         </div>
         <script src="../js/signUp.js"></script>
         <script src="../js/slider.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".hamburger").click(function () {
+                    $(this).toggleClass("is-active");
+                    $('header').toggleClass("active");
+                });
+            });
+        </script>
 </body>
 
 </html>

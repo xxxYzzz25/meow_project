@@ -2,9 +2,16 @@
 .right {
     margin-left: 200px;
     @include afterClear;
-    background-image: url(../../images/marble.jpg);
+    background-image: url(../images/marble.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    .bigImg {
+        height: 40vh;
+        background-image: url(../images/cutecatbg3.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
     h2 {
         text-align: center;
         font-size: $font-size-h2;
@@ -40,10 +47,13 @@
             margin-bottom: 260px;
         }
     }
+    .smalllist {
+        display: none;
+    }
     .content {
         width: 65%;
         float: left;
-        margin-bottom: 50px;
+        padding-bottom: 50px;
         h4 {
             text-align: center;
             font-size: $font-size-h3;

@@ -1,0 +1,12 @@
+@include respond-to(small) {
+    .container {
+        max-width: 90%;
+    }
+    .banner {
+        .search {
+            select,input {
+                font-size: 16px;
+            }
+        }
+    }
+}

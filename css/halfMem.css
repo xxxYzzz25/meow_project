@@ -131,6 +131,63 @@ header {
         transform: scale(1.15);
         transition: .3s; }
 
+header.active {
+  top: 0;
+  transition: .6s; }
+
+.hamburger .line {
+  width: 50px;
+  height: 5px;
+  background-color: #2c3e50;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+.hamburger {
+  top: 30px;
+  right: 30px;
+  position: fixed;
+  z-index: 999999999;
+  display: none; }
+
+.hamburger:hover {
+  cursor: pointer; }
+
+#hamburger-6.is-active {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+#hamburger-6.is-active .line:nth-child(2) {
+  width: 0px; }
+
+#hamburger-6.is-active .line:nth-child(1),
+#hamburger-6.is-active .line:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s; }
+
+#hamburger-6.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(13px);
+  -ms-transform: translateY(13px);
+  -o-transform: translateY(13px);
+  transform: translateY(13px); }
+
+#hamburger-6.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-13px) rotate(90deg);
+  -ms-transform: translateY(-13px) rotate(90deg);
+  -o-transform: translateY(-13px) rotate(90deg);
+  transform: translateY(-13px) rotate(90deg); }
+
 footer {
   background-color: #f5eae3;
   margin-left: 200px;
@@ -165,7 +222,7 @@ footer {
     top: -20px;
     padding: 10px; }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media all and (max-width: 991px) {
   footer {
     margin-left: 0;
     width: 100%; } }
@@ -271,6 +328,12 @@ header ul li:nth-child(5):after {
     content: '';
     display: block;
     clear: both; }
+  .right .bigImg {
+    height: 40vh;
+    background-image: url(../images/cutecatbg3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
   .right h2 {
     text-align: center;
     font-size: 30px;
@@ -298,10 +361,14 @@ header ul li:nth-child(5):after {
           color: #0f71c2; }
     .right .leftselect .leftbottom {
       margin-bottom: 260px; }
+  .right .smalllist {
+    display: none; }
   .right .content {
     width: 65%;
     float: left;
-    margin-bottom: 50px; }
+    padding-bottom: 50px; }
+    .right .content textarea {
+      resize: none; }
     .right .content h4 {
       text-align: center;
       font-size: 24px;
@@ -355,6 +422,8 @@ header ul li:nth-child(5):after {
         padding: 10px; }
         .right .content .halfMemCat form #simple p {
           padding: 10px 0; }
+    .right .content .halfMemAdopt form table {
+      width: 100%; }
     .right .content .halfMemAdopt form th {
       text-align: center;
       background-color: #f2f2f2;
@@ -369,15 +438,35 @@ header ul li:nth-child(5):after {
         color: firebrick;
         cursor: pointer; }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media all and (max-width: 991px) {
   header {
     display: none; }
   .right {
     margin: 0; }
     .right .leftselect {
-      width: 25%;
-      float: left;
-      margin: 0 20px; } }
+      display: none; }
+    .right .smalllist {
+      display: block; }
+      .right .smalllist ul {
+        text-align: center; }
+        .right .smalllist ul li {
+          width: 18%;
+          display: inline-block;
+          padding: 10px 0;
+          border-bottom: 2px dotted #c2740f;
+          cursor: pointer; }
+          .right .smalllist ul li:hover {
+            color: #0f71c2; }
+          .right .smalllist ul li:first-child {
+            color: #0f71c2; }
+    .right .content {
+      width: 80%;
+      float: none;
+      margin: 50px auto 0 auto;
+      padding-bottom: 50px; }
+      .right .content .halfMemInfo textarea {
+        width: 90%;
+        height: 200px; } }
 
 @media all and (max-width: 767px) {
   header {
@@ -385,11 +474,31 @@ header ul li:nth-child(5):after {
   .right {
     margin: 0; }
     .right .leftselect {
-      width: 25%;
-      float: left;
-      margin: 0 20px; } }
+      display: none; }
+    .right .smalllist {
+      display: block; }
+      .right .smalllist ul {
+        text-align: center; }
+        .right .smalllist ul li {
+          width: 18%;
+          display: inline-block;
+          padding: 10px 0;
+          border-bottom: 2px dotted #c2740f;
+          cursor: pointer; }
+          .right .smalllist ul li:hover {
+            color: #0f71c2; }
+          .right .smalllist ul li:first-child {
+            color: #0f71c2; }
+    .right .content {
+      width: 80%;
+      float: none;
+      margin: 50px auto 0 auto;
+      padding-bottom: 50px; }
+      .right .content .halfMemInfo textarea {
+        width: 90%;
+        height: 200px; } }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media all and (max-width: 991px) {
   footer {
     margin-left: 0;
     width: 100%; } }

@@ -5,9 +5,32 @@
     .right {
         margin: 0;
         .leftselect {
-            width: 25%;
-            float: left;
-            margin: 0 20px;
+            display: none;
+        }
+        .smalllist {
+            display: block;
+            ul {
+                text-align: center;
+                li {
+                    display: inline-block;
+                    padding: 10px 0;
+                    margin: 0 30px;
+                    border-bottom: 2px dotted #c2740f;
+                    cursor: pointer;
+                    &:hover {
+                        color: #0f71c2;
+                    }
+                    &:first-child {
+                        color: #0f71c2;
+                    }
+                }
+            }
+        }
+        .content {
+            width: 80%;
+            float: none;
+            margin: 50px auto 0 auto;
+            padding-bottom: 50px;
         }
     }
 }

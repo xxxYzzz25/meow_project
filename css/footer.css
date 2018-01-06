@@ -163,7 +163,7 @@ footer {
     top: -20px;
     padding: 10px; }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media all and (max-width: 991px) {
   footer {
     margin-left: 0;
     width: 100%; } }
@@ -176,7 +176,7 @@ footer {
       display: block;
       text-align: center; } }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media all and (max-width: 991px) {
   footer {
     margin-left: 0;
     width: 100%; } }
