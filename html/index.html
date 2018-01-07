@@ -21,10 +21,12 @@
     <div id="loading">
         <img src="../images/loading.svg" id="loadingCat" alt="loading">
     </div>
-    <div class="hamburger" id="hamburger-6">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+    <div class="hb">
+        <div class="hamburger" id="hamburger-6">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
     </div>
     <!-- header -->
     <header>
@@ -117,25 +119,38 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="scroll-down">
+                            領養前先於下頁完成小測驗看看自己適不適合領養!
+                            <br>
+                            <small>Scroll Down</small>
+                            <br>
+                            <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="section">
                 <!-- 分數遊戲 -->
-                <div class="game-point">
+                <div class="game-point" id="game-point">
                     <div class="game-point-title">
                         <h2>適合養喵小孩嗎?</h2>
                         <h3>Precautions</h3>
                     </div>
                     <div class="game-point-top">
-
-                        <div class="askBox">
-                            <span id="questions">這是一個題目</span>
+                        <div class="game-qty-box">
+                            <span id="game-qty"></span>
                         </div>
-                        <img class="cat-ask" src="../images/cat_ask.png" alt="cat ask">
+                        <div class="askBox">
+                            <span id="questions"></span>
+                        </div>
                     </div>
                     <div class="game-point-bottom" id="gamePointBottom">
-                        <img class="people" id="people" src="../images/cat_ask_people.png" alt="cat ask people">
+                        <div class="hint-box">
+                            <div class="hint" id="hint"></div>
+                            <img src="../images/answer.png" alt="answer cat">
+                            <button id="i-know">我知道了!</button>
+                        </div>
+                        <img class="people" id="people" src="../images/runningBoy_1357.png" alt="cat ask people">
                         <div class="option-area option-area-a" id="optionA">
                         </div>
                         <div class="option-area option-area-b" id="optionB">
@@ -351,17 +366,17 @@
         <div class="signUpLightbox" id="loginBox">
             <i class="fa fa-times cancel"></i>
             <div class="bgImg"></div>
-            <div class="formShape">
+            <div id="formShape">
                 <div class="chioce">
                     <button id="halfMember">中途之家會員</button>
                     <button id="member" class="selected">一般會員</button>
                 </div>
                 <form action="#1" id="signUpForm">
-                    <label for="userName">會員暱稱
+                    <label for="userName">會員名稱
                         <br>
                         <small>不得多於8個中/英文字元</small>
                     </label>
-                    <input type="text" id="userName" placeholder="請輸入您的暱稱" required>
+                    <input type="text" id="userName" placeholder="請輸入您的名稱" required>
                     <br>
                     <label for="userId">會員帳號
                         <br>
@@ -377,24 +392,21 @@
                     <br>
                     <label for="userTel">聯絡電話
                         <br>
-                        <small></small>
                     </label>
                     <input type="tel" id="userTel" placeholder="請輸入您的手機號碼" required>
                     <br>
                     <label for="userBirth">會員生日
                         <br>
-                        <small></small>
                     </label>
                     <input type="text" id="userBirth" placeholder="ex:19900101" required>
                     <br>
                     <label for="userAddress">通訊地址
                         <br>
-                        <small></small>
                     </label>
                     <input type="text" id="userAddress" placeholder="請輸入您的地址" required>
                     <br>
                     <div class="chioce">
-                        <label for="userPhoto" class="formBtn">
+                        <label for="userPhoto" class="formBtn" id="userPhotoLabel">
                             點我上傳您的大頭貼
                         </label>
                         <input type="file" id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
@@ -402,6 +414,9 @@
                         <input type="reset" class="formBtn formSubmitBtn" value="清除重填">
                     </div>
                 </form>
+                <p class="signInUpPos">已經是會員了嗎?
+                    <button id="signInUp">點此登入</button>
+                </p>
             </div>
         </div>
         <script src="../js/signUp.js"></script>
