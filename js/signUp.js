@@ -41,6 +41,17 @@ window.addEventListener('load', function () {
         memHeadInput.setAttribute("placeholder", "請輸入您的負責人姓名");
         memAddLabel.innerHTML = "中途店址";
     })
+    // 以下呼叫signIn.html
+    let signInUp = document.getElementById('signInUp')
+    signInUp.addEventListener('click', function signIn() {
+        let req = new XMLHttpRequest()
+        req.open('get', '../html/signIn.html')
+        req.onload = function(){
+            let content = document.getElementById('formShape')
+            content.innerHTML = this.responseText
+        }
+        req.send()
+    })
 });
 $(document).ready(function () {
     // 以下是燈箱置中

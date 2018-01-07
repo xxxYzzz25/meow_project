@@ -16,20 +16,21 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
     width: 100vw;
     height: 100vh;
     position: fixed;
-    z-index: 1000; // display: none;
+    z-index: 1000;
+    display: none;
 }
 
 .signUpLightbox {
-    width: 800px;
-    height: 600px;
     z-index: 1001;
-    position: fixed; // display: none;
+    position: fixed;
+    display: none;
     .cancel {
         position: absolute;
         top: 5px;
         right: 5px;
         font-size: 20px;
         z-index: 1002;
+        cursor: pointer;
     }
     .bgImg {
         width: 400px;
@@ -42,7 +43,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
         background-size: cover;
         background-repeat: no-repeat;
     }
-    .formShape {
+    #formShape {
         background-color: rgb(145, 152, 159);
         width: 400px;
         height: 600px;
@@ -102,7 +103,6 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 transition: .3s;
                 color: #333;
                 margin: 0 auto 30px;
-                cursor: pointer;
                 &:hover {
                     background-color: $navColor;
                     border: 1px solid $navColor;
@@ -153,10 +153,10 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
             }
         }
         .signInUpPos {
-            width: 165px;
+            width: 170px;
             position: absolute;
             left: 50%;
-            margin-left: -82.5px;
+            margin-left: -85px;
             bottom: 14px;
             color: #eee;
             font-size: $font-size-small;
@@ -168,6 +168,51 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 border-bottom: #eee 1px solid;
                 cursor: pointer;
                 outline: none;
+            }
+        }
+    }
+}
+
+@include respond-to(medium) {
+    .signUpLightbox {
+        .bgImg {
+            display: none;
+            visibility: hidden;
+            width: 0;
+            height: 0;
+        }
+        #formShape {
+            border-radius: 10px;
+        }
+    }
+}
+
+@include respond-to(small) {
+    .signUpLightbox {
+        .bgImg {
+            display: none;
+            visibility: hidden;
+            width: 0;
+            height: 0;
+        }
+        #formShape {
+            width: 300px;
+            border-radius: 10px;
+            .chioce {
+                button {
+                    font-size: $font-size-base;
+                }
+            }
+            form {
+                .formBtn {
+                    width: 180px;
+                    font-size: $font-size-base;
+                }
+                .formSubmitBtn {
+                    display: inline-block;
+                    width: 80px;
+                    font-size: $font-size-base;
+                }
             }
         }
     }

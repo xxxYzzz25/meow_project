@@ -532,7 +532,7 @@ header.active {
   background-repeat: no-repeat;
 }
 
-.signUpLightbox .formShape {
+.signUpLightbox #formShape {
   background-color: #91989f;
   width: 400px;
   height: 600px;
@@ -541,15 +541,15 @@ header.active {
   position: relative;
 }
 
-.signUpLightbox .formShape .chioce {
+.signUpLightbox #formShape .chioce {
   text-align: center;
 }
 
-.signUpLightbox .formShape .chioce:last-child {
+.signUpLightbox #formShape .chioce:last-child {
   margin-top: 20px;
 }
 
-.signUpLightbox .formShape .chioce button {
+.signUpLightbox #formShape .chioce button {
   background-color: transparent;
   border: none;
   display: inline-block;
@@ -561,39 +561,39 @@ header.active {
   cursor: pointer;
 }
 
-.signUpLightbox .formShape .chioce button:hover {
+.signUpLightbox #formShape .chioce button:hover {
   color: #fff;
 }
 
-.signUpLightbox .formShape .chioce .selected {
+.signUpLightbox #formShape .chioce .selected {
   border-bottom: 1px solid #eaaf88;
   color: #fff;
 }
 
-.signUpLightbox .formShape form {
-  padding: 50px;
+.signUpLightbox #formShape form {
+  padding: 10px 50px;
   margin: 0 auto;
   color: #fff;
   font-family: '../fonts/NotoSansCJKtc-Thin.otf';
 }
 
-.signUpLightbox .formShape form label {
+.signUpLightbox #formShape form label {
   margin-top: 10px;
   margin-bottom: 4px;
   display: block;
   font-size: 18px;
 }
 
-.signUpLightbox .formShape form label:first-child {
+.signUpLightbox #formShape form label:first-child {
   margin-top: 0;
 }
 
-.signUpLightbox .formShape form label small {
+.signUpLightbox #formShape form label small {
   font-size: 12px;
   color: rgba(245, 245, 245, 0.7);
 }
 
-.signUpLightbox .formShape form .formBtn {
+.signUpLightbox #formShape form .formBtn {
   width: 240px;
   border: 1px solid #333;
   display: block;
@@ -606,20 +606,20 @@ header.active {
   margin: 0 auto 30px;
 }
 
-.signUpLightbox .formShape form .formBtn:hover {
+.signUpLightbox #formShape form .formBtn:hover {
   background-color: #eaaf88;
   border: 1px solid #eaaf88;
   color: #fff;
 }
 
-.signUpLightbox .formShape form input {
+.signUpLightbox #formShape form input {
   border: none;
   background-color: transparent;
   border-bottom: 1px solid rgba(245, 245, 245, 0.7);
   width: 100%;
 }
 
-.signUpLightbox .formShape form input:-ms-input-placeholder {
+.signUpLightbox #formShape form input:-ms-input-placeholder {
   line-height: 1em;
   padding: 5px 15px;
   color: rgba(245, 245, 245, 0.7);
@@ -627,7 +627,7 @@ header.active {
   font-size: 12px;
 }
 
-.signUpLightbox .formShape form input:-moz-placeholder {
+.signUpLightbox #formShape form input:-moz-placeholder {
   line-height: 1em;
   padding: 5px 15px;
   color: rgba(245, 245, 245, 0.7);
@@ -635,7 +635,7 @@ header.active {
   font-size: 12px;
 }
 
-.signUpLightbox .formShape form input::-moz-placeholder {
+.signUpLightbox #formShape form input::-moz-placeholder {
   line-height: 1em;
   padding: 5px 15px;
   color: rgba(245, 245, 245, 0.7);
@@ -643,7 +643,7 @@ header.active {
   font-size: 12px;
 }
 
-.signUpLightbox .formShape form input::-webkit-input-placeholder {
+.signUpLightbox #formShape form input::-webkit-input-placeholder {
   line-height: 1em;
   padding: 5px 15px;
   color: rgba(245, 245, 245, 0.7);
@@ -651,14 +651,34 @@ header.active {
   font-size: 12px;
 }
 
-.signUpLightbox .formShape form #userPhoto {
+.signUpLightbox #formShape form #userPhoto {
   display: none;
 }
 
-.signUpLightbox .formShape form .formSubmitBtn {
+.signUpLightbox #formShape form .formSubmitBtn {
   display: inline-block;
   width: 100px;
   font-size: 14px;
+}
+
+.signUpLightbox #formShape .signInUpPos {
+  width: 170px;
+  position: absolute;
+  left: 50%;
+  margin-left: -85px;
+  bottom: 14px;
+  color: #eee;
+  font-size: 12px;
+}
+
+.signUpLightbox #formShape .signInUpPos button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: #eee;
+  border-bottom: #eee 1px solid;
+  cursor: pointer;
+  outline: none;
 }
 
 @media all and (max-width: 991px) {
@@ -668,7 +688,7 @@ header.active {
     width: 0;
     height: 0;
   }
-  .signUpLightbox .formShape {
+  .signUpLightbox #formShape {
     border-radius: 10px;
   }
 }
@@ -680,18 +700,18 @@ header.active {
     width: 0;
     height: 0;
   }
-  .signUpLightbox .formShape {
+  .signUpLightbox #formShape {
     width: 300px;
     border-radius: 10px;
   }
-  .signUpLightbox .formShape .chioce button {
+  .signUpLightbox #formShape .chioce button {
     font-size: 14px;
   }
-  .signUpLightbox .formShape form .formBtn {
+  .signUpLightbox #formShape form .formBtn {
     width: 180px;
     font-size: 14px;
   }
-  .signUpLightbox .formShape form .formSubmitBtn {
+  .signUpLightbox #formShape form .formSubmitBtn {
     display: inline-block;
     width: 80px;
     font-size: 14px;
