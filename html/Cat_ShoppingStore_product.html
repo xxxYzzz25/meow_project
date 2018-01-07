@@ -19,6 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Cat_ShoppingStore_product.css">
     <script src="../js/wow.js"></script>
+    <script src="../js/shoppingCart.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -117,20 +118,6 @@
                 尋喵啟事
                 <span>SHOPPING STORE</span>
             </div>
-            <!-- 
-            <div class="menu">
-
-                <a href="Cat_ShoppingStore.html" class="menuTitle">全部喵喵商品</a>
-
-                <a href="#" class="menuNow menuTitle">喵喵肚子餓</a>
-
-                <a href="#" class="menuTitle">喵喵待在家</a>
-
-                <a href="#" class="menuTitle">精選喵草</a>
-
-                <a href="#" class="menuTitle">喵喵愛玩耍</a>
-
-            </div> -->
 
             <br>
             <br>
@@ -154,8 +141,19 @@
                         </form>
                     </div>
                     <div class="buy wow zoomIn">
-                        <button>加入購物車</button>
-                        <button>直接購買</button>
+                        <div>
+                            <span id="Friskies" class="addButton">
+                                加入購物車
+                                <input type="hidden" value="Friskies">
+                            </span>
+
+                            <span class="addButton">
+                                <a href="Cat_ShoppingStore_cart.html">直接購買</a>
+                            </span>
+                        </div>
+
+
+
                     </div>
                 </div>
             </div>
