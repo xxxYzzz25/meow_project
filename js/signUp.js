@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
         let memBirthLabel = userPhotoLabel.parentNode.parentNode.childNodes[25];
         let memBirthInput = userPhotoLabel.parentNode.parentNode.childNodes[27]; 
         let memAddLabel = userPhotoLabel.parentNode.parentNode.childNodes[31];
-        memNameLabel.innerHTML = "會員暱稱<br><small>不得多於8個中/英文字元</small>";
+        memNameLabel.innerHTML = "會員名稱<br><small>不得多於8個中/英文字元</small>";
         memIdLabel.innerHTML = "會員帳號<br><small>請輸入您的電子郵件</small>";
         memPswLabel.innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>";
         memBirthLabel.innerHTML = "會員生日<br>";
@@ -40,6 +40,17 @@ window.addEventListener('load', function () {
         memHeadLabel.innerHTML = "中途負責人名稱<br>";
         memHeadInput.setAttribute("placeholder", "請輸入您的負責人姓名");
         memAddLabel.innerHTML = "中途店址";
+    })
+    // 以下呼叫signIn.html
+    let signInUp = document.getElementById('signInUp')
+    signInUp.addEventListener('click', function signIn() {
+        let req = new XMLHttpRequest()
+        req.open('get', '../html/signIn.html')
+        req.onload = function(){
+            let content = document.getElementById('formShape')
+            content.innerHTML = this.responseText
+        }
+        req.send()
     })
 });
 $(document).ready(function () {

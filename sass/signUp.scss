@@ -21,8 +21,6 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
 }
 
 .signUpLightbox {
-    width: 800px;
-    height: 600px;
     z-index: 1001;
     position: fixed;
     display: none;
@@ -32,6 +30,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
         right: 5px;
         font-size: 20px;
         z-index: 1002;
+        cursor: pointer;
     }
     .bgImg {
         width: 400px;
@@ -44,7 +43,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
         background-size: cover;
         background-repeat: no-repeat;
     }
-    .formShape {
+    #formShape {
         background-color: rgb(145, 152, 159);
         width: 400px;
         height: 600px;
@@ -65,6 +64,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 outline: none;
                 color: $colorPlaceholder;
                 font-size: $font-size-h2;
+                cursor: pointer;
                 &:hover {
                     color: #fff;
                 }
@@ -150,6 +150,69 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 display: inline-block;
                 width: 100px;
                 font-size: $font-size-base;
+            }
+        }
+        .signInUpPos {
+            width: 170px;
+            position: absolute;
+            left: 50%;
+            margin-left: -85px;
+            bottom: 14px;
+            color: #eee;
+            font-size: $font-size-small;
+            button {
+                background-color: transparent;
+                padding: 0;
+                border: none;
+                color: #eee;
+                border-bottom: #eee 1px solid;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+    }
+}
+
+@include respond-to(medium) {
+    .signUpLightbox {
+        .bgImg {
+            display: none;
+            visibility: hidden;
+            width: 0;
+            height: 0;
+        }
+        #formShape {
+            border-radius: 10px;
+        }
+    }
+}
+
+@include respond-to(small) {
+    .signUpLightbox {
+        .bgImg {
+            display: none;
+            visibility: hidden;
+            width: 0;
+            height: 0;
+        }
+        #formShape {
+            width: 300px;
+            border-radius: 10px;
+            .chioce {
+                button {
+                    font-size: $font-size-base;
+                }
+            }
+            form {
+                .formBtn {
+                    width: 180px;
+                    font-size: $font-size-base;
+                }
+                .formSubmitBtn {
+                    display: inline-block;
+                    width: 80px;
+                    font-size: $font-size-base;
+                }
             }
         }
     }
