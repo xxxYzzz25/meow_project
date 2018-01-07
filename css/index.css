@@ -316,26 +316,29 @@ header {
         transform: scale(1.15);
         transition: .3s; }
 
+.hb {
+  position: fixed;
+  z-index: 999999999;
+  background-color: rgba(238, 237, 237, 0.808);
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+  top: 30px;
+  right: 30px; }
+
 header.active {
   top: 0;
   transition: .6s; }
 
 .hamburger .line {
-  width: 50px;
-  height: 5px;
+  width: 40px;
+  height: 4px;
   background-color: #2c3e50;
   display: block;
   margin: 8px auto;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
-
-.hamburger {
-  top: 30px;
-  right: 30px;
-  position: fixed;
-  z-index: 999999999;
-  display: none; }
 
 .hamburger:hover {
   cursor: pointer; }
@@ -362,16 +365,16 @@ header.active {
   transition-delay: 0.3s; }
 
 #hamburger-6.is-active .line:nth-child(1) {
-  -webkit-transform: translateY(13px);
-  -ms-transform: translateY(13px);
-  -o-transform: translateY(13px);
-  transform: translateY(13px); }
+  -webkit-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px); }
 
 #hamburger-6.is-active .line:nth-child(3) {
-  -webkit-transform: translateY(-13px) rotate(90deg);
-  -ms-transform: translateY(-13px) rotate(90deg);
-  -o-transform: translateY(-13px) rotate(90deg);
-  transform: translateY(-13px) rotate(90deg); }
+  -webkit-transform: translateY(-14px) rotate(90deg);
+  -ms-transform: translateY(-14px) rotate(90deg);
+  -o-transform: translateY(-14px) rotate(90deg);
+  transform: translateY(-14px) rotate(90deg); }
 
 .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2 {
   font-size: 18px;
@@ -467,6 +470,24 @@ header.active {
       right: 10px;
       top: 28px; }
 
+@keyframes scrollDown {
+  to {
+    opacity: .3;
+    top: 30px; } }
+
+.scroll-down {
+  text-align: center;
+  margin: 10px auto;
+  line-height: 36px; }
+  .scroll-down i {
+    top: 0;
+    position: relative;
+    animation: scrollDown 1.2s ease-out infinite;
+    color: #fff;
+    text-decoration: none; }
+  .scroll-down small {
+    font-size: 14px; }
+
 .pick-kit {
   text-align: center;
   height: 100vh;
@@ -486,7 +507,7 @@ header.active {
     justify-content: space-around;
     align-items: center; }
     .pick-kit ul li {
-      width: 28%;
+      width: 16%;
       float: left; }
       .pick-kit ul li .cat_list_bg {
         width: 100%;
@@ -660,8 +681,9 @@ header.active {
 
 .game-point {
   height: 100vh;
-  background-color: #EAAF88;
-  box-shadow: 20px 20px #333 inset, -20px -20px #333 inset; }
+  background-image: url(../images/bgimg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
   .game-point .game-point-title {
     height: 15vh;
     display: flex;
@@ -677,39 +699,32 @@ header.active {
     border-bottom: 3px solid #fff;
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     padding-right: 60px; }
-    .game-point .game-point-top .askBox {
-      position: relative;
-      height: 30vh;
+    .game-point .game-point-top .game-qty-box {
+      width: 123px;
+      height: 90px;
+      background-image: url(../../images/cloud_no.png);
+      background-repeat: no-repeat;
+      background-size: contain;
       display: flex;
-      padding: 30px 50px;
       justify-content: center;
       align-items: center;
-      border: 3px solid #fff;
-      border-radius: 20% 60% 30% 60%;
-      background-color: #EAAF88;
-      bottom: 10px; }
-      .game-point .game-point-top .askBox:after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border-radius: 60% 40% 50% 60%;
-        border: 3px solid #fff;
-        right: -40px;
-        top: 50%; }
-      .game-point .game-point-top .askBox:before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 13px;
-        height: 13px;
-        border-radius: 60% 40% 50% 60%;
-        border: 3px solid #fff;
-        right: -55px;
-        top: 35%; }
+      margin-right: 20px;
+      font-family: notoSans_r; }
+      .game-point .game-point-top .game-qty-box #game-qty::first-letter {
+        font-size: 24px; }
+    .game-point .game-point-top .askBox {
+      width: 319px;
+      height: 133px;
+      background-image: url(../images/cloud_question.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: notoSans_r; }
     .game-point .game-point-top .cat-ask {
       max-width: 80%;
       max-height: 80%;
@@ -725,26 +740,68 @@ header.active {
     align-items: flex-end;
     padding-top: 40px;
     padding-bottom: 20px; }
+    .game-point .game-point-bottom .hint-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #effafc;
+      border: 2px solid #000;
+      z-index: 0;
+      transition: .3s;
+      opacity: 0; }
+      .game-point .game-point-bottom .hint-box .hint {
+        width: 80%;
+        border: 2px #000 solid;
+        background-color: #f8e4e3;
+        border-radius: 10px;
+        padding: 15px 45px;
+        line-height: 30px; }
+      .game-point .game-point-bottom .hint-box button {
+        background-color: #e46d69;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 10px;
+        border: 2px solid #000;
+        cursor: pointer; }
+    .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
+    .game-point .game-point-bottom .option-area-b {
+      align-self: flex-start;
+      width: 15%;
+      padding-bottom: 15%;
+      border-radius: 50%;
+      position: relative;
+      background-color: #369;
+      text-align: center;
+      cursor: pointer; }
+      .game-point .game-point-bottom .option-area-a:hover, .game-point .game-point-bottom .option-area-b:hover,
+      .game-point .game-point-bottom .option-area-b:hover {
+        transition: .3s; }
+    .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b {
+      background-image: url(../images/yes.png);
+      background-size: cover;
+      background-repeat: no-repeat; }
+    .game-point .game-point-bottom .option-area-b {
+      background-image: url(../images/no.png); }
     .game-point .game-point-bottom .people {
       position: relative;
       z-index: 2;
-      width: 100px;
-      height: 105px;
-      left: 0; }
-    .game-point .game-point-bottom #optionA,
-    .game-point .game-point-bottom #optionB {
-      align-self: flex-start;
-      width: 30%;
-      height: 250px;
-      position: relative;
-      background-color: #369;
-      text-align: center; }
+      width: 70px;
+      height: 108x;
+      left: 0;
+      bottom: 60px;
+      transition: .3s; }
     .game-point .game-point-bottom .hug {
       position: relative;
-      width: 50px;
-      height: 90px;
+      width: 70px;
+      height: 102px;
       z-index: 1;
-      right: 0; }
+      right: 0;
+      bottom: 60px;
+      transition: .3s ease-in-out; }
 
 #loading {
   position: fixed;
@@ -913,7 +970,7 @@ header.active {
 @media all and (max-width: 991px) {
   header {
     top: -100%; }
-  .hamburger {
+  .hb {
     display: block; } }
 
 @media all and (max-width: 767px) {
@@ -923,6 +980,14 @@ header.active {
 @media all and (max-width: 991px) {
   .margin-200 {
     margin-left: 0; }
+  .banner .find, .banner .wait {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0; }
+  .banner .wait {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0; }
   .banner .findBox, .banner .waitBox {
     display: block;
     text-align: center; }
@@ -938,4 +1003,6 @@ header.active {
   .container {
     max-width: 90%; }
   .banner .search select, .banner .search input {
-    font-size: 16px; } }
+    font-size: 16px; }
+  .pick-kit ul {
+    width: 600%; } }

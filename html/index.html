@@ -21,10 +21,12 @@
     <div id="loading">
         <img src="../images/loading.svg" id="loadingCat" alt="loading">
     </div>
-    <div class="hamburger" id="hamburger-6">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+    <div class="hb">
+        <div class="hamburger" id="hamburger-6">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
     </div>
     <!-- header -->
     <header>
@@ -117,25 +119,38 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="scroll-down">
+                            領養前先於下頁完成小測驗看看自己適不適合領養!
+                            <br>
+                            <small>Scroll Down</small>
+                            <br>
+                            <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="section">
                 <!-- 分數遊戲 -->
-                <div class="game-point">
+                <div class="game-point" id="game-point">
                     <div class="game-point-title">
                         <h2>適合養喵小孩嗎?</h2>
                         <h3>Precautions</h3>
                     </div>
                     <div class="game-point-top">
-
-                        <div class="askBox">
-                            <span id="questions">這是一個題目</span>
+                        <div class="game-qty-box">
+                            <span id="game-qty"></span>
                         </div>
-                        <img class="cat-ask" src="../images/cat_ask.png" alt="cat ask">
+                        <div class="askBox">
+                            <span id="questions"></span>
+                        </div>
                     </div>
                     <div class="game-point-bottom" id="gamePointBottom">
-                        <img class="people" id="people" src="../images/cat_ask_people.png" alt="cat ask people">
+                        <div class="hint-box">
+                            <div class="hint" id="hint"></div>
+                            <img src="../images/answer.png" alt="answer cat">
+                            <button id="i-know">我知道了!</button>
+                        </div>
+                        <img class="people" id="people" src="../images/runningBoy_1357.png" alt="cat ask people">
                         <div class="option-area option-area-a" id="optionA">
                         </div>
                         <div class="option-area option-area-b" id="optionB">
