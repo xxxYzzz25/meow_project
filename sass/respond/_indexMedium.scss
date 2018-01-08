@@ -1,0 +1,30 @@
+@include respond-to(medium) {
+    .margin-200{
+        margin-left: 0;
+    }
+    .banner{
+        .find{
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+        .wait{
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+        .findBox{
+            display: block;
+            text-align: center;
+        }
+    }
+    .search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        select{
+            margin: auto 3px;
+        }
+    }
+}

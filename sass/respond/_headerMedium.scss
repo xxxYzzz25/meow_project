@@ -1,0 +1,8 @@
+@include respond-to(medium) {
+    header{
+        top: -100%;
+    }
+    .hb{
+        display: block;
+    }
+}
