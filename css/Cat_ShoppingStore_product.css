@@ -203,8 +203,11 @@ input.qtyminus:hover{
     color: #333;
 }
 
+.buy{
+    clear: both;
+}
 
-button{
+.addButton{
     border: 2px solid #333333;
     background-color: transparent;
     height: 40px;
@@ -213,12 +216,24 @@ button{
     cursor: pointer;
     letter-spacing: 3px;
     margin: 30px 10px 60px 0;
+    float: left;
+    text-align: center;
+    padding-top: 3px;
+    
 }
 
-button:hover{
-    color: #fff;
+.addButton a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.addButton:hover{
 	background-color: #EAAF88;
 	border: 1px solid #EAAF88;
+}
+
+.addButton:hover a{
+    color: #fff;    
 }
 
 @media only screen and (max-width: 768px){
