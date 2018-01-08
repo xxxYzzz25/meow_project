@@ -15,7 +15,7 @@
     }
 
     @else if $breakpoint == "medium" {
-        @media all and (min-width: $medium) and (max-width: $medium_max)  {
+        @media all and (max-width: $medium_max) {
             @content;
         }
     }

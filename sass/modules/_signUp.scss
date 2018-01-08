@@ -31,7 +31,7 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
-        .formShape {
+        #formShape {
             background-color: rgb(145, 152, 159);
             width: 400px;
             height: 600px;
@@ -63,7 +63,7 @@
                 }
             }
             form {
-                padding: 50px;
+                padding: 10px 50px;
                 margin: 0 auto;
                 color: #fff;
                 font-family: '../fonts/NotoSansCJKtc-Thin.otf';
@@ -140,6 +140,24 @@
                     font-size: $font-size-base;
                 }
             }
+            .signInUpPos {
+                width: 170px;
+                position: absolute;
+                left: 50%;
+                margin-left: -85px;
+                bottom: 14px;
+                color: #eee;
+                font-size: $font-size-small;
+                button {
+                    background-color: transparent;
+                    padding: 0;
+                    border: none;
+                    color: #eee;
+                    border-bottom: #eee 1px solid;
+                    cursor: pointer;
+                    outline: none;
+                }
+            }
         }
     }
 
@@ -151,7 +169,7 @@
                 width: 0;
                 height: 0;
             }
-            .formShape {
+            #formShape {
                 border-radius: 10px;
             }
         }
@@ -165,7 +183,7 @@
                 width: 0;
                 height: 0;
             }
-            .formShape {
+            #formShape {
                 width: 300px;
                 border-radius: 10px;
                 .chioce {
