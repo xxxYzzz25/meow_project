@@ -754,8 +754,8 @@ header.active {
 
 .right .container1 .catItem .img .favorite {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 14px;
+  left: 14px;
   color: #fa3737;
   font-size: 30px;
   z-index: 3;
@@ -885,70 +885,6 @@ header.active {
   color: #fa9c29;
 }
 
-@media all and (max-width: 767px) {
-  header {
-    display: none;
-  }
-  .right {
-    width: 100%;
-    margin: 0;
-  }
-  .right .container1 {
-    padding-top: 0;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .right .container1 .catItem .img,
-  .right .container1 .catItem figure {
-    display: block;
-    margin: 0;
-    margin: 0 auto;
-  }
-  .right .container1 .catItem figure {
-    height: auto;
-    padding-left: 0;
-    width: 100%;
-    margin: 0 auto;
-  }
-  .right .container1 .catItem div.btn {
-    position: relative;
-    bottom: auto;
-    margin: 20px auto 0;
-    font-size: 0;
-    width: 100%;
-  }
-  .right .container1 .catItem div.btn button.defaultBtn {
-    font-size: 14px;
-    display: block;
-    float: right;
-    width: 48%;
-    max-width: 200px;
-  }
-  .right .container1 .catItem div.btn button.defaultBtn:first-child {
-    margin-right: 10px;
-    float: left;
-  }
-  .right .container1 .catItem div.btn:after {
-    content: '';
-    clear: both;
-    display: block;
-  }
-  .right .container1 .donateForm {
-    width: 60%;
-    margin: 20px auto 0;
-  }
-  .right .container1 .donateInfo #canvas {
-    width: 100%;
-  }
-  .right .container1 .introduction {
-    margin-top: 40px;
-  }
-  footer {
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
 @media all and (max-width: 991px) {
   header {
     display: none;
@@ -997,6 +933,72 @@ header.active {
   .right .container1 .donateForm {
     width: 60%;
     margin: 20px auto 0;
+  }
+  .right .container1 .introduction {
+    margin-top: 40px;
+  }
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  header {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    margin: 0;
+  }
+  .right .container1 {
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .right .container1 .catItem {
+    width: 100%;
+  }
+  .right .container1 .catItem .img,
+  .right .container1 .catItem figure {
+    display: block;
+    margin: 0;
+    margin: 0 auto;
+  }
+  .right .container1 .catItem figure {
+    height: auto;
+    padding-left: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .right .container1 .catItem div.btn {
+    position: relative;
+    bottom: auto;
+    margin: 20px auto 0;
+    font-size: 0;
+    width: 100%;
+  }
+  .right .container1 .catItem div.btn button {
+    float: left;
+    font-size: 14px;
+    display: block;
+    width: 48%;
+    max-width: 200px;
+  }
+  .right .container1 .catItem div.btn button:first-child {
+    margin-right: 10px;
+  }
+  .right .container1 .catItem div.btn:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+  .right .container1 .donateForm {
+    width: 90%;
+    margin: 20px auto 0;
+  }
+  .right .container1 .donateInfo #canvas {
+    width: 100%;
   }
   .right .container1 .introduction {
     margin-top: 40px;

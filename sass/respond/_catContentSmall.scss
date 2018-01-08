@@ -7,9 +7,10 @@
         margin: 0;
         .container1 {
             padding-top: 0;
-            padding-left: 30px;
-            padding-right: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
             .catItem {
+                width: 100%;
                 .img,
                 figure {
                     display: block;
@@ -28,15 +29,14 @@
                     margin: 20px auto 0;
                     font-size: 0;
                     width: 100%;
-                    button.defaultBtn {
+                    button {
+                        float: left;
                         font-size: $font-size-base;
                         display: block;
-                        float: right;
                         width: 48%;
                         max-width: 200px;
                         &:first-child {
                             margin-right: 10px;
-                            float: left;
                         }
                     }
                     &:after {
@@ -47,11 +47,11 @@
                 }
             }
             .donateForm {
-                width: 60%;
+                width: 90%;
                 margin: 20px auto 0;
             }
-            .donateInfo{
-                #canvas{
+            .donateInfo {
+                #canvas {
                     width: 100%;
                 }
             }

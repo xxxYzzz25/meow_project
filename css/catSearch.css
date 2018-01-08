@@ -956,8 +956,8 @@ body {
 
 .right .container1 .catPic .catItem .favorite {
   position: absolute;
-  right: 12px;
-  top: 12px;
+  left: 14px;
+  top: 14px;
   color: #fa3737;
   font-size: 30px;
   z-index: 3;
@@ -1062,6 +1062,38 @@ body {
   text-align: center;
 }
 
+@media all and (max-width: 991px) {
+  header {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    margin: 0;
+  }
+  .right .container1 .selectForm .advanceSearch {
+    right: 14%;
+  }
+  .right .container1 .catPic #sortCat {
+    left: 100px;
+  }
+  .right .container1 .catPic .catItem {
+    width: 80%;
+    display: block;
+    margin: 0 auto 100px;
+  }
+  .right .container1 .catPic .catItem .catContent,
+  .right .container1 .catPic .catItem figure {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .right .container1 .catPic .catItem figure {
+    padding-top: 60px;
+  }
+  footer {
+    margin-left: 0;
+  }
+}
+
 @media all and (max-width: 767px) {
   header {
     display: none;
@@ -1111,38 +1143,6 @@ body {
   .right .container1 .catPic .catItem .catContent,
   .right .container1 .catPic .catItem figure {
     display: inline-block;
-  }
-  footer {
-    margin-left: 0;
-  }
-}
-
-@media all and (max-width: 991px) {
-  header {
-    display: none;
-  }
-  .right {
-    width: 100%;
-    margin: 0;
-  }
-  .right .container1 .selectForm .advanceSearch {
-    right: 14%;
-  }
-  .right .container1 .catPic #sortCat {
-    left: 100px;
-  }
-  .right .container1 .catPic .catItem {
-    width: 80%;
-    display: block;
-    margin: 0 auto 100px;
-  }
-  .right .container1 .catPic .catItem .catContent,
-  .right .container1 .catPic .catItem figure {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .right .container1 .catPic .catItem figure {
-    padding-top: 60px;
   }
   footer {
     margin-left: 0;
