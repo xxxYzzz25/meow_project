@@ -649,7 +649,7 @@ header.active {
 .pick-kit .pick-title {
   height: 15vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .pick-kit .pick-title h2 {
@@ -915,16 +915,17 @@ header.active {
 }
 
 .game-point {
-  height: 100vh;
-  background-image: url(../images/bgimg.jpg);
+  height: 90vh;
+  background-image: url(../../images/background_up.png);
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 .game-point .game-point-title {
   height: 15vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
 }
 
@@ -945,32 +946,21 @@ header.active {
 }
 
 .game-point .game-point-top .game-qty-box {
-  width: 123px;
-  height: 90px;
-  background-image: url(../../images/cloud_no.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 10%;
   margin-right: 20px;
-  font-family: notoSans_r;
 }
 
-.game-point .game-point-top .game-qty-box #game-qty::first-letter {
-  font-size: 24px;
+.game-point .game-point-top .game-qty-box img {
+  width: 100%;
 }
 
 .game-point .game-point-top .askBox {
-  width: 319px;
-  height: 133px;
-  background-image: url(../images/cloud_question.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: notoSans_r;
+  width: 40%;
+}
+
+.game-point .game-point-top .askBox img {
+  width: 100%;
+  height: 100%;
 }
 
 .game-point .game-point-top .cat-ask {
@@ -985,11 +975,10 @@ header.active {
   width: 90%;
   margin: auto;
   display: flex;
-  height: 55vh;
+  height: 45vh;
   justify-content: space-between;
   align-items: flex-end;
   padding-top: 40px;
-  padding-bottom: 20px;
 }
 
 .game-point .game-point-bottom .hint-box {
@@ -1061,7 +1050,7 @@ header.active {
   width: 70px;
   height: 108x;
   left: 0;
-  bottom: 60px;
+  bottom: 0;
   transition: .3s;
 }
 
@@ -1071,8 +1060,15 @@ header.active {
   height: 102px;
   z-index: 1;
   right: 0;
-  bottom: 60px;
+  bottom: 0;
   transition: .3s ease-in-out;
+}
+
+.game-point-bgimg {
+  height: 10vh;
+  background-image: url(../../images/background_down.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .noticegame {
@@ -1094,33 +1090,19 @@ header.active {
   line-height: 10px;
 }
 
-.noticegame .boxcontainer {
-  width: 90%;
-  margin: auto;
+.noticegame #rightbox,
+.noticegame #leftbox {
+  display: inline-flex;
+  justify-content: space-between;
+  margin: 50px;
 }
 
-.noticegame .boxcontainer:after {
-  content: '';
-  display: block;
-  clear: both;
+.noticegame .centerbox {
+  display: inline-flex;
+  justify-content: center;
 }
 
-.noticegame .boxcontainer #rightbox,
-.noticegame .boxcontainer #leftbox {
-  float: left;
-  width: 45%;
-}
-
-.noticegame .boxcontainer #rightbox img,
-.noticegame .boxcontainer #leftbox img {
-  width: 100%;
-}
-
-.noticegame .boxcontainer .centerbox {
-  float: left;
-}
-
-.noticegame .boxcontainer .centerbox img {
+.noticegame .centerbox img {
   width: 100%;
 }
 
@@ -1411,7 +1393,7 @@ header.active {
 
 @media all and (max-width: 991px) {
   header {
-    top: -100%;
+    top: -130%;
   }
   .hb {
     display: block;
@@ -1455,14 +1437,42 @@ header.active {
   .search select {
     margin: auto 3px;
   }
+  .game-point .game-point-top .game-qty-box {
+    width: 80%;
+  }
+  .game-point .game-point-top .askBox {
+    width: 260%;
+  }
 }
 
 @media all and (max-width: 767px) {
+  .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2, .noticegame .game-point-title h2 {
+    margin: 0;
+  }
+  .pick-kit .pick-title h3, .half .half-title h3, .shop .shop-title h3, .game-point h3, .noticegame .game-point-title h3 {
+    margin: 0;
+  }
   .container {
     max-width: 90%;
   }
-  .banner .search select, .banner .search input {
+  .banner .search select,
+  .banner .search input {
     font-size: 16px;
+  }
+  .game-point .game-point-top {
+    display: block;
+  }
+  .game-point .game-point-top .game-qty-box {
+    width: 40%;
+  }
+  .game-point .game-point-top .askBox {
+    width: 130%;
+  }
+  .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
+  .game-point .game-point-bottom .option-area-b {
+    align-self: center;
+    width: 24%;
+    padding-bottom: 24%;
   }
   .pick-kit ul {
     width: 600%;
@@ -1474,6 +1484,15 @@ header.active {
   }
   .half .half-qty span {
     align-self: flex-end;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
+  .game-point .game-point-bottom .option-area-b {
+    align-self: flex-start;
+    width: 25%;
+    padding-bottom: 25%;
   }
 }
 

@@ -1,0 +1,12 @@
+@include respond-to(ssmall) {
+    .game-point {
+        .game-point-bottom {
+            .option-area-a,
+            .option-area-b {
+                align-self: flex-start;
+                width: 25%;
+                padding-bottom: 25%;
+            }
+        }
+    }
+}

@@ -146,7 +146,7 @@
     .pick-title {
         height: 15vh;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         h2 {
             @extend %h2-btn;
             height: 40px;
@@ -383,14 +383,15 @@
 }
 
 .game-point {
-    height: 100vh;
-    background-image: url(../images/bgimg.jpg);
+    height: 90vh;
+    background-image: url(../../images/background_up.png);
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     .game-point-title {
         height: 15vh;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: flex-start;
     }
     h2 {
@@ -411,32 +412,24 @@
         align-items: center;
         padding-right: 60px;
         .game-qty-box {
-            width: 123px;
-            height: 90px;
-            background-image: url(../../images/cloud_no.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 10%;
             margin-right: 20px;
-            font-family: notoSans_r;
-            #game-qty {
-                &::first-letter {
-                    font-size: $font-size-h3;
-                }
+            img {
+                width: 100%;
             }
         }
         .askBox {
-            width: 319px;
-            height: 133px;
-            background-image: url(../images/cloud_question.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: notoSans_r;
+            width: 40%;
+            img {
+                width: 100%;
+                height: 100%;
+            } // background-image: url(../images/cloud_question.png);
+            // background-repeat: no-repeat;
+            // background-size: contain;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // font-family: notoSans_r;
         } // .askBox {
         //     position: relative;
         //     height: 30vh;
@@ -483,11 +476,10 @@
         width: 90%;
         margin: auto;
         display: flex;
-        height: 55vh;
+        height: 45vh;
         justify-content: space-between;
         align-items: flex-end;
         padding-top: 40px;
-        padding-bottom: 20px;
         .hint-box {
             display: flex;
             flex-direction: column;
@@ -550,7 +542,7 @@
             width: 70px;
             height: 108x;
             left: 0;
-            bottom: 60px;
+            bottom: 0;
             transition: .3s;
         }
         .hug {
@@ -559,10 +551,17 @@
             height: 102px;
             z-index: 1;
             right: 0;
-            bottom: 60px;
+            bottom: 0;
             transition: .3s ease-in-out;
         }
     }
+}
+
+.game-point-bgimg {
+    height: 10vh;
+    background-image: url(../../images/background_down.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .noticegame {
@@ -584,23 +583,17 @@
             @extend %h3-btn;
         }
     }
-    .boxcontainer {
-        width: 90%;
-        margin: auto;
-        @include afterClear;
-        #rightbox,
-        #leftbox {
-            float: left;
-            width: 45%;
-            img {
-                width: 100%;
-            }
-        }
-        .centerbox {
-            float: left;
-            img {
-                width: 100%;
-            }
+    #rightbox,
+    #leftbox {
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 50px;
+    }
+    .centerbox {
+        display: inline-flex;
+        justify-content: center;
+        img {
+            width: 100%;
         }
     }
     .hintbox {
