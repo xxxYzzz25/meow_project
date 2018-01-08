@@ -2,17 +2,13 @@ window.addEventListener('load', function () {
     let list = document.getElementById('half-list');
     let len = $(list).children('li').length;
     let count = 0;
-    let width = $(window).width();
-    $('').on('click', moveL);
-    $('').on('click', moveR);
-    $(window).on('resize', function () {
-        width = $('body').width();
-    });
+    $('#arrowLeft').on('click', moveL);
+    $('#arrowRight').on('click', moveR);
 
     function moveL() {
         count--;
         if (count < 0) {
-            count = len - 3;
+            count = len-1;
         }
         $(list).stop().animate({
             left: (count * -100) + '%'
@@ -22,7 +18,7 @@ window.addEventListener('load', function () {
 
     function moveR() {
         count++;
-        if (count >= len - 2) {
+        if (count >= len) {
             count = 0;
         }
         $(list).stop().animate({

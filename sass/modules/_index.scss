@@ -238,6 +238,38 @@
 }
 
 .half {
+    #arrowLeft{
+        position: absolute;
+        top: 65vh;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.411);
+        color: #fff;
+        width: 50px;
+        height: 60px;
+        cursor: pointer;
+        text-align: center;
+        z-index: 666;
+        i{
+            position: relative;
+            top: 12px;
+        }
+    }
+    #arrowRight{
+        position: absolute;
+        top: 65vh;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.411);
+        color: #fff;
+        width: 50px;
+        height: 60px;
+        cursor: pointer;
+        text-align: center;
+        z-index: 666;
+        i{
+            position: relative;
+            top: 12px;
+        }
+    }
     background-image: url(../images/wood.jpg);
     background-repeat: no-repeat;
     background-size: cover;
