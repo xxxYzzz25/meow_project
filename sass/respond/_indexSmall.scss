@@ -1,4 +1,11 @@
 @include respond-to(small) {
+    %h2-btn {
+        margin: 0;
+    }
+    
+    %h3-btn {
+        margin: 0;
+    }
     .container {
         max-width: 90%;
     }

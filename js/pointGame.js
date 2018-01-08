@@ -2,6 +2,8 @@ window.addEventListener('load', function () {
     let option = [];
     option.push(document.getElementById('optionA'));
     option.push(document.getElementById('optionB'));
+    let questNumber = document.getElementById('QuestNumber');
+    let cloudQuest = document.getElementById('cloudQuest');
     let hint = document.getElementById('hint');
     let questionsBlock = document.getElementById('questions');
     let know = document.getElementById('i-know');
@@ -47,8 +49,9 @@ window.addEventListener('load', function () {
 
     function showData(obj) {
         if (count <= 8) {
-            questionsBlock.textContent = obj.questions[count - 1].question; //問題
             hint.textContent = obj.questions[count - 1].hint;
+            questNumber.src = '../images/cloud1_Q' + count + '.png';
+            cloudQuest.src = '../images/cloud2_Q' + count + '.png';
             if (obj.questions[count - 1].answer === 0) { //答案
                 option[0].dataset.answer = 'true';
                 option[1].dataset.answer = '';
@@ -104,7 +107,6 @@ window.addEventListener('load', function () {
         bingo = 1;
         know.textContent = '我知道了!';
         know.removeEventListener('click', reset);
-        gameCount.textContent = `${count} / 8`;
         showData(subject);
     }
     option[0].addEventListener('click', adjudge);
@@ -127,8 +129,6 @@ window.addEventListener('load', function () {
     let width;
     let peopleWidth = window.getComputedStyle(people).width.replace('px', '');
     let hugWidth = window.getComputedStyle(hug).width.replace('px', '');
-
-    gameCount.textContent = `${bingo} / 8`;
     peopleWidth = Math.floor(peopleWidth);
     hugWidth = Math.floor(hugWidth);
 
@@ -215,7 +215,6 @@ window.addEventListener('load', function () {
         }
         if (bingo > 8)
             bingo = 8;
-        gameCount.textContent = `${count} / 8`;
         bingo++;
         Object.assign(hug, {
             style: 'right:' + ((width * bingo) - (peopleWidth)) + 'px;'
@@ -229,7 +228,6 @@ window.addEventListener('load', function () {
 
     function err() {
         bingo--;
-        gameCount.textContent = `${count} / 8`;
         if (bingo <= 0) {
             bingo = 1;
         } else {
