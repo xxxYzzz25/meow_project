@@ -143,6 +143,7 @@ window.addEventListener('load', function () {
     });
 
     function correct() {
+        console.log(bingo);
         switch (bingo) {
             case 1:
                 Object.assign(people, {
