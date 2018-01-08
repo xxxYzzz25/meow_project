@@ -1015,6 +1015,7 @@ header.active {
   cursor: pointer;
   position: relative;
   top: -10px;
+  outline: none;
 }
 
 .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
@@ -1076,6 +1077,7 @@ header.active {
   background-image: url(../images/noticeGame/bgimg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  text-align: center;
 }
 
 .noticegame .game-point-title {
@@ -1090,19 +1092,24 @@ header.active {
   line-height: 10px;
 }
 
-.noticegame #rightbox,
-.noticegame #leftbox {
+.noticegame .boxcontainer {
   display: inline-flex;
-  justify-content: space-between;
-  margin: 50px;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
 }
 
-.noticegame .centerbox {
-  display: inline-flex;
-  justify-content: center;
+.noticegame .boxcontainer #rightbox,
+.noticegame .boxcontainer #leftbox {
+  width: 40%;
 }
 
-.noticegame .centerbox img {
+.noticegame .boxcontainer #rightbox img,
+.noticegame .boxcontainer #leftbox img {
+  width: 100%;
+}
+
+.noticegame .boxcontainer .centerbox img {
   width: 100%;
 }
 
@@ -1142,6 +1149,7 @@ header.active {
   cursor: pointer;
   position: relative;
   top: -10px;
+  outline: none;
 }
 
 .noticegame .imgbox {
@@ -1149,6 +1157,11 @@ header.active {
   margin: 30px auto 0 auto;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.noticegame .imgbox img:hover {
+  cursor: pointer;
 }
 
 #loading {
@@ -1443,6 +1456,16 @@ header.active {
   .game-point .game-point-top .askBox {
     width: 260%;
   }
+  .noticegame .boxcontainer {
+    width: 100%;
+  }
+  .noticegame .boxcontainer #rightbox,
+  .noticegame .boxcontainer #leftbox {
+    width: 45%;
+  }
+  .noticegame .imgbox img {
+    width: 33.333%;
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -1484,6 +1507,22 @@ header.active {
   }
   .half .half-qty span {
     align-self: flex-end;
+  }
+  .noticegame .boxcontainer {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .noticegame .boxcontainer #rightbox,
+  .noticegame .boxcontainer #leftbox {
+    width: 45%;
+  }
+  .noticegame .imgbox {
+    width: 100%;
+    margin: 0;
+    padding-top: 30px;
+  }
+  .noticegame .imgbox img {
+    width: 33.333%;
   }
 }
 

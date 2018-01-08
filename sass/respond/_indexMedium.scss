@@ -37,4 +37,18 @@
             }
         }
     }
+    .noticegame{
+        .boxcontainer{
+            width: 100%;
+            #rightbox,
+            #leftbox {
+                width: 45%;
+            }
+        }
+        .imgbox{
+            img{
+                width: 33.333%;
+            }
+        }
+    }
 }

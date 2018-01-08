@@ -511,6 +511,7 @@
                 cursor: pointer;
                 position: relative;
                 top: -10px;
+                outline: none;
             }
         }
         .option-area-a,
@@ -569,6 +570,7 @@
     background-image: url(../images/noticeGame/bgimg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
     .game-point-title {
         height: 15vh;
         display: flex;
@@ -583,17 +585,22 @@
             @extend %h3-btn;
         }
     }
-    #rightbox,
-    #leftbox {
+    .boxcontainer {
         display: inline-flex;
-        justify-content: space-between;
-        margin: 50px;
-    }
-    .centerbox {
-        display: inline-flex;
-        justify-content: center;
-        img {
-            width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        #rightbox,
+        #leftbox {
+            width: 40%;
+            img {
+                width: 100%;
+            }
+        }
+        .centerbox {
+            img {
+                width: 100%;
+            }
         }
     }
     .hintbox {
@@ -629,6 +636,7 @@
             cursor: pointer;
             position: relative;
             top: -10px;
+            outline: none;
         }
     }
     .imgbox {
@@ -636,5 +644,11 @@
         margin: 30px auto 0 auto;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        img{
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 }
