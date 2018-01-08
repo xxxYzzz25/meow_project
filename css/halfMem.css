@@ -301,15 +301,15 @@ footer {
   .btns .btn.youtube:hover {
     color: #fff; }
 
-header ul li:nth-child(5) {
+header ul li:nth-child(1) {
   background-color: #fff;
   box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199); }
 
-header ul li:nth-child(5) a {
+header ul li:nth-child(1) a {
   color: #333;
   font-family: notoSans_r; }
 
-header ul li:nth-child(5):after {
+header ul li:nth-child(1):after {
   z-index: -1;
   content: '';
   display: block;
