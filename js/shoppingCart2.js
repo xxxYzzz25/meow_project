@@ -42,8 +42,9 @@ function createCartList(itemKey,itemValue){
 	tdImage.style.width = '200px';
 
 	var image = document.createElement('img');
+	console.log(itemImage);
 	image.src = itemImage;
-	image.width = '80px';
+	image.width = '80';
 
 	tdImage.appendChild(image);
 	trItemList.appendChild(tdImage);
@@ -98,20 +99,21 @@ function createCartList(itemKey,itemValue){
 
 function deleteItem(){
 
-	var itemId = this.parentNode.getAttribute('id');
+	var itemId = this.parentNode.parentNode;
+	
 
 	//刪除該筆資料之前，先將金額扣除
 	var itemValue = storage.getItem(itemId);
 	subtotal -= parseInt(itemValue.split('|')[2]);
 
-	document.getElementById('subtotal').innerText = subtotal;
+	// document.getElementById('subtotal').innerText = subtotal;
 
-	//清除storage的資料
-	storage.removeItem(itemId);
-	storage['addItemList'] = storage['addItemList'].replace(itemId+', ','');
+	// //清除storage的資料
+	// storage.removeItem(itemId);
+	// storage['addItemList'] = storage['addItemList'].replace(itemId+', ','');
 	
-	//再將該筆tr刪除
-	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+	// //再將該筆tr刪除
+	// this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
 }
 
 function changeItemCount(){

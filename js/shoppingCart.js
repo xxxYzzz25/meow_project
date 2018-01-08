@@ -38,18 +38,6 @@ function addItem(itemId,itemValue){
 
 	var newItem = document.getElementById('newItem');
 
-	//判斷此處是否已有物件，如果有，要先刪除
-	// if(newItem.hasChildNodes()){
-	// 	while(newItem.childNodes.length >= 1){
-	// 		newItem.removeChild(newItem.firstChild);
-	// 	}
-	// }
-	
-	//再顯示新物件
-	// newItem.appendChild(image);
-	// newItem.appendChild(price);
-	// newItem.appendChild(title);
-
 	//存入storage
 	if(storage[itemId]){
 		alert('商品已在購物車裡囉！');
