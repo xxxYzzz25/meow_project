@@ -3,7 +3,6 @@ window.addEventListener('load', function () {
     let len = $(list).children('li').length;
     let count = 0;
     let width = $(window).width();
-    console.log('qq123');
     $('.left-arrow').on('click', moveL);
     $('.right-arrow').on('click', moveR);
     $(window).on('resize', function () {
