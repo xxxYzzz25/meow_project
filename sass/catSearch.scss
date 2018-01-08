@@ -12,6 +12,6 @@
 @import "base/genderIcon";
 @import "modules/_signUp.scss";
 @import 'modules/_catSearch.scss';
-@import 'respond/_catSearchSmall.scss';
 @import 'respond/_catSearchMedium.scss';
+@import 'respond/_catSearchSmall.scss';
 @include navNow(1);
