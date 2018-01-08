@@ -44,6 +44,7 @@ window.addEventListener('load', function () {
             }
         ],
     };
+
     function showData(obj) {
         if (count <= 8) {
             questionsBlock.textContent = obj.questions[count - 1].question; //問題
@@ -55,7 +56,7 @@ window.addEventListener('load', function () {
                 option[0].dataset.answer = '';
                 option[1].dataset.answer = 'true';
             }
-                count++;
+            count++;
         } else {
             count = 1;
         }
@@ -64,12 +65,14 @@ window.addEventListener('load', function () {
 
     function adjudge() {
         tempAnswer = this.dataset.answer;
-        if(count > 8 && bingo >= 5){
+        if (count > 8 && bingo >= 5) {
             know.textContent = '及格！現在去領養';
-            know.addEventListener('click',function(){document.location.href="../html/catSearch.html";});
-        }else if(count > 8 && bingo < 5){
+            know.addEventListener('click', function () {
+                document.location.href = "../html/catSearch.html";
+            });
+        } else if (count > 8 && bingo < 5) {
             know.textContent = '失敗..再來一次?';
-            know.addEventListener('click',reset);
+            know.addEventListener('click', reset);
         }
         know.parentNode.style.opacity = '1';
         know.parentNode.style.zIndex = '6';
@@ -94,12 +97,13 @@ window.addEventListener('load', function () {
         }
         showData(subject);
     }
-    function reset(){
+
+    function reset() {
         count = 1;
         tempAnswer = '';
         bingo = 1;
         know.textContent = '我知道了!';
-        know.removeEventListener('click',reset);
+        know.removeEventListener('click', reset);
         gameCount.textContent = `${count} / 8`;
         showData(subject);
     }
@@ -148,40 +152,64 @@ window.addEventListener('load', function () {
                 Object.assign(people, {
                     src: '../images/runningBoy_1357.png'
                 });
+                Object.assign(hug, {
+                    src: '../images/runningCat_1357.png'
+                });
                 break;
             case 2:
                 Object.assign(people, {
                     src: '../images/runningBoy_246.png'
+                });
+                Object.assign(hug, {
+                    src: '../images/runningCat_246.png'
                 });
                 break;
             case 3:
                 Object.assign(people, {
                     src: '../images/runningBoy_1357.png'
                 });
+                Object.assign(hug, {
+                    src: '../images/runningCat_1357.png'
+                });
                 break;
             case 4:
                 Object.assign(people, {
                     src: '../images/runningBoy_246.png'
+                });
+                Object.assign(hug, {
+                    src: '../images/runningCat_246.png'
                 });
                 break;
             case 5:
                 Object.assign(people, {
                     src: '../images/runningBoy_1357.png'
                 });
+                Object.assign(hug, {
+                    src: '../images/runningCat_1357.png'
+                });
                 break;
             case 6:
                 Object.assign(people, {
                     src: '../images/runningBoy_246.png'
+                });
+                Object.assign(hug, {
+                    src: '../images/runningCat_246.png'
                 });
                 break;
             case 7:
                 Object.assign(people, {
                     src: '../images/runningBoy_1357.png'
                 });
+                Object.assign(hug, {
+                    src: '../images/runningCat_1357.png'
+                });
                 break;
             case 8:
                 Object.assign(people, {
                     src: '../images/runningBoy_8.png'
+                });
+                Object.assign(hug, {
+                    src: '../images/runningCat_8.png'
                 });
                 break;
         }
