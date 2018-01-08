@@ -1,17 +1,86 @@
 /* rest css  */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,8 +89,17 @@ time, mark, audio, video {
   vertical-align: top;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -29,16 +107,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -56,7 +138,23 @@ a {
   text-decoration: none;
 }
 
+
 /* */
+@font-face {
+  font-family: notoSans;
+  src: url('../fonts/NotoSansCJKtc-Thin.otf');
+}
+@font-face {
+  font-family: notoSans_r;
+  src: url('../fonts/NotoSansCJKtc-Regular.otf');
+}
+@font-face {
+  font-family: notoSans_b;
+  src: url('../fonts/NotoSansCJKtc-Black.otf');
+}
+html{
+  font-family: notoSans;
+}
 header {
   background-color: #EAAF88;
   width: 200px;
@@ -87,6 +185,7 @@ header .logo img {
 header ul {
   position: absolute;
   bottom: 180px;
+  letter-spacing: 3px;
 }
 
 header ul li {
@@ -155,6 +254,7 @@ header .icons a:hover {
   background-color: #fff;
   box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
 }
+
 .active::after {
   z-index: -1;
   content: '';
@@ -223,6 +323,7 @@ h1 {
 .forum-list {
   margin-top: 5%;
 }
+
 .forum-list li {
   letter-spacing: 2px;
   padding: 20px 0;
@@ -231,6 +332,7 @@ h1 {
   border: 2px solid black;
   display: inline-block;
 }
+
 .forum-list li:hover {
   cursor: pointer;
   color: #fff;
@@ -246,18 +348,22 @@ h1 {
   width: 39%;
   border: 2px solid #ccc;
 }
+
 .post-list li {
   margin-top: 6%;
   text-align: left;
 }
+
 .post-list li a {
   color: #000;
 }
+
 .post-list li a:hover {
   cursor: pointer;
   color: #EAAF88;
   transition: .3s;
 }
+
 .post-list li:last-child {
   margin-top: 15%;
   text-align: right;
@@ -272,6 +378,7 @@ h1 {
 .post-header {
   text-align: left;
 }
+
 .post-header::after {
   content: "";
   display: block;
@@ -287,6 +394,7 @@ h1 {
   background-color: transparent;
   cursor: pointer;
 }
+
 .btn:hover {
   color: #fff;
   border: 2px solid #ccc;
@@ -299,19 +407,19 @@ h1 {
     margin-left: 200px;
   }
 }
+
 @media screen and (max-width: 991px) {
   header {
     display: none;
   }
-
   .post-header {
     margin-top: 5%;
   }
-
   .post-list {
     padding: 2%;
   }
 }
+
 @media screen and (min-width: 652px) {
   .fbox .row:nth-child(2) .col {
     position: relative;
@@ -323,6 +431,7 @@ h1 {
     right: 60%;
   }
 }
+
 @media screen and (max-width: 829px) {
   .post-header {
     margin-top: 3%;
@@ -331,27 +440,26 @@ h1 {
     margin: 5% auto;
   }
 }
+
 @media screen and (max-width: 651px) {
   h1 {
     font-size: 20px;
   }
-
   .forum-list li {
     letter-spacing: 1px;
     padding: 3% 0;
     margin: 0 1%;
   }
-
   .row {
     margin-top: 10%;
   }
-
   .col {
     width: 95%;
     display: block;
     margin: 0 auto;
   }
 }
+
 .po-list {
   margin: 0 3%;
   padding: 2%;
@@ -364,14 +472,17 @@ h1 {
   display: inline-block;
   width: 65%;
 }
+
 .po-title a {
   color: #000;
 }
+
 .po-title a:hover {
   cursor: pointer;
   color: #EAAF88;
   transition: .3s;
 }
+
 .po-title h3 {
   display: inline-block;
   margin-left: 5%;
@@ -382,6 +493,7 @@ h1 {
   width: 34%;
   text-align: right;
 }
+
 .po-time span {
   margin: 0 5%;
 }
@@ -391,13 +503,13 @@ h1 {
     width: 100%;
     display: block;
   }
-
   .po-time {
     width: 100%;
     margin-top: 5px;
     margin-left: 4%;
   }
 }
+
 .f-active {
   color: #fff;
   border: 2px solid #ccc;
@@ -441,6 +553,7 @@ h1 {
   background-color: #eee;
   border: 1px solid rgba(241, 209, 146, 0.815);
 }
+
 .postfrom p {
   padding: 5px;
   background-color: #ccc;
@@ -450,6 +563,7 @@ h1 {
   padding: 5px;
   margin-top: 5px;
 }
+
 .post-select input {
   width: 87.5%;
 }
@@ -457,6 +571,7 @@ h1 {
 .text-tar {
   padding: 5px;
 }
+
 .text-tar textarea {
   resize: none;
   width: 99.9%;
@@ -466,5 +581,30 @@ h1 {
   margin: 1%;
   text-align: right;
 }
+
+header ul li:nth-child(4) {
+  background-color: #fff;
+  box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
+}
+
+header ul li:nth-child(4) a {
+  color: #333;
+  font-family: notoSans_r;
+}
+
+header ul li:nth-child(4):after {
+  z-index: -1;
+  content: '';
+  display: block;
+  width: 34px;
+  height: 34px;
+  background-color: #fff;
+  position: absolute;
+  top: 7px;
+  right: -17px;
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
+}
+
 
 /*# sourceMappingURL=forum.css.map */
