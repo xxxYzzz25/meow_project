@@ -1145,7 +1145,14 @@ header.active {
           height: 25vh; }
           .half ul.half-list li .half-item .half-text .read-more {
             display: block;
-            text-align: right; } }
+            text-align: right; }
+  .noticegame .smallbox {
+    display: block;
+    margin-top: 60px; }
+  .noticegame .boxcontainer {
+    display: none; }
+  .noticegame .imgbox {
+    display: none; } }
 
 @media all and (max-width: 767px) {
   .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2, .noticegame .game-point-title h2 {
@@ -1169,7 +1176,14 @@ header.active {
     width: 24%;
     padding-bottom: 24%; }
   .pick-kit ul {
-    width: 600%; } }
+    width: 600%; }
+  .noticegame .smallbox {
+    display: block;
+    margin-top: 60px; }
+  .noticegame .boxcontainer {
+    display: none; }
+  .noticegame .imgbox {
+    display: none; } }
 
 @media all and (max-width: 376px) {
   .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
