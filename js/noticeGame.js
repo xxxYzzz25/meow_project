@@ -15,6 +15,8 @@ function doFirst() {
             e.preventDefault();
         })
     })
+
+    let num = 0;
     let temp = '';
     let obj = {
         correct: ['banana', 'egg', 'watermelon'],
@@ -30,16 +32,13 @@ function doFirst() {
     let hinttext = document.getElementById('hinttext');
     let hintbox = document.getElementById('hintbox');
     let know = document.getElementById('know');
+    let imgbox = document.getElementById('imgbox');
 
     function startDrag(e) {
         let data = '<img src="' + e.target.src + '">';
         e.dataTransfer.setData('image/jpeg', data);
         temp = e.target;
     }
-
-    // function endDrag(e) {
-    //     e.target.style.visibility = 'hidden';
-    // }
 
     function dropped(e) {
         temp.style.visibility = 'hidden';
@@ -55,15 +54,23 @@ function doFirst() {
         if (e.target.dataset.box === 'left') {
             if (obj.correct.indexOf(arr) !== -1) {
                 show(arr);
+                num++;
             } else {
                 err();
             }
         } else if (e.target.dataset.box === 'right') {
             if (obj.error.indexOf(arr) !== -1) {
                 show(arr);
+                num++;
             } else {
                 err();
             }
+        }
+        if (num == 6) {
+            know.textContent = '恭喜您~全部答對囉! 您可以獲得50元商城首購優惠 現在馬上前往商城購物吧!';
+            know.addEventListener('click', function () {
+                document.location.href = "../html/Cat_ShoppingStore.html";
+            });
         }
     }
 

@@ -1080,6 +1080,10 @@ header.active {
   text-align: center;
 }
 
+.noticegame .smallbox {
+  display: none;
+}
+
 .noticegame .game-point-title {
   height: 15vh;
   display: flex;
@@ -1508,21 +1512,15 @@ header.active {
   .half .half-qty span {
     align-self: flex-end;
   }
-  .noticegame .boxcontainer {
-    width: 100%;
-    margin-top: 50px;
+  .noticegame .smallbox {
+    display: block;
+    margin-top: 150px;
   }
-  .noticegame .boxcontainer #rightbox,
-  .noticegame .boxcontainer #leftbox {
-    width: 45%;
+  .noticegame .boxcontainer {
+    display: none;
   }
   .noticegame .imgbox {
-    width: 100%;
-    margin: 0;
-    padding-top: 30px;
-  }
-  .noticegame .imgbox img {
-    width: 33.333%;
+    display: none;
   }
 }
 

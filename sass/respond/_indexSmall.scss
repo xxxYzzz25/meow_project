@@ -53,21 +53,31 @@
         }
     }
     .noticegame {
-        .boxcontainer {
-            width: 100%;
-            margin-top: 50px;
-            #rightbox,
-            #leftbox {
-                width: 45%;
-            }
+        // .boxcontainer {
+        //     width: 100%;
+        //     margin-top: 50px;
+        //     #rightbox,
+        //     #leftbox {
+        //         width: 45%;
+        //     }
+        // }
+        // .imgbox {
+        //     width: 100%;
+        //     margin: 0;
+        //     padding-top: 30px;
+        //     img {
+        //         width: 33.333%;
+        //     }
+        // }
+        .smallbox{
+            display: block;
+            margin-top: 150px;
         }
-        .imgbox {
-            width: 100%;
-            margin: 0;
-            padding-top: 30px;
-            img {
-                width: 33.333%;
-            }
+        .boxcontainer{
+            display: none;
+        }
+        .imgbox{
+            display: none;
         }
     }
 }

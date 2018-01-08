@@ -571,6 +571,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    .smallbox {
+        display: none;
+    }
     .game-point-title {
         height: 15vh;
         display: flex;
@@ -645,8 +648,8 @@
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        img{
-            &:hover{
+        img {
+            &:hover {
                 cursor: pointer;
             }
         }
