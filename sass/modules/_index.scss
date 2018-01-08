@@ -13,9 +13,11 @@
     border: 2px solid #333;
     margin: $gap 0;
 }
-.margin-200{
+
+.margin-200 {
     margin-left: 200px;
 }
+
 .more {
     width: 100%;
     position: absolute;
@@ -37,7 +39,7 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    .findBox{
+    .findBox {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -57,7 +59,7 @@
             vertical-align: middle;
         }
     }
-    .waitBox{
+    .waitBox {
         @extend .findBox;
     }
     .wait {
@@ -75,12 +77,12 @@
             border: 3px solid #fff;
             border-radius: 40px;
             text-align-last: center;
-            padding: 3px 0;
+            padding: 3px 6px;
             font-size: $font-size-h4;
             color: #333;
             cursor: pointer;
         }
-        .go{
+        .go {
             display: inline-block;
             position: relative;
         }
@@ -112,24 +114,30 @@
         }
     }
 }
-@keyframes scrollDown{
-    to{opacity: .3;top: 30px;}
+
+@keyframes scrollDown {
+    to {
+        opacity: .3;
+        top: 30px;
+    }
 }
-.scroll-down{
+
+.scroll-down {
     text-align: center;
     margin: 10px auto;
     line-height: 36px;
-    i{
+    i {
         top: 0;
         position: relative;
         animation: scrollDown 1.2s ease-out infinite;
         color: #fff;
         text-decoration: none;
     }
-    small{
+    small {
         font-size: $font-size-h5;
     }
 }
+
 .pick-kit {
     text-align: center;
     height: 100vh;
@@ -363,7 +371,6 @@
     .quick-signUp {
         height: 80vh;
         width: 100%;
-
     }
     position: relative;
     footer {
@@ -403,7 +410,7 @@
         justify-content: center;
         align-items: center;
         padding-right: 60px;
-        .game-qty-box{
+        .game-qty-box {
             width: 123px;
             height: 90px;
             background-image: url(../../images/cloud_no.png);
@@ -414,8 +421,8 @@
             align-items: center;
             margin-right: 20px;
             font-family: notoSans_r;
-            #game-qty{
-                &::first-letter{
+            #game-qty {
+                &::first-letter {
                     font-size: $font-size-h3;
                 }
             }
@@ -430,8 +437,7 @@
             justify-content: center;
             align-items: center;
             font-family: notoSans_r;
-        }
-        // .askBox {
+        } // .askBox {
         //     position: relative;
         //     height: 30vh;
         //     display: flex;
@@ -482,21 +488,21 @@
         align-items: flex-end;
         padding-top: 40px;
         padding-bottom: 20px;
-        .hint-box{
+        .hint-box {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             position: absolute;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             background-color: #effafc;
             border: 2px solid #000;
             z-index: 0;
             transition: .3s;
             opacity: 0;
             border-radius: 10px;
-            .hint{
+            .hint {
                 width: 80%;
                 border: 2px #000 solid;
                 background-color: #f8e4e3;
@@ -504,7 +510,7 @@
                 padding: $gap $gap*3;
                 line-height: 30px;
             }
-            button{
+            button {
                 background-color: #e46d69;
                 color: #fff;
                 padding: 10px 30px;
@@ -525,16 +531,16 @@
             background-color: #369;
             text-align: center;
             cursor: pointer;
-            &:hover{
+            &:hover {
                 transition: .3s;
             }
         }
-        .option-area-a{
+        .option-area-a {
             background-image: url(../images/yes.png);
             background-size: cover;
             background-repeat: no-repeat;
         }
-        .option-area-b{
+        .option-area-b {
             @extend .option-area-a;
             background-image: url(../images/no.png);
         }
@@ -559,3 +565,77 @@
     }
 }
 
+.noticegame {
+    height: 100vh;
+    background-image: url(../images/noticeGame/bgimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .game-point-title {
+        height: 15vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        h2 {
+            @extend %h2-btn;
+            height: 40px;
+            line-height: 10px;
+        }
+        h3 {
+            @extend %h3-btn;
+        }
+    }
+    #rightbox,
+    #leftbox {
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 50px;
+    }
+    .centerbox {
+        display: inline-flex;
+        justify-content: center;
+        img{
+            width: 100%;
+        }
+    }
+    .hintbox {
+        position: absolute;
+        width: 80%;
+        height: 60vh;
+        top: 20%;
+        left: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #effafc;
+        border: 2px solid #000;
+        z-index: -1;
+        transition: .3s;
+        opacity: 0;
+        border-radius: 10px;
+        .hinttext {
+            width: 80%;
+            border: 2px #000 solid;
+            background-color: #f8e4e3;
+            border-radius: 10px;
+            padding: $gap $gap*3;
+            line-height: 30px;
+        }
+        button {
+            background-color: #e46d69;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 10px;
+            border: 2px solid #000;
+            cursor: pointer;
+            position: relative;
+            top: -10px;
+        }
+    }
+    .imgbox {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+    }
+}
