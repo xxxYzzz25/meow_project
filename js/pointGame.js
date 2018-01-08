@@ -9,6 +9,8 @@ window.addEventListener('load', function () {
     let know = document.getElementById('i-know');
     let count = 1; //第幾題
     let tempAnswer = '';
+    let combon = document.getElementById('combon');
+    let windowWidth = document.body.clientWidth;
     let subject = {
         questions: [{
                 question: '您有過敏嗎?',
@@ -77,6 +79,7 @@ window.addEventListener('load', function () {
             know.textContent = '失敗..再來一次?';
             know.addEventListener('click', reset);
         }
+        know.parentNode.style.display = '';
         know.parentNode.style.opacity = '1';
         know.parentNode.style.zIndex = '6';
     }
@@ -87,10 +90,10 @@ window.addEventListener('load', function () {
         } else if (e.target.id === 'optionB') {
             e.target.style.backgroundImage = 'url(../images/no_hover.png)';
         }
-
     }
 
     function iKnow(e) {
+        this.parentNode.style.display = 'none';
         this.parentNode.style.opacity = '0';
         this.parentNode.style.zIndex = '0';
         if (tempAnswer === 'true') {
@@ -109,6 +112,7 @@ window.addEventListener('load', function () {
         know.removeEventListener('click', reset);
         showData(subject);
     }
+
     option[0].addEventListener('click', adjudge);
     option[1].addEventListener('click', adjudge);
     option[0].addEventListener('mouseenter', hoverImg);
@@ -140,10 +144,21 @@ window.addEventListener('load', function () {
         width = Math.ceil(res / 9);
     }
     qq();
+
+    if (document.body.clientWidth <= 375) {
+        combon.style.display = 'none';
+    }
+
     window.addEventListener('resize', function () {
+        windowWidth = document.body.clientWidth;
         res = window.getComputedStyle(moveArea).width.replace('px', '');
         res = Math.floor(res);
         qq();
+        if (windowWidth <= 375) {
+            combon.style.display = 'none';
+        } else {
+            combon.style.display = '';
+        }
     });
 
     function correct() {
@@ -231,12 +246,21 @@ window.addEventListener('load', function () {
         if (bingo <= 0) {
             bingo = 1;
         } else {
-            Object.assign(people, {
-                style: 'left:' + ((width * bingo) - (peopleWidth)) + 'px;transform'
-            });
-            Object.assign(hug, {
-                style: 'right:' + ((width * bingo) - (peopleWidth)) + 'px;'
-            });
+            if (windowWidth <= 768) {
+                Object.assign(people, {
+                    style: 'left:' + (width * bingo) + 'px;transform'
+                });
+                Object.assign(hug, {
+                    style: 'right:' + (width * bingo) + 'px;'
+                });
+            } else if(windowWidth > 768){
+                Object.assign(people, {
+                    style: 'left:' + ((width * bingo) - (peopleWidth)) + 'px;transform'
+                });
+                Object.assign(hug, {
+                    style: 'right:' + ((width * bingo) - (peopleWidth)) + 'px;'
+                });
+            }
         }
     }
 });

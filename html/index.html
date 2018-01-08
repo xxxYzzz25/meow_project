@@ -147,7 +147,7 @@
                     <div class="game-point-bottom" id="gamePointBottom">
                         <div class="hint-box">
                             <div class="hint" id="hint"></div>
-                            <img src="../images/answer.png" alt="answer cat">
+                            <img src="../images/answer.png" alt="answer cat" id="combon">
                             <button id="i-know">我知道了!</button>
                         </div>
                         <img class="people" id="people" src="../images/runningBoy_8.png" alt="cat ask people">
@@ -301,54 +301,62 @@
                         <h2>中途之家</h2>
                         <h3>Animal Shelter</h3>
                     </div>
-                    <div class="half-item">
-                        <div class="half-qty">
-                            <img src="../images/number5.png" alt="5">
-                            <img src="../images/number8.png" alt="8">
-                            <span>隻喵喵待領養</span>
-                        </div>
-                        </a>
-                        <div class="half-pic"></div>
-                        <div class="half-text">
-                            <a href="../html/halfway_house_detail.html">
-                                <span class="half-name">貓貓別哭 中途咖啡廳</span>
-                            </a>
-                            <span class="half-address">台北市信義區信義路四段88號</span>
-                            <span class="half-tel">02-2777-6666</span>
-                            <span class="half-time">營業時間 : 10:00~20:00</span>
-                            <a href="#" class="read-more">前往領養</a>
-                        </div>
-                    </div>
-                    <div class="half-item">
-                        <div class="half-qty">
-                            <img src="../images/number3.png" alt="3">
-                            <img src="../images/number6.png" alt="6">
-                            <span>隻喵喵待領養</span>
-                        </div>
-                        <div class="half-pic"></div>
-                        <div class="half-text">
-                            <a href="../html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡廳</a>
-                            <span class="half-address">台北市信義區信義路四段88號</span>
-                            <span class="half-tel">02-2777-6666</span>
-                            <span class="half-time">營業時間 : 10:00~20:00</span>
-                            <a href="#" class="read-more">前往領養</a>
-                        </div>
-                    </div>
-                    <div class="half-item">
-                        <div class="half-qty">
-                            <img src="../images/number2.png" alt="2">
-                            <img src="../images/number8.png" alt="8">
-                            <span>隻喵喵待領養</span>
-                        </div>
-                        <div class="half-pic"></div>
-                        <div class="half-text">
-                            <a href="../html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡廳</a>
-                            <span class="half-address">台北市信義區信義路四段88號</span>
-                            <span class="half-tel">02-2777-6666</span>
-                            <span class="half-time">營業時間 : 10:00~20:00</span>
-                            <a href="#" class="read-more">前往領養</a>
-                        </div>
-                    </div>
+                    <ul class="half-list" id="half-list">
+                        <li>
+                            <div class="half-item">
+                                <div class="half-qty">
+                                    <img src="../images/number5.png" alt="5">
+                                    <img src="../images/number8.png" alt="8">
+                                    <span>隻喵喵待領養</span>
+                                </div>
+                                </a>
+                                <div class="half-pic"></div>
+                                <div class="half-text">
+                                    <a href="../html/halfway_house_detail.html">
+                                        <span class="half-name">貓貓別哭 中途咖啡</span>
+                                    </a>
+                                    <span class="half-address">台北市信義區信義路四段88號</span>
+                                    <span class="half-tel">02-2777-6666</span>
+                                    <span class="half-time">10:00~20:00</span>
+                                    <a href="#" class="read-more">前往領養</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="half-item">
+                                <div class="half-qty">
+                                    <img src="../images/number3.png" alt="3">
+                                    <img src="../images/number6.png" alt="6">
+                                    <span>隻喵喵待領養</span>
+                                </div>
+                                <div class="half-pic"></div>
+                                <div class="half-text">
+                                    <a href="../html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡</a>
+                                    <span class="half-address">台北市信義區信義路四段88號</span>
+                                    <span class="half-tel">02-2777-6666</span>
+                                    <span class="half-time">10:00~20:00</span>
+                                    <a href="#" class="read-more">前往領養</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="half-item">
+                                <div class="half-qty">
+                                    <img src="../images/number2.png" alt="2">
+                                    <img src="../images/number8.png" alt="8">
+                                    <span>隻喵喵待領養</span>
+                                </div>
+                                <div class="half-pic"></div>
+                                <div class="half-text">
+                                    <a href="../html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡</a>
+                                    <span class="half-address">台北市信義區信義路四段88號</span>
+                                    <span class="half-tel">02-2777-6666</span>
+                                    <span class="half-time">10:00~20:00</span>
+                                    <a href="#" class="read-more">前往領養</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                     <div class="more">
                         <a href="#" class="btn-more">More</a>
                     </div>
@@ -454,7 +462,8 @@
             </div>
         </div>
         <script src="../js/signUp.js"></script>
-        <script src="../js/slider.js"></script>
+        <script src="../js/sliderKit.js"></script>
+        <script src="../js/sliderHalf.js"></script>
         <script>
             $(document).ready(function () {
                 $(".hamburger").click(function () {

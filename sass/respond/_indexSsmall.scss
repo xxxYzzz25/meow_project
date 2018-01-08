@@ -1,12 +1,23 @@
-@include respond-to(ssmall) {
-    .game-point {
-        .game-point-bottom {
-            .option-area-a,
-            .option-area-b {
-                align-self: flex-start;
-                width: 25%;
-                padding-bottom: 25%;
+    @include respond-to(ssmall) {
+        .game-point {
+            .game-point-bottom {
+                .option-area-a,
+                .option-area-b {
+                    align-self: flex-start;
+                    width: 25%;
+                    padding-bottom: 25%;
+                }
+            }
+            .game-point-title {
+                width: 100%;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+        .pick-kit {
+            .pick-title {
+                width: 100%;
+                display: inline-block;
             }
         }
     }
-}
