@@ -24,4 +24,9 @@
             @content;
         }
     }
+    @else if $breakpoint == "ssmall" {
+        @media all and (max-width: $ssmall) {
+            @content;
+        }
+    }
 }

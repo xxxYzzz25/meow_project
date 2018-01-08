@@ -405,24 +405,15 @@
         align-items: center;
         padding-right: 60px;
         .game-qty-box{
-            width: 123px;
-            height: 90px;
-            // background-image: url(../../images/cloud_no.png);
-            // background-repeat: no-repeat;
-            // background-size: contain;
-            // display: flex;
-            // justify-content: center;
-            // align-items: center;
+            width: 10%;
             margin-right: 20px;
-            // font-family: notoSans_r;
-            #game-qty{
-                &::first-letter{
-                    font-size: $font-size-h3;
-                }
+            img{
+                width: 100%;
             }
+            
         }
         .askBox {
-            width: 370px;
+            width: 40%;
             img{
                 width: 100%;
                 height: 100%;

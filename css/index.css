@@ -703,13 +703,12 @@ header.active {
     align-items: center;
     padding-right: 60px; }
     .game-point .game-point-top .game-qty-box {
-      width: 123px;
-      height: 90px;
+      width: 10%;
       margin-right: 20px; }
-      .game-point .game-point-top .game-qty-box #game-qty::first-letter {
-        font-size: 24px; }
+      .game-point .game-point-top .game-qty-box img {
+        width: 100%; }
     .game-point .game-point-top .askBox {
-      width: 370px; }
+      width: 40%; }
       .game-point .game-point-top .askBox img {
         width: 100%;
         height: 100%; }
@@ -1012,7 +1011,11 @@ header.active {
     align-items: center;
     flex-wrap: wrap; }
     .search select {
-      margin: auto 3px; } }
+      margin: auto 3px; }
+  .game-point .game-point-top .game-qty-box {
+    width: 80%; }
+  .game-point .game-point-top .askBox {
+    width: 260%; } }
 
 @media all and (max-width: 767px) {
   .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2 {
@@ -1021,8 +1024,20 @@ header.active {
     margin: 0; }
   .container {
     max-width: 90%; }
-  .banner .search select, .banner .search input {
+  .banner .search select,
+  .banner .search input {
     font-size: 16px; }
+  .game-point .game-point-top {
+    display: block; }
+    .game-point .game-point-top .game-qty-box {
+      width: 40%; }
+    .game-point .game-point-top .askBox {
+      width: 130%; }
+  .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
+  .game-point .game-point-bottom .option-area-b {
+    align-self: center;
+    width: 24%;
+    padding-bottom: 24%; }
   .pick-kit ul {
     width: 600%; }
   .half .half-qty img {
@@ -1031,3 +1046,10 @@ header.active {
     margin: 0 5px; }
   .half .half-qty span {
     align-self: flex-end; } }
+
+@media all and (max-width: 376px) {
+  .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
+  .game-point .game-point-bottom .option-area-b {
+    align-self: flex-start;
+    width: 25%;
+    padding-bottom: 25%; } }
