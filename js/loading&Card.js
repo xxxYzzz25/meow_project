@@ -64,6 +64,7 @@ let  createCard = function() {
 window.addEventListener('load', function () {
     $('#fullpages').fullpage({
         'navigation': true,
+        'anchors': ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
     });
     window.setTimeout(function () {
         let loading = document.getElementById('loading');
