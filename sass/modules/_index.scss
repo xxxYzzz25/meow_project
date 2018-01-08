@@ -584,17 +584,23 @@
             @extend %h3-btn;
         }
     }
-    #rightbox,
-    #leftbox {
-        display: inline-flex;
-        justify-content: space-between;
-        margin: 50px;
-    }
-    .centerbox {
-        display: inline-flex;
-        justify-content: center;
-        img{
-            width: 100%;
+    .boxcontainer {
+        width: 90%;
+        margin: auto;
+        @include afterClear;
+        #rightbox,
+        #leftbox {
+            float: left;
+            width: 45%;
+            img {
+                width: 100%;
+            }
+        }
+        .centerbox {
+            float: left;
+            img {
+                width: 100%;
+            }
         }
     }
     .hintbox {
@@ -634,7 +640,7 @@
     }
     .imgbox {
         width: 80%;
-        margin: 0 auto;
+        margin: 30px auto 0 auto;
         display: flex;
         justify-content: space-around;
     }

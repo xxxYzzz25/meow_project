@@ -1094,19 +1094,33 @@ header.active {
   line-height: 10px;
 }
 
-.noticegame #rightbox,
-.noticegame #leftbox {
-  display: inline-flex;
-  justify-content: space-between;
-  margin: 50px;
+.noticegame .boxcontainer {
+  width: 90%;
+  margin: auto;
 }
 
-.noticegame .centerbox {
-  display: inline-flex;
-  justify-content: center;
+.noticegame .boxcontainer:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
-.noticegame .centerbox img {
+.noticegame .boxcontainer #rightbox,
+.noticegame .boxcontainer #leftbox {
+  float: left;
+  width: 45%;
+}
+
+.noticegame .boxcontainer #rightbox img,
+.noticegame .boxcontainer #leftbox img {
+  width: 100%;
+}
+
+.noticegame .boxcontainer .centerbox {
+  float: left;
+}
+
+.noticegame .boxcontainer .centerbox img {
   width: 100%;
 }
 
@@ -1150,7 +1164,7 @@ header.active {
 
 .noticegame .imgbox {
   width: 80%;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
   display: flex;
   justify-content: space-around;
 }
