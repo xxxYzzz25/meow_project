@@ -13,6 +13,6 @@
 @import "base/genderIcon";
 @import "modules/_signUp.scss";
 @import "modules/_catContent.scss";
-@import 'respond/_catContentSmall.scss';
 @import 'respond/_catContentMedium.scss';
+@import 'respond/_catContentSmall.scss';
 @include navNow(1);

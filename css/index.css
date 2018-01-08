@@ -376,14 +376,14 @@ header.active {
   -o-transform: translateY(-14px) rotate(90deg);
   transform: translateY(-14px) rotate(90deg); }
 
-.pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2 {
+.pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2, .noticegame .game-point-title h2 {
   font-size: 18px;
   color: #fff;
   background-color: #333;
   padding: 15px 30px;
   margin: 15px 0; }
 
-.pick-kit .pick-title h3, .half .half-title h3, .shop .shop-title h3, .game-point h3 {
+.pick-kit .pick-title h3, .half .half-title h3, .shop .shop-title h3, .game-point h3, .noticegame .game-point-title h3 {
   color: #333;
   background-color: rgba(255, 255, 255, 0.537);
   padding: 10px 30px;
@@ -798,6 +798,67 @@ header.active {
   background-repeat: no-repeat;
   background-size: cover; }
 
+.noticegame {
+  height: 100vh;
+  background-image: url(../images/noticeGame/bgimg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .noticegame .game-point-title {
+    height: 15vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start; }
+    .noticegame .game-point-title h2 {
+      height: 40px;
+      line-height: 10px; }
+  .noticegame #rightbox,
+  .noticegame #leftbox {
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 50px; }
+  .noticegame .centerbox {
+    display: inline-flex;
+    justify-content: center; }
+    .noticegame .centerbox img {
+      width: 100%; }
+  .noticegame .hintbox {
+    position: absolute;
+    width: 80%;
+    height: 60vh;
+    top: 20%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #effafc;
+    border: 2px solid #000;
+    z-index: -1;
+    transition: .3s;
+    opacity: 0;
+    border-radius: 10px; }
+    .noticegame .hintbox .hinttext {
+      width: 80%;
+      border: 2px #000 solid;
+      background-color: #f8e4e3;
+      border-radius: 10px;
+      padding: 15px 45px;
+      line-height: 30px; }
+    .noticegame .hintbox button {
+      background-color: #e46d69;
+      color: #fff;
+      padding: 10px 30px;
+      border-radius: 10px;
+      border: 2px solid #000;
+      cursor: pointer;
+      position: relative;
+      top: -10px; }
+  .noticegame .imgbox {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; }
+
 #loading {
   position: fixed;
   top: 0;
@@ -1018,9 +1079,9 @@ header.active {
     width: 260%; } }
 
 @media all and (max-width: 767px) {
-  .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2 {
+  .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2, .noticegame .game-point-title h2 {
     margin: 0; }
-  .pick-kit .pick-title h3, .half .half-title h3, .shop .shop-title h3, .game-point h3 {
+  .pick-kit .pick-title h3, .half .half-title h3, .shop .shop-title h3, .game-point h3, .noticegame .game-point-title h3 {
     margin: 0; }
   .container {
     max-width: 90%; }
