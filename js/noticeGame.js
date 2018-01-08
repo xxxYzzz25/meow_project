@@ -15,31 +15,30 @@ function doFirst() {
             e.preventDefault();
         })
     })
+
+    let num = 0;
     let temp = '';
     let obj = {
         correct: ['banana', 'egg', 'watermelon'],
         error: ['cookie', 'milk'],
         hint: {
-            banana: '111',
-            egg: '222',
-            watermelon: '222',
-            cookie: '222',
-            milk: '222'
+            banana: '香蕉是無毒性的水果，貓咪可以少量食用。過量可能會引起貓咪腹瀉、嘔吐、肚子疼。',
+            egg: '生雞蛋中可能含有沙門氏菌，極容易造成貓咪急性胃腸炎，給貓咪造成不小的痛苦。生雞蛋中含有天然的蛋白質抗生物素蛋白，貓咪過度吸收素蛋白會妨礙生物素（又名維生素B7或H）的吸收及功能發揮，偏偏生物素對於脂肪的新陳代謝、細胞生長和二氧化碳轉移方面的功能無可替代。',
+            watermelon: '貓咪是可以吃一點西瓜的，但是貓咪吃西瓜是不吸收的。貓是肉食動物，吃水果是吸收不了的。別給吃太多就行了，還有剛從冰箱裡拿出來的東西別立刻給，一定要在外面放一會，要是涼的該拉肚子啦!',
+            cookie: '巧克力中含有大量的甲基黃嘌呤鹼類，主要以可可鹼與咖啡因為主。若是貓狗過量攝取，會造成急性的腸胃道、神經、及心臟方面的中毒症狀。',
+            milk: '很多貓咪在喝了牛奶或乳製品後造成下痢（腹瀉），原因是缺乏乳糖消化脢和乳糖酵素，以致於牛奶中的乳糖不能在腸道中發酵，無法被身體消化所致，而這些無法消化的乳糖又會造成細菌的繁殖，反而會吸收水份造成下痢，這樣的情況，跟人類的乳糖不耐症很類似。'
         }
     };
     let hinttext = document.getElementById('hinttext');
     let hintbox = document.getElementById('hintbox');
     let know = document.getElementById('know');
+    let imgbox = document.getElementById('imgbox');
 
     function startDrag(e) {
         let data = '<img src="' + e.target.src + '">';
         e.dataTransfer.setData('image/jpeg', data);
         temp = e.target;
     }
-
-    // function endDrag(e) {
-    //     e.target.style.visibility = 'hidden';
-    // }
 
     function dropped(e) {
         temp.style.visibility = 'hidden';
@@ -55,15 +54,23 @@ function doFirst() {
         if (e.target.dataset.box === 'left') {
             if (obj.correct.indexOf(arr) !== -1) {
                 show(arr);
+                num++;
             } else {
                 err();
             }
         } else if (e.target.dataset.box === 'right') {
             if (obj.error.indexOf(arr) !== -1) {
                 show(arr);
+                num++;
             } else {
                 err();
             }
+        }
+        if (num == 6) {
+            know.textContent = '恭喜您~全部答對囉! 您可以獲得50元商城首購優惠 現在馬上前往商城購物吧!';
+            know.addEventListener('click', function () {
+                document.location.href = "../html/Cat_ShoppingStore.html";
+            });
         }
     }
 

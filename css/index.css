@@ -752,7 +752,8 @@ header.active {
         border: 2px solid #000;
         cursor: pointer;
         position: relative;
-        top: -10px; }
+        top: -10px;
+        outline: none; }
     .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
     .game-point .game-point-bottom .option-area-b {
       align-self: flex-start;
@@ -799,7 +800,10 @@ header.active {
   height: 100vh;
   background-image: url(../images/noticeGame/bgimg.jpg);
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  text-align: center; }
+  .noticegame .smallbox {
+    display: none; }
   .noticegame .game-point-title {
     height: 15vh;
     display: flex;
@@ -808,15 +812,18 @@ header.active {
     .noticegame .game-point-title h2 {
       height: 40px;
       line-height: 10px; }
-  .noticegame #rightbox,
-  .noticegame #leftbox {
+  .noticegame .boxcontainer {
     display: inline-flex;
-    justify-content: space-between;
-    margin: 50px; }
-  .noticegame .centerbox {
-    display: inline-flex;
-    justify-content: center; }
-    .noticegame .centerbox img {
+    justify-content: space-around;
+    align-items: center;
+    width: 80%; }
+    .noticegame .boxcontainer #rightbox,
+    .noticegame .boxcontainer #leftbox {
+      width: 40%; }
+      .noticegame .boxcontainer #rightbox img,
+      .noticegame .boxcontainer #leftbox img {
+        width: 100%; }
+    .noticegame .boxcontainer .centerbox img {
       width: 100%; }
   .noticegame .hintbox {
     position: absolute;
@@ -849,12 +856,16 @@ header.active {
       border: 2px solid #000;
       cursor: pointer;
       position: relative;
-      top: -10px; }
+      top: -10px;
+      outline: none; }
   .noticegame .imgbox {
     width: 80%;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    .noticegame .imgbox img:hover {
+      cursor: pointer; }
 
 #loading {
   position: fixed;
