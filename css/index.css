@@ -840,6 +840,13 @@ header.active {
     .noticegame .game-point-title h2 {
       height: 40px;
       line-height: 10px; }
+  .noticegame .ask {
+    width: 30%;
+    margin: auto;
+    padding-right: 3%; }
+    .noticegame .ask img {
+      width: 100%;
+      margin: auto; }
   .noticegame .boxcontainer {
     display: inline-flex;
     justify-content: space-around;
@@ -847,12 +854,12 @@ header.active {
     width: 80%; }
     .noticegame .boxcontainer #rightbox,
     .noticegame .boxcontainer #leftbox {
-      width: 40%; }
+      width: 50%; }
       .noticegame .boxcontainer #rightbox img,
       .noticegame .boxcontainer #leftbox img {
         width: 100%; }
     .noticegame .boxcontainer .centerbox img {
-      width: 100%; }
+      width: 70%; }
   .noticegame .hintbox {
     position: absolute;
     width: 80%;
@@ -888,7 +895,7 @@ header.active {
       outline: none; }
   .noticegame .imgbox {
     width: 80%;
-    margin: 30px auto 0 auto;
+    margin: 50px auto 0 auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; }
