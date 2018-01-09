@@ -580,30 +580,57 @@ header ul li:nth-child(5):after {
   cursor: pointer;
 }
 
+@media all and (max-width: 991px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  footer {
+    margin-left: 0;
+    width: 100%;
+  }
+  footer span {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 991px) {
+  header {
+    top: -130%;
+  }
+  .hb {
+    display: block;
+  }
+}
+
+@media all and (max-width: 767px) {
+  header {
+    width: 100%;
+  }
+  .hb {
+    top: 5px;
+    right: 5px;
+  }
+}
+
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100vw;
   height: 100vh;
   position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1000;
+}
+
+.signUpLightbox2 {
   display: none;
 }
 
 .signUpLightbox {
   z-index: 1001;
   position: fixed;
-  display: none;
-}
-
-.signUpLightbox .cancel {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 20px;
-  z-index: 1002;
-  cursor: pointer;
 }
 
 .signUpLightbox .bgImg {
@@ -757,14 +784,12 @@ header ul li:nth-child(5):after {
   font-size: 12px;
 }
 
-.signUpLightbox #formShape .signInUpPos button {
-  background-color: transparent;
-  padding: 0;
-  border: none;
+.signUpLightbox #formShape .signInUpPos a {
   color: #eee;
   border-bottom: #eee 1px solid;
   cursor: pointer;
   outline: none;
+  letter-spacing: 0;
 }
 
 @media all and (max-width: 991px) {

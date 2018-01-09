@@ -1,31 +1,25 @@
-@import 'base/_reset.scss';
-@import 'base/_var.scss';
-@import 'base/_boxsizing.scss';
-@import 'mixins/_afterClear.scss';
-@import './mixins/_navNow.scss';
-@import 'base/_font.scss';
-@import 'modules/_btns.scss';
-@import './layout/_container.scss';
-@import 'modules/_footer.scss';
-@import './modules/_header.scss';
-@import './modules/_member.scss';
-@import 'mixins/_rwd.scss';
-@import 'respond/_footerSmall.scss';
-@import 'respond/_headerMedium.scss';
-@import 'respond/_headerSmall.scss';
 $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
 .signUpLightboxBlack {
     background-color: rgba(0, 0, 0, .8);
     width: 100vw;
     height: 100vh;
     position: fixed;
-}
-.signUpLightbox2{
+    z-index: 1000;
     display: none;
 }
+
 .signUpLightbox {
     z-index: 1001;
     position: fixed;
+    display: none;
+    .cancel {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 20px;
+        z-index: 1002;
+        cursor: pointer;
+    }
     .bgImg {
         width: 400px;
         height: 600px;
@@ -37,7 +31,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
         background-size: cover;
         background-repeat: no-repeat;
     }
-    #formShape {
+    .formShape {
         background-color: rgb(145, 152, 159);
         width: 400px;
         height: 600px;
@@ -97,6 +91,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 transition: .3s;
                 color: #333;
                 margin: 0 auto 30px;
+                cursor: pointer;
                 &:hover {
                     background-color: $navColor;
                     border: 1px solid $navColor;
@@ -145,21 +140,34 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 width: 100px;
                 font-size: $font-size-base;
             }
-        }
-        .signInUpPos {
-            width: 170px;
-            position: absolute;
-            left: 50%;
-            margin-left: -85px;
-            bottom: 14px;
-            color: #eee;
-            font-size: $font-size-small;
-            a {
+            .chioce {
+                margin-top: 20px;
+            }
+            .signInUpPos {
+                width: 170px;
+                position: absolute;
+                left: 50%;
+                margin-left: -85px;
+                bottom: 14px;
                 color: #eee;
-                border-bottom: #eee 1px solid;
-                cursor: pointer;
-                outline: none;
-                letter-spacing: 0;
+                font-size: $font-size-small;
+                span {
+                    background-color: transparent;
+                    color: #eee;
+                    border-bottom: #eee 1px solid;
+                    cursor: pointer;
+                    outline: none;
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+    .formShape2 {
+        display: none;
+        background-color: rgb(189, 192, 186);
+        .chioce {
+            .selected {
+                border-bottom-color: #876633; 
             }
         }
     }
@@ -173,7 +181,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
             width: 0;
             height: 0;
         }
-        #formShape {
+        .formShape {
             border-radius: 10px;
         }
     }
@@ -187,7 +195,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
             width: 0;
             height: 0;
         }
-        #formShape {
+        .formShape {
             width: 300px;
             border-radius: 10px;
             .chioce {
