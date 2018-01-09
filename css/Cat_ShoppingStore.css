@@ -1,6 +1,5 @@
 body {
 	background-image: url(../img/marble.jpg);
-	
 }
 
 @media only screen and (max-width: 768px) {
@@ -189,7 +188,7 @@ body {
 }
 
 .typeBanner4 {
-	background-image: url(../img/playBanner.jpg);
+	background-image: url(../img/playCatBanner.jpg);
 }
 
 .typeBanner a {

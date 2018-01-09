@@ -16,6 +16,7 @@
     <script src="../js/loading&Card.js"></script>
     <script src="../js/pointGame.js"></script>
     <script src="../js/noticeGame.js"></script>
+    <script src="../js/signIn.js"></script>
 </head>
 
 <body>
@@ -32,11 +33,38 @@
     <div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
-        <div class="bgImg"></div>
-        <div id="formShape">
+        <div class="bgImg" id="bgImg"></div>
+        <div id="formShape1" class="formShape formShape1">
             <div class="chioce">
-                <button id="halfMember">中途之家會員</button>
-                <button id="member" class="selected">一般會員</button>
+                <button id="halfMember1">中途之家會員</button>
+                <button id="member1" class="selected">一般會員</button>
+            </div>
+            <form action="#1" class="signUpForm" id="signInForm">
+                <br>
+                <br>
+                <br>
+                <br>
+                <label for="userId">會員帳號
+                    <br>
+                    <small>請輸入您的電子郵件</small>
+                </label>
+                <input type="email" id="userIdIn" required>
+                <br>
+                <label for="userPsw">會員密碼
+                    <br>
+                    <small>請輸入6~10碼英數字</small>
+                </label>
+                <input type="password" id="userPswIn" required>
+                <br>
+                <p class="signInUpPos">尚未成為會員嗎?
+                    <span id="signIn2Up">點此註冊</span>
+                </p>
+            </form>
+        </div>
+        <div id="formShape2" class="formShape formShape2">
+            <div class="chioce">
+                <button id="halfMember2">中途之家會員</button>
+                <button id="member2" class="selected">一般會員</button>
             </div>
             <form action="#1" id="signUpForm">
                 <label for="userName">會員名稱
@@ -80,13 +108,12 @@
                     <input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
                     <input type="reset" class="formBtn formSubmitBtn" value="清除重填">
                 </div>
+                <p class="signInUpPos">已經是會員了嗎?
+                    <span id="signUp2In">點此登入</span>
+                </p>
             </form>
-            <p class="signInUpPos">已經是會員了嗎?
-                <button id="signInUp">點此登入</button>
-            </p>
         </div>
     </div>
-    <script src="../js/signUp.js"></script>
     <!-- header -->
     <header>
         <div class="logo">
@@ -188,6 +215,12 @@
             <div class="section">
                 <!-- 分數遊戲 -->
                 <div class="game-point" id="game-point">
+                    <div class="door-left"></div>
+                    <div class="door-right"></div>
+                    <div class="door-start">
+                        <div class="door-start-text">領養前先過關此遊戲</div>
+                        <div class="door-start-btn">開始!</div>
+                    </div>
                     <div class="game-point-title">
                         <h2>適合養喵小孩嗎?</h2>
                         <h3>Precautions</h3>
@@ -208,12 +241,12 @@
                             <img src="../images/answer.png" alt="answer cat" id="combon">
                             <button id="i-know">我知道了!</button>
                         </div>
-                        <img class="people" id="people" src="../images/runningBoy_8.png" alt="cat ask people">
+                        <img class="people" id="people" src="../images/runningBoy_1357.png" alt="cat ask people">
                         <div class="option-area option-area-a" id="optionA">
                         </div>
                         <div class="option-area option-area-b" id="optionB">
                         </div>
-                        <img class="hug" id="hug" src="../images/runningCat_8.png" alt="hug cat">
+                        <img class="hug" id="hug" src="../images/runningCat_1357.png" alt="hug cat">
                     </div>
                 </div>
                 <div class="game-point-bgimg"></div>
@@ -467,7 +500,7 @@
                 </div>
             </div>
         </div>
-        
+
         <script src="../js/sliderKit.js"></script>
         <script src="../js/sliderHalf.js"></script>
         <script>

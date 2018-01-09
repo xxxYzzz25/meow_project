@@ -1,26 +1,50 @@
-<div class="chioce">
-    <button id="halfMember">中途之家會員</button>
-    <button id="member" class="selected">一般會員</button>
-</div>
-<form action="#1" id="signUpForm">
-    <br>
-    <br>
-    <br>
-    <br>
-    <label for="userId">會員帳號
-        <br>
-        <small>請輸入您的電子郵件</small>
-    </label>
-    <input type="email" id="userId" placeholder="請輸入您的電子郵件" required>
-    <br>
-    <label for="userPsw">會員密碼
-        <br>
-        <small>請輸入6~10碼英數字</small>
-    </label>
-    <input type="password" id="userPsw" placeholder="請輸入您的密碼" required>
-    <br>
-</form>
-<p class="signInUpPos">尚未成為會員嗎?
-    <button id="signInUp">點此註冊</button>
-</p>
-</div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>會員專區</title>
+    <link rel="stylesheet" href="../css/signUp.css">
+    <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+</head>
+
+<body>
+    <div class="signUpLightboxBlack"></div>
+    <div class="signUpLightbox" id="loginBox">
+        <i class="fa fa-times cancel"></i>
+        <div class="bgImg"></div>
+        <div id="formShape">
+            <div class="chioce">
+                <button id="halfMember">中途之家會員</button>
+                <button id="member" class="selected">一般會員</button>
+            </div>
+            <form action="#1" id="signUpForm">
+                <br>
+                <br>
+                <br>
+                <br>
+                <label for="userId">會員帳號
+                    <br>
+                    <small>請輸入您的電子郵件</small>
+                </label>
+                <input type="email" id="userId" placeholder="請輸入您的電子郵件" required>
+                <br>
+                <label for="userPsw">會員密碼
+                    <br>
+                    <small>請輸入6~10碼英數字</small>
+                </label>
+                <input type="password" id="userPsw" placeholder="請輸入您的密碼" required>
+                <br>
+            </form>
+            <p class="signInUpPos">尚未成為會員嗎?
+                <button id="signInUp">點此註冊</button>
+            </p>
+        </div>
+    </div>
+    <script src="../js/signUp.js"></script>
+</body>
+
+</html>
