@@ -574,6 +574,7 @@ header.active {
   position: relative; }
   .half #arrowLeft {
     position: absolute;
+    display: none;
     top: 65vh;
     left: 0;
     background-color: rgba(0, 0, 0, 0.411);
@@ -588,6 +589,7 @@ header.active {
       top: 12px; }
   .half #arrowRight {
     position: absolute;
+    display: none;
     top: 65vh;
     right: 0;
     background-color: rgba(0, 0, 0, 0.411);
@@ -692,17 +694,20 @@ header.active {
         padding: 15px;
         display: block; }
 
-.section {
-  position: relative; }
-  .section .quick-signUp {
-    height: 80vh;
-    width: 100%; }
-  .section footer {
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0; }
+.section .shop {
+  height: 100vh;
+  width: 100%; }
+
+.section .prod {
+  width: 100%;
+  height: 75vh; }
+
+.section footer {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0; }
 
 .game-point {
   height: 90vh;
@@ -1113,6 +1118,10 @@ header.active {
     width: 80%; }
   .game-point .game-point-top .askBox {
     width: 260%; }
+  .half #arrowLeft {
+    display: block; }
+  .half #arrowRight {
+    display: block; }
   .half .half-title {
     width: 100%;
     display: inline-block;
@@ -1146,6 +1155,10 @@ header.active {
           .half ul.half-list li .half-item .half-text .read-more {
             display: block;
             text-align: right; }
+  .noticegame .game-point-title {
+    width: 100%;
+    display: inline-block;
+    align-items: center; }
   .noticegame .smallbox {
     display: block;
     margin-top: 60px; }
