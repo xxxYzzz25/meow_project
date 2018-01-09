@@ -405,14 +405,15 @@ header.active {
 
 .banner {
   height: 100vh;
-  background-image: url(../images/AdobeStock_112482963.jpeg);
+  background-image: url(../img/banner1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left center;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff; }
+  color: #fff;
+  text-shadow: 2px 2px 3px #333333; }
   .banner .findBox, .banner .waitBox {
     display: flex;
     justify-content: center;
