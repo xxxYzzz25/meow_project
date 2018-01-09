@@ -423,6 +423,25 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    .door-left{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.6;
+        top: 0;
+    }
+    .door-right{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.6;
+        top: 0;
+    }
+    .door-start{}
+    .door-start-text{}
+    .door-start-btn{}
     .game-point-title {
         height: 15vh;
         display: flex;

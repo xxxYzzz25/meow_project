@@ -716,6 +716,20 @@ header.active {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative; }
+  .game-point .door-left {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    top: 0; }
+  .game-point .door-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    top: 0; }
   .game-point .game-point-title {
     height: 15vh;
     display: flex;
