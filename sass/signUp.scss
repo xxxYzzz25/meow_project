@@ -16,6 +16,8 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
     width: 100vw;
     height: 100vh;
     position: fixed;
+    left: 0;
+    top: 0;
     z-index: 1000;
     display: none;
 }

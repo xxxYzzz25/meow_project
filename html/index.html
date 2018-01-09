@@ -29,6 +29,64 @@
             <span class="line"></span>
         </div>
     </div>
+    <div class="signUpLightboxBlack"></div>
+    <div class="signUpLightbox" id="loginBox">
+        <i class="fa fa-times cancel"></i>
+        <div class="bgImg"></div>
+        <div id="formShape">
+            <div class="chioce">
+                <button id="halfMember">中途之家會員</button>
+                <button id="member" class="selected">一般會員</button>
+            </div>
+            <form action="#1" id="signUpForm">
+                <label for="userName">會員名稱
+                    <br>
+                    <small>不得多於8個中/英文字元</small>
+                </label>
+                <input type="text" id="userName" placeholder="請輸入您的名稱" required>
+                <br>
+                <label for="userId">會員帳號
+                    <br>
+                    <small>請輸入您的電子郵件</small>
+                </label>
+                <input type="email" id="userId" placeholder="請輸入您的電子郵件" required>
+                <br>
+                <label for="userPsw">會員密碼
+                    <br>
+                    <small>請輸入6~10碼英數字</small>
+                </label>
+                <input type="password" id="userPsw" placeholder="請輸入您的密碼" required>
+                <br>
+                <label for="userTel">聯絡電話
+                    <br>
+                </label>
+                <input type="tel" id="userTel" placeholder="請輸入您的手機號碼" required>
+                <br>
+                <label for="userBirth">會員生日
+                    <br>
+                </label>
+                <input type="text" id="userBirth" placeholder="ex:19900101" required>
+                <br>
+                <label for="userAddress">通訊地址
+                    <br>
+                </label>
+                <input type="text" id="userAddress" placeholder="請輸入您的地址" required>
+                <br>
+                <div class="chioce">
+                    <label for="userPhoto" class="formBtn" id="userPhotoLabel">
+                        點我上傳您的大頭貼
+                    </label>
+                    <input type="file" id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
+                    <input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
+                    <input type="reset" class="formBtn formSubmitBtn" value="清除重填">
+                </div>
+            </form>
+            <p class="signInUpPos">已經是會員了嗎?
+                <button id="signInUp">點此登入</button>
+            </p>
+        </div>
+    </div>
+    <script src="../js/signUp.js"></script>
     <!-- header -->
     <header>
         <div class="logo">
@@ -420,64 +478,7 @@
                 </footer>
             </div>
         </div>
-        <div class="signUpLightboxBlack"></div>
-        <div class="signUpLightbox" id="loginBox">
-            <i class="fa fa-times cancel"></i>
-            <div class="bgImg"></div>
-            <div id="formShape">
-                <div class="chioce">
-                    <button id="halfMember">中途之家會員</button>
-                    <button id="member" class="selected">一般會員</button>
-                </div>
-                <form action="#1" id="signUpForm">
-                    <label for="userName">會員名稱
-                        <br>
-                        <small>不得多於8個中/英文字元</small>
-                    </label>
-                    <input type="text" id="userName" placeholder="請輸入您的名稱" required>
-                    <br>
-                    <label for="userId">會員帳號
-                        <br>
-                        <small>請輸入您的電子郵件</small>
-                    </label>
-                    <input type="email" id="userId" placeholder="請輸入您的電子郵件" required>
-                    <br>
-                    <label for="userPsw">會員密碼
-                        <br>
-                        <small>請輸入6~10碼英數字</small>
-                    </label>
-                    <input type="password" id="userPsw" placeholder="請輸入您的密碼" required>
-                    <br>
-                    <label for="userTel">聯絡電話
-                        <br>
-                    </label>
-                    <input type="tel" id="userTel" placeholder="請輸入您的手機號碼" required>
-                    <br>
-                    <label for="userBirth">會員生日
-                        <br>
-                    </label>
-                    <input type="text" id="userBirth" placeholder="ex:19900101" required>
-                    <br>
-                    <label for="userAddress">通訊地址
-                        <br>
-                    </label>
-                    <input type="text" id="userAddress" placeholder="請輸入您的地址" required>
-                    <br>
-                    <div class="chioce">
-                        <label for="userPhoto" class="formBtn" id="userPhotoLabel">
-                            點我上傳您的大頭貼
-                        </label>
-                        <input type="file" id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
-                        <input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
-                        <input type="reset" class="formBtn formSubmitBtn" value="清除重填">
-                    </div>
-                </form>
-                <p class="signInUpPos">已經是會員了嗎?
-                    <button id="signInUp">點此登入</button>
-                </p>
-            </div>
-        </div>
-        <script src="../js/signUp.js"></script>
+        
         <script src="../js/sliderKit.js"></script>
         <script src="../js/sliderHalf.js"></script>
         <script>
