@@ -38,6 +38,8 @@
         }
     }
     .half {
+        #arrowLeft{display: block;}
+        #arrowRight{display: block;}
         .half-title {
             width: 100%;
             display: inline-block;
@@ -95,14 +97,19 @@
         //         width: 33.333%;
         //     }
         // }
-        .smallbox{
+        .game-point-title {
+            width: 100%;
+            display: inline-block;
+            align-items: center;
+        }
+        .smallbox {
             display: block;
             margin-top: 60px;
         }
-        .boxcontainer{
+        .boxcontainer {
             display: none;
         }
-        .imgbox{
+        .imgbox {
             display: none;
         }
     }

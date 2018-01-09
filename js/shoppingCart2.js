@@ -1,4 +1,4 @@
-﻿﻿
+
 var storage = sessionStorage;
 
 function doFirst(){

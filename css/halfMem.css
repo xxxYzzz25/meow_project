@@ -397,17 +397,17 @@ footer span {
   color: #fff;
 }
 
-header ul li:nth-child(1) {
+header ul li:nth-child(5) {
   background-color: #fff;
   box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
 }
 
-header ul li:nth-child(1) a {
+header ul li:nth-child(5) a {
   color: #333;
   font-family: notoSans_r;
 }
 
-header ul li:nth-child(1):after {
+header ul li:nth-child(5):after {
   z-index: -1;
   content: '';
   display: block;
@@ -450,7 +450,7 @@ header ul li:nth-child(1):after {
 }
 
 .right .leftselect {
-  width: 30%;
+  width: 25%;
   float: left;
   margin-right: 30px;
 }
@@ -490,7 +490,7 @@ header ul li:nth-child(1):after {
 }
 
 .right .content {
-  width: 65%;
+  width: 70%;
   float: left;
   padding-bottom: 50px;
 }
@@ -586,6 +586,23 @@ header ul li:nth-child(1):after {
   padding: 10px 0;
 }
 
+.right .content .halfMemAdobtRecord form table {
+  width: 100%;
+}
+
+.right .content .halfMemAdobtRecord form th {
+  text-align: center;
+  background-color: #f2f2f2;
+  border: 2px solid #ccc;
+  padding: 15px;
+}
+
+.right .content .halfMemAdobtRecord form td {
+  border: 2px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
 .right .content .halfMemAdopt form table {
   width: 100%;
 }
@@ -603,7 +620,59 @@ header ul li:nth-child(1):after {
   text-align: center;
 }
 
-.right .content .halfMemAdopt form td .fa-trash {
+.right .content .halfMemAdopt form td .fa-circle-o {
+  font-size: 16.8px;
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.right .content .halfMemAdopt form td .fa-times {
+  font-size: 16.8px;
+  color: crimson;
+  cursor: pointer;
+}
+
+.right .content .halfMemOrderlist {
+  font-size: 18px;
+}
+
+.right .content .halfMemOrderlist h5 {
+  margin-bottom: 20px;
+}
+
+.right .content .halfMemOrderlist p {
+  margin-bottom: 20px;
+}
+
+.right .content .halfMemOrderlist span {
+  color: #eb2f2f;
+}
+
+.right .content .halfMemOrderlist form {
+  width: 100%;
+  margin: 30px auto;
+}
+
+.right .content .halfMemOrderlist form table {
+  width: 100%;
+}
+
+.right .content .halfMemOrderlist form tr {
+  text-align: center;
+}
+
+.right .content .halfMemOrderlist form th {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px 0 20px 0;
+}
+
+.right .content .halfMemOrderlist form td {
+  border: 1px solid #ccc;
+  padding: 20px 0 20px 0;
+}
+
+.right .content .halfMemOrderlist form td .fa-trash {
   font-size: 16.8px;
   color: firebrick;
   cursor: pointer;
@@ -626,9 +695,10 @@ header ul li:nth-child(1):after {
     text-align: center;
   }
   .right .smalllist ul li {
-    width: 18%;
+    width: 23%;
     display: inline-block;
     padding: 10px 0;
+    margin-top: 20px;
     border-bottom: 2px dotted #c2740f;
     cursor: pointer;
   }
@@ -667,9 +737,10 @@ header ul li:nth-child(1):after {
     text-align: center;
   }
   .right .smalllist ul li {
-    width: 18%;
+    width: 23%;
     display: inline-block;
     padding: 10px 0;
+    margin-top: 20px;
     border-bottom: 2px dotted #c2740f;
     cursor: pointer;
   }

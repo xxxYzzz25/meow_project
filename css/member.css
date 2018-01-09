@@ -450,7 +450,7 @@ header ul li:nth-child(5):after {
 }
 
 .right .leftselect {
-  width: 30%;
+  width: 25%;
   float: left;
   margin-right: 30px;
 }
@@ -490,7 +490,7 @@ header ul li:nth-child(5):after {
 }
 
 .right .content {
-  width: 65%;
+  width: 70%;
   float: left;
   padding-bottom: 50px;
 }

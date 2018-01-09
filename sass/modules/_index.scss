@@ -241,6 +241,7 @@
 .half {
     #arrowLeft{
         position: absolute;
+        display: none;
         top: 65vh;
         left: 0;
         background-color: rgba(0, 0, 0, 0.411);
@@ -257,6 +258,7 @@
     }
     #arrowRight{
         position: absolute;
+        display: none;
         top: 65vh;
         right: 0;
         background-color: rgba(0, 0, 0, 0.411);
@@ -398,13 +400,16 @@
 }
 
 .section {
-    .quick-signUp {
-        height: 80vh;
+    .shop {
+        height: 100vh;
         width: 100%;
     }
-    position: relative;
+    .prod{
+        width: 100%;
+        height: 75vh;
+    }
     footer {
-        height: 20vh;
+        height: 15vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -601,6 +606,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    
     .smallbox {
         display: none;
     }

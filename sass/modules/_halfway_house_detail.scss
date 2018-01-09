@@ -14,7 +14,7 @@
     position: relative;
     margin-left: 200px;
     padding-top: 50px;
-    .breadcrumbs{
+    .breadcrumbs {
         margin-left: 50px;
         margin-bottom: 0;
     }
@@ -42,8 +42,7 @@
             display: flex;
             justify-content: space-around;
             .bigpic {
-                width: 65%;
-                margin: 15px;
+                width: 80%;
                 margin-top: 50px;
                 background-image: url(../images/halfdetail1.jpg);
                 background-size: 100%;
@@ -54,7 +53,7 @@
                 margin: 15px;
                 .intro {
                     @include text;
-                    padding-top: 30px;
+                    padding: 30px 20px 20px 20px;
                 }
                 .star {
                     @include text;
@@ -118,6 +117,7 @@
             .picture {
                 width: 25%;
                 margin: 0 10px;
+                box-shadow: 12px 10px 20px -10px #333;
                 img {
                     width: 100%;
                 }
@@ -131,27 +131,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-        overflow: hidden;
-        .flycat {
-            width: 70px;
-            overflow: hidden;
-            animation: aa 10s linear infinite;
-            &:nth-child(2) {
-                position: absolute;
-                top: -2%;
-                left: 5%;
-            }
-            &:nth-child(3) {
-                position: absolute;
-                top: -2%;
-                left: 90%;
-            }
-        }
-        @keyframes aa {
-            100% {
-                top: 100%;
-            }
-        }
         h2 {
             color: #333;
             font-weight: bold;
@@ -169,7 +148,10 @@
             .catitem {
                 position: relative;
                 margin: 0 15px 30px 15px;
-                width: 25%;
+                width: 30%;
+                overflow: hidden;
+                background-color: rgba(223, 222, 222, 0.863);
+                box-shadow: 12px 10px 20px -10px #333;
                 .favorite {
                     position: absolute;
                     top: 10px;
@@ -178,13 +160,21 @@
                     font-size: $font-size-h2;
                     z-index: 3;
                 }
-                img {
-                    width: 100%;
+                .catpic {
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        transition: all 0.35s ease-in-out;
+                        &:hover {
+                            transform: scale(1.2);
+                            cursor: pointer;
+                        }
+                    }
                 }
                 .text {
                     font-size: $font-size-base;
                     line-height: $line-height-base*1.2;
-                    padding: 10px;
+                    padding: 20px;
                     h3 {
                         font-size: $font-size-h3;
                         font-weight: bold;

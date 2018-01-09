@@ -580,8 +580,7 @@ header ul li:nth-child(2):after {
 }
 
 .right .banner .container .bigpic {
-  width: 65%;
-  margin: 15px;
+  width: 80%;
   margin-top: 50px;
   background-image: url(../images/halfdetail1.jpg);
   background-size: 100%;
@@ -599,7 +598,7 @@ header ul li:nth-child(2):after {
   padding: 10px 15px;
   font-size: 18px;
   line-height: 2.0;
-  padding-top: 30px;
+  padding: 30px 20px 20px 20px;
 }
 
 .right .banner .container .text .star {
@@ -675,6 +674,7 @@ header ul li:nth-child(2):after {
 .right .halfwaypic .container .picture {
   width: 25%;
   margin: 0 10px;
+  box-shadow: 12px 10px 20px -10px #333;
 }
 
 .right .halfwaypic .container .picture img {
@@ -688,31 +688,6 @@ header ul li:nth-child(2):after {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  overflow: hidden;
-}
-
-.right .cat .flycat {
-  width: 70px;
-  overflow: hidden;
-  animation: aa 10s linear infinite;
-}
-
-.right .cat .flycat:nth-child(2) {
-  position: absolute;
-  top: -2%;
-  left: 5%;
-}
-
-.right .cat .flycat:nth-child(3) {
-  position: absolute;
-  top: -2%;
-  left: 90%;
-}
-
-@keyframes aa {
-  100% {
-    top: 100%;
-  }
 }
 
 .right .cat h2 {
@@ -735,7 +710,10 @@ header ul li:nth-child(2):after {
 .right .cat .container .catitem {
   position: relative;
   margin: 0 15px 30px 15px;
-  width: 25%;
+  width: 30%;
+  overflow: hidden;
+  background-color: rgba(223, 222, 222, 0.863);
+  box-shadow: 12px 10px 20px -10px #333;
 }
 
 .right .cat .container .catitem .favorite {
@@ -747,14 +725,24 @@ header ul li:nth-child(2):after {
   z-index: 3;
 }
 
-.right .cat .container .catitem img {
+.right .cat .container .catitem .catpic {
+  overflow: hidden;
+}
+
+.right .cat .container .catitem .catpic img {
   width: 100%;
+  transition: all 0.35s ease-in-out;
+}
+
+.right .cat .container .catitem .catpic img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .right .cat .container .catitem .text {
   font-size: 14px;
   line-height: 1.71429;
-  padding: 10px;
+  padding: 20px;
 }
 
 .right .cat .container .catitem .text h3 {
