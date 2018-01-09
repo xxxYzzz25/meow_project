@@ -165,58 +165,58 @@ window.addEventListener('load', function () {
         switch (bingo) {
             case 1:
                 Object.assign(people, {
-                    src: '../images/runningBoy_1357.png'
+                    src: '../images/runningBoy_246.png'
                 });
                 Object.assign(hug, {
-                    src: '../images/runningCat_1357.png'
+                    src: '../images/runningCat_246.png'
                 });
                 break;
             case 2:
                 Object.assign(people, {
-                    src: '../images/runningBoy_246.png'
+                    src: '../images/runningBoy_1357.png'
                 });
                 Object.assign(hug, {
-                    src: '../images/runningCat_246.png'
+                    src: '../images/runningCat_1357.png'
                 });
                 break;
             case 3:
                 Object.assign(people, {
-                    src: '../images/runningBoy_1357.png'
+                    src: '../images/runningBoy_246.png'
                 });
                 Object.assign(hug, {
-                    src: '../images/runningCat_1357.png'
+                    src: '../images/runningCat_246.png'
                 });
                 break;
             case 4:
                 Object.assign(people, {
-                    src: '../images/runningBoy_246.png'
+                    src: '../images/runningBoy_1357.png'
                 });
                 Object.assign(hug, {
-                    src: '../images/runningCat_246.png'
+                    src: '../images/runningCat_1357.png'
                 });
                 break;
             case 5:
                 Object.assign(people, {
-                    src: '../images/runningBoy_1357.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_1357.png'
-                });
-                break;
-            case 6:
-                Object.assign(people, {
                     src: '../images/runningBoy_246.png'
                 });
                 Object.assign(hug, {
                     src: '../images/runningCat_246.png'
                 });
                 break;
-            case 7:
+            case 6:
                 Object.assign(people, {
                     src: '../images/runningBoy_1357.png'
                 });
                 Object.assign(hug, {
                     src: '../images/runningCat_1357.png'
+                });
+                break;
+            case 7:
+                Object.assign(people, {
+                    src: '../images/runningBoy_246.png'
+                });
+                Object.assign(hug, {
+                    src: '../images/runningCat_246.png'
                 });
                 break;
             case 8:
