@@ -1,9 +1,9 @@
 body{
-	letter-spacing: 3px;
+	
 	background-color: #eee; 
-	font-size: 14px;
+	
 	background-image: url(../img/marble.jpg);
-	line-height: 22px;
+
 }
 
 @media only screen and (max-width: 768px){
@@ -19,6 +19,9 @@ body{
 .wrapCenter{
 	width: 80%;
 	margin: auto;
+	line-height: 22px;
+	font-size: 14px;
+	letter-spacing: 3px;
 }
 
 @media only screen and (max-width: 768px){
