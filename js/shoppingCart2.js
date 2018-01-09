@@ -106,14 +106,14 @@ function deleteItem(){
 	var itemValue = storage.getItem(itemId);
 	subtotal -= parseInt(itemValue.split('|')[2]);
 
-	// document.getElementById('subtotal').innerText = subtotal;
+	document.getElementById('subtotal').innerText = subtotal;
 
-	// //清除storage的資料
-	// storage.removeItem(itemId);
-	// storage['addItemList'] = storage['addItemList'].replace(itemId+', ','');
+	//清除storage的資料
+	storage.removeItem(itemId);
+	storage['addItemList'] = storage['addItemList'].replace(itemId+', ','');
 	
-	// //再將該筆tr刪除
-	// this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+	//再將該筆tr刪除
+	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
 }
 
 function changeItemCount(){

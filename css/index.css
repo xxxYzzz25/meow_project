@@ -1575,6 +1575,9 @@ header.active {
     display: inline-block;
     align-items: center;
   }
+  .noticegame .ask {
+    display: none;
+  }
   .noticegame .smallbox {
     display: block;
     margin-top: 60px;
@@ -1618,6 +1621,9 @@ header.active {
   }
   .pick-kit ul {
     width: 600%;
+  }
+  .noticegame .ask {
+    display: none;
   }
   .noticegame .smallbox {
     display: block;
