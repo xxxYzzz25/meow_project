@@ -1167,6 +1167,8 @@ header.active {
     width: 100%;
     display: inline-block;
     align-items: center; }
+  .noticegame .ask {
+    display: none; }
   .noticegame .smallbox {
     display: block;
     margin-top: 60px; }
@@ -1198,6 +1200,8 @@ header.active {
     padding-bottom: 24%; }
   .pick-kit ul {
     width: 600%; }
+  .noticegame .ask {
+    display: none; }
   .noticegame .smallbox {
     display: block;
     margin-top: 60px; }
