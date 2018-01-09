@@ -278,8 +278,8 @@ header ul li:nth-child(3):after {
   height: 34px;
   background-color: #fff;
   position: absolute;
-  top: 7px;
-  right: -17px;
+  top: 6.5px;
+  right: -16px;
   transform: rotate(45deg);
   box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199); }
 
