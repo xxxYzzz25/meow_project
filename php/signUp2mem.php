@@ -18,13 +18,13 @@
 			return;
 		}else{
 			if ($_FILES['image']['error'] === 0) {
-				$dir = "../images/memberPic/$id";
+				$dir = "../images/memberPic";
 				if (file_exists($dir) === false) {	// 如果沒有$dir資料夾路徑
 					mkdir($dir);	// 創建一個資料夾 路徑與名字=$dir
 				}
-
+				$fileType = substr($_FILES['image']['type'], 6);
 				$source = $_FILES['image']['tmp_name'];
-				$dest = $dir."/".$id.$_FILES['image']['name'];
+				$dest = $dir."/$id.".$fileType;
 				if (move_uploaded_file($source, $dest)) {
 					if ( $name != null && $id != null && $psw != null && $tel != null && $birth != null && $address != null && $dest != null) {
 						$sql = "insert into MEMBER set MEM_Name = ?,
@@ -49,11 +49,12 @@
 					}
 				}else{
 					echo "<center>上傳圖片至伺服器失敗</center>";
+					echo $_FILES['image']['type'];
 				}
 			}elseif ($_FILES['image']['error'] === 1) {
 				echo "<center>上傳檔案太大, 不可超過", ini_get("upload_max_filesize"),"</center>";
 			}elseif ($_FILES['image']['error'] === 2) {
-				echo "<center>上傳檔案太大, 不可超過", $_POST['MAX_FILE_SIZE'],"Byte(1kb)</center>";
+				echo "<center>上傳檔案太大, 不可超過", $_POST['MAX_FILE_SIZE'],"Byte(1024kb)</center>";
 			}elseif ($_FILES['image']['error'] === 3) {
 				echo "<center>上傳檔案不完整, 請檢查您的網路狀態</center>";
 			}elseif ($_FILES['image']['error'] === 4) {
@@ -68,6 +69,9 @@
 	}
 	echo "<script type='text/javascript'>back()</script>";
 	echo "<center>將在五秒後回到原網址</center>";
+	for ($i=5; $i=0  ; $i--) { 
+		echo "將在$i秒後回到原網址<br>";
+	}
 ?>
 <script type='text/javascript'>
 	setTimeout(function back(){
