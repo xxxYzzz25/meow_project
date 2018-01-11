@@ -66,7 +66,7 @@ function doFirst() {
                 err();
             }
         }
-        if (num == 6) {
+        if (num == 5) {
             know.textContent = '恭喜您~全部答對囉! 您可以獲得50元商城首購優惠 現在馬上前往商城購物吧!';
             know.addEventListener('click', function () {
                 document.location.href = "../html/Cat_ShoppingStore.html";

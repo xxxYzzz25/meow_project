@@ -1,8 +1,9 @@
 body{
 	
 	background-color: #eee; 
-	
 	background-image: url(../img/marble.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 
 }
 
