@@ -332,6 +332,11 @@
                 color: #EAAF88;
             }
         }
+        a.read-more{
+            width: 100%;
+            text-align: right;
+            display: block;
+        }
         .read-more {
             text-decoration: underline;
         }
@@ -339,10 +344,13 @@
             font-family: 'Noto Sans TC';
             font-weight: 500;
             font-size: $font-size-h4;
+            margin-bottom: 10px;
+            display: block;
         }
         span {
             margin: 10px 0;
             display: block;
+            
         }
     }
 }
@@ -351,6 +359,8 @@
     height: 100vh;
     overflow: hidden;
     background-image: url(../images/wood.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     .container {
         @include afterClear();
         text-align: center;
@@ -382,34 +392,12 @@
             @extend %h3-btn;
         }
     }
-    .prod-list {
-        padding: 60px 40px;
-        background-color: rgba(255, 255, 255, 0.537);
-        border: 2px solid #fff;
-        margin-top: 60px;
-        li {
-            position: relative;
-            a {
-                text-decoration: none;
-                color: #222;
-                font-weight: bolder;
-                padding: $gap;
-                display: block;
-            }
-        }
+    .prod {
+        width: 100%;
+        height: 75vh;
     }
 }
 
-.shop {
-    height: 100vh;
-    width: 100%;
-    
-}
-
-.prod {
-    width: 100%;
-    height: 75vh;
-}
 
 footer {
     height: 15vh;
@@ -641,8 +629,8 @@ footer {
         .people {
             position: relative;
             z-index: 2;
-            width: 70px;
-            height: 108x;
+            width: 80px;
+            height: 102x;
             left: 0;
             bottom: 0;
             transition: .3s;

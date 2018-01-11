@@ -140,8 +140,9 @@ window.addEventListener('load', function () {
     res = Math.floor(res);
 
     let qq = function () {
+        res -= (hugWidth*2);
         res /= 2;
-        width = Math.ceil(res / 9);
+        width = Math.ceil(res / 8);
     }
     qq();
 
@@ -162,15 +163,16 @@ window.addEventListener('load', function () {
     });
 
     function correct() {
-        if (bingo > 8)
+        if (bingo > 8){
             bingo = 8;
+        }
         bingo++;
         Object.assign(hug, {
-            style: 'right:' + ((width * bingo) - (peopleWidth)) + 'px;'
+            style: 'right:' + (width * bingo) + 'px;'
         });
 
         Object.assign(people, {
-            style: 'left:' + ((width * bingo) - (peopleWidth)) + 'px;'
+            style: 'left:' + (width * bingo) + 'px;'
         });
     }
 
@@ -189,10 +191,10 @@ window.addEventListener('load', function () {
                 });
             } else if(windowWidth > 768){
                 Object.assign(people, {
-                    style: 'left:' + ((width * bingo) - (peopleWidth)) + 'px;transform'
+                    style: 'left:' + (width * bingo) + 'px;transform'
                 });
                 Object.assign(hug, {
-                    style: 'right:' + ((width * bingo) - (peopleWidth)) + 'px;'
+                    style: 'right:' + (width * bingo) + 'px;'
                 });
             }
         }
