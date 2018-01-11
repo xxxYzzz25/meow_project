@@ -148,14 +148,14 @@ header {
   z-index: 999; }
   header .logo {
     position: relative;
-    top: 70px;
+    top: 60px;
     width: 180px;
     text-align: center; }
     header .logo a {
       text-decoration: none;
       color: #fff; }
     header .logo img {
-      width: 90%; }
+      width: 80%; }
   header ul {
     position: absolute;
     bottom: 180px; }
