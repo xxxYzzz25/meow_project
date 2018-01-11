@@ -39,7 +39,7 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    text-shadow:2px 2px 3px #333333;
+    text-shadow: 2px 2px 3px #333333;
     .findBox {
         display: flex;
         justify-content: center;
@@ -239,7 +239,7 @@
 }
 
 .half {
-    #arrowLeft{
+    #arrowLeft {
         position: absolute;
         display: none;
         top: 65vh;
@@ -251,12 +251,12 @@
         cursor: pointer;
         text-align: center;
         z-index: 666;
-        i{
+        i {
             position: relative;
             top: 12px;
         }
     }
-    #arrowRight{
+    #arrowRight {
         position: absolute;
         display: none;
         top: 65vh;
@@ -268,7 +268,7 @@
         cursor: pointer;
         text-align: center;
         z-index: 666;
-        i{
+        i {
             position: relative;
             top: 12px;
         }
@@ -336,7 +336,8 @@
             text-decoration: underline;
         }
         .half-name {
-            font-family: notoSans_r;
+            font-family: 'Noto Sans TC';
+            font-weight: 500;
             font-size: $font-size-h4;
         }
         span {
@@ -404,7 +405,7 @@
         height: 100vh;
         width: 100%;
     }
-    .prod{
+    .prod {
         width: 100%;
         height: 75vh;
     }
@@ -416,6 +417,64 @@
         margin-left: 0;
     }
 }
+.doorLeft{
+    animation: openDoorLeft .8s forwards;
+}
+.doorRight{
+    animation: openDoorRight .8s forwards;
+}
+@keyframes openDoorLeft{
+    to{
+        left:-50%;
+    }
+}
+@keyframes openDoorRight{
+    to{
+        right:-50%;
+    }
+}
+.door-left {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    background-color: #111;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.door-right {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    background-color: #111;
+    opacity: 0.7;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.door-start {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #EAAF88;
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.door-start-text {}
+
+.door-start-btn {}
 
 .game-point {
     height: 90vh;
@@ -423,25 +482,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    .door-left{
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        background-color: #000;
-        opacity: 0.6;
-        top: 0;
-    }
-    .door-right{
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        background-color: #000;
-        opacity: 0.6;
-        top: 0;
-    }
-    .door-start{}
-    .door-start-text{}
-    .door-start-btn{}
     .game-point-title {
         height: 15vh;
         display: flex;
@@ -483,7 +523,8 @@
             // display: flex;
             // justify-content: center;
             // align-items: center;
-            // font-family: notoSans_r;
+            // font-family: 'Noto Sans TC';
+            //font-weight: 500;
         } // .askBox {
         //     position: relative;
         //     height: 30vh;
@@ -625,7 +666,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    
     .smallbox {
         display: none;
     }
@@ -643,14 +683,14 @@
             @extend %h3-btn;
         }
     }
-    .ask{
+    .ask {
         width: 30%;
         margin: auto;
         padding-right: 3%;
-            img {
-                width: 100%;
-                margin: auto;
-            }
+        img {
+            width: 100%;
+            margin: auto;
+        }
     }
     .boxcontainer {
         display: inline-flex;

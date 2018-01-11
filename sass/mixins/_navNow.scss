@@ -6,7 +6,8 @@
         }
         &:nth-child(#{$nth}) a {
             color: #333;
-            font-family: notoSans_r;
+            font-family: 'Noto Sans TC';
+            font-weight: 700;
         }
         &:nth-child(#{$nth}):after {
             z-index: -1;

@@ -214,13 +214,13 @@
             </div>
             <div class="section">
                 <!-- 分數遊戲 -->
+                <div class="door-start" id="doorStart">
+                    <div class="door-start-text">領養前先過關此遊戲</div>
+                    <div class="door-start-btn">開始!</div>
+                </div>
+                <div class="door-left" id="doorLeft"></div>
+                <div class="door-right" id="doorRight"></div>
                 <div class="game-point" id="game-point">
-                    <div class="door-left"></div>
-                    <div class="door-right"></div>
-                    <div class="door-start">
-                        <div class="door-start-text">領養前先過關此遊戲</div>
-                        <div class="door-start-btn">開始!</div>
-                    </div>
                     <div class="game-point-title">
                         <h2>適合養喵小孩嗎?</h2>
                         <h3>Precautions</h3>
@@ -509,6 +509,13 @@
                 $(".hamburger").click(function () {
                     $(this).toggleClass("is-active");
                     $('header').toggleClass("active");
+                });
+                $('#doorStart').on('click',function(){
+                    $(this).fadeOut();
+                    $('#doorLeft').addClass('doorLeft');
+                    $('#doorRight').addClass('doorRight');
+                    $('#people').attr({src: '../images/runningCat.gif'});
+                    $('#hug').attr({src: '../images/runningBoy.gif'});
                 });
             });
         </script>

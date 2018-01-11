@@ -1,19 +1,22 @@
-@font-face {
-    font-family: notoSans;
-    src: url('../fonts/NotoSansCJKtc-Thin.otf');
-}
-@font-face {
-    font-family: notoSans_r;
-    src: url('../fonts/NotoSansCJKtc-Regular.otf');
-}
-@font-face {
-    font-family: notoSans_b;
-    src: url('../fonts/NotoSansCJKtc-Black.otf');
-}
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+// @font-face {
+//     font-family: notoSans;
+//     src: url('../fonts/NotoSansCJKtc-Thin.otf');
+// }
+// @font-face {
+//     font-family: notoSans_r;
+//     src: url('../fonts/NotoSansCJKtc-Regular.otf');
+// }
+// @font-face {
+//     font-family: notoSans_b;
+//     src: url('../fonts/NotoSansCJKtc-Black.otf');
+// }
 input,select{
-    font-family: notoSans_r;    
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
 }
 body{
-    font-family: notoSans;
+    font-family: 'Noto Sans TC';
+    font-weight: 300;
     letter-spacing: 3px;
 }

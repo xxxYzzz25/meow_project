@@ -16,6 +16,7 @@ function clickfunctoin1() {
 	document.getElementById("c-2").classList.remove("s-active");
 	document.getElementById("c-1").classList.add("s-active");
 }
+
 function clickfunctoin2() {
 	document.getElementById("f-4").classList.remove("f-active");
 	document.getElementById("f-3").classList.remove("f-active");
@@ -25,6 +26,7 @@ function clickfunctoin2() {
 	document.getElementById("c-1").classList.remove("s-active");
 	document.getElementById("c-2").classList.add("s-active");
 }
+
 function clickfunctoin3() {
 	document.getElementById("f-4").classList.remove("f-active");
 	document.getElementById("f-2").classList.remove("f-active");
@@ -34,6 +36,7 @@ function clickfunctoin3() {
 	document.getElementById("c-1").classList.remove("s-active");
 	document.getElementById("c-3").classList.add("s-active");
 }
+
 function clickfunctoin4() {
 	document.getElementById("f-2").classList.remove("f-active");
 	document.getElementById("f-3").classList.remove("f-active");
