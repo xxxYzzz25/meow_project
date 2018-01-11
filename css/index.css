@@ -43,7 +43,7 @@ table {
 
 input, select {
   font-family: 'Noto Sans TC';
-  font-weight: 500; }
+  font-weight: bolder; }
 
 body {
   font-family: 'Noto Sans TC';
@@ -235,10 +235,11 @@ footer {
     width: 100%; } }
 
 @media all and (max-width: 767px) {
-  footer {
+  .section footer {
     margin-left: 0;
-    width: 100%; }
-    footer span {
+    width: 100%;
+    height: 20vh; }
+    .section footer span {
       display: block;
       text-align: center; } }
 
@@ -688,15 +689,15 @@ header.active {
         padding: 15px;
         display: block; }
 
-.section .shop {
+.shop {
   height: 100vh;
   width: 100%; }
 
-.section .prod {
+.prod {
   width: 100%;
   height: 75vh; }
 
-.section footer {
+footer {
   height: 15vh;
   display: flex;
   justify-content: center;
@@ -1259,7 +1260,9 @@ header.active {
   .noticegame .boxcontainer {
     display: none; }
   .noticegame .imgbox {
-    display: none; } }
+    display: none; }
+  .prod {
+    height: 70vh; } }
 
 @media all and (max-width: 376px) {
   .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,
