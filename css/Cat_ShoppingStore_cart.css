@@ -3,7 +3,7 @@ body{
 	background-color: #eee; 
     font-size: 14px;
     background-image: url(../img/marble.jpg);
-    background-size: repeat;
+    background-size: cover;
     background-attachment: fixed;
    
 }
