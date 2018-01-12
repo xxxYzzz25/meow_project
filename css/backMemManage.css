@@ -2,76 +2,53 @@
 v2.0 | 20110126
 License: none (public domain)
 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before, blockquote:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 q:before, q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-@font-face {
-  font-family: notoSans;
-  src: url("../fonts/NotoSansCJKtc-Thin.otf");
-}
-
-@font-face {
-  font-family: notoSans_r;
-  src: url("../fonts/NotoSansCJKtc-Regular.otf");
-}
-
-@font-face {
-  font-family: notoSans_b;
-  src: url("../fonts/NotoSansCJKtc-Black.otf");
-}
+  -moz-box-sizing: border-box; }
 
 input, select {
-  font-family: notoSans_r;
-}
+  font-family: 'Noto Sans TC';
+  font-weight: bolder; }
 
 body {
-  font-family: notoSans;
-  letter-spacing: 3px;
-}
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
+  letter-spacing: 3px; }
 
 .btns .btn {
   font-size: 30px;
@@ -88,79 +65,53 @@ body {
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
   padding-left: 3px;
   padding-bottom: 3px;
-  z-index: 1;
-}
-
-.btns .btn:hover:before {
-  transition: .35s;
-  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-  top: -10%;
-  left: -10%;
-}
-
-.btns .btn:before {
-  content: '';
-  display: block;
-  width: 120%;
-  height: 120%;
-  position: absolute;
-  transform: rotate(45deg);
-  top: 90%;
-  left: -110%;
-  z-index: -1;
-}
+  z-index: 1; }
+  .btns .btn:hover:before {
+    transition: .35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    top: -10%;
+    left: -10%; }
+  .btns .btn:before {
+    content: '';
+    display: block;
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 90%;
+    left: -110%;
+    z-index: -1; }
 
 .btns .fa {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 .btns .btn.facebook {
-  color: #3b5998;
-}
-
-.btns .btn.facebook:before {
-  background-color: #3b5998;
-}
-
-.btns .btn.facebook:hover {
-  color: #fff;
-}
+  color: #3b5998; }
+  .btns .btn.facebook:before {
+    background-color: #3b5998; }
+  .btns .btn.facebook:hover {
+    color: #fff; }
 
 .btns .btn.twitter {
-  color: #3cf;
-}
-
-.btns .btn.twitter:before {
-  background-color: #3cf;
-}
-
-.btns .btn.twitter:hover {
-  color: #fff;
-}
+  color: #3cf; }
+  .btns .btn.twitter:before {
+    background-color: #3cf; }
+  .btns .btn.twitter:hover {
+    color: #fff; }
 
 .btns .btn.google {
-  color: #dc4a38;
-}
-
-.btns .btn.google:before {
-  background-color: #dc4a38;
-}
-
-.btns .btn.google:hover {
-  color: #fff;
-}
+  color: #dc4a38; }
+  .btns .btn.google:before {
+    background-color: #dc4a38; }
+  .btns .btn.google:hover {
+    color: #fff; }
 
 .btns .btn.youtube {
-  color: #f00;
-}
-
-.btns .btn.youtube:before {
-  background-color: #f00;
-}
-
-.btns .btn.youtube:hover {
-  color: #fff;
-}
+  color: #f00; }
+  .btns .btn.youtube:before {
+    background-color: #f00; }
+  .btns .btn.youtube:hover {
+    color: #fff; }
 
 header {
   background-color: #c2eaeb;
@@ -169,88 +120,64 @@ header {
   position: fixed;
   padding-left: 15px;
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-  z-index: 999;
-}
-
-header .logo {
-  position: relative;
-  top: 70px;
-  width: 180px;
-  text-align: center;
-}
-
-header .logo a {
-  text-decoration: none;
-  color: #fff;
-}
-
-header .logo img {
-  width: 90%;
-}
-
-header ul {
-  position: absolute;
-  bottom: 180px;
-}
-
-header ul li {
-  margin: 1px 0;
-  position: relative;
-}
-
-header ul li:hover {
-  background-color: #fff;
-  box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
-  transition: .3s;
-}
-
-header ul li:hover a {
-  color: #000;
-  transition: .3s;
-}
-
-header ul li a {
-  width: 190px;
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 15px 20px;
-}
-
-header .icons {
-  width: 180px;
-  display: flex;
-  padding: 15px;
-  padding-right: 20px;
-  justify-content: space-around;
-  position: absolute;
-  bottom: 40px;
-}
-
-header .icons #like {
-  font-size: 12px;
-  text-align: center;
-  line-height: 20px;
-  display: block;
-  width: 15px;
-  height: 15px;
-  position: relative;
-  color: #d33;
-  top: -17px;
-  right: -25px;
-  font-family: notoSans_b;
-}
-
-header .icons a {
-  text-decoration: none;
-  color: #fff;
-}
-
-header .icons a:hover {
-  transform: scale(1.15);
-  transition: .3s;
-}
+  z-index: 999; }
+  header .logo {
+    position: relative;
+    top: 70px;
+    width: 180px;
+    text-align: center; }
+    header .logo a {
+      text-decoration: none;
+      color: #fff; }
+    header .logo img {
+      width: 90%; }
+  header ul {
+    position: absolute;
+    bottom: 180px; }
+    header ul li {
+      margin: 1px 0;
+      position: relative; }
+      header ul li:hover {
+        background-color: #fff;
+        box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
+        transition: .3s; }
+      header ul li:hover a {
+        color: #000;
+        transition: .3s; }
+      header ul li a {
+        width: 190px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 15px 20px; }
+  header .icons {
+    width: 180px;
+    display: flex;
+    padding: 15px;
+    padding-right: 20px;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 40px; }
+    header .icons #like {
+      font-size: 12px;
+      text-align: center;
+      line-height: 20px;
+      display: block;
+      width: 15px;
+      height: 15px;
+      position: relative;
+      color: #d33;
+      top: -17px;
+      right: -25px;
+      font-family: 'Noto Sans TC';
+      font-weight: 900; }
+    header .icons a {
+      text-decoration: none;
+      color: #fff; }
+      header .icons a:hover {
+        transform: scale(1.15);
+        transition: .3s; }
 
 .defaultBtn {
   font-size: 16px;
@@ -261,14 +188,11 @@ header .icons a:hover {
   background-color: transparent;
   cursor: pointer;
   transition: .3s all;
-  outline: none;
-}
-
-.defaultBtn:hover {
-  color: white;
-  background-color: #EAAF88;
-  border-color: #EAAF88;
-}
+  outline: none; }
+  .defaultBtn:hover {
+    color: white;
+    background-color: #EAAF88;
+    border-color: #EAAF88; }
 
 .btn-more {
   width: 160px;
@@ -281,80 +205,63 @@ header .icons a:hover {
   position: relative;
   overflow: hidden;
   z-index: 2;
-  font-family: notoSans_r;
-}
-
-.btn-more:hover {
-  color: #fff;
-}
-
-.btn-more:before {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  content: '';
-  position: absolute;
-  left: -100%;
-  background-color: transparent;
-  transition: .3s;
-  z-index: -1;
-}
-
-.btn-more:hover:before {
-  left: 0;
-  background-color: #333;
-}
-
-.btn-more:after {
-  margin-top: -7px;
-  width: 7px;
-  height: 13px;
-  background: url(../images/icon01.png) no-repeat right center;
-  position: absolute;
-  top: 50%;
-  right: 18px;
-  content: "";
-}
+  font-family: notoSans_r; }
+  .btn-more:hover {
+    color: #fff; }
+  .btn-more:before {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: -100%;
+    background-color: transparent;
+    transition: .3s;
+    z-index: -1; }
+  .btn-more:hover:before {
+    left: 0;
+    background-color: #333; }
+  .btn-more:after {
+    margin-top: -7px;
+    width: 7px;
+    height: 13px;
+    background: url(../images/icon01.png) no-repeat right center;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    content: ""; }
 
 .breadcrumbs {
   margin-bottom: 40px;
-  font-size: 18px;
-}
-
-.breadcrumbs a {
-  font-size: 14px;
-  text-decoration: none;
-  border-width: 1px;
-  padding: 4px 10px;
-  text-align: center;
-}
+  font-size: 18px; }
+  .breadcrumbs a {
+    font-size: 14px;
+    text-decoration: none;
+    border-width: 1px;
+    padding: 4px 10px;
+    text-align: center; }
 
 @media all and (max-width: 767px) {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-    text-align: center;
-  }
-  .breadcrumbs a {
-    border: none;
-    padding: 0;
-  }
-  .breadcrumbs a:hover {
-    color: #333;
-    background-color: transparent;
-    border-color: transparent;
-  }
-}
+    text-align: center; }
+    .breadcrumbs a {
+      border: none;
+      padding: 0; }
+      .breadcrumbs a:hover {
+        color: #333;
+        background-color: transparent;
+        border-color: transparent; } }
 
 header ul li:nth-child(1) {
   background-color: #fff;
-  box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
-}
+  box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199); }
 
 header ul li:nth-child(1) a {
   color: #333;
-  font-family: notoSans_r;
-}
+  font-family: 'Noto Sans TC';
+  font-weight: 700; }
 
 header ul li:nth-child(1):after {
   z-index: -1;
@@ -364,80 +271,52 @@ header ul li:nth-child(1):after {
   height: 34px;
   background-color: #fff;
   position: absolute;
-  top: 7px;
-  right: -17px;
+  top: 6.5px;
+  right: -16px;
   transform: rotate(45deg);
-  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
-}
+  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199); }
 
 .right {
   width: calc(100% - 200px);
   margin-left: 200px;
-  color: #222;
-}
-
-.right .container1 {
-  width: 100%;
-  position: relative;
-  padding: 0 50px;
-  max-width: 3000px;
-  text-align: center;
-}
-
-.right .container1,
-.right .container1 * {
-  outline: none;
-}
-
-.right .container1 .bigImg {
-  background-size: cover;
-  margin: 0 auto;
-}
-
-.right .container1 .bigImg img {
-  width: 100%;
-  max-width: 1000px;
-}
-
-.right .container1 .empManage {
-  width: 80%;
-  margin: 100px auto 100px;
-}
-
-.right .container1 .empManage button {
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.right .container1 .empManage table {
-  width: 100%;
-  margin: 40px auto 60px;
-}
-
-.right .container1 .empManage table .newEmpTROff {
-  display: none;
-}
-
-.right .container1 .empManage table .newEmpTROn {
-  display: table-row;
-}
-
-.right .container1 .empManage table tr {
-  border-bottom: 1px solid #333;
-}
-
-.right .container1 .empManage table tr th,
-.right .container1 .empManage table tr td {
-  padding-top: 16px;
-  padding-bottom: 8px;
-  font-size: 14px;
-}
-
-.right .container1 .empManage table tr th {
-  font-size: 18px;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
-
-/*# sourceMappingURL=backMemManage.css.map */
+  color: #222; }
+  .right .container1 {
+    width: 100%;
+    position: relative;
+    padding: 0 50px;
+    max-width: 3000px;
+    text-align: center; }
+    .right .container1,
+    .right .container1 * {
+      outline: none; }
+    .right .container1 .bigImg {
+      background-size: cover;
+      margin: 0 auto; }
+      .right .container1 .bigImg img {
+        width: 100%;
+        max-width: 1000px; }
+    .right .container1 .empManage {
+      width: 80%;
+      margin: 100px auto 100px; }
+      .right .container1 .empManage button {
+        display: block;
+        margin-left: auto;
+        margin-right: 0; }
+      .right .container1 .empManage table {
+        width: 100%;
+        margin: 40px auto 60px; }
+        .right .container1 .empManage table .newEmpTROff {
+          display: none; }
+        .right .container1 .empManage table .newEmpTROn {
+          display: table-row; }
+        .right .container1 .empManage table tr {
+          border-bottom: 1px solid #333; }
+          .right .container1 .empManage table tr th,
+          .right .container1 .empManage table tr td {
+            padding-top: 16px;
+            padding-bottom: 8px;
+            font-size: 14px; }
+          .right .container1 .empManage table tr th {
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-weight: bold; }
