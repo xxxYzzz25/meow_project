@@ -88,7 +88,7 @@ body {
             .advanceSearchItem {
                 text-align: left;
                 label {
-                    font-family: '../fonts/NotoSansCJKtc-Regular.otf';
+                    font-family: 'Noto Sans TC';
                 }
             }
             .selectTitle {
@@ -145,7 +145,8 @@ body {
                 .condition {
                     padding: 5px 10px;
                     border: 1px solid transparent;
-                    font-family: '../fonts/NotoSansCJKtc-Thin.otf';
+                    font-family: 'Noto Sans TC';
+                    font-weight: 500;
                     background-color: #fff;
                     color: #333;
                     line-height: 20px;

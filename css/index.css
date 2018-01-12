@@ -2,6 +2,7 @@
 v2.0 | 20110126
 License: none (public domain)
 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -39,6 +40,7 @@ table {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
+<<<<<<< HEAD
 
 @font-face {
   font-family: notoSans;
@@ -57,6 +59,16 @@ input, select {
 
 body {
   font-family: notoSans;
+=======
+
+input, select {
+  font-family: 'Noto Sans TC';
+  font-weight: bolder; }
+
+body {
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
   letter-spacing: 3px; }
 
 .btns .btn {
@@ -244,10 +256,16 @@ footer {
     width: 100%; } }
 
 @media all and (max-width: 767px) {
-  footer {
+  .section footer {
     margin-left: 0;
+<<<<<<< HEAD
     width: 100%; }
     footer span {
+=======
+    width: 100%;
+    height: 20vh; }
+    .section footer span {
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
       display: block;
       text-align: center; } }
 
@@ -261,14 +279,22 @@ header {
   z-index: 999; }
   header .logo {
     position: relative;
+<<<<<<< HEAD
     top: 70px;
+=======
+    top: 60px;
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
     width: 180px;
     text-align: center; }
     header .logo a {
       text-decoration: none;
       color: #fff; }
     header .logo img {
+<<<<<<< HEAD
       width: 90%; }
+=======
+      width: 80%; }
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
   header ul {
     position: absolute;
     bottom: 180px; }
@@ -308,7 +334,12 @@ header {
       color: #d33;
       top: -17px;
       right: -25px;
+<<<<<<< HEAD
       font-family: notoSans_b; }
+=======
+      font-family: 'Noto Sans TC';
+      font-weight: 700; }
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
     header .icons a {
       text-decoration: none;
       color: #fff; }
@@ -566,6 +597,7 @@ header.active {
       top: 12px; }
   .pick-kit .right-arrow {
     right: 0; }
+<<<<<<< HEAD
 
 .half {
   background-image: url(../images/wood.jpg);
@@ -730,6 +762,199 @@ header.active {
     background-color: #000;
     opacity: 0.6;
     top: 0; }
+=======
+
+.half {
+  background-image: url(../images/wood.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative; }
+  .half #arrowLeft {
+    position: absolute;
+    display: none;
+    top: 65vh;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.411);
+    color: #fff;
+    width: 50px;
+    height: 60px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 666; }
+    .half #arrowLeft i {
+      position: relative;
+      top: 12px; }
+  .half #arrowRight {
+    position: absolute;
+    display: none;
+    top: 65vh;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.411);
+    color: #fff;
+    width: 50px;
+    height: 60px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 666; }
+    .half #arrowRight i {
+      position: relative;
+      top: 12px; }
+  .half .half-title {
+    height: 10vh;
+    display: flex;
+    align-items: center; }
+    .half .half-title h2 {
+      height: 40px;
+      line-height: 10px; }
+  .half .half-item {
+    padding: 7.5px 15px;
+    height: 25vh;
+    margin: 0.84vh auto;
+    display: flex;
+    background-color: #fff;
+    width: 80%; }
+  .half .half-qty {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .half .half-qty img {
+      width: 40px;
+      height: 55px;
+      margin: 0 5px; }
+  .half .half-pic {
+    width: 35%;
+    height: 100%;
+    background-image: url(../images/half_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+  .half .half-text {
+    width: 35%;
+    padding: 10px;
+    position: relative; }
+    .half .half-text a {
+      text-decoration: none;
+      transition: .3s all;
+      color: #333;
+      margin: 10px 0; }
+      .half .half-text a:hover {
+        color: #EAAF88; }
+    .half .half-text a.read-more {
+      width: 100%;
+      text-align: right;
+      display: block; }
+    .half .half-text .read-more {
+      text-decoration: underline; }
+    .half .half-text .half-name {
+      font-family: 'Noto Sans TC';
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: block; }
+    .half .half-text span {
+      margin: 10px 0;
+      display: block; }
+
+.shop {
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../images/wood.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .shop .container {
+    text-align: center;
+    display: flex;
+    justify-content: space-around; }
+    .shop .container:after {
+      content: '';
+      display: block;
+      clear: both; }
+  .shop .shop-left, .shop .shop-right {
+    position: relative;
+    top: -600px;
+    float: left; }
+    .shop .shop-left img, .shop .shop-right img {
+      display: block;
+      margin: 10px; }
+  .shop .shop-right {
+    top: -300px; }
+  .shop .shop-title {
+    height: 10vh;
+    display: flex;
+    align-items: center; }
+    .shop .shop-title h2 {
+      height: 40px; }
+  .shop .prod {
+    width: 100%;
+    height: 75vh; }
+
+footer {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0; }
+
+.doorLeft {
+  animation: openDoorLeft .8s forwards; }
+
+.doorRight {
+  animation: openDoorRight .8s forwards; }
+
+@keyframes openDoorLeft {
+  to {
+    left: -50%; } }
+
+@keyframes openDoorRight {
+  to {
+    right: -50%; } }
+
+.door-left {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  background-color: #111;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  z-index: 999; }
+
+.door-right {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  background-color: #111;
+  opacity: 0.7;
+  top: 0;
+  right: 0;
+  z-index: 999; }
+
+.door-start {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #EAAF88;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer; }
+
+.game-point {
+  height: 90vh;
+  background-image: url(../images/background_up.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
   .game-point .game-point-title {
     height: 15vh;
     display: flex;
@@ -824,8 +1049,13 @@ header.active {
     .game-point .game-point-bottom .people {
       position: relative;
       z-index: 2;
+<<<<<<< HEAD
       width: 70px;
       height: 108x;
+=======
+      width: 80px;
+      height: 102x;
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
       left: 0;
       bottom: 0;
       transition: .3s; }
@@ -840,7 +1070,11 @@ header.active {
 
 .game-point-bgimg {
   height: 10vh;
+<<<<<<< HEAD
   background-image: url(../../images/background_down.png);
+=======
+  background-image: url(../images/background_down.png);
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
   background-repeat: no-repeat;
   background-size: cover; }
 
@@ -996,7 +1230,12 @@ header.active {
       padding: 10px 50px;
       margin: 0 auto;
       color: #fff;
+<<<<<<< HEAD
       font-family: '../fonts/NotoSansCJKtc-Thin.otf'; }
+=======
+      font-family: 'Noto Sans TC';
+      font-weight: 300; }
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
       .signUpLightbox .formShape form label {
         margin-top: 10px;
         margin-bottom: 4px;
@@ -1229,7 +1468,13 @@ header.active {
   .noticegame .boxcontainer {
     display: none; }
   .noticegame .imgbox {
+<<<<<<< HEAD
     display: none; } }
+=======
+    display: none; }
+  .prod {
+    height: 70vh; } }
+>>>>>>> f4a8914d6fdd1fd289dcf804b9fbe6bdb1c00e8c
 
 @media all and (max-width: 376px) {
   .game-point .game-point-bottom .option-area-a, .game-point .game-point-bottom .option-area-b,

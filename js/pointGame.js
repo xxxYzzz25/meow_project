@@ -140,8 +140,9 @@ window.addEventListener('load', function () {
     res = Math.floor(res);
 
     let qq = function () {
+        res -= (hugWidth*2);
         res /= 2;
-        width = Math.ceil(res / 9);
+        width = Math.ceil(res / 8);
     }
     qq();
 
@@ -162,81 +163,16 @@ window.addEventListener('load', function () {
     });
 
     function correct() {
-        switch (bingo) {
-            case 1:
-                Object.assign(people, {
-                    src: '../images/runningBoy_246.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_246.png'
-                });
-                break;
-            case 2:
-                Object.assign(people, {
-                    src: '../images/runningBoy_1357.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_1357.png'
-                });
-                break;
-            case 3:
-                Object.assign(people, {
-                    src: '../images/runningBoy_246.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_246.png'
-                });
-                break;
-            case 4:
-                Object.assign(people, {
-                    src: '../images/runningBoy_1357.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_1357.png'
-                });
-                break;
-            case 5:
-                Object.assign(people, {
-                    src: '../images/runningBoy_246.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_246.png'
-                });
-                break;
-            case 6:
-                Object.assign(people, {
-                    src: '../images/runningBoy_1357.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_1357.png'
-                });
-                break;
-            case 7:
-                Object.assign(people, {
-                    src: '../images/runningBoy_246.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_246.png'
-                });
-                break;
-            case 8:
-                Object.assign(people, {
-                    src: '../images/runningBoy_8.png'
-                });
-                Object.assign(hug, {
-                    src: '../images/runningCat_8.png'
-                });
-                break;
-        }
-        if (bingo > 8)
+        if (bingo > 8){
             bingo = 8;
+        }
         bingo++;
         Object.assign(hug, {
-            style: 'right:' + ((width * bingo) - (peopleWidth)) + 'px;'
+            style: 'right:' + (width * bingo) + 'px;'
         });
 
         Object.assign(people, {
-            style: 'left:' + ((width * bingo) - (peopleWidth)) + 'px;'
+            style: 'left:' + (width * bingo) + 'px;'
         });
     }
 
@@ -255,10 +191,10 @@ window.addEventListener('load', function () {
                 });
             } else if(windowWidth > 768){
                 Object.assign(people, {
-                    style: 'left:' + ((width * bingo) - (peopleWidth)) + 'px;transform'
+                    style: 'left:' + (width * bingo) + 'px;transform'
                 });
                 Object.assign(hug, {
-                    style: 'right:' + ((width * bingo) - (peopleWidth)) + 'px;'
+                    style: 'right:' + (width * bingo) + 'px;'
                 });
             }
         }
