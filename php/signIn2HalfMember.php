@@ -11,28 +11,28 @@
 
 <body>
     <?php
-        $memId = $_POST["memId"];
-        $memPsw = $_POST["memPsw"];
+        $halfId = $_POST["memId"];
+        $halfPsw = $_POST["memPsw"];
         try{
             require_once("connectBD103G2.php");
 
                 //準備好指令
-            $sql = "select * from member where mem_Id=? and mem_Psw=?";
+            $sql = "select * from halfway_member where half_Id=? and half_Psw=?";
                 //執行該指令
             $statement = $pdo -> prepare( $sql );
-            $statement -> bindValue(1, $memId);
-            $statement -> bindValue(2, MD5($memPsw));
+            $statement -> bindValue(1, $halfId);
+            $statement -> bindValue(2, MD5($halfPsw));
             $statement -> execute();
                 //檢查是否有此帳密
             if( $statement->rowCount() === 0){ //帳密錯誤
                 echo "<center>帳密錯誤 , 請重新登入</center>";
             }else{//帳密存在
-                $memRow = $statement -> fetch(PDO::FETCH_ASSOC);//取回資料錄
-                if ($memRow["MEM_BAN"]) {
+                $halfRow = $statement -> fetch(PDO::FETCH_ASSOC);//取回資料錄
+                if ($halfRow["HALF_BAN"]) {
                     echo "<center>此帳號已被停權, 若有疑問請來信客服。</center>";
                 }else{
-                    $_SESSION["MEM_ID"] = $memRow["MEM_ID"];
-                    echo "<center>", $memRow["MEM_NAME"] , "您好~</center>";//致歡迎詞
+                    $_SESSION["HALF_ID"] = $halfRow["HALF_ID"];
+                    echo "<center>", $halfRow["HALF_NAME"] , "您好~</center>";//致歡迎詞
                 }
             }
         }catch( PDOException $e){

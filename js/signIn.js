@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
     in2up.addEventListener('click', () => {
         signIn.style.display = 'none'
         signUp.style.display = 'block'
-        img.style.backgroundImage = "url('images/memberBG2.jpg')"        
+        img.style.backgroundImage = "url('images/memberBG2.jpg')"
     })
 
     up2in.addEventListener('click', () => {
@@ -26,12 +26,14 @@ window.addEventListener('load', function () {
         halfMem1.classList.remove('selected')
         signInForm.childNodes[9].innerHTML = "會員帳號<br><small>請輸入您的電子郵件</small>"
         signInForm.childNodes[15].innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>"
+        signInForm.action = "php/signIn2Member.php"
     })
     halfMem1.addEventListener('click', () => {
         halfMem1.classList.add('selected')
         mem1.classList.remove('selected')
         signInForm.childNodes[9].innerHTML = "中途帳號<br><small>請輸入您的電子郵件</small>"
         signInForm.childNodes[15].innerHTML = "中途密碼<br><small>請輸入6~10碼英數字</small>"
+        signInForm.action = "php/signIn2HalfMember.php"
     })
 
     // 以下是切換form action/signUpBox變更
