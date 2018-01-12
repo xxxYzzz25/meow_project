@@ -35,6 +35,7 @@ CREATE TABLE `HALFWAY_MEMBER` (
   `HALF_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
   `HALF_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
   `HALF_OPEN` varchar(20) NOT NULL DEFAULT '尚未登記',
+  `HALF_COVER` varchar(100) NOT NULL DEFAULT '../images/halfMemberPic/default.jpg',
   PRIMARY KEY (`HALF_NO`),
   UNIQUE KEY `HALF_ID` (`HALF_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
