@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
     mem2.addEventListener('click', function toggleAction() {
         mem2.classList.add('selected')
         halfMem2.classList.remove('selected')
-        signUpForm.action = "#123"
+        signUpForm.action = "../php/signUp2mem.php"
         userPhotoLabel.innerHTML = '點我上傳您的大頭貼'
         let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
         let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
@@ -56,12 +56,13 @@ window.addEventListener('load', function () {
         memPswLabel.innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>"
         memBirthLabel.innerHTML = "會員生日<br>"
         memBirthInput.setAttribute("placeholder", "ex:19910101")
+        memBirthInput.setAttribute("type", "")
         memAddLabel.innerHTML = "通訊地址"
     })
     halfMem2.addEventListener('click', function toggleAction2() {
         halfMem2.classList.add('selected')
         mem2.classList.remove('selected')
-        signUpForm.action = "#321"
+        signUpForm.action = "../php/signUp2halfMem.php"
         userPhotoLabel.innerHTML = '點我上傳您的封面照片'
         let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
         let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
@@ -74,6 +75,7 @@ window.addEventListener('load', function () {
         memPswLabel.innerHTML = "中途密碼<br><small>請輸入6~10碼英數字</small>"
         memHeadLabel.innerHTML = "中途負責人名稱<br>"
         memHeadInput.setAttribute("placeholder", "請輸入您的負責人姓名")
+        memHeadInput.setAttribute("name", "userHead");
         memAddLabel.innerHTML = "中途店址"
     })
 
