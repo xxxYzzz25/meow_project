@@ -6,7 +6,7 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.6.35)
-# Database: bd103G2
+# Database: BD103G2
 # Generation Time: 2018-01-05 12:31:24 +0000
 # ************************************************************
 
