@@ -54,7 +54,7 @@ CREATE TABLE `MEMBER` (
   `MEM_TEL` varchar(10) NOT NULL DEFAULT '',
   `MEM_ADDRESS` varchar(40) NOT NULL DEFAULT '',
   `MEM_SCORE` int(3) DEFAULT NULL,
-  `MEM_PIC` varchar(100) DEFAULT NULL,
+  `MEM_PIC` varchar(100) NOT NULL DEFAULT '../images/memberPic/default.jpg',
   `MEM_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
   `MEM_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
   PRIMARY KEY (`MEM_NO`),
