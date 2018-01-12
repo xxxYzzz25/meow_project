@@ -9,13 +9,13 @@ window.addEventListener('load', function () {
     in2up.addEventListener('click', () => {
         signIn.style.display = 'none'
         signUp.style.display = 'block'
-        img.style.backgroundImage = "url('../images/memberBG2.jpg')"        
+        img.style.backgroundImage = "url('images/memberBG2.jpg')"        
     })
 
     up2in.addEventListener('click', () => {
         signUp.style.display = 'none'
         signIn.style.display = 'block'
-        img.style.backgroundImage = "url('../images/memberBG.jpg')"
+        img.style.backgroundImage = "url('images/memberBG.jpg')"
     })
 
     let mem1 = document.getElementById('member1')
@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
     mem2.addEventListener('click', function toggleAction() {
         mem2.classList.add('selected')
         halfMem2.classList.remove('selected')
-        signUpForm.action = "../php/signUp2mem.php"
+        signUpForm.action = "php/signUp2mem.php"
         userPhotoLabel.innerHTML = '點我上傳您的大頭貼'
         let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
         let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
@@ -62,7 +62,7 @@ window.addEventListener('load', function () {
     halfMem2.addEventListener('click', function toggleAction2() {
         halfMem2.classList.add('selected')
         mem2.classList.remove('selected')
-        signUpForm.action = "../php/signUp2halfMem.php"
+        signUpForm.action = "php/signUp2halfMem.php"
         userPhotoLabel.innerHTML = '點我上傳您的封面照片'
         let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
         let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]

@@ -39,7 +39,7 @@
                 <button id="halfMember1">中途之家會員</button>
                 <button id="member1" class="selected">一般會員</button>
             </div>
-            <form action="#1" class="signUpForm" id="signInForm">
+            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
                 <br>
                 <br>
                 <br>
@@ -56,6 +56,7 @@
                 </label>
                 <input type="password" id="userPswIn" required>
                 <br>
+                <input type="submit" value="登入">
                 <p class="signInUpPos">尚未成為會員嗎?
                     <span id="signIn2Up">點此註冊</span>
                 </p>
@@ -66,7 +67,7 @@
                 <button id="halfMember2">中途之家會員</button>
                 <button id="member2" class="selected">一般會員</button>
             </div>
-            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data">
+            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
                 <label for="userName">會員名稱
                     <br>
                     <small>不得多於8個中/英文字元</small>
