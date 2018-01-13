@@ -7,8 +7,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<link rel="stylesheet" href="../css/halfway_house_detail.css">
-	<!-- <script src="../plugin/pace-master/pace.js"></script> -->
-	<!-- <link href="../plugin/pace-master/themes/orange/pace-theme-loading-bar.css" rel="stylesheet" /> -->
 	<title>中途之家</title>
 </head>
 
@@ -53,20 +51,46 @@
 			</a>
 		</div>
 	</header>
+
+	<?php
+$no = $_REQUEST["halfno"];
+
+try {
+    require_once "../php/connectBD103G2.php";
+
+    $sql     = "select * from halfway_member where HALF_NO=$no";
+    $halfway = $pdo->prepare($sql);
+    $halfway->bindColumn("HALF_NAME", $NAME);
+    $halfway->bindColumn("HALF_ADDRESS", $ADDRESS);
+    $halfway->bindColumn("HALF_TEL", $TEL);
+    $halfway->bindColumn("HALF_OPEN", $OPEN);
+    $halfway->bindColumn("HALF_COVER", $COVER);
+    $halfway->execute();
+    $row = $halfway->fetchObject()
+    ?>
+
 	<div class="right">
 		<div class="breadcrumbs">
 			<a href="../index.html" class="defaultBtn">尋喵啟事</a> >
 			<a href="halfway_house_search.html" class="defaultBtn">搜尋中途之家</a> >
-			<a href="halfway_house_detail.html" class="defaultBtn">讀貓園</a>
+			<a href="halfway_house_detail.html" class="defaultBtn">
+				<?php echo $NAME ?>
+			</a>
 		</div>
 		<div class="banner">
 			<h2>
-				讀貓園
+				<?php echo $NAME ?>
 			</h2>
 			<div class="contact">
-				<p>地址：台北市大安區和平東路三段370號2樓</p>
-				<p>電話：02 2736 9898</p>
-				<p>營業時間：14:00 – 22:30（周一公休）</p>
+				<p>地址：
+					<?php echo $ADDRESS ?>
+				</p>
+				<p>電話：
+					<?php echo $TEL ?>
+				</p>
+				<p>營業時間：
+					<?php echo $OPEN ?>
+				</p>
 			</div>
 			<div class="container">
 				<div class="bigpic"></div>
@@ -106,41 +130,100 @@
 			</div>
 		</div>
 
+		<?php
+} catch (PDOException $e) {
+    echo "錯誤原因 : ", $e->getMessage(), "<br>";
+    echo "錯誤行號 : ", $e->getLine(), "<br>";
+    // echo "getCode : " , $e->getCode() , "<br>";
+    // echo "異動失敗,請聯絡系統維護人員";
+}
+?>
+
+
+
+
 		<div class="halfwaypic">
 			<div class="container">
+
+				<?php
+try {
+    require_once "../php/connectBD103G2.php";
+
+    $sql     = "select * from half_pic where HALF_NO=$no";
+    $halfway = $pdo->prepare($sql);
+    $halfway->bindColumn("HALF_PIC_PATH", $PATH);
+    $halfway->execute();
+    while ($row = $halfway->fetchObject()) {
+        ?>
+
 				<div class="picture">
-					<img src="../images/halfdetail7_resized.jpg" alt="halfway">
+					<img src="<?php echo $PATH ?>" alt="halfway">
 				</div>
-				<div class="picture">
-					<img src="../images/halfdetail5.jpg" alt="halfway">
-				</div>
-				<div class="picture">
-					<img src="../images/halfdetail6.jpg" alt="halfway">
-				</div>
-				<div class="picture">
-					<img src="../images/halfdetail4.jpg" alt="halfway">
-				</div>
+
+				<?php
+}
+} catch (PDOException $e) {
+    echo "錯誤原因 : ", $e->getMessage(), "<br>";
+    echo "錯誤行號 : ", $e->getLine(), "<br>";
+    // echo "getCode : " , $e->getCode() , "<br>";
+    // echo "異動失敗,請聯絡系統維護人員";
+}
+?>
+
 			</div>
 		</div>
 		<script src="../js/halfway/showlarge.js"></script>
 
+
+
 		<div class="cat">
 			<h2>我們的喵小孩</h2>
 			<div class="container">
+
+				<?php
+try {
+    require_once "../php/connectBD103G2.php";
+
+    $sql     = "select * from cat where HALF_NO=$no";
+    $halfway = $pdo->prepare($sql);
+    $halfway->bindColumn("CAT_NAME", $NAME);
+    $halfway->bindColumn("CAT_DATE", $ADDRESS);
+    $halfway->bindColumn("CAT_SEX", $SEX);
+    $halfway->bindColumn("CAT_NARRATIVE", $NARRATIVEEN);
+    $halfway->execute();
+    while ($row = $halfway->fetchObject()) {
+        ?>
+
 				<div class="catitem">
 					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
 					<div class="catpic">
 						<img src="../images/catcat_171225_0003.jpg" alt="cat">
 					</div>
 					<div class="text">
-						<h3>喵芽芽</h3>
-						約2017/09月份出生
-						<br> 女生
+						<h3>
+							<?php echo $NAME ?>
+						</h3>
+						<?php echo $ADDRESS ?>
+						<br>
+						<?php echo $SEX ?>
 						<i class="fa fa-venus" aria-hidden="true"></i>
-						<br> 活潑親人
+						<br>
+						<?php echo $NARRATIVEEN ?>
 					</div>
 				</div>
-				<div class="catitem">
+
+				<?php
+}
+
+} catch (PDOException $e) {
+    echo "錯誤原因 : ", $e->getMessage(), "<br>";
+    echo "錯誤行號 : ", $e->getLine(), "<br>";
+    // echo "getCode : " , $e->getCode() , "<br>";
+    // echo "異動失敗,請聯絡系統維護人員";
+}
+?>
+
+				<!-- <div class="catitem">
 					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
 					<div class="catpic">
 						<img src="../images/catcat_171225_0004.jpg" alt="cat">
@@ -204,10 +287,12 @@
 						<i class="fa fa-venus" aria-hidden="true"></i>
 						<br> 活潑親人
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<script src="../js/cat/like.js"></script>
+
+
 
 		<div class="map">
 			<h2>我們的位置</h2>
