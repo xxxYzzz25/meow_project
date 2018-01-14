@@ -13,7 +13,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="backMemManage.html" title="會員帳號管理">會員帳號管理</a>
+                    <a href="backMemManage.php" title="會員帳號管理">會員帳號管理</a>
                 </li>
                 <li>
                     <a href="backEmpManage.html" title="員工帳號管理">員工帳號管理</a>
