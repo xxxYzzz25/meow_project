@@ -98,16 +98,16 @@ try {
                 <th>喵小孩簡單介紹</th>
                 <td id="simple">
                     <p>個性
-                        <input type="text" class="simple" name="individuality" placeholder="<?php echo $HWcatRow->CAT_INDIVIDUALITY;?>">
+                        <input type="text" class="simple" name="individuality" value="<?php echo $HWcatRow->CAT_INDIVIDUALITY;?>">
                     </p>
                     <p>適合對象
-                        <input type="text" class="simple" name="fit" placeholder="<?php echo $HWcatRow->CAT_FIT;?>">
+                        <input type="text" class="simple" name="fit" value="<?php echo $HWcatRow->CAT_FIT;?>">
                     </p>
                     <p>優點
-                        <input type="text" class="simple" name="advantage" placeholder="<?php echo $HWcatRow->CAT_ADVANTAGE;?>">
+                        <input type="text" class="simple" name="advantage" value="<?php echo $HWcatRow->CAT_ADVANTAGE;?>">
                     </p>
                     <p>缺點
-                        <input type="text" class="simple" name="disadvantage" placeholder="<?php echo $HWcatRow->CAT_DISADVANTAGE;?>">
+                        <input type="text" class="simple" name="disadvantage" value="<?php echo $HWcatRow->CAT_DISADVANTAGE;?>">
                     </p>
                 </td>
             </tr>

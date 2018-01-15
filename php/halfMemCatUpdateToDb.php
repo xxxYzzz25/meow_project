@@ -7,7 +7,7 @@
 <body>
 <?php
 try {
-	require_once("../php/connectBD103G2.php");
+	require_once("connectBD103G2.php");
 	$sql="update cat set CAT_NAME=:name, 
                        CAT_DATE=:date, 
                        CAT_SEX=:sex, 

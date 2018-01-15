@@ -7,14 +7,16 @@
 <body>
 <?php
 try {
-	require_once("../php/connectBD103G2.php");
+	require_once("connectBD103G2.php");
 	$sql="update halfway_member set HALF_PSW=:psw, 
-				                          HALF_HEAD=:head 
+				                          HALF_HEAD=:head, 
+				                          HALF_COVER=:pic 
 			  where HALF_NO=:no";
 	$products = $pdo->prepare( $sql );
 	$products->bindValue(":no" , $_REQUEST["no"]);
-	$products->bindValue(":psw" , $_REQUEST["psw"]);
-	$products->bindValue(":head" , $_REQUEST["head"]);
+	$products->bindValue(":psw" , $_REQUEST["hwmempsw"]);
+	$products->bindValue(":head" , $_REQUEST["hwmemhead"]);
+	$products->bindValue(":pic" , $_REQUEST["hwmempic"]);
 	$products->execute();
 	echo "修改成功<br>";
 } catch (Exception $e) {

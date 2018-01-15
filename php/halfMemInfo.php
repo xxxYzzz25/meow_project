@@ -24,13 +24,13 @@ try {
             <tr>
                 <th>中途之家會員密碼</th>
                 <td>
-                    <input type="psw" name="psw" placeholder="<?php echo $HWmemRow->HALF_PSW;?>">
+                    <input type="psw" name="hwmempsw" placeholder="<?php echo $HWmemRow->HALF_PSW;?>">
                 </td>
             </tr>
             <tr>
                 <th>中途之家負責人姓名</th>
                 <td>
-                    <input type="text" name="head" placeholder="<?php echo $HWmemRow->HALF_HEAD;?>">
+                    <input type="text" name="hwmemhead" placeholder="<?php echo $HWmemRow->HALF_HEAD;?>">
                 </td>
             </tr>
             <tr>

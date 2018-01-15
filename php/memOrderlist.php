@@ -2,7 +2,7 @@
     ob_start();
     session_start();
 ?>
-<div class="halfMemOrderlist">
+<div class="memOrderlist">
     <h4>查詢訂單記錄</h4>
     <p>以下是您的訂購紀錄：</p>
     <span>*提醒您，若您的未取件次數累計達5次(含)，將無法再使用超商取貨付款，造成不便及困擾之處，懇請見諒。</span>
@@ -10,9 +10,9 @@
 try {
     require_once "connectBD103G2.php";
 
-    $sql       = "select * from orderlist where HALF_NO =?";
+    $sql       = "select * from orderlist where MEM_NO =?";
     $orderlist = $pdo->prepare($sql);
-    $orderlist->bindValue(1, $_SESSION["HALF_ID"]); //session
+    $orderlist->bindValue(1, $_SESSION["MEM_ID"]); //session
     $orderlist->execute();
 
     if ($orderlist->rowCount() == 0) {

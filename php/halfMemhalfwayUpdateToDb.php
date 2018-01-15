@@ -7,7 +7,7 @@
 <body>
 <?php
 try {
-	require_once("../php/connectBD103G2.php");
+	require_once("connectBD103G2.php");
 	$sql="update halfway_member set HALF_NAME=:name, 
 				                          HALF_ADDRESS=:address, 
 				                          HALF_TEL=:tel, 

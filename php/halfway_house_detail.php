@@ -22,19 +22,19 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="./catSearch.html">尋喵</a>
+					<a href="../catSearch.html">尋喵</a>
 				</li>
 				<li>
-					<a href="./halfway_house_search.html">中途之家</a>
+					<a href="../php/halfway_house_search.php">中途之家</a>
 				</li>
 				<li>
-					<a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
+					<a href="../Cat_ShoppingStore.html" title="前往商城">商城</a>
 				</li>
 				<li>
-					<a href="./forum.html">討論區</a>
+					<a href="../forum.html">討論區</a>
 				</li>
 				<li>
-					<a href="./member.html">會員專區</a>
+					<a href="../member.html">會員專區</a>
 				</li>
 			</ul>
 		</nav>
@@ -98,7 +98,6 @@ try {
 				<div class="text">
 					<div class="intro">
 						<?php echo $INTRO ?>
-						<!-- 這棟建築名為「希望館」。從一樓到三樓都是老闆，老嫗一手打造的貓咪天堂。一樓「多恩寵物商城」，是間寵物商品店，還有提供寵物自助澡堂。二樓「讀貓園—貓咪中途咖啡」，享受咖啡與貓咪的治癒，店貓都超級親人！三樓「貓咪遊樂園．貓咪旅館」是專門給喵星人住的旅館，當貓奴要長期外出時，就可帶貓咪們來此度假。 -->
 					</div>
 					<div class="star">
 						<fieldset class="rating">
@@ -189,7 +188,7 @@ try {
     $halfway->bindColumn("CAT_COVER", $COVER);
     $halfway->bindColumn("CAT_DATE", $ADDRESS);
     $halfway->bindColumn("CAT_SEX", $SEX);
-    $halfway->bindColumn("CAT_NARRATIVE", $NARRATIVEEN);
+    $halfway->bindColumn("CAT_NARRATIVE", $NARRATIVE);
     $halfway->execute();
     while ($row = $halfway->fetchObject()) {
         ?>
@@ -208,7 +207,7 @@ try {
 						<?php echo $SEX ?>
 						<i class="fa fa-venus" aria-hidden="true"></i>
 						<br>
-						<?php echo $NARRATIVEEN ?>
+						<?php echo $NARRATIVE ?>
 					</div>
 				</div>
 
@@ -218,76 +217,8 @@ try {
 } catch (PDOException $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
-    // echo "getCode : " , $e->getCode() , "<br>";
-    // echo "異動失敗,請聯絡系統維護人員";
 }
 ?>
-
-				<!-- <div class="catitem">
-					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
-					<div class="catpic">
-						<img src="../images/catcat_171225_0004.jpg" alt="cat">
-					</div>
-					<div class="text">
-						<h3>喵芽芽</h3>
-						約2017/09月份出生
-						<br> 女生
-						<i class="fa fa-venus" aria-hidden="true"></i>
-						<br> 活潑親人
-					</div>
-				</div>
-				<div class="catitem">
-					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
-					<div class="catpic">
-						<img src="../images/catcat_171225_0007.jpg" alt="cat">
-					</div>
-					<div class="text">
-						<h3>喵芽芽</h3>
-						約2017/09月份出生
-						<br> 女生
-						<i class="fa fa-venus" aria-hidden="true"></i>
-						<br> 活潑親人
-					</div>
-				</div>
-				<div class="catitem">
-					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
-					<div class="catpic">
-						<img src="../images/catcat_171225_0003.jpg" alt="cat">
-					</div>
-					<div class="text">
-						<h3>喵芽芽</h3>
-						約2017/09月份出生
-						<br> 女生
-						<i class="fa fa-venus" aria-hidden="true"></i>
-						<br> 活潑親人
-					</div>
-				</div>
-				<div class="catitem">
-					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
-					<div class="catpic">
-						<img src="../images/catcat_171225_0004.jpg" alt="cat">
-					</div>
-					<div class="text">
-						<h3>喵芽芽</h3>
-						約2017/09月份出生
-						<br> 女生
-						<i class="fa fa-venus" aria-hidden="true"></i>
-						<br> 活潑親人
-					</div>
-				</div>
-				<div class="catitem">
-					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
-					<div class="catpic">
-						<img src="../images/catcat_171225_0007.jpg" alt="cat">
-					</div>
-					<div class="text">
-						<h3>喵芽芽</h3>
-						約2017/09月份出生
-						<br> 女生
-						<i class="fa fa-venus" aria-hidden="true"></i>
-						<br> 活潑親人
-					</div>
-				</div> -->
 			</div>
 		</div>
 		<script src="../js/cat/like.js"></script>
@@ -300,59 +231,6 @@ try {
 			    frameborder="0" style="border:0" allowfullscreen id="map"></iframe>
 		</div>
 
-		<!-- <div class="talk">
-            <div class="container">
-                <h2>最新文章</h2>
-                <div class="article">
-                    <h3>看懂貓咪心思就知貓咪多愛你</h3>
-                    <p>
-                        Here is some content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil accusantium dolor aut delectus, incidunt
-                        ab culpa laboriosam doloribus impedit ullam ut facere repudiandae officia illo unde maiores eius
-                        dolorem fuga.
-                        <br>
-                        <br>
-                        <br>
-                        <a href="#">see more</a>
-                    </p>
-                </div>
-                <div class="article">
-                    <h3>看懂貓咪心思就知貓咪多愛你</h3>
-                    <p>
-                        Here is some content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil accusantium dolor aut delectus, incidunt
-                        ab culpa laboriosam doloribus impedit ullam ut facere repudiandae officia illo unde maiores eius
-                        dolorem fuga.
-                        <br>
-                        <br>
-                        <br>
-                        <a href="#">see more</a>
-                    </p>
-                </div>
-                <div class="article">
-                    <h3>看懂貓咪心思就知貓咪多愛你</h3>
-                    <p>
-                        Here is some content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil accusantium dolor aut delectus, incidunt
-                        ab culpa laboriosam doloribus impedit ullam ut facere repudiandae officia illo unde maiores eius
-                        dolorem fuga.
-                        <br>
-                        <br>
-                        <br>
-                        <a href="#">see more</a>
-                    </p>
-                </div>
-                <div class="article">
-                    <h3>看懂貓咪心思就知貓咪多愛你</h3>
-                    <p>
-                        Here is some content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil accusantium dolor aut delectus, incidunt
-                        ab culpa laboriosam doloribus impedit ullam ut facere repudiandae officia illo unde maiores eius
-                        dolorem fuga.
-                        <br>
-                        <br>
-                        <br>
-                        <a href="#">see more</a>
-                    </p>
-                </div>
-            </div>
-        </div> -->
 	</div>
 
 	<footer>

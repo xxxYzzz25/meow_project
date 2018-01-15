@@ -12,13 +12,6 @@
     <link rel="stylesheet" href="../css/halfway_house_search.css">
     <title>搜尋中途之家</title>
 </head>
-<?php
-$dsn      = "mysql:host=localhost;port=3306;dbname=bd103g2;charset=utf8";
-$user     = "root";
-$password = "root";
-$options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-$pdo      = new PDO($dsn, $user, $password, $options);
-?>
 <body>
     <!-- "php.executablePath": "D:/xampp/php/php.exe",
     "php.validate.executablePath": "D:/xampp/php/php.exe",
@@ -44,19 +37,19 @@ $pdo      = new PDO($dsn, $user, $password, $options);
         <nav>
             <ul>
                 <li>
-                    <a href="./catSearch.html">尋喵</a>
+                    <a href="../catSearch.html">尋喵</a>
                 </li>
                 <li>
-                    <a href="./halfway_house_search.html">中途之家</a>
+                    <a href="../php/halfway_house_search.php">中途之家</a>
                 </li>
                 <li>
-                    <a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="../Cat_ShoppingStore.html" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="./forum.html">討論區</a>
+                    <a href="../forum.html">討論區</a>
                 </li>
                 <li>
-                    <a href="./member.html">會員專區</a>
+                    <a href="../member.html">會員專區</a>
                 </li>
             </ul>
         </nav>
