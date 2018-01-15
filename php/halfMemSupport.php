@@ -18,12 +18,13 @@ try {
     $donate->execute();
 
     if ($donate->rowCount() == 0) {
-        echo "<center>查無此訂單資料</center>";
+        echo "<center>查無此助養紀錄</center>";
     } else {
         while ($donateRow = $donate->fetchObject()) {
             ?>
 
-    <form action="" id="form1">
+    <form action="halfMemSuupportUpdateToDb.php">
+        <input type="hidden" name="no" value="<?php echo $HWmemRow->HALF_NO;?>">
         <table>
             <tr>
                 <th>助養者名字</th>
