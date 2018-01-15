@@ -12,8 +12,20 @@
     <link rel="stylesheet" href="../css/halfway_house_search.css">
     <title>搜尋中途之家</title>
 </head>
-
 <body>
+    <!-- "php.executablePath": "D:/xampp/php/php.exe",
+    "php.validate.executablePath": "D:/xampp/php/php.exe",
+    "phpfmt.php_bin": "D:/xampp/php/php.exe",
+    "phpfmt.format_on_save": true,
+    "phpfmt.indent_with_space": 4,
+    "phpfmt.enable_auto_align": true,
+    "phpfmt.visibility_order": true,
+    "phpfmt.passes": [],
+    "phpfmt.smart_linebreak_after_curly": true,
+    // Enable per-language
+    "[php]": {
+        "editor.formatOnSave": true
+    } -->
     <header>
         <div class="logo">
             <a href="../index.html">
@@ -25,19 +37,19 @@
         <nav>
             <ul>
                 <li>
-                    <a href="./catSearch.html">尋喵</a>
+                    <a href="../catSearch.html">尋喵</a>
                 </li>
                 <li>
-                    <a href="./halfway_house_search.html">中途之家</a>
+                    <a href="../php/halfway_house_search.php">中途之家</a>
                 </li>
                 <li>
-                    <a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="../Cat_ShoppingStore.html" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="./forum.html">討論區</a>
+                    <a href="../forum.html">討論區</a>
                 </li>
                 <li>
-                    <a href="./member.html">會員專區</a>
+                    <a href="../member.html">會員專區</a>
                 </li>
             </ul>
         </nav>
@@ -76,22 +88,55 @@
             </div>
         </div>
 
+
+
         <div class="result">
             <div class="container">
-                <div class="item">
-                    <div class="pic">
-                        <img src="../images/halfdetail3.jpg" alt="halfway">
-                    </div>
-                    <div class="text tx1">
-                        <h3>野喵中途咖啡</h3>
-                        <p>ADD：新北市三重區集英路65號</p>
-                        <p>TEL：02-2857-8282</p>
-                        <p>TIME：12:00～21:00（周一公休）</p>
-                        <a href="./halfway_house_detail.html">see more</a>
-                    </div>
-                    <div class="bg bg1"></div>
+<?php
+
+try {
+    require_once "../php/connectBD103G2.php";
+
+    $sql     = "select * from halfway_member";
+    $halfway = $pdo->prepare($sql);
+    $halfway->bindColumn("HALF_NO", $NO);
+    $halfway->bindColumn("HALF_NAME", $NAME);
+    $halfway->bindColumn("HALF_ADDRESS", $ADDRESS);
+    $halfway->bindColumn("HALF_TEL", $TEL);
+    $halfway->bindColumn("HALF_OPEN", $OPEN);
+    $halfway->bindColumn("HALF_COVER", $COVER);
+    $halfway->execute();
+    while ($row = $halfway->fetchObject()) {
+        ?>
+            <div class="item">
+                <div class="pic">
+                    <img src="<?php echo $COVER ?>" alt="halfway">
                 </div>
-                <div class="item">
+                <div class="text tx1">
+                    <h3><?php echo $NAME ?></h3>
+                    <p>ADD：<?php echo $ADDRESS ?></p>
+                    <p>TEL：<?php echo $TEL ?></p>
+                    <p>TIME：<?php echo $OPEN ?></p>
+                    <form action="halfway_house_detail.php">
+                        <input type="hidden" name="halfno" value="<?php echo $NO ?>">
+                        <button type="submit" id="btn">see more</button>
+                        <!-- <a href="./halfway_house_detail.php">see more</a> -->
+                    </form>
+                </div>
+                <div class="bg color<?php echo $NO ?>"></div>
+            </div>
+
+<?php
+}
+
+} catch (PDOException $e) {
+    echo "錯誤原因 : ", $e->getMessage(), "<br>";
+    echo "錯誤行號 : ", $e->getLine(), "<br>";
+    // echo "getCode : " , $e->getCode() , "<br>";
+    // echo "異動失敗,請聯絡系統維護人員";
+}
+?>
+            <!--  <div class="item">
                     <div class="pic">
                         <img src="../images/halfdetail2.jpg" alt="halfway">
                     </div>
@@ -116,9 +161,12 @@
                         <a href="./halfway_house_detail.html">see more</a>
                     </div>
                     <div class="bg bg3"></div>
-                </div>
+                </div> -->
             </div>
         </div>
+
+
+
     </div>
     </div>
 
