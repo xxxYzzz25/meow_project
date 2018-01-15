@@ -6,7 +6,7 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.6.35)
-# Database: bd103G2
+# Database: BD103G2
 # Generation Time: 2018-01-05 12:31:24 +0000
 # ************************************************************
 
@@ -35,6 +35,7 @@ CREATE TABLE `HALFWAY_MEMBER` (
   `HALF_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
   `HALF_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
   `HALF_OPEN` varchar(20) NOT NULL DEFAULT '尚未登記',
+  `HALF_COVER` varchar(100) NOT NULL DEFAULT '../images/halfMemberPic/default.jpg',
   PRIMARY KEY (`HALF_NO`),
   UNIQUE KEY `HALF_ID` (`HALF_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -53,7 +54,7 @@ CREATE TABLE `MEMBER` (
   `MEM_TEL` varchar(10) NOT NULL DEFAULT '',
   `MEM_ADDRESS` varchar(40) NOT NULL DEFAULT '',
   `MEM_SCORE` int(3) DEFAULT NULL,
-  `MEM_PIC` varchar(100) DEFAULT NULL,
+  `MEM_PIC` varchar(100) NOT NULL DEFAULT '../images/memberPic/default.jpg',
   `MEM_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
   `MEM_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
   PRIMARY KEY (`MEM_NO`),

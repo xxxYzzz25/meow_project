@@ -71,7 +71,36 @@
             display: none;
         }
     }
-    .prod {
-        height: 70vh;
+    .shop{
+        .prod{
+            height: 70vh;
+            .arrowLeft{
+                display: block;
+                top: 45vh;
+            }
+            .arrowRight{
+                display: block;
+                top: 45vh;
+            }
+        }
+        ul.prod-list{
+            width: 400%;
+            height: 70vh;
+            position: absolute;
+            flex-wrap: nowrap;
+            left: 0;
+            top: 0;
+            li.prod-item{
+                width: 25%;
+                .front{
+                    width: 80%;
+                    height: 60%;
+                }
+                .backed{
+                    width: 80%;
+                    height: 60%;
+                }
+            }
+        }
     }
 }

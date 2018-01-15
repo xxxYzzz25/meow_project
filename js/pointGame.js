@@ -52,8 +52,8 @@ window.addEventListener('load', function () {
     function showData(obj) {
         if (count <= 8) {
             hint.textContent = obj.questions[count - 1].hint;
-            questNumber.src = '../images/cloud1_Q' + count + '.png';
-            cloudQuest.src = '../images/cloud2_Q' + count + '.png';
+            questNumber.src = 'images/cloud1_Q' + count + '.png';
+            cloudQuest.src = 'images/cloud2_Q' + count + '.png';
             if (obj.questions[count - 1].answer === 0) { //答案
                 option[0].dataset.answer = 'true';
                 option[1].dataset.answer = '';

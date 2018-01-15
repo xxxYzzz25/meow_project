@@ -166,7 +166,8 @@ footer {
     height: 20vh; }
     .section footer span {
       display: block;
-      text-align: center; } }
+      text-align: center;
+      top: -10px; } }
 
 header {
   background-color: #eaaf88;

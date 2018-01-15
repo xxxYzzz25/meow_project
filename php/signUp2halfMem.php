@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>會員註冊</title>
+	<title>中途之家註冊</title>
 </head>
 <body>
 	<?php
@@ -15,10 +15,10 @@
 			$id = $_POST['userId'];
 			$psw = $_POST['userPsw'];
 			$tel = $_POST['userTel'];
-			$birth = $_POST['userBirth'];
+			$head = $_POST['userHead'];
 			$address = $_POST['userAddress'];
 
-			$sql = "select * from member where MEM_Id = ?";
+			$sql = "select * from halfway_member where half_Id = ?";
 			$stmt = $pdo -> prepare($sql);
 			$stmt -> bindValue(1, $id);
 			$stmt -> execute();
@@ -28,7 +28,7 @@
 			}else{
 				if(($_FILES['image']['type']== "image/gif" || $_FILES['image']['type']== "image/png" || $_FILES['image']['type']== "image/jpeg" || $_FILES['image']['type']== "image/JPEG" || $_FILES['image']['type']== "image/PNG" || $_FILES['image']['type']== "image/GIF")){
 					if ($_FILES['image']['error'] === 0) {
-						$dir = "../images/memberPic";
+						$dir = "../images/halfMemberPic";
 						if (file_exists($dir) === false) {	// 如果沒有$dir資料夾路徑
 							mkdir($dir);	// 創建一個資料夾 路徑與名字=$dir
 						}
@@ -36,24 +36,24 @@
 						$source = $_FILES['image']['tmp_name'];
 						$dest = $dir."/$id".$fileType;
 						if (move_uploaded_file($source, $dest)) {
-							if ( $name != null && $id != null && $psw != null && $tel != null && $birth != null && $address != null && $dest != null) {
-								$sql = "insert into MEMBER set MEM_Name = ?,
-									MEM_ID = ?,
-									MEM_PSW = ?,
-									MEM_TEL = ?,
-									MEM_BIRTHDAY = ?,
-									MEM_ADDRESS = ?,
-									MEM_PIC = ?";
+							if ( $name != null && $id != null && $psw != null && $tel != null && $head != null && $address != null && $dest != null) {
+								$sql = "insert into HALFWAY_MEMBER set HALF_Name = ?,
+									HALF_ID = ?,
+									HALF_PSW = ?,
+									HALF_TEL = ?,
+									HALF_HEAD = ?,
+									HALF_ADDRESS = ?,
+									HALF_COVER = ?";
 								$stmt = $pdo -> prepare( $sql );
 								$stmt -> bindValue(1, $name);
 								$stmt -> bindValue(2, $id);
 								$stmt -> bindValue(3, MD5($psw));
 								$stmt -> bindValue(4, $tel);
-								$stmt -> bindValue(5, $birth);
+								$stmt -> bindValue(5, $head);
 								$stmt -> bindValue(6, $address);
 								$stmt -> bindValue(7, $dest);
 								$stmt -> execute();
-								echo "<center>註冊成功</center><br>";
+								echo "<center>註冊成功<br>請靜候審核</center><br>";
 							}else{
 								echo "<center>您的資料輸入未完全, 請檢查</center>";
 							}
@@ -80,6 +80,7 @@
 			echo "<center>因為小精靈在搗亂伺服器所以失敗了唷<br>請稍後再試</center>";
 		}
 		echo "<script type='text/javascript'>back()</script>";
+		echo "<center>將在五秒後回到原網址</center>";
 	?>
 	<script type='text/javascript'>
 		setTimeout(function back(){

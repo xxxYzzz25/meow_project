@@ -39,7 +39,7 @@
                 <button id="halfMember1">中途之家會員</button>
                 <button id="member1" class="selected">一般會員</button>
             </div>
-            <form action="#1" class="signUpForm" id="signInForm">
+            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
                 <br>
                 <br>
                 <br>
@@ -48,14 +48,15 @@
                     <br>
                     <small>請輸入您的電子郵件</small>
                 </label>
-                <input type="email" id="userIdIn" required>
+                <input type="email" id="userIdIn" name="memId" required>
                 <br>
                 <label for="userPsw">會員密碼
                     <br>
                     <small>請輸入6~10碼英數字</small>
                 </label>
-                <input type="password" id="userPswIn" required>
+                <input type="password" id="userPswIn" name="memPsw" required>
                 <br>
+                <input type="submit" value="登入">
                 <p class="signInUpPos">尚未成為會員嗎?
                     <span id="signIn2Up">點此註冊</span>
                 </p>
@@ -66,7 +67,7 @@
                 <button id="halfMember2">中途之家會員</button>
                 <button id="member2" class="selected">一般會員</button>
             </div>
-            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data">
+            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
                 <label for="userName">會員名稱
                     <br>
                     <small>不得多於8個中/英文字元</small>
@@ -216,8 +217,11 @@
             <div class="section">
                 <!-- 分數遊戲 -->
                 <div class="door-start" id="doorStart">
-                    <div class="door-start-text">領養前先過關此遊戲</div>
-                    <div class="door-start-btn">開始!</div>
+                    <div class="door-start-text">
+                        領養前先過關此遊戲
+                        <br> 對五題以上開放領養
+                    </div>
+                    <div class="door-start-btn btn-more" id="door-start-btn">開始!</div>
                 </div>
                 <div class="door-left" id="doorLeft"></div>
                 <div class="door-right" id="doorRight"></div>
@@ -398,10 +402,10 @@
             <div class="section">
                 <!-- 中途之家 -->
                 <div class="half">
-                    <div id="arrowLeft">
-                        <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+                    <div class="arrowLeft">
+                        <i class="fa fa-arrow-left fa-2x" aria-hclassden="true"></i>
                     </div>
-                    <div id="arrowRight">
+                    <div class="arrowRight">
                         <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
                     </div>
                     <div class="half-title">
@@ -477,6 +481,63 @@
                         <h3>Shopping Store</h3>
                     </div>
                     <div class="prod">
+                        <div class="arrowLeft">
+                            <i class="fa fa-arrow-left fa-2x" aria-hclassden="true"></i>
+                        </div>
+                        <div class="arrowRight">
+                            <i class="fa fa-arrow-right fa-2x" aria-hclassden="true"></i>
+                        </div>
+
+                        <ul class="prod-list" id="prod-list">
+                            <li class="prod-item">
+                                <a href="#">
+                                    <div class="front">
+                                        <div class="prod-content"></div>
+                                        <div class="prod-text">
+                                            <h4>喵喵肚子餓</h4>
+                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                        </div>
+                                    </div>
+                                    <div class="backed"></div>
+                                </a>
+                            </li>
+                            <li class="prod-item">
+                                <a href="#">
+                                    <div class="front">
+                                        <div class="prod-content"></div>
+                                        <div class="prod-text">
+                                            <h4>喵喵待在家</h4>
+                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                        </div>
+                                    </div>
+                                    <div class="backed"></div>
+                                </a>
+                            </li>
+                            <li class="prod-item">
+                                <a href="#">
+                                    <div class="front">
+                                        <div class="prod-content"></div>
+                                        <div class="prod-text">
+                                            <h4>精選喵草</h4>
+                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                        </div>
+                                    </div>
+                                    <div class="backed"></div>
+                                </a>
+                            </li>
+                            <li class="prod-item">
+                                <a href="#">
+                                    <div class="front">
+                                        <div class="prod-content"></div>
+                                        <div class="prod-text">
+                                            <h4>喵喵愛玩耍</h4>
+                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                        </div>
+                                    </div>
+                                    <div class="backed"></div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <footer>
                         <div class="container">
@@ -511,8 +572,8 @@
                     $(this).toggleClass("is-active");
                     $('header').toggleClass("active");
                 });
-                $('#doorStart').on('click', function () {
-                    $(this).fadeOut();
+                $('#door-start-btn').on('click', function () {
+                    $(this).closest('#doorStart').fadeOut();
                     $('#doorLeft').addClass('doorLeft');
                     $('#doorRight').addClass('doorRight');
                     $('#people').attr({

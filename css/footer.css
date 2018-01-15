@@ -166,7 +166,8 @@ footer {
     height: 20vh; }
     .section footer span {
       display: block;
-      text-align: center; } }
+      text-align: center;
+      top: -10px; } }
 
 @media all and (max-width: 991px) {
   footer {
@@ -180,4 +181,5 @@ footer {
     height: 20vh; }
     .section footer span {
       display: block;
-      text-align: center; } }
+      text-align: center;
+      top: -10px; } }
