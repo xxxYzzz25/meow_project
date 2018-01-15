@@ -52,7 +52,7 @@
 		</div>
 	</header>
 
-	<?php
+<?php
 $no = $_REQUEST["halfno"];
 
 try {
@@ -64,6 +64,7 @@ try {
     $halfway->bindColumn("HALF_ADDRESS", $ADDRESS);
     $halfway->bindColumn("HALF_TEL", $TEL);
     $halfway->bindColumn("HALF_OPEN", $OPEN);
+    $halfway->bindColumn("HALF_INTRO", $INTRO);
     $halfway->bindColumn("HALF_COVER", $COVER);
     $halfway->execute();
     $row = $halfway->fetchObject()
@@ -93,10 +94,11 @@ try {
 				</p>
 			</div>
 			<div class="container">
-				<div class="bigpic"></div>
+				<div class="bigpic" style="background-image: url(<?php echo $COVER ?>);"></div>
 				<div class="text">
 					<div class="intro">
-						這棟建築名為「希望館」。從一樓到三樓都是老闆，老嫗一手打造的貓咪天堂。一樓「多恩寵物商城」，是間寵物商品店，還有提供寵物自助澡堂。二樓「讀貓園—貓咪中途咖啡」，享受咖啡與貓咪的治癒，店貓都超級親人！三樓「貓咪遊樂園．貓咪旅館」是專門給喵星人住的旅館，當貓奴要長期外出時，就可帶貓咪們來此度假。
+						<?php echo $INTRO ?>
+						<!-- 這棟建築名為「希望館」。從一樓到三樓都是老闆，老嫗一手打造的貓咪天堂。一樓「多恩寵物商城」，是間寵物商品店，還有提供寵物自助澡堂。二樓「讀貓園—貓咪中途咖啡」，享受咖啡與貓咪的治癒，店貓都超級親人！三樓「貓咪遊樂園．貓咪旅館」是專門給喵星人住的旅館，當貓奴要長期外出時，就可帶貓咪們來此度假。 -->
 					</div>
 					<div class="star">
 						<fieldset class="rating">
@@ -130,7 +132,7 @@ try {
 			</div>
 		</div>
 
-		<?php
+<?php
 } catch (PDOException $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
@@ -139,13 +141,10 @@ try {
 }
 ?>
 
-
-
-
 		<div class="halfwaypic">
 			<div class="container">
 
-				<?php
+<?php
 try {
     require_once "../php/connectBD103G2.php";
 
@@ -156,11 +155,11 @@ try {
     while ($row = $halfway->fetchObject()) {
         ?>
 
-				<div class="picture">
-					<img src="<?php echo $PATH ?>" alt="halfway">
-				</div>
+			<div class="picture">
+				<img src="<?php echo $PATH ?>" alt="halfwaypic">
+			</div>
 
-				<?php
+<?php
 }
 } catch (PDOException $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
@@ -180,13 +179,14 @@ try {
 			<h2>我們的喵小孩</h2>
 			<div class="container">
 
-				<?php
+<?php
 try {
     require_once "../php/connectBD103G2.php";
 
     $sql     = "select * from cat where HALF_NO=$no";
     $halfway = $pdo->prepare($sql);
     $halfway->bindColumn("CAT_NAME", $NAME);
+    $halfway->bindColumn("CAT_COVER", $COVER);
     $halfway->bindColumn("CAT_DATE", $ADDRESS);
     $halfway->bindColumn("CAT_SEX", $SEX);
     $halfway->bindColumn("CAT_NARRATIVE", $NARRATIVEEN);
@@ -197,7 +197,7 @@ try {
 				<div class="catitem">
 					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
 					<div class="catpic">
-						<img src="../images/catcat_171225_0003.jpg" alt="cat">
+						<img src="<?php echo $COVER ?>" alt="cat">
 					</div>
 					<div class="text">
 						<h3>
@@ -212,7 +212,7 @@ try {
 					</div>
 				</div>
 
-				<?php
+<?php
 }
 
 } catch (PDOException $e) {

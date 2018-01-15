@@ -12,7 +12,13 @@
     <link rel="stylesheet" href="../css/halfway_house_search.css">
     <title>搜尋中途之家</title>
 </head>
-
+<?php
+$dsn      = "mysql:host=localhost;port=3306;dbname=bd103g2;charset=utf8";
+$user     = "root";
+$password = "root";
+$options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+$pdo      = new PDO($dsn, $user, $password, $options);
+?>
 <body>
     <!-- "php.executablePath": "D:/xampp/php/php.exe",
     "php.validate.executablePath": "D:/xampp/php/php.exe",
@@ -93,7 +99,7 @@
 
         <div class="result">
             <div class="container">
-                 <?php
+<?php
 
 try {
     require_once "../php/connectBD103G2.php";
@@ -109,25 +115,25 @@ try {
     $halfway->execute();
     while ($row = $halfway->fetchObject()) {
         ?>
-                <div class="item">
-                    <div class="pic">
-                        <img src="<?php echo $COVER ?>" alt="halfway">
-                    </div>
-                    <div class="text tx1">
-                        <h3><?php echo $NAME ?></h3>
-                        <p>ADD：<?php echo $ADDRESS ?></p>
-                        <p>TEL：<?php echo $TEL ?></p>
-                        <p>TIME：<?php echo $OPEN ?></p>
-                        <form action="halfway_house_detail.php">
-                            <input type="hidden" name="halfno" value="<?php echo $NO ?>">
-                            <button type="submit" id="btn">see more</button>
-                            <!-- <a href="./halfway_house_detail.php">see more</a> -->
-                        </form>
-                    </div>
-                    <div class="bg color<?php echo $NO ?>"></div>
+            <div class="item">
+                <div class="pic">
+                    <img src="<?php echo $COVER ?>" alt="halfway">
                 </div>
+                <div class="text tx1">
+                    <h3><?php echo $NAME ?></h3>
+                    <p>ADD：<?php echo $ADDRESS ?></p>
+                    <p>TEL：<?php echo $TEL ?></p>
+                    <p>TIME：<?php echo $OPEN ?></p>
+                    <form action="halfway_house_detail.php">
+                        <input type="hidden" name="halfno" value="<?php echo $NO ?>">
+                        <button type="submit" id="btn">see more</button>
+                        <!-- <a href="./halfway_house_detail.php">see more</a> -->
+                    </form>
+                </div>
+                <div class="bg color<?php echo $NO ?>"></div>
+            </div>
 
-                <?php
+<?php
 }
 
 } catch (PDOException $e) {
