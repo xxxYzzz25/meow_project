@@ -32,11 +32,11 @@ CREATE TABLE `HALFWAY_MEMBER` (
   `HALF_TEL` varchar(10) NOT NULL DEFAULT '',
   `HALF_ADDRESS` varchar(40) NOT NULL DEFAULT '',
   `HALF_AUDIT_STATUS` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=審核中/ 1=審核成功/ 2=審核失敗',
-  `HALF_INTRO` text NOT NULL COMMENT '中途介紹',
   `HALF_DISCOUNT` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=尚未獲得/ 1=已獲得/ 2=已使用',
   `HALF_BAN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=未停權/ 1=停權中',
   `HALF_OPEN` varchar(20) NOT NULL DEFAULT '尚未登記',
   `HALF_COVER` varchar(100) NOT NULL DEFAULT '../images/halfMemberPic/default.jpg',
+  `HALF_INTRO` text NOT NULL,
   PRIMARY KEY (`HALF_NO`),
   UNIQUE KEY `HALF_ID` (`HALF_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
