@@ -430,4 +430,16 @@ header ul li:nth-child(1):after {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
+=======
+.right .container1 .empManage table a {
+  text-align: center;
+  text-decoration: none;
+  padding: 2px;
+  border-radius: 0;
+  border-width: 1px;
+  padding-left: 5px;
+}
+
+>>>>>>> 7c0e26632eac0cdaf48497c915abcc985ed9d934
 /*# sourceMappingURL=backMemManage.css.map */

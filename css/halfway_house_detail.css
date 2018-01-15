@@ -573,7 +573,10 @@ header ul li:nth-child(2):after {
 .right .banner .container .bigpic {
   width: 80%;
   margin-top: 50px;
+<<<<<<< HEAD
   background-image: url(../images/halfdetail1.jpg);
+=======
+>>>>>>> 7c0e26632eac0cdaf48497c915abcc985ed9d934
   background-size: 100%;
   background-repeat: no-repeat;
 }

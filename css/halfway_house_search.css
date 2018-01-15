@@ -593,6 +593,27 @@ header ul li:nth-child(2):after {
   padding: 5px 15px;
 }
 
+<<<<<<< HEAD
+=======
+.right form {
+  text-align: right;
+}
+
+.right form #btn {
+  display: inline-block;
+  border-style: none;
+  margin-right: 20px;
+  background-color: transparent;
+  color: #EAAF88;
+}
+
+.right form #btn:hover {
+  outline: none;
+  cursor: pointer;
+  color: #333;
+}
+
+>>>>>>> 7c0e26632eac0cdaf48497c915abcc985ed9d934
 .right .result .container .item {
   width: 90%;
   margin: 200px auto 150px auto;
@@ -614,6 +635,7 @@ header ul li:nth-child(2):after {
   letter-spacing: 10px;
 }
 
+<<<<<<< HEAD
 .right .result .container .item .text a {
   display: flex;
   justify-content: flex-end;
@@ -626,6 +648,8 @@ header ul li:nth-child(2):after {
   color: #333;
 }
 
+=======
+>>>>>>> 7c0e26632eac0cdaf48497c915abcc985ed9d934
 .right .result .container .item .pic {
   position: absolute;
   top: -40px;
@@ -647,6 +671,7 @@ header ul li:nth-child(2):after {
   z-index: -3;
 }
 
+<<<<<<< HEAD
 .right .result .container .item .bg1 {
   background-color: rgba(66, 136, 115, 0.767);
 }
@@ -656,6 +681,29 @@ header ul li:nth-child(2):after {
 }
 
 .right .result .container .item .bg3 {
+=======
+.right .result .container .item .color1 {
+  background-color: rgba(66, 136, 115, 0.767);
+}
+
+.right .result .container .item .color2 {
+  background-color: rgba(199, 79, 73, 0.767);
+}
+
+.right .result .container .item .color3 {
+  background-color: rgba(139, 105, 73, 0.767);
+}
+
+.right .result .container .item .color4 {
+  background-color: rgba(66, 136, 115, 0.767);
+}
+
+.right .result .container .item .color5 {
+  background-color: rgba(199, 79, 73, 0.767);
+}
+
+.right .result .container .item .color6 {
+>>>>>>> 7c0e26632eac0cdaf48497c915abcc985ed9d934
   background-color: rgba(139, 105, 73, 0.767);
 }
 
