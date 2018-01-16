@@ -1,0 +1,30 @@
+@keyframes rororo {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.guide {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .front,
+    .backed {
+        position: relative;
+        img {
+            width: 300px;
+            height: 300px;
+            animation: rororo infinite 6s linear;
+        }
+        &:hover img{
+            animation: rororo infinite 6s linear reverse;
+        }
+    }
+    .backed img {
+        animation: rororo infinite 6s linear reverse;
+        &:hover{
+            animation: rororo infinite 6s linear;
+        }
+    }
+}

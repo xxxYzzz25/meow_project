@@ -36,11 +36,24 @@
                 width: 260%;
             }
         }
+        .game-point-title{
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+        }
+    }
+    .pick-kit {
+        .pick-title {
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+        }
     }
     .half {
         .arrowLeft{display: block;}
         .arrowRight{display: block;}
         .half-title {
+            text-align: center;
             width: 100%;
             display: inline-block;
             align-items: center;

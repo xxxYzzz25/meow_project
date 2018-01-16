@@ -38,13 +38,6 @@
     <div id="loading">
         <img src="images/loading.svg" id="loadingCat" alt="loading">
     </div>
-    <div class="hb">
-        <div class="hamburger" id="hamburger-6">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
-    </div>
     <div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
@@ -135,7 +128,7 @@
     <!-- header -->
     <header>
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
                 <h1>
                     <img src="images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -172,6 +165,13 @@
                 <span id="like">6</span>
             </a>
         </div>
+        <div class="hb">
+        <div class="hamburger" id="hamburger-6">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
     </header>
     <div id="fullpages">
         <div class="margin-200">
@@ -225,7 +225,7 @@
                             <br>
                             <small>Scroll Down</small>
                             <br>
-                            <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
+                            <a href="#page2"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -366,9 +366,18 @@
                     </div>
                     <ul class="half-list" id="half-list">
                         <?php
-                            $sql = "select h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,h.HALF_TEL halfTel,h.HALF_OPEN,h.HALF_COVER halfPic,count(c.HALF_NO) count from HALFWAY_MEMBER h join CAT c on h.HALF_NO = c.HALF_NO join HALF_PIC p on c.HALF_NO = p.HALF_NO group by h.HALF_NO order by 評價 limit 3";
+                            $sql = "select h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,h.HALF_TEL halfTel,h.HALF_OPEN,h.HALF_COVER halfPic,count(c.HALF_NO) count,avg(e.EVALUATION_STARS) stars
+                            from HALFWAY_MEMBER h 
+                            join CAT c 
+                            on h.HALF_NO = c.HALF_NO
+                            join EVALUATION e 
+                            on c.HALF_NO = e.HALF_NO
+                            group by c.HALF_NO 
+                            order by avg(e.EVALUATION_STARS) desc
+                            limit 3";
                             $data = $pdo -> query($sql);
-                            // <!--待養,圖片,名稱,地址,電話,營業時間 1.HALFWAY_MEMBER 2.CAT 3.HALF_PIC-->
+                            // <!--待養,圖片,名稱,地址,電話,營業時間,評價排列 1.HALFWAY_MEMBER 2.CAT 3.HALF_PIC-->
+                            
                             while ($dataObj = $data -> fetchObject()) {
                                 $str = $dataObj -> count;
                                 $str = explode("",$str);

@@ -13,7 +13,7 @@
 <body>
 	<header>
 		<div class="logo">
-			<a href="../index.html">
+			<a href="../index.php">
 				<h1>
 					<img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
 				</h1>
@@ -72,7 +72,7 @@ try {
 
 	<div class="right">
 		<div class="breadcrumbs">
-			<a href="../index.html" class="defaultBtn">尋喵啟事</a> >
+			<a href="../index.php" class="defaultBtn">尋喵啟事</a> >
 			<a href="halfway_house_search.html" class="defaultBtn">搜尋中途之家</a> >
 			<a href="halfway_house_detail.html" class="defaultBtn">
 				<?php echo $NAME ?>
