@@ -56,8 +56,4 @@ package-lock.json
 package-lock.json
 bower.json
 .bowerrc
-<<<<<<< HEAD
-.gitignore
-=======
 timer.html
->>>>>>> 1bae92da1a0c64fb19d8ff22400960210e0995a5
