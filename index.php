@@ -22,17 +22,17 @@
     <?php
         try{
             require_once("php/connectBD103G2.php");
-            $sql = "select count(ADOPT_STAUTS) COUNT from CAT where ADOPT_STAUTS = 2";//總共幾隻貓被領養
+            $sql = "select count(ADOPT_STATUS) COUNT from CAT where ADOPT_STATUS = 2";//總共幾隻貓被領養
             $data = $pdo -> query($sql);
             $dataObj = $data -> fetchObject();
             echo "<script>var findQty=".$dataObj->COUNT.";</script>";
 
-            $sql = "select count(ADOPT_STAUTS) COUNT from CAT where ADOPT_STAUTS = 0";//還有幾隻貓待領養
+            $sql = "select count(ADOPT_STATUS) COUNT from CAT where ADOPT_STATUS = 0";//還有幾隻貓待領養
             $data = $pdo -> query($sql);
             $dataObj = $data -> fetchObject();
             echo "<script>var waitQty=".$dataObj->COUNT.";</script>";
             //取出登記日期最早的六筆資料
-            $sql = "select C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by QQDATE limit 6";
+            $sql = "select C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by CAT_DATE limit 6";
             $data = $pdo -> query($sql);
     ?>
     <div id="loading">
@@ -366,7 +366,7 @@
                     </div>
                     <ul class="half-list" id="half-list">
                         <?php
-                            $sql = "select h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,h.HALF_TEL halfTel,h.HALF_TIME,p.HALF_PIC halfPic,count(c.HALF_NO) count from HALFWAY_MEMBER h join CAT c on h.HALF_NO = c.HALF_NO join HALF_PIC p on c.HALF_NO = p.HALF_NO group by h.HALF_NO order by 評價 limit 3";
+                            $sql = "select h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,h.HALF_TEL halfTel,h.HALF_OPEN,h.HALF_COVER halfPic,count(c.HALF_NO) count from HALFWAY_MEMBER h join CAT c on h.HALF_NO = c.HALF_NO join HALF_PIC p on c.HALF_NO = p.HALF_NO group by h.HALF_NO order by 評價 limit 3";
                             $data = $pdo -> query($sql);
                             // <!--待養,圖片,名稱,地址,電話,營業時間 1.HALFWAY_MEMBER 2.CAT 3.HALF_PIC-->
                             while ($dataObj = $data -> fetchObject()) {
