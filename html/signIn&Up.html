@@ -7,7 +7,7 @@
             <button id="halfMember1">中途之家會員</button>
             <button id="member1" class="selected">一般會員</button>
         </div>
-        <form action="#1" class="signUpForm" id="signInForm" autocomplete="off">
+        <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
             <br>
             <br>
             <br>
@@ -16,14 +16,17 @@
                 <br>
                 <small>請輸入您的電子郵件</small>
             </label>
-            <input type="email" id="userIdIn" required>
+            <input type="email" id="userIdIn" name="memId" required>
             <br>
             <label for="userPsw">會員密碼
                 <br>
                 <small>請輸入6~10碼英數字</small>
             </label>
-            <input type="password" id="userPswIn" required>
+            <input type="password" id="userPswIn" name="memPsw" required>
             <br>
+            <div class="chioce">
+                <input type="submit" class="formBtn formSubmitBtn" value="登入">
+            </div>
             <p class="signInUpPos">尚未成為會員嗎?
                 <span id="signIn2Up">點此註冊</span>
             </p>
@@ -75,7 +78,6 @@
                 <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
                 <input type="file" name='image' id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
                 <input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
-                <input type="reset" class="formBtn formSubmitBtn" value="清除重填">
             </div>
             <p class="signInUpPos">已經是會員了嗎?
                 <span id="signUp2In">點此登入</span>

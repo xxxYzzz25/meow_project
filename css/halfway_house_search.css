@@ -40,6 +40,26 @@ table {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
+
+input, select {
+  font-family: 'Noto Sans TC';
+  font-weight: bolder; }
+
+body {
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
+  letter-spacing: 3px; }
+
+.fa-mars {
+  color: deepskyblue; }
+
+.fa-venus {
+  color: #fc516d; }
+
+.defaultBtn {
+  font-size: 16px;
+  border: #333 2px solid;
+  border-radius: 24px;
   color: #333;
   padding: 4px 30px;
   background-color: transparent;
@@ -48,6 +68,7 @@ table {
   outline: none; }
   .defaultBtn:hover {
     color: white;
+    background-color: #EAAF88;
     border-color: #EAAF88; }
 
 .btn-more {
@@ -289,7 +310,8 @@ footer {
     height: 20vh; }
     .section footer span {
       display: block;
-      text-align: center; } }
+      text-align: center;
+      top: -10px; } }
 
 .btns .btn {
   font-size: 30px;
@@ -431,6 +453,18 @@ header ul li:nth-child(2):after {
           line-height: 30px;
           letter-spacing: 4px;
           padding: 5px 15px; }
+  .right form {
+    text-align: right; }
+    .right form #btn {
+      display: inline-block;
+      border-style: none;
+      margin-right: 20px;
+      background-color: transparent;
+      color: #EAAF88; }
+      .right form #btn:hover {
+        outline: none;
+        cursor: pointer;
+        color: #333; }
   .right .result .container .item {
     width: 90%;
     margin: 200px auto 150px auto;
@@ -446,14 +480,6 @@ header ul li:nth-child(2):after {
         font-size: 24px;
         padding: 8% 0;
         letter-spacing: 10px; }
-      .right .result .container .item .text a {
-        display: flex;
-        justify-content: flex-end;
-        margin-right: 25px;
-        text-decoration: none;
-        color: #EAAF88; }
-        .right .result .container .item .text a:hover {
-          color: #333; }
     .right .result .container .item .pic {
       position: absolute;
       top: -40px;
@@ -469,11 +495,17 @@ header ul li:nth-child(2):after {
       height: 120%;
       box-shadow: 12px 10px 10px -4px #aaa;
       z-index: -3; }
-    .right .result .container .item .bg1 {
+    .right .result .container .item .color1 {
       background-color: rgba(66, 136, 115, 0.767); }
-    .right .result .container .item .bg2 {
+    .right .result .container .item .color2 {
       background-color: rgba(199, 79, 73, 0.767); }
-    .right .result .container .item .bg3 {
+    .right .result .container .item .color3 {
+      background-color: rgba(139, 105, 73, 0.767); }
+    .right .result .container .item .color4 {
+      background-color: rgba(66, 136, 115, 0.767); }
+    .right .result .container .item .color5 {
+      background-color: rgba(199, 79, 73, 0.767); }
+    .right .result .container .item .color6 {
       background-color: rgba(139, 105, 73, 0.767); }
 
 @media all and (max-width: 991px) {

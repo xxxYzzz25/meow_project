@@ -38,8 +38,8 @@
         }
     }
     .half {
-        #arrowLeft{display: block;}
-        #arrowRight{display: block;}
+        .arrowLeft{display: block;}
+        .arrowRight{display: block;}
         .half-title {
             width: 100%;
             display: inline-block;
@@ -114,6 +114,21 @@
         }
         .imgbox {
             display: none;
+        }
+    }
+    .shop{
+        .prod{
+            ul.prod-list{
+                height: 80%;
+                top:0;
+                left: 0;
+                bottom: 0;
+                right:0;
+                margin:auto;
+                li.prod-item{
+                    width: 35%;
+                }
+            }
         }
     }
 }
