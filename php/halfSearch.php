@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Examples</title>
-</head>
-<body>
+
 <?php
 try {
     require_once "../php/connectBD103G2.php";
-    if(isset($REQUEST_["searchLoc"]) || isset($REQUEST_["searchName"])){
-        $searchLoc = isset($REQUEST_["searchLoc"]) ? $REQUEST_["searchLoc"]:'';
-        $searchName = isset($REQUEST_["searchName"]) ? $REQUEST_["searchLoc"]:'';
+
+    if(isset($_REQUEST["searchLoc"]) || isset($_REQUEST["searchName"])){
+        $echoText = "";
         
-   	    $locArr = array('北部' => array("臺北市","新北市","基隆市","桃園市","新竹市","新竹縣","宜蘭縣"), '中部' => array("苗栗縣","台中市","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市"),'南部' => array("台南市","高雄市","屏東縣"),'東部' => array("花蓮縣","台東縣"),'離島' => array("金門縣","連江縣","澎湖縣"));
+        $searchLoc = isset($_REQUEST["searchLoc"]) ? $_REQUEST["searchLoc"] : '';
+        $searchName = isset($_REQUEST["searchName"]) ? $_REQUEST["searchName"] : '';
+        
+   	    $locArr = array('北部' => array("台北市","新北市","基隆市","桃園市","新竹市","新竹縣","宜蘭縣"), '中部' => array("苗栗縣","台中市","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市"),'南部' => array("台南市","高雄市","屏東縣"),'東部' => array("花蓮縣","台東縣"),'離島' => array("金門縣","連江縣","澎湖縣"));
         
         $sql     = "select * from halfway_member
                     where ";
-                
-    	if($searchLoc !== ''){
-            foreach ($locArr[$searchLoc] as $key => $value) {
-                $sql.="HALF_ADDRESS like '%$value%' or ";
+    	if(!empty($searchLoc)){
+            $arrLen = count($locArr[$searchLoc]);
+            $sql .= "(";
+            for($i = 0; $i < $arrLen ; $i++) {
+                if($i == $arrLen-1){
+                    $temp = $locArr[$searchLoc][$i];
+                    $sql.="HALF_ADDRESS like '%$temp%') and ";
+                }else{
+                    $temp = $locArr[$searchLoc][$i];
+                    $sql.="HALF_ADDRESS like '%$temp%' or ";
+                }
             }
         }
         $sql .= "HALF_NAME like '%$searchName%'";
@@ -89,5 +93,3 @@ try {
     echo "錯誤行號 : ", $e->getLine(), "<br>";
 }
 ?>
-</body>
-</html>
