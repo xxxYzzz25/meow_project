@@ -7,7 +7,7 @@
 <body>
 <?php
 try {
-	require_once("../php/connectBD103G2.php");
+	require_once("connectBD103G2.php");
 	$sql="update cat set ADOPT_STATUS=:status
 			  where CAT_NO=:no";
 	$products = $pdo->prepare( $sql );

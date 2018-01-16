@@ -147,7 +147,7 @@
                     <a href="html/catSearch.html">尋喵</a>
                 </li>
                 <li>
-                    <a href="php/halfway_house_search.php">中途之家</a>
+                    <a href="html/halfway_house_search.php">中途之家</a>
                 </li>
                 <li>
                     <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
