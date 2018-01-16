@@ -1331,6 +1331,10 @@ footer {
     padding-bottom: 24%; }
   .pick-kit ul {
     width: 600%; }
+    .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
+      top: 40%; }
+    .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
+      top: 5%; }
   .noticegame .ask {
     display: none; }
   .noticegame .smallbox {
