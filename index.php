@@ -22,15 +22,15 @@
     <?php
         try{
             require_once("php/connectBD103G2.php");
-            $sql = "select count(ADOPT_STATUS) COUNT from CAT where ADOPT_STATUS = 2";//總共幾隻貓被領養
+            $sql = "select count(ADOPT_STATUS) COUNT from CAT where ADOPT_STATUS = 2 or  ADOPT_STATUS = 1";//總共幾隻貓被領養
             $data = $pdo -> query($sql);
             $dataObj = $data -> fetchObject();
-            echo "<script>var findQty=".$dataObj->COUNT.";</script>";
+            echo "<script>var findQty='".$dataObj->COUNT."';</script>";
 
             $sql = "select count(ADOPT_STATUS) COUNT from CAT where ADOPT_STATUS = 0";//還有幾隻貓待領養
             $data = $pdo -> query($sql);
             $dataObj = $data -> fetchObject();
-            echo "<script>var waitQty=".$dataObj->COUNT.";</script>";
+            echo "<script>var waitQty='".$dataObj->COUNT."';</script>";
             //取出登記日期最早的六筆資料
             $sql = "select C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by CAT_DATE limit 6";
             $data = $pdo -> query($sql);
@@ -295,8 +295,8 @@
                                     <div class="cat_list">
                                         <div class="bubble">
                                             <span class="kit-name"><?php echo $dataObj -> catName ?></span>
-                                            <span class="kit-age"><?php echo $dataObj -> catDate ?></span>
-                                            <span class="kit-address"><?php echo substr($dataObj -> halfAddress,3) ?></span>
+                                            <span class="kit-age"><?php echo $dataObj -> catDate."出生" ?></span>
+                                            <span class="kit-address"><?php echo $dataObj -> halfAddress ?></span>
                                             <span class="kit-home"><?php echo $dataObj -> halfName ?></span>
                                         </div>
                                     </div>
