@@ -1,6 +1,16 @@
 @include respond-to(medium) {
     header{
-        top: -130%;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 90%;
+        height: 80vh;
+        transform: translateY(-100%);
+        border-radius: 0 0 0 30px;
+        .logo{
+            left: calc(50% - 90px);
+        }
     }
     .hb{
         display: block;
