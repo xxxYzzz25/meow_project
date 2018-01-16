@@ -365,11 +365,25 @@
                         <h3>Animal Shelter</h3>
                     </div>
                     <ul class="half-list" id="half-list">
-                        <li><!--待養,圖片,名稱,地址,電話,營業時間 1.HALFWAY_MEMBER 2.CAT 3.HALF_PIC-->
+                        <?php
+                            $sql = "select h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,h.HALF_TEL halfTel,h.HALF_TIME,p.HALF_PIC halfPic,count(c.HALF_NO) count from HALFWAY_MEMBER h join CAT c on h.HALF_NO = c.HALF_NO join HALF_PIC p on c.HALF_NO = p.HALF_NO group by h.HALF_NO order by 評價 limit 3";
+                            $data = $pdo -> query($sql);
+                            // <!--待養,圖片,名稱,地址,電話,營業時間 1.HALFWAY_MEMBER 2.CAT 3.HALF_PIC-->
+                            while ($dataObj = $data -> fetchObject()) {
+                                $str = $dataObj -> count;
+                                $str = explode("",$str);
+                                $strLen = count($str);
+                        ?>
+                        <li>
                             <div class="half-item">
                                 <div class="half-qty">
-                                    <img src="images/number5.png" alt="5">
-                                    <img src="images/number8.png" alt="8">
+                        <?php
+                            for ($i=0; $i < $strLen; $i++) { 
+                                    ?>
+                                    <img src="images/number<?php echo $str[$i] ?>.png" alt="<?php echo $str[$i] ?>">
+                                    <?php
+                                }
+                        ?>
                                     <span>隻喵喵待領養</span>
                                 </div>
                                 </a>
@@ -386,6 +400,7 @@
                             </div>
                         </li>
                         <?php
+                        }
                             }catch(PDOException $e){
                                 echo $e -> getLine();
                                 echo $e -> getMessage();
