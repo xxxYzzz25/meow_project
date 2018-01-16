@@ -6,7 +6,7 @@ session_start();
     <h4>新增助養資訊</h4>
 <?php
 try {
-    require_once "connectBD103G2.php";
+    require_once "../php/connectBD103G2.php";
 
     $sql = "select d.CAT_NO,d.DONATE_NAME,d.DONATE_PRICE,d.DONATE_DATE,c.CAT_NAME,h.HALF_NO
             from donate d,cat c,halfway_member h
@@ -18,7 +18,7 @@ try {
     $donate->execute();
     $donateRow = $donate->fetchObject()
 ?>
-    <form action="halfMemDonateInserToDb.php">
+    <form action="../php/halfMemDonateInserToDb.php">
         <input type="hidden" name="no" value="<?php echo $donateRow->HALF_NO; ?>">
         <table>
             <tr>

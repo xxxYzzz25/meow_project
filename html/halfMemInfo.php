@@ -6,7 +6,7 @@
     <h4>修改中途之家會員資料</h4>
     <?php
 try {
-    require_once("connectBD103G2.php");
+    require_once("../php/connectBD103G2.php");
 
     $sql = "select * from halfway_member where HALF_NO =?";
     $HWmem = $pdo->prepare( $sql );
@@ -18,7 +18,7 @@ try {
     }else{
         $HWmemRow = $HWmem->fetchObject();
 ?>
-    <form action="halfMemInfoUpdateToDb.php">
+    <form action="../php/halfMemInfoUpdateToDb.php">
         <input type="hidden" name="no" value="<?php echo $HWmemRow->HALF_NO;?>">
         <table>
             <tr>

@@ -6,7 +6,7 @@
     <h4>查詢領養紀錄</h4>
         <?php
 try {
-    require_once("connectBD103G2.php");
+    require_once("../php/connectBD103G2.php");
 
     $sql = "select *
             from adoption a,cat c,member m,halfway_member h
@@ -23,7 +23,6 @@ try {
     }else{
         while ($adoptRow = $adopt->fetchObject()) {
 ?>
-        <input type="hidden" name="no" value="<?php echo $adoptRow->CAT_NO;?>">
         <table>
             <tr>
                 <th>喵小孩名字</th>

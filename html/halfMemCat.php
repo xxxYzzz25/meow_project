@@ -6,7 +6,7 @@
     <h4>編輯喵小孩資料</h4>
     <?php
 try {
-    require_once("connectBD103G2.php");
+    require_once("../php/connectBD103G2.php");
 
     $sql = "select * from cat where HALF_NO =1";
     $HWcat = $pdo->prepare( $sql );
@@ -18,7 +18,7 @@ try {
     }else{
         $HWcatRow = $HWcat->fetchObject();
 ?>
-    <form action="halfMemCatUpdateToDb.php">
+    <form action="../php/halfMemCatUpdateToDb.php">
         <input type="hidden" name="no" value="<?php echo $HWcatRow->HALF_NO;?>">
         <table>
             <tr>

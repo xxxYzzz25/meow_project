@@ -25,7 +25,7 @@
 					<a href="../catSearch.html">尋喵</a>
 				</li>
 				<li>
-					<a href="../php/halfway_house_search.php">中途之家</a>
+					<a href="../halfway_house_search.php">中途之家</a>
 				</li>
 				<li>
 					<a href="../Cat_ShoppingStore.html" title="前往商城">商城</a>
@@ -204,8 +204,13 @@ try {
 						</h3>
 						<?php echo $ADDRESS ?>
 						<br>
-						<?php echo $SEX ?>
-						<i class="fa fa-venus" aria-hidden="true"></i>
+						<?php 
+						if ($SEX = 1) {
+							echo "男生"."<i class='fa fa-mars' aria-hidden='true'></i>";
+						}else {
+							echo "女生"."<i class='fa fa-venus' aria-hidden='true'></i>";
+						}
+						?>
 						<br>
 						<?php echo $NARRATIVE ?>
 					</div>

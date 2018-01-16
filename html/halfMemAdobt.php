@@ -7,7 +7,7 @@
 
         <?php
 try {
-    require_once("connectBD103G2.php");
+    require_once("../php/connectBD103G2.php");
 
     $sql = "select *
             from adoption a,cat c,member m,halfway_member h
@@ -24,7 +24,7 @@ try {
     }else{
         while ($adoptRow = $adopt->fetchObject()) {
 ?>
-        <form action="halfMemAdobtUpdateToDb.php">
+        <form action="../php/halfMemAdobtUpdateToDb.php">
             <input type="hidden" name="no" value="<?php echo $adoptRow->CAT_NO;?>">
             <table>
                 <tr>
