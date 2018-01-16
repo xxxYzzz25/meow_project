@@ -18,8 +18,23 @@
     <script src="js/noticeGame.js"></script>
     <script src="js/signIn.js"></script>
 </head>
-
 <body>
+    <?php
+        try{
+            require_once("php/connectBD103G2.php");
+            $sql = "select count(ADOPT_STAUTS) COUNT from CAT where ADOPT_STAUTS = 2";//總共幾隻貓被領養
+            $data = $pdo -> query($sql);
+            $dataObj = $data -> fetchObject();
+            echo "<script>var findQty=".$dataObj->COUNT.";</script>";
+
+            $sql = "select count(ADOPT_STAUTS) COUNT from CAT where ADOPT_STAUTS = 0";//還有幾隻貓待領養
+            $data = $pdo -> query($sql);
+            $dataObj = $data -> fetchObject();
+            echo "<script>var waitQty=".$dataObj->COUNT.";</script>";
+            //取出登記日期最早的六筆資料
+            $sql = "select C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by QQDATE limit 6";
+            $data = $pdo -> query($sql);
+    ?>
     <div id="loading">
         <img src="images/loading.svg" id="loadingCat" alt="loading">
     </div>
@@ -132,7 +147,7 @@
                     <a href="html/catSearch.html">尋喵</a>
                 </li>
                 <li>
-                    <a href="html/halfway_house_search.html">中途之家</a>
+                    <a href="php/halfway_house_search.php">中途之家</a>
                 </li>
                 <li>
                     <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
@@ -271,90 +286,26 @@
                         <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
                     </div>
                     <ul id="kit-list">
+                        <?php
+                            while ($dataObj = $data -> fetchObject()) {
+                        ?>
                         <li>
                             <div class="cat_list_bg">
                                 <a href="#">
                                     <div class="cat_list">
                                         <div class="bubble">
-                                            <span class="kit-name">書書</span>
-                                            <span class="kit-age">三個月</span>
-                                            <span class="kit-address">台南市</span>
-                                            <span class="kit-home">喃喃中途之家</span>
+                                            <span class="kit-name"><?php echo $dataObj -> catName ?></span>
+                                            <span class="kit-age"><?php echo $dataObj -> catDate ?></span>
+                                            <span class="kit-address"><?php echo substr($dataObj -> halfAddress,3) ?></span>
+                                            <span class="kit-home"><?php echo $dataObj -> halfName ?></span>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </li>
-                        <li>
-                            <div class="cat_list_bg">
-                                <a href="#">
-                                    <div class="cat_list">
-                                        <div class="bubble">
-                                            <span class="kit-name">書書</span>
-                                            <span class="kit-age">三個月</span>
-                                            <span class="kit-address">台南市</span>
-                                            <span class="kit-home">喃喃中途之家</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cat_list_bg">
-                                <a href="#">
-                                    <div class="cat_list">
-                                        <div class="bubble">
-                                            <span class="kit-name">書書</span>
-                                            <span class="kit-age">三個月</span>
-                                            <span class="kit-address">台南市</span>
-                                            <span class="kit-home">喃喃中途之家</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cat_list_bg">
-                                <a href="#">
-                                    <div class="cat_list">
-                                        <div class="bubble">
-                                            <span class="kit-name">書書</span>
-                                            <span class="kit-age">三個月</span>
-                                            <span class="kit-address">台南市</span>
-                                            <span class="kit-home">喃喃中途之家</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cat_list_bg">
-                                <a href="#">
-                                    <div class="cat_list">
-                                        <div class="bubble">
-                                            <span class="kit-name">書書</span>
-                                            <span class="kit-age">三個月</span>
-                                            <span class="kit-address">台南市</span>
-                                            <span class="kit-home">喃喃中途之家</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cat_list_bg">
-                                <a href="#">
-                                    <div class="cat_list">
-                                        <div class="bubble">
-                                            <span class="kit-name">書書</span>
-                                            <span class="kit-age">三個月</span>
-                                            <span class="kit-address">台南市</span>
-                                            <span class="kit-home">喃喃中途之家</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
+                        <?php
+                            }
+                        ?>
                     </ul>
                     <div class="more">
                         <a href="html/catSearch.html" class="btn-more">More</a>
@@ -414,7 +365,7 @@
                         <h3>Animal Shelter</h3>
                     </div>
                     <ul class="half-list" id="half-list">
-                        <li>
+                        <li><!--待養,圖片,名稱,地址,電話,營業時間 1.HALFWAY_MEMBER 2.CAT 3.HALF_PIC-->
                             <div class="half-item">
                                 <div class="half-qty">
                                     <img src="images/number5.png" alt="5">
@@ -425,49 +376,21 @@
                                 <div class="half-pic"></div>
                                 <div class="half-text">
                                     <a href="html/halfway_house_detail.html">
-                                        <span class="half-name">貓貓別哭 中途咖啡</span>
+                                        <span class="half-name"><?php echo $dataObj -> halfName ?></span>
                                     </a>
-                                    <span class="half-address">台北市信義區信義路四段88號</span>
-                                    <span class="half-tel">02-2777-6666</span>
-                                    <span class="half-time">10:00~20:00</span>
+                                    <span class="half-address"><?php echo $dataObj -> halfAddress ?></span>
+                                    <span class="half-tel"><?php echo $dataObj -> halfTel ?></span>
+                                    <span class="half-time"><?php echo $dataObj -> halfTime ?></span>
                                     <a href="#" class="read-more">前往領養</a>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="half-item">
-                                <div class="half-qty">
-                                    <img src="images/number3.png" alt="3">
-                                    <img src="images/number6.png" alt="6">
-                                    <span>隻喵喵待領養</span>
-                                </div>
-                                <div class="half-pic"></div>
-                                <div class="half-text">
-                                    <a href="html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡</a>
-                                    <span class="half-address">台北市信義區信義路四段88號</span>
-                                    <span class="half-tel">02-2777-6666</span>
-                                    <span class="half-time">10:00~20:00</span>
-                                    <a href="#" class="read-more">前往領養</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="half-item">
-                                <div class="half-qty">
-                                    <img src="images/number2.png" alt="2">
-                                    <img src="images/number8.png" alt="8">
-                                    <span>隻喵喵待領養</span>
-                                </div>
-                                <div class="half-pic"></div>
-                                <div class="half-text">
-                                    <a href="html/halfway_house_detail.html" class="half-name">貓貓別哭 中途咖啡</a>
-                                    <span class="half-address">台北市信義區信義路四段88號</span>
-                                    <span class="half-tel">02-2777-6666</span>
-                                    <span class="half-time">10:00~20:00</span>
-                                    <a href="#" class="read-more">前往領養</a>
-                                </div>
-                            </div>
-                        </li>
+                        <?php
+                            }catch(PDOException $e){
+                                echo $e -> getLine();
+                                echo $e -> getMessage();
+                            }
+                        ?>
                     </ul>
                     <div class="more">
                         <a href="html/halfway_house_search.html" class="btn-more">More</a>
