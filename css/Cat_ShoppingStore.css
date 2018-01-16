@@ -31,11 +31,17 @@ body {
 	}
 }
 
-.title {
+h2 {
 	text-align: center;
-	padding: 3%;
-	font-size: 34px;
-	letter-spacing: 15px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 26px;
+    letter-spacing: 15px;
+	text-align: center;
+	padding: 5%;
+	margin: 0;
 }
 
 .menu {
@@ -125,8 +131,8 @@ body {
 .typeName {
 	float: left;
 	/* background-color: #EAAF88; */
-	color: #333;
-	background-color: rgb(253, 223, 203);
+	color: #fff;
+	background-color: #EAAF88;
 	width: 29%;
 	padding: 4.8%;
 	box-sizing: border-box;
@@ -218,10 +224,27 @@ body {
 .product {
 	float: left;
 	width: 25%;
-	background-color: #fff;
+	/* background-color: #fff; */
 	margin-top: 1%;
 	text-align: center;
-	margin-bottom: 4%;
+	margin-bottom: 10%;
+}
+
+.addButton{
+    border-radius: 100px;
+    cursor: pointer;
+	letter-spacing: 3px;
+	padding: 2% 8% 2% 10%;
+    border: 2px solid #333333;
+	background-color: transparent;
+	color: #333;
+}
+
+.addButton:hover{
+	
+	background-color: #EAAF88;
+	border: 1px solid #EAAF88;
+	color: #fff;
 }
 
 @media only screen and (max-width: 768px) {
@@ -245,7 +268,7 @@ body {
 
 .pic {
 	box-sizing: border-box;
-	padding: 15% 15% 0 15%;
+	padding: 15%;
 	transition: 0.5s all ease-in-out;
 }
 
@@ -256,7 +279,7 @@ body {
 .text {
 	text-align: center;
 	box-sizing: border-box;
-	padding: 15%;
+	padding: 15% 0;
 	height: 100px;
 }
 
@@ -264,7 +287,7 @@ body {
 	height: 50px;
 }
 
-header ul li:nth-child(3) {
+/* header ul li:nth-child(3) {
 	background-color: #fff;
 	box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
 }
@@ -286,4 +309,4 @@ header ul li:nth-child(3):after {
 	right: -17px;
 	transform: rotate(45deg);
 	box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
-}
+} */
