@@ -65,6 +65,7 @@ function createCartList(itemKey,itemValue){
 	//單價 -- 第三個td
 	var tdPrice = document.createElement('td');
 	tdPrice.style.width = '100px';
+	tdPrice.setAttribute('data-price',itemPrice);
 	tdPrice.innerText = itemPrice;
 
 	trItemList.appendChild(tdPrice);
@@ -99,8 +100,7 @@ function createCartList(itemKey,itemValue){
 
 function deleteItem(){
 
-	var itemId = this.parentNode.parentNode;
-	
+	var itemId = this.parentNode.parentNode.childNodes[1].getAttribute('id');
 
 	//刪除該筆資料之前，先將金額扣除
 	var itemValue = storage.getItem(itemId);
@@ -117,7 +117,18 @@ function deleteItem(){
 }
 
 function changeItemCount(){
-
+	let qty = this.value;
+	let table = this.parentNode.parentNode.parentNode;
+	let trs = table.childNodes;
+	let tr = this.parentNode.parentNode;
+	let td = tr.childNodes[2];
+	let subTotal = 0;
+	td.textContent = (qty * td.getAttribute('data-price'));
+	for (const value of trs) {
+		let num = parseInt(value.childNodes[2].textContent);
+		subTotal += num;
+	}
+	document.getElementById('subtotal').textContent = subTotal;
 }
 
 window.addEventListener('load', doFirst, false);

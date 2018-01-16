@@ -1,7 +1,6 @@
 body{
-	letter-spacing: 3px;
-	background-color: #eee; 
-    font-size: 14px;
+    background-color: #eee;
+    
     background-image: url(../img/marble.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -17,6 +16,8 @@ body{
 .wrap{
     margin-left: 200px;
     line-height: 28px;
+    letter-spacing: 3px;
+    font-size: 14px;
 }
 
 .wrapCenter{
