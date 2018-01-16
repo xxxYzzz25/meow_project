@@ -1,7 +1,0 @@
-<?php
-$dsn = "mysql:host=localhost;port=8889;dbname=bd103g2;charset=utf8";
-$user = "web";
-$psw = "780429";
-$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-$pdo = new PDO( $dsn, $user,$psw, $options );
-?>
