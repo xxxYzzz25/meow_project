@@ -8,44 +8,82 @@
 <?php
 try {
     require_once "../php/connectBD103G2.php";
-    $searchLoc = $REQUEST_["searchLoc"];
-    $searchName = $REQUEST_["searchName"];
-   	$locArr = array('北部' => array("臺北市","新北市","基隆市","桃園市","新竹市","新竹縣","宜蘭縣"), '中部' => array("苗栗縣","台中市","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市"),'南部' => array("台南市","高雄市","屏東縣"),'東部' => array("花蓮縣","台東縣"),'離島' => array("金門縣","連江縣","澎湖縣"));
-   	$ result = array_search($locArr, $searchLoc);
-    				
-    $sql     = "select * from halfway_member
-    			where HALF_ADDRESS like '%$%'
-				and HALF_NAME like '%$%'";
-    $halfway = $pdo->prepare($sql);
-    $halfway->bindColumn("HALF_NO", $NO);
-    $halfway->bindColumn("HALF_NAME", $NAME);
-    $halfway->bindColumn("HALF_ADDRESS", $ADDRESS);
-    $halfway->bindColumn("HALF_TEL", $TEL);
-    $halfway->bindColumn("HALF_OPEN", $OPEN);
-    $halfway->bindColumn("HALF_COVER", $COVER);
-    $halfway->execute();
-    while ($row = $halfway->fetchObject()) {
-        ?>
-            <div class="item">
-                <div class="pic">
-                    <img src="<?php echo $COVER ?>" alt="halfway">
+    if(isset($REQUEST_["searchLoc"]) || isset($REQUEST_["searchName"])){
+        $searchLoc = isset($REQUEST_["searchLoc"]) ? $REQUEST_["searchLoc"]:'';
+        $searchName = isset($REQUEST_["searchName"]) ? $REQUEST_["searchLoc"]:'';
+        
+   	    $locArr = array('北部' => array("臺北市","新北市","基隆市","桃園市","新竹市","新竹縣","宜蘭縣"), '中部' => array("苗栗縣","台中市","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市"),'南部' => array("台南市","高雄市","屏東縣"),'東部' => array("花蓮縣","台東縣"),'離島' => array("金門縣","連江縣","澎湖縣"));
+        
+        $sql     = "select * from halfway_member
+                    where ";
+                
+    	if($searchLoc !== ''){
+            foreach ($locArr[$searchLoc] as $key => $value) {
+                $sql.="HALF_ADDRESS like '%$value%' or ";
+            }
+        }
+        $sql .= "HALF_NAME like '%$searchName%'";
+        $halfway = $pdo->prepare($sql);
+        $halfway->bindColumn("HALF_NO", $NO);
+        $halfway->bindColumn("HALF_NAME", $NAME);
+        $halfway->bindColumn("HALF_ADDRESS", $ADDRESS);
+        $halfway->bindColumn("HALF_TEL", $TEL);
+        $halfway->bindColumn("HALF_OPEN", $OPEN);
+        $halfway->bindColumn("HALF_COVER", $COVER);
+        $halfway->execute();
+        while ($row = $halfway->fetchObject()) {
+            
+            $echoText .="<div class='item'>
+                <div class='pic'>
+                    <img src='$COVER' alt='halfway'>
                 </div>
-                <div class="text tx1">
-                    <h3><?php echo $NAME ?></h3>
-                    <p>ADD：<?php echo $ADDRESS ?></p>
-                    <p>TEL：<?php echo $TEL ?></p>
-                    <p>TIME：<?php echo $OPEN ?></p>
-                    <form action="halfway_house_detail.php">
-                        <input type="hidden" name="halfno" value="<?php echo $NO ?>">
-                        <button type="submit" id="btn">see more</button>
-                        <!-- <a href="./halfway_house_detail.php">see more</a> -->
+                <div class='text tx1'>
+                    <h3>$NAME</h3>
+                    <p>ADD：$ADDRESS</p>
+                    <p>TEL：$TEL</p>
+                    <p>TIME：$OPEN</p>
+                    <form action='halfway_house_detail.php'>
+                        <input type='hidden' name='halfno' value='$NO'>
+                        <button type='submit' id='btn'>see more</button>
                     </form>
                 </div>
-                <div class="bg color<?php echo $NO ?>"></div>
-            </div>
+                <div class='bg color$NO'></div>
+            </div>";
+        }
+        echo $echoText;
 
-<?php
-}
+    }else{
+        $echoText = "";
+        $sql = "select * from halfway_member";
+        $halfway = $pdo->prepare($sql);
+        $halfway->bindColumn("HALF_NO", $NO);
+        $halfway->bindColumn("HALF_NAME", $NAME);
+        $halfway->bindColumn("HALF_ADDRESS", $ADDRESS);
+        $halfway->bindColumn("HALF_TEL", $TEL);
+        $halfway->bindColumn("HALF_OPEN", $OPEN);
+        $halfway->bindColumn("HALF_COVER", $COVER);
+        $halfway->execute();
+        while ($row = $halfway->fetchObject()) {
+            
+                $echoText .="<div class='item'>
+                    <div class='pic'>
+                        <img src='$COVER' alt='halfway'>
+                    </div>
+                    <div class='text tx1'>
+                        <h3>$NAME</h3>
+                        <p>ADD：$ADDRESS</p>
+                        <p>TEL：$TEL</p>
+                        <p>TIME：$OPEN</p>
+                        <form action='halfway_house_detail.php'>
+                            <input type='hidden' name='halfno' value='$NO'>
+                            <button type='submit' id='btn'>see more</button>
+                        </form>
+                    </div>
+                    <div class='bg color$NO'></div>
+                </div>";
+        }
+        echo $echoText;
+    }
 } catch (PDOException $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";

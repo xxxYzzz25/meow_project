@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/halfway_house_search.css">
     <title>搜尋中途之家</title>
 </head>
+
 <body>
     <!-- "php.executablePath": "D:/xampp/php/php.exe",
     "php.validate.executablePath": "D:/xampp/php/php.exe",
@@ -67,30 +68,29 @@
         </div>
     </header>
     <div class="right">
-        <h2>搜尋中途之家</h2>
+        <h2 id="qqq">搜尋中途之家</h2>
 
-    <form action="../php/halfSearch.php">
-        <div class="searchsection">
-            <div class="container">
-                <div class="formInsert">
-                    <select name="searchLoc" class="select defaultBtn">
-                        <option>地區</option>
-                        <option value="north">北部</option>
-                        <option value="center">中部</option>
-                        <option value="south">南部</option>
-                        <option value="east">東部</option>
-                        <option value="out">離島</option>
-                    </select>
-                    <input type="text" name="searchName" class="searchBar condition1" placeholder="喜歡的中途之家的名字">
-                    <button type="submit" class="searchBtn defaultBtn">
-                        <i class="fa fa-search " aria-hidden="true"></i>
-                    </button>
+            <div class="searchsection">
+                <div class="container">
+                    <div class="formInsert">
+                        <select name="searchLoc" class="select defaultBtn" id="searchLoc">
+                            <option>地區</option>
+                            <option value="north">北部</option>
+                            <option value="center">中部</option>
+                            <option value="south">南部</option>
+                            <option value="east">東部</option>
+                            <option value="out">離島</option>
+                        </select>
+                        <input type="text" name="searchName" id="searchName" class="searchBar condition1" placeholder="喜歡的中途之家的名字">
+                        <button class="searchBtn defaultBtn" id="searchBtn">
+                            <i class="fa fa-search " aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
         <div class="result">
             <div class="container" id="content"></div>
+            <!-- res -->
         </div>
     </div>
 
@@ -117,21 +117,47 @@
     </footer>
 </body>
 <script>
-    function getData(pagename) {
-        let xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            if (xhr.status == 200) {
-                //modify here
-                let content = document.getElementById('content');
-                content.innerHTML = this.responseText;
-            } else {
-                alert(xhr.status);
+    window.addEventListener('load',() => {
+        
+        function getData(info) {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    //modify here
+                    let content = document.getElementById('content');
+                    content.innerHTML = this.responseText;
+                    console.log('執行成功ajax');
+                } else {
+                    alert(xhr.status);
+                }
+            }
+            let url = '../php/halfSearch.php';
+            let dataInfo = info;
+            xhr.open("post", url, true);
+            xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+            xhr.send(dataInfo);
+        }
+        function ajaxData(e){
+            
+            let searchLoc = document.getElementById('searchLoc').value;
+            let searchName = document.getElementById('searchName').value;
+            alert(searchLoc !== '地區' || searchName !== '');
+            if(searchLoc !== '地區' || searchName !== ''){
+                if(searchLoc === '地區'){
+                    getData(searchName);
+                }else if(searchName === ''){
+                    getData(searchLoc);
+                }else{
+                    getData('searchLoc' + searchLoc + 'searchName=' + searchName);
+                }
             }
         }
-        let url = pagename;
-        xhr.open("get", url, true);
-        xhr.send(null);
-    }
-    
+
+        let searchBtn = document.getElementById('searchBtn');
+        searchBtn.addEventListener('click',ajaxData);
+
+        getData();
+    });
 </script>
+
 </html>
