@@ -6,11 +6,99 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="../css/halfway_house_detail.css">
+    <script src="../js/signIn.js"></script>
 	<title>中途之家</title>
 </head>
 
-<body>
+<body><div class="signUpLightboxBlack"></div>
+    <div class="signUpLightbox" id="loginBox">
+        <i class="fa fa-times cancel"></i>
+        <div class="bgImg" id="bgImg"></div>
+        <div id="formShape1" class="formShape formShape1">
+            <div class="chioce">
+                <button id="halfMember1">中途之家會員</button>
+                <button id="member1" class="selected">一般會員</button>
+            </div>
+            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
+                <br>
+                <br>
+                <br>
+                <br>
+                <label for="userId">會員帳號
+                    <br>
+                    <small>請輸入您的電子郵件</small>
+                </label>
+                <input type="email" id="userIdIn" name="memId" required>
+                <br>
+                <label for="userPsw">會員密碼
+                    <br>
+                    <small>請輸入6~10碼英數字</small>
+                </label>
+                <input type="password" id="userPswIn" name="memPsw" required>
+                <br>
+                <div class="chioce">
+                    <input type="submit" class="formBtn formSubmitBtn" value="登入">
+                </div>
+                <p class="signInUpPos">尚未成為會員嗎?
+                    <span id="signIn2Up">點此註冊</span>
+                </p>
+            </form>
+        </div>
+        <div id="formShape2" class="formShape formShape2">
+            <div class="chioce">
+                <button id="halfMember2">中途之家會員</button>
+                <button id="member2" class="selected">一般會員</button>
+            </div>
+            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
+                <label for="userName">會員名稱
+                    <br>
+                    <small>不得多於8個中/英文字元</small>
+                </label>
+                <input type="text" name="userName" id="userName" placeholder="請輸入您的名稱" required>
+                <br>
+                <label for="userId">會員帳號
+                    <br>
+                    <small>請輸入您的電子郵件</small>
+                </label>
+                <input type="email" name="userId" id="userId" placeholder="請輸入您的電子郵件" required>
+                <br>
+                <label for="userPsw">會員密碼
+                    <br>
+                    <small>請輸入6~10碼英數字</small>
+                </label>
+                <input type="password" name="userPsw" id="userPsw" placeholder="請輸入您的密碼" required>
+                <br>
+                <label for="userTel">聯絡電話
+                    <br>
+                </label>
+                <input type="tel" name="userTel" id="userTel" placeholder="請輸入您的手機號碼" required>
+                <br>
+                <label for="userBirth">會員生日
+                    <br>
+                </label>
+                <input type="text" name="userBirth" id="userBirth" placeholder="ex:19900101" required>
+                <br>
+                <label for="userAddress">通訊地址
+                    <br>
+                </label>
+                <input type="text" name="userAddress" id="userAddress" placeholder="請輸入您的地址" required>
+                <br>
+                <div class="chioce">
+                    <label for="userPhoto" class="formBtn" id="userPhotoLabel" required>
+                        點我上傳您的大頭貼
+                    </label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                    <input type="file" name='image' id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
+                    <input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
+                </div>
+                <p class="signInUpPos">已經是會員了嗎?
+                    <span id="signUp2In">點此登入</span>
+                </p>
+            </form>
+        </div>
+    </div>
 	<header>
 		<div class="logo">
 			<a href="../index.php">
@@ -42,7 +130,7 @@
 			<a href="#">
 				<i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
 			</a>
-			<a href="#">
+			<a href="#" class="login">
 				<i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
 			</a>
 			<a href="#">
@@ -53,12 +141,22 @@
 	</header>
 
 <?php
-$no = $_REQUEST["halfno"];
-
+$halfno = $_REQUEST["halfno"];
+// $memno = $_SESSION["MEM_NO"];
+$memno = 1;
 try {
     require_once "../php/connectBD103G2.php";
 
-    $sql     = "select * from halfway_member where HALF_NO=$no";
+
+	$sql     = "select HALF_NAME,HALF_ADDRESS,
+				HALF_TEL,HALF_OPEN,
+				HALF_INTRO,HALF_COVER,
+				EVALUATION_STARS,
+				ROUND(avg(EVALUATION_STARS), 1),
+				COUNT(EVALUATION_STARS)
+				from halfway_member h,evaluation e 
+				where h.HALF_NO=e.HALF_NO
+				and h.HALF_NO=$halfno";
     $halfway = $pdo->prepare($sql);
     $halfway->bindColumn("HALF_NAME", $NAME);
     $halfway->bindColumn("HALF_ADDRESS", $ADDRESS);
@@ -66,6 +164,8 @@ try {
     $halfway->bindColumn("HALF_OPEN", $OPEN);
     $halfway->bindColumn("HALF_INTRO", $INTRO);
     $halfway->bindColumn("HALF_COVER", $COVER);
+    $halfway->bindColumn("ROUND(avg(EVALUATION_STARS), 1)", $AVG);
+    $halfway->bindColumn("COUNT(EVALUATION_STARS)", $COUNT);
     $halfway->execute();
     $row = $halfway->fetchObject()
     ?>
@@ -102,41 +202,80 @@ try {
 					<div class="star">
 						<fieldset class="rating">
 							<input type="radio" id="star5" name="rating" value="5" />
-							<label class="full" for="star5" title="Awesome - 5 stars"></label>
-							<input type="radio" id="star4half" name="rating" value="4 and a half" />
-							<label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+							<label class="full" for="star5" title="非常好 - 5 stars"></label>
+
+							<input type="radio" id="star4half" name="rating" value="4.5" />
+							<label class="half" for="star4half" title="非常不錯 - 4.5 stars"></label>
+
 							<input type="radio" id="star4" name="rating" value="4" />
-							<label class="full" for="star4" title="Pretty good - 4 stars"></label>
-							<input type="radio" id="star3half" name="rating" value="3 and a half" />
-							<label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+							<label class="full" for="star4" title="很不錯 - 4 stars"></label>
+
+							<input type="radio" id="star3half" name="rating" value="3.5" />
+							<label class="half" for="star3half" title="還不錯 - 3.5 stars"></label>
+
 							<input type="radio" id="star3" name="rating" value="3" />
-							<label class="full" for="star3" title="Meh - 3 stars"></label>
-							<input type="radio" id="star2half" name="rating" value="2 and a half" />
-							<label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+							<label class="full" for="star3" title="還好 - 3 stars"></label>
+
+							<input type="radio" id="star2half" name="rating" value="2.5" />
+							<label class="half" for="star2half" title="有點不好 - 2.5 stars"></label>
+
 							<input type="radio" id="star2" name="rating" value="2" />
-							<label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-							<input type="radio" id="star1half" name="rating" value="1 and a half" />
-							<label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+							<label class="full" for="star2" title="不好 - 2 stars"></label>
+
+							<input type="radio" id="star1half" name="rating" value="1.5" />
+							<label class="half" for="star1half" title="有點糟 - 1.5 stars"></label>
+
 							<input type="radio" id="star1" name="rating" value="1" />
-							<label class="full" for="star1" title="Sucks big time - 1 star"></label>
-							<input type="radio" id="starhalf" name="rating" value="half" />
-							<label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+							<label class="full" for="star1" title="很糟糕 - 1 star"></label>
+
+							<input type="radio" id="starhalf" name="rating" value="0.5" />
+							<label class="half" for="starhalf" title="糟透了 - 0.5 stars"></label>
+
 						</fieldset>
+						<div class="ratingscore">
+							您的評分
+							<span id="scoretext">0</span>/5顆星
+							<input type="hidden" name="" value="">
+						</div>
 						<div class="ratingtext">
 							總平均
-							<span>4.6</span>/5顆星(共10人評分)
+							<span id="avgScore"><?php echo $AVG ?></span>/5顆星(共<span id="person"><?php echo $COUNT ?></span>人評分)
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
+<script>
+	//把點到的星星數量傳到scoretext秀出來
+	let input = document.getElementsByTagName('input');
+	for (let i = 0; i < input.length; i++) {
+		input[i].addEventListener('click', function () {
+			let score = input[i].getAttribute('value');
+			let scoretext = document.getElementById('scoretext');
+			scoretext.innerHTML = score;
+
+			// ajax傳到php 存到mysql
+			let xhr = new XMLHttpRequest();
+			xhr.onload=function(){
+				let response = JSON.parse(xhr.responseText);
+				document.getElementById("avgScore").innerHTML=response.avg;
+				document.getElementById("person").innerHTML=response.count;
+			}
+			if (scoretext.innerHTML !== 0) { 
+				alert("您已經評過分了！"); 
+			}	
+			let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
+			xhr.open("get", url, true);
+			xhr.send(null);
+		});
+	}
+</script>
+
 <?php
 } catch (PDOException $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
-    // echo "getCode : " , $e->getCode() , "<br>";
-    // echo "異動失敗,請聯絡系統維護人員";
 }
 ?>
 
@@ -147,7 +286,7 @@ try {
 try {
     require_once "../php/connectBD103G2.php";
 
-    $sql     = "select * from half_pic where HALF_NO=$no";
+    $sql     = "select * from half_pic where HALF_NO=$halfno";
     $halfway = $pdo->prepare($sql);
     $halfway->bindColumn("HALF_PIC_PATH", $PATH);
     $halfway->execute();
@@ -163,8 +302,6 @@ try {
 } catch (PDOException $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
-    // echo "getCode : " , $e->getCode() , "<br>";
-    // echo "異動失敗,請聯絡系統維護人員";
 }
 ?>
 
@@ -182,7 +319,7 @@ try {
 try {
     require_once "../php/connectBD103G2.php";
 
-    $sql     = "select * from cat where HALF_NO=$no";
+    $sql     = "select * from cat where HALF_NO=$halfno";
     $halfway = $pdo->prepare($sql);
     $halfway->bindColumn("CAT_NAME", $NAME);
     $halfway->bindColumn("CAT_COVER", $COVER);
