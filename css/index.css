@@ -642,14 +642,12 @@ header.active {
       transition: .3s all;
       color: #333;
       margin: 10px 0; }
-      .half .half-text a:hover {
-        color: #EAAF88; }
     .half .half-text a.read-more {
       width: 100%;
       text-align: right;
       display: block; }
     .half .half-text .read-more {
-      text-decoration: underline; }
+      color: #e68c80; }
     .half .half-text .half-name {
       font-family: 'Noto Sans TC';
       font-weight: 500;

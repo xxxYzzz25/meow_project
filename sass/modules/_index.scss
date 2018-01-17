@@ -336,9 +336,6 @@
             transition: .3s all;
             color: #333;
             margin: 10px 0;
-            &:hover {
-                color: #EAAF88;
-            }
         }
         a.read-more{
             width: 100%;
@@ -346,7 +343,7 @@
             display: block;
         }
         .read-more {
-            text-decoration: underline;
+            color: rgb(230, 140, 128);
         }
         .half-name {
             font-family: 'Noto Sans TC';

@@ -291,7 +291,7 @@
                         ?>
                         <li>
                             <div class="cat_list_bg">
-                                <a href="#">
+                                <a href="html/catContent.html">
                                     <div class="cat_list" style="background-image: url(<?php echo mb_substr( $dataObj -> catPic , 3 , mb_strlen($dataObj -> catPic)-1 ); ?>);">
                                         <div class="bubble">
                                             <span class="kit-name"><?php echo $dataObj -> catName ?></span>
