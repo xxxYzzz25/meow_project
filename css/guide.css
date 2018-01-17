@@ -3,6 +3,7 @@ v2.0 | 20110126
 License: none (public domain)
 */
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -36,6 +37,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+input, select {
+  font-family: 'Noto Sans TC';
+  font-weight: bolder; }
+
+body {
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
+  letter-spacing: 3px; }
+
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -54,11 +64,35 @@ body {
   to {
     transform: rotate(360deg); } }
 
+@keyframes upupup {
+  form {
+    transform: perspective(600px) translateY(0) translateZ(0); }
+  to {
+    transform: perspective(600px) translateY(-50px) translateZ(100px); } }
+
+body {
+  background-image: url(../images/test.jpg); }
+
+.svg-space {
+  height: 20vh;
+  padding-top: 5vh;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .svg-space #logo {
+    margin: auto;
+    width: 450px;
+    height: 450px; }
+
 .guide {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: space-around;
   align-items: center; }
+  .guide a {
+    text-decoration: none; }
   .guide .front,
   .guide .backed {
     position: relative; }
@@ -67,10 +101,24 @@ body {
       width: 300px;
       height: 300px;
       animation: rororo infinite 6s linear; }
-    .guide .front:hover img,
-    .guide .backed:hover img {
-      animation: rororo infinite 6s linear reverse; }
+    .guide .front:hover .watch,
+    .guide .backed:hover .watch {
+      animation: upupup 3s linear forwards; }
   .guide .backed img {
     animation: rororo infinite 6s linear reverse; }
-    .guide .backed img:hover {
-      animation: rororo infinite 6s linear; }
+  .guide .anchor {
+    background-color: rgba(51, 51, 51, 0.397);
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 36px;
+    color: #fff;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 500; }
