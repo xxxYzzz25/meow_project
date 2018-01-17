@@ -111,6 +111,13 @@ window.addEventListener('load', function () {
         know.textContent = '我知道了!';
         know.removeEventListener('click', reset);
         showData(subject);
+        Object.assign(hug, {
+            style: 'right: 0px;'
+        });
+
+        Object.assign(people, {
+            style: 'left: 0px;'
+        });
     }
 
     option[0].addEventListener('click', adjudge);
