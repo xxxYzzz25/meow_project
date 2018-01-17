@@ -42,7 +42,7 @@ function createCartList(itemKey,itemValue){
 	tdImage.style.width = '200px';
 
 	var image = document.createElement('img');
-	console.log(itemImage);
+	// console.log(itemImage);
 	image.src = itemImage;
 	image.width = '80';
 

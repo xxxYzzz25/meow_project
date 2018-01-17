@@ -27,7 +27,7 @@ function doFirst(){
 function addItem(itemId,itemValue){
 
 	var image = document.createElement('img');
-	image.src = '../img/' + itemValue.split('|')[1];
+	image.src = '../images/productPic/' + itemValue.split('|')[1];
 	image.id = 'imageSelect';
 
 	var title = document.createElement('span');
@@ -49,11 +49,13 @@ function addItem(itemId,itemValue){
 	//計算購買數量和小計
 	var itemString = storage.getItem('addItemList');
 	var items = itemString.substr(0,itemString.length-2).split(', ');
+	console.log(items);
 	// console.log(items); //["A1001","A1002"]
 
 	var subtotal = 0;
 	for(var key in items){ //use items[key]
 		var itemInfo = storage.getItem(items[key]);
+		console.log(itemInfo);
 		var itemPrice = parseInt(itemInfo.split('|')[2]);
 
 		subtotal += itemPrice;
