@@ -8,7 +8,7 @@
     <span>*提醒您，若您的未取件次數累計達5次(含)，將無法再使用超商取貨付款，造成不便及困擾之處，懇請見諒。</span>
 <?php
 try {
-    require_once "connectBD103G2.php";
+    require_once "../php/connectBD103G2.php";
 
     $sql       = "select * from orderlist where MEM_NO =?";
     $orderlist = $pdo->prepare($sql);

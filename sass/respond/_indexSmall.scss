@@ -38,6 +38,14 @@
     .pick-kit {
         ul {
             width: 600%;
+            li {
+                &:nth-child(even) .cat_list_bg a .cat_list .bubble {
+                    top: 40%;
+                }
+                &:nth-child(odd) .cat_list_bg a .cat_list .bubble {
+                    top: 5%;
+                }
+            }
         }
     }
     .noticegame {
@@ -57,7 +65,7 @@
         //         width: 33.333%;
         //     }
         // }
-        .ask{
+        .ask {
             display: none;
         }
         .smallbox {
@@ -71,32 +79,32 @@
             display: none;
         }
     }
-    .shop{
-        .prod{
+    .shop {
+        .prod {
             height: 70vh;
-            .arrowLeft{
+            .arrowLeft {
                 display: block;
                 top: 45vh;
             }
-            .arrowRight{
+            .arrowRight {
                 display: block;
                 top: 45vh;
             }
         }
-        ul.prod-list{
+        ul.prod-list {
             width: 400%;
             height: 70vh;
             position: absolute;
             flex-wrap: nowrap;
             left: 0;
             top: 0;
-            li.prod-item{
+            li.prod-item {
                 width: 25%;
-                .front{
+                .front {
                     width: 80%;
                     height: 60%;
                 }
-                .backed{
+                .backed {
                     width: 80%;
                     height: 60%;
                 }

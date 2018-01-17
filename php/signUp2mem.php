@@ -25,7 +25,9 @@
 				echo "<center>帳號已存在！</center>";
 				return;
 			}else{
-				if(($_FILES['image']['type']== "image/gif" || $_FILES['image']['type']== "image/png" || $_FILES['image']['type']== "image/jpeg" || $_FILES['image']['type']== "image/JPEG" || $_FILES['image']['type']== "image/PNG" || $_FILES['image']['type']== "image/GIF")){
+				if(!isset($_FILES['image'])){
+					echo "<center>請上傳大頭貼!</center>";
+				}else if(($_FILES['image']['type']== "image/gif" || $_FILES['image']['type']== "image/png" || $_FILES['image']['type']== "image/jpeg" || $_FILES['image']['type']== "image/JPEG" || $_FILES['image']['type']== "image/PNG" || $_FILES['image']['type']== "image/GIF")){
 					if ($_FILES['image']['error'] === 0) {
 						$dir = "../images/memberPic";
 						if (file_exists($dir) === false) {	// 如果沒有$dir資料夾路徑
@@ -78,7 +80,6 @@
 		}catch (Exception $e) {
 			echo "<center>因為小精靈在搗亂伺服器所以失敗了唷<br>請稍後再試</center>";
 		}
-		echo "<script type='text/javascript'>back()</script>";
 	?>
 	<script type='text/javascript'>
 		setTimeout(function back(){

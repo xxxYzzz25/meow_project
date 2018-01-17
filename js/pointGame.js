@@ -73,7 +73,7 @@ window.addEventListener('load', function () {
         if (count > 8 && bingo >= 5) {
             know.textContent = '及格！現在去領養';
             know.addEventListener('click', function () {
-                document.location.href = "../html/catSearch.html";
+                document.location.href = "html/catSearch.html";
             });
         } else if (count > 8 && bingo < 5) {
             know.textContent = '失敗..再來一次?';
@@ -86,9 +86,9 @@ window.addEventListener('load', function () {
     // =========================
     function hoverImg(e) {
         if (e.target.id === 'optionA') {
-            e.target.style.backgroundImage = 'url(../images/yes_hover.png)';
+            e.target.style.backgroundImage = 'url(images/yes_hover.png)';
         } else if (e.target.id === 'optionB') {
-            e.target.style.backgroundImage = 'url(../images/no_hover.png)';
+            e.target.style.backgroundImage = 'url(images/no_hover.png)';
         }
     }
 
@@ -111,6 +111,13 @@ window.addEventListener('load', function () {
         know.textContent = '我知道了!';
         know.removeEventListener('click', reset);
         showData(subject);
+        Object.assign(hug, {
+            style: 'right: 0px;'
+        });
+
+        Object.assign(people, {
+            style: 'left: 0px;'
+        });
     }
 
     option[0].addEventListener('click', adjudge);

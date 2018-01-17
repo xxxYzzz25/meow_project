@@ -13,13 +13,13 @@ try {
              where d.CAT_NO = c.CAT_NO
              and c.HALF_NO = h.HALF_NO
              and c.HALF_NO = :no
-             and c.CAT_NAME = :catName;"
+             and c.CAT_NAME = :catName";
     $catno = $pdo->prepare($sql1);
     $catno->bindValue(":no", $_REQUEST["no"]);
     $catno->bindValue(":catName", $_REQUEST["catName"]);
     $catno->execute();
 
-    $sql2 = "insert into donate(CAT_NO,DONATE_NAME,DONATE_PRICE,DONATE_DATE) VALUES (:catNo,:memName,:price,curdate());"
+    $sql2 = "insert into donate(CAT_NO,DONATE_NAME,DONATE_PRICE,DONATE_DATE) VALUES (:catNo,:memName,:price,curdate())";
     $donate = $pdo->prepare($sql2);
     $donate->bindValue(":catNo", $_REQUEST["catNo"]);
     $donate->bindValue(":memName", $_REQUEST["memName"]);

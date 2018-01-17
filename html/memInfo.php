@@ -6,7 +6,7 @@
     <h4>修改會員資料</h4>
     <?php
 try {
-    require_once("connectBD103G2.php");
+    require_once("../php/connectBD103G2.php");
 
     $sql = "select * from member where MEM_NO =?";
     $mem = $pdo->prepare( $sql );

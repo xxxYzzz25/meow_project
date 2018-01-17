@@ -32,18 +32,11 @@
             $dataObj = $data -> fetchObject();
             echo "<script>var waitQty='".$dataObj->COUNT."';</script>";
             //取出登記日期最早的六筆資料
-            $sql = "select C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by CAT_DATE limit 6";
+            $sql = "select C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName,C.CAT_COVER catPic from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by CAT_DATE limit 6";
             $data = $pdo -> query($sql);
     ?>
     <div id="loading">
         <img src="images/loading.svg" id="loadingCat" alt="loading">
-    </div>
-    <div class="hb">
-        <div class="hamburger" id="hamburger-6">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
     </div>
     <div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
@@ -135,7 +128,7 @@
     <!-- header -->
     <header>
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
                 <h1>
                     <img src="images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -147,7 +140,7 @@
                     <a href="html/catSearch.html">尋喵</a>
                 </li>
                 <li>
-                    <a href="php/halfway_house_search.php">中途之家</a>
+                    <a href="html/halfway_house_search.php">中途之家</a>
                 </li>
                 <li>
                     <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
@@ -172,6 +165,13 @@
                 <span id="like">6</span>
             </a>
         </div>
+        <div class="hb">
+        <div class="hamburger" id="hamburger-6">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
     </header>
     <div id="fullpages">
         <div class="margin-200">
@@ -225,7 +225,7 @@
                             <br>
                             <small>Scroll Down</small>
                             <br>
-                            <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
+                            <a href="#page2"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -291,8 +291,8 @@
                         ?>
                         <li>
                             <div class="cat_list_bg">
-                                <a href="#">
-                                    <div class="cat_list">
+                                <a href="html/catContent.html">
+                                    <div class="cat_list" style="background-image: url(<?php echo mb_substr( $dataObj -> catPic , 3 , mb_strlen($dataObj -> catPic)-1 ); ?>);">
                                         <div class="bubble">
                                             <span class="kit-name"><?php echo $dataObj -> catName ?></span>
                                             <span class="kit-age"><?php echo $dataObj -> catDate."出生" ?></span>
@@ -366,36 +366,53 @@
                     </div>
                     <ul class="half-list" id="half-list">
                         <?php
-                            $sql = "select h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,h.HALF_TEL halfTel,h.HALF_OPEN,h.HALF_COVER halfPic,count(c.HALF_NO) count from HALFWAY_MEMBER h join CAT c on h.HALF_NO = c.HALF_NO join HALF_PIC p on c.HALF_NO = p.HALF_NO group by h.HALF_NO order by 評價 limit 3";
+                            $sql = "select h.HALF_NO halfNo,h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,h.HALF_TEL halfTel,h.HALF_OPEN halfTime,h.HALF_COVER halfPic,count(c.HALF_NO) count,avg(e.EVALUATION_STARS) stars
+                            from HALFWAY_MEMBER h 
+                            join CAT c 
+                            on h.HALF_NO = c.HALF_NO
+                            join EVALUATION e 
+                            on c.HALF_NO = e.HALF_NO
+                            group by c.HALF_NO 
+                            order by avg(e.EVALUATION_STARS) desc
+                            limit 3";
                             $data = $pdo -> query($sql);
-                            // <!--待養,圖片,名稱,地址,電話,營業時間 1.HALFWAY_MEMBER 2.CAT 3.HALF_PIC-->
+                            $pdo2 = new PDO( $dsn, $user,$psw, $options );
+                            
+                            // <!--待養,圖片,名稱,地址,電話,營業時間,評價排列 1.HALFWAY_MEMBER 2.CAT 3.HALF_PIC-->
+                            
                             while ($dataObj = $data -> fetchObject()) {
-                                $str = $dataObj -> count;
-                                $str = explode("",$str);
-                                $strLen = count($str);
+                                
                         ?>
                         <li>
                             <div class="half-item">
                                 <div class="half-qty">
                         <?php
-                            for ($i=0; $i < $strLen; $i++) { 
-                                    ?>
-                                    <img src="images/number<?php echo $str[$i] ?>.png" alt="<?php echo $str[$i] ?>">
+                            $sql2 = "select count(*) count from CAT where HALF_NO = ".$dataObj -> halfNo;
+                            $data2 = $pdo2 -> query($sql2);
+                            while ($dataObj2 = $data2 -> fetchObject()) { 
+                                    $str = $dataObj2 -> count;
+                                    $str = str_split($str,1);
+                                    foreach ($str as $key => $value) {
+                                        # code...
+                                    
+                        ?>
+                                    <img src="images/number<?php echo $value ?>.png" alt="<?php echo $value ?>">
                                     <?php
+                                    }
                                 }
                         ?>
                                     <span>隻喵喵待領養</span>
                                 </div>
                                 </a>
-                                <div class="half-pic"></div>
+                                <div class="half-pic" style="background-image: url(<?php echo mb_substr( $dataObj -> halfPic , 3 , mb_strlen($dataObj -> halfPic)-1 ); ?>);"></div>
                                 <div class="half-text">
-                                    <a href="html/halfway_house_detail.html">
+                                    <a href="html/halfway_house_detail.php?halfno=<?php echo $dataObj -> halfNo ?>">
                                         <span class="half-name"><?php echo $dataObj -> halfName ?></span>
                                     </a>
                                     <span class="half-address"><?php echo $dataObj -> halfAddress ?></span>
                                     <span class="half-tel"><?php echo $dataObj -> halfTel ?></span>
                                     <span class="half-time"><?php echo $dataObj -> halfTime ?></span>
-                                    <a href="#" class="read-more">前往領養</a>
+                                    <a href="html/halfway_house_detail.php?halfno=<?php echo $dataObj -> halfNo ?>" class="read-more">前往領養</a>
                                 </div>
                             </div>
                         </li>

@@ -212,8 +212,8 @@
                         background: #369;
                         box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.76), -1px -1px 6px rgba(0, 0, 0, 0.555);
                         .bubble {
-                            width: 200px;
-                            height: 200px;
+                            width: 250px;
+                            height: 250px;
                             border-radius: 50%;
                             display: block;
                             background-color: rgba(255, 255, 255, 0.687);
@@ -317,12 +317,15 @@
         }
     }
     .half-pic {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
         width: 35%;
         height: 100%;
-        background-image: url(../images/half_1.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     .half-text {
         width: 35%;
@@ -333,9 +336,6 @@
             transition: .3s all;
             color: #333;
             margin: 10px 0;
-            &:hover {
-                color: #EAAF88;
-            }
         }
         a.read-more{
             width: 100%;
@@ -343,7 +343,7 @@
             display: block;
         }
         .read-more {
-            text-decoration: underline;
+            color: rgb(230, 140, 128);
         }
         .half-name {
             font-family: 'Noto Sans TC';
