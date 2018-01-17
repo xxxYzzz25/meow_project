@@ -317,12 +317,15 @@
         }
     }
     .half-pic {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
         width: 35%;
         height: 100%;
-        background-image: url(../images/half_1.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     .half-text {
         width: 35%;

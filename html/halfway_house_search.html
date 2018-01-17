@@ -125,7 +125,6 @@
                     //modify here
                     let content = document.getElementById('content');
                     content.innerHTML = this.responseText;
-                    console.log('執行成功ajax');
                 } else {
                     alert(xhr.status);
                 }
@@ -154,7 +153,7 @@
 
         let searchBtn = document.getElementById('searchBtn');
         searchBtn.addEventListener('click',ajaxData);
-
+        
         getData();
     });
 </script>

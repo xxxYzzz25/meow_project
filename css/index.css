@@ -625,12 +625,14 @@ header.active {
       height: 55px;
       margin: 0 5px; }
   .half .half-pic {
-    width: 35%;
-    height: 100%;
-    background-image: url(../images/half_1.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
-    background-size: cover; }
+    width: 35%;
+    height: 100%; }
+    .half .half-pic img {
+      width: 100%;
+      height: 100%; }
   .half .half-text {
     width: 35%;
     padding: 10px;
