@@ -543,34 +543,46 @@ header ul li:nth-child(5):after {
   color: #eb2f2f;
 }
 
-.right .content .memOrderlist form {
+.right .content .memOrderlist table {
   width: 100%;
   margin: 30px auto;
 }
 
-.right .content .memOrderlist form table {
-  width: 100%;
-}
-
-.right .content .memOrderlist form tr {
+.right .content .memOrderlist table tr {
   text-align: center;
 }
 
-.right .content .memOrderlist form th {
+.right .content .memOrderlist table th {
   background-color: #f2f2f2;
   border: 1px solid #ccc;
   padding: 20px 0 20px 0;
 }
 
-.right .content .memOrderlist form td {
+.right .content .memOrderlist table td {
   border: 1px solid #ccc;
   padding: 20px 0 20px 0;
 }
 
-.right .content .memOrderlist form td .fa-trash {
+.right .content .memOrderlist table td .fa-trash {
   font-size: 16.8px;
   color: firebrick;
   cursor: pointer;
+}
+
+.right .content .memOrderlist table td button {
+  border-radius: 60px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  padding: 2% 8% 2% 10%;
+  border: 1px solid #333333;
+  background-color: transparent;
+  color: #333;
+}
+
+.right .content .memOrderlist table td button:hover {
+  background-color: #EAAF88;
+  border: 1px solid #EAAF88;
+  color: #fff;
 }
 
 @media all and (max-width: 991px) {

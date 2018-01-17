@@ -12,7 +12,8 @@
 	<title>中途之家</title>
 </head>
 
-<body><div class="signUpLightboxBlack"></div>
+<body>
+	<div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
         <div class="bgImg" id="bgImg"></div>
@@ -147,14 +148,13 @@ $memno = 1;
 try {
     require_once "../php/connectBD103G2.php";
 
-
-	$sql     = "select HALF_NAME,HALF_ADDRESS,
+    $sql = "select HALF_NAME,HALF_ADDRESS,
 				HALF_TEL,HALF_OPEN,
 				HALF_INTRO,HALF_COVER,
 				EVALUATION_STARS,
 				ROUND(avg(EVALUATION_STARS), 1),
 				COUNT(EVALUATION_STARS)
-				from halfway_member h,evaluation e 
+				from halfway_member h,evaluation e
 				where h.HALF_NO=e.HALF_NO
 				and h.HALF_NO=$halfno";
     $halfway = $pdo->prepare($sql);
@@ -262,9 +262,9 @@ try {
 				document.getElementById("avgScore").innerHTML=response.avg;
 				document.getElementById("person").innerHTML=response.count;
 			}
-			if (scoretext.innerHTML !== 0) { 
-				alert("您已經評過分了！"); 
-			}	
+			if (scoretext.innerHTML !== 0) {
+				alert("您已經評過分了！");
+			}
 			let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
 			xhr.open("get", url, true);
 			xhr.send(null);
@@ -341,13 +341,13 @@ try {
 						</h3>
 						<?php echo $ADDRESS ?>
 						<br>
-						<?php 
-						if ($SEX = 1) {
-							echo "男生"."<i class='fa fa-mars' aria-hidden='true'></i>";
-						}else {
-							echo "女生"."<i class='fa fa-venus' aria-hidden='true'></i>";
-						}
-						?>
+						<?php
+if ($SEX = 1) {
+            echo "男生" . "<i class='fa fa-mars' aria-hidden='true'></i>";
+        } else {
+            echo "女生" . "<i class='fa fa-venus' aria-hidden='true'></i>";
+        }
+        ?>
 						<br>
 						<?php echo $NARRATIVE ?>
 					</div>
