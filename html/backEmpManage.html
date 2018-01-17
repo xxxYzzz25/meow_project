@@ -49,7 +49,7 @@
             <div class="empManage">
                 <button id="newEmp" class="defaultBtn">新增員工帳號</button>
                 <form>
-                    <table>
+                    <table id="empTable">
                         <tr class="newEmpTR newEmpTROff" id="abc">
                             <th>員工帳號</th>
                             <th>員工密碼</th>
@@ -77,103 +77,32 @@
                         </tr>
                 </form>
                 <form action="#">
-                    <tr>
+                    <tr id="empRow">
                         <th>員工帳號</th>
                         <th>員工密碼</th>
                         <th>員工職位</th>
-                        <th>員工帳號移除</th>
+                        <th>員工帳號管理</th>
                     </tr>
-
-                    <tr>
-                        <td>
-                            <input type="text" id="empId1">
-                        </td>
-                        <td>
-                            <input type="password" name="empPsw" id="empPsw1">
-                        </td>
-                        <td>
-                            <select name="EmpOffice" id="EmpOffice1">
-                                <option value="">Supper Admin</option>
-                                <option value="">Sales</option>
-                                <option value="">RD</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" id="empId2">
-                        </td>
-                        <td>
-                            <input type="password" name="empPsw" id="empPsw2">
-                        </td>
-                        <td>
-                            <select name="EmpOffice" id="EmpOffice2">
-                                <option value="">Supper Admin</option>
-                                <option value="">Sales</option>
-                                <option value="">RD</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" id="empId3">
-                        </td>
-                        <td>
-                            <input type="password" name="empPsw" id="empPsw3">
-                        </td>
-                        <td>
-                            <select name="EmpOffice" id="EmpOffice3">
-                                <option value="">Supper Admin</option>
-                                <option value="">Sales</option>
-                                <option value="">RD</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" id="empId4">
-                        </td>
-                        <td>
-                            <input type="password" name="empPsw" id="empPsw4">
-                        </td>
-                        <td>
-                            <select name="EmpOffice" id="EmpOffice4">
-                                <option value="">Supper Admin</option>
-                                <option value="">Sales</option>
-                                <option value="">RD</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                    </tr>
-                    <tr id="trLast">
-                        <td>
-                            <input type="text" id="empId5">
-                        </td>
-                        <td>
-                            <input type="password" name="empPsw" id="empPsw5">
-                        </td>
-                        <td>
-                            <select name="EmpOffice" id="EmpOffice5">
-                                <option value="">Supper Admin</option>
-                                <option value="">Sales</option>
-                                <option value="">RD</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                    </tr>
+                    <!-- emp data star -->
+                    <!-- <tr>
+                            <td>
+                                <input type='text' id='empId1' value='$dataRow -> EMP_ID'>
+                            </td>
+                            <td>
+                                <input type='password' name='empPsw' id='empPsw1' value='******'>
+                            </td>
+                            <td>
+                                <select name='EmpOffice' id='EmpOffice1'>
+                                    <option value=''>Supper Admin</option>
+                                    <option value=''>Sales</option>
+                                    <option value=''>RD</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type='button' value='異動'>
+                            </td>
+                        </tr> -->
+                    <!-- emp data end -->
                     </table>
                     <input type="submit" value="確認送出" class="defaultBtn">
                     <input type="reset" value="重設全部" class="defaultBtn">
@@ -182,35 +111,217 @@
         </div>
     </div>
     <script>
-        window.addEventListener('load', function () {
-            const newEmp = document.getElementById('newEmp');
-            newEmp.addEventListener('click', function newEmp() {
-                const newEmp = document.getElementById('newEmp')
-                const tr = document.getElementsByClassName('newEmpTR')
-                if (tr[0].className.match('newEmpTROff') && tr[1].className.match('newEmpTROff')) {
-                    tr[0].className =
-                        tr[0].className.replace
-                            ('newEmpTROff', 'newEmpTROn')
-                    tr[1].className =
-                        tr[1].className.replace
-                            ('newEmpTROff', 'newEmpTROn')
-                    newEmp.innerText = '取消新增員工'
-                } else {
-                    tr[0].className =
-                        tr[0].className.replace
-                            ('newEmpTROn', 'newEmpTROff')
-                    tr[1].className =
-                        tr[1].className.replace
-                            ('newEmpTROn', 'newEmpTROff')
-                    newEmp.innerText = '新增員工帳號'
-                }
-            })
-            const ensureBtn = document.getElementById('ensureBtn')
-            ensureBtn.addEventListener('click', function () {
-                confirm('您確定要新增嗎?')
-            })
+        // window.addEventListener('load', function () {
+        //     const newEmp = document.getElementById('newEmp');
+        //     newEmp.addEventListener('click', function newEmp() {
+        //         const newEmp = document.getElementById('newEmp')
+        //         const tr = document.getElementsByClassName('newEmpTR')
+        //         if (tr[0].className.match('newEmpTROff') && tr[1].className.match('newEmpTROff')) {
+        //             tr[0].className =
+        //                 tr[0].className.replace
+        //                     ('newEmpTROff', 'newEmpTROn')
+        //             tr[1].className =
+        //                 tr[1].className.replace
+        //                     ('newEmpTROff', 'newEmpTROn')
+        //             newEmp.innerText = '取消新增員工'
+        //         } else {
+        //             tr[0].className =
+        //                 tr[0].className.replace
+        //                     ('newEmpTROn', 'newEmpTROff')
+        //             tr[1].className =
+        //                 tr[1].className.replace
+        //                     ('newEmpTROn', 'newEmpTROff')
+        //             newEmp.innerText = '新增員工帳號'
+        //         }
+        //     })
+        //     const ensureBtn = document.getElementById('ensureBtn')
+        //     ensureBtn.addEventListener('click', function () {
+        //         confirm('您確定要新增嗎?')
+        //     })
+        // })
+        window.addEventListener('load',()=>{
 
-        })
+            function edit(){
+                this.removeEventListener('click',edit);
+                let parent = this.parentNode;
+                let editBtn = document.createElement('input');
+                let deleteBtn = document.createElement('input');
+
+                Object.assign(editBtn,{type:'button',value:'編輯'});
+                Object.assign(deleteBtn,{type:'button',value:'刪除'});
+
+                editBtn.addEventListener('click',ajaxUpdate);
+                deleteBtn.addEventListener('click',ajaxDelete);
+
+                this.remove();
+                
+                parent.appendChild(editBtn);
+                parent.appendChild(deleteBtn);
+            }
+
+            function ajaxUpdate(){
+                let tempId = '';
+                let tempPsw = '';
+                let tempOffice = '';
+
+                function editDone(){
+                    this.removeEventListener('click',editDone);
+                    let tr = this.parentNode.parentNode;
+                    let empIdTd = tr.childNodes[0];
+                    let empId = empIdTd.firstChild;
+                    let empIdText = empId.value;
+                    let empPswTd = tr.childNodes[1];
+                    let empPsw = empPswTd.firstChild;
+                    let empPswText = empPsw.value;
+                    let empOfficeTd = tr.childNodes[2]
+                    let empOffice = empOfficeTd.firstChild;
+                    let empOfficeText = empOffice.value;
+                    let admin = tr.childNodes[3];
+                    
+                    empId.remove();
+                    empIdTd.textContent = empIdText;
+
+                    empPsw.remove();
+                    empPswTd.textContent = empPswText;
+
+                    empOffice.remove();
+                    empOfficeTd.textContent = empOfficeText;
+
+                    admin.remove();
+                    admin = document.createElement('td');
+                    let changeBtn = document.createElement('input');
+                    Object.assign(changeBtn,{type:'button',value:'異動'});
+                    changeBtn.addEventListener('click',edit);
+                    admin.appendChild(changeBtn);
+                    tr.appendChild(admin);
+                }
+                function editCancel(){
+                    this.removeEventListener('click',editCancel);
+                    let tr = this.parentNode.parentNode;
+                    let 
+                }
+
+                this.removeEventListener('click',ajaxUpdate);
+                let tr = this.parentNode.parentNode;
+                let empId = tr.childNodes[0];
+                let empIdText = tr.childNodes[0].textContent;
+                tempId = empIdText;
+                let empPsw = tr.childNodes[1];
+                let empPswText = tr.childNodes[1].textContent;
+                tempPsw = empPswText;
+                let empOffice = tr.childNodes[2];
+                tempOffice = tr.childNodes[2].textContent;
+                let op1 = document.createElement('option');
+                let op1Text = document.createTextNode('Supper Admin');
+                let op2 = document.createElement('option');
+                let op2Text = document.createTextNode('Sales');
+                let op3 = document.createElement('option');
+                let op3Text = document.createTextNode('RD');
+                let admin = tr.childNodes[3];
+
+                empId.remove();
+                let empIdTd = document.createElement('td');
+                empId = document.createElement('input');
+                Object.assign(empId,{value:empIdText});
+                empIdTd.appendChild(empId);
+                tr.appendChild(empIdTd);
+
+                empPsw.remove();
+                let empPswTd = document.createElement('td');
+                empPsw = document.createElement('input');
+                Object.assign(empPsw,{type:'password',value:empPswText});
+                empPswTd.appendChild(empPsw);
+                tr.appendChild(empPswTd);
+
+                empOffice.remove();
+                let empOfficeTd = document.createElement('td');
+                empOffice = document.createElement('select');
+                op1.appendChild(op1Text);
+                op2.appendChild(op2Text);
+                op3.appendChild(op3Text);
+                Object.assign(op1,{value:'Supper Admin'});
+                Object.assign(op2,{value:'Sales'});
+                Object.assign(op3,{value:'RD'});
+                empOffice.appendChild(op1);
+                empOffice.appendChild(op2);
+                empOffice.appendChild(op3);
+                empOfficeTd.appendChild(empOffice);
+                tr.appendChild(empOfficeTd);
+
+                admin.remove();
+                admin = document.createElement('td');
+                let sureBtn = document.createElement('input');
+                let cancelBtn = document.createElement('input');
+                Object.assign(sureBtn,{type:'button',value:'完成'});
+                Object.assign(cancelBtn,{type:'button',value:'取消'});
+                sureBtn.addEventListener('click',editDone);
+                cancelBtn.addEventListener('click',editCancel);
+                admin.appendChild(sureBtn);
+                admin.appendChild(cancelBtn);
+                tr.appendChild(admin);
+                // ajax('../php/backEmpManageUpdate.php',dataUpdate,command);
+            }
+
+            function ajaxDelete(){
+                this.removeEventListener('click',ajaxDelete);
+                if(confirm('確認刪除?')){
+
+                    let tr = this.parentNode.parentNode;
+                    let empId = tr.firstChild.textContent;
+                    let command = 'empId=' + empId;
+                    ajax('../php/backEmpManageDelete.php',function(){alert('刪除完成')},command);
+                }
+            }
+
+            function query(){
+                let empData = JSON.parse(this.responseText);
+                let empTable = document.getElementById('empTable');
+                let empRow = document.getElementById('empRow');
+                let fragment = document.createDocumentFragment();
+                
+                for (const key in empData) {
+
+                    let emp = empData[key];
+                    for (const name in emp) {
+
+                        let tr = document.createElement('tr');
+                        let empId = document.createElement('td');
+                        let empIdText = document.createTextNode(name);
+                        let empPaw = document.createElement('td');
+                        let empPswText = document.createTextNode('******');
+                        let empOffice = document.createElement('td');
+                        let empOfficeText = document.createTextNode(emp[name]);
+                        let change = document.createElement('td');
+                        let changeBtn = document.createElement('input');
+                        
+                        Object.assign(changeBtn,{type:'button',value:'異動'});
+
+                        changeBtn.addEventListener('click',edit);
+
+                        change.appendChild(changeBtn);
+                        empOffice.appendChild(empOfficeText);
+                        empPaw.appendChild(empPswText);
+                        empId.appendChild(empIdText);
+
+                        tr.appendChild(empId);
+                        tr.appendChild(empPaw);
+                        tr.appendChild(empOffice);
+                        tr.appendChild(change);
+                        fragment.appendChild(tr);
+                    }
+                    empTable.appendChild(fragment);
+                }
+            }
+
+            function ajax(url,callback,dataInfo){
+                let xhr = new XMLHttpRequest();
+                xhr.open('post',url);
+                xhr.onload = callback;
+                xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                xhr.send();
+            }
+            ajax('../php/backEmpManageQuery.php',query,null);
+        });
     </script>
 </body>
 

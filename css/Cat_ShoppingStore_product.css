@@ -35,11 +35,17 @@ body{
     }
 }
 
-.title{
+h2{
 	text-align: center;
-	padding: 3%;
-	font-size: 34px;
-	letter-spacing: 15px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 26px;
+    letter-spacing: 15px;
+    text-align: center;
+    padding: 5%;
+	margin: 0;
 }
 
 .menu{

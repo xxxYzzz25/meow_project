@@ -84,7 +84,7 @@
                         </tr>
                     </form>
     <?php
-                }
+            }
             } catch (PDOException $e) {
                 echo "錯誤原因 : " , $e->getMessage() , "<br>";
                 echo "錯誤行號 : " , $e->getLine() , "<br>";
@@ -94,13 +94,13 @@
                     <tr>
                         <td colspan="3">
                             <a href="?pageNo=1">第一頁</a>
-                            <?
+                            <?php
                                 for($i=1;$i<=$totalpage;$i++){
                                     echo '<a href="?pageNo='.$i.'"class="defaultBtn">'.$i.'</a> ';
                                 }
                                 $i = $i-1;
                                 echo '<a href="?pageNo='.$i.'">最後一頁</a> ';
-                            }
+        }
                             ?>
 
                         </td>

@@ -13,7 +13,6 @@
     <script src="../js/cat/like.js"></script>
     <!-- 引用助養資訊表格 -->
     <script src="../js/cat/createTable.js"></script>
-    <script src="../js/cat/processBar.js"></script>
 	<title>尋喵啟事</title>
 </head>
 
@@ -201,8 +200,10 @@
 					</div>
 				</figure>
 			</picture>
-			<div id="donateArea">
-
+			<div>
+				<form action="../php/donate2db.php" id="donateArea" class="donateForm" method="post">
+					<input type="hidden" name="catNo" value="<?echo $no?>">
+				</form>
             </div>
             <div class="donateInfo"><br>
             <?php
@@ -245,7 +246,12 @@
                 $sql2 = "select cat_no, SUM(DONATE_PRICE) total from donate where CAT_NO = $no group by CAT_NO";
                 $donate = $pdo -> query( $sql2 );
                 $donateRow = $donate->fetchObject();
-                echo $donateRow->cat_no == null ? 0 : $donateRow->total;
+				echo isset($donateRow->cat_no) ? $donateRow->total : 0;
+				if(isset($donateRow->cat_no)){
+					echo "<script>var totalDonate = $donateRow->total</script>";
+				}else{
+					echo "<script>var totalDonate = 0</script>";
+				}
             ?>
                     NT/ 2750NT</h2>
             </div>
@@ -347,6 +353,8 @@
 			</div>
 		</div>
 	</footer>
+    <script src="../js/cat/processBar.js"></script>
+	
 </body>
 
 </html>
