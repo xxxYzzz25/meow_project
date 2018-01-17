@@ -17,7 +17,6 @@
 			$tel = $_POST['userTel'];
 			$birth = $_POST['userBirth'];
 			$address = $_POST['userAddress'];
-
 			$sql = "select * from member where MEM_Id = ?";
 			$stmt = $pdo -> prepare($sql);
 			$stmt -> bindValue(1, $id);

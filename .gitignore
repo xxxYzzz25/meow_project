@@ -38,6 +38,9 @@ jspm_packages
 .node_repl_history
 
 .DS_Store
+.idea
+.idea/php.xml
+.ideavcs.xml
 ._.DS_Store
 .sass-cache/
 bower_components
@@ -50,11 +53,13 @@ dest/aseets/css/autoprefixer
 dist/
 .bowerrc
 .gitignore
-gulpfile.js
 package.json
-package-lock.json
-package-lock.json
+.jshintrc
+.eslintrc.json
 bower.json
-.bowerrc
-timer.html
-php/connectBD103G2.php
+gulpfile.js
+package-lock.json
+readme.md
+.vscode
+/php/phpLab/
+/php/connectBD103G2.php
