@@ -7,6 +7,13 @@
 <head>
 <meta charset="utf-8">
 <title>會員登入</title>
+<style>
+    a{
+        cursor: pointer;
+        border-bottom: 1px solid #44f;
+        color: #44f;
+    }
+</style>
 </head>
 
 <body>
@@ -31,21 +38,28 @@
                 if ($memRow["MEM_BAN"]) {
                     echo "<center>此帳號已被停權, 若有疑問請來信客服。</center>";
                 }else{
-                    $_SESSION["MEM_ID"] = $memRow["MEM_ID"];
+                    $_SESSION["MEM_NO"] = $memRow["MEM_NO"];
                     echo "<center>", $memRow["MEM_NAME"] , "您好~</center>";//致歡迎詞
                 }
             }
         }catch( PDOException $e){
         echo "行號: ",$e->getLine(), "<br>";
         echo "訊息: ",$e->getMessage() , "<br>";
-        }echo "<script type='text/javascript'>back()</script>";
-        echo "<center>將在五秒後回到原網址</center>";
+        }
+        echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext'>或者點此直接回到原網址</a></center>";
 
     ?>
-    <script type='text/javascript'>
-        setTimeout(function back(){
-            history.back()
-        }, 5000)
-    </script>
+    <script>
+		window.addEventListener('load', ()=>{
+			let back = document.getElementById('backNext')
+			setTimeout(function back(){
+				history.back()
+			}, 5000)
+			back.addEventListener('click', (e)=>{
+				e.preventDefault();
+				window.history.back()
+			})
+		})
+	</script>
 </body>
 </html>

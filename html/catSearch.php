@@ -11,7 +11,6 @@
     <script src="../js/signIn.js"></script>
     <script src="../js/cat/advanceSearch_JQuery.js"></script>
     <script src="../js/cat/arrowSwitch.js"></script>
-    <script src="../js/cat/like.js"></script>
 	<title>尋喵</title>
 </head>
 <body>
@@ -227,6 +226,8 @@
 				
 				
 			</select>
+			<div id="black"></div>
+			<div id="quickViewArea"></div>
             <div class="catPic" id="content">
 			<?php
 				$searchCon = isset($_GET['sort'])? 'sort='.$_GET['sort'].'&':'';
@@ -265,7 +266,7 @@
 								<img src="<?echo $cat_Row['CAT_COVER']?>" alt="<?echo $cat_Row['CAT_NAME']?>">
 							</div>
 						</a>
-						<button type="button" class="quickView">
+						<button type="button" class="quickView" data-val="<?echo $cat_Row['CAT_NO']?>">
 							Quick View
 						</button>
 					</div>
@@ -332,6 +333,7 @@
 						let content = document.getElementById('content')
 						content.innerHTML = this.responseText
 						like()
+						quickView()
 					} else {
 						alert(xhr.status)
 					}
@@ -360,7 +362,7 @@
 				}
 			}
 			function like() {
-				let heart = document.getElementsByClassName('favorite');
+				let heart = document.getElementsByClassName('favorite')
 				for (let i = 0, len = heart.length; i < len; i++) {
 					heart[i].addEventListener('click', () => {
 						if (heart[i].className.match('fa-heart-o')) {
@@ -375,11 +377,66 @@
 					})
 				}
 			}
+			function quickView(){
+				let qkV = document.getElementsByClassName('quickView')
+				for (let i = 0, len = qkV.length; i < len; i++){
+					qkV[i].addEventListener('click', () => {
+						let xhr = new XMLHttpRequest()
+						xhr.onload = function () {
+							if (xhr.status == 200) {
+								let black = document.getElementById('black')
+								black.style.display= 'block'
+								let content = document.getElementById('quickViewArea')
+								content.style.display= 'block'
+								content.innerHTML = this.responseText
+								off()
+							} else {
+								alert(xhr.status)
+							}
+						}
+						let url = '../php/catQuickView.php'
+						xhr.open("post", url, true)
+						xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+						xhr.send('CAT_NO=' + qkV[i].getAttribute('data-val'))
+					})
+				}
+			}
+			function off(){
+				let black = document.getElementById('black')
+				let content = document.getElementById('quickViewArea')
+				black.addEventListener('click', () => {
+					black.style.display= 'none'
+					content.style.display= 'none'
+				})
+				content.addEventListener('click', () => {
+					black.style.display= 'none'
+					content.style.display= 'none'
+				})
+			}
+			$(document).ready(function () {
+				// 以下是燈箱置中
+				moveCenter();
+				$(window).resize(function () {
+					moveCenter();
+				});
+				function moveCenter() {
+					winWidth = $(window).width();
+					winHeight = $(window).height();
+					divWidth = $('#quickViewArea').width();
+					divHeight = $('#quickViewArea').height();
+
+					$('#quickViewArea').css({
+						left: (winWidth - divWidth) / 2,
+						top: (winHeight - divHeight) / 2
+					});
+				}
+			});
 			let searchInput = document.getElementById('searchText')
 			searchInput.addEventListener('input', ajaxData)
 			let sort = document.getElementById('sortCat')
 			sort.addEventListener('change', ajaxData)
 			like()
+			quickView()
 		});
 	</script>
 </body>

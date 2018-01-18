@@ -75,7 +75,7 @@
                                 <img src='$COVER' alt='$NAME'>
                             </div>
                         </a>
-                        <button type='button' class='quickView'>
+                        <button type='button' class='quickView' data-val='$NO'>
                             Quick View
                         </button>
                     </div>
