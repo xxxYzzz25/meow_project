@@ -99,12 +99,9 @@
             span {
                 color: rgb(235, 47, 47);
             }
-            form {
+            table {
                 width: 100%;
                 margin: 30px auto;
-                table {
-                    width: 100%;
-                }
                 tr {
                     text-align: center;
                 }
@@ -120,6 +117,20 @@
                         font-size: $font-size-base*1.2;
                         color: firebrick;
                         cursor: pointer;
+                    }
+                    button {
+                        border-radius: 60px;
+                        cursor: pointer;
+                        letter-spacing: 3px;
+                        padding: 2% 8% 2% 10%;
+                        border: 1px solid #333333;
+                        background-color: transparent;
+                        color: #333;
+                        &:hover{
+                            background-color: #EAAF88;
+                            border: 1px solid #EAAF88;
+                            color: #fff;
+                        }
                     }
                 }
             }

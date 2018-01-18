@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
     /* by www.geekwen.com */
     var canvas = document.getElementById("canvas"),
         ctx = canvas.getContext("2d"),
-        percent = (1800 / 2750) * 100, // 最终百分比
+        percent = (totalDonate / 2750) * 100, // 最终百分比
         circleX = canvas.width / 2, // 中心x坐标
         circleY = canvas.height / 2, // 中心y坐标
         radius = 100, // 圆环半径
