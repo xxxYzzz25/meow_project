@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="backMemManage.html" title="會員帳號管理">會員帳號管理</a>
+                    <a href="backMemManage.php" title="會員帳號管理">會員帳號管理</a>
                 </li>
                 <li>
                     <a href="backEmpManage.html" title="員工帳號管理">員工帳號管理</a>
@@ -48,8 +48,9 @@
             </div>
             <div class="empManage">
                 <button id="newEmp" class="defaultBtn">新增員工帳號</button>
-                <form>
+                <form action="../php/backEmpManageQuery.php" method="post">
                     <table id="empTable">
+                        <input type="hidden" name="cmd" value="add">
                         <tr class="newEmpTR newEmpTROff" id="abc">
                             <th>員工帳號</th>
                             <th>員工密碼</th>
@@ -58,25 +59,24 @@
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
                             <td>
-                                <input type="text" id="empIdNew">
+                                <input type="text" id="empIdNew" name="empId" required>
                             </td>
                             <td>
-                                <input type="password" name="empPsw" id="empPswNew">
+                                <input type="password" name="empPsw" id="empPswNew" pattern="[A-z]{1-10}" required>
                             </td>
                             <td>
-                                <select name="EmpOffice" id="EmpOfficeNew">
-                                    <option value="">Supper Admin</option>
-                                    <option value="">Sales</option>
-                                    <option value="">RD</option>
+                                <select name="empOffice" id="EmpOfficeNew" required>
+                                    <option value="Supper Admin">Supper Admin</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="RD">RD</option>
                                 </select>
                             </td>
                             <td>
-                                <input type="submit" value="確認新增">
+                                <input id="ensureBtn" type="submit" value="確認新增">
                                 <input type="reset" value="清除內容">
                             </td>
                         </tr>
                 </form>
-                <form action="#">
                     <tr id="empRow">
                         <th>員工帳號</th>
                         <th>員工密碼</th>
@@ -104,41 +104,34 @@
                         </tr> -->
                     <!-- emp data end -->
                     </table>
-                    <input type="submit" value="確認送出" class="defaultBtn">
-                    <input type="reset" value="重設全部" class="defaultBtn">
-                </form>
             </div>
         </div>
     </div>
     <script>
-        // window.addEventListener('load', function () {
-        //     const newEmp = document.getElementById('newEmp');
-        //     newEmp.addEventListener('click', function newEmp() {
-        //         const newEmp = document.getElementById('newEmp')
-        //         const tr = document.getElementsByClassName('newEmpTR')
-        //         if (tr[0].className.match('newEmpTROff') && tr[1].className.match('newEmpTROff')) {
-        //             tr[0].className =
-        //                 tr[0].className.replace
-        //                     ('newEmpTROff', 'newEmpTROn')
-        //             tr[1].className =
-        //                 tr[1].className.replace
-        //                     ('newEmpTROff', 'newEmpTROn')
-        //             newEmp.innerText = '取消新增員工'
-        //         } else {
-        //             tr[0].className =
-        //                 tr[0].className.replace
-        //                     ('newEmpTROn', 'newEmpTROff')
-        //             tr[1].className =
-        //                 tr[1].className.replace
-        //                     ('newEmpTROn', 'newEmpTROff')
-        //             newEmp.innerText = '新增員工帳號'
-        //         }
-        //     })
-        //     const ensureBtn = document.getElementById('ensureBtn')
-        //     ensureBtn.addEventListener('click', function () {
-        //         confirm('您確定要新增嗎?')
-        //     })
-        // })
+        window.addEventListener('load', function () {
+            const newEmp = document.getElementById('newEmp');
+            newEmp.addEventListener('click', function newEmp() {
+                const newEmp = document.getElementById('newEmp')
+                const tr = document.getElementsByClassName('newEmpTR')
+                if (tr[0].className.match('newEmpTROff') && tr[1].className.match('newEmpTROff')) {
+                    tr[0].className =
+                        tr[0].className.replace
+                            ('newEmpTROff', 'newEmpTROn')
+                    tr[1].className =
+                        tr[1].className.replace
+                            ('newEmpTROff', 'newEmpTROn')
+                    newEmp.innerText = '取消新增員工'
+                } else {
+                    tr[0].className =
+                        tr[0].className.replace
+                            ('newEmpTROn', 'newEmpTROff')
+                    tr[1].className =
+                        tr[1].className.replace
+                            ('newEmpTROn', 'newEmpTROff')
+                    newEmp.innerText = '新增員工帳號'
+                }
+            });
+        });
         window.addEventListener('load',()=>{
 
             function edit(){
@@ -157,6 +150,7 @@
                 
                 parent.appendChild(editBtn);
                 parent.appendChild(deleteBtn);
+
             }
 
             function ajaxUpdate(){
@@ -177,12 +171,12 @@
                     let empOffice = empOfficeTd.firstChild;
                     let empOfficeText = empOffice.value;
                     let admin = tr.childNodes[3];
-                    
+                    let empNo = tr.dataset.No;
                     empId.remove();
                     empIdTd.textContent = empIdText;
 
                     empPsw.remove();
-                    empPswTd.textContent = empPswText;
+                    empPswTd.textContent = '******';
 
                     empOffice.remove();
                     empOfficeTd.textContent = empOfficeText;
@@ -194,11 +188,33 @@
                     changeBtn.addEventListener('click',edit);
                     admin.appendChild(changeBtn);
                     tr.appendChild(admin);
+
+                    ajax(()=>{alert('資料更新成功');},`cmd=update&empId=${empIdText}&empPsw=${empPswText}&empOffice=${empOfficeText}&empNo=${empNo}`);
                 }
                 function editCancel(){
                     this.removeEventListener('click',editCancel);
                     let tr = this.parentNode.parentNode;
-                    let 
+                    let empIdTd = tr.childNodes[0];
+                    let empPswTd = tr.childNodes[1];
+                    let empOfficeTd = tr.childNodes[2];
+                    let adminTd = tr.childNodes[3];
+
+                    empIdTd.firstChild.remove();
+                    empIdTd.textContent = tempId;
+                    empPswTd.firstChild.remove();
+                    empPswTd.textContent = tempPsw;
+                    empOfficeTd.firstChild.remove();
+                    empOfficeTd.textContent = tempOffice;
+
+                    adminTd.remove();
+
+                    adminTd = document.createElement('td');
+                    let changeBtn = document.createElement('input');
+                    Object.assign(changeBtn,{type:'button',value:'異動'});
+                    adminTd.appendChild(changeBtn);
+                    tr.appendChild(adminTd);
+
+                    changeBtn.addEventListener('click',edit);
                 }
 
                 this.removeEventListener('click',ajaxUpdate);
@@ -263,13 +279,23 @@
             }
 
             function ajaxDelete(){
-                this.removeEventListener('click',ajaxDelete);
                 if(confirm('確認刪除?')){
 
                     let tr = this.parentNode.parentNode;
-                    let empId = tr.firstChild.textContent;
-                    let command = 'empId=' + empId;
-                    ajax('../php/backEmpManageDelete.php',function(){alert('刪除完成')},command);
+                    let empNo = tr.dataset.No;
+
+                    tr.remove();
+                    ajax(null,`cmd=delete&empNo=${empNo}`);
+                }else{
+                    let adminTd = this.parentNode;
+                    let tr = adminTd.parentNode;
+                    adminTd.remove();
+                    adminTd = document.createElement('td');
+                    let changeBtn = document.createElement('input');
+                    Object.assign(changeBtn,{type:'button',value:'異動'});
+                    changeBtn.addEventListener('click',edit);
+                    adminTd.appendChild(changeBtn);
+                    tr.appendChild(adminTd);
                 }
             }
 
@@ -278,49 +304,53 @@
                 let empTable = document.getElementById('empTable');
                 let empRow = document.getElementById('empRow');
                 let fragment = document.createDocumentFragment();
-                
                 for (const key in empData) {
-
+                    
                     let emp = empData[key];
+
                     for (const name in emp) {
-
-                        let tr = document.createElement('tr');
-                        let empId = document.createElement('td');
-                        let empIdText = document.createTextNode(name);
-                        let empPaw = document.createElement('td');
-                        let empPswText = document.createTextNode('******');
-                        let empOffice = document.createElement('td');
-                        let empOfficeText = document.createTextNode(emp[name]);
-                        let change = document.createElement('td');
-                        let changeBtn = document.createElement('input');
                         
-                        Object.assign(changeBtn,{type:'button',value:'異動'});
+                        if(name !== 'No'){
+                            let tr = document.createElement('tr');
+                            let empId = document.createElement('td');
+                            let empIdText = document.createTextNode(name);
+                            let empPaw = document.createElement('td');
+                            let empPswText = document.createTextNode('******');
+                            let empOffice = document.createElement('td');
+                            let empOfficeText = document.createTextNode(emp[name]);
+                            let change = document.createElement('td');
+                            let changeBtn = document.createElement('input');
+                            
+                            Object.assign(changeBtn,{type:'button',value:'異動'});
 
-                        changeBtn.addEventListener('click',edit);
+                            changeBtn.addEventListener('click',edit);
 
-                        change.appendChild(changeBtn);
-                        empOffice.appendChild(empOfficeText);
-                        empPaw.appendChild(empPswText);
-                        empId.appendChild(empIdText);
+                            change.appendChild(changeBtn);
+                            empOffice.appendChild(empOfficeText);
+                            empPaw.appendChild(empPswText);
+                            empId.appendChild(empIdText);
 
-                        tr.appendChild(empId);
-                        tr.appendChild(empPaw);
-                        tr.appendChild(empOffice);
-                        tr.appendChild(change);
-                        fragment.appendChild(tr);
+                            tr.appendChild(empId);
+                            tr.appendChild(empPaw);
+                            tr.appendChild(empOffice);
+                            tr.appendChild(change);
+                            fragment.appendChild(tr);
+                        }else if(name === 'No'){
+                            fragment.lastChild.dataset.No = emp[name];
+                        }
                     }
                     empTable.appendChild(fragment);
                 }
             }
 
-            function ajax(url,callback,dataInfo){
+            function ajax(callback,dataInfo){
                 let xhr = new XMLHttpRequest();
-                xhr.open('post',url);
+                xhr.open('post','../php/backEmpManageQuery.php');
                 xhr.onload = callback;
                 xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-                xhr.send();
+                xhr.send(dataInfo);
             }
-            ajax('../php/backEmpManageQuery.php',query,null);
+            ajax(query,"cmd=query");
         });
     </script>
 </body>

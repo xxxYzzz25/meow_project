@@ -1,3 +1,7 @@
+<?php
+ ob_start();
+ session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,7 +162,16 @@
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             </a>
             <a href="#" class="login">
-                <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                <?php 
+                
+                    if(isset($_SESSION["MEM_ID"]) || isset($_SESSION["HALF_ID"])){
+
+                        echo "<i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>";
+                    }else{
+                        echo "<i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>";
+                    }
+                ?>
+                
             </a>
             <a href="#">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
