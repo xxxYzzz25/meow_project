@@ -18,7 +18,7 @@ try {
     }else{
         $HWmemRow = $HWmem->fetchObject();
 ?>
-    <form action="../php/halfMemhalfwayUpdateToDb.php">
+    <form action="../php/halfMemHalfwayUpdateToDb.php">
         <input type="hidden" name="no" value="<?php echo $HWmemRow->HALF_NO;?>">
         <table>
             <tr>

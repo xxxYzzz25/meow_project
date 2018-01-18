@@ -140,9 +140,6 @@
 			</a>
 		</div>
     </header>
-    <?php
-        require_once("../php/connectBD103G2.php");
-    ?>
 	<div class="right">
 		<div class="container container1">
 			<h2>尋喵
@@ -152,7 +149,7 @@
 			<form method="POST" action="#" class='selectForm'>
 				<div>
 					<div class="formInsert">
-						<input type="text" class="searchBar condition1" placeholder="你知道心儀喵喵的名字嗎？">
+						<input type="text" id="searchText" class="searchBar condition1" placeholder="你知道心儀喵喵的名字嗎？">
 						<button type="submit" class="searchBtn defaultBtn">
 							<i class="fa fa-search " aria-hidden="true"></i>
 						</button>
@@ -167,14 +164,13 @@
 					<div>
 						<label class="selectTitle">毛色：</label>
 						<div class="formInsert">
-							<button type="button" class="condition condition1" data-name='color' data-val='1'>虎斑</button>
-							<button type="button" class="condition" data-name='color' data-val='2'>豹紋</button>
-							<button type="button" class="condition" data-name='color' data-val='3'>三花</button>
-							<button type="button" class="condition" data-name='color' data-val='4'>玳瑁</button>
-							<button type="button" class="condition" data-name='color' data-val='5'>純色</button>
+							<button type="button" class="condition condition1" data-name='color' data-val='1'>黑白</button>
+							<button type="button" class="condition" data-name='color' data-val='2'>虎斑</button>
+							<button type="button" class="condition" data-name='color' data-val='3'>橘白</button>
+							<button type="button" class="condition" data-name='color' data-val='4'>橘色</button>
+							<button type="button" class="condition" data-name='color' data-val='5'>黑色</button>
 						</div>
 					</div>
-
 					<div>
 						<label class="selectTitle toMiddle">地區：</label>
 						<div class="formInsert">
@@ -207,7 +203,6 @@
 							<button type="button" class="condition" data-name='location' data-val='19'>離島</button>
 						</div>
 					</div>
-
 					<div>
 						<label class="selectTitle">性別：</label>
 						<div class="formInsert">
@@ -215,41 +210,36 @@
 							<button type="button" class="condition" data-name='gender' data-val='1'>女孩</button>
 						</div>
 					</div>
-
-					<div>
-						<label class="selectTitle">年齡：</label>
-						<div class="formInsert">
-							<button type="button" class="condition condition1" data-name='age' data-val='0'>四個月以下</button>
-							<button type="button" class="condition" data-name='age' data-val='1'>四個月到一歲</button>
-							<br class="forRWD">
-							<button type="button" class="condition" data-name='age' data-val='2'>一歲到三歲</button>
-							<button type="button" class="condition" data-name='age' data-val='3'>三歲以上</button>
-						</div>
-					</div>
-					<div>
-						<label class="selectTitle">疫苗：</label>
-						<div class="formInsert">
-							<button type="button" class="condition condition1" data-name='vaccine' data-val='0'>已施打</button>
-							<button type="button" class="condition" data-name='vaccine' data-val='1'>未施打</button>
-						</div>
-					</div>
-					<div>
-						<label class="selectTitle">結紮：</label>
-						<div class="formInsert">
-							<button type="button" class="condition condition1" data-name='ligation' data-val='0'>已結紮</button>
-							<button type="button" class="condition" data-name='ligation' data-val='1'>未結紮</button>
-						</div>
-					</div>
 				</div>
 				<div class='S_checkbox' style='display:none;'></div>
 			</form>
-            <div class="catPic">
-				<select name="sortCat" id="sortCat">
-					<option value="1">刊登日期從新到舊</option>
-					<option value="2">刊登日期從舊到新</option>
-                </select>
-            <?php
-                $sql = "select count(1) from cat where `ADOPT_STATUS` = 0";	// 計算資料筆數
+			<select name="sortCat" id="sortCat">
+				<?
+				isset($_GET['sort'])?$sort = $_GET['sort']:$sort = 1;
+				if( $sort == 2 ){
+					echo "<option value='1'>刊登日期從新到舊</option>
+						<option value='2' selected>刊登日期從舊到新</option>";
+				}else{
+					echo "<option value='1' selected>刊登日期從新到舊</option>
+						<option value='2'>刊登日期從舊到新</option>";
+				}
+				?>
+				
+				
+			</select>
+            <div class="catPic" id="content">
+			<?php
+				$searchCon = isset($_GET['sort'])? 'sort='.$_GET['sort'].'&':'';
+				$searchCon .= isset($_GET['searchText'])? 'searchText='.$_GET['searchText']:'';
+				
+        		require_once("../php/connectBD103G2.php");
+				if ( $sort == 2 ) {
+					$desc = '';
+				}else if( $sort == 1 ){
+					$desc = 'desc';
+				}
+				
+				$sql = "select count(1) from cat where `ADOPT_STATUS` = 0";	// 計算資料筆數
                 $total = $pdo->query($sql);
                 $rownum = $total->fetchcolumn(); 		                    // 總共欄位數
                 $perPage = 9;                                               // 每頁顯示筆數
@@ -257,7 +247,7 @@
                 $pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
                                                                             // 若無當前頁數則進入第一頁 若有則進入該頁
                 $start = ($pageNo - 1)* $perPage;		                    // 計算起始頁數
-                $sql="select * from cat where `ADOPT_STATUS` = 0 order by CAT_NO limit $start, $perPage";
+                $sql="select * from cat where `ADOPT_STATUS` = 0 order by CAT_NO $desc limit $start, $perPage";
                                                                             // 設定每頁呈現內容
                 $cat = $pdo -> query( $sql );
                 $catRow = $cat->fetchAll(PDO::FETCH_ASSOC);
@@ -294,16 +284,15 @@
 					</figure>
                 </picture>
                 <?
-                    }
+                }
                 ?>
-			</div>
-			<div class="page">
-                <?
-                    for($i=1;$i<=$totalpage;$i++){
-                        echo '<a href="?pageNo='.$i.'"class="pageNo defaultBtn">'.$i.'</a> ';
-                    }
-                    $i = $i-1;
-                ?>
+				<div class="page">
+				<?
+					for($i=1;$i<=$totalpage;$i++){
+						echo "<a href='?pageNo=$i&$searchCon' class='pageNo defaultBtn'>".$i."</a>";
+					}
+				?>
+				</div>
 			</div>
 		</div>
     </div>
@@ -334,6 +323,65 @@
 			</div>
 		</div>
 	</footer>
+	<script>
+		window.addEventListener('load',() => {
+			function getData(info) {
+				let xhr = new XMLHttpRequest()
+				xhr.onload = function () {
+					if (xhr.status == 200) {
+						let content = document.getElementById('content')
+						content.innerHTML = this.responseText
+						like()
+					} else {
+						alert(xhr.status)
+					}
+				}
+				let url = '../php/catSearch.php?' + info
+				xhr.open("get", url, true)
+				// xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+				xhr.send()
+			}
+			function ajaxData(e){
+				let searchText = document.getElementById('searchText').value
+				let sort = document.getElementById('sortCat').value
+				if( searchText !== '' ){
+					if( sort == 2 ){
+						getData('sort=2&searchText=' + searchText)
+					}else{
+						getData('sort=1&searchText=' + searchText)
+					}
+				}else{
+					if ( sort == 2 ) {
+						getData('sort=2')
+					}
+					else{
+						getData('sort=1')
+					}
+				}
+			}
+			function like() {
+				let heart = document.getElementsByClassName('favorite');
+				for (let i = 0, len = heart.length; i < len; i++) {
+					heart[i].addEventListener('click', () => {
+						if (heart[i].className.match('fa-heart-o')) {
+							heart[i].className =
+								heart[i].className.replace
+									('fa-heart-o', 'fa-heart')
+						} else {
+							heart[i].className =
+								heart[i].className.replace
+									('fa-heart', 'fa-heart-o')
+						}
+					})
+				}
+			}
+			let searchInput = document.getElementById('searchText')
+			searchInput.addEventListener('input', ajaxData)
+			let sort = document.getElementById('sortCat')
+			sort.addEventListener('change', ajaxData)
+			like()
+		});
+	</script>
 </body>
 
 </html>

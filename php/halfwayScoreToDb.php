@@ -10,7 +10,12 @@ try {
     $eva->bindValue(":EVALUATION_STARS", $_REQUEST["EVALUATION_STARS"]);
     $eva->execute();
 
-    $sql="select ROUND(avg(EVALUATION_STARS), 1) avg,COUNT(*) count 
+    // $sql = "select EVALUATION_STARS from evaluation ORDER BY EVALUATION_NO DESC limit 1";
+    // $star = $pdo->query($sql);
+    // $starRow=$star->fetch(PDO::FETCH_ASSOC);
+    // echo $starRow["EVALUATION_STARS"];
+
+    $sql = "select ROUND(avg(EVALUATION_STARS), 1) avg,COUNT(*) count
             from evaluation
             where HALF_NO=:HALF_NO";
     $avgScore = $pdo->prepare($sql);
@@ -19,7 +24,7 @@ try {
     $avgScoreRow = $avgScore->fetchObject();
     $avg = $avgScoreRow->avg;
     $count = $avgScoreRow->count;
-    $array = array( "avg" => $avg ,"count" => $count);
+    $array = array( "avg" => $avg ,"count" => $count );
     $array_json = json_encode($array);
     echo $array_json;
 } catch (Exception $e) {

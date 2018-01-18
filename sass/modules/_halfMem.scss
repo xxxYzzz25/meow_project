@@ -54,6 +54,21 @@
         width: 70%;
         float: left;
         padding-bottom: 50px;
+        button {
+            border-radius: 60px;
+            cursor: pointer;
+            letter-spacing: 3px;
+            padding: 2% 8% 2% 10%;
+            background-color: #EAAF88;
+            border: 1px solid #EAAF88;
+            color: #fff;
+            outline: none;
+            &:hover {
+                border: 1px solid #EAAF88;
+                background-color: transparent;
+                color: #EAAF88;
+            }
+        }
         textarea {
             resize: none;
         }
@@ -92,6 +107,35 @@
             }
         }
         .halfMemCat {
+            .catInfo {
+                width: 100%;
+                tr {
+                    text-align: center;
+                }
+                th {
+                    width: 30%;
+                    text-align: center;
+                    background-color: rgb(242, 242, 242);
+                    border: 2px solid #ccc;
+                    padding: 20px;
+                }
+                td {
+                    border: 2px solid #ccc;
+                    padding: 20px;
+                    input {
+                        width: 90%;
+                        height: 30px;
+                        border: none;
+                    }
+                    .radio {
+                        width: 10%;
+                        height: 15px;
+                    }
+                    .simple {
+                        width: 80%;
+                    }
+                }
+            }
             form {
                 width: 100%;
                 table {
@@ -169,7 +213,6 @@
                         color: dodgerblue;
                         cursor: pointer;
                     }
-
                     .fa-times {
                         font-size: $font-size-base*1.2;
                         color: crimson;
@@ -189,12 +232,9 @@
             span {
                 color: rgb(235, 47, 47);
             }
-            form {
+            table {
                 width: 100%;
                 margin: 30px auto;
-                table {
-                    width: 100%;
-                }
                 tr {
                     text-align: center;
                 }
@@ -210,6 +250,15 @@
                         font-size: $font-size-base*1.2;
                         color: firebrick;
                         cursor: pointer;
+                    }
+                }
+            }
+            .odTable {
+                a {
+                    text-decoration: none;
+                    color: #EAAF88;
+                    &:hover {
+                        color: #0f71c2;
                     }
                 }
             }

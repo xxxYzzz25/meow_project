@@ -12,9 +12,9 @@ try {
     $sql = "select *
             from adoption a,cat c,member m,halfway_member h
             where a.CAT_NO = c.CAT_NO 
-              and a.MEM_NO = m.MEM_NO 
-              and c.HALF_NO = h.HALF_NO
-              and c.HALF_NO =?;";
+                and a.MEM_NO = m.MEM_NO 
+                and c.HALF_NO = h.HALF_NO
+                and c.HALF_NO =?;";
     $adopt = $pdo->prepare( $sql );
     $adopt->bindValue(1, $_SESSION["HALF_ID"]);//session
     $adopt->execute();

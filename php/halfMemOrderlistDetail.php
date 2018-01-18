@@ -13,12 +13,12 @@ try {
             from orderlist o,orderlist_details od,product p
             where o.ORDER_NO = od.ORDER_NO
             and od.PRODUCT_NO = p.PRODUCT_NO
-            and MEM_NO = :memNo
+            and HALF_NO = :halfNo
             and o.ORDER_NO = :orderNo";
     $product = $pdo->prepare($sql);
-    $product->bindValue(":memNo", $_REQUEST["MEM_NO"]);
+    $product->bindValue(":halfNo", $_REQUEST["halfNo"]);
     $product->bindValue(":orderNo", $_REQUEST["ORDER_NO"]);
-    // $product->bindValue(":memNo", 1);
+    // $product->bindValue(":halfNo", 1);
     $product->execute();
     while($productRow = $product->fetchObject()){;
 ?>   

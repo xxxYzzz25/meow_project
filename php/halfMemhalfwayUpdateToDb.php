@@ -8,12 +8,12 @@
 <?php
 try {
 	require_once("connectBD103G2.php");
-	$sql="update halfway_member set HALF_NAME=:name, 
-				                          HALF_ADDRESS=:address, 
-				                          HALF_TEL=:tel, 
-				                          HALF_OPEN=:open, 
-				                          HALF_INTRO=:intro 
-			  where HALF_NO=:no";
+	$sql = "update halfway_member set HALF_NAME=:name, 
+									HALF_ADDRESS=:address, 
+									HALF_TEL=:tel, 
+									HALF_OPEN=:open, 
+									HALF_INTRO=:intro 
+			where HALF_NO=:no";
 	$products = $pdo->prepare( $sql );
 	$products->bindValue(":name" , $_REQUEST["name"]);
 	$products->bindValue(":address" , $_REQUEST["address"]);

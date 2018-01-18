@@ -78,7 +78,7 @@
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
                             <td colspan="2">
-                                <input type="submit" value="確認上架">
+                                <input type="submit" value="確認新增" id="ensureBtn">
                                 <input type="reset" value="清除內容">
                             </td>
                         </tr>
@@ -131,10 +131,9 @@
     </div>
     <script>
         window.addEventListener('load', function () {
-            const newEmp = document.getElementById('newEmp');
+            let newEmp = document.getElementById('newEmp');
             newEmp.addEventListener('click', function newEmp() {
-                const newEmp = document.getElementById('newEmp')
-                const tr = document.getElementsByClassName('newEmpTR')
+                let tr = document.getElementsByClassName('newEmpTR')
                 if (tr[0].className.match('newEmpTROff') && tr[1].className.match('newEmpTROff')) {
                     tr[0].className =
                         tr[0].className.replace('newEmpTROff', 'newEmpTROn')
@@ -150,9 +149,7 @@
                         tr[5].className.replace('newEmpTROff', 'newEmpTROn')
                     tr[6].className =
                         tr[6].className.replace('newEmpTROff', 'newEmpTROn')
-                    tr[7].className =
-                        tr[7].className.replace('newEmpTROff', 'newEmpTROn')
-                    newEmp.innerText = '取消上架商品'
+                    newEmp.innerText = '取消新增商品'
                 } else {
                     tr[0].className =
                         tr[0].className.replace('newEmpTROn', 'newEmpTROff')
@@ -168,15 +165,14 @@
                         tr[5].className.replace('newEmpTROn', 'newEmpTROff')
                     tr[6].className =
                         tr[6].className.replace('newEmpTROn', 'newEmpTROff')
-                    tr[7].className =
-                        tr[7].className.replace('newEmpTROn', 'newEmpTROff')
-                    newEmp.innerText = '上架商品'
+                    let newEmp = document.getElementById('newEmp')
+                    newEmp.innerText = '新增商品'
                 }
             })
-            // const ensureBtn = document.getElementById('ensureBtn')
-            // ensureBtn.addEventListener('click', function () {
-            //     confirm('您確定要新增嗎?')
-            // })
+            let ensureBtn = document.getElementById('ensureBtn')
+            ensureBtn.addEventListener('click', function () {
+                confirm('您確定要新增嗎?')
+            })
         })
     </script>
 </body>
