@@ -182,5 +182,30 @@
         xhr.send(null);
     }
 </script>
+<script>
+    let newEmp = document.getElementById('newEmp');
+    newEmp.addEventListener('click', function() {
+        let tr = document.getElementsByClassName('newEmpTR');
+        if (tr[0].className.match('newEmpTROff')) {
+            for (let i = 0; i < tr.length; i++) {
+                tr[i].className =
+                    tr[i].className.replace('newEmpTROff', 'newEmpTROn');
+            }
+            let newEmp = document.getElementById('newEmp');
+            newEmp.innerHTML = "取消新增喵小孩";
+        } else {
+            for (let i = 0; i < tr.length; i++) {
+                tr[i].className =
+                    tr[i].className.replace('newEmpTROn', 'newEmpTROff');
+            }
+            let newEmp = document.getElementById('newEmp');
+            newEmp.innerHTML = "新增喵小孩";
+        }
+    });
+    let ensureBtn = document.getElementById('ensureBtn')
+    ensureBtn.addEventListener('click', function () {
+        confirm('您確定要新增嗎?')
+    });
+</script>
 
 </html>

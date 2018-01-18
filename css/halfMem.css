@@ -492,7 +492,7 @@ header ul li:nth-child(5):after {
   border-radius: 60px;
   cursor: pointer;
   letter-spacing: 3px;
-  padding: 2% 8% 2% 10%;
+  padding: 2% 6%;
   background-color: #EAAF88;
   border: 1px solid #EAAF88;
   color: #fff;
@@ -512,7 +512,7 @@ header ul li:nth-child(5):after {
 .right .content h4 {
   text-align: center;
   font-size: 24px;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 .right .content .halfMemInfo form {
@@ -546,6 +546,19 @@ header ul li:nth-child(5):after {
   width: 90%;
   height: 30px;
   border: none;
+}
+
+.right .content .halfMemCat .newbtn {
+  float: right;
+  margin-bottom: 20px;
+}
+
+.right .content .halfMemCat .newEmpTROff {
+  display: none;
+}
+
+.right .content .halfMemCat .newEmpTROn {
+  display: table-row;
 }
 
 .right .content .halfMemCat .catInfo {

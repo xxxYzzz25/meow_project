@@ -1,18 +1,9 @@
 <?php
 try {
     require_once "connectBD103G2.php";
-    $sql = "update cat set CAT_NAME=:name,
-							CAT_DATE=:date,
-							CAT_SEX=:sex,
-							CAT_NARRATIVE=:narrative,
-							CAT_LOCATION=:location,
-							CAT_VACCINE=:vaccine,
-							CAT_LIGATION=:ligation,
-							CAT_INDIVIDUALITY=:individuality,
-							CAT_FIT=:fit,
-							CAT_ADVANTAGE=:advantage,
-							CAT_DISADVANTAGE=:disadvantage,
-							CAT_COVER=:catpic
+    $sql = "insert into
+            cat (CAT_NAME,,CAT_DATE,CAT_SEX,CAT_NARRATIVE,CAT_LOCATION,CAT_VACCINE,CAT_LIGATION,CAT_INDIVIDUALITY,CAT_FIT,CAT_ADVANTAGE,CAT_DISADVANTAGE,CAT_COVER)
+            values (:name,:date,:sex,:narrative,:location,:vaccine,:ligation,:individuality,:fit,:advantage,:disadvantage,:catpic)
 			where CAT_NO=:no";
     $products = $pdo->prepare($sql);
     $products->bindValue(":no", $_REQUEST["no"]);
@@ -29,7 +20,7 @@ try {
     $products->bindValue(":disadvantage", $_REQUEST["disadvantage"]);
     $products->bindValue(":catpic", $_REQUEST["catpic"]);
     $products->execute();
-    echo "編輯成功<br>";
+    echo "新增成功<br>";
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
