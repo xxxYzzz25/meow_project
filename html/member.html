@@ -129,8 +129,6 @@
         xhr.open("get", url, true);
         xhr.send(null);
     }
-</script>
-<script>
     let li = document.getElementsByClassName('li');
     for (let i = 0; i < li.length; i++) {
         li[i].addEventListener('click', function () {
@@ -141,5 +139,21 @@
         });
     }
 </script>
-
+<script>
+    function add(data) {
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                //modify here
+                let odTable = document.getElementById('odTable');
+                odTable.innerHTML = this.responseText;
+            } else {
+                alert(xhr.status);
+            }
+        }
+        let url = data;
+        xhr.open("get", url, true);
+        xhr.send(null);
+    }
+</script>
 </html>

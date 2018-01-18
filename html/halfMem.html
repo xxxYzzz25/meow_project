@@ -65,7 +65,7 @@
                         <li onclick="getData('halfMemInfo.php');" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 修改會員資料
                         </li>
-                        <li onclick="getData('halfMemhalfway.php');" class="li">
+                        <li onclick="getData('halfMemHalfway.php');" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 編輯中途之家資料
                         </li>
                         <li onclick="getData('halfMemCat.php');" class="li">
@@ -92,7 +92,7 @@
                     <li onclick="getData('halfMeminfo.php');" class="li">
                         修改會員資料
                     </li>
-                    <li onclick="getData('halfMemhalfway.php');" class="li">
+                    <li onclick="getData('halfMemHalfway.php');" class="li">
                         編輯中途之家資料
                     </li>
                     <li onclick="getData('halfMemCat.php');" class="li">
@@ -163,6 +163,23 @@
             }
             this.style.color = "#0f71c2";
         });
+    }
+</script>
+<script>
+    function add(data) {
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                //modify here
+                let catInfo = document.getElementById('catInfo');
+                catInfo.innerHTML = this.responseText;
+            } else {
+                alert(xhr.status);
+            }
+        }
+        let url = data;
+        xhr.open("get", url, true);
+        xhr.send(null);
     }
 </script>
 

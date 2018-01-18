@@ -123,14 +123,24 @@
                         cursor: pointer;
                         letter-spacing: 3px;
                         padding: 2% 8% 2% 10%;
-                        border: 1px solid #333333;
-                        background-color: transparent;
-                        color: #333;
-                        &:hover{
-                            background-color: #EAAF88;
+                        background-color: #EAAF88;
+                        border: 1px solid #EAAF88;
+                        color: #fff;
+                        outline: none;
+                        &:hover {
                             border: 1px solid #EAAF88;
-                            color: #fff;
+                            background-color: transparent;
+                            color: #EAAF88;
                         }
+                    }
+                }
+            }
+            .odTable {
+                a {
+                    text-decoration: none;
+                    color: #EAAF88;
+                    &:hover {
+                        color: #0f71c2;
                     }
                 }
             }

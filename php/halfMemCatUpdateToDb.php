@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Examples</title>
-</head>
-<body>
 <?php
 try {
 	require_once("connectBD103G2.php");
-	$sql="update cat set CAT_NAME=:name, 
-                       CAT_DATE=:date, 
-                       CAT_SEX=:sex, 
-                       CAT_NARRATIVE=:narrative, 
-                       CAT_LOCATION=:location, 
-                       CAT_VACCINE=:vaccine, 
-                       CAT_LIGATION=:ligation, 
-                       CAT_INDIVIDUALITY=:individuality, 
-                       CAT_FIT=:fit, 
-                       CAT_ADVANTAGE=:advantage, 
-                       CAT_DISADVANTAGE=:disadvantage
-			  where HALF_NO=:no";
+	$sql = "update cat set CAT_NAME=:name, 
+							CAT_DATE=:date, 
+							CAT_SEX=:sex, 
+							CAT_NARRATIVE=:narrative, 
+							CAT_LOCATION=:location, 
+							CAT_VACCINE=:vaccine, 
+							CAT_LIGATION=:ligation, 
+							CAT_INDIVIDUALITY=:individuality, 
+							CAT_FIT=:fit, 
+							CAT_ADVANTAGE=:advantage, 
+							CAT_DISADVANTAGE=:disadvantage
+			where CAT_NO=:no";
 	$products = $pdo->prepare( $sql );
+	$products->bindValue(":no" , $_REQUEST["no"]);
 	$products->bindValue(":name" , $_REQUEST["name"]);
 	$products->bindValue(":date" , $_REQUEST["date"]);
 	$products->bindValue(":sex" , $_REQUEST["sex"]);
@@ -39,5 +33,3 @@ try {
 	echo "錯誤行號 : " , $e->getLine() , "<br>";	
 }
 ?>
-</body>
-</html>
