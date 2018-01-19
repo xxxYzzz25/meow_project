@@ -1,3 +1,7 @@
+<?php
+    ob_start();
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,53 +57,25 @@
                     <option value="2">領養日期從舊到新</option>
                 </select>
                 <table>
-                    <tr>
+                    <tr id="">
                         <th>喵小孩編號</th>
                         <th>領養者</th>
                         <th>領養時間</th>
-                        <th>審核狀態</th>
                     </tr>
                     <tr>
                         <td>001</td>
                         <td>abc@gmail.com</td>
                         <td>2017/12/18</td>
-                        <td>成功</td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>abc@gmail.com</td>
-                        <td>2017/12/27</td>
-                        <td>成功</td>
-                    </tr>
-                    <tr>
-                        <td>003</td>
-                        <td>abc@gmail.com</td>
-                        <td>2018/1/2</td>
-                        <td>成功</td>
-                    </tr>
-                    <tr>
-                        <td>004</td>
-                        <td>abc@gmail.com</td>
-                        <td>2018/1/8</td>
-                        <td>待審核</td>
-                    </tr>
-                    <tr>
-                        <td>005</td>
-                        <td>abc@gmail.com</td>
-                        <td>2018/1/20</td>
-                        <td>待審核</td>
                     </tr>
                 </table>
-                <a href="#" class="defaultBtn">1</a>
-                <a href="#" class="defaultBtn">2</a>
-                <a href="#" class="defaultBtn">3</a>
-                <a href="#" class="defaultBtn">4</a>
-                <a href="#" class="defaultBtn">5</a>
+                
             </div>
         </div>
 
     </div>
-
+<script>
+    
+</script>
 </body>
 
 </html>
