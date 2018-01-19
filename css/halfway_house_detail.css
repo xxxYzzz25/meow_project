@@ -985,6 +985,24 @@ header ul li:nth-child(2):after {
   font-weight: bold;
 }
 
+.right .cat .page {
+  text-align: center;
+}
+
+.right .cat .page .pageNo {
+  border-width: 1px;
+  border-radius: 0px;
+  padding: 2px;
+  padding-left: 5px;
+  width: 20px;
+  line-height: 1.5em;
+  display: inline-block;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
 .right .map {
   width: 80%;
   margin: auto;
