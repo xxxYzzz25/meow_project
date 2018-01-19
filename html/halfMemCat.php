@@ -130,7 +130,7 @@ try {
 
     $sql   = "select * from cat where HALF_NO =1";
     $HWcat = $pdo->prepare($sql);
-    // $HWcat->bindValue(1, $_SESSION["HALF_ID"]);//session
+    // $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWcat->execute();
 
     if ($HWcat->rowCount() == 0) {

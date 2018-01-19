@@ -6,16 +6,6 @@ session_start();
     <h4>查詢訂單記錄</h4>
     <p>以下是您的訂購紀錄：</p>
     <span>*提醒您，若您的未取件次數累計達5次(含)，將無法再使用超商取貨付款，造成不便及困擾之處，懇請見諒。</span>
-
-        <table>
-            <tr>
-                <th>訂單編號</th>
-                <th>購買總金額</th>
-                <th>訂購時間</th>
-                <th>訂單狀態</th>
-                <th>訂單明細</th>
-            </tr>
-
 <?php
 try {
     require_once "../php/connectBD103G2.php";
@@ -32,6 +22,14 @@ try {
     } else {
         while ($orderlistRow = $orderlist->fetchObject()) {
 ?>
+    <table>
+        <tr>
+            <th>訂單編號</th>
+            <th>購買總金額</th>
+            <th>訂購時間</th>
+            <th>訂單狀態</th>
+            <th>訂單明細</th>
+        </tr>
         <tr>
             <td><?php echo $orderlistRow->ORDER_NO; ?></td>
             <td><?php echo $orderlistRow->ORDER_PRICE; ?></td>

@@ -143,8 +143,8 @@
 
 <?php
 $halfno = $_REQUEST["halfno"];
-$memno = $_SESSION["MEM_NO"];
-// $memno = 1;
+// $memno = $_SESSION["MEM_NO"];
+$memno = 1;
 try {
     require_once "../php/connectBD103G2.php";
 
@@ -234,12 +234,12 @@ try {
 						</fieldset>
 						<div class="ratingscore">
 							您的評分
-							<span id="scoretext"></span>/5顆星
+							<span id="scoretext">0</span>/5顆星
 							<input type="hidden" name="" value="">
 						</div>
 						<div class="ratingtext">
 							總平均
-							<span id="avgScore"><?php echo $AVG ?></span>/5顆星(共<span id="person"><?php echo $COUNT ?></span>人評分)
+							<span id="avgScore"><?php echo $AVG ?></span>/5顆星(共<span id="count"><?php echo $COUNT ?></span>人評分)
 						</div>
 					</div>
 				</div>
@@ -251,23 +251,22 @@ try {
 	let input = document.getElementsByTagName('input');
 	for (let i = 0; i < input.length; i++) {
 		input[i].addEventListener('click', function () {
-			if (scoretext.innerHTML == '') {
+			if (scoretext.innerHTML == '0') {
 				let score = input[i].getAttribute('value');
-				let scoretext = document.getElementById('scoretext');
-				scoretext.innerHTML = score;
-
 				// ajax傳到php 存到mysql
 				let xhr = new XMLHttpRequest();
 				xhr.onload=function(){
+					alert(xhr.responseText);
 					let response = JSON.parse(xhr.responseText);
 					document.getElementById("avgScore").innerHTML=response.avg;
-					document.getElementById("person").innerHTML=response.count;
+					document.getElementById("count").innerHTML=response.count;
+					document.getElementById("scoretext").innerHTML=response.star;
 				}
 				let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
 				xhr.open("get", url, true);
 				xhr.send(null);
 			}else{
-				alert("123");
+				alert("您已經評過分囉!");
 			}
 		});
 	}
