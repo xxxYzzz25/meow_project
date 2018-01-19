@@ -1,112 +1,25 @@
 <?php
     ob_start();
     session_start();
+	isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<link rel="stylesheet" href="../css/halfway_house_detail.css">
+	<script src="http://maps.google.com/maps/api/js?key=AIzaSyDKPVIamuQGV_Yi0y8zXQl5bUGs7bfxW04"></script>
     <script src="../js/signIn.js"></script>
+	<link rel="stylesheet" href="../css/halfway_house_detail.css">
 	<title>中途之家</title>
 </head>
 
 <body>
-	<div class="signUpLightboxBlack"></div>
-    <div class="signUpLightbox" id="loginBox">
-        <i class="fa fa-times cancel"></i>
-        <div class="bgImg" id="bgImg"></div>
-        <div id="formShape1" class="formShape formShape1">
-            <div class="chioce">
-                <button id="halfMember1">中途之家會員</button>
-                <button id="member1" class="selected">一般會員</button>
-            </div>
-            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
-                <br>
-                <br>
-                <br>
-                <br>
-                <label for="userId">會員帳號
-                    <br>
-                    <small>請輸入您的電子郵件</small>
-                </label>
-                <input type="email" id="userIdIn" name="memId" required>
-                <br>
-                <label for="userPsw">會員密碼
-                    <br>
-                    <small>請輸入6~10碼英數字</small>
-                </label>
-                <input type="password" id="userPswIn" name="memPsw" required>
-                <br>
-                <div class="chioce">
-                    <input type="submit" class="formBtn formSubmitBtn" value="登入">
-                </div>
-                <p class="signInUpPos">尚未成為會員嗎?
-                    <span id="signIn2Up">點此註冊</span>
-                </p>
-            </form>
-        </div>
-        <div id="formShape2" class="formShape formShape2">
-            <div class="chioce">
-                <button id="halfMember2">中途之家會員</button>
-                <button id="member2" class="selected">一般會員</button>
-            </div>
-            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
-                <label for="userName">會員名稱
-                    <br>
-                    <small>不得多於8個中/英文字元</small>
-                </label>
-                <input type="text" name="userName" id="userName" placeholder="請輸入您的名稱" required>
-                <br>
-                <label for="userId">會員帳號
-                    <br>
-                    <small>請輸入您的電子郵件</small>
-                </label>
-                <input type="email" name="userId" id="userId" placeholder="請輸入您的電子郵件" required>
-                <br>
-                <label for="userPsw">會員密碼
-                    <br>
-                    <small>請輸入6~10碼英數字</small>
-                </label>
-                <input type="password" name="userPsw" id="userPsw" placeholder="請輸入您的密碼" required>
-                <br>
-                <label for="userTel">聯絡電話
-                    <br>
-                </label>
-                <input type="tel" name="userTel" id="userTel" placeholder="請輸入您的手機號碼" required>
-                <br>
-                <label for="userBirth">會員生日
-                    <br>
-                </label>
-                <input type="text" name="userBirth" id="userBirth" placeholder="ex:19900101" required>
-                <br>
-                <label for="userAddress">通訊地址
-                    <br>
-                </label>
-                <input type="text" name="userAddress" id="userAddress" placeholder="請輸入您的地址" required>
-                <br>
-                <div class="chioce">
-                    <label for="userPhoto" class="formBtn" id="userPhotoLabel" required>
-                        點我上傳您的大頭貼
-                    </label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-                    <input type="file" name='image' id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
-                    <input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
-                </div>
-                <p class="signInUpPos">已經是會員了嗎?
-                    <span id="signUp2In">點此登入</span>
-                </p>
-            </form>
-        </div>
-    </div>
 	<header>
 		<div class="logo">
-			<a href="../index.php">
+			<a href="index.php">
 				<h1>
 					<img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
 				</h1>
@@ -115,19 +28,19 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="../catSearch.html">尋喵</a>
+					<a href="html/catSearch.html">尋喵</a>
 				</li>
 				<li>
-					<a href="../halfway_house_search.php">中途之家</a>
+					<a href="html/halfway_house_search.html">中途之家</a>
 				</li>
 				<li>
-					<a href="../Cat_ShoppingStore.html" title="前往商城">商城</a>
+					<a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
 				</li>
 				<li>
-					<a href="../forum.html">討論區</a>
+					<a href="html/forum.html">討論區</a>
 				</li>
 				<li>
-					<a href="../member.html">會員專區</a>
+					<a href="html/member.html">會員專區</a>
 				</li>
 			</ul>
 		</nav>
@@ -135,20 +48,36 @@
 			<a href="#">
 				<i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
 			</a>
-			<a href="#" class="login">
-				<i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
-			</a>
-			<a href="#">
-				<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-				<span id="like">6</span>
-			</a>
+			<?php
+						if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
+
+							echo "<a href='php/memberLogOut.php'>
+								<i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+								</a>";
+						}else{
+							echo "<a href='#' class='login'>
+								<i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+								</a>";
+						}
+				?>
+				<a href="#">
+					<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+					<span id="like">6</span>
+				</a>
+		</div>
+		<div class="hb">
+			<div class="hamburger" id="hamburger-6">
+				<span class="line"></span>
+				<span class="line"></span>
+				<span class="line"></span>
+			</div>
 		</div>
 	</header>
 
 <?php
 $halfno = $_REQUEST["halfno"];
-// $memno = $_SESSION["MEM_NO"];
-$memno = 1;
+$memno = $_SESSION["MEM_NO"];
+// $memno = 1;
 try {
     require_once "../php/connectBD103G2.php";
 
@@ -238,7 +167,22 @@ try {
 						</fieldset>
 						<div class="ratingscore">
 							您的評分
-							<span id="scoretext"></span>/5顆星
+							<span id="scoretext">
+								<?php
+									if ($_SESSION['MEM_NO'] !== null) {
+										$sql2 = "select count(*),EVALUATION_STARS es 
+												from evaluation 
+												where MEM_NO = $memno and HALF_NO = $halfno";
+										$starcount = $pdo->query($sql2);
+										$starcountRow = $starcount->fetchObject();
+										if ( $starcountRow->es != '') {
+											echo $starcountRow->es;
+										} else {
+											echo "0";
+										}
+									}
+								?>
+							</span>/5顆星
 						</div>
 						<div class="ratingtext">
 							總平均
@@ -251,15 +195,14 @@ try {
 
 <script>
 	//把點到的星星數量傳到scoretext秀出來
-	let input = document.getElementsByTagName('input');
-	for (let i = 0; i < input.length; i++) {
-		input[i].addEventListener('click', function () {
-			if (scoretext.innerHTML == '') {
-				let score = input[i].getAttribute('value');
+	let inputbtn = document.getElementsByTagName('input');
+	for (let i = 0; i < inputbtn.length; i++) {
+		inputbtn[i].addEventListener('click', function () {
+			if (scoretext.innerHTML == '0') {
+				let score = inputbtn[i].getAttribute('value');
 				// ajax傳到php 存到mysql
 				let xhr = new XMLHttpRequest();
 				xhr.onload=function(){
-					alert(xhr.responseText);
 					let response = JSON.parse(xhr.responseText);
 					document.getElementById("avgScore").innerHTML=response.avg;
 					document.getElementById("count").innerHTML=response.count;
@@ -320,64 +263,133 @@ try {
 
 <?php
 try {
-    require_once "../php/connectBD103G2.php";
-
-    $sql     = "select * from cat where HALF_NO=$halfno";
+	require_once "../php/connectBD103G2.php";
+	
+	$sql = "select count(1) from cat where HALF_NO=$halfno";    // 計算資料筆數
+	$total = $pdo->query($sql);
+	$rownum = $total->fetchcolumn();                            // 總共欄位數
+	$perPage = 6;                                               // 每頁顯示筆數
+	$totalpage = ceil($rownum / $perPage);                      // 計算總頁數
+	$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
+	// 若無當前頁數則進入第一頁 若有則進入該頁
+	$start = ($pageNo - 1) * $perPage;   
+	// 設定每頁呈現內容
+    $sql     = "select * from cat where HALF_NO=$halfno limit $start, $perPage";
     $halfway = $pdo->prepare($sql);
-    $halfway->bindColumn("CAT_NAME", $NAME);
+    $halfway->bindColumn("CAT_NAME", $CNAME);
     $halfway->bindColumn("CAT_COVER", $COVER);
-    $halfway->bindColumn("CAT_DATE", $ADDRESS);
+    $halfway->bindColumn("CAT_DATE", $DATE);
     $halfway->bindColumn("CAT_SEX", $SEX);
     $halfway->bindColumn("CAT_NARRATIVE", $NARRATIVE);
-    $halfway->execute();
-    while ($row = $halfway->fetchObject()) {
-        ?>
-
-				<div class="catitem">
-					<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
-					<div class="catpic">
-						<img src="<?php echo $COVER ?>" alt="cat">
-					</div>
-					<div class="text">
-						<h3>
-							<?php echo $NAME ?>
-						</h3>
-						<?php echo $ADDRESS ?>
-						<br>
-						<?php
-if ($SEX = 1) {
-            echo "男生" . "<i class='fa fa-mars' aria-hidden='true'></i>";
-        } else {
-            echo "女生" . "<i class='fa fa-venus' aria-hidden='true'></i>";
-        }
-        ?>
-						<br>
-						<?php echo $NARRATIVE ?>
-					</div>
+	$halfway->execute();
+	if( $halfway->rowCount()==0){
+        echo "<center>此中途之家沒有任何喵小孩哦!</center>";
+    }else{
+    	while ($row = $halfway->fetchObject()) {
+?>
+			<div class="catitem">
+				<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
+				<div class="catpic">
+					<img src="<?php echo $COVER ?>" alt="cat">
 				</div>
+				<div class="text">
+					<h3>
+						<?php echo $CNAME ?>
+					</h3>
+					<?php echo $DATE ?>
+					<br>
+<?php
+			if ($SEX = 1) {
+				echo "男生" . "<i class='fa fa-mars' aria-hidden='true'></i>";
+			} else {
+				echo "女生" . "<i class='fa fa-venus' aria-hidden='true'></i>";
+			}
+?>
+					<br>
+					<?php echo $NARRATIVE ?>
+				</div>
+			</div>
 
 <?php
-}
-
-} catch (PDOException $e) {
-    echo "錯誤原因 : ", $e->getMessage(), "<br>";
-    echo "錯誤行號 : ", $e->getLine(), "<br>";
-}
+		}
+	}
 ?>
+			</div>
+			<div class="page">
+				<?php
+					for ($i = 1; $i <= $totalpage; $i++) {
+						echo "<a href='?halfno=$halfno&pageNo=$i' class='pageNo defaultBtn'>" . $i . "</a>";
+					}
+				?>
 			</div>
 		</div>
 		<script src="../js/cat/like.js"></script>
 
 
-
 		<div class="map">
 			<h2>我們的位置</h2>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1808.4820782514587!2d121.19146549411086!3d24.967334110163314!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1b5e6ee66e9fec49!2z6LOH562W5pyD5Lit5aOiIFRpYmFNZSDlnIvpmpvkurrmiY3nmbzlsZXkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1514365006333"
-			    frameborder="0" style="border:0" allowfullscreen id="map"></iframe>
+			<div id="myMap" style="width:1300px;height:600px;"></div>
 		</div>
+
+		<script>
+			function doFirst(){
+				let geocoder = new google.maps.Geocoder();
+
+				// 地址
+				let add = "<?php echo $ADDRESS ?>";
+
+				// 傳地址資訊至 geocoder.geocode
+				geocoder.geocode({'address': add }, function(results, status) {
+					if (status === google.maps.GeocoderStatus.OK) {
+						// 如果有資料就會回傳
+						if (results) {
+							showmap(results[0].geometry.location);
+						}
+					}
+					// 經緯度資訊錯誤
+					else {
+						alert("Reverse Geocoding failed because: " + status);
+					}
+				});
+
+				function showmap(params) {
+					let area = document.getElementById('myMap');
+
+					let myMap = new google.maps.Map(area,{
+						zoom: 16,
+						center: params,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					});
+
+					let marker = new google.maps.Marker({
+						position: params,
+						map: myMap,
+						icon: '../images/flycat1.png',
+						title: ''
+					});
+
+					let infowindow = new google.maps.InfoWindow({
+						content: "<center><?php echo $NAME ?></center><br><center><?php echo $ADDRESS ?></center>"
+					});
+
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(myMap, marker);
+					});
+				};
+
+				
+			}
+			window.addEventListener('load',doFirst);
+		</script>
 
 	</div>
 
+<?php
+} catch (PDOException $e) {
+    echo "錯誤原因 : ", $e->getMessage(), "<br>";
+    echo "錯誤行號 : ", $e->getLine(), "<br>";
+}
+?>
 	<footer>
 		<div class="container">
 			<div class="follow">
