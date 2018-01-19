@@ -2,7 +2,6 @@
 ob_start();
 session_start();
 isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
-
 try {
 	require_once("../php/connectBD103G2.php");
 	$echoText = "";
@@ -18,10 +17,40 @@ try {
 		$desc = 'desc';
 	}
 	// 關鍵字搜尋
-	if (isset($_REQUEST["searchText"])) {
-		$searchText = $_REQUEST["searchText"];
+	if (isset($_REQUEST["searchText"]) == 1 || file_get_contents('php://input') !== null) {
+			//關鍵字
+		if( isset( $_REQUEST["searchText"] ) ){
+			$searchText = "and cat_name like '%";
+			$searchText .= $_REQUEST["searchText"];
+			$searchText .= "%'";
+		}else {
+			$searchText = '';
+		}
+			//進階搜尋
+		if ( file_get_contents('php://input') !== null ) {
+			$json = file_get_contents('php://input');
+			$jsonPHP = json_decode($json);
+			if($jsonPHP->color !== null ){
+				$colorAdv = "and (cat_color like '%";
+				$colorAdv .= implode("%' or cat_color like '%", $jsonPHP->color);
+				$colorAdv .= "%')";
+			}else $colorAdv = null;
+			if ($jsonPHP->location !== null) {
+				$locationAdv = "and (cat_location like '%";
+				$locationAdv .= implode("%' or cat_location like '%", $jsonPHP->location);
+				$locationAdv .= "%')";
+			}else $locationAdv = null;
+			if ($jsonPHP->gender) {
+				$genderAdv = "and (cat_gender like '%";
+				$genderAdv .= implode("%' or cat_gender like '%", $jsonPHP->gender);
+				$genderAdv .= "%')";
+			}else $genderAdv = null;
+		}else {
+			$colorAdv = '';
+		}
 
-		$sql = "select count(1) from cat where CAT_NAME like '%$searchText%' and `ADOPT_STATUS` = 0";    // 計算資料筆數
+
+		$sql = "select count(1) from cat where `ADOPT_STATUS` = 0 $searchText $colorAdv $locationAdv $genderAdv";    // 計算資料筆數
 		$total = $pdo->query($sql);
 		$rownum = $total->fetchcolumn();                            // 總共欄位數
 		$perPage = 9;                                               // 每頁顯示筆數
@@ -32,7 +61,7 @@ try {
 		if ($rownum == 0) {
 			echo "這裡沒有你要找的喵喵, 請重新輸入您的關鍵字";
 		} else {
-			$sql = "select * from cat where CAT_NAME like '%$searchText%' order by CAT_NO $desc limit $start, $perPage";
+			$sql = "select * from cat where `ADOPT_STATUS` = 0 $searchText $colorAdv $locationAdv $genderAdv order by CAT_NO $desc limit $start, $perPage";
 			$cat = $pdo->prepare($sql);
 			$cat->bindColumn("CAT_NO", $NO);
 			$cat->bindColumn("CAT_NAME", $NAME);
@@ -82,8 +111,7 @@ try {
 					$likeNot = "0";
 				}
 			}
-
-			$echoText .= " 
+			$echoText .= "
                 <picture class='catItem'>
                     <i class='$heart' aria-hidden='true' data-val='$NO' data-boolean='$likeNot'></i>
                     <div class='catContent'>
