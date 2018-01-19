@@ -68,7 +68,7 @@
                         <li onclick="getData('halfMemHalfway.php');" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 編輯中途之家資料
                         </li>
-                        <li onclick="getData('halfMemCat.php');" class="li">
+                        <li onclick="getData('halfMemCat.php',tempQQName);" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 編輯喵小孩資料
                         </li>
                         <li onclick="getData('halfMemOrderlist.php');" class="li">
@@ -95,7 +95,7 @@
                     <li onclick="getData('halfMemHalfway.php');" class="li">
                         編輯中途之家資料
                     </li>
-                    <li onclick="getData('halfMemCat.php');" class="li">
+                    <li onclick="getData('halfMemCat.php,tempQQName');" class="li">
                         編輯喵小孩資料
                     </li>
                     <li onclick="getData('halfMemOrderlist.php');" class="li">
@@ -138,13 +138,16 @@
 </body>
 
 <script>
-    function getData(pagename) {
+    function getData(pagename,callback) {
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
                 //modify here
                 let content = document.getElementById('content');
                 content.innerHTML = this.responseText;
+                if(callback !== undefined){
+                    callback();
+                }
             } else {
                 alert(xhr.status);
             }
@@ -152,6 +155,32 @@
         let url = pagename;
         xhr.open("get", url, true);
         xhr.send(null);
+    }
+
+    function tempQQName() {
+        let newEmp = document.getElementById('newEmp');
+        newEmp.addEventListener('click', function () {
+            let tr = document.getElementsByClassName('newEmpTR');
+            if (tr[0].className.match('newEmpTROff')) {
+                for (let i = 0; i < tr.length; i++) {
+                    tr[i].className =
+                        tr[i].className.replace('newEmpTROff', 'newEmpTROn');
+                }
+                let newEmp = document.getElementById('newEmp');
+                newEmp.innerHTML = "取消新增喵小孩";
+            } else {
+                for (let i = 0; i < tr.length; i++) {
+                    tr[i].className =
+                        tr[i].className.replace('newEmpTROn', 'newEmpTROff');
+                }
+                let newEmp = document.getElementById('newEmp');
+                newEmp.innerHTML = "新增喵小孩";
+            }
+        });
+        // let ensureBtn = document.getElementById('ensureBtn')
+        // ensureBtn.addEventListener('click', function () {
+        //     confirm('您確定要新增嗎?')
+        // });
     }
 </script>
 <script>
@@ -181,31 +210,6 @@
         xhr.open("get", url, true);
         xhr.send(null);
     }
-</script>
-<script>
-    let newEmp = document.getElementById('newEmp');
-    newEmp.addEventListener('click', function() {
-        let tr = document.getElementsByClassName('newEmpTR');
-        if (tr[0].className.match('newEmpTROff')) {
-            for (let i = 0; i < tr.length; i++) {
-                tr[i].className =
-                    tr[i].className.replace('newEmpTROff', 'newEmpTROn');
-            }
-            let newEmp = document.getElementById('newEmp');
-            newEmp.innerHTML = "取消新增喵小孩";
-        } else {
-            for (let i = 0; i < tr.length; i++) {
-                tr[i].className =
-                    tr[i].className.replace('newEmpTROn', 'newEmpTROff');
-            }
-            let newEmp = document.getElementById('newEmp');
-            newEmp.innerHTML = "新增喵小孩";
-        }
-    });
-    let ensureBtn = document.getElementById('ensureBtn')
-    ensureBtn.addEventListener('click', function () {
-        confirm('您確定要新增嗎?')
-    });
 </script>
 
 </html>
