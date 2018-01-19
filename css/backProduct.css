@@ -438,6 +438,37 @@ header ul li:nth-child(8):after {
   cursor: pointer;
 }
 
+.right .container1 .adoptInfomation table tr th input,
+.right .container1 .adoptInfomation table tr td input {
+  width: 50%;
+  margin: 8px 0;
+}
+
+.right .container1 .adoptInfomation table tr th textarea,
+.right .container1 .adoptInfomation table tr td textarea {
+  resize: none;
+}
+
+.right .container1 .adoptInfomation table tr th button,
+.right .container1 .adoptInfomation table tr td button {
+  border-radius: 60px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  padding: 1% 1.5%;
+  background-color: #EAAF88;
+  border: 1px solid #EAAF88;
+  color: #fff;
+  outline: none;
+  display: inline-block;
+}
+
+.right .container1 .adoptInfomation table tr th button:hover,
+.right .container1 .adoptInfomation table tr td button:hover {
+  border: 1px solid #EAAF88;
+  background-color: transparent;
+  color: #EAAF88;
+}
+
 .right .container1 .adoptInfomation table tr th {
   font-size: 18px;
   letter-spacing: 2px;

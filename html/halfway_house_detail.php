@@ -143,8 +143,8 @@
 
 <?php
 $halfno = $_REQUEST["halfno"];
-// $memno = $_SESSION["MEM_NO"];
-$memno = 1;
+$memno = $_SESSION["MEM_NO"];
+// $memno = 1;
 try {
     require_once "../php/connectBD103G2.php";
 
@@ -234,7 +234,7 @@ try {
 						</fieldset>
 						<div class="ratingscore">
 							您的評分
-							<span id="scoretext">0</span>/5顆星
+							<span id="scoretext"></span>/5顆星
 							<input type="hidden" name="" value="">
 						</div>
 						<div class="ratingtext">
@@ -251,23 +251,24 @@ try {
 	let input = document.getElementsByTagName('input');
 	for (let i = 0; i < input.length; i++) {
 		input[i].addEventListener('click', function () {
-			let score = input[i].getAttribute('value');
-			let scoretext = document.getElementById('scoretext');
-			scoretext.innerHTML = score;
+			if (scoretext.innerHTML == '') {
+				let score = input[i].getAttribute('value');
+				let scoretext = document.getElementById('scoretext');
+				scoretext.innerHTML = score;
 
-			// ajax傳到php 存到mysql
-			let xhr = new XMLHttpRequest();
-			xhr.onload=function(){
-				let response = JSON.parse(xhr.responseText);
-				document.getElementById("avgScore").innerHTML=response.avg;
-				document.getElementById("person").innerHTML=response.count;
+				// ajax傳到php 存到mysql
+				let xhr = new XMLHttpRequest();
+				xhr.onload=function(){
+					let response = JSON.parse(xhr.responseText);
+					document.getElementById("avgScore").innerHTML=response.avg;
+					document.getElementById("person").innerHTML=response.count;
+				}
+				let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
+				xhr.open("get", url, true);
+				xhr.send(null);
+			}else{
+				alert("123");
 			}
-			if (scoretext.innerHTML !== 0) {
-				alert("您已經評過分了！");
-			}
-			let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
-			xhr.open("get", url, true);
-			xhr.send(null);
 		});
 	}
 </script>
@@ -298,7 +299,7 @@ try {
 			</div>
 
 <?php
-}
+	}
 } catch (PDOException $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";

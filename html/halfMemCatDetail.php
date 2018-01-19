@@ -1,47 +1,49 @@
 <?php
-ob_start();
-session_start();
-?>
+try {
+    require_once("../php/connectBD103G2.php");
 
-<div class="halfMemCat" id="catInfo">
-<!-- 新增喵開始 -->
-    <button id="newEmp" class="newbtn">新增喵小孩</button>
-    <form action="../php/halfMemCatInsertToDb.php" method="post">
-        <input type="hidden" name="no" value="<?php echo $_SESSION["HALF_NO"];?>">
-        <h4 class="newEmpTR newEmpTROff">新增喵小孩</h4>
+    $sql = "select * from cat where CAT_NO = :catNo";
+    $HWcat = $pdo->prepare( $sql );
+    $HWcat->bindValue(":catNo", $_REQUEST["CAT_NO"]);
+    $HWcat->execute();
+    while($HWcatRow = $HWcat->fetchObject()){
+?>
+    <h4>修改喵小孩資料</h4>
+    <form action="../php/halfMemCatUpdateToDb.php" method="post">
+        <input type="hidden" name="no" value="<?php echo $HWcatRow->CAT_NO;?>">
         <table>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩名稱</th>
                 <td>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="<?php echo $HWcatRow->CAT_NAME;?>">
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩出生年月</th>
                 <td>
-                    <input type="text" name="date">
+                    <input type="text" name="date" value="<?php echo $HWcatRow->CAT_DATE;?>">
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩性別</th>
                 <td>
                     <input type="radio" class="radio" name="sex" value="0" checked="true">男
                     <input type="radio" class="radio" name="sex" value="1">女
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩個性</th>
                 <td>
-                    <input type="text" name="narrative">
+                    <input type="text" name="narrative" value="<?php echo $HWcatRow->CAT_NARRATIVE;?>">
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩毛色</th>
                 <td>
-                    <input type="text" name="color">
+                    <input type="text" name="color" value="<?php echo $HWcatRow->CAT_COLOR;?>">
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩地區</th>
                 <td>
                     <select name="location">
@@ -69,97 +71,54 @@ session_start();
                     </select>
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩疫苗</th>
                 <td>
                     <input type="radio" class="radio" name="vaccine" value="1">是
                     <input type="radio" class="radio" name="vaccine" value="0" checked="true">否
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩結紮</th>
                 <td>
                     <input type="radio" class="radio" name="ligation" value="1">是
                     <input type="radio" class="radio" name="ligation" value="0" checked="true">否
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩簡單介紹</th>
                 <td id="simple">
                     <p>個性
-                        <input type="text" class="simple" name="individuality">
+                        <input type="text" class="simple" name="individuality" value="<?php echo $HWcatRow->CAT_INDIVIDUALITY;?>">
                     </p>
                     <p>適合對象
-                        <input type="text" class="simple" name="fit">
+                        <input type="text" class="simple" name="fit" value="<?php echo $HWcatRow->CAT_FIT;?>">
                     </p>
                     <p>優點
-                        <input type="text" class="simple" name="advantage">
+                        <input type="text" class="simple" name="advantage" value="<?php echo $HWcatRow->CAT_ADVANTAGE;?>">
                     </p>
                     <p>缺點
-                        <input type="text" class="simple" name="disadvantage">
+                        <input type="text" class="simple" name="disadvantage" value="<?php echo $HWcatRow->CAT_DISADVANTAGE;?>">
                     </p>
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <th>喵小孩大頭貼</th>
                 <td>
                     <input type="file" name="catpic">
                 </td>
             </tr>
-            <tr class="newEmpTR newEmpTROff">
+            <tr>
                 <td colspan="2">
                     <button type="submit">確定修改</button>
-                    <button type="reset">清除內容</button>
                 </td>
             </tr>
         </table>
     </form>
-<!-- 新增喵結束 -->
-
-<!-- 喵的資訊 -->
-    <h4>喵小孩資料</h4>
-    <table class="catInfo">
-        <tr>
-            <th>喵小孩名字</th>
-            <th>喵小孩領養狀態</th>
-            <th>喵小孩詳細資料</th>
-        </tr>
 <?php
-try {
-    require_once "../php/connectBD103G2.php";
-
-    $sql   = "select * from cat where HALF_NO =1";
-    $HWcat = $pdo->prepare($sql);
-    // $HWcat->bindValue(1, $_SESSION["HALF_ID"]);//session
-    $HWcat->execute();
-
-    if ($HWcat->rowCount() == 0) {
-        echo "<center>查無此中途之家喵小孩資料</center>";
-    } else {
-        while ($HWcatRow = $HWcat->fetchObject()) {
-            ?>
-        <tr>
-            <td><?php echo $HWcatRow->CAT_NAME; ?></td>
-            <td>
-                <?php if ($HWcatRow->ADOPT_STATUS == 0) {
-                echo "喵喵等待領養";
-            } elseif ($HWcatRow->ADOPT_STATUS == 1) {
-                echo "喵喵領養審核中";
-            } else {
-                echo "喵喵已被領養";
-            }
-            ?>
-            </td>
-            <td><button onclick="add('../html/halfMemCatDetail.php?CAT_NO=<?php echo $HWcatRow->CAT_NO; ?>');">查看喵小孩</button></td>
-        </tr>
-
-<?php
-} //while
-    } //if...else
+    }//while
 } catch (PDOException $e) {
     echo "錯誤行號 : ", $e->getLine(), "<br>";
-    echo "錯誤訊息 : ", $e->getMessage(), "<br>";
+    echo "錯誤訊息 : ", $e->getMessage(), "<br>"; 
 }
 ?>
-    </table>
-</div>

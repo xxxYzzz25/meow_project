@@ -64,6 +64,29 @@
                             color: dodgerblue;
                             cursor: pointer;
                         }
+                        input{
+                            width: 50%;
+                            margin: 8px 0;
+                        }
+                        textarea{
+                            resize: none;
+                        }
+                        button {
+                            border-radius: 60px;
+                            cursor: pointer;
+                            letter-spacing: 3px;
+                            padding: 1% 1.5%;
+                            background-color: #EAAF88;
+                            border: 1px solid #EAAF88;
+                            color: #fff;
+                            outline: none;
+                            display: inline-block;
+                            &:hover {
+                                border: 1px solid #EAAF88;
+                                background-color: transparent;
+                                color: #EAAF88;
+                            }
+                        }
                     }
                     th {
                         font-size: $font-size-large;

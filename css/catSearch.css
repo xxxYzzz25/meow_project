@@ -743,6 +743,32 @@ body {
   margin-bottom: 40px;
 }
 
+.right .container1 #black {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.right .container1 #quickViewArea {
+  position: fixed;
+  height: 600px;
+  width: 450px;
+  z-index: 1001;
+  display: none;
+  box-sizing: border-box;
+  border: 10px solid #fff;
+}
+
+.right .container1 #quickViewArea img {
+  width: 100%;
+  height: 100%;
+}
+
 .right .container1 a {
   text-decoration: none;
 }
@@ -828,7 +854,7 @@ body {
 }
 
 .right .container1 .selectForm #advanced:checked ~ div {
-  height: 400px;
+  height: 280px;
 }
 
 .right .container1 .selectForm .advanceSearchItem {
@@ -866,6 +892,7 @@ body {
   font-size: 14px;
   text-indent: 4px;
   margin-right: 6px;
+  padding-left: 5px;
 }
 
 .right .container1 .selectForm .formInsert .searchBar:focus {
@@ -936,19 +963,17 @@ body {
   display: none;
 }
 
+.right .container1 #sortCat {
+  border: solid #333 1px;
+  background-color: #fffffb;
+  text-align: center;
+  position: absolute;
+}
+
 .right .container1 .catPic {
   width: 100%;
   margin: 60px auto 0;
   position: relative;
-}
-
-.right .container1 .catPic #sortCat {
-  position: absolute;
-  top: -46px;
-  left: 30px;
-  border: solid #333 1px;
-  background-color: #fffffb;
-  text-align: center;
 }
 
 .right .container1 .catPic .catItem {
@@ -1053,12 +1078,11 @@ body {
   margin-left: -10px;
 }
 
-.right .container1 .page {
-  padding: 5px;
+.right .container1 .catPic .page {
   text-align: center;
 }
 
-.right .container1 .page .pageNo {
+.right .container1 .catPic .page .pageNo {
   border-width: 1px;
   border-radius: 0px;
   padding: 2px;
@@ -1067,6 +1091,8 @@ body {
   line-height: 1.5em;
   display: inline-block;
   text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 @media all and (max-width: 991px) {
@@ -1076,6 +1102,10 @@ body {
   .right {
     width: 100%;
     margin: 0;
+  }
+  .right .container1 #quickViewArea {
+    height: 540px;
+    width: 360px;
   }
   .right .container1 .selectForm .advanceSearch {
     right: 14%;
@@ -1109,6 +1139,10 @@ body {
     width: 100%;
     margin: 0;
   }
+  .right .container1 #quickViewArea {
+    height: 400px;
+    width: 300px;
+  }
   .right .container1 .selectForm {
     width: 100%;
   }
@@ -1126,7 +1160,7 @@ body {
     right: 5%;
   }
   .right .container1 .selectForm #advanced:checked ~ div {
-    height: 710px;
+    height: 500px;
   }
   .right .container1 .selectForm .advanceSearchItem {
     padding-left: 20px;

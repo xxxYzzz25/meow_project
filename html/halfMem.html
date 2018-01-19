@@ -65,7 +65,7 @@
                         <li onclick="getData('halfMemInfo.php');" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 修改會員資料
                         </li>
-                        <li onclick="getData('halfMemhalfway.php');" class="li">
+                        <li onclick="getData('halfMemHalfway.php');" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 編輯中途之家資料
                         </li>
                         <li onclick="getData('halfMemCat.php');" class="li">
@@ -92,7 +92,7 @@
                     <li onclick="getData('halfMeminfo.php');" class="li">
                         修改會員資料
                     </li>
-                    <li onclick="getData('halfMemhalfway.php');" class="li">
+                    <li onclick="getData('halfMemHalfway.php');" class="li">
                         編輯中途之家資料
                     </li>
                     <li onclick="getData('halfMemCat.php');" class="li">
@@ -164,6 +164,49 @@
             this.style.color = "#0f71c2";
         });
     }
+</script>
+<script>
+    function add(data) {
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                //modify here
+                let catInfo = document.getElementById('catInfo');
+                catInfo.innerHTML = this.responseText;
+            } else {
+                alert(xhr.status);
+            }
+        }
+        let url = data;
+        xhr.open("get", url, true);
+        xhr.send(null);
+    }
+</script>
+<script>
+    let newEmp = document.getElementById('newEmp');
+    newEmp.addEventListener('click', function () {
+        console.log("1231213213");
+        let tr = document.getElementsByClassName('newEmpTR');
+        if (tr[0].className.match('newEmpTROff')) {
+            for (let i = 0; i < tr.length; i++) {
+                tr[i].className =
+                    tr[i].className.replace('newEmpTROff', 'newEmpTROn');
+            }
+            let newEmp = document.getElementById('newEmp');
+            newEmp.innerHTML = "取消新增喵小孩";
+        } else {
+            for (let i = 0; i < tr.length; i++) {
+                tr[i].className =
+                    tr[i].className.replace('newEmpTROn', 'newEmpTROff');
+            }
+            let newEmp = document.getElementById('newEmp');
+            newEmp.innerHTML = "新增喵小孩";
+        }
+    });
+    let ensureBtn = document.getElementById('ensureBtn')
+    ensureBtn.addEventListener('click', function () {
+        confirm('您確定要新增嗎?')
+    });
 </script>
 
 </html>

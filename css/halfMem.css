@@ -488,6 +488,23 @@ header ul li:nth-child(5):after {
   padding-bottom: 50px;
 }
 
+.right .content button {
+  border-radius: 60px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  padding: 2% 6%;
+  background-color: #EAAF88;
+  border: 1px solid #EAAF88;
+  color: #fff;
+  outline: none;
+}
+
+.right .content button:hover {
+  border: 1px solid #EAAF88;
+  background-color: transparent;
+  color: #EAAF88;
+}
+
 .right .content textarea {
   resize: none;
 }
@@ -495,7 +512,7 @@ header ul li:nth-child(5):after {
 .right .content h4 {
   text-align: center;
   font-size: 24px;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 .right .content .halfMemInfo form {
@@ -529,6 +546,55 @@ header ul li:nth-child(5):after {
   width: 90%;
   height: 30px;
   border: none;
+}
+
+.right .content .halfMemCat .newbtn {
+  float: right;
+  margin-bottom: 20px;
+}
+
+.right .content .halfMemCat .newEmpTROff {
+  display: none;
+}
+
+.right .content .halfMemCat .newEmpTROn {
+  display: table-row;
+}
+
+.right .content .halfMemCat .catInfo {
+  width: 100%;
+}
+
+.right .content .halfMemCat .catInfo tr {
+  text-align: center;
+}
+
+.right .content .halfMemCat .catInfo th {
+  width: 30%;
+  text-align: center;
+  background-color: #f2f2f2;
+  border: 2px solid #ccc;
+  padding: 20px;
+}
+
+.right .content .halfMemCat .catInfo td {
+  border: 2px solid #ccc;
+  padding: 20px;
+}
+
+.right .content .halfMemCat .catInfo td input {
+  width: 90%;
+  height: 30px;
+  border: none;
+}
+
+.right .content .halfMemCat .catInfo td .radio {
+  width: 10%;
+  height: 15px;
+}
+
+.right .content .halfMemCat .catInfo td .simple {
+  width: 80%;
 }
 
 .right .content .halfMemCat form {
@@ -641,34 +707,39 @@ header ul li:nth-child(5):after {
   color: #eb2f2f;
 }
 
-.right .content .halfMemOrderlist form {
+.right .content .halfMemOrderlist table {
   width: 100%;
   margin: 30px auto;
 }
 
-.right .content .halfMemOrderlist form table {
-  width: 100%;
-}
-
-.right .content .halfMemOrderlist form tr {
+.right .content .halfMemOrderlist table tr {
   text-align: center;
 }
 
-.right .content .halfMemOrderlist form th {
+.right .content .halfMemOrderlist table th {
   background-color: #f2f2f2;
   border: 1px solid #ccc;
   padding: 20px 0 20px 0;
 }
 
-.right .content .halfMemOrderlist form td {
+.right .content .halfMemOrderlist table td {
   border: 1px solid #ccc;
   padding: 20px 0 20px 0;
 }
 
-.right .content .halfMemOrderlist form td .fa-trash {
+.right .content .halfMemOrderlist table td .fa-trash {
   font-size: 16.8px;
   color: firebrick;
   cursor: pointer;
+}
+
+.right .content .halfMemOrderlist .odTable a {
+  text-decoration: none;
+  color: #EAAF88;
+}
+
+.right .content .halfMemOrderlist .odTable a:hover {
+  color: #0f71c2;
 }
 
 @media all and (max-width: 991px) {
