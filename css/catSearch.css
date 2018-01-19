@@ -764,6 +764,13 @@ body {
   border: 10px solid #fff;
 }
 
+.right .container1 #quickViewArea #cancelQkv {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+}
+
 .right .container1 #quickViewArea img {
   width: 100%;
   height: 100%;
