@@ -7,6 +7,7 @@ session_start();
 <!-- 新增喵開始 -->
     <button id="newEmp" class="newbtn">新增喵小孩</button>
     <form action="../php/halfMemCatInsertToDb.php" method="post">
+        <input type="hidden" name="no" value="<?php echo $_SESSION["HALF_NO"];?>">
         <h4 class="newEmpTR newEmpTROff">新增喵小孩</h4>
         <table>
             <tr class="newEmpTR newEmpTROff">
