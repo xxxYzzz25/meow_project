@@ -1,3 +1,7 @@
+<?php
+    ob_start();
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -149,14 +153,14 @@ try {
     require_once "../php/connectBD103G2.php";
 
     $sql = "select HALF_NAME,HALF_ADDRESS,
-				HALF_TEL,HALF_OPEN,
-				HALF_INTRO,HALF_COVER,
-				EVALUATION_STARS,
-				ROUND(avg(EVALUATION_STARS), 1),
-				COUNT(EVALUATION_STARS)
-				from halfway_member h,evaluation e
-				where h.HALF_NO=e.HALF_NO
-				and h.HALF_NO=$halfno";
+					HALF_TEL,HALF_OPEN,
+					HALF_INTRO,HALF_COVER,
+					EVALUATION_STARS,
+					ROUND(avg(EVALUATION_STARS), 1),
+					COUNT(EVALUATION_STARS)
+			from halfway_member h,evaluation e
+			where h.HALF_NO=e.HALF_NO
+			and h.HALF_NO=$halfno";
     $halfway = $pdo->prepare($sql);
     $halfway->bindColumn("HALF_NAME", $NAME);
     $halfway->bindColumn("HALF_ADDRESS", $ADDRESS);
@@ -234,8 +238,7 @@ try {
 						</fieldset>
 						<div class="ratingscore">
 							您的評分
-							<span id="scoretext">0</span>/5顆星
-							<input type="hidden" name="" value="">
+							<span id="scoretext"></span>/5顆星
 						</div>
 						<div class="ratingtext">
 							總平均
@@ -251,7 +254,7 @@ try {
 	let input = document.getElementsByTagName('input');
 	for (let i = 0; i < input.length; i++) {
 		input[i].addEventListener('click', function () {
-			if (scoretext.innerHTML == '0') {
+			if (scoretext.innerHTML == '') {
 				let score = input[i].getAttribute('value');
 				// ajax傳到php 存到mysql
 				let xhr = new XMLHttpRequest();

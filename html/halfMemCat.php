@@ -3,12 +3,12 @@ ob_start();
 session_start();
 ?>
 
-<div class="halfMemCat" id="catInfo">
+<div class="halfMemCat" id="halfMemCat">
 <!-- 新增喵開始 -->
     <button id="newEmp" class="newbtn">新增喵小孩</button>
     <form action="../php/halfMemCatInsertToDb.php" method="post">
         <input type="hidden" name="no" value="<?php echo $_SESSION["HALF_NO"];?>">
-        <h4 class="newEmpTR newEmpTROff">新增喵小孩</h4>
+        <h4 class="newEmpTR newEmpTROff">新增一隻喵小孩</h4>
         <table>
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩名稱</th>
@@ -108,7 +108,7 @@ session_start();
             </tr>
             <tr class="newEmpTR newEmpTROff">
                 <td colspan="2">
-                    <button type="submit">確定修改</button>
+                    <button type="submit" id="ensureBtn">確定修改</button>
                     <button type="reset">清除內容</button>
                 </td>
             </tr>
@@ -119,25 +119,25 @@ session_start();
 <!-- 喵的資訊 -->
     <h4>喵小孩資料</h4>
     <table class="catInfo">
-        <tr>
-            <th>喵小孩名字</th>
-            <th>喵小孩領養狀態</th>
-            <th>喵小孩詳細資料</th>
-        </tr>
 <?php
 try {
     require_once "../php/connectBD103G2.php";
 
-    $sql   = "select * from cat where HALF_NO =1";
+    $sql   = "select * from cat where HALF_NO =?";
     $HWcat = $pdo->prepare($sql);
-    // $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
+    $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWcat->execute();
 
     if ($HWcat->rowCount() == 0) {
         echo "<center>查無此中途之家喵小孩資料</center>";
     } else {
         while ($HWcatRow = $HWcat->fetchObject()) {
-            ?>
+?>
+        <tr>
+            <th>喵小孩名字</th>
+            <th>喵小孩領養狀態</th>
+            <th>喵小孩詳細資料</th>
+        </tr>
         <tr>
             <td><?php echo $HWcatRow->CAT_NAME; ?></td>
             <td>

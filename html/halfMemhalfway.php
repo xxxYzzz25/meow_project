@@ -52,7 +52,7 @@ try {
                 </td>
             </tr>
             <tr>
-                <th>中途之家的詳細圖片(最多可選擇5張)</th>
+                <th>中途之家的詳細圖片(最多可選擇4張)</th>
                 <td>
                     <input type="file" name="hwpic" multiple="multiple">
                 </td>
@@ -68,8 +68,8 @@ try {
         <?php
     } //if...else 
 } catch (PDOException $e) {
-  echo "錯誤行號 : ", $e->getLine(), "<br>";
-  echo "錯誤訊息 : ", $e->getMessage(), "<br>"; 
+    echo "錯誤行號 : ", $e->getLine(), "<br>";
+    echo "錯誤訊息 : ", $e->getMessage(), "<br>"; 
 }
 
 ?>
