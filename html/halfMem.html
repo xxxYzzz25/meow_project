@@ -25,7 +25,7 @@
                     <a href="catSearch.html">尋喵</a>
                 </li>
                 <li>
-                    <a href="halfway_house_search.php">中途之家</a>
+                    <a href="halfway_house_search.html">中途之家</a>
                 </li>
                 <li>
                     <a href="Cat_ShoppingStore.html" title="前往商城">商城</a>
@@ -77,7 +77,7 @@
                         <li onclick="getData('halfMemAdobtRecord.php');" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 查詢領養紀錄
                         </li>
-                        <li onclick="getData('halfMemAdopt.php');" class="li">
+                        <li onclick="getData('halfMemAdobt.php');" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 審核領養案件
                         </li>
                     </ul>
@@ -104,7 +104,7 @@
                     <li onclick="getData('halfMemAdobtRecord.php');" class="li">
                         查詢領養紀錄
                     </li>
-                    <li onclick="getData('halfMemAdopt.php');" class="li">
+                    <li onclick="getData('halfMemAdobt.php');" class="li">
                         審核領養案件
                     </li>
                 </ul>
@@ -177,10 +177,10 @@
                 newEmp.innerHTML = "新增喵小孩";
             }
         });
-        // let ensureBtn = document.getElementById('ensureBtn')
-        // ensureBtn.addEventListener('click', function () {
-        //     confirm('您確定要新增嗎?')
-        // });
+        let ensureBtn = document.getElementById('ensureBtn')
+        ensureBtn.addEventListener('click', function () {
+            confirm('您確定要新增嗎?')
+        });
     }
 </script>
 <script>
@@ -200,8 +200,8 @@
         xhr.onload = function () {
             if (xhr.status == 200) {
                 //modify here
-                let catInfo = document.getElementById('catInfo');
-                catInfo.innerHTML = this.responseText;
+                let halfMemCat = document.getElementById('halfMemCat');
+                halfMemCat.innerHTML = this.responseText;
             } else {
                 alert(xhr.status);
             }
