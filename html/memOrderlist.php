@@ -37,7 +37,7 @@ try {
             <td><?php echo $orderlistRow->ORDER_PRICE; ?></td>
             <td><?php echo $orderlistRow->ORDER_TIME; ?></td>
             <td><?php echo $orderlistRow->ORDER_STATUS; ?></td>
-            <td><button onclick="add('../php/memOrderlistDetail.php?ORDER_NO=<?php echo $orderlistRow->ORDER_NO; ?>');">訂單詳情</button></td>
+            <td><button class="defaultBtn" onclick="add('../php/memOrderlistDetail.php?ORDER_NO=<?php echo $orderlistRow->ORDER_NO; ?>');">訂單詳情</button></td>
         </tr>
 <?php
         }

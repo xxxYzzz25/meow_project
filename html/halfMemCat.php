@@ -5,7 +5,7 @@ session_start();
 
 <div class="halfMemCat" id="halfMemCat">
 <!-- 新增喵開始 -->
-    <button id="newEmp" class="newbtn">新增喵小孩</button>
+    <button id="newEmp" class="newbtn defaultBtn">新增喵小孩</button>
     <form action="../php/halfMemCatInsertToDb.php" method="post">
         <input type="hidden" name="no" value="<?php echo $_SESSION["HALF_NO"];?>">
         <h4 class="newEmpTR newEmpTROff">新增一隻喵小孩</h4>
@@ -108,8 +108,8 @@ session_start();
             </tr>
             <tr class="newEmpTR newEmpTROff">
                 <td colspan="2">
-                    <button type="submit" id="ensureBtn">確定修改</button>
-                    <button type="reset">清除內容</button>
+                    <button type="submit" id="ensureBtn" class="defaultBtn">確定修改</button>
+                    <button type="reset" class="defaultBtn">清除內容</button>
                 </td>
             </tr>
         </table>
@@ -150,7 +150,7 @@ try {
             }
             ?>
             </td>
-            <td><button onclick="add('../html/halfMemCatDetail.php?CAT_NO=<?php echo $HWcatRow->CAT_NO; ?>');">查看喵小孩</button></td>
+            <td><button class="defaultBtn" onclick="add('../html/halfMemCatDetail.php?CAT_NO=<?php echo $HWcatRow->CAT_NO; ?>');">查看喵小孩</button></td>
         </tr>
 
 <?php

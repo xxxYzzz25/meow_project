@@ -118,21 +118,6 @@
                         color: firebrick;
                         cursor: pointer;
                     }
-                    button {
-                        border-radius: 60px;
-                        cursor: pointer;
-                        letter-spacing: 3px;
-                        padding: 2% 8% 2% 10%;
-                        background-color: #EAAF88;
-                        border: 1px solid #EAAF88;
-                        color: #fff;
-                        outline: none;
-                        &:hover {
-                            border: 1px solid #EAAF88;
-                            background-color: transparent;
-                            color: #EAAF88;
-                        }
-                    }
                 }
             }
             .odTable {

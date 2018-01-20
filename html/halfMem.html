@@ -162,6 +162,8 @@
         newEmp.addEventListener('click', function () {
             let tr = document.getElementsByClassName('newEmpTR');
             if (tr[0].className.match('newEmpTROff')) {
+                tr[0].className =
+                    tr[0].className.replace('newEmpTROff', 'newblock');
                 for (let i = 0; i < tr.length; i++) {
                     tr[i].className =
                         tr[i].className.replace('newEmpTROff', 'newEmpTROn');
@@ -169,6 +171,8 @@
                 let newEmp = document.getElementById('newEmp');
                 newEmp.innerHTML = "取消新增喵小孩";
             } else {
+                tr[0].className =
+                    tr[0].className.replace('newblock', 'newEmpTROff');
                 for (let i = 0; i < tr.length; i++) {
                     tr[i].className =
                         tr[i].className.replace('newEmpTROn', 'newEmpTROff');

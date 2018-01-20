@@ -54,21 +54,6 @@
         width: 73%;
         float: left;
         padding-bottom: 50px;
-        button {
-            border-radius: 60px;
-            cursor: pointer;
-            letter-spacing: 3px;
-            padding: 2% 6%;
-            background-color: #EAAF88;
-            border: 1px solid #EAAF88;
-            color: #fff;
-            outline: none;
-            &:hover {
-                border: 1px solid #EAAF88;
-                background-color: transparent;
-                color: #EAAF88;
-            }
-        }
         textarea {
             resize: none;
         }
@@ -116,6 +101,9 @@
             }
             .newEmpTROn {
                 display: table-row;
+            }
+            .newblock{
+                display: block;
             }
             .catInfo {
                 width: 100%;
