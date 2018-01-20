@@ -2,6 +2,8 @@
 ob_start();
 session_start();
 isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
+
+
 try {
 	require_once("../php/connectBD103G2.php");
 	$echoText = "";
@@ -17,7 +19,7 @@ try {
 		$desc = 'desc';
 	}
 	// 關鍵字搜尋
-	if (isset($_REQUEST["searchText"]) == 1 || file_get_contents('php://input') !== null) {
+	if ( isset($_REQUEST["searchText"]) || isset($_GET['color']) || isset($_GET['location']) || isset($_GET['gender']) ) {
 			//關鍵字
 		if( isset( $_REQUEST["searchText"] ) ){
 			$searchText = "and cat_name like '%";
@@ -27,29 +29,27 @@ try {
 			$searchText = '';
 		}
 			//進階搜尋
-		if ( file_get_contents('php://input') !== null ) {
-			$json = file_get_contents('php://input');
-			$jsonPHP = json_decode($json);
-			if($jsonPHP->color !== null ){
-				$colorAdv = "and (cat_color like '%";
-				$colorAdv .= implode("%' or cat_color like '%", $jsonPHP->color);
-				$colorAdv .= "%')";
-			}else $colorAdv = null;
-			if ($jsonPHP->location !== null) {
-				$locationAdv = "and (cat_location like '%";
-				$locationAdv .= implode("%' or cat_location like '%", $jsonPHP->location);
-				$locationAdv .= "%')";
-			}else $locationAdv = null;
-			if ($jsonPHP->gender) {
-				$genderAdv = "and (cat_gender like '%";
-				$genderAdv .= implode("%' or cat_gender like '%", $jsonPHP->gender);
-				$genderAdv .= "%')";
-			}else $genderAdv = null;
-		}else {
-			$colorAdv = '';
-		}
-
-
+		if(isset($_GET['color'])){
+			$colorJS = $_GET['color'];
+			$colorArr = explode(",", "$colorJS");
+			$colorAdv = "and (cat_color like '%";
+			$colorAdv .= implode("%' or cat_color like '%", $colorArr);
+			$colorAdv .= "%')";
+		}else $colorAdv = null;
+		if (isset($_GET['location'])) {
+			$locationJS = $_GET['location'];
+			$locationArr = explode(",", "$locationJS");
+			$locationAdv = "and (cat_location like '%";
+			$locationAdv .= implode("%' or cat_location like '%", $locationArr);
+			$locationAdv .= "%')";
+		}else $locationAdv = null;
+		if (isset($_GET['gender'])) {
+			$genderJS = $_GET['gender'];
+			$locationArr = explode(",", "$genderJS");
+			$genderAdv = "and (cat_sex like '%";
+			$genderAdv .= implode("%' or cat_sex like '%", $locationArr);
+			$genderAdv .= "%')";
+		}else $genderAdv = null;
 		$sql = "select count(1) from cat where `ADOPT_STATUS` = 0 $searchText $colorAdv $locationAdv $genderAdv";    // 計算資料筆數
 		$total = $pdo->query($sql);
 		$rownum = $total->fetchcolumn();                            // 總共欄位數
@@ -110,6 +110,9 @@ try {
 					$heart = "fa fa-heart-o favorite";
 					$likeNot = "0";
 				}
+			}else{
+				$heart = "fa fa-heart-o favorite";
+				$likeNot = "0";
 			}
 			$echoText .= "
                 <picture class='catItem'>

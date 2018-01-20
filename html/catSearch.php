@@ -1,4 +1,4 @@
-<?
+<?php
 ob_start();
 session_start();
 isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
@@ -14,7 +14,6 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/catSearch.css">
     <script src="../js/signIn.js"></script>
-    <script src="../js/cat/advanceSearch_JQuery.js"></script>
     <script src="../js/cat/arrowSwitch.js"></script>
     <title>尋喵</title>
 </head>
@@ -168,47 +167,47 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
                 <div>
                     <label class="selectTitle">毛色：</label>
                     <div class="formInsert">
-                        <button type="button" class="condition condition1" data-name='color' data-val='0'>黑白</button>
-                        <button type="button" class="condition" data-name='color' data-val='1'>虎斑</button>
-                        <button type="button" class="condition" data-name='color' data-val='2'>橘白</button>
-                        <button type="button" class="condition" data-name='color' data-val='3'>橘色</button>
-                        <button type="button" class="condition" data-name='color' data-val='4'>黑色</button>
+                        <button type="button" class="condition condition1" data-name='color' data-val='黑白'>黑白</button>
+                        <button type="button" class="condition" data-name='color' data-val='虎斑'>虎斑</button>
+                        <button type="button" class="condition" data-name='color' data-val='橘白'>橘白</button>
+                        <button type="button" class="condition" data-name='color' data-val='橘'>橘色</button>
+                        <button type="button" class="condition" data-name='color' data-val='黑'>黑色</button>
                     </div>
                 </div>
                 <div>
                     <label class="selectTitle toMiddle">地區：</label>
                     <div class="formInsert">
-                        <button type="button" class="condition condition1" data-name='location' data-val='0'>臺北市
+                        <button type="button" class="condition condition1" data-name='location' data-val='台北市'>臺北市
                         </button>
-                        <button type="button" class="condition" data-name='location' data-val='1'>新北市</button>
-                        <button type="button" class="condition" data-name='location' data-val='2'>基隆市</button>
+                        <button type="button" class="condition" data-name='location' data-val='新北市'>新北市</button>
+                        <button type="button" class="condition" data-name='location' data-val='基隆市'>基隆市</button>
                         <br class="forRWD">
-                        <button type="button" class="condition" data-name='location' data-val='3'>桃園市</button>
-                        <button type="button" class="condition" data-name='location' data-val='4'>新竹市</button>
+                        <button type="button" class="condition" data-name='location' data-val='桃園市'>桃園市</button>
+                        <button type="button" class="condition" data-name='location' data-val='新竹市'>新竹市</button>
                         <br>
-                        <button type="button" class="condition condition1" data-name='location' data-val='5'>新竹縣
+                        <button type="button" class="condition condition1" data-name='location' data-val='新竹縣'>新竹縣
                         </button>
-                        <button type="button" class="condition" data-name='location' data-val='6'>宜蘭縣</button>
-                        <button type="button" class="condition" data-name='location' data-val='7'>苗栗縣</button>
+                        <button type="button" class="condition" data-name='location' data-val='宜蘭縣'>宜蘭縣</button>
+                        <button type="button" class="condition" data-name='location' data-val='苗栗縣'>苗栗縣</button>
                         <br class="forRWD">
-                        <button type="button" class="condition" data-name='location' data-val='8'>台中市</button>
-                        <button type="button" class="condition" data-name='location' data-val='9'>彰化縣</button>
+                        <button type="button" class="condition" data-name='location' data-val='台中市'>台中市</button>
+                        <button type="button" class="condition" data-name='location' data-val='彰化縣'>彰化縣</button>
                         <br>
-                        <button type="button" class="condition condition1" data-name='location' data-val='10'>南投縣
+                        <button type="button" class="condition condition1" data-name='location' data-val='南投縣'>南投縣
                         </button>
-                        <button type="button" class="condition" data-name='location' data-val='11'>雲林縣</button>
-                        <button type="button" class="condition" data-name='location' data-val='12'>嘉義縣</button>
+                        <button type="button" class="condition" data-name='location' data-val='雲林縣'>雲林縣</button>
+                        <button type="button" class="condition" data-name='location' data-val='嘉義縣'>嘉義縣</button>
                         <br class="forRWD">
-                        <button type="button" class="condition" data-name='location' data-val='13'>嘉義市</button>
-                        <button type="button" class="condition" data-name='location' data-val='14'>台南市</button>
+                        <button type="button" class="condition" data-name='location' data-val='嘉義市'>嘉義市</button>
+                        <button type="button" class="condition" data-name='location' data-val='台南市'>台南市</button>
                         <br>
-                        <button type="button" class="condition condition1" data-name='location' data-val='15'>高雄市
+                        <button type="button" class="condition condition1" data-name='location' data-val='高雄市'>高雄市
                         </button>
-                        <button type="button" class="condition" data-name='location' data-val='16'>屏東縣</button>
-                        <button type="button" class="condition" data-name='location' data-val='17'>花蓮縣</button>
+                        <button type="button" class="condition" data-name='location' data-val='屏東縣'>屏東縣</button>
+                        <button type="button" class="condition" data-name='location' data-val='花蓮縣'>花蓮縣</button>
                         <br class="forRWD">
-                        <button type="button" class="condition" data-name='location' data-val='18'>台東縣</button>
-                        <button type="button" class="condition" data-name='location' data-val='19'>離島</button>
+                        <button type="button" class="condition" data-name='location' data-val='台東縣'>台東縣</button>
+                        <button type="button" class="condition" data-name='location' data-val='離島'>離島</button>
                     </div>
                 </div>
                 <div>
@@ -219,10 +218,10 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
                     </div>
                 </div>
             </div>
-            <div class='S_checkbox' style='display:none;'></div>
+            <div id='S_checkbox' style='display:none;'></div>
         </form>
         <select name="sortCat" id="sortCat">
-			<?
+			<?php
 			isset($_GET['sort']) ? $sort = $_GET['sort'] : $sort = 1;
 			if ($sort == 2) {
 				echo "<option value='1'>刊登日期從新到舊</option>
@@ -271,7 +270,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 			foreach ($catRow as $i => $cat_Row) {
 				?>
                 <picture class="catItem">
-					<?
+					<?php
 					if ($_SESSION['MEM_NO'] !== null) {
 						$MEMNO = $_SESSION['MEM_NO'];
 						$CATNO = $cat_Row['CAT_NO'];
@@ -284,50 +283,53 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 							$heart = "fa fa-heart-o favorite";
 							$likeNot = "0";
 						}
-					}
+					}else{
+                        $heart = "fa fa-heart-o favorite";
+                        $likeNot = "0";
+                    }
 					?>
-                    <i class="<?
-					echo $heart ?>" aria-hidden="true" data-boolean="<?
-					echo $likeNot ?>" data-val="<?
-					echo $cat_Row['CAT_NO'] ?>"></i>
+                    <i class="<?php
+					echo $heart ;?>" aria-hidden="true" data-boolean="<?php
+					echo $likeNot ;?>" data-val="<?php
+					echo $cat_Row['CAT_NO'] ;?>"></i>
                     <div class="catContent">
-                        <a href="catContent.php?catNo=<?
-						echo $cat_Row['CAT_NO'] ?>" title="瀏覽<?
-						echo $cat_Row['CAT_NAME'] ?>">
+                        <a href="catContent.php?catNo=<?php
+						echo $cat_Row['CAT_NO'];?>" title="瀏覽<?php
+						echo $cat_Row['CAT_NAME'];?>">
                             <div class="img">
-                                <img src="<?
-								echo $cat_Row['CAT_COVER'] ?>" alt="<?
-								echo $cat_Row['CAT_NAME'] ?>">
+                                <img src="<?php
+								echo $cat_Row['CAT_COVER'];?>" alt="<?php
+								echo $cat_Row['CAT_NAME'];?>">
                             </div>
                         </a>
-                        <button type="button" class="quickView" data-val="<?
-						echo $cat_Row['CAT_NO'] ?>">
+                        <button type="button" class="quickView" data-val="<?php
+						echo $cat_Row['CAT_NO'];?>">
                             Quick View
                         </button>
                     </div>
                     <figure>
-                        <h3><?
-							echo $cat_Row['CAT_NAME'] ?></h3>
-                        <br><?
-						echo $cat_Row['CAT_LOCATION'] ?>
-                        <br>約<?
-						echo $cat_Row['CAT_DATE'] ?>出生
-                        <br><?
+                        <h3><?php
+							echo $cat_Row['CAT_NAME'];?></h3>
+                        <br><?php
+						echo $cat_Row['CAT_LOCATION'];?>
+                        <br>約<?php
+						echo $cat_Row['CAT_DATE'];?>出生
+                        <br><?php
 						if ($cat_Row['CAT_SEX'] == 1) {
 							echo '女生<i class="fa fa-venus" aria-hidden="true"></i>';
 						} else if ($cat_Row['CAT_SEX'] == 0) {
 							echo '男生<i class="fa fa-mars" aria-hidden="true"></i>';
 						}
 						?>
-                        <br><?
-						echo $cat_Row['CAT_NARRATIVE'] ?>
+                        <br><?php
+						echo $cat_Row['CAT_NARRATIVE'];?>
                     </figure>
                 </picture>
-				<?
+				<?php
 			}
 			?>
             <div class="page">
-				<?
+				<?php
 				for ($i = 1; $i <= $totalpage; $i++) {
 					echo "<a href='?pageNo=$i&$searchCon' class='pageNo defaultBtn'>" . $i . "</a>";
 				}
@@ -365,6 +367,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
     </div>
 </footer>
 <script src="../js/cat/catSearchAjax.js"></script>
+<script src="../js/cat/advanceSearch_JQuery.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<?
+<?php
 ob_start();
 session_start();
 $memNo = $_SESSION['MEM_NO'];
