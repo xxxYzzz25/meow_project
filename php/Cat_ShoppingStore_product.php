@@ -86,12 +86,12 @@
 
             <div id="pdDetail">  
                     <?php
-                    $NO = $_REQUEST["PRODUCT_NO"];
+                    // $NO = $_REQUEST["PRODUCT_NO"];
                     try {
                         require_once("../php/connectBD103G2.php");
-                        $sql = "select * from PRODUCT where PRODUCT_NO = :NO";
+                        $sql = "select * from PRODUCT where PRODUCT_NO = 1";
                         $PRODUCT = $pdo->prepare($sql);
-                        $PRODUCT->bindValue(":NO",$NO);
+                        // $PRODUCT->bindValue(":NO",$NO);
                         $PRODUCT->execute();
                         $PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
                     
@@ -153,11 +153,11 @@
                     
                         <p>
                             產品規格<br>
-                            <li>重量：<?php echo $PRODUCT["PRODUCT_WEIGHT"] ?></li>
-                            <li>尺寸：<?php echo $PRODUCT["PRODUCT_SIZE"] ?></li>
-                            <li>材質：<?php echo $PRODUCT["PRODUCT_MATERIAL"] ?></li>
-                            <li>成分：<?php echo $PRODUCT["PRODUCT_COMPONENT"] ?></li>
-                            <li>產地：<?php echo $PRODUCT["PRODUCT_LOC"] ?></li>
+                            <li class="spec">重量：<?php echo $PRODUCT["PRODUCT_WEIGHT"] ?></li>
+                            <li class="spec">尺寸：<?php echo $PRODUCT["PRODUCT_SIZE"] ?></li>
+                            <li class="spec">材質：<?php echo $PRODUCT["PRODUCT_MATERIAL"] ?></li>
+                            <li class="spec">成分：<?php echo $PRODUCT["PRODUCT_COMPONENT"] ?></li>
+                            <li class="spec">產地：<?php echo $PRODUCT["PRODUCT_LOC"] ?></li>
                         </p>
                     
                         <br>
@@ -189,8 +189,18 @@
 
         </div>
     </div>
+<script>
+    window.addEventListener('load', function(){
+        let spec = document.querySelectorAll('.spec');
+        for (let i = 0; i < spec.length; i++) {
+            let splitspec = spec[i].textContent.split("：");
+            if(splitspec[1] == ''){
+                spec[i].style.display = "none";
+            }
+        }
+    })
+</script>
 
-   
 
 </body>
 

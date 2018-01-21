@@ -776,6 +776,10 @@ header ul li:nth-child(5):after {
   text-align: center;
 }
 
+.right .content .halfMemAdopt form td .defaultBtn {
+  font-size: 12px;
+}
+
 .right .content .halfMemAdopt form td .circle {
   color: dodgerblue;
 }

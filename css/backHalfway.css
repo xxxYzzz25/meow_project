@@ -409,10 +409,6 @@ header ul li:nth-child(3):after {
   margin: 100px auto 100px;
 }
 
-.right .container1 .halfArea select {
-  display: block;
-}
-
 .right .container1 .halfArea table {
   width: 100%;
   margin: 40px auto 60px;

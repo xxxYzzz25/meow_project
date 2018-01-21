@@ -12,6 +12,7 @@
                 <th>領養案件時間</th>
                 <th>審核狀態</th>
                 <th>審核此筆紀錄</th>
+                <th>送出審核</th>
             </tr>
 <?php
 try {
@@ -21,9 +22,11 @@ try {
             from adoption a,cat c,member m,halfway_member h
             where a.CAT_NO = c.CAT_NO 
                 and a.MEM_NO = m.MEM_NO 
-                and c.HALF_NO = h.HALF_NO";
+                and c.HALF_NO = h.HALF_NO
+                and c.ADOPT_STATUS = 1
+                and h.HALF_NO = ?";
     $adopt = $pdo->prepare( $sql );
-    // $adopt->bindValue(1, $_SESSION["HALF_NO"]);//session
+    $adopt->bindValue(1, $_SESSION["HALF_NO"]);//session
     $adopt->execute();
     
     if( $adopt->rowCount()==0){
@@ -47,8 +50,17 @@ try {
                     ?>
                 </td>
                 <td>
-                    <i class='fa fa-circle-o ensureBtn' aria-hidden='true' name='audit' value='1'></i>
-                    <i class='fa fa-times cancel cancelBtn' name='audit' value='1'></i>
+                    <p class="circle">
+                        <input type="radio" id="circle" name="status" value="2">
+                        <i class="fa fa-circle-o" aria-hidden="true" id="ensureBtn"></i>成功
+                    </p>
+                    <p class="times">
+                        <input type="radio" id="times" name="status" value="0">
+                        <i class="fa fa-times cancel"></i>失敗
+                    </p>
+                </td>
+                <td>
+                    <button type="submit" class="defaultBtn">確定審核</button>
                 </td>
             </tr>
 <?php
