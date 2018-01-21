@@ -389,59 +389,69 @@ header ul li:nth-child(3):after {
   max-width: 1000px;
 }
 
-.right .container1 .adoptInfomation {
+.right .container1 .halfArea {
   width: 80%;
   margin: 100px auto 100px;
 }
 
-.right .container1 .adoptInfomation select {
+.right .container1 .halfArea select {
   display: block;
 }
 
-.right .container1 .adoptInfomation table {
+.right .container1 .halfArea table {
   width: 100%;
   margin: 40px auto 60px;
 }
 
-.right .container1 .adoptInfomation table tr {
+.right .container1 .halfArea table tr {
   border-bottom: 1px solid #333;
 }
 
-.right .container1 .adoptInfomation table tr th,
-.right .container1 .adoptInfomation table tr td {
+.right .container1 .halfArea table tr th,
+.right .container1 .halfArea table tr td {
   padding-top: 16px;
   padding-bottom: 8px;
   font-size: 14px;
 }
 
-.right .container1 .adoptInfomation table tr th .fa-trash,
-.right .container1 .adoptInfomation table tr td .fa-trash {
+.right .container1 .halfArea table tr th .fa-trash,
+.right .container1 .halfArea table tr td .fa-trash {
   font-size: 16.8px;
   color: firebrick;
   cursor: pointer;
 }
 
-.right .container1 .adoptInfomation table tr th .fa-circle-o,
-.right .container1 .adoptInfomation table tr td .fa-circle-o {
+.right .container1 .halfArea table tr th .fa-circle-o,
+.right .container1 .halfArea table tr td .fa-circle-o {
   font-size: 16.8px;
   color: dodgerblue;
   cursor: pointer;
 }
 
-.right .container1 .adoptInfomation table tr th .fa-times,
-.right .container1 .adoptInfomation table tr td .fa-times {
+.right .container1 .halfArea table tr th .fa-times,
+.right .container1 .halfArea table tr td .fa-times {
   font-size: 16.8px;
   color: crimson;
   cursor: pointer;
 }
 
-.right .container1 .adoptInfomation table tr th {
+.right .container1 .halfArea table tr th input,
+.right .container1 .halfArea table tr td input {
+  width: 80%;
+  padding-left: 10px;
+}
+
+.right .container1 .halfArea table tr th {
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: bold;
 }
 
-.right .container1 .adoptInfomation a {
+.right .container1 .halfArea table tr.last {
+  border-bottom: 0px solid #000;
+}
+
+.right .container1 .halfArea a {
   text-align: center;
   text-decoration: none;
   padding: 2px;
