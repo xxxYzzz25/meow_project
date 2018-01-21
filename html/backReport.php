@@ -47,8 +47,8 @@
             <div class="bigImg">
                 <img src="../images/back/catAdoptRecord.jpg" alt="">
             </div>
-            <a onclick="getData('backReportArt.php');" class="link">文章</a>
-            <a onclick="getData('backReportMem.php');" class="link">留言</a>
+            <a onclick="getData('../php/backReportArt.php');" class="link">文章</a>
+            <a onclick="getData('../php/backReportMes.php');" class="link">留言</a>
             <div class="adoptInfomation" id="adoptInfomation"></div>
         </div>
     </div>
@@ -58,9 +58,9 @@
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
-                //modify here
                 let content = document.getElementById('adoptInfomation');
                 content.innerHTML = this.responseText;
+                report()
             } else {
                 alert(xhr.status);
             }
@@ -69,6 +69,22 @@
         xhr.open("get", url, true);
         xhr.send(null);
     }
+
+    function report(){
+        let input = document.querySelector('#report')
+        let form = document.querySelector('#reportForm')
+        let ensure = document.querySelector('#ensureBtn')
+        let cancel = document.querySelector('#cancelBtn')
+        ensure.addEventListener('click', ()=>{
+            form.submit()
+        })
+        cancel.addEventListener('click', ()=>{
+            input.value = "2"
+            form.submit()
+        })
+    }
+
+
     let link = document.getElementsByClassName('link');
     for (let i = 0; i < link.length; i++) {
         link[i].addEventListener('click', function () {
