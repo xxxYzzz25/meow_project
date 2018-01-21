@@ -89,8 +89,8 @@
                                         <input type="text" name="halfAdd" readonly="readonly" value="<?php echo $halfRow['HALF_ADDRESS']; ?>">
                                     </td>
                                     <td>
-                                        <i class='fa fa-circle-o ensureBtn' aria-hidden='true' name='audit' value='1'></i>
-                                        <i class='fa fa-times cancel cancelBtn' name='audit' value='1'></i>
+                                        <i class='fa fa-circle-o ensureBtn' aria-hidden='true'></i>
+                                        <i class='fa fa-times cancel cancelBtn'></i>
                                     </td>
                                 </tr>
                             </form>
