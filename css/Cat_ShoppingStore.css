@@ -164,8 +164,8 @@ h2 {
 	.typeName {
 		float: none;
 		width: 100%;
-		background-color: #EAAF88;
-		color: #fff;
+		background-color: transparent;
+		color: #333;
 	}
 	.typeBanner {
 		display: none;
@@ -224,10 +224,11 @@ h2 {
 .product {
 	float: left;
 	width: 25%;
-	/* background-color: #fff; */
+	background-color: #fff;
 	margin-top: 1%;
 	text-align: center;
 	margin-bottom: 10%;
+	padding-bottom: 6%;
 }
 
 .addButton{
@@ -279,12 +280,11 @@ h2 {
 .text {
 	text-align: center;
 	box-sizing: border-box;
-	padding: 15% 0;
-	height: 100px;
+	height: 35px;
 }
 
 .cost {
-	height: 50px;
+	height: 70px;
 }
 
 /* header ul li:nth-child(3) {

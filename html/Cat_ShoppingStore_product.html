@@ -19,7 +19,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Cat_ShoppingStore_product.css">
     <script src="../js/wow.js"></script>
-    <script src="../js/shoppingCart.js"></script>
+    
+    <script src="../js/shoppingStore_product.js"></script>
+    <script src="../js/shoppingCount.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -30,45 +32,6 @@
 </head>
 
 <body>
-
-    <script>
-        $(function () {
-
-            $('.qtyplus').click(function (e) {
-
-                e.preventDefault();
-
-                fieldName = $(this).attr('field');
-
-                var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-
-                if (!isNaN(currentVal)) {
-
-                    $('input[name=' + fieldName + ']').val(currentVal + 1);
-                } else {
-
-                    $('input[name=' + fieldName + ']').val(0);
-                }
-            });
-
-            $(".qtyminus").click(function (e) {
-
-                e.preventDefault();
-
-                fieldName = $(this).attr('field');
-
-                var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-
-                if (!isNaN(currentVal) && currentVal > 0) {
-
-                    $('input[name=' + fieldName + ']').val(currentVal - 1);
-                } else {
-
-                    $('input[name=' + fieldName + ']').val(0);
-                }
-            });
-        });
-    </script>
 
     <header>
         <div class="logo">
@@ -122,80 +85,112 @@
             <br>
             <br>
 
-            <div class="product">
-                <div class="left wow zoomIn">
-                    <div class="bigPic">
-                        <img src="../img/food1.png" alt="Friskies 雞肉罐頭">
-                    </div>
-                    <div class="smallPic"></div>
-                </div>
-                <div class="right">
-                    <div class="name wow zoomIn">Friskies 雞肉罐頭</div>
-                    <div class="price wow zoomIn">$560</div>
-                    <div class="quantity wow zoomIn">
-                        <form id='myform' method='POST' action='#'>
-                            <label for="">數量</label>
-                            <input type='button' value='-' class='qtyminus' field='quantity' />
-                            <input type='text' name='quantity' value='1' class='qty' />
-                            <input type='button' value='+' class='qtyplus' field='quantity' />
-                        </form>
-                    </div>
-                    <div class="buy wow zoomIn">
-                        <div>
-                            <span id="Friskies" class="addButton">
-                                加入購物車
-                                <input type="hidden" value="Friskies雞肉罐頭|1.jpg|560">
-                            </span>
 
-                            <span class="addButton">
-                                <a href="Cat_ShoppingStore_cart.html">直接購買</a>
-                            </span>
+        <div id="pdDetail">  
+                <?php
+                $NO = $_REQUEST["PRODUCT_NO"];
+                try {
+                    require_once("../php/connectBD103G2.php");
+                    $sql = "select * from PRODUCT where PRODUCT_NO = :NO";
+                    $PRODUCT = $pdo->prepare($sql);
+                    $PRODUCT->bindValue(":NO",$NO);
+                    $PRODUCT->execute();
+                    $PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
+                
+                    foreach( $PRODUCT as $i=>$PRODUCT){
+                ?>
+                
+                <div class="product">
+                
+                    <div class="left wow zoomIn">
+                        <div class="bigPic">
+                            <?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
                         </div>
-
-
-
                     </div>
+                
+                    <div class="right">
+                        
+                        <div class="name wow zoomIn">
+                            <?php echo $PRODUCT["PRODUCT_NAME"] ?>
+                            <!-- Friskies 雞肉罐頭 -->
+                        </div>
+                
+                        <div class="price wow zoomIn">
+                            <?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+                            <!-- $560 -->
+                        </div>
+                
+                        <div class="quantity wow zoomIn">
+                            <!-- <input type="number" min="1" value="1" id="count"> -->
+                            <form id='myform' method='POST' action='#'>
+                                <label for="">數量</label>
+                                <input type='button' value='-' class='qtyminus' field='quantity' />
+                                <input type='text' name='quantity' value='1' class='qty' />
+                                <input type='button' value='+' class='qtyplus' field='quantity' />
+                            </form>
+                        </div>
+                        
+                        <div class="buy wow zoomIn">
+                                <span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+                                    加入購物車
+                                    <input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
+                                </span>
+                
+                                <span class="addButton">
+                                    <a href="Cat_ShoppingStore_cart.html">直接購買</a>
+                                </span>
+                        </div>
+                
+                    </div>
+                
                 </div>
-            </div>
-            <hr>
-            <div class="productDetail wow zoomIn">
-
-
-
-                <img src="../img/detail1.jpg" alt="">
-                <br>
-                <b>產品特色</b>
-                <br>
-                <li>100% 紐西蘭雞肉</li>
-                <li>採天然風乾製作</li>
-                <li>羊鮮草胃含有豐富鈣質與磷質，完美 1:1 比例</li>
-                <li>有助於骨骼健康與發展</li>
-                <li>含有 omega 3 、 omega 6 及天然益生菌</li>
-                <li>有助腸胃道</li>
-                <br>
-                <b>產品規格</b>
-                <br>
-                <li>重量：100g (± 5%)</li>
-                <li>產地：紐西蘭</li>
-                <br>
-
-
-
-
-                <img src="../img/detail3.jpg" alt=""> BEST!全方位寵物營養專家,專門替亞熱帶地區寵物特別研發出全方位營養寵物飼料。
-                <br> 遵照 NRC、AAFCO、FEDIAF 為標準製作， 並技術指導製造商使用高規格機器， 在全程電腦精準計算食材數量控制， 及人員嚴格品質把關的低溫烘培下， 將食材營養牢牢鎖在飼料中，讓養分完全保留不流失， BEST！系列絕不潻加人工香料、荷爾蒙、防腐劑、化學添加物、動物副產品！
-                冠全生技用心、用愛來生產寵物飼料， 讓每位飼主的愛心可藉由優良寵物飼料傳遞給寵物。 因此特別與「財團法人動物研究所動物產業組」合作定期進行飼料批量病毒檢驗。
-                <br>
-                <br>
-
-                <img src="../img/detail2.jpg" alt="">
-
-            </div>
-
+                
+                <hr>
+                
+                <div class="productDetail wow zoomIn">
+                    
+                    <img src="../img/detail1.jpg" alt="">
+                
+                    <p>
+                        產品規格<br>
+                        <li>重量：<?php echo $PRODUCT["PRODUCT_WEIGHT"] ?></li>
+                        <li>尺寸：<?php echo $PRODUCT["PRODUCT_SIZE"] ?></li>
+                        <li>材質：<?php echo $PRODUCT["PRODUCT_MATERIAL"] ?></li>
+                        <li>成分：<?php echo $PRODUCT["PRODUCT_COMPONENT"] ?></li>
+                        <li>產地：<?php echo $PRODUCT["PRODUCT_LOC"] ?></li>
+                    </p>
+                
+                    <br>
+                
+                    <img src="../img/detail3.jpg" alt=""> 
+                
+                    <p>
+                        產品敘述<br>
+                        <?php echo $PRODUCT["PRODUCT_NARRATIVE"] ?>
+                    </p>
+                
+                    <br>
+                
+                    <img src="../img/detail2.jpg" alt="">
+                
+                </div>
+                
+                <?php  
+                    }
+                
+                } catch (PDOException $e) {
+                 echo "錯誤原因 : " , $e->getMessage() , "<br>";
+                 echo "錯誤行號 : " , $e->getLine() , "<br>";
+                }
+                ?>
+                
+                
+        </div>  
 
         </div>
     </div>
 
+   
 
 </body>
 

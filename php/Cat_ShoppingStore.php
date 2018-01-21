@@ -46,10 +46,10 @@
 					<a href="./catSearch.html">尋喵</a>
 				</li>
 				<li>
-					<a href="./halfway_house_search.html">中途之家</a>
+					<a href="./halfway_house_search.php">中途之家</a>
 				</li>
 				<li>
-					<a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
+					<a href="./Cat_ShoppingStore.php" title="前往商城">商城</a>
 				</li>
 				<li>
 					<a href="./forum.html">討論區</a>
@@ -78,14 +78,13 @@
 			
 			<h2 class="title">
 				商城
-				<span>SHOPPING STORE</span>
 			</h2>
 
 			<div class="menu">
 
-				<a href="Cat_ShoppingStore.html" class="menuTitle menuNow ">全部喵喵商品</a>
+				<a href="Cat_ShoppingStore.php" class="menuTitle menuNow ">全部喵喵商品</a>
 
-				<a href="Cat_ShoppingStore_food.html" class="menuTitle">喵喵肚子餓</a>
+				<a href="Cat_ShoppingStore_food.php" class="menuTitle">喵喵肚子餓</a>
 
 				<a href="#" class="menuTitle">喵喵待在家</a>
 
@@ -123,7 +122,7 @@
 					<div class="typeName wow zoomIn">喵喵肚子餓</div>
 					
 					<div class="typeBanner typeBanner1 wow zoomIn">
-						<a href="Cat_ShoppingStore_food.html">前往
+						<a href="Cat_ShoppingStore_food.php">前往
 							<b>喵喵肚子餓</b> ｜ 30 項商品</a>
 					</div>
 
@@ -160,7 +159,7 @@
 						
 								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
 									加入購物車
-									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
+									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
 								</span>
 						
 							</div>
