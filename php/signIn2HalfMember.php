@@ -37,7 +37,9 @@ try {
 		$halfRow = $statement->fetch(PDO::FETCH_ASSOC);//取回資料錄
 		if ($halfRow["HALF_BAN"]) {
 			echo "<center>此帳號已被停權, 若有疑問請來信客服。</center>";
-		} else {
+        }else if ( $halfRow["HALF_AUDIT_STATUS"] != 1 ) {
+			echo "<center>此帳號尚未審核, 請稍候, 我們將盡快為您審核。</center>";
+        }else {
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];
 			echo "<center>", $halfRow["HALF_NAME"], "您好~</center>";//致歡迎詞
 		}
@@ -51,20 +53,16 @@ echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext
 
 ?>
 <script>
-    window.addEventListener('load', () = > {
-        let back = document.getElementById('backNext')
-        setTimeout(function back()
-    {
+    window.addEventListener('load', () => {
+    let back = document.getElementById('backNext')
+    setTimeout(function(){
         history.back()
-    }
-    ,
-    5000
-    )
-    back.addEventListener('click', (e) = > {
+    }, 5000)
+    back.addEventListener('click', (e) => {
         e.preventDefault();
-    window.history.back()
+        window.history.back()
     })
-    })
+})
 </script>
 </body>
 </html>
