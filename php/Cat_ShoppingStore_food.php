@@ -49,7 +49,7 @@
 					<a href="./halfway_house_search.html">中途之家</a>
 				</li>
 				<li>
-					<a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
+					<a href="./Cat_ShoppingStore.php" title="前往商城">商城</a>
 				</li>
 				<li>
 					<a href="./forum.html">討論區</a>
@@ -78,12 +78,11 @@
 		<div class="wrapCenter">
 			<h2 class="title">
 				喵喵肚子餓
-				<span>FOOD</span>
 			</h2>
 
 			<div class="menu">
 
-				<a href="Cat_ShoppingStore.html" class="menuTitle">全部喵喵商品</a>
+				<a href="Cat_ShoppingStore.php" class="menuTitle">全部喵喵商品</a>
 
 				<a href="#" class="menuNow menuTitle">喵喵肚子餓</a>
 				<!-- <li><a href="#">喵飼料</a></li>

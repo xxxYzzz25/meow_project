@@ -93,55 +93,6 @@
                 </table>
             </div>
 
-            <!-- <div id="cartList">
-                    <table cellpadding="300px" border="5">
-                        <tr class="itemHead">
-                            <td class="tdTitle" style="width:55%;">
-                                <img src="../images/productPic/1.jpg" alt="">
-                                FancyFeast 鮪魚大餐
-                            </td>
-                            <td class="tdTitle" style="width:15%;text-align:center;">價錢</td>
-                            <td class="tdTitle" style="width:15%;text-align:center;">數量</td>
-                            <td class="tdTitle" style="width:15%;text-align:center;"></td>
-                        </tr>
-                    </table>
-                </div> -->
-
-            <!-- <div id="cartList">
-                <div class="table">
-                    <div class="itemHead itemHeadTitle">
-                        <div class="tdTitle" style="width:55%;">商品</div>
-                        <div class="tdTitle" style="width:15%;text-align:center;">價錢</div>
-                        <div class="tdTitle" style="width:15%;text-align:center;">數量</div>
-                        <div class="tdTitle" style="width:15%;text-align:center;">刪除</div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="cartList">
-                <div class="table">
-                    <div class="itemHead">
-                        <div class="td" style="width:20%;">
-                            <img src="../images/productPic/1.jpg">
-                        </div>
-                        <div class="td" style="width:35%;">
-                            12345567890987654321
-                        </div>
-                        <div class="td" style="width:15%;text-align:center;">$100</div>
-                        <div class="td" style="width:15%;text-align:center;">
-                            <input type="number">
-                        </div>
-                        <div class="td" style="width:15%;text-align:center;">
-                            <button>x</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-
-
-
-
             <form class="saleCard" action="Cat_ShoppingStore_cart.php" method="post">
                 是否使用遊戲折價卷？
                 <select name="saleCard" class="select" id="hi">

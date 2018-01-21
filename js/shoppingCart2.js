@@ -1,5 +1,5 @@
 
-var storage = sessionStorage;
+var storage = localStorage;
 
 function doFirst(){
 
@@ -28,7 +28,7 @@ function doFirst(){
 
 function createCartList(itemKey,itemValue){
 	var itemTitle = itemValue.split('|')[0];
-	var itemImage = '../img/' + itemValue.split('|')[1];
+	var itemImage = itemValue.split('|')[1];
 	var itemPrice = parseInt(itemValue.split('|')[2]);
 
 	//建立每個品項的清單區域 -- tr
@@ -85,36 +85,9 @@ function createCartList(itemKey,itemValue){
 	tdItemCount.appendChild(itemCount);
 	trItemList.appendChild(tdItemCount);
 
-	//x -- 第五個td
-	var tdDelete = document.createElement('td');
-	tdDelete.style.width = '50px';
-
-	var delButton = document.createElement('button');
-	delButton.innerText = 'x';
-	delButton.addEventListener('click',deleteItem);
-
-	tdDelete.appendChild(delButton);
-	trItemList.appendChild(tdDelete);
-
 }
 
-function deleteItem(){
 
-	var itemId = this.parentNode.parentNode.childNodes[1].getAttribute('id');
-
-	//刪除該筆資料之前，先將金額扣除
-	var itemValue = storage.getItem(itemId);
-	subtotal -= parseInt(itemValue.split('|')[2]);
-
-	document.getElementById('subtotal').innerText = subtotal;
-
-	//清除storage的資料
-	storage.removeItem(itemId);
-	storage['addItemList'] = storage['addItemList'].replace(itemId+', ','');
-	
-	//再將該筆tr刪除
-	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
-}
 
 function changeItemCount(){
 	let qty = this.value;
