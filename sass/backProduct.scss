@@ -2,10 +2,10 @@
 @import 'base/_var.scss';
 @import 'base/_boxsizing.scss';
 @import 'base/_font.scss';
+@import "base/_btn.scss";
 @import 'modules/_btns.scss';
-@import './modules/_backHeader.scss';
+@import 'modules/_backHeader.scss';
 @import 'mixins/_navNow.scss';
-@import "base/btn";
 @include navNow(8);
 .right {
     width: calc(100% - 200px);
@@ -38,15 +38,18 @@
                 margin-left: auto;
                 margin-right: 0;
             }
+            .newEmpTROff {
+                display: none;
+            }
+            .newEmpTROn {
+                display: table-row;
+            }
+            .newblock{
+                display: block;
+            }
             table {
                 width: 100%;
                 margin: 40px auto 60px;
-                .newEmpTROff {
-                    display: none;
-                }
-                .newEmpTROn {
-                    display: table-row;
-                }
                 tr {
                     border-bottom: 1px solid #333;
                     th,
@@ -63,6 +66,17 @@
                             font-size: $font-size-base*1.2;
                             color: dodgerblue;
                             cursor: pointer;
+                        }
+                        input {
+                            width: 50%;
+                            margin: 8px 0;
+                        }
+                        textarea {
+                            resize: none;
+                        }
+                        button {
+                            display: inline-block;
+                            text-align: center;
                         }
                     }
                     th {

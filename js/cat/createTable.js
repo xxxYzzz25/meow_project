@@ -2,14 +2,10 @@ window.addEventListener('load', function () {
     let donateBtn = document.getElementById('donate');
     donateBtn.addEventListener('click', function createTable() {
         let i, tr, td, textNode, input;				// 宣告變數
-        let form = document.createElement("form");		// 創建form標籤
         let table = document.createElement("table");	// 創建table標籤
-        document.getElementById("donateArea").appendChild(form);
-        form.appendChild(table);
+        let form = document.getElementById("donateArea")
+        document.getElementById("donateArea").appendChild(table)
 
-        form.setAttribute("action", "#");
-        form.setAttribute("method", "post");
-        form.className = "donateForm";
 
         // 第一行
         tr = document.createElement("tr");
@@ -25,6 +21,7 @@ window.addEventListener('load', function () {
 
         td2.setAttribute("colspan", "2");
         input.setAttribute("placeholder", "請輸入您的大名");
+        input.setAttribute("name", "donateName");
 
         // 第二行
         tr2 = document.createElement("tr");
@@ -40,6 +37,7 @@ window.addEventListener('load', function () {
 
         td4.setAttribute("colspan", "2");
         input.setAttribute("placeholder", "請輸入您的助養金額");
+        input.setAttribute("name", "donatePrice");
 
         // 第三行
         tr3 = document.createElement("tr");

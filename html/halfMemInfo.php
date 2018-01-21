@@ -10,7 +10,7 @@ try {
 
     $sql = "select * from halfway_member where HALF_NO =?";
     $HWmem = $pdo->prepare( $sql );
-    $HWmem->bindValue(1, $_SESSION["HALF_ID"]);//session
+    $HWmem->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWmem->execute();
     
     if( $HWmem->rowCount()==0){
@@ -41,7 +41,7 @@ try {
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="submit">確定修改</button>
+                    <button type="submit" class="defaultBtn">確定修改</button>
                 </td>
             </tr>
         </table>
@@ -50,8 +50,8 @@ try {
     <?php
     } //if...else 
 } catch (PDOException $e) {
-  echo "錯誤行號 : ", $e->getLine(), "<br>";
-  echo "錯誤訊息 : ", $e->getMessage(), "<br>"; 
+    echo "錯誤行號 : ", $e->getLine(), "<br>";
+    echo "錯誤訊息 : ", $e->getMessage(), "<br>"; 
 }
 
 ?>

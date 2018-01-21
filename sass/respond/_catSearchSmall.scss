@@ -6,6 +6,10 @@
         width: 100%;
         margin: 0;
         .container1 {
+            #quickViewArea {
+                height: 400px;
+                width: 300px;
+            }
             .selectForm {
                 width: 100%;
                 .formInsert {
@@ -22,12 +26,12 @@
                     right: 5%
                 }
                 #advanced:checked~div {
-                    height: 710px;
+                    height: 500px;
                 }
                 .advanceSearchItem {
                     padding-left: 20px;
                     padding-right: 20px;
-                    .selectTitle{
+                    .selectTitle {
                         display: block;
                         margin-top: 20px;
                     }
@@ -35,7 +39,7 @@
                         padding: 3px 8px;
                         margin: 4px 2px;
                     }
-                    .forRWD{
+                    .forRWD {
                         display: block;
                     }
                 }

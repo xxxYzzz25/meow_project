@@ -44,7 +44,7 @@
             .bigpic {
                 width: 80%;
                 margin-top: 50px;
-                // background-image: url(../images/halfdetail1.jpg);
+                height: 400px; // background-image: url(../images/halfdetail1.jpg);
                 background-size: 100%;
                 background-repeat: no-repeat;
             }
@@ -96,11 +96,11 @@
                     .rating>input:checked~label:hover~label {
                         color: rgb(243, 40, 74);
                     }
-                    .ratingtext {
-                        padding: 15px;
+                    .ratingtext,
+                    .ratingscore {
+                        padding: 6px;
                         text-align: right;
                         font-size: $font-size-large;
-                        vertical-align: middle;
                         span {
                             font-size: $font-size-large*1.5;
                         }
@@ -120,7 +120,7 @@
                 box-shadow: 12px 10px 20px -10px #333;
                 img {
                     width: 100%;
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
                     }
                 }

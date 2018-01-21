@@ -19,7 +19,7 @@
         padding: 50px 0;
     }
     .leftselect {
-        width: 25%;
+        width: 20%;
         float: left;
         margin-right: 30px;
         img {
@@ -51,7 +51,7 @@
         display: none;
     }
     .content {
-        width: 70%;
+        width: 76%;
         float: left;
         padding-bottom: 50px;
         h4 {
@@ -99,12 +99,9 @@
             span {
                 color: rgb(235, 47, 47);
             }
-            form {
+            table {
                 width: 100%;
                 margin: 30px auto;
-                table {
-                    width: 100%;
-                }
                 tr {
                     text-align: center;
                 }
@@ -120,6 +117,15 @@
                         font-size: $font-size-base*1.2;
                         color: firebrick;
                         cursor: pointer;
+                    }
+                }
+            }
+            .odTable {
+                a {
+                    text-decoration: none;
+                    color: #EAAF88;
+                    &:hover {
+                        color: #0f71c2;
                     }
                 }
             }

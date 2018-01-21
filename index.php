@@ -1,3 +1,7 @@
+<?php
+ ob_start();
+ session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,7 +144,7 @@
                     <a href="html/catSearch.html">尋喵</a>
                 </li>
                 <li>
-                    <a href="html/halfway_house_search.php">中途之家</a>
+                    <a href="html/halfway_house_search.html">中途之家</a>
                 </li>
                 <li>
                     <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
@@ -156,10 +160,18 @@
         <div class="icons">
             <a href="#">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="login">
-                <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
-            </a>
+            </a><?php
+                    if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
+
+                        echo "<a href='php/memberLogOut.php'>
+                            <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }else{
+                        echo "<a href='#' class='login'>
+                            <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }
+            ?>
             <a href="#">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
                 <span id="like">6</span>

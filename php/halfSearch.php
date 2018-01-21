@@ -9,7 +9,7 @@ try {
         $searchLoc = isset($_REQUEST["searchLoc"]) ? $_REQUEST["searchLoc"] : '';
         $searchName = isset($_REQUEST["searchName"]) ? $_REQUEST["searchName"] : '';
         
-   	    $locArr = array('北部' => array("台北市","新北市","基隆市","桃園市","新竹市","新竹縣","宜蘭縣"), '中部' => array("苗栗縣","台中市","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市"),'南部' => array("台南市","高雄市","屏東縣"),'東部' => array("花蓮縣","台東縣"),'離島' => array("金門縣","連江縣","澎湖縣"));
+        $locArr = array('北部' => array("台北市","新北市","基隆市","桃園市","新竹市","新竹縣","宜蘭縣"), '中部' => array("苗栗縣","台中市","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市"),'南部' => array("台南市","高雄市","屏東縣"),'東部' => array("花蓮縣","台東縣"),'離島' => array("金門縣","連江縣","澎湖縣"));
         
         $sql     = "select * from halfway_member
                     where ";

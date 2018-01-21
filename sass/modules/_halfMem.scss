@@ -2,7 +2,7 @@
 .right {
     margin-left: 200px;
     @include afterClear;
-    background-image: url(../../images/marble.jpg);
+    background-image: url(../images/marble.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     .bigImg {
@@ -19,7 +19,7 @@
         padding: 50px 0;
     }
     .leftselect {
-        width: 25%;
+        width: 20%;
         float: left;
         margin-right: 30px;
         img {
@@ -51,7 +51,7 @@
         display: none;
     }
     .content {
-        width: 70%;
+        width: 76%;
         float: left;
         padding-bottom: 50px;
         textarea {
@@ -60,7 +60,7 @@
         h4 {
             text-align: center;
             font-size: $font-size-h3;
-            margin-bottom: 30px;
+            margin: 30px 0;
         }
         .halfMemInfo {
             form {
@@ -92,6 +92,49 @@
             }
         }
         .halfMemCat {
+            .newbtn {
+                display: block;
+                margin-left: auto;
+                margin-right: 0;
+            }
+            .newEmpTROff {
+                display: none;
+            }
+            .newEmpTROn {
+                display: table-row;
+            }
+            .newblock {
+                display: block;
+            }
+            .catInfo {
+                width: 100%;
+                tr {
+                    text-align: center;
+                }
+                th {
+                    width: 30%;
+                    text-align: center;
+                    background-color: rgb(242, 242, 242);
+                    border: 2px solid #ccc;
+                    padding: 20px;
+                }
+                td {
+                    border: 2px solid #ccc;
+                    padding: 20px;
+                    input {
+                        width: 90%;
+                        height: 30px;
+                        border: none;
+                    }
+                    .radio {
+                        width: 10%;
+                        height: 15px;
+                    }
+                    .simple {
+                        width: 80%;
+                    }
+                }
+            }
             form {
                 width: 100%;
                 table {
@@ -132,10 +175,8 @@
             }
         }
         .halfMemAdobtRecord {
-            form {
-                table {
-                    width: 100%;
-                }
+            table {
+                width: 100%;
                 th {
                     text-align: center;
                     background-color: rgb(242, 242, 242);
@@ -164,22 +205,34 @@
                     border: 2px solid #ccc;
                     padding: 20px;
                     text-align: center;
-                    .fa-circle-o {
-                        font-size: $font-size-base*1.2;
+                    .circle {
                         color: dodgerblue;
-                        cursor: pointer;
+                        label {
+                            cursor: pointer;
+                        }
+                        .fa-check-circle-o {
+                            font-size: $font-size-base*1.2;
+                        }
                     }
-
-                    .fa-times {
-                        font-size: $font-size-base*1.2;
+                    .times {
                         color: crimson;
-                        cursor: pointer;
+                        label {
+                            cursor: pointer;
+                        }
+                        .fa-times-circle-o {
+                            font-size: $font-size-base*1.2;
+                        }
                     }
                 }
             }
         }
         .halfMemOrderlist {
             font-size: $font-size-h4;
+            .newbtn {
+                display: block;
+                margin-left: auto;
+                margin-right: 0;
+            }
             h5 {
                 margin-bottom: 20px;
             }
@@ -189,12 +242,9 @@
             span {
                 color: rgb(235, 47, 47);
             }
-            form {
+            table {
                 width: 100%;
                 margin: 30px auto;
-                table {
-                    width: 100%;
-                }
                 tr {
                     text-align: center;
                 }
@@ -210,6 +260,15 @@
                         font-size: $font-size-base*1.2;
                         color: firebrick;
                         cursor: pointer;
+                    }
+                }
+            }
+            .odTable {
+                a {
+                    text-decoration: none;
+                    color: #EAAF88;
+                    &:hover {
+                        color: #0f71c2;
                     }
                 }
             }

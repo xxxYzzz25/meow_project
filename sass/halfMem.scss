@@ -2,13 +2,14 @@
 @import 'base/_var.scss';
 @import 'base/_boxsizing.scss';
 @import 'base/_font.scss';
+@import "base/_btn.scss";
 @import 'layout/_container.scss';
 @import 'mixins/_afterClear.scss';
 @import 'mixins/_navNow.scss';
 @import 'mixins/_rwd.scss';
+@import 'modules/_btns.scss';
 @import 'modules/_header.scss';
 @import 'modules/_footer.scss';
-@import 'modules/_btns.scss';
 @import 'modules/_halfMem.scss';
 @import 'respond/_halfMemberMedium.scss';
 @import 'respond/_halfMemberSmall.scss';
