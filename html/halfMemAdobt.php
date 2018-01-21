@@ -4,7 +4,7 @@
 ?>
 <div class="halfMemAdopt">
     <h4>審核領養案件</h4>
-    <form action="../php/halfMemAdobtUpdateToDb.php">
+    <form action="../php/halfMemAdobtToDb.php">
         <table>
             <tr>
                 <th>喵小孩名字</th>
@@ -47,12 +47,8 @@ try {
                     ?>
                 </td>
                 <td>
-                    <p class="circle">
-                        <input type="radio" id="circle" name="status" value="2">審核通過</label>
-                    </p>
-                    <p class="times">
-                        <input type="radio" id="times" name="status" value="0">審核失敗</label>
-                    </p>
+                    <i class='fa fa-circle-o ensureBtn' aria-hidden='true' name='audit' value='1'></i>
+                    <i class='fa fa-times cancel cancelBtn' name='audit' value='1'></i>
                 </td>
             </tr>
 <?php
@@ -64,11 +60,6 @@ try {
 }
 
 ?>
-            <tr>
-                <td colspan="5">
-                    <button type="submit" class="defaultBtn">確定審核</button>
-                </td>
-            </tr>
         </table>
     </form>
 </div>

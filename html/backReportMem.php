@@ -46,14 +46,8 @@ try {
                         <td></td>
                         <td><?php echo $reportnoRow->ARTICLE_REPORT_TIME; ?></td>
                         <td>
-                            <p class="circle">
-                                <input type="radio" id="circle" name="status" value="2">
-                                <label for="circle"><i class="fa fa-check-circle-o" aria-hidden="true"></i>審核通過</label><br><br>
-                            </p>
-                            <p class="times">
-                                <input type="radio" id="times" name="status" value="0">
-                                <label for="times"><i class="fa fa-times-circle-o" aria-hidden="true"></i>審核失敗</label>
-                            </p>
+                            <i class="fa fa-circle-o" aria-hidden="true" id="ensureBtn"></i>
+                            <i class="fa fa-times cancel"></i>
                         </td>
                     </tr>
 <?php

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>會員登入</title>
+<title></title>
 <style>
     a{
         cursor: pointer;
@@ -17,7 +17,7 @@
 try {
 	require_once("connectBD103G2.php");
 	$sql="update cat set ADOPT_STATUS=:status
-			where CAT_NO=:no";
+            where CAT_NO=:no";
 	$products = $pdo->prepare( $sql );
 	$products->bindValue(":no" , $_REQUEST["no"]);
 	$products->bindValue(":status" , $_REQUEST["status"]);
