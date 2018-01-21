@@ -50,19 +50,15 @@ echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext
 
 ?>
 <script>
-    window.addEventListener('load', () = > {
+    window.addEventListener('load', ()=>{
         let back = document.getElementById('backNext')
-        setTimeout(function back()
-    {
-        history.back()
-    }
-    ,
-    5000
-    )
-    back.addEventListener('click', (e) = > {
-        e.preventDefault();
-    window.history.back()
-    })
+        setTimeout(function back(){
+            history.back()
+        }, 5000)
+        back.addEventListener('click', (e)=>{
+            e.preventDefault();
+            window.history.back()
+        })
     })
 </script>
 </body>

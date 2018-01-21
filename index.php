@@ -141,19 +141,19 @@
         <nav>
             <ul>
                 <li>
-                    <a href="html/catSearch.html">尋喵</a>
+                    <a href="html/catSearch.html" title="前往尋喵">尋喵</a>
                 </li>
                 <li>
-                    <a href="html/halfway_house_search.html">中途之家</a>
+                    <a href="html/halfway_house_search.html" title="前往中途之家">中途之家</a>
                 </li>
                 <li>
                     <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="html/forum.html">討論區</a>
+                    <a href="html/forum.html" title="前往討論區">討論區</a>
                 </li>
                 <li>
-                    <a href="html/member.html">會員專區</a>
+                    <a href="html/member.html" title="前往會員專區">會員專區</a>
                 </li>
             </ul>
         </nav>
@@ -163,11 +163,11 @@
             </a><?php
                     if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
 
-                        echo "<a href='php/memberLogOut.php'>
+                        echo "<a href='php/memberLogOut.php' title='登出'>
                             <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
                             </a>";
                     }else{
-                        echo "<a href='#' class='login'>
+                        echo "<a href='#' class='login title='登入/註冊'>
                             <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
                             </a>";
                     }
