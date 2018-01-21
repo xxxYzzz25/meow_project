@@ -58,7 +58,7 @@
                 <?php
 				require_once("../php/connectBD103G2.php");
 
-				$sql = "select count(1) from halfway_member where half_audit_status = 0 or half_audit_status = 2";    // 計算資料筆數
+				$sql = "select count(1) from halfway_member where half_audit_status = 0";    // 計算資料筆數
 				$total = $pdo->query($sql);
 				$rownum = $total->fetchcolumn();                            // 總共欄位數
 				$perPage = 10;                                               // 每頁顯示筆數
@@ -66,20 +66,20 @@
 				$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
 				// 若無當前頁數則進入第一頁 若有則進入該頁
 				$start = ($pageNo - 1) * $perPage;                            // 計算起始頁數
-				$sql2 = "select * from halfway_member where half_audit_status = 0 or half_audit_status = 2 order by half_no desc limit $start, $perPage";
+				$sql2 = "select * from halfway_member where half_audit_status = 0 order by half_no desc limit $start, $perPage";
 				// 設定每頁呈現內容
 				$stmt = $pdo->query($sql2);
 				$half = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				if ($rownum == 0) {
                     echo "<tr><td colspan='4'>'目前尚無待審核的中途之家！'</td></tr>";
-                    echo $sql;
 				}else{
                     try {
                         foreach ($half as $i => $halfRow) {
 				?>
-                            <form action="../php/halfAudit" method="get" class="halfForm">
+                            <form action="../php/backHalfAudit.php" method="get" class="halfForm">
                                 <tr>
                                     <td>
+                                        <input type="hidden" name="halfNo" value="<?echo $halfRow['HALF_NO']; ?>">
                                         <input type="text" name="halfId" readonly="readonly" value="<?php echo $halfRow['HALF_ID']; ?>">
                                     </td>
                                     <td>
@@ -89,14 +89,8 @@
                                         <input type="text" name="halfAdd" readonly="readonly" value="<?php echo $halfRow['HALF_ADDRESS']; ?>">
                                     </td>
                                     <td>
-                                        <?php 
-                                        if ($halfRow['HALF_AUDIT_STATUS'] == 2) {
-                                            echo "<span>已駁回審核</span>";
-                                        }else {
-                                            echo "<i class='fa fa-circle-o ensureBtn' aria-hidden='true'></i>";
-                                            echo "<i class='fa fa-times cancel cancelBtn'></i>";
-                                        }
-                                        ?>
+                                        <i class='fa fa-circle-o ensureBtn' aria-hidden='true' name='audit' value='1'></i>
+                                        <i class='fa fa-times cancel cancelBtn' name='audit' value='1'></i>
                                     </td>
                                 </tr>
                             </form>
@@ -128,10 +122,21 @@
         let ensureBtn = document.querySelectorAll('.ensureBtn')
         let cancelBtn = document.querySelectorAll('.cancelBtn')
         let form = document.querySelectorAll('.halfForm')
+        let hidden = document.createElement("input")
+        hidden.type = "hidden"
+        hidden.value = "1"
+        hidden.name = "audit"
         for (let i = 0; i < ensureBtn.length; i++) {
             ensureBtn[i].addEventListener('click', ()=>{
-                console.log(ensureBtn[i].parentNode.parentNode);
-                
+                form[i].appendChild(hidden)
+                form[i].submit()
+            })
+        }
+        for (let i = 0; i < ensureBtn.length; i++) {
+            cancelBtn[i].addEventListener('click', ()=>{
+                hidden.value = "2"
+                form[i].appendChild(hidden)
+                form[i].submit()
             })
         }
     })

@@ -72,7 +72,7 @@
 				try {
 					foreach ($memRow as $i => $mem_Row) {
 						?>
-                        <form action="../php/MEM_BAN_Update.php" method="get">
+                        <form action="../php/backMemBanUpdate.php" method="get">
                             <tr>
                                 <td>
                                     <input type="text" name="memId" readonly="readonly"
