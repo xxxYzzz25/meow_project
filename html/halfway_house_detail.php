@@ -268,7 +268,7 @@ try {
 	$sql = "select count(1) from cat where HALF_NO=$halfno";    // 計算資料筆數
 	$total = $pdo->query($sql);
 	$rownum = $total->fetchcolumn();                            // 總共欄位數
-	$perPage = 6;                                               // 每頁顯示筆數
+	$perPage = 3;                                               // 每頁顯示筆數
 	$totalpage = ceil($rownum / $perPage);                      // 計算總頁數
 	$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
 	// 若無當前頁數則進入第一頁 若有則進入該頁

@@ -206,6 +206,11 @@
                 //modify here
                 let halfMemCat = document.getElementById('halfMemCat');
                 halfMemCat.innerHTML = this.responseText;
+
+                let back = document.getElementById('back'); 
+                back.addEventListener('click',function () {
+                    window.location.reload(); 
+                });
             } else {
                 alert(xhr.status);
             }

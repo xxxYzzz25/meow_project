@@ -318,6 +318,21 @@ header .icons a:hover {
   text-align: center;
 }
 
+.page {
+  text-align: center;
+  padding: 30px;
+}
+
+.page .pageNo {
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  padding-left: 7px;
+  border-radius: 0px;
+  border-width: 1px;
+  margin: 10px;
+}
+
 @media all and (max-width: 767px) {
   .breadcrumbs {
     margin-top: 40px;
@@ -420,13 +435,32 @@ header ul li:nth-child(5):after {
   font-weight: bold;
 }
 
-.right .container1 .adoptInfomation a {
-  text-align: center;
+.right .container1 .adoptInfomation .odTable tr {
+  border-bottom: 1px solid #333;
+}
+
+.right .container1 .adoptInfomation .odTable tr th,
+.right .container1 .adoptInfomation .odTable tr td {
+  padding-top: 20px;
+  padding-bottom: 12px;
+  font-size: 14px;
+}
+
+.right .container1 .adoptInfomation .odTable tr th a,
+.right .container1 .adoptInfomation .odTable tr td a {
   text-decoration: none;
-  padding: 2px;
-  border-radius: 0px;
-  border-width: 1px;
-  padding-left: 5px;
+  color: #EAAF88;
+}
+
+.right .container1 .adoptInfomation .odTable tr th a:hover,
+.right .container1 .adoptInfomation .odTable tr td a:hover {
+  color: #0f71c2;
+}
+
+.right .container1 .adoptInfomation .odTable tr th {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=backOrderlist.css.map */

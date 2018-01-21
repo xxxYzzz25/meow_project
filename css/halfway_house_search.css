@@ -146,6 +146,21 @@ body {
   text-align: center;
 }
 
+.page {
+  text-align: center;
+  padding: 30px;
+}
+
+.page .pageNo {
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  padding-left: 7px;
+  border-radius: 0px;
+  border-width: 1px;
+  margin: 10px;
+}
+
 @media all and (max-width: 767px) {
   .breadcrumbs {
     margin-top: 40px;

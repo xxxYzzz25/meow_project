@@ -60,7 +60,7 @@
         </div>
     </header>
     <div class="right">
-        <h2 id="qqq">搜尋中途之家</h2>
+        <h2>搜尋中途之家</h2>
             <div class="searchsection">
                 <div class="container">
                     <div class="formInsert">

@@ -137,7 +137,7 @@ session_start();
                         <td>$<?php echo $productRow->PRODUCT_PRICE; ?></td>
                         <td><?php echo $productRow->PRODUCT_STATUS; ?></td>
                         <td>
-                            <button class="defaultBtn" onclick="add('../html/backProductDetail.php?PRODUCT_NO=<?php echo $productRow->PRODUCT_NO; ?>');">商品詳情</button>
+                            <button class="defaultBtn" onclick="add('../php/backProductDetail.php?PRODUCT_NO=<?php echo $productRow->PRODUCT_NO; ?>');">商品詳情</button>
                         </td>
                     </tr>
 <?php
@@ -197,8 +197,6 @@ session_start();
                 let back = document.getElementById('back');
                 back.addEventListener('click',function () {
                     window.location.reload();
-                    console.log('123');
-                });
             } else {
                 alert(xhr.status);
             }

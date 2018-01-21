@@ -10,7 +10,7 @@ try {
 
     $sql = "select * from member where MEM_NO =?";
     $mem = $pdo->prepare($sql);
-    $mem->bindValue(1, $_SESSION["MEM_ID"]); //session
+    $mem->bindValue(1, $_SESSION["MEM_NO"]); //session
     $mem->execute();
 
     if ($mem->rowCount() == 0) {
