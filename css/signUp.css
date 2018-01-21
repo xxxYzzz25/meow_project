@@ -569,23 +569,6 @@ header ul li:nth-child(5):after {
   cursor: pointer;
 }
 
-.right .content .memOrderlist table td button {
-  border-radius: 60px;
-  cursor: pointer;
-  letter-spacing: 3px;
-  padding: 2% 8% 2% 10%;
-  background-color: #EAAF88;
-  border: 1px solid #EAAF88;
-  color: #fff;
-  outline: none;
-}
-
-.right .content .memOrderlist table td button:hover {
-  border: 1px solid #EAAF88;
-  background-color: transparent;
-  color: #EAAF88;
-}
-
 .right .content .memOrderlist .odTable a {
   text-decoration: none;
   color: #EAAF88;

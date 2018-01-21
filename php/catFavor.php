@@ -1,4 +1,4 @@
-<?
+<?php
 ob_start();
 session_start();
 try {
@@ -22,6 +22,4 @@ try {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";
 }
-
-
 ?>

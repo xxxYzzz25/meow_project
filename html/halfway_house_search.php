@@ -1,3 +1,8 @@
+<?php
+    ob_start();
+    session_start();
+	isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,19 +19,6 @@
 </head>
 
 <body>
-    <!-- "php.executablePath": "D:/xampp/php/php.exe",
-    "php.validate.executablePath": "D:/xampp/php/php.exe",
-    "phpfmt.php_bin": "D:/xampp/php/php.exe",
-    "phpfmt.format_on_save": true,
-    "phpfmt.indent_with_space": 4,
-    "phpfmt.enable_auto_align": true,
-    "phpfmt.visibility_order": true,
-    "phpfmt.passes": [],
-    "phpfmt.smart_linebreak_after_curly": true,
-    // Enable per-language
-    "[php]": {
-        "editor.formatOnSave": true
-    } -->
     <header>
         <div class="logo">
             <a href="../index.html">

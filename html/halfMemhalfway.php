@@ -60,7 +60,7 @@ try {
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="submit">確定修改</button>
+                    <button type="submit" class="defaultBtn">確定修改</button>
                 </td>
             </tr>
         </table>

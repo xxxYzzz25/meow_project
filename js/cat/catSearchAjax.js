@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
         xhr.open("get", url, true)
         xhr.send()
     }
-    function getDataJson(json) {
+    function getDataArr(info) {
         let xhr = new XMLHttpRequest()
         xhr.onload = function () {
             if (xhr.status == 200) {
@@ -27,11 +27,9 @@ window.addEventListener('load', () => {
                 alert(xhr.status)
             }
         }
-        let xxx = JSON.stringify(json);
         let url = '../php/catSearch.php'
-        xhr.open("post", url, true)
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(xxx)
+        xhr.open("get", url, true)
+        xhr.send(arr)
     }
     function ajaxData(e) {
         let searchText = document.getElementById('searchText').value
@@ -116,122 +114,10 @@ window.addEventListener('load', () => {
             advancedSearch[i].addEventListener('click', () => {
                 var name = advancedSearch[i].getAttribute('data-name')
                 var val = advancedSearch[i].getAttribute('data-val')
-                if (advancedSearch[i].getAttribute('data-name') == 'color') {
-                    switch (val) {
-                        case "0": {
-                            val = "黑白";
-                            break;
-                        }
-                        case "1": {
-                            val = "虎斑";
-                            break;
-                        }
-                        case "2": {
-                            val = "橘白";
-                            break;
-                        }
-                        case "3": {
-                            val = "橘";
-                            break;
-                        }
-                        case "4": {
-                            val = "黑";
-                            break;
-                        }
-                    }
-                } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
-                    switch (val) {
-                        case "0": {
-                            val = "台北市";
-                            break;
-                        }
-                        case "1": {
-                            val = "新北市";
-                            break;
-                        }
-                        case "2": {
-                            val = "基隆市";
-                            break;
-                        }
-                        case "3": {
-                            val = "桃園市";
-                            break;
-                        }
-                        case "4": {
-                            val = "新竹市";
-                            break;
-                        }
-                        case "5": {
-                            val = "新竹縣";
-                            break;
-                        }
-                        case "6": {
-                            val = "宜蘭縣";
-                            break;
-                        }
-                        case "7": {
-                            val = "苗栗縣";
-                            break;
-                        }
-                        case "8": {
-                            val = "台中市";
-                            break;
-                        }
-                        case "9": {
-                            val = "彰化市";
-                            break;
-                        }
-                        case "10": {
-                            val = "南投市";
-                            break;
-                        }
-                        case "11": {
-                            val = "雲林市";
-                            break;
-                        }
-                        case "12": {
-                            val = "新竹市";
-                            break;
-                        }
-                        case "13": {
-                            val = "嘉義縣";
-                            break;
-                        }
-                        case "14": {
-                            val = "嘉義市";
-                            break;
-                        }
-                        case "15": {
-                            val = "台南市";
-                            break;
-                        }
-                        case "16": {
-                            val = "高雄市";
-                            break;
-                        }
-                        case "17": {
-                            val = "屏東市";
-                            break;
-                        }
-                        case "18": {
-                            val = "花蓮縣";
-                            break;
-                        }
-                        case "19": {
-                            val = "台東縣";
-                            break;
-                        }
-                        case "20": {
-                            val = "離島";
-                            break;
-                        }
-                    }
-                }
+                
                 if (advancedSearch[i].className.match('conditionSelected')) {
                     if (advancedSearch[i].getAttribute('data-name') == 'color') {
                         removeByValue(color, val)
-                        console.log(color);
-                        
                     } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
                         removeByValue(location, val)
                     } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
@@ -240,18 +126,17 @@ window.addEventListener('load', () => {
                 } else {
                     if (advancedSearch[i].getAttribute('data-name') == 'color') {
                         color.push(val)
-                        console.log(color);
                     } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
                         location.push(val)
                     } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
                         gender.push(val)
                     }
                 }
-                var obj = new Object
-                obj.color = color
-                obj.location = location
-                obj.gender = gender
-                getDataJson(obj);
+                
+                getData("color=" + color + "&location=" + location + "&gender=" + gender )
+                
+                
+                
             })
         }
         

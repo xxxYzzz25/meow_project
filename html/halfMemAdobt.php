@@ -57,7 +57,7 @@ try {
             </tr>
             <tr>
                 <td colspan="5">
-                    <button type="submit">確定審核</button>
+                    <button type="submit" class="defaultBtn">確定審核</button>
                 </td>
             </tr>
 <?php
