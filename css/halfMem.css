@@ -742,18 +742,18 @@ header ul li:nth-child(5):after {
   padding: 10px 0;
 }
 
-.right .content .halfMemAdobtRecord table {
+.right .content .halfMemAdoptRecord table {
   width: 100%;
 }
 
-.right .content .halfMemAdobtRecord table th {
+.right .content .halfMemAdoptRecord table th {
   text-align: center;
   background-color: #f2f2f2;
   border: 2px solid #ccc;
   padding: 15px;
 }
 
-.right .content .halfMemAdobtRecord table td {
+.right .content .halfMemAdoptRecord table td {
   border: 2px solid #ccc;
   padding: 20px;
   text-align: center;

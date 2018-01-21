@@ -153,7 +153,14 @@
                     <a href="html/forum.html">討論區</a>
                 </li>
                 <li>
-                    <a href="html/member.html">會員專區</a>
+                    <?php
+                        if($_SESSION['HALF_NO'] == null){
+                            echo "<a href='member.html'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                        }
+                    ?>
                 </li>
             </ul>
         </nav>

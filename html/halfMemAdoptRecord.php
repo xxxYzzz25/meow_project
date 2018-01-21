@@ -2,7 +2,7 @@
     ob_start();
     session_start();
 ?>
-<div class="halfMemAdobtRecord">
+<div class="halfMemAdoptRecord">
     <h4>查詢領養紀錄</h4>
 <?php
 try {
@@ -13,7 +13,8 @@ try {
             where a.CAT_NO = c.CAT_NO 
             and a.MEM_NO = m.MEM_NO 
             and c.HALF_NO = h.HALF_NO
-            and c.HALF_NO =?;";
+            and c.HALF_NO =?
+            order by ADOPT_DATE desc;";
     $adopt = $pdo->prepare( $sql );
     $adopt->bindValue(1, $_SESSION["HALF_NO"]);//session
     $adopt->execute();
@@ -21,9 +22,7 @@ try {
     if( $adopt->rowCount()==0){
         echo "<center>查無領養紀錄</center>";
     }else{
-        while ($adoptRow = $adopt->fetchObject()) {
 ?>
-        
     <table>
         <tr>
             <th>喵小孩名字</th>
@@ -31,6 +30,10 @@ try {
             <th>領養時間</th>
             <th>審核狀態</th>
         </tr>
+<?php
+        while ($adoptRow = $adopt->fetchObject()) {
+?>
+        
         <tr>
             <td><?php echo $adoptRow->CAT_NAME; ?></td>
             <td><?php echo $adoptRow->MEM_NAME; ?></td>
