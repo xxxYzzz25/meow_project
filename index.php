@@ -142,16 +142,20 @@
         <nav>
             <ul>
                 <li>
+<<<<<<< HEAD
                     <a href="html/catSearch.php">尋喵</a>
+=======
+                    <a href="html/catSearch.html" title="前往尋喵">尋喵</a>
+>>>>>>> c99bc213c6a773c43d96dfa0189c9dce57636fb1
                 </li>
                 <li>
-                    <a href="html/halfway_house_search.html">中途之家</a>
+                    <a href="html/halfway_house_search.html" title="前往中途之家">中途之家</a>
                 </li>
                 <li>
                     <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="html/forum.html">討論區</a>
+                    <a href="html/forum.html" title="前往討論區">討論區</a>
                 </li>
                 <li>
                     <?php
@@ -171,11 +175,19 @@
             </a><?php
                     if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
 
+<<<<<<< HEAD
                         echo "<a href='php/memberLogOut.php' id='loginBtn'>
                             <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
                             </a>";
                     }else{
                         echo "<a href='#' class='login' id='loginBtn'>
+=======
+                        echo "<a href='php/memberLogOut.php' title='登出'>
+                            <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }else{
+                        echo "<a href='#' class='login title='登入/註冊'>
+>>>>>>> c99bc213c6a773c43d96dfa0189c9dce57636fb1
                             <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
                             </a>";
                     }
@@ -559,6 +571,13 @@
                         src: 'images/runningCat.gif'
                     });
                 });
+            });
+        </script>
+        <script>
+            $('').click(function (e) {
+                e.preventDefault();
+                $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });
+                $('#loginBox').css('display', 'block');
             });
         </script>
 </body>

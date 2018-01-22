@@ -36,9 +36,15 @@ try {
 		$halfRow = $statement->fetch(PDO::FETCH_ASSOC);//取回資料錄
 		if ($halfRow["HALF_BAN"]) {
 			echo "<center>此帳號已被停權, 若有疑問請來信客服。</center>";
-        }else if ( $halfRow["HALF_AUDIT_STATUS"] != 1 ) {
+		}else if ( $halfRow["HALF_AUDIT_STATUS"] != 1 ) {
 			echo "<center>此帳號尚未審核, 請稍候, 我們將盡快為您審核。</center>";
         }else {
+				$memNo = $memRow["MEM_NO"];
+				echo "<script>
+				window.addEventListener('load',()=>{
+					localStorage.setItem('memNo',$memNo);
+				});
+				</script>";
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];
 			echo "<center>", $halfRow["HALF_NAME"], "您好~</center>";//致歡迎詞
 		}

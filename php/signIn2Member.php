@@ -38,6 +38,12 @@ try {
 			echo "<center>此帳號已被停權, 若有疑問請來信客服。</center>";
 		} else {
 			$_SESSION["MEM_NO"] = $memRow["MEM_NO"];
+			$memNo = $memRow["MEM_NO"];
+			echo "<script>
+			window.addEventListener('load',()=>{
+				localStorage.setItem('memNo',$memNo);
+			});
+		</script>";
 			echo "<center>", $memRow["MEM_NAME"], "您好~</center>";//致歡迎詞
 		}
 	}
@@ -49,16 +55,16 @@ echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext
 
 ?>
 <script>
-    window.addEventListener('load', () => {
-    let back = document.getElementById('backNext')
-    setTimeout(function(){
-        window.history.back()
-    }, 5000)
-    back.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.history.back()
+    window.addEventListener('load', ()=>{
+        let back = document.getElementById('backNext')
+        setTimeout(function back(){
+            history.back()
+        }, 5000)
+        back.addEventListener('click', (e)=>{
+            e.preventDefault();
+            window.history.back()
+        })
     })
-})
 </script>
 </body>
 </html>
