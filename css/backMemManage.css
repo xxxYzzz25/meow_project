@@ -291,51 +291,92 @@ header ul li:nth-child(1):after {
 .right {
   width: calc(100% - 200px);
   margin-left: 200px;
-  color: #222; }
-  .right .container1 {
-    width: 100%;
-    position: relative;
-    padding: 0 50px;
-    max-width: 3000px;
-    text-align: center; }
-    .right .container1,
-    .right .container1 * {
-      outline: none; }
-    .right .container1 .bigImg {
-      background-size: cover;
-      margin: 0 auto; }
-      .right .container1 .bigImg img {
-        width: 100%;
-        max-width: 1000px; }
-    .right .container1 .empManage {
-      width: 80%;
-      margin: 100px auto 100px; }
-      .right .container1 .empManage button {
-        display: block;
-        margin-left: auto;
-        margin-right: 0; }
-      .right .container1 .empManage table {
-        width: 100%;
-        margin: 40px auto 60px; }
-        .right .container1 .empManage table .newEmpTROff {
-          display: none; }
-        .right .container1 .empManage table .newEmpTROn {
-          display: table-row; }
-        .right .container1 .empManage table tr {
-          border-bottom: 1px solid #333; }
-          .right .container1 .empManage table tr th,
-          .right .container1 .empManage table tr td {
-            padding-top: 16px;
-            padding-bottom: 8px;
-            font-size: 14px; }
-          .right .container1 .empManage table tr th {
-            font-size: 18px;
-            letter-spacing: 2px;
-            font-weight: bold; }
-        .right .container1 .empManage table a {
-          text-align: center;
-          text-decoration: none;
-          padding: 2px;
-          border-radius: 0;
-          border-width: 1px;
-          padding-left: 5px; }
+  color: #222;
+}
+
+.right .container1 {
+  width: 100%;
+  position: relative;
+  padding: 0 50px;
+  max-width: 3000px;
+  text-align: center;
+}
+
+.right .container1,
+.right .container1 * {
+  outline: none;
+}
+
+.right .container1 .bigImg {
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.right .container1 .bigImg img {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.right .container1 .empManage {
+  width: 80%;
+  margin: 100px auto 100px;
+}
+
+.right .container1 .empManage button {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.right .container1 .empManage table {
+  width: 100%;
+  margin: 40px auto 60px;
+}
+
+.right .container1 .empManage table input[type="text"] {
+  width: 70%;
+}
+
+.right .container1 .empManage table .newEmpTROff {
+  display: none;
+}
+
+.right .container1 .empManage table .newEmpTROn {
+  display: table-row;
+}
+
+.right .container1 .empManage table tr {
+  border-bottom: 1px solid #333;
+}
+
+.right .container1 .empManage table tr th,
+.right .container1 .empManage table tr td {
+  padding-top: 16px;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+.right .container1 .empManage table tr th {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.right .container1 .empManage table tr:last-child {
+  border-bottom: 0px solid #000;
+}
+
+.right .container1 .empManage table a {
+  text-align: center;
+  text-decoration: none;
+  padding: 2px;
+  border-radius: 0;
+  border-width: 1px;
+  padding-left: 5px;
+}
+
+.right .container1 .empManage .half {
+  display: none;
+}
+
+/*# sourceMappingURL=backMemManage.css.map */

@@ -12,8 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous">
-    </script>
+        crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="../js/signIn.js"></script>
     <script src="../js/halfway/halfSearch.js"></script>
@@ -133,12 +132,16 @@
                 </li>
                 <li>
                     <?php
+                    if($_SESSION['MEM_NO'] == null && $_SESSION['HALF_NO'] == null){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
                         if($_SESSION['HALF_NO'] == null){
                             echo "<a href='member.html'>會員專區</a>";
                         }
                         else{
                             echo "<a href='halfMem.html'>中途會員專區</a>";
                         }
+                    }
                     ?>
                 </li>
             </ul>

@@ -53,7 +53,7 @@
                     <th>申請者帳號</th>
                     <th>申請之中途之家名稱</th>
                     <th>申請之中途之家地址</th>
-                    <th>審核狀態</th>
+                    <th>審核</th>
                 </tr>
                 <?php
 				require_once("../php/connectBD103G2.php");

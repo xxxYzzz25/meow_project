@@ -53,19 +53,19 @@ session_start();
                 <button id="newEmp" class="defaultBtn">新增商品</button>
                 <form action="../php/backProductInsertToDb.php" method="post" enctype="multipart/form-data">
 	                <input type="hidden" name="MAX_FILE_SIZE" value="10485760">
-                    <h4 class="newEmpTR newEmpTROff">新增一項商品</h4>
+                    <h4 class="newEmpTR newEmpTROff">新增一項商品 (*為必填項目)</h4>
                     <table>
                         <tr class="newEmpTR newEmpTROff">
-                            <th>商品名稱</th>
+                            <th>商品名稱*</th>
                             <td>
-                                <input type="text" name="name">
+                                <input type="text" name="name" required="required">
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
-                            <th>商品分類</th>
+                            <th>商品分類*</th>
                             <td>
-                                <select name="part">
-                                    <option>請選擇</option>
+                                <select name="part" required="required">
+                                    <option></option>
                                     <option value="1">喵喵肚子餓</option>
                                     <option value="2">喵喵待在家</option>
                                     <option value="3">精選喵草</option>
@@ -74,13 +74,13 @@ session_start();
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
-                            <th>商品價錢</th>
+                            <th>商品價錢*</th>
                             <td>
-                                $<input type="text" name="price">
+                                $<input type="text" name="price" required="required">
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
-                            <th>商品規格</th>
+                            <th>商品規格(如果不填就不會顯示在頁面哦)</th>
                             <td>
                                 重量<input type="text" name="weight"><br>
                                 產地<input type="text" name="loc"><br>
@@ -89,15 +89,15 @@ session_start();
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
-                            <th>商品敘述</th>
+                            <th>商品敘述*</th>
                             <td>
-                                <textarea name="narrative" id="" cols="50" rows="15"></textarea>
+                                <textarea name="narrative" cols="50" rows="15" required="required"></textarea>
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
-                            <th>商品圖片(最多可選擇三張)</th>
+                            <th>商品圖片(最多可選擇三張)*</th>
                             <td>
-                                <input type="file" name=" upFile[]" multiple="multiple">
+                                <input type="file" name=" upFile[]" multiple="multiple" required="required">
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
@@ -110,7 +110,7 @@ session_start();
                 <!-- 新增商品結束 -->
 
                 <!-- 商品資訊 -->
-                <table id="adoptInfomation">
+                <table>
                     <tr>
                         <th>商品編號</th>
                         <th>商品名稱</th>
@@ -119,18 +119,18 @@ session_start();
                         <th>商品明細</th>
                     </tr>
 <?php
-    try {
-        require_once "../php/connectBD103G2.php";
+try {
+    require_once "../php/connectBD103G2.php";
 
-        $sql = "select * from product";
-        $product = $pdo->prepare($sql);
-        $product->execute();
+    $sql     = "select * from product";
+    $product = $pdo->prepare($sql);
+    $product->execute();
 
-        if ($product->rowCount() == 0) {
-            echo "<center>查無商品資料</center>";
-        } else {
-            while ($productRow = $product->fetchObject()) {
-?>
+    if ($product->rowCount() == 0) {
+        echo "<center>查無商品資料</center>";
+    } else {
+        while ($productRow = $product->fetchObject()) {
+            ?>
                     <tr>
                         <td><?php echo $productRow->PRODUCT_NO; ?></td>
                         <td><?php echo $productRow->PRODUCT_NAME; ?></td>
@@ -141,7 +141,7 @@ session_start();
                         </td>
                     </tr>
 <?php
-        }
+}
     } //if...else
 } catch (PDOException $e) {
     echo "錯誤行號 : ", $e->getLine(), "<br>";
@@ -180,7 +180,7 @@ session_start();
         })
         let ensureBtn = document.getElementById('ensureBtn')
         ensureBtn.addEventListener('click', function () {
-            confirm('您確定要新增嗎?')
+            confirm('您確定要新增嗎?');
         })
     })
 </script>
@@ -193,10 +193,6 @@ session_start();
                 //modify here
                 let pro = document.getElementById('adoptInfomation');
                 pro.innerHTML = this.responseText;
-
-                let back = document.getElementById('back');
-                back.addEventListener('click',function () {
-                    window.location.reload();
             } else {
                 alert(xhr.status);
             }
