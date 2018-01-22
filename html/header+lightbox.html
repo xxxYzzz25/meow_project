@@ -114,11 +114,15 @@
             </li>
             <li>
                 <?php
-                    if($_SESSION['HALF_NO'] == null){
-                        echo "<a href='member.html'>會員專區</a>";
-                    }
-                    else{
-                        echo "<a href='halfMem.html'>中途會員專區</a>";
+                    if($_SESSION['MEM_NO'] == null && $_SESSION['HALF_NO'] == null){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if($_SESSION['HALF_NO'] == null){
+                            echo "<a href='member.html'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                        }
                     }
                 ?>
             </li>
