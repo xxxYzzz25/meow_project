@@ -232,34 +232,34 @@ try {
 					</div>
 					<div class="star">
 						<fieldset class="rating">
-							<input type="radio" id="star5" name="rating" value="5" />
+							<input type="radio" class="ratingbtn" id="star5" name="rating" value="5" />
 							<label class="full" for="star5" title="非常好 - 5 stars"></label>
 
-							<input type="radio" id="star4half" name="rating" value="4.5" />
+							<input type="radio" class="ratingbtn" id="star4half" name="rating" value="4.5" />
 							<label class="half" for="star4half" title="非常不錯 - 4.5 stars"></label>
 
-							<input type="radio" id="star4" name="rating" value="4" />
+							<input type="radio" class="ratingbtn" id="star4" name="rating" value="4" />
 							<label class="full" for="star4" title="很不錯 - 4 stars"></label>
 
-							<input type="radio" id="star3half" name="rating" value="3.5" />
+							<input type="radio" class="ratingbtn" id="star3half" name="rating" value="3.5" />
 							<label class="half" for="star3half" title="還不錯 - 3.5 stars"></label>
 
-							<input type="radio" id="star3" name="rating" value="3" />
+							<input type="radio" class="ratingbtn" id="star3" name="rating" value="3" />
 							<label class="full" for="star3" title="還好 - 3 stars"></label>
 
-							<input type="radio" id="star2half" name="rating" value="2.5" />
+							<input type="radio" class="ratingbtn" id="star2half" name="rating" value="2.5" />
 							<label class="half" for="star2half" title="有點不好 - 2.5 stars"></label>
 
-							<input type="radio" id="star2" name="rating" value="2" />
+							<input type="radio" class="ratingbtn" id="star2" name="rating" value="2" />
 							<label class="full" for="star2" title="不好 - 2 stars"></label>
 
-							<input type="radio" id="star1half" name="rating" value="1.5" />
+							<input type="radio" class="ratingbtn" id="star1half" name="rating" value="1.5" />
 							<label class="half" for="star1half" title="有點糟 - 1.5 stars"></label>
 
-							<input type="radio" id="star1" name="rating" value="1" />
+							<input type="radio" class="ratingbtn" id="star1" name="rating" value="1" />
 							<label class="full" for="star1" title="很糟糕 - 1 star"></label>
 
-							<input type="radio" id="starhalf" name="rating" value="0.5" />
+							<input type="radio" class="ratingbtn" id="starhalf" name="rating" value="0.5" />
 							<label class="half" for="starhalf" title="糟透了 - 0.5 stars"></label>
 
 						</fieldset>
@@ -295,7 +295,7 @@ try {
 
 <script>
     //把點到的星星數量傳到scoretext秀出來
-	let inputbtn = document.getElementsByTagName('input');
+	let inputbtn = document.querySelectorAll('.ratingbtn');
 	for (let i = 0; i < inputbtn.length; i++) {
         inputbtn[i].addEventListener('click', function () {
             if(localStorage.getItem('memNo') == null && localStorage.getItem('halfNo') == null){
@@ -303,7 +303,7 @@ try {
                 document.getElementsByClassName("signUpLightboxBlack")[0].style.top = "top";
                 document.getElementById("loginBox").style.display = "block";
             }else{
-                if (scoretext.innerHTML == '0') {
+                if (scoretext.innerHTML == 0) {
                     let score = inputbtn[i].getAttribute('value');
                     // ajax傳到php 存到mysql
                     let xhr = new XMLHttpRequest();

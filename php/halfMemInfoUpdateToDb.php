@@ -17,15 +17,13 @@
 try {
 	require_once("connectBD103G2.php");
 	$sql = "update halfway_member 
-			set HALF_PSW=:psw, 
-			HALF_HEAD=:head, 
-			HALF_COVER=:pic 
+			set HALF_PSW=md5(:psw), 
+			HALF_HEAD=:head
 			where HALF_NO=:no";
 	$products = $pdo->prepare( $sql );
 	$products->bindValue(":no" , $_REQUEST["no"]);
 	$products->bindValue(":psw" , $_REQUEST["hwmempsw"]);
 	$products->bindValue(":head" , $_REQUEST["hwmemhead"]);
-	$products->bindValue(":pic" , $_REQUEST["hwmempic"]);
 	$products->execute();
 	echo "<center>修改成功</center><br>
         <center>將在五秒後回到原網址</center><br>
