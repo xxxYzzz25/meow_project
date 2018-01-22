@@ -79,7 +79,8 @@ window.addEventListener('load', function () {
                     alert('中途會員不可進行領養!');
                     reset();
                 }else{
-                    alert('請登入一般會員(中途會員不可領養)');
+                    alert('請登入一般會員(中途會員不可領養)')
+                        showLogin();
                 }
                 
             });
@@ -214,4 +215,38 @@ window.addEventListener('load', function () {
             }
         }
     }
+    $(document).ready(function () {
+        $(".hamburger").click(function () {
+            $(this).toggleClass("is-active");
+            $('header').toggleClass("active");
+        });
+        $('#door-start-btn').on('click', function () {
+            $(this).closest('#doorStart').fadeOut();
+            $('#doorLeft').addClass('doorLeft');
+            $('#doorRight').addClass('doorRight');
+            $('#people').attr({
+                src: 'images/runningBoy.gif'
+            });
+            $('#hug').attr({
+                src: 'images/runningCat.gif'
+            });
+        });
+    });
+});
+
+window.addEventListener('load',()=>{
+
+    
+
+    function ajax(cb,dataInfo){
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('post','../php/showLike.php');
+        xhr.load = cb;
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(dataInfo);
+
+    }
+    let likeBox = document.getElementById('likeBox');
+    likeBox.addEventListener('click',ajax);
 });

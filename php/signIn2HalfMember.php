@@ -39,10 +39,10 @@ try {
 		}else if ( $halfRow["HALF_AUDIT_STATUS"] != 1 ) {
 			echo "<center>此帳號尚未審核, 請稍候, 我們將盡快為您審核。</center>";
         }else {
-				$memNo = $memRow["MEM_NO"];
+				$halfNo = $halfRow["HALF_NO"];
 				echo "<script>
 				window.addEventListener('load',()=>{
-					localStorage.setItem('memNo',$memNo);
+					localStorage.setItem('halfNo',$halfNo);
 				});
 				</script>";
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];

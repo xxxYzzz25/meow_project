@@ -2,6 +2,7 @@
     ob_start();
     session_start();
 	isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
+	isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://maps.google.com/maps/api/js?key=AIzaSyDKPVIamuQGV_Yi0y8zXQl5bUGs7bfxW04"></script>
     <script src="../js/signIn.js"></script>
@@ -222,7 +225,7 @@ try {
 				</p>
 			</div>
 			<div class="container">
-				<div class="bigpic" style="background-image: url(<?php echo $COVER ?>);"></div>
+				<div class="bigpic" style="background-image: url(<?php echo $COVER ?>)"></div>
 				<div class="text">
 					<div class="intro">
 						<?php echo $INTRO ?>
@@ -291,27 +294,33 @@ try {
 		</div>
 
 <script>
-	//把點到的星星數量傳到scoretext秀出來
+    //把點到的星星數量傳到scoretext秀出來
 	let inputbtn = document.getElementsByTagName('input');
 	for (let i = 0; i < inputbtn.length; i++) {
-		inputbtn[i].addEventListener('click', function () {
-			if (scoretext.innerHTML == '0') {
-				let score = inputbtn[i].getAttribute('value');
-				// ajax傳到php 存到mysql
-				let xhr = new XMLHttpRequest();
-				xhr.onload=function(){
-					let response = JSON.parse(xhr.responseText);
-					document.getElementById("avgScore").innerHTML=response.avg;
-					document.getElementById("count").innerHTML=response.count;
-					document.getElementById("scoretext").innerHTML=response.star;
-				}
-				let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
-				xhr.open("get", url, true);
-				xhr.send(null);
-			}else{
-				alert("您已經評過分囉!");
-			}
-		});
+        inputbtn[i].addEventListener('click', function () {
+            if(localStorage.getItem('memNo') == null && localStorage.getItem('halfNo') == null){
+                document.getElementsByClassName("signUpLightboxBlack")[0].style.display = "block";
+                document.getElementsByClassName("signUpLightboxBlack")[0].style.top = "top";
+                document.getElementById("loginBox").style.display = "block";
+            }else{
+                if (scoretext.innerHTML == '0') {
+                    let score = inputbtn[i].getAttribute('value');
+                    // ajax傳到php 存到mysql
+                    let xhr = new XMLHttpRequest();
+                    xhr.onload=function(){
+                        let response = JSON.parse(xhr.responseText);
+                        document.getElementById("avgScore").innerHTML=response.avg;
+                        document.getElementById("count").innerHTML=response.count;
+                        document.getElementById("scoretext").innerHTML=response.star;
+                    }
+                    let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
+                    xhr.open("get", url, true);
+                    xhr.send(null);
+                }else{
+                    alert("您已經評過分囉!");
+                }
+            }
+        });
 	}
 </script>
 
