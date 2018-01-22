@@ -66,7 +66,7 @@
                                 <input type="text" id="empIdNew" name="empId" required>
                             </td>
                             <td>
-                                <input type="password" name="empPsw" id="empPswNew" pattern="[A-z]{1-10}" required>
+                                <input type="password" name="empPsw" id="empPswNew" required>
                             </td>
                             <td>
                                 <select name="empOffice" id="EmpOfficeNew" required>
@@ -164,18 +164,22 @@
 
                 function editDone(){
                     this.removeEventListener('click',editDone);
+
                     let tr = this.parentNode.parentNode;
-                    let empIdTd = tr.childNodes[0];
+                    
+                    let empIdTd = tr.childNodes[1];
                     let empId = empIdTd.firstChild;
                     let empIdText = empId.value;
-                    let empPswTd = tr.childNodes[1];
+                    let empPswTd = tr.childNodes[2];
                     let empPsw = empPswTd.firstChild;
                     let empPswText = empPsw.value;
-                    let empOfficeTd = tr.childNodes[2]
+                    console.log(empPswText);
+                    let empOfficeTd = tr.childNodes[3]
                     let empOffice = empOfficeTd.firstChild;
                     let empOfficeText = empOffice.value;
-                    let admin = tr.childNodes[3];
+                    let admin = tr.childNodes[4];
                     let empNo = tr.dataset.No;
+                    
                     empId.remove();
                     empIdTd.textContent = empIdText;
 
@@ -192,21 +196,27 @@
                     changeBtn.addEventListener('click',edit);
                     admin.appendChild(changeBtn);
                     tr.appendChild(admin);
-
-                    ajax(()=>{alert('資料更新成功');},`cmd=update&empId=${empIdText}&empPsw=${empPswText}&empOffice=${empOfficeText}&empNo=${empNo}`);
+                    let odd = tr.childNodes[0].firstChild;
+                    ajax(()=>{
+                        alert('資料更新成功');
+                        ajax(function(){
+                            odd.value = this.responseText;
+                        },`cmd=md&empId=${empIdText}&empNo=${empNo}`);
+                    },`cmd=update&empId=${empIdText}&empPsw=${empPswText}&empOffice=${empOfficeText}&empNo=${empNo}`);
+                    
                 }
                 function editCancel(){
                     this.removeEventListener('click',editCancel);
                     let tr = this.parentNode.parentNode;
-                    let empIdTd = tr.childNodes[0];
-                    let empPswTd = tr.childNodes[1];
-                    let empOfficeTd = tr.childNodes[2];
-                    let adminTd = tr.childNodes[3];
+                    let empIdTd = tr.childNodes[1];
+                    let empPswTd = tr.childNodes[2];
+                    let empOfficeTd = tr.childNodes[3];
+                    let adminTd = tr.childNodes[4];
 
                     empIdTd.firstChild.remove();
                     empIdTd.textContent = tempId;
                     empPswTd.firstChild.remove();
-                    empPswTd.textContent = tempPsw;
+                    empPswTd.textContent = '******';
                     empOfficeTd.firstChild.remove();
                     empOfficeTd.textContent = tempOffice;
 
@@ -223,21 +233,22 @@
 
                 this.removeEventListener('click',ajaxUpdate);
                 let tr = this.parentNode.parentNode;
-                let empId = tr.childNodes[0];
-                let empIdText = tr.childNodes[0].textContent;
+                let empId = tr.childNodes[1];
+                let empIdText = tr.childNodes[1].textContent;
                 tempId = empIdText;
-                let empPsw = tr.childNodes[1];
-                let empPswText = tr.childNodes[1].textContent;
+                let empPsw = tr.childNodes[2];
+                let empPswText = tr.childNodes[0].firstChild.value;
+                
                 tempPsw = empPswText;
-                let empOffice = tr.childNodes[2];
-                tempOffice = tr.childNodes[2].textContent;
+                let empOffice = tr.childNodes[3];
+                tempOffice = tr.childNodes[3].textContent;
                 let op1 = document.createElement('option');
                 let op1Text = document.createTextNode('Supper Admin');
                 let op2 = document.createElement('option');
                 let op2Text = document.createTextNode('Sales');
                 let op3 = document.createElement('option');
                 let op3Text = document.createTextNode('RD');
-                let admin = tr.childNodes[3];
+                let admin = tr.childNodes[4];
 
                 empId.remove();
                 let empIdTd = document.createElement('td');
@@ -279,7 +290,7 @@
                 admin.appendChild(sureBtn);
                 admin.appendChild(cancelBtn);
                 tr.appendChild(admin);
-                // ajax('../php/backEmpManageUpdate.php',dataUpdate,command);
+                // tr.childNodes[2].childNodes[0].select() 自動反白
             }
 
             function ajaxDelete(){
@@ -302,31 +313,37 @@
                     tr.appendChild(adminTd);
                 }
             }
-
+            function deleteRow(){
+                let empTable = document.getElementById('empTable');
+                while(empTable.firstChild) {
+                    empTable.removeChild(empTable.firstChild);
+                }
+            }
             function query(){
                 let empData = JSON.parse(this.responseText);
                 let empTable = document.getElementById('empTable');
                 let empRow = document.getElementById('empRow');
                 let fragment = document.createDocumentFragment();
-                for (const key in empData) {
-                    
-                    let emp = empData[key];
 
-                    for (const name in emp) {
-                        
-                        if(name !== 'No'){
+                    for (const name of empData) {
+
                             let tr = document.createElement('tr');
                             let empId = document.createElement('td');
-                            let empIdText = document.createTextNode(name);
+                            let empIdText = document.createTextNode(name['id']);
                             let empPaw = document.createElement('td');
                             let empPswText = document.createTextNode('******');
+                            let oddPswTd = document.createElement('td');
+                            let oddPsw = document.createElement('input');
                             let empOffice = document.createElement('td');
-                            let empOfficeText = document.createTextNode(emp[name]);
+                            let empOfficeText = document.createTextNode(name['post']);
                             let change = document.createElement('td');
                             let changeBtn = document.createElement('input');
-                            
+
+                            Object.assign(oddPsw,{type:'password',value:name['odd']});
+                            Object.assign(oddPswTd,{style: 'display:none;'});
                             Object.assign(changeBtn,{type:'button',value:'異動'});
 
+                            oddPswTd.appendChild(oddPsw);
                             changeBtn.addEventListener('click',edit);
 
                             change.appendChild(changeBtn);
@@ -334,17 +351,17 @@
                             empPaw.appendChild(empPswText);
                             empId.appendChild(empIdText);
 
+                            tr.appendChild(oddPswTd);
                             tr.appendChild(empId);
                             tr.appendChild(empPaw);
                             tr.appendChild(empOffice);
                             tr.appendChild(change);
+                            
+                            tr.dataset.No = name['No'];
+
                             fragment.appendChild(tr);
-                        }else if(name === 'No'){
-                            fragment.lastChild.dataset.No = emp[name];
-                        }
                     }
                     empTable.appendChild(fragment);
-                }
             }
 
             function ajax(callback,dataInfo){

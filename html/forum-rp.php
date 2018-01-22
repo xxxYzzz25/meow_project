@@ -176,9 +176,10 @@
 				}
 				?>
 			<div class="post-ft">
-				<a class="report" href="../php/forum-report.php?ARTICLE_NO=<?php echo $ARTICLE_NO ?>">
-					<button class="btn">檢舉</button>
-				</a>
+				<form action="../php/forum-report.php" method="post">
+					<input type="hidden" name="ARTICLE_NO" value="<?php echo $ARTICLE_NO ?>">
+					<button type="submit" class="btn reportBtns">檢舉</button>
+				</form>
 			</div>
 		</div>
 		<!-- ============================ -->
@@ -204,9 +205,10 @@
 				<?php echo $dataRow -> MESSAGE_CONTENT ?>
 			</div>
 			<div class="post-ft">
-				<a class="report" href='../php/forum-report.php?MESSAGE_NO=<?php echo $dataRow -> MESSAGE_NO ?>'>
-					<button class="btn report">檢舉</button>
-				</a>
+				<form action="../php/forum-report.php" method="post">
+					<input type="hidden" name="MESSAGE_NO" value="<?php echo $dataRow -> MESSAGE_NO ?>">
+					<button class="btn reportBtns">檢舉</button>
+				</form>
 			</div>
 		</div>
 		<!--  -->
@@ -256,12 +258,11 @@
 				}
 			}
 			let textArea = document.getElementById('textArea');
-			let reports = document.querySelectorAll('.report');
+			let reports = document.querySelectorAll('.reportBtns');
 			for (const i of reports) {
-				i.addEventListener('click',(e)=>{
-					e.target.href = 'javascript: void(0)';
+				i.addEventListener('submit',()=>{
+					alert('請先登入');
 					if(localStorage.getItem('halfNo') || localStorage.getItem('halfNo')){
-						
 						alert('請先登入');
 						qq();
 					}
