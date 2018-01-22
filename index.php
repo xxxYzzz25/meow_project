@@ -179,9 +179,8 @@
                             </a>";
                     }
             ?>
-            <a href="#">
+            <a href="#" id="likeBox">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-                <span id="like">6</span>
             </a>
         </div>
         <div class="hb">
@@ -542,31 +541,12 @@
         <script src="js/sliderKit.js"></script>
         <script src="js/sliderHalf.js"></script>
         <script>
-            $(document).ready(function () {
-                $(".hamburger").click(function () {
-                    $(this).toggleClass("is-active");
-                    $('header').toggleClass("active");
-                });
-                $('#door-start-btn').on('click', function () {
-                    $(this).closest('#doorStart').fadeOut();
-                    $('#doorLeft').addClass('doorLeft');
-                    $('#doorRight').addClass('doorRight');
-                    $('#people').attr({
-                        src: 'images/runningBoy.gif'
-                    });
-                    $('#hug').attr({
-                        src: 'images/runningCat.gif'
-                    });
-                });
-            });
-        </script>
-        <script>
-            $('').click(function (e) {
-                e.preventDefault();
+            function showLogin() {
                 $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });
                 $('#loginBox').css('display', 'block');
-            });
+            }
         </script>
+        
 </body>
 
 </html>
