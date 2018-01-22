@@ -12,7 +12,7 @@ try {
 	$start = ($pageNo - 1) * $perPage;   
 	// 設定每頁呈現內容
     $sql = "
-        select r.article_report_narrative, a.article_title, m.mem_name, h.half_name, a.mem_no, a.half_no
+        select r.article_report_no, r.article_report_narrative, a.article_title, m.mem_name, h.half_name, a.mem_no, a.half_no
         from ((article_report r left join article a on r.article_no = a.article_no ) left join member m on m.mem_no = a.mem_no) left join halfway_member h on h.half_no = a.half_no
         where r.audit_status = 0
         order by ARTICLE_REPORT_NO desc
@@ -38,9 +38,12 @@ try {
             <td><?php echo isset($report_Row['mem_name'])?$report_Row['mem_name']:$report_Row['half_name']; ?></td>
             <td><textarea name="" id="" cols="30" rows="2" readonly="readonly"><?php echo $report_Row['article_report_narrative']; ?></textarea></td>
             <td>
-                <form action="../php/backArtBan" id="reportForm">
-                    <input type="hidden" name="val" id="report" value="1">
-                    <input type="hidden" name="no" value="<?php echo isset($report_Row['mem_no'])?$report_Row['mem_no']:$report_Row['half_no']; ?>">
+                <form action="../php/backBan.php" id="reportForm">
+                    <input type="hidden" name="part" value="article_report">
+                    <input type="hidden" name="reportVal" id="report" value="1">
+                    <input type="hidden" name="banVal" id="ban" value="1">
+                    <input type="hidden" name="artNo" value='<?php echo $report_Row['article_report_no']; ?>'>
+                    <input type="hidden" name="<?php echo isset($report_Row['mem_no'])?'memNo':'halfNo'; ?>" value="<?php echo isset($report_Row['mem_no'])?$report_Row['mem_no']:$report_Row['half_no']; ?>">
                 </form>
                 <i class="fa fa-circle-o" aria-hidden="true" id="ensureBtn"></i>
                 <i class="fa fa-times cancel" id="cancelBtn"></i>

@@ -122,6 +122,7 @@ body {
 .guide .front,
 .guide .backed {
   position: relative;
+  transition: .3s;
 }
 
 .guide .front img,
