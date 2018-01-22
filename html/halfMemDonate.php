@@ -12,9 +12,9 @@ try {
             from donate d,cat c,halfway_member h
             where d.CAT_NO = c.CAT_NO
             and c.HALF_NO = h.HALF_NO
-            and c.HALF_NO =1;";
+            and c.HALF_NO =?;";
     $donate = $pdo->prepare($sql);
-    // $donate->bindValue(1, $_SESSION["HALF_ID"]); //session
+    $donate->bindValue(1, $_SESSION["HALF_NO"]); //session
     $donate->execute();
     $donateRow = $donate->fetchObject()
 ?>

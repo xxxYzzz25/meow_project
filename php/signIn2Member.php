@@ -66,6 +66,7 @@ echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext
             window.history.back()
         })
     })
+})
 </script>
 </body>
 </html>

@@ -20,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/Cat_ShoppingStore.css">
 	<script src="../js/wow.js"></script>
 
+	<script src="../js/shoppingStore.js"></script>
+
 	<script>
 		$(document).ready(function () {
 			new WOW().init();
@@ -98,10 +100,9 @@
 			</div>
 
 			<form>
-
-				<select name="YourLocation" class="select">
-					<option value="Taipei">價格由高到低</option>
-					<option value="Taoyuan">價格由低到高</option>
+				<select name="price" class="select">
+					<option value="priceDown">價格由高到低</option>
+					<option value="priceUp">價格由低到高</option>
 				</select>
 			</form>
 
@@ -128,32 +129,258 @@
 
 				</div>
 
-				<div id="pdContent">	
+				<div id="pdContent">
+						<?php
+						try {
+							require_once("../php/connectBD103G2.php");
+							$sql = "select * from PRODUCT where PRODUCT_PART = '1' limit 4 ";
+							$PRODUCT = $pdo->prepare($sql);
+							$PRODUCT->execute();
+							$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
+						
+							foreach( $PRODUCT as $i=>$PRODUCT){
+						?>
+						
+							<div class="product">
+								<div class="pic  wow zoomIn">
+									<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
+										<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+									</a>
+								 </div>
+								<div class="text">
+									<?php echo $PRODUCT["PRODUCT_NAME"] ?>
+									<!-- Friskies
+									<br>雞肉罐頭 -->
+								</div>
+						
+								<div class="cost">
+									<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+									<!-- $1000 -->
+								</div>
+						
+								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+									加入購物車
+									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
+								</span>
+						
+							</div>
+						
+						<?php  
+							}
+						
+						} catch (PDOException $e) {
+						 echo "錯誤原因 : " , $e->getMessage() , "<br>";
+						 echo "錯誤行號 : " , $e->getLine() , "<br>";
+						}
+						?>
+						
+						<!-- 2 喵喵待在家 -->
+							<div class="allProduct">
+								
+								<div class="type1">
+									
+									<div class="typeName wow zoomIn">喵喵待在家</div>
+									
+									<div class="typeBanner typeBanner2 wow zoomIn">
+										<a href="#">前往
+											<b>喵喵待在家</b> ｜ 46 項商品</a>
+									</div>
+						
+								</div>
+						
+						<?php
+						try {
+							require_once("connectBook.php");
+							$sql = "select * from PRODUCT where PRODUCT_PART = '2' limit 4 ";
+							$PRODUCT = $pdo->prepare($sql);
+							$PRODUCT->execute();
+							$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
+						
+							foreach( $PRODUCT as $i=>$PRODUCT){
+						?>
+								
+								<div class="type2">
+						
+						
+									<div class="product">
+										
+										<a href="#">
+											<div class="pic  wow zoomIn">
+											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+											</div>
+										</a>
+						
+										<div class="text">
+											<?php echo $PRODUCT["PRODUCT_NAME"] ?>
+											<!-- Friskies
+											<br>雞肉罐頭 -->
+										</div>
+						
+										<div class="cost">
+											<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+											<!-- $1000 -->
+										</div>
+						
+										<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+											加入購物車
+											<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
+										</span>
+						
+									</div>
+								</div>
+						
+						<?php  
+							}
+						
+						} catch (PDOException $e) {
+						 echo "錯誤原因 : " , $e->getMessage() , "<br>";
+						 echo "錯誤行號 : " , $e->getLine() , "<br>";
+						}
+						?>
+						
+						<!-- 3 精選喵草 -->
+						
+						<div class="allProduct">
+								
+								<div class="type1">
+									
+									<div class="typeName wow zoomIn">精選喵草</div>
+									
+									<div class="typeBanner typeBanner3 wow zoomIn">
+										<a href="#">前往
+											<b>精選喵草</b> ｜ 46 項商品</a>
+									</div>
+						
+								</div>
+						
+						<?php
+						try {
+							require_once("connectBook.php");
+							$sql = "select * from PRODUCT where PRODUCT_PART = '3' limit 4 ";
+							$PRODUCT = $pdo->prepare($sql);
+							$PRODUCT->execute();
+							$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
+						
+							foreach( $PRODUCT as $i=>$PRODUCT){
+						?>
+								
+								<div class="type2">
+						
+						
+									<div class="product">
+										
+										<a href="#">
+											<div class="pic  wow zoomIn">
+											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+											</div>
+										</a>
+						
+										<div class="text">
+											<?php echo $PRODUCT["PRODUCT_NAME"] ?>
+											<!-- Friskies
+											<br>雞肉罐頭 -->
+										</div>
+						
+										<div class="cost">
+											<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+											<!-- $1000 -->
+										</div>
+						
+										<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+											加入購物車
+											<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
+										</span>
+						
+									</div>
+								</div>
+						
+						<?php  
+							}
+						
+						} catch (PDOException $e) {
+						 echo "錯誤原因 : " , $e->getMessage() , "<br>";
+						 echo "錯誤行號 : " , $e->getLine() , "<br>";
+						}
+						?>
+						
+						<!-- 4 喵喵愛玩耍 -->
+						
+						<div class="allProduct">
+								
+								<div class="type1">
+									
+									<div class="typeName wow zoomIn">喵喵愛玩耍</div>
+									
+									<div class="typeBanner typeBanner4 wow zoomIn">
+										<a href="#">前往
+											<b>喵喵愛玩耍</b> ｜ 46 項商品</a>
+									</div>
+						
+								</div>
+						
+						<?php
+						try {
+							require_once("connectBook.php");
+							$sql = "select * from PRODUCT where PRODUCT_PART = '4' limit 4 ";
+							$PRODUCT = $pdo->prepare($sql);
+							$PRODUCT->execute();
+							$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
+						
+							foreach( $PRODUCT as $i=>$PRODUCT){
+						?>
+								
+								<div class="type2">
+						
+						
+									<div class="product">
+										
+										<a href="#">
+											<div class="pic  wow zoomIn">
+											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+											</div>
+										</a>
+						
+										<div class="text">
+											<?php echo $PRODUCT["PRODUCT_NAME"] ?>
+											<!-- Friskies
+											<br>雞肉罐頭 -->
+										</div>
+						
+										<div class="cost">
+											<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+											<!-- $1000 -->
+										</div>
+						
+										<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+											加入購物車
+											<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
+										</span>
+						
+									</div>
+								</div>
+						
+						<?php  
+							}
+						
+						} catch (PDOException $e) {
+						 echo "錯誤原因 : " , $e->getMessage() , "<br>";
+						 echo "錯誤行號 : " , $e->getLine() , "<br>";
+						}
+						?>
+						
+						
 				</div>
 
 			</div>
 		</div>
 	</div> 
 
-	<script>
+	<!-- <script>
 		window.onload = function(){
         
-			var xhr = new XMLHttpRequest();
-			xhr.onload=function (){
-				if( xhr.status == 200 ){
-					//alert( xhr.responseText );  
-					//modify_here
-					document.getElementById('pdContent').innerHTML = xhr.responseText;
-				}else{
-					alert( xhr.status );
-				}
-			}//xhr.onreadystatechange
-			
-			var url = "queryProducts.php?teacher_no=";
-			xhr.open("Get", url, true);
-			xhr.send( null );
+
 		}
-	</script>
+	</script> -->
 
 
 

@@ -17,28 +17,28 @@ session_start();
         <nav>
             <ul>
                 <li>
-                    <a href="backMemManage.html" title="會員帳號管理">會員帳號管理</a>
+                    <a href="backMemManage.php" title="會員帳號管理">會員帳號管理</a>
                 </li>
                 <li>
-                    <a href="backEmpManage.html" title="員工帳號管理">員工帳號管理</a>
+                    <a href="backEmpManage.php" title="員工帳號管理">員工帳號管理</a>
                 </li>
                 <li>
-                    <a href="backHalfWay.html" title="中途之家審核">中途之家審核</a>
+                    <a href="backHalfWay.php" title="中途之家審核">中途之家審核</a>
                 </li>
                 <li>
-                    <a href="backReport.html" title="檢舉審核">檢舉審核</a>
+                    <a href="backReport.php" title="檢舉審核">檢舉審核</a>
                 </li>
                 <li>
-                    <a href="backOrderlist.html" title="訂單管理">訂單管理</a>
+                    <a href="backOrderlist.php" title="訂單管理">訂單管理</a>
                 </li>
                 <li>
-                    <a href="backAdobtRecord.html" title="領養紀錄查詢">領養紀錄查詢</a>
+                    <a href="backAdobtRecord.php" title="領養紀錄查詢">領養紀錄查詢</a>
                 </li>
                 <li>
-                    <a href="backSaleRecord.html" title="銷售紀錄查詢">銷售紀錄查詢</a>
+                    <a href="backSaleRecord.php" title="銷售紀錄查詢">銷售紀錄查詢</a>
                 </li>
                 <li>
-                    <a href="backProduct.html" title="寵物商品上下架">寵物商品上下架</a>
+                    <a href="backProduct.php" title="寵物商品上下架">寵物商品上下架</a>
                 </li>
             </ul>
         </nav>
@@ -137,7 +137,7 @@ session_start();
                         <td>$<?php echo $productRow->PRODUCT_PRICE; ?></td>
                         <td><?php echo $productRow->PRODUCT_STATUS; ?></td>
                         <td>
-                            <button class="defaultBtn" onclick="add('../html/backProductDetail.php?PRODUCT_NO=<?php echo $productRow->PRODUCT_NO; ?>');">商品詳情</button>
+                            <button class="defaultBtn" onclick="add('../php/backProductDetail.php?PRODUCT_NO=<?php echo $productRow->PRODUCT_NO; ?>');">商品詳情</button>
                         </td>
                     </tr>
 <?php
@@ -197,8 +197,6 @@ session_start();
                 let back = document.getElementById('back');
                 back.addEventListener('click',function () {
                     window.location.reload();
-                    console.log('123');
-                });
             } else {
                 alert(xhr.status);
             }

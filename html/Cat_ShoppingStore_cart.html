@@ -19,8 +19,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Cat_ShoppingStore_cart.css">
     <script src="../js/wow.js"></script>
+
     <script src="../js/shoppingCart.js"></script>
-    <script src="../js/shoppingCart2.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -32,44 +32,7 @@
 
 <body>
 
-    <script>
-        $(function () {
 
-            $('.qtyplus').click(function (e) {
-
-                e.preventDefault();
-
-                fieldName = $(this).attr('field');
-
-                var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-
-                if (!isNaN(currentVal)) {
-
-                    $('input[name=' + fieldName + ']').val(currentVal + 1);
-                } else {
-
-                    $('input[name=' + fieldName + ']').val(0);
-                }
-            });
-
-            $(".qtyminus").click(function (e) {
-
-                e.preventDefault();
-
-                fieldName = $(this).attr('field');
-
-                var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-
-                if (!isNaN(currentVal) && currentVal > 0) {
-
-                    $('input[name=' + fieldName + ']').val(currentVal - 1);
-                } else {
-
-                    $('input[name=' + fieldName + ']').val(0);
-                }
-            });
-        });
-    </script>
 
     <header>
         <div class="logo">
@@ -88,7 +51,7 @@
                     <a href="./halfway_house_search.html">中途之家</a>
                 </li>
                 <li>
-                    <a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="./Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
                     <a href="./member.html">討論區</a>
@@ -117,30 +80,100 @@
         <div class="wrapCenter">
             <h2 class="title">
                 購物車
-                <span>SHOPPING CART</span>
             </h2>
-        
+
             <div id="cartList">
-                <table cellpadding="100px" border="5">
+                <table cellpadding="300px" border="5">
                     <tr class="itemHead">
-                        <td style="width:500px;">商品</td>
-                        <td style="width:100px;">單價</td>
-                        <td style="width:100px;">數量</td>
-                        <!-- <td style="width:150px;">總計</td> -->
-                        <td style="width:50px;"></td>
+                        <td class="tdTitle" style="width:55%;">商品</td>
+                        <td class="tdTitle" style="width:15%;text-align:center;">價錢</td>
+                        <td class="tdTitle" style="width:15%;text-align:center;">數量</td>
+                        <td class="tdTitle" style="width:15%;text-align:center;"></td>
                     </tr>
                 </table>
             </div>
- 
 
-            <div class="total" style="text-align:right;">
-				總共：<span id="subtotal">0</span>
+            <!-- <div id="cartList">
+                    <table cellpadding="300px" border="5">
+                        <tr class="itemHead">
+                            <td class="tdTitle" style="width:55%;">
+                                <img src="../images/productPic/1.jpg" alt="">
+                                FancyFeast 鮪魚大餐
+                            </td>
+                            <td class="tdTitle" style="width:15%;text-align:center;">價錢</td>
+                            <td class="tdTitle" style="width:15%;text-align:center;">數量</td>
+                            <td class="tdTitle" style="width:15%;text-align:center;"></td>
+                        </tr>
+                    </table>
+                </div> -->
+
+            <!-- <div id="cartList">
+                <div class="table">
+                    <div class="itemHead itemHeadTitle">
+                        <div class="tdTitle" style="width:55%;">商品</div>
+                        <div class="tdTitle" style="width:15%;text-align:center;">價錢</div>
+                        <div class="tdTitle" style="width:15%;text-align:center;">數量</div>
+                        <div class="tdTitle" style="width:15%;text-align:center;">刪除</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cartList">
+                <div class="table">
+                    <div class="itemHead">
+                        <div class="td" style="width:20%;">
+                            <img src="../images/productPic/1.jpg">
+                        </div>
+                        <div class="td" style="width:35%;">
+                            12345567890987654321
+                        </div>
+                        <div class="td" style="width:15%;text-align:center;">$100</div>
+                        <div class="td" style="width:15%;text-align:center;">
+                            <input type="number">
+                        </div>
+                        <div class="td" style="width:15%;text-align:center;">
+                            <button>x</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+
+
+
+            <form class="saleCard" action="Cat_ShoppingStore_cart.php" method="post">
+                是否使用遊戲折價卷？
+                <select name="saleCard" class="select" id="hi">
+                    <option value="0">不使用折價卷</option>
+                    <option value="50">使用 50 元折價卷</option>
+                    
+                </select>
+            </form>
+
+            <div class="total" style="text-align:center;">
+                總共：
+                <span id="subtotal"></span> 元
             </div>
 
             <div class="confirm">
-                <a href="">繼續購買</a>
-                <a href="">前往結帳</a>
-            </div>            
+                <a href="../php/Cat_ShoppingStore.php">繼續購買</a>
+            </div>
+
+            <div class="confirm pay">
+                <a href="Cat_ShoppingStore_cart2.html">前往結帳</a>
+            </div>
+
+            <div id="result"></div>
+
+            <script>
+            function print_value() {
+                <!-- 將 select 的值在印出 -->
+                document.getElementById("result").innerHTML = document.getElementById("hi").value;
+            }
+            </script>
+                     
+
             
 
         </div>

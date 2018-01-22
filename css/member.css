@@ -138,6 +138,21 @@ body {
   text-align: center;
 }
 
+.page {
+  text-align: center;
+  padding: 30px;
+}
+
+.page .pageNo {
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  padding-left: 7px;
+  border-radius: 0px;
+  border-width: 1px;
+  margin: 10px;
+}
+
 @media all and (max-width: 767px) {
   .breadcrumbs {
     margin-top: 40px;
@@ -537,7 +552,7 @@ header ul li:nth-child(5):after {
 }
 
 .right .leftselect {
-  width: 25%;
+  width: 20%;
   float: left;
   margin-right: 30px;
 }
@@ -577,7 +592,7 @@ header ul li:nth-child(5):after {
 }
 
 .right .content {
-  width: 70%;
+  width: 76%;
   float: left;
   padding-bottom: 50px;
 }

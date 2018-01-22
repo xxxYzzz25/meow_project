@@ -68,7 +68,6 @@ try {
         $halfway->bindColumn("HALF_COVER", $COVER);
         $halfway->execute();
         while ($row = $halfway->fetchObject()) {
-            
                 $echoText .="<div class='item'>
                     <div class='pic'>
                         <img src='$COVER' alt='halfway'>
@@ -80,7 +79,7 @@ try {
                         <p>TIME：$OPEN</p>
                         <form action='halfway_house_detail.php'>
                             <input type='hidden' name='halfno' value='$NO'>
-                            <button type='submit' id='btn'>see more</button>
+                            <button type='submit' class='more'>see more</button>
                         </form>
                     </div>
                     <div class='bg color$NO'></div>

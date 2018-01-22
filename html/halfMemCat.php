@@ -118,7 +118,6 @@ session_start();
 
 <!-- 喵的資訊 -->
     <h4>喵小孩資料</h4>
-    <table class="catInfo">
 <?php
 try {
     require_once "../php/connectBD103G2.php";
@@ -131,13 +130,16 @@ try {
     if ($HWcat->rowCount() == 0) {
         echo "<center>查無此中途之家喵小孩資料</center>";
     } else {
-        while ($HWcatRow = $HWcat->fetchObject()) {
 ?>
+    <table class="catInfo">
         <tr>
             <th>喵小孩名字</th>
             <th>喵小孩領養狀態</th>
             <th>喵小孩詳細資料</th>
         </tr>
+<?php
+        while ($HWcatRow = $HWcat->fetchObject()) {
+?>
         <tr>
             <td><?php echo $HWcatRow->CAT_NAME; ?></td>
             <td>
@@ -150,7 +152,7 @@ try {
             }
             ?>
             </td>
-            <td><button class="defaultBtn" onclick="add('../html/halfMemCatDetail.php?CAT_NO=<?php echo $HWcatRow->CAT_NO; ?>');">查看喵小孩</button></td>
+            <td><button class="defaultBtn" onclick="add('../php/halfMemCatDetail.php?CAT_NO=<?php echo $HWcatRow->CAT_NO; ?>');">查看喵小孩</button></td>
         </tr>
 
 <?php

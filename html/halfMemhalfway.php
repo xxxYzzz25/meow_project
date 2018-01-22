@@ -8,9 +8,9 @@
 try {
     require_once("../php/connectBD103G2.php");
 
-    $sql = "select * from halfway_member where HALF_NO =1";
+    $sql = "select * from halfway_member where HALF_NO =?";
     $HWmem = $pdo->prepare( $sql );
-    // $HWmem->bindValue(1, $_SESSION["HALF_ID"]);//session
+    $HWmem->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWmem->execute();
     
     if( $HWmem->rowCount()==0){

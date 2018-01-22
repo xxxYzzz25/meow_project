@@ -20,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/Cat_ShoppingStore_food.css">
 	<script src="../js/wow.js"></script>
 
+	<script src="../js/shoppingStore_food.js"></script>
+
 	<script>
 		$(document).ready(function () {
 			new WOW().init();
@@ -103,11 +105,6 @@
 				<img src="../img/shopping_foodBanner.jpg">
 			</div>
 
-
-			<!-- <div class="hr"></div>
-					<div class="allTitle">喵喵肚子餓</div>
-					<div class="hr hr2"></div> -->
-
 			<form>
 				<select name="YourLocation" class="select">
 					<option value="high">價格由高到低</option>
@@ -123,381 +120,57 @@
 			<br>
 			<br>
 
+			<div id="pdFoodContent">
 
-			<div class="type2">
-
-				<div class="product">
-					<a href="Cat_ShoppingStore_product.html">
-						<div class="pic  wow zoomIn">
-							<img src="../img/food1.png">
-						</div>
-					</a>
-
-					<div class="text">
-						Friskies
-						<br>雞肉罐頭
-					</div>
-
-					<div class="cost">
-						$1000
-					</div>
-				</div>
-
-				<div class="product">
-					<a href="#">
-						<div class="pic  wow zoomIn">
-							<img src="../img/food2.jpg">
-						</div>
-					</a>
-
-					<div class="text">
-						Whiskas
-						<br>美味飼料
-					</div>
-
-					<div class="cost">
-						$900
-					</div>
-				</div>
-
-				<div class="product">
-					<a href="#">
-						<div class="pic  wow zoomIn">
-							<img src="../img/food3.JPG">
-						</div>
-					</a>
-
-					<div class="text">
-						Whiskas
-						<br>雞肉口味飼料
-					</div>
-
-					<div class="cost">
-						$120
-					</div>
-				</div>
-
-				<div class="product">
-					<a href="#">
-						<div class="pic  wow zoomIn">
-							<img src="../img/food4.jpeg">
-						</div>
-					</a>
-
-					<div class="text">
-						FancyFeast
-						<br>鮪魚大餐
-					</div>
-
-					<div class="cost">
-						$1000
-					</div>
-				</div>
-
-				<div class="product">
-					<a href="#">
-						<div class="pic  wow zoomIn">
-							<img src="../img/food1.png">
-						</div>
-					</a>
-
-					<div class="text">
-						Whiskas
-						<br>咖哩罐頭
-					</div>
-
-					<div class="cost">
-						$1000
-					</div>
-				</div>
-
-
-
-
-
-
-
-				<div class="type2">
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food1.png">
-							</div>
-						</a>
-
-						<div class="text">
-							Friskies
-							<br>雞肉罐頭
-						</div>
-
-						<div class="cost">
-							$1000
-						</div>
-					</div>
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food2.jpg">
-							</div>
-						</a>
-
-						<div class="text">
-							Whiskas
-							<br>美味飼料
-						</div>
-
-						<div class="cost">
-							$900
-						</div>
-					</div>
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food3.JPG">
-							</div>
-						</a>
-
-						<div class="text">
-							Whiskas
-							<br>雞肉口味飼料
-						</div>
-
-						<div class="cost">
-							$120
-						</div>
-					</div>
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food4.jpeg">
-							</div>
-						</a>
-
-						<div class="text">
-							FancyFeast
-							<br>鮪魚大餐
-						</div>
-
-						<div class="cost">
-							$1000
-						</div>
-					</div>
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food1.png">
-							</div>
-						</a>
-
-						<div class="text">
-							Whiskas
-							<br>咖哩罐頭
-						</div>
-
-						<div class="cost">
-							$1000
-						</div>
-					</div>
-
-
-
-
-
-
-
-
-					<div class="type2">
-
+					<?php
+					try {
+						require_once("../php/connectBD103G2.php");
+						$sql = "select * from PRODUCT where PRODUCT_PART = '1'";
+						$PRODUCT = $pdo->prepare($sql);
+						$PRODUCT->execute();
+						$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
+					
+						foreach( $PRODUCT as $i=>$PRODUCT){
+					?>
+					
 						<div class="product">
-							<a href="#">
+							<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
 								<div class="pic  wow zoomIn">
-									<img src="../img/food1.png">
+								<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
 								</div>
 							</a>
-
+					
 							<div class="text">
-								Friskies
-								<br>雞肉罐頭
+								<?php echo $PRODUCT["PRODUCT_NAME"] ?>
+								<!-- Friskies
+								<br>雞肉罐頭 -->
 							</div>
-
+					
 							<div class="cost">
-								$1000
+								<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+								<!-- $1000 -->
 							</div>
+					
+							<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+								加入購物車
+								<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
+							</span>
+					
 						</div>
+					
+					<?php  
+						}
+					
+					} catch (PDOException $e) {
+					 echo "錯誤原因 : " , $e->getMessage() , "<br>";
+					 echo "錯誤行號 : " , $e->getLine() , "<br>";
+					}
+					?>
+					
+					
 
-						<div class="product">
-							<a href="#">
-								<div class="pic  wow zoomIn">
-									<img src="../img/food2.jpg">
-								</div>
-							</a>
-
-							<div class="text">
-								Whiskas
-								<br>美味飼料
-							</div>
-
-							<div class="cost">
-								$900
-							</div>
-						</div>
-
-						<div class="product">
-							<a href="#">
-								<div class="pic  wow zoomIn">
-									<img src="../img/food3.JPG">
-								</div>
-							</a>
-
-							<div class="text">
-								Whiskas
-								<br>雞肉口味飼料
-							</div>
-
-							<div class="cost">
-								$120
-							</div>
-						</div>
-
-						<div class="product">
-							<a href="#">
-								<div class="pic  wow zoomIn">
-									<img src="../img/food4.jpeg">
-								</div>
-							</a>
-
-							<div class="text">
-								FancyFeast
-								<br>鮪魚大餐
-							</div>
-
-							<div class="cost">
-								$1000
-							</div>
-						</div>
-
-						<div class="product">
-							<a href="#">
-								<div class="pic  wow zoomIn">
-									<img src="../img/food1.png">
-								</div>
-							</a>
-
-							<div class="text">
-								Whiskas
-								<br>咖哩罐頭
-							</div>
-
-							<div class="cost">
-								$1000
-							</div>
-						</div>
-
-
-
-
-					</div>
-				</div>
-
-
-
-				<div class="type2">
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food1.png">
-							</div>
-						</a>
-
-						<div class="text">
-							Friskies
-							<br>雞肉罐頭
-						</div>
-
-						<div class="cost">
-							$1000
-						</div>
-					</div>
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food2.jpg">
-							</div>
-						</a>
-
-						<div class="text">
-							Whiskas
-							<br>美味飼料
-						</div>
-
-						<div class="cost">
-							$900
-						</div>
-					</div>
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food3.JPG">
-							</div>
-						</a>
-
-						<div class="text">
-							Whiskas
-							<br>雞肉口味飼料
-						</div>
-
-						<div class="cost">
-							$120
-						</div>
-					</div>
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food4.jpeg">
-							</div>
-						</a>
-
-						<div class="text">
-							FancyFeast
-							<br>鮪魚大餐
-						</div>
-
-						<div class="cost">
-							$1000
-						</div>
-					</div>
-
-					<div class="product">
-						<a href="#">
-							<div class="pic  wow zoomIn">
-								<img src="../img/food1.png">
-							</div>
-						</a>
-
-						<div class="text">
-							Whiskas
-							<br>咖哩罐頭
-						</div>
-
-						<div class="cost">
-							$1000
-						</div>
-					</div>
-
-
-
-
-				</div>
 			</div>
+
 		</div>
 	</div>
 

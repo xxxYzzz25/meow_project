@@ -10,7 +10,7 @@ try {
 
     $sql = "select * from halfway_member where HALF_NO =?";
     $HWmem = $pdo->prepare( $sql );
-    $HWmem->bindValue(1, $_SESSION["HALF_ID"]);//session
+    $HWmem->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWmem->execute();
     
     if( $HWmem->rowCount()==0){

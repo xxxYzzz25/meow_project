@@ -27,7 +27,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
     <!-- 引用助養資訊表格 -->
     <script src="../js/cat/createTable.js"></script>
     <script src="../js/cat/adopt.js"></script>
-    <title><?php echo $nameRow['CAT_NAME'];?></title>
+    <title><?php echo $nameRow['CAT_NAME']; ?></title>
 </head>
 
 <body>
@@ -167,7 +167,7 @@ $catRow = $cats->fetchObject();
         <div class="breadcrumbs">
             <a href="../index.php" class="defaultBtn" title="前往首頁">尋喵啟事</a> >
             <a href="catSearch.php" class="defaultBtn" title="前往尋喵">尋喵</a> >
-            <a href="catContent.html" class="defaultBtn" title="瀏覽喵航航"><?php echo $catRow->CAT_NAME;?></a>
+            <a href="catContent.html" class="defaultBtn" title="瀏覽喵航航"><?php echo $catRow->CAT_NAME; ?></a>
         </div>
         <picture class="catItem">
             <div class="img">
@@ -175,7 +175,7 @@ $catRow = $cats->fetchObject();
 				if ($_SESSION['MEM_NO'] !== null) {
 					$MEMNO = $_SESSION['MEM_NO'];
 					$CATNO = $catRow->CAT_NO;
-					$sql2 = "select count(1) from favorite where mem_no = $MEMNO and cat_no = $CATNO";
+					$sql2 = "selecÒt count(1) from favorite where mem_no = $MEMNO and cat_no = $CATNO";
 					$like = $pdo->query($sql2);
 					if ($like->fetchcolumn() == 1) {
 						$heart = "fa fa-heart favorite";
@@ -184,18 +184,21 @@ $catRow = $cats->fetchObject();
 						$heart = "fa fa-heart-o favorite";
 						$likeNot = "0";
 					}
+				} else {
+					$heart = "fa fa-heart-o favorite";
+					$likeNot = "0";
 				}
 				?>
                 <i class="<?php
-				echo $heart;?>" aria-hidden="true" data-boolean="<?php
-				echo $likeNot;?>" data-val="<?php
-				echo $catRow->CAT_NO;?>"></i>
-                <img src="<?php echo $catRow->CAT_COVER;?>" alt="<?php echo $catRow->CAT_NAME;?>">
+				echo $heart; ?>" aria-hidden="true" data-boolean="<?php
+				echo $likeNot; ?>" data-val="<?php
+				echo $catRow->CAT_NO; ?>"></i>
+                <img src="<?php echo $catRow->CAT_COVER; ?>" alt="<?php echo $catRow->CAT_NAME; ?>">
             </div>
             <figure>
-                <h1><?php echo $catRow->CAT_NAME;?></h1>
-                <br><?php echo $catRow->HALF_NAME;?>
-                <br>約<?php echo $catRow->CAT_DATE;?>月份出生
+                <h1><?php echo $catRow->CAT_NAME; ?></h1>
+                <br><?php echo $catRow->HALF_NAME; ?>
+                <br>約<?php echo $catRow->CAT_DATE; ?>月份出生
                 <br>性別:<?php
 				if ($catRow->CAT_SEX == 1) {
 					echo '女生<i class="fa fa-venus" aria-hidden="true"></i>';
@@ -204,11 +207,11 @@ $catRow = $cats->fetchObject();
 				}
 				?>
                 <br>個性:<?php
-				echo $catRow->CAT_NARRATIVE;?>
+				echo $catRow->CAT_NARRATIVE; ?>
                 <br>毛色:<?php
-				echo $catRow->CAT_COLOR;?>
+				echo $catRow->CAT_COLOR; ?>
                 <br>地區:<?php
-				echo $catRow->CAT_LOCATION;?>
+				echo $catRow->CAT_LOCATION; ?>
                 <br>疫苗:<?php
 				if ($catRow->CAT_VACCINE == 1) {
 					echo '已施打';
@@ -228,14 +231,14 @@ $catRow = $cats->fetchObject();
 				}
 				?>
                 <div class="btn">
-                    <button class="defaultBtn" data-val="<?php echo $catRow->CAT_NO;?>" id="adoptThis">我要領養</button>
+                    <button class="defaultBtn" data-val="<?php echo $catRow->CAT_NO; ?>" id="adoptThis">我要領養</button>
                     <button class="defaultBtn" id="donate">我要助養</button>
                 </div>
             </figure>
         </picture>
         <div>
             <form action="../php/donate2db.php" id="donateArea" class="donateForm" method="post">
-                <input type="hidden" name="catNo" value="<?php echo $no;?>">
+                <input type="hidden" name="catNo" value="<?php echo $no; ?>">
             </form>
         </div>
         <div class="donateInfo"><br>
@@ -255,11 +258,11 @@ $catRow = $cats->fetchObject();
                         感謝
                         <span>
                     <?php
-                    echo $donate_Row['DONATE_NAME'];?>
+                    echo $donate_Row['DONATE_NAME']; ?>
                 </span>先生/小姐 助養喵航航
                         <span>
                     <?php
-                    echo $donate_Row['DONATE_PRICE'];?>
+                    echo $donate_Row['DONATE_PRICE']; ?>
                 </span> 元<br>
 						<?php
 					}
@@ -294,10 +297,10 @@ $catRow = $cats->fetchObject();
         <section class="introduction">
             <span class="title">【簡單介紹:】</span>
             <ul>
-                <li>◎個性：<?php echo $catRow->CAT_INDIVIDUALITY;?></li>
-                <li>◎適合對象：<?php echo $catRow->CAT_FIT;?></li>
-                <li>◎優點：<?php echo $catRow->CAT_ADVANTAGE;?></li>
-                <li>◎缺點：<?php echo $catRow->CAT_DISADVANTAGE;?></li>
+                <li>◎個性：<?php echo $catRow->CAT_INDIVIDUALITY; ?></li>
+                <li>◎適合對象：<?php echo $catRow->CAT_FIT; ?></li>
+                <li>◎優點：<?php echo $catRow->CAT_ADVANTAGE; ?></li>
+                <li>◎缺點：<?php echo $catRow->CAT_DISADVANTAGE; ?></li>
             </ul>
             <span class="title">【領養流程說明:】</span>
             <ul>

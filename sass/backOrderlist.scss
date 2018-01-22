@@ -54,13 +54,28 @@
                     }
                 }
             }
-            a {
-                text-align: center;
-                text-decoration: none;
-                padding: 2px;
-                border-radius: 0px;
-                border-width: 1px;
-                padding-left: 5px;
+            .odTable {
+                tr {
+                    border-bottom: 1px solid #333;
+                    th,
+                    td {
+                        padding-top: 20px;
+                        padding-bottom: 12px;
+                        font-size: $font-size-base;
+                        a {
+                            text-decoration: none;
+                            color: #EAAF88;
+                            &:hover {
+                                color: #0f71c2;
+                            }
+                        }
+                    }
+                    th {
+                        font-size: $font-size-large;
+                        letter-spacing: 2px;
+                        font-weight: bold;
+                    }
+                }
             }
         }
     }

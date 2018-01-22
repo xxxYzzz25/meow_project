@@ -116,6 +116,10 @@ hr{
     width: 40%;
 }
 
+.bigPic{
+    text-align: center;
+}
+
 .bigPic img{
     width: 90%;
     border: 3px solid #333333;
@@ -227,22 +231,15 @@ input.qtyminus:hover{
     float: left;
     text-align: center;
     padding-top: 3px;
-    
-}
-
-.addButton a{
-    text-decoration: none;
     color: #333333;
 }
 
 .addButton:hover{
+    color: #fff;
 	background-color: #EAAF88;
 	border: 1px solid #EAAF88;
 }
 
-.addButton:hover a{
-    color: #fff;    
-}
 
 @media only screen and (max-width: 768px){
     button{

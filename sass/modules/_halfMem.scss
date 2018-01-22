@@ -19,7 +19,7 @@
         padding: 50px 0;
     }
     .leftselect {
-        width: 23%;
+        width: 20%;
         float: left;
         margin-right: 30px;
         img {
@@ -51,7 +51,7 @@
         display: none;
     }
     .content {
-        width: 73%;
+        width: 76%;
         float: left;
         padding-bottom: 50px;
         textarea {
@@ -93,8 +93,9 @@
         }
         .halfMemCat {
             .newbtn {
-                float: right;
-                margin-bottom: 20px;
+                display: block;
+                margin-left: auto;
+                margin-right: 0;
             }
             .newEmpTROff {
                 display: none;
@@ -102,7 +103,7 @@
             .newEmpTROn {
                 display: table-row;
             }
-            .newblock{
+            .newblock {
                 display: block;
             }
             .catInfo {
@@ -173,7 +174,7 @@
                 }
             }
         }
-        .halfMemAdobtRecord {
+        .halfMemAdoptRecord {
             table {
                 width: 100%;
                 th {
@@ -204,9 +205,12 @@
                     border: 2px solid #ccc;
                     padding: 20px;
                     text-align: center;
+                    .defaultBtn{
+                        font-size: 12px;
+                    }
                     .circle {
                         color: dodgerblue;
-                        label{
+                        label {
                             cursor: pointer;
                         }
                         .fa-check-circle-o {
@@ -215,7 +219,7 @@
                     }
                     .times {
                         color: crimson;
-                        label{
+                        label {
                             cursor: pointer;
                         }
                         .fa-times-circle-o {
@@ -227,6 +231,11 @@
         }
         .halfMemOrderlist {
             font-size: $font-size-h4;
+            .newbtn {
+                display: block;
+                margin-left: auto;
+                margin-right: 0;
+            }
             h5 {
                 margin-bottom: 20px;
             }
