@@ -1,27 +1,27 @@
 <?php
 try {
-    require_once("../php/connectBD103G2.php");
+    require_once "../php/connectBD103G2.php";
 
-    $sql = "select * from cat where CAT_NO = :catNo";
-    $HWcat = $pdo->prepare( $sql );
+    $sql   = "select * from cat where CAT_NO = :catNo";
+    $HWcat = $pdo->prepare($sql);
     $HWcat->bindValue(":catNo", $_REQUEST["CAT_NO"]);
     $HWcat->execute();
-    while($HWcatRow = $HWcat->fetchObject()){
-?>
+    while ($HWcatRow = $HWcat->fetchObject()) {
+        ?>
     <h4>修改喵小孩資料</h4>
     <form action="../php/halfMemCatUpdateToDb.php" method="post">
-        <input type="hidden" name="no" value="<?php echo $HWcatRow->CAT_NO;?>">
+        <input type="hidden" name="no" value="<?php echo $HWcatRow->CAT_NO; ?>">
         <table>
             <tr>
                 <th>喵小孩名稱</th>
                 <td>
-                    <input type="text" name="name" value="<?php echo $HWcatRow->CAT_NAME;?>">
+                    <input type="text" name="name" value="<?php echo $HWcatRow->CAT_NAME; ?>">
                 </td>
             </tr>
             <tr>
                 <th>喵小孩出生年月</th>
                 <td>
-                    <input type="text" name="date" value="<?php echo $HWcatRow->CAT_DATE;?>">
+                    <input type="text" name="date" value="<?php echo $HWcatRow->CAT_DATE; ?>">
                 </td>
             </tr>
             <tr>
@@ -34,20 +34,20 @@ try {
             <tr>
                 <th>喵小孩個性</th>
                 <td>
-                    <input type="text" name="narrative" value="<?php echo $HWcatRow->CAT_NARRATIVE;?>">
+                    <input type="text" name="narrative" value="<?php echo $HWcatRow->CAT_NARRATIVE; ?>">
                 </td>
             </tr>
             <tr>
                 <th>喵小孩毛色</th>
                 <td>
-                    <input type="text" name="color" value="<?php echo $HWcatRow->CAT_COLOR;?>">
+                    <input type="text" name="color" value="<?php echo $HWcatRow->CAT_COLOR; ?>">
                 </td>
             </tr>
             <tr>
                 <th>喵小孩地區</th>
                 <td>
-                    <select name="location">
-                    <option>請選擇</option>
+                    <select name="location" required="required">
+                    <option></option>
                     <option value="台北市">台北市</option>
                     <option value="新北市">新北市</option>
                     <option value="基隆市">基隆市</option>
@@ -89,23 +89,17 @@ try {
                 <th>喵小孩簡單介紹</th>
                 <td id="simple">
                     <p>個性
-                        <input type="text" class="simple" name="individuality" value="<?php echo $HWcatRow->CAT_INDIVIDUALITY;?>">
+                        <input type="text" class="simple" name="individuality" value="<?php echo $HWcatRow->CAT_INDIVIDUALITY; ?>">
                     </p>
                     <p>適合對象
-                        <input type="text" class="simple" name="fit" value="<?php echo $HWcatRow->CAT_FIT;?>">
+                        <input type="text" class="simple" name="fit" value="<?php echo $HWcatRow->CAT_FIT; ?>">
                     </p>
                     <p>優點
-                        <input type="text" class="simple" name="advantage" value="<?php echo $HWcatRow->CAT_ADVANTAGE;?>">
+                        <input type="text" class="simple" name="advantage" value="<?php echo $HWcatRow->CAT_ADVANTAGE; ?>">
                     </p>
                     <p>缺點
-                        <input type="text" class="simple" name="disadvantage" value="<?php echo $HWcatRow->CAT_DISADVANTAGE;?>">
+                        <input type="text" class="simple" name="disadvantage" value="<?php echo $HWcatRow->CAT_DISADVANTAGE; ?>">
                     </p>
-                </td>
-            </tr>
-            <tr>
-                <th>喵小孩大頭貼</th>
-                <td>
-                    <input type="file" name="catpic">
                 </td>
             </tr>
             <tr>
@@ -116,9 +110,9 @@ try {
         </table>
     </form>
 <?php
-    }//while
+} //while
 } catch (PDOException $e) {
     echo "錯誤行號 : ", $e->getLine(), "<br>";
-    echo "錯誤訊息 : ", $e->getMessage(), "<br>"; 
+    echo "錯誤訊息 : ", $e->getMessage(), "<br>";
 }
 ?>

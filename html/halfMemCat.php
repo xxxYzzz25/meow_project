@@ -7,45 +7,45 @@ session_start();
 <!-- 新增喵開始 -->
     <button id="newEmp" class="newbtn defaultBtn">新增喵小孩</button>
     <form action="../php/halfMemCatInsertToDb.php" method="post">
-        <input type="hidden" name="no" value="<?php echo $_SESSION["HALF_NO"];?>">
-        <h4 class="newEmpTR newEmpTROff">新增一隻喵小孩</h4>
+        <input type="hidden" name="no" value="<?php echo $_SESSION["HALF_NO"]; ?>">
+        <h4 class="newEmpTR newEmpTROff">新增一隻喵小孩 (*為必填項目)</h4>
         <table>
             <tr class="newEmpTR newEmpTROff">
-                <th>喵小孩名稱</th>
+                <th>喵小孩名稱*</th>
                 <td>
-                    <input type="text" name="name">
+                    <input type="text" name="name" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
-                <th>喵小孩出生年月</th>
+                <th>喵小孩出生年月*</th>
                 <td>
-                    <input type="text" name="date">
+                    <input type="text" name="date" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
-                <th>喵小孩性別</th>
+                <th>喵小孩性別*</th>
                 <td>
                     <input type="radio" class="radio" name="sex" value="0" checked="true">男
                     <input type="radio" class="radio" name="sex" value="1">女
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
-                <th>喵小孩個性</th>
+                <th>喵小孩個性*</th>
                 <td>
-                    <input type="text" name="narrative">
+                    <input type="text" name="narrative" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
-                <th>喵小孩毛色</th>
+                <th>喵小孩毛色*</th>
                 <td>
-                    <input type="text" name="color">
+                    <input type="text" name="color" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩地區</th>
                 <td>
-                    <select name="location">
-                    <option>請選擇</option>
+                    <select name="location" required="required">
+                    <option></option>
                     <option value="台北市">台北市</option>
                     <option value="新北市">新北市</option>
                     <option value="基隆市">基隆市</option>
@@ -84,7 +84,7 @@ session_start();
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
-                <th>喵小孩簡單介紹</th>
+                <th>喵小孩簡單介紹(若不填就不會在頁面上顯示哦)</th>
                 <td id="simple">
                     <p>個性
                         <input type="text" class="simple" name="individuality">
@@ -101,9 +101,9 @@ session_start();
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
-                <th>喵小孩大頭貼</th>
+                <th>喵小孩大頭貼*</th>
                 <td>
-                    <input type="file" name="catpic">
+                    <input type="file" name="catpic" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
@@ -122,15 +122,15 @@ session_start();
 try {
     require_once "../php/connectBD103G2.php";
 
-    $sql   = "select * from cat where HALF_NO =?";
+    $sql   = "select * from cat where HALF_NO =1";
     $HWcat = $pdo->prepare($sql);
-    $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
+    // $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWcat->execute();
 
     if ($HWcat->rowCount() == 0) {
         echo "<center>查無此中途之家喵小孩資料</center>";
     } else {
-?>
+        ?>
     <table class="catInfo">
         <tr>
             <th>喵小孩名字</th>
@@ -138,8 +138,8 @@ try {
             <th>喵小孩詳細資料</th>
         </tr>
 <?php
-        while ($HWcatRow = $HWcat->fetchObject()) {
-?>
+while ($HWcatRow = $HWcat->fetchObject()) {
+            ?>
         <tr>
             <td><?php echo $HWcatRow->CAT_NAME; ?></td>
             <td>
