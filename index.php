@@ -1,6 +1,7 @@
 <?php
  ob_start();
  session_start();
+ isset($_SESSION['HALF_NO'])?$_SESSION['HALF_NO']=$_SESSION['HALF_NO']:$_SESSION['HALF_NO']=null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,7 +142,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="html/catSearch.html" title="前往尋喵">尋喵</a>
+                    <a href="html/catSearch.php" title="前往尋喵">尋喵</a>
                 </li>
                 <li>
                     <a href="html/halfway_house_search.html" title="前往中途之家">中途之家</a>
@@ -169,12 +170,11 @@
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             </a><?php
                     if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-
-                        echo "<a href='php/memberLogOut.php' title='登出'>
+                        echo "<a href='php/memberLogOut.php' id='loginBtn'>
                             <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
                             </a>";
                     }else{
-                        echo "<a href='#' class='login title='登入/註冊'>
+                        echo "<a href='#' class='login' id='loginBtn'>
                             <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
                             </a>";
                     }
@@ -184,12 +184,12 @@
             </a>
         </div>
         <div class="hb">
-        <div class="hamburger" id="hamburger-6">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
         </div>
-    </div>
     </header>
     <div id="fullpages">
         <div class="margin-200">

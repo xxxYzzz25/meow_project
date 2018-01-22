@@ -6,80 +6,162 @@ window.addEventListener('load', function () {
     let signUp = document.getElementById('formShape2')
     let img = document.getElementById('bgImg')
 
-    in2up.addEventListener('click', () => {
-        signIn.style.display = 'none'
-        signUp.style.display = 'block'
-        img.style.backgroundImage = "url('images/memberBG2.jpg')"
-    })
+    let path = location.pathname;
+    path = path.split('/');
+    path = path[path.length - 1];
+    if (path = 'index.php') {
+        in2up.addEventListener('click', () => {
+            signIn.style.display = 'none'
+            signUp.style.display = 'block'
+            img.style.backgroundImage = "url('images/memberBG2.jpg')"
+        })
 
-    up2in.addEventListener('click', () => {
-        signUp.style.display = 'none'
-        signIn.style.display = 'block'
-        img.style.backgroundImage = "url('images/memberBG.jpg')"
-    })
+        up2in.addEventListener('click', () => {
+            signUp.style.display = 'none'
+            signIn.style.display = 'block'
+            img.style.backgroundImage = "url('images/memberBG.jpg')"
+        })
 
-    let mem1 = document.getElementById('member1')
-    let halfMem1 = document.getElementById('halfMember1')
-    let signInForm = document.getElementById('signInForm')
-    mem1.addEventListener('click', ()=>{
-        mem1.classList.add('selected')
-        halfMem1.classList.remove('selected')
-        signInForm.childNodes[9].innerHTML = "會員帳號<br><small>請輸入您的電子郵件</small>"
-        signInForm.childNodes[15].innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>"
-        signInForm.action = "php/signIn2Member.php"
-    })
-    halfMem1.addEventListener('click', () => {
-        halfMem1.classList.add('selected')
-        mem1.classList.remove('selected')
-        signInForm.childNodes[9].innerHTML = "中途帳號<br><small>請輸入您的電子郵件</small>"
-        signInForm.childNodes[15].innerHTML = "中途密碼<br><small>請輸入6~10碼英數字</small>"
-        signInForm.action = "php/signIn2HalfMember.php"
-    })
+        let mem1 = document.getElementById('member1')
+        let halfMem1 = document.getElementById('halfMember1')
+        let signInForm = document.getElementById('signInForm')
+        mem1.addEventListener('click', () => {
+            mem1.classList.add('selected')
+            halfMem1.classList.remove('selected')
+            signInForm.childNodes[9].innerHTML = "會員帳號<br><small>請輸入您的電子郵件</small>"
+            signInForm.childNodes[15].innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>"
+            signInForm.action = "php/signIn2Member.php"
+        })
+        halfMem1.addEventListener('click', () => {
+            halfMem1.classList.add('selected')
+            mem1.classList.remove('selected')
+            signInForm.childNodes[9].innerHTML = "中途帳號<br><small>請輸入您的電子郵件</small>"
+            signInForm.childNodes[15].innerHTML = "中途密碼<br><small>請輸入6~10碼英數字</small>"
+            signInForm.action = "php/signIn2HalfMember.php"
+        })
 
-    // 以下是切換form action/signUpBox變更
-    let mem2 = document.getElementById('member2')
-    let halfMem2 = document.getElementById('halfMember2')
-    let signUpForm = document.getElementById('signUpForm')
-    let userPhotoLabel = document.getElementById('userPhotoLabel')
+        // 以下是切換form action/signUpBox變更
+        let mem2 = document.getElementById('member2')
+        let halfMem2 = document.getElementById('halfMember2')
+        let signUpForm = document.getElementById('signUpForm')
+        let userPhotoLabel = document.getElementById('userPhotoLabel')
 
-    mem2.addEventListener('click', function toggleAction() {
-        mem2.classList.add('selected')
-        halfMem2.classList.remove('selected')
-        signUpForm.action = "php/signUp2mem.php"
-        userPhotoLabel.innerHTML = '點我上傳您的大頭貼'
-        let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
-        let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
-        let memPswLabel = userPhotoLabel.parentNode.parentNode.childNodes[13]
-        let memBirthLabel = userPhotoLabel.parentNode.parentNode.childNodes[25]
-        let memBirthInput = userPhotoLabel.parentNode.parentNode.childNodes[27]
-        let memAddLabel = userPhotoLabel.parentNode.parentNode.childNodes[31]
-        memNameLabel.innerHTML = "會員名稱<br><small>不得多於8個中/英文字元</small>"
-        memIdLabel.innerHTML = "會員帳號<br><small>請輸入您的電子郵件</small>"
-        memPswLabel.innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>"
-        memBirthLabel.innerHTML = "會員生日<br>"
-        memBirthInput.setAttribute("placeholder", "ex:19910101")
-        memBirthInput.setAttribute("type", "")
-        memAddLabel.innerHTML = "通訊地址"
-    })
-    halfMem2.addEventListener('click', function toggleAction2() {
-        halfMem2.classList.add('selected')
-        mem2.classList.remove('selected')
-        signUpForm.action = "php/signUp2halfMem.php"
-        userPhotoLabel.innerHTML = '點我上傳您的封面照片'
-        let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
-        let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
-        let memPswLabel = userPhotoLabel.parentNode.parentNode.childNodes[13]
-        let memHeadLabel = userPhotoLabel.parentNode.parentNode.childNodes[25]
-        let memHeadInput = userPhotoLabel.parentNode.parentNode.childNodes[27]
-        let memAddLabel = userPhotoLabel.parentNode.parentNode.childNodes[31]
-        memNameLabel.innerHTML = '中途之家名稱<br><small>不得多於8個中/英文字元</small>'
-        memIdLabel.innerHTML = "中途帳號<br><small>請輸入您的電子郵件</small>"
-        memPswLabel.innerHTML = "中途密碼<br><small>請輸入6~10碼英數字</small>"
-        memHeadLabel.innerHTML = "中途負責人名稱<br>"
-        memHeadInput.setAttribute("placeholder", "請輸入您的負責人姓名")
-        memHeadInput.setAttribute("name", "userHead");
-        memAddLabel.innerHTML = "中途店址"
-    })
+        mem2.addEventListener('click', function toggleAction() {
+            mem2.classList.add('selected')
+            halfMem2.classList.remove('selected')
+            signUpForm.action = "php/signUp2mem.php"
+            userPhotoLabel.innerHTML = '點我上傳您的大頭貼'
+            let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
+            let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
+            let memPswLabel = userPhotoLabel.parentNode.parentNode.childNodes[13]
+            let memBirthLabel = userPhotoLabel.parentNode.parentNode.childNodes[25]
+            let memBirthInput = userPhotoLabel.parentNode.parentNode.childNodes[27]
+            let memAddLabel = userPhotoLabel.parentNode.parentNode.childNodes[31]
+            memNameLabel.innerHTML = "會員名稱<br><small>不得多於8個中/英文字元</small>"
+            memIdLabel.innerHTML = "會員帳號<br><small>請輸入您的電子郵件</small>"
+            memPswLabel.innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>"
+            memBirthLabel.innerHTML = "會員生日<br>"
+            memBirthInput.setAttribute("placeholder", "ex:19910101")
+            memBirthInput.setAttribute("type", "")
+            memAddLabel.innerHTML = "通訊地址"
+        })
+        halfMem2.addEventListener('click', function toggleAction2() {
+            halfMem2.classList.add('selected')
+            mem2.classList.remove('selected')
+            signUpForm.action = "php/signUp2halfMem.php"
+            userPhotoLabel.innerHTML = '點我上傳您的封面照片'
+            let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
+            let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
+            let memPswLabel = userPhotoLabel.parentNode.parentNode.childNodes[13]
+            let memHeadLabel = userPhotoLabel.parentNode.parentNode.childNodes[25]
+            let memHeadInput = userPhotoLabel.parentNode.parentNode.childNodes[27]
+            let memAddLabel = userPhotoLabel.parentNode.parentNode.childNodes[31]
+            memNameLabel.innerHTML = '中途之家名稱<br><small>不得多於8個中/英文字元</small>'
+            memIdLabel.innerHTML = "中途帳號<br><small>請輸入您的電子郵件</small>"
+            memPswLabel.innerHTML = "中途密碼<br><small>請輸入6~10碼英數字</small>"
+            memHeadLabel.innerHTML = "中途負責人名稱<br>"
+            memHeadInput.setAttribute("placeholder", "請輸入您的負責人姓名")
+            memHeadInput.setAttribute("name", "userHead");
+            memAddLabel.innerHTML = "中途店址"
+        })
+    } else {
+        in2up.addEventListener('click', () => {
+            signIn.style.display = 'none'
+            signUp.style.display = 'block'
+            img.style.backgroundImage = "url('../images/memberBG2.jpg')"
+        })
+
+        up2in.addEventListener('click', () => {
+            signUp.style.display = 'none'
+            signIn.style.display = 'block'
+            img.style.backgroundImage = "url('../images/memberBG.jpg')"
+        })
+
+        let mem1 = document.getElementById('member1')
+        let halfMem1 = document.getElementById('halfMember1')
+        let signInForm = document.getElementById('signInForm')
+        mem1.addEventListener('click', () => {
+            mem1.classList.add('selected')
+            halfMem1.classList.remove('selected')
+            signInForm.childNodes[9].innerHTML = "會員帳號<br><small>請輸入您的電子郵件</small>"
+            signInForm.childNodes[15].innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>"
+            signInForm.action = "../php/signIn2Member.php"
+        })
+        halfMem1.addEventListener('click', () => {
+            halfMem1.classList.add('selected')
+            mem1.classList.remove('selected')
+            signInForm.childNodes[9].innerHTML = "中途帳號<br><small>請輸入您的電子郵件</small>"
+            signInForm.childNodes[15].innerHTML = "中途密碼<br><small>請輸入6~10碼英數字</small>"
+            signInForm.action = "../php/signIn2HalfMember.php"
+        })
+
+        // 以下是切換form action/signUpBox變更
+        let mem2 = document.getElementById('member2')
+        let halfMem2 = document.getElementById('halfMember2')
+        let signUpForm = document.getElementById('signUpForm')
+        let userPhotoLabel = document.getElementById('userPhotoLabel')
+
+        mem2.addEventListener('click', function toggleAction() {
+            mem2.classList.add('selected')
+            halfMem2.classList.remove('selected')
+            signUpForm.action = "../php/signUp2mem.php"
+            userPhotoLabel.innerHTML = '點我上傳您的大頭貼'
+            let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
+            let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
+            let memPswLabel = userPhotoLabel.parentNode.parentNode.childNodes[13]
+            let memBirthLabel = userPhotoLabel.parentNode.parentNode.childNodes[25]
+            let memBirthInput = userPhotoLabel.parentNode.parentNode.childNodes[27]
+            let memAddLabel = userPhotoLabel.parentNode.parentNode.childNodes[31]
+            memNameLabel.innerHTML = "會員名稱<br><small>不得多於8個中/英文字元</small>"
+            memIdLabel.innerHTML = "會員帳號<br><small>請輸入您的電子郵件</small>"
+            memPswLabel.innerHTML = "會員密碼<br><small>請輸入6~10碼英數字</small>"
+            memBirthLabel.innerHTML = "會員生日<br>"
+            memBirthInput.setAttribute("placeholder", "ex:19910101")
+            memBirthInput.setAttribute("type", "")
+            memAddLabel.innerHTML = "通訊地址"
+        })
+        halfMem2.addEventListener('click', function toggleAction2() {
+            halfMem2.classList.add('selected')
+            mem2.classList.remove('selected')
+            signUpForm.action = "../php/signUp2halfMem.php"
+            userPhotoLabel.innerHTML = '點我上傳您的封面照片'
+            let memNameLabel = userPhotoLabel.parentNode.parentNode.childNodes[1]
+            let memIdLabel = userPhotoLabel.parentNode.parentNode.childNodes[7]
+            let memPswLabel = userPhotoLabel.parentNode.parentNode.childNodes[13]
+            let memHeadLabel = userPhotoLabel.parentNode.parentNode.childNodes[25]
+            let memHeadInput = userPhotoLabel.parentNode.parentNode.childNodes[27]
+            let memAddLabel = userPhotoLabel.parentNode.parentNode.childNodes[31]
+            memNameLabel.innerHTML = '中途之家名稱<br><small>不得多於8個中/英文字元</small>'
+            memIdLabel.innerHTML = "中途帳號<br><small>請輸入您的電子郵件</small>"
+            memPswLabel.innerHTML = "中途密碼<br><small>請輸入6~10碼英數字</small>"
+            memHeadLabel.innerHTML = "中途負責人名稱<br>"
+            memHeadInput.setAttribute("placeholder", "請輸入您的負責人姓名")
+            memHeadInput.setAttribute("name", "userHead");
+            memAddLabel.innerHTML = "中途店址"
+        })
+    }
+
+
 
 
 })

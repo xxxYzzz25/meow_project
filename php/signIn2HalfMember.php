@@ -10,7 +10,6 @@ session_start();
     <style>
         a {
             cursor: pointer;
-            border-bottom: 1px solid #44f;
             color: #44f;
         }
     </style>
@@ -54,15 +53,14 @@ try {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";
 }
-echo "<script type='text/javascript'>back()</script>";
-echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext'>或者點此直接回到原網址</a></center>";
+echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext'>或點此直接回到原網址</a></center>";
 
 ?>
 <script>
     window.addEventListener('load', () => {
     let back = document.getElementById('backNext')
     setTimeout(function(){
-        history.back()
+        window.history.back()
     }, 5000)
     back.addEventListener('click', (e) => {
         e.preventDefault();

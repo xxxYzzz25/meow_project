@@ -10,7 +10,6 @@ session_start();
     <style>
         a {
             cursor: pointer;
-            border-bottom: 1px solid #44f;
             color: #44f;
         }
     </style>
@@ -52,7 +51,7 @@ try {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";
 }
-echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext'>或者點此直接回到原網址</a></center>";
+echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext'>或點此直接回到原網址</a></center>";
 
 ?>
 <script>
@@ -66,7 +65,6 @@ echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext
             window.history.back()
         })
     })
-})
 </script>
 </body>
 </html>
