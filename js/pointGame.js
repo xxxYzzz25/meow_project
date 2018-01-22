@@ -73,7 +73,15 @@ window.addEventListener('load', function () {
         if (count > 8 && bingo >= 5) {
             know.textContent = '及格！現在去領養';
             know.addEventListener('click', function () {
-                document.location.href = "html/catSearch.html";
+                if(localStorage.getItem('memNo')){
+                    // 叫php寫入分數後轉址
+                }else if(localStorage.getItem('halfNo')){
+                    alert('中途會員不可進行領養!');
+                    reset();
+                }else{
+                    alert('請登入一般會員(中途會員不可領養)');
+                }
+                
             });
         } else if (count > 8 && bingo < 5) {
             know.textContent = '失敗..再來一次?';

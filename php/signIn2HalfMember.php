@@ -38,6 +38,12 @@ try {
 		if ($halfRow["HALF_BAN"]) {
 			echo "<center>此帳號已被停權, 若有疑問請來信客服。</center>";
 		} else {
+            $memNo = $memRow["MEM_NO"];
+			echo "<script>
+			window.addEventListener('load',()=>{
+				localStorage.setItem('memNo',$memNo);
+			});
+		    </script>";
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];
 			echo "<center>", $halfRow["HALF_NAME"], "您好~</center>";//致歡迎詞
 		}

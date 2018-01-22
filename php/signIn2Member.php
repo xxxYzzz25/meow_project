@@ -39,6 +39,12 @@ try {
 			echo "<center>此帳號已被停權, 若有疑問請來信客服。</center>";
 		} else {
 			$_SESSION["MEM_NO"] = $memRow["MEM_NO"];
+			$memNo = $memRow["MEM_NO"];
+			echo "<script>
+			window.addEventListener('load',()=>{
+				localStorage.setItem('memNo',$memNo);
+			});
+		</script>";
 			echo "<center>", $memRow["MEM_NAME"], "您好~</center>";//致歡迎詞
 		}
 	}

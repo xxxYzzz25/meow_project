@@ -553,6 +553,13 @@
                 });
             });
         </script>
+        <script>
+            $('').click(function (e) {
+                e.preventDefault();
+                $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });
+                $('#loginBox').css('display', 'block');
+            });
+        </script>
 </body>
 
 </html>

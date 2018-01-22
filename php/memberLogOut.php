@@ -24,6 +24,11 @@
 	<center><a src="#" id="backNext">或點我回到上一頁</a></center>
 	<script>
 		window.addEventListener('load', ()=>{
+			if(localStorage.getItem('memNo')){
+            	localStorage.removeItem('memNo');
+			}else{
+				localStorage.removeItem('halfNo');
+			}
 			let back = document.getElementById('backNext')
 			setTimeout(function back(){
 				history.back()
