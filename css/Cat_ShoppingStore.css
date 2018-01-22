@@ -4,7 +4,7 @@ body {
     background-attachment: fixed;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
 	header {
 		visibility: hidden;
 	}
@@ -22,7 +22,7 @@ body {
 	margin: auto;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
 	.wrap {
 		margin-left: 0;
 	}
@@ -55,13 +55,18 @@ h2 {
 .menuTitle {
 	text-decoration: none;
 	color: #333;
-	margin: 2% 1%;
+	margin: 3% 0%;
 	cursor: pointer;
 	padding: 5px 30px;
 	border-radius: 30px;
 	border: 1px solid transparent;
 }
 
+@media only screen and (max-width: 1170px) {
+	.menuTitle{
+		padding: 5px 15px;
+	}
+}
 
 /* 
 .menu a{
@@ -78,7 +83,7 @@ h2 {
 	display: inline-block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
 	.menuTitle {
 		display: block;
 	}
@@ -155,7 +160,7 @@ h2 {
 	display: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
 	.title span {
 		margin-top: 20px;
 		display: block;
@@ -248,7 +253,7 @@ h2 {
 	color: #fff;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
 	.typeBanner a {
 		background-color: rgba(255, 255, 255, 0.7);
 	}
@@ -280,11 +285,11 @@ h2 {
 .text {
 	text-align: center;
 	box-sizing: border-box;
-	height: 35px;
+	
 }
 
 .cost {
-	height: 70px;
+	padding: 20%;
 }
 
 /* header ul li:nth-child(3) {

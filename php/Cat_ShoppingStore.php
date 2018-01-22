@@ -84,15 +84,17 @@
 
 				<a href="Cat_ShoppingStore.php" class="menuTitle menuNow ">全部喵喵商品</a>
 
-				<a href="Cat_ShoppingStore_food.php" class="menuTitle">喵喵肚子餓</a>
+				<button value="1" class="menuTitle" id="pd_food">喵喵肚子餓</button>
 
-				<a href="#" class="menuTitle">喵喵待在家</a>
+				<button value="2" class="menuTitle" id="pd_home">喵喵待在家</button>
 
-				<a href="#" class="menuTitle">精選喵草</a>
+				<button value="3" class="menuTitle" id="pd_grass">精選喵草</button>
 
-				<a href="#" class="menuTitle">喵喵愛玩耍</a>
+				<button value="4" class="menuTitle" id="pd_play">喵喵愛玩耍</button>
 
 			</div>
+
+			
 
 			<div class="banner  wow zoomIn">
 				<img src="../img/shoppingBanner.jpg">
@@ -114,7 +116,7 @@
 			<br>
 
 
-		
+		<div id="pdContent">
 			<div class="allProduct">
 				
 				<div class="type1">
@@ -128,16 +130,20 @@
 
 				</div>
 
-				<div id="pdContent">
+				
 						<?php
 						try {
 							require_once("../php/connectBD103G2.php");
-							$sql = "select * from PRODUCT where PRODUCT_PART = '1' limit 4 ";
+							$sql = "select * from PRODUCT where PRODUCT_PART = '1' and PRODUCT_STATUS = '0' limit 4";
 							$PRODUCT = $pdo->prepare($sql);
 							$PRODUCT->execute();
 							$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
 						
 							foreach( $PRODUCT as $i=>$PRODUCT){
+								$PRODUCT_NAME = $PRODUCT["PRODUCT_NAME"];
+								$PRODUCT_NAME = explode(" ",$PRODUCT_NAME);
+								$PRODUCT_EN = $PRODUCT_NAME[0];
+								$PRODUCT_CH = $PRODUCT_NAME[1];
 						?>
 						
 							<div class="product">
@@ -147,9 +153,7 @@
 									</a>
 								 </div>
 								<div class="text">
-									<?php echo $PRODUCT["PRODUCT_NAME"] ?>
-									<!-- Friskies
-									<br>雞肉罐頭 -->
+									<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>
 								</div>
 						
 								<div class="cost">
@@ -189,44 +193,40 @@
 						
 						<?php
 						try {
-							require_once("connectBook.php");
-							$sql = "select * from PRODUCT where PRODUCT_PART = '2' limit 4 ";
+							require_once("../php/connectBD103G2.php");
+							$sql = "select * from PRODUCT where PRODUCT_PART = '2' and PRODUCT_STATUS = '0' limit 4 ";
 							$PRODUCT = $pdo->prepare($sql);
 							$PRODUCT->execute();
 							$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
 						
 							foreach( $PRODUCT as $i=>$PRODUCT){
+								$PRODUCT_NAME = $PRODUCT["PRODUCT_NAME"];
+								$PRODUCT_NAME = explode(" ",$PRODUCT_NAME);
+								$PRODUCT_EN = $PRODUCT_NAME[0];
+								$PRODUCT_CH = $PRODUCT_NAME[1];
 						?>
 								
-								<div class="type2">
-						
-						
-									<div class="product">
-										
-										<a href="#">
-											<div class="pic  wow zoomIn">
-											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
-											</div>
-										</a>
-						
-										<div class="text">
-											<?php echo $PRODUCT["PRODUCT_NAME"] ?>
-											<!-- Friskies
-											<br>雞肉罐頭 -->
-										</div>
-						
-										<div class="cost">
-											<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
-											<!-- $1000 -->
-										</div>
-						
-										<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-											加入購物車
-											<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
-										</span>
-						
-									</div>
+								<div class="product">
+								<div class="pic  wow zoomIn">
+									<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
+										<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+									</a>
+								 </div>
+								<div class="text">
+									<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>
 								</div>
+						
+								<div class="cost">
+									<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+									<!-- $1000 -->
+								</div>
+						
+								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+									加入購物車
+									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
+								</span>
+						
+							</div>
 						
 						<?php  
 							}
@@ -254,44 +254,40 @@
 						
 						<?php
 						try {
-							require_once("connectBook.php");
-							$sql = "select * from PRODUCT where PRODUCT_PART = '3' limit 4 ";
+							require_once("../php/connectBD103G2.php");
+							$sql = "select * from PRODUCT where PRODUCT_PART = '3' and PRODUCT_STATUS = '0' limit 4 ";
 							$PRODUCT = $pdo->prepare($sql);
 							$PRODUCT->execute();
 							$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
 						
 							foreach( $PRODUCT as $i=>$PRODUCT){
+								$PRODUCT_NAME = $PRODUCT["PRODUCT_NAME"];
+								$PRODUCT_NAME = explode(" ",$PRODUCT_NAME);
+								$PRODUCT_EN = $PRODUCT_NAME[0];
+								$PRODUCT_CH = $PRODUCT_NAME[1];
 						?>
 								
-								<div class="type2">
-						
-						
-									<div class="product">
-										
-										<a href="#">
-											<div class="pic  wow zoomIn">
-											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
-											</div>
-										</a>
-						
-										<div class="text">
-											<?php echo $PRODUCT["PRODUCT_NAME"] ?>
-											<!-- Friskies
-											<br>雞肉罐頭 -->
-										</div>
-						
-										<div class="cost">
-											<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
-											<!-- $1000 -->
-										</div>
-						
-										<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-											加入購物車
-											<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
-										</span>
-						
-									</div>
+								<div class="product">
+								<div class="pic  wow zoomIn">
+									<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
+										<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+									</a>
+								 </div>
+								<div class="text">
+									<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>
 								</div>
+						
+								<div class="cost">
+									<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+									<!-- $1000 -->
+								</div>
+						
+								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+									加入購物車
+									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
+								</span>
+						
+							</div>
 						
 						<?php  
 							}
@@ -319,44 +315,40 @@
 						
 						<?php
 						try {
-							require_once("connectBook.php");
-							$sql = "select * from PRODUCT where PRODUCT_PART = '4' limit 4 ";
+							require_once("../php/connectBD103G2.php");
+							$sql = "select * from PRODUCT where PRODUCT_PART = '4' and PRODUCT_STATUS = '0' limit 4 ";
 							$PRODUCT = $pdo->prepare($sql);
 							$PRODUCT->execute();
 							$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
 						
 							foreach( $PRODUCT as $i=>$PRODUCT){
+								$PRODUCT_NAME = $PRODUCT["PRODUCT_NAME"];
+								$PRODUCT_NAME = explode(" ",$PRODUCT_NAME);
+								$PRODUCT_EN = $PRODUCT_NAME[0];
+								$PRODUCT_CH = $PRODUCT_NAME[1];
 						?>
 								
-								<div class="type2">
-						
-						
-									<div class="product">
-										
-										<a href="#">
-											<div class="pic  wow zoomIn">
-											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
-											</div>
-										</a>
-						
-										<div class="text">
-											<?php echo $PRODUCT["PRODUCT_NAME"] ?>
-											<!-- Friskies
-											<br>雞肉罐頭 -->
-										</div>
-						
-										<div class="cost">
-											<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
-											<!-- $1000 -->
-										</div>
-						
-										<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-											加入購物車
-											<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"] ?>">
-										</span>
-						
-									</div>
+								<div class="product">
+								<div class="pic  wow zoomIn">
+									<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
+										<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+									</a>
+								 </div>
+								<div class="text">
+									<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>	
 								</div>
+						
+								<div class="cost">
+									<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+									<!-- $1000 -->
+								</div>
+						
+								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+									加入購物車
+									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
+								</span>
+						
+							</div>
 						
 						<?php  
 							}
@@ -369,8 +361,7 @@
 						
 						
 				</div>
-
-			</div>
+					</div>
 		</div>
 	</div> 
 
@@ -380,6 +371,36 @@
 
 		}
 	</script> -->
+
+	<script>
+
+		var type = document.querySelectorAll(".menuTitle");  
+		
+		for( var i=1 ; i<type.length ; i++ ){
+			type[i].addEventListener("click" , getProducts , false)
+		}
+
+		function getProducts(e){
+			var pdType = e.target.value;
+			var url = "Cat_ShoppingStore_food.php?pdType=" + pdType;
+			
+			var xhr = new XMLHttpRequest();
+			xhr.open("Get",url, true);
+			xhr.onload = function(){
+			
+				if( xhr.status == 200 ){
+					document.getElementById("pdContent").innerHTML = this.responseText;
+				}else{
+					alert(xhr.status);
+				}
+			
+		}
+		xhr.send( null );
+	}
+
+
+
+		</script>  
 
 
 

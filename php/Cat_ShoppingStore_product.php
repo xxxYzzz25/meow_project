@@ -86,12 +86,12 @@
 
             <div id="pdDetail">  
                     <?php
-                    // $NO = $_REQUEST["PRODUCT_NO"];
+                    $NO = $_REQUEST["PRODUCT_NO"];
                     try {
                         require_once("../php/connectBD103G2.php");
-                        $sql = "select * from PRODUCT where PRODUCT_NO = 1";
+                        $sql = "select * from PRODUCT where PRODUCT_NO = :NO";
                         $PRODUCT = $pdo->prepare($sql);
-                        // $PRODUCT->bindValue(":NO",$NO);
+                        $PRODUCT->bindValue(":NO",$NO);
                         $PRODUCT->execute();
                         $PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
                     
