@@ -12,32 +12,36 @@ $catNo = $_GET['CATNO'];
     <title>領養要求送出</title>
     <style>
         a {
-            border-bottom: 1px solid #00f;
             color: #44c;
         }
     </style>
 </head>
 <body>
 <?php
-if(isset($memNo)){
-	try {
-		require_once("connectBD103G2.php");
-		$sql = "insert into adoption set CAT_NO = ?, MEM_NO = ?, ADOPT_DATE = ?";
-		$statement = $pdo->prepare($sql);
-		$statement->bindValue(1, $catNo);
-		$statement->bindValue(2, $memNo);
-		$statement->bindValue(3, date("Y-m-d"));
-		$sql = "update CAT SET ADOPT_STATUS = 1 WHERE CAT_NO = $catNo";
-		$statement = $pdo->query($sql);
-		echo "<center>已送出領養請求, 請等候中途之家通知</center>";
-		echo "<center><a href='../html/catSearch.php'>請按此回到尋喵頁面</a>, 或等候五秒, 我們將為您轉至尋喵頁面</center>";
-	} catch (Exception $e) {
-		echo "錯誤原因 : ", $e->getMessage(), "<br>";
-		echo "錯誤行號 : ", $e->getLine(), "<br>";
-		echo "異動失敗";
-	}
-}else{
-	echo "<center>您尚未登入, 請先<a href='../html/catSearch.php'>登入</a></center>";
+try {
+    require_once("connectBD103G2.php");
+    $sql = "select MEM_SCORE from member where mem_no = $memNo";
+    $statement = $pdo->query($sql);
+    $mem = $statement->fetchObject();
+    $score = $mem->MEM_SCORE;
+    if($score >= 5){
+        try {
+            $sql = "update CAT SET ADOPT_STATUS = 1 WHERE CAT_NO = $catNo";
+            $statement = $pdo->query($sql);
+            echo "<center>已送出領養請求, 請等候中途之家通知</center>";
+            echo "<center><a href='../html/catSearch.php'>請按此回到尋喵頁面</a></center>";
+        } catch (Exception $e) {
+            echo "錯誤原因 : ", $e->getMessage(), "<br>";
+            echo "錯誤行號 : ", $e->getLine(), "<br>";
+            echo "異動失敗";
+        }
+    }else{
+        echo "<center>您的答對題數為：$score 題</center>";
+        echo "<center>您的養貓知識還不足夠, <a href='../index.php'>點我去首頁學習！</a></center>";
+    }
+} catch (Exception $e) {
+    echo "錯誤原因 : ", $e->getMessage(), "<br>";
+    echo "錯誤行號 : ", $e->getLine(), "<br>";
 }
 
 ?>

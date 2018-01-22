@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +32,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 </head>
 
 <body>
-<div class="signUpLightboxBlack">
-</div>
+<div class="signUpLightboxBlack"></div>
 <div class="signUpLightbox" id="loginBox">
     <i class="fa fa-times cancel"></i>
     <div class="bgImg" id="bgImg"></div>
@@ -41,7 +41,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
             <button id="halfMember1">中途之家會員</button>
             <button id="member1" class="selected">一般會員</button>
         </div>
-        <form action="#1" class="signUpForm" id="signInForm">
+        <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
             <br>
             <br>
             <br>
@@ -50,14 +50,17 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
                 <br>
                 <small>請輸入您的電子郵件</small>
             </label>
-            <input type="email" id="userIdIn" required>
+            <input type="email" id="userIdIn" name="memId" required>
             <br>
             <label for="userPsw">會員密碼
                 <br>
                 <small>請輸入6~10碼英數字</small>
             </label>
-            <input type="password" id="userPswIn" required>
+            <input type="password" id="userPswIn" name="memPsw" required>
             <br>
+            <div class="chioce">
+                <input type="submit" class="formBtn formSubmitBtn" value="登入">
+            </div>
             <p class="signInUpPos">尚未成為會員嗎?
                 <span id="signIn2Up">點此註冊</span>
             </p>
@@ -68,47 +71,47 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
             <button id="halfMember2">中途之家會員</button>
             <button id="member2" class="selected">一般會員</button>
         </div>
-        <form action="#1" id="signUpForm">
+        <form action="../php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
             <label for="userName">會員名稱
                 <br>
                 <small>不得多於8個中/英文字元</small>
             </label>
-            <input type="text" id="userName" placeholder="請輸入您的名稱" required>
+            <input type="text" name="userName" id="userName" placeholder="請輸入您的名稱" required>
             <br>
             <label for="userId">會員帳號
                 <br>
                 <small>請輸入您的電子郵件</small>
             </label>
-            <input type="email" id="userId" placeholder="請輸入您的電子郵件" required>
+            <input type="email" name="userId" id="userId" placeholder="請輸入您的電子郵件" required>
             <br>
             <label for="userPsw">會員密碼
                 <br>
                 <small>請輸入6~10碼英數字</small>
             </label>
-            <input type="password" id="userPsw" placeholder="請輸入您的密碼" required>
+            <input type="password" name="userPsw" id="userPsw" placeholder="請輸入您的密碼" required>
             <br>
             <label for="userTel">聯絡電話
                 <br>
             </label>
-            <input type="tel" id="userTel" placeholder="請輸入您的手機號碼" required>
+            <input type="tel" name="userTel" id="userTel" placeholder="請輸入您的手機號碼" required>
             <br>
             <label for="userBirth">會員生日
                 <br>
             </label>
-            <input type="text" id="userBirth" placeholder="ex:19900101" required>
+            <input type="text" name="userBirth" id="userBirth" placeholder="ex:19900101" required>
             <br>
             <label for="userAddress">通訊地址
                 <br>
             </label>
-            <input type="text" id="userAddress" placeholder="請輸入您的地址" required>
+            <input type="text" name="userAddress" id="userAddress" placeholder="請輸入您的地址" required>
             <br>
             <div class="chioce">
-                <label for="userPhoto" class="formBtn" id="userPhotoLabel">
+                <label for="userPhoto" class="formBtn" id="userPhotoLabel" required>
                     點我上傳您的大頭貼
                 </label>
-                <input type="file" id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
+                <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                <input type="file" name='image' id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
                 <input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
-                <input type="reset" class="formBtn formSubmitBtn" value="清除重填">
             </div>
             <p class="signInUpPos">已經是會員了嗎?
                 <span id="signUp2In">點此登入</span>
@@ -118,7 +121,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 </div>
 <header>
     <div class="logo">
-        <a href="../index.html">
+        <a href="../index.php">
             <h1>
                 <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
             </h1>
@@ -127,33 +130,59 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
     <nav>
         <ul>
             <li>
-                <a href="./catSearch.html">尋喵</a>
+                <a href="../html/catSearch.php">尋喵</a>
             </li>
             <li>
-                <a href="./halfway_house_search.html">中途之家</a>
+                <a href="../html/halfway_house_search.php">中途之家</a>
             </li>
             <li>
-                <a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
+                <a href="../html/Cat_ShoppingStore.php" title="前往商城">商城</a>
             </li>
             <li>
-                <a href="./forum.html">討論區</a>
+                <a href="../html/forum.php">討論區</a>
             </li>
             <li>
-                <a href="./member.html">會員專區</a>
+                <?php
+                    if($_SESSION['HALF_NO'] == null){
+                        echo "<a href='member.html'>會員專區</a>";
+                    }
+                    else{
+                        echo "<a href='halfMem.html'>中途會員專區</a>";
+                    }
+                ?>
             </li>
         </ul>
     </nav>
     <div class="icons">
         <a href="#">
             <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-user-circle-o fa-2x login" aria-hidden="true"></i>
-        </a>
+        </a><?php
+                if(isset($_SESSION["MEM_NO"])){
+                    echo "<a href='../php/memberLogOut.php' id='loginBtn'>
+                        <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }elseif (isset($_SESSION["HALF_NO"])) {
+                    echo "<a href='../php/memberLogOut.php' class='login123' id='loginBtn'>
+                        <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }
+                else{
+                    echo "<a href='#' class='login login123' id='loginBtn'>
+                        <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }
+        ?>
         <a href="#">
             <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
             <span id="like">6</span>
         </a>
+    </div>
+    <div class="hb">
+        <div class="hamburger" id="hamburger-6">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
     </div>
 </header>
 <?php
@@ -175,7 +204,7 @@ $catRow = $cats->fetchObject();
 				if ($_SESSION['MEM_NO'] !== null) {
 					$MEMNO = $_SESSION['MEM_NO'];
 					$CATNO = $catRow->CAT_NO;
-					$sql2 = "selecÒt count(1) from favorite where mem_no = $MEMNO and cat_no = $CATNO";
+					$sql2 = "select count(1) from favorite where mem_no = $MEMNO and cat_no = $CATNO";
 					$like = $pdo->query($sql2);
 					if ($like->fetchcolumn() == 1) {
 						$heart = "fa fa-heart favorite";
@@ -231,7 +260,15 @@ $catRow = $cats->fetchObject();
 				}
 				?>
                 <div class="btn">
-                    <button class="defaultBtn" data-val="<?php echo $catRow->CAT_NO; ?>" id="adoptThis">我要領養</button>
+                    <?
+                    if(( $_SESSION['MEM_NO']) !== null ){
+                        echo "<button class='defaultBtn' data-val=";
+                        echo $catRow->CAT_NO.' ';
+                        echo "id='adoptThis'>我要領養</button>";
+                    }else{
+                        echo"<button class='defaultBtn login'>我要領養</button>";
+                    }
+                    ?>
                     <button class="defaultBtn" id="donate">我要助養</button>
                 </div>
             </figure>
