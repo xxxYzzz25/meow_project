@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
             <button id="halfMember1">中途之家會員</button>
             <button id="member1" class="selected">一般會員</button>
         </div>
-        <form action="#1" class="signUpForm" id="signInForm">
+        <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method='post'>
             <br>
             <br>
             <br>
@@ -37,14 +38,17 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
                 <br>
                 <small>請輸入您的電子郵件</small>
             </label>
-            <input type="email" id="userIdIn" required>
+            <input type="email" id="userIdIn" name='memId' required>
             <br>
             <label for="userPsw">會員密碼
                 <br>
                 <small>請輸入6~10碼英數字</small>
             </label>
-            <input type="password" id="userPswIn" required>
+            <input type="password" id="userPswIn" name='memPsw' required>
             <br>
+            <div class="chioce">
+                <input type="submit" class="formBtn formSubmitBtn" value="登入">
+            </div>
             <p class="signInUpPos">尚未成為會員嗎?
                 <span id="signIn2Up">點此註冊</span>
             </p>
@@ -55,7 +59,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
             <button id="halfMember2">中途之家會員</button>
             <button id="member2" class="selected">一般會員</button>
         </div>
-        <form action="#1" id="signUpForm">
+        <form action="../php/signUp2mem.php" id="signUpForm">
             <label for="userName">會員名稱
                 <br>
                 <small>不得多於8個中/英文字元</small>
@@ -105,42 +109,72 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 </div>
 <header>
     <div class="logo">
-        <a href="../index.html" title="尋喵啟事">
+        <a href="../index.php">
             <h1>
-                <img src="../images/logo_white.png" alt="尋喵啟事" title="前往首頁">
+                <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
             </h1>
         </a>
     </div>
     <nav>
         <ul>
             <li>
-                <a href="./catSearch.html" title="前往尋喵">尋喵</a>
+                <a href="../html/catSearch.php">尋喵</a>
             </li>
             <li>
-                <a href="./halfway_house_search.html" title="前往中途之家">中途之家</a>
+                <a href="../html/halfway_house_search.php">中途之家</a>
             </li>
             <li>
-                <a href="./Cat_ShoppingStore.html" title="前往商城">商城</a>
+                <a href="../html/Cat_ShoppingStore.php" title="前往商城">商城</a>
             </li>
             <li>
-                <a href="./forum.html" title="前往討論區">討論區</a>
+                <a href="../html/forum.php">討論區</a>
             </li>
             <li>
-                <a href="./member.html" title="前往會員專區">會員專區</a>
+                <?php
+                    if($_SESSION['MEM_NO'] == null && $_SESSION['HALF_NO'] == null){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if($_SESSION['HALF_NO'] == null){
+                            echo "<a href='member.html'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                        }
+                    }
+                    ?>
             </li>
         </ul>
     </nav>
     <div class="icons">
         <a href="#">
             <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-user-circle-o fa-2x login" aria-hidden="true"></i>
-        </a>
+        </a><?php
+                if(isset($_SESSION["MEM_NO"])){
+                    echo "<a href='../php/memberLogOut.php' id='loginBtn'>
+                        <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }elseif (isset($_SESSION["HALF_NO"])) {
+                    echo "<a href='../php/memberLogOut.php' class='login123' id='loginBtn'>
+                        <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }
+                else{
+                    echo "<a href='#' class='login login123' id='loginBtn'>
+                        <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }
+        ?>
         <a href="#">
             <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
             <span id="like">6</span>
         </a>
+    </div>
+    <div class="hb">
+        <div class="hamburger" id="hamburger-6">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
     </div>
 </header>
 <div class="right">

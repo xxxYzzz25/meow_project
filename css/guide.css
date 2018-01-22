@@ -10,87 +10,68 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before, blockquote:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 q:before, q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 input, select {
   font-family: 'Noto Sans TC';
-  font-weight: bolder;
-}
+  font-weight: bolder; }
 
 body {
   font-family: 'Noto Sans TC';
   font-weight: 300;
-  letter-spacing: 3px;
-}
+  letter-spacing: 3px; }
 
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
+  -moz-box-sizing: border-box; }
 
 input, select {
   font-family: 'Noto Sans TC';
-  font-weight: bolder;
-}
+  font-weight: bolder; }
 
 body {
   font-family: 'Noto Sans TC';
   font-weight: 300;
-  letter-spacing: 3px;
-}
+  letter-spacing: 3px; }
 
 @keyframes rororo {
   to {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 
 @keyframes upupup {
   form {
-    transform: perspective(600px) translateY(0) translateZ(0);
-  }
+    transform: perspective(600px) translateY(0) translateZ(0); }
   to {
-    transform: perspective(600px) translateY(-50px) translateZ(100px);
-  }
-}
+    transform: perspective(600px) translateY(-50px) translateZ(100px); } }
 
 body {
-  background-image: url(../images/test.jpg);
-}
+  background-image: url(../images/test.jpg); }
 
 .svg-space {
   height: 20vh;
@@ -99,14 +80,11 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.svg-space #logo {
-  margin: auto;
-  width: 450px;
-  height: 450px;
-}
+  align-items: center; }
+  .svg-space #logo {
+    margin: auto;
+    width: 450px;
+    height: 450px; }
 
 .guide {
   height: 80vh;
@@ -122,6 +100,7 @@ body {
 .guide .front,
 .guide .backed {
   position: relative;
+  transition: .3s;
 }
 
 .guide .front img,

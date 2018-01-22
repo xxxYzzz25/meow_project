@@ -13,7 +13,7 @@ try {
 	// 設定每頁呈現內容
     $sql = "
         select r.message_report_no, r.message_report_narrative, m.mem_no, m.half_no, m.message_content, mem.mem_name, h.half_name
-        from ((message_report r left join message m on r.message_no = m.message_no ) left join member mem on mem.mem_no = r.mem_no) left join halfway_member h on h.half_no = r.half_no
+        from ((message_report r left join message m on r.message_no = m.message_no ) left join member mem on mem.mem_no = m.mem_no) left join halfway_member h on h.half_no = m.half_no
         where r.audit_status = 0
         order by message_REPORT_NO desc
         limit $start, $perPage";
@@ -25,7 +25,7 @@ try {
             <th>被檢舉留言</th>
             <th>被檢舉人名稱</th>
             <th>檢舉內容</th>
-            <th>審核檢舉</th>
+            <th>停權/駁回</th>
         </tr>
 <?php
     if ($rownum == 0) {
@@ -38,9 +38,12 @@ try {
             <td><?php echo isset($report_Row['mem_name'])?$report_Row['mem_name']:$report_Row['half_name']; ?></td>
             <td><textarea name="" id="" cols="30" rows="2" readonly="readonly"><?php echo $report_Row['message_report_narrative']; ?></textarea></td>
             <td>
-                <form action="../php/backMesBan" id="reportForm">
-                    <input type="hidden" id="report" value="1">                    <input type="hidden" name="no" value="<?php echo $report_Row['mem_no']; ?>">
-                    <input type="hidden" name="no" value="<?php echo isset($report_Row['mem_no'])?$report_Row['mem_no']:$report_Row['half_no']; ?>">
+                <form action="../php/backBan.php" id="reportForm" method="post">
+                    <input type="hidden" name="part" value="message_report">
+                    <input type="hidden" name="reportVal" id="report" value="1">
+                    <input type="hidden" name="banVal" id="ban" value="1">
+                    <input type="hidden" name="artNo" value='<?php echo $report_Row['message_report_no']; ?>'>
+                    <input type="hidden" name="<?php echo isset($report_Row['mem_no'])?'memNo':'halfNo'; ?>" value="<?php echo isset($report_Row['mem_no'])?$report_Row['mem_no']:$report_Row['half_no']; ?>">
                 </form>
                 <i class="fa fa-circle-o" aria-hidden="true" id="ensureBtn"></i>
                 <i class="fa fa-times cancel" id="cancelBtn"></i>

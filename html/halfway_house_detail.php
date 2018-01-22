@@ -2,6 +2,7 @@
     ob_start();
     session_start();
 	isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
+	isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,70 +10,167 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://maps.google.com/maps/api/js?key=AIzaSyDKPVIamuQGV_Yi0y8zXQl5bUGs7bfxW04"></script>
     <script src="../js/signIn.js"></script>
+	<script src="../js/halfway/showlarge.js"></script>
+	<script src="../js/halfway/star.js"></script>
 	<link rel="stylesheet" href="../css/halfway_house_detail.css">
 	<title>中途之家</title>
 </head>
 
 <body>
-	<header>
-		<div class="logo">
-			<a href="index.php">
-				<h1>
-					<img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
-				</h1>
-			</a>
-		</div>
-		<nav>
-			<ul>
-				<li>
-					<a href="html/catSearch.html">尋喵</a>
-				</li>
-				<li>
-					<a href="html/halfway_house_search.html">中途之家</a>
-				</li>
-				<li>
-					<a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
-				</li>
-				<li>
-					<a href="html/forum.html">討論區</a>
-				</li>
-				<li>
-					<a href="html/member.html">會員專區</a>
-				</li>
-			</ul>
-		</nav>
-		<div class="icons">
-			<a href="#">
-				<i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-			</a>
-			<?php
-				if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-
-					echo "<a href='php/memberLogOut.php'>
-						<i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
-						</a>";
-				}else{
-					echo "<a href='#' class='login'>
-						<i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
-						</a>";
-				}
-			?>
-				<a href="#">
-					<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-					<span id="like">6</span>
-				</a>
-		</div>
-		<div class="hb">
-			<div class="hamburger" id="hamburger-6">
-				<span class="line"></span>
-				<span class="line"></span>
-				<span class="line"></span>
-			</div>
-		</div>
-	</header>
+	<div class="signUpLightboxBlack"></div>
+    <div class="signUpLightbox" id="loginBox">
+        <i class="fa fa-times cancel"></i>
+        <div class="bgImg" id="bgImg"></div>
+        <div id="formShape1" class="formShape formShape1">
+            <div class="chioce">
+                <button id="halfMember1">中途之家會員</button>
+                <button id="member1" class="selected">一般會員</button>
+            </div>
+            <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
+                <br>
+                <br>
+                <br>
+                <br>
+                <label for="userId">會員帳號
+                    <br>
+                    <small>請輸入您的電子郵件</small>
+                </label>
+                <input type="email" id="userIdIn" name="memId" required>
+                <br>
+                <label for="userPsw">會員密碼
+                    <br>
+                    <small>請輸入6~10碼英數字</small>
+                </label>
+                <input type="password" id="userPswIn" name="memPsw" required>
+                <br>
+                <div class="chioce">
+                    <input type="submit" class="formBtn formSubmitBtn" value="登入">
+                </div>
+                <p class="signInUpPos">尚未成為會員嗎?
+                    <span id="signIn2Up">點此註冊</span>
+                </p>
+            </form>
+        </div>
+        <div id="formShape2" class="formShape formShape2">
+            <div class="chioce">
+                <button id="halfMember2">中途之家會員</button>
+                <button id="member2" class="selected">一般會員</button>
+            </div>
+            <form action="../php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
+                <label for="userName">會員名稱
+                    <br>
+                    <small>不得多於8個中/英文字元</small>
+                </label>
+                <input type="text" name="userName" id="userName" placeholder="請輸入您的名稱" required>
+                <br>
+                <label for="userId">會員帳號
+                    <br>
+                    <small>請輸入您的電子郵件</small>
+                </label>
+                <input type="email" name="userId" id="userId" placeholder="請輸入您的電子郵件" required>
+                <br>
+                <label for="userPsw">會員密碼
+                    <br>
+                    <small>請輸入6~10碼英數字</small>
+                </label>
+                <input type="password" name="userPsw" id="userPsw" placeholder="請輸入您的密碼" required>
+                <br>
+                <label for="userTel">聯絡電話
+                    <br>
+                </label>
+                <input type="tel" name="userTel" id="userTel" placeholder="請輸入您的手機號碼" required>
+                <br>
+                <label for="userBirth">會員生日
+                    <br>
+                </label>
+                <input type="text" name="userBirth" id="userBirth" placeholder="ex:19900101" required>
+                <br>
+                <label for="userAddress">通訊地址
+                    <br>
+                </label>
+                <input type="text" name="userAddress" id="userAddress" placeholder="請輸入您的地址" required>
+                <br>
+                <div class="chioce">
+                    <label for="userPhoto" class="formBtn" id="userPhotoLabel" required>
+                        點我上傳您的大頭貼
+                    </label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                    <input type="file" name='image' id="userPhoto" placeholder="您可以上傳您的檔案" value="file">
+                    <input type="submit" id="loginBoxSubmit" class="formBtn formSubmitBtn" value="確認註冊">
+                </div>
+                <p class="signInUpPos">已經是會員了嗎?
+                    <span id="signUp2In">點此登入</span>
+                </p>
+            </form>
+        </div>
+    </div>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <h1>
+                    <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
+                </h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="catSearch.html">尋喵</a>
+                </li>
+                <li>
+                    <a href="halfway_house_search.php">中途之家</a>
+                </li>
+                <li>
+                    <a href="Cat_ShoppingStore.html" title="前往商城">商城</a>
+                </li>
+                <li>
+                    <a href="forum.html">討論區</a>
+                </li>
+                <li>
+                    <?php
+                        if($_SESSION['HALF_NO'] == null){
+                            echo "<a href='member.html'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                        }
+                    ?>
+                </li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="#">
+                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+            </a>
+            <?php
+                if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
+                    echo "<a href='../php/memberLogOut.php'>
+                        <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }else{
+                    echo "<a href='#' class='login'>
+                        <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }
+            ?>
+            <a href="#">
+                <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+                <span id="like">6</span>
+            </a>
+        </div>
+        <div class="hb">
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
+    </header>
 
 <?php
 $halfno = $_REQUEST["halfno"];
@@ -106,8 +204,8 @@ try {
 	<div class="right">
 		<div class="breadcrumbs">
 			<a href="../index.php" class="defaultBtn">尋喵啟事</a> >
-			<a href="halfway_house_search.html" class="defaultBtn">搜尋中途之家</a> >
-			<a href="halfway_house_detail.html" class="defaultBtn">
+			<a href="halfway_house_search.php" class="defaultBtn">搜尋中途之家</a> >
+			<a href="halfway_house_detail.php?halfno=<?php echo $halfno ?>" class="defaultBtn">
 				<?php echo $NAME ?>
 			</a>
 		</div>
@@ -127,7 +225,7 @@ try {
 				</p>
 			</div>
 			<div class="container">
-				<div class="bigpic" style="background-image: url(<?php echo $COVER ?>);"></div>
+				<div class="bigpic" style="background-image: url(<?php echo $COVER ?>)"></div>
 				<div class="text">
 					<div class="intro">
 						<?php echo $INTRO ?>
@@ -180,6 +278,8 @@ try {
 										} else {
 											echo "0";
 										}
+									}else{
+										echo "0";
 									}
 								?>
 							</span>/5顆星
@@ -194,27 +294,33 @@ try {
 		</div>
 
 <script>
-	//把點到的星星數量傳到scoretext秀出來
+    //把點到的星星數量傳到scoretext秀出來
 	let inputbtn = document.getElementsByTagName('input');
 	for (let i = 0; i < inputbtn.length; i++) {
-		inputbtn[i].addEventListener('click', function () {
-			if (scoretext.innerHTML == '0') {
-				let score = inputbtn[i].getAttribute('value');
-				// ajax傳到php 存到mysql
-				let xhr = new XMLHttpRequest();
-				xhr.onload=function(){
-					let response = JSON.parse(xhr.responseText);
-					document.getElementById("avgScore").innerHTML=response.avg;
-					document.getElementById("count").innerHTML=response.count;
-					document.getElementById("scoretext").innerHTML=response.star;
-				}
-				let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
-				xhr.open("get", url, true);
-				xhr.send(null);
-			}else{
-				alert("您已經評過分囉!");
-			}
-		});
+        inputbtn[i].addEventListener('click', function () {
+            if(localStorage.getItem('memNo') == null && localStorage.getItem('halfNo') == null){
+                document.getElementsByClassName("signUpLightboxBlack")[0].style.display = "block";
+                document.getElementsByClassName("signUpLightboxBlack")[0].style.top = "top";
+                document.getElementById("loginBox").style.display = "block";
+            }else{
+                if (scoretext.innerHTML == '0') {
+                    let score = inputbtn[i].getAttribute('value');
+                    // ajax傳到php 存到mysql
+                    let xhr = new XMLHttpRequest();
+                    xhr.onload=function(){
+                        let response = JSON.parse(xhr.responseText);
+                        document.getElementById("avgScore").innerHTML=response.avg;
+                        document.getElementById("count").innerHTML=response.count;
+                        document.getElementById("scoretext").innerHTML=response.star;
+                    }
+                    let url = "../php/halfwayScoreToDb.php?EVALUATION_STARS="+ score +"&MEM_NO=<?php echo $memno ?>&HALF_NO=<?php echo $halfno ?>";
+                    xhr.open("get", url, true);
+                    xhr.send(null);
+                }else{
+                    alert("您已經評過分囉!");
+                }
+            }
+        });
 	}
 </script>
 
@@ -253,7 +359,6 @@ try {
 
 			</div>
 		</div>
-		<script src="../js/halfway/showlarge.js"></script>
 
 
 
@@ -323,12 +428,11 @@ try {
 				?>
 			</div>
 		</div>
-		<script src="../js/cat/like.js"></script>
 
 
 		<div class="map">
 			<h2>我們的位置</h2>
-			<div id="myMap" style="width:1300px;height:600px;"></div>
+			<div id="myMap"></div>
 		</div>
 
 		<script>
@@ -358,13 +462,211 @@ try {
 					let myMap = new google.maps.Map(area,{
 						zoom: 16,
 						center: params,
-						mapTypeId: google.maps.MapTypeId.ROADMAP
+						mapTypeId: google.maps.MapTypeId.ROADMAP,
+						styles: [
+                            {
+                                "featureType": "water",
+                                "stylers": [
+                                    {
+                                        "color": "#19a0d8"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "color": "#ffffff"
+                                    },
+                                    {
+                                        "weight": 6
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#e85113"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "geometry.stroke",
+                                "stylers": [
+                                    {
+                                        "color": "#efe9e4"
+                                    },
+                                    {
+                                        "lightness": -40
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.arterial",
+                                "elementType": "geometry.stroke",
+                                "stylers": [
+                                    {
+                                        "color": "#efe9e4"
+                                    },
+                                    {
+                                        "lightness": -20
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "lightness": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "lightness": -100
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "labels.icon"
+                            },
+                            {
+                                "featureType": "landscape",
+                                "elementType": "labels",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape",
+                                "stylers": [
+                                    {
+                                        "lightness": 20
+                                    },
+                                    {
+                                        "color": "#efe9e4"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape.man_made",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "lightness": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "lightness": -100
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "hue": "#11ff00"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "lightness": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "hue": "#4cff00"
+                                    },
+                                    {
+                                        "saturation": 58
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "color": "#f0e4d3"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "geometry.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#efe9e4"
+                                    },
+                                    {
+                                        "lightness": -25
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.arterial",
+                                "elementType": "geometry.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#efe9e4"
+                                    },
+                                    {
+                                        "lightness": -10
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "labels",
+                                "stylers": [
+                                    {
+                                        "visibility": "simplified"
+                                    }
+                                ]
+                            }
+                        ]
 					});
 
 					let marker = new google.maps.Marker({
 						position: params,
 						map: myMap,
-						icon: '../images/flycat1.png',
+						icon: '../images/halfwayPic/cat_loc.png',
 						title: ''
 					});
 

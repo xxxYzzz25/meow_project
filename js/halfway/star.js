@@ -1,11 +1,16 @@
-let star = document.getElementsByClassName('fa');
-for (let i = 0, len = star.length; i < len; i++) {
-    star[i].addEventListener('mouseover', function () {
-        star[i].className =
-            star[i].className.replace('fa-star-o', 'fa-star')
-    });
-    star[i].addEventListener('mouseleave', function () {
-        star[i].className =
-            star[i].className.replace('fa-star', 'fa-star-o')
-    });
-}
+window.addEventListener('load', () => {
+    let heart = document.getElementsByClassName('favorite');
+    for (let i = 0, len = heart.length; i < len; i++) {
+        heart[i].addEventListener('click', () => {
+            if (heart[i].className.match('fa-heart-o')) {
+                heart[i].className =
+                    heart[i].className.replace('fa-heart-o', 'fa-heart')
+                heart[i].setAttribute('data-boolean', 1)
+            } else {
+                heart[i].className =
+                    heart[i].className.replace('fa-heart', 'fa-heart-o')
+                heart[i].setAttribute('data-boolean', 0)
+            }
+        })
+    }
+})

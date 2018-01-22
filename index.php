@@ -1,6 +1,7 @@
 <?php
  ob_start();
  session_start();
+ isset($_SESSION['HALF_NO'])?$_SESSION['HALF_NO']=$_SESSION['HALF_NO']:$_SESSION['HALF_NO']=null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,19 +142,26 @@
         <nav>
             <ul>
                 <li>
-                    <a href="html/catSearch.html">尋喵</a>
+                    <a href="html/catSearch.php" title="前往尋喵">尋喵</a>
                 </li>
                 <li>
-                    <a href="html/halfway_house_search.html">中途之家</a>
+                    <a href="html/halfway_house_search.html" title="前往中途之家">中途之家</a>
                 </li>
                 <li>
                     <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="html/forum.html">討論區</a>
+                    <a href="html/forum.html" title="前往討論區">討論區</a>
                 </li>
                 <li>
-                    <a href="html/member.html">會員專區</a>
+                    <?php
+                        if($_SESSION['HALF_NO'] == null){
+                            echo "<a href='member.html'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                        }
+                    ?>
                 </li>
             </ul>
         </nav>
@@ -162,28 +170,26 @@
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             </a><?php
                     if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-
-                        echo "<a href='php/memberLogOut.php'>
+                        echo "<a href='php/memberLogOut.php' id='loginBtn'>
                             <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
                             </a>";
                     }else{
-                        echo "<a href='#' class='login'>
+                        echo "<a href='#' class='login' id='loginBtn'>
                             <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
                             </a>";
                     }
             ?>
-            <a href="#">
+            <a href="#" id="likeBox">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-                <span id="like">6</span>
             </a>
         </div>
         <div class="hb">
-        <div class="hamburger" id="hamburger-6">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
         </div>
-    </div>
     </header>
     <div id="fullpages">
         <div class="margin-200">
@@ -535,24 +541,12 @@
         <script src="js/sliderKit.js"></script>
         <script src="js/sliderHalf.js"></script>
         <script>
-            $(document).ready(function () {
-                $(".hamburger").click(function () {
-                    $(this).toggleClass("is-active");
-                    $('header').toggleClass("active");
-                });
-                $('#door-start-btn').on('click', function () {
-                    $(this).closest('#doorStart').fadeOut();
-                    $('#doorLeft').addClass('doorLeft');
-                    $('#doorRight').addClass('doorRight');
-                    $('#people').attr({
-                        src: 'images/runningBoy.gif'
-                    });
-                    $('#hug').attr({
-                        src: 'images/runningCat.gif'
-                    });
-                });
-            });
+            function showLogin() {
+                $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });
+                $('#loginBox').css('display', 'block');
+            }
         </script>
+        
 </body>
 
 </html>

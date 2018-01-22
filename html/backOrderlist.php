@@ -16,28 +16,28 @@
         <nav>
             <ul>
                 <li>
-                    <a href="backMemManage.html" title="會員帳號管理">會員帳號管理</a>
+                    <a href="backMemManage.php" title="會員帳號管理">會員帳號管理</a>
                 </li>
                 <li>
-                    <a href="backEmpManage.html" title="員工帳號管理">員工帳號管理</a>
+                    <a href="backEmpManage.php" title="員工帳號管理">員工帳號管理</a>
                 </li>
                 <li>
-                    <a href="backHalfWay.html" title="中途之家審核">中途之家審核</a>
+                    <a href="backHalfWay.php" title="中途之家審核">中途之家審核</a>
                 </li>
                 <li>
-                    <a href="backReport.html" title="檢舉審核">檢舉審核</a>
+                    <a href="backReport.php" title="檢舉審核">檢舉審核</a>
                 </li>
                 <li>
-                    <a href="backOrderlist.html" title="訂單管理">訂單管理</a>
+                    <a href="backOrderlist.php" title="訂單管理">訂單管理</a>
                 </li>
                 <li>
-                    <a href="backAdobtRecord.html" title="領養紀錄查詢">領養紀錄查詢</a>
+                    <a href="backAdobtRecord.php" title="領養紀錄查詢">領養紀錄查詢</a>
                 </li>
                 <li>
-                    <a href="backSaleRecord.html" title="銷售紀錄查詢">銷售紀錄查詢</a>
+                    <a href="backSaleRecord.php" title="銷售紀錄查詢">銷售紀錄查詢</a>
                 </li>
                 <li>
-                    <a href="backProduct.html" title="寵物商品上下架">寵物商品上下架</a>
+                    <a href="backProduct.php" title="寵物商品上下架">寵物商品上下架</a>
                 </li>
             </ul>
         </nav>
@@ -66,7 +66,7 @@ try {
     $orderlist->execute();
 
     if ($orderlist->rowCount() == 0) {
-        echo "<center>查無此訂單資料</center>";
+        echo "<center>查無訂單資料</center>";
     } else {
 ?>
             <table>

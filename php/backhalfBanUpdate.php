@@ -8,9 +8,9 @@
 	<?php
 		try {
 			require_once("connectBD103G2.php");
-			$sql = "update member set MEM_BAN = 0 where MEM_ID = ?";
+			$sql = "update halfway_member set half_BAN = 0 where half_ID = ?";
 			$statement = $pdo -> prepare( $sql );
-    	    $statement -> bindValue(1, $_REQUEST['memId']);
+    	    $statement -> bindValue(1, $_REQUEST['halfId']);
     	    $statement -> execute();
     	    echo "異動成功";
 		} catch (Exception $e) {
@@ -20,7 +20,7 @@
 		}
 	?>
 	<?	// 跳轉到：
-		header('location:../html/backReport.php');
+		header('location:../html/backMemManage.php');
 	?>
 </body>
 </html>

@@ -45,7 +45,8 @@
             <img src="../images/back/catAdoptRecord.jpg" alt="">
         </div>
         <div class="empManage">
-            <table>
+            <button class='defaultBtn' id='switch'>中途會員</button>
+            <table class="member" data-val="0">
                 <tr>
                     <th>會員帳號</th>
                     <th>停權狀態</th>
@@ -57,7 +58,7 @@
 				$sql = "select count(1) from member where `MEM_BAN` = 1";    // 計算資料筆數
 				$total = $pdo->query($sql);
 				$rownum = $total->fetchcolumn();                            // 總共欄位數
-				$perPage = 2;                                               // 每頁顯示筆數
+				$perPage = 5;                                               // 每頁顯示筆數
 				$totalpage = ceil($rownum / $perPage);                        // 計算總頁數
 				$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
 				// 若無當前頁數則進入第一頁 若有則進入該頁
@@ -105,8 +106,90 @@
                     </td>
                 </tr>
             </table>
+            <table class="half">
+                <tr>
+                    <th>中途帳號</th>
+                    <th>停權狀態</th>
+                    <th>取消停權</th>
+                </tr>
+				<?php
+				require_once("../php/connectBD103G2.php");
+
+				$sql = "select count(1) from halfway_member where `HALF_BAN` = 1";    // 計算資料筆數
+				$total = $pdo->query($sql);
+				$rownum = $total->fetchcolumn();                            // 總共欄位數
+				$perPage = 5;                                               // 每頁顯示筆數
+				$totalpage = ceil($rownum / $perPage);                        // 計算總頁數
+				$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
+				// 若無當前頁數則進入第一頁 若有則進入該頁
+				$start = ($pageNo - 1) * $perPage;                            // 計算起始頁數
+				$sql = "select * from halfway_member where `HALF_BAN` = 1 limit $start, $perPage";
+				// 設定每頁呈現內容
+				$half = $pdo->query($sql);
+				$halfRow = $half->fetchAll(PDO::FETCH_ASSOC);
+				if ($rownum == 0) {
+					echo "<tr><td colspan='3'>'太好了, 這裡沒有被停權的帳號！'</td></tr>";
+				}else{
+				try {
+					foreach ($halfRow as $i => $half_Row) {
+						?>
+                        <form action="../php/backhalfBanUpdate.php" method="get">
+                            <tr>
+                                <td>
+                                    <input type="text" name="halfId" readonly="readonly" value="<?php echo $half_Row['HALF_ID'] ?>">
+                                </td>
+                                <td>停權中</td>
+                                <td>
+                                    <input type="submit">
+                                </td>
+                            </tr>
+                        </form>
+						<?php
+					}
+				} catch (PDOException $e) {
+					echo "錯誤原因 : ", $e->getMessage(), "<br>";
+					echo "錯誤行號 : ", $e->getLine(), "<br>";
+				}
+
+				?>
+                <tr>
+                    <td colspan="3">
+						<?php
+						for ($i = 1; $i <= $totalpage; $i++) {
+							echo '<a href="?pageNo=' . $i . '"class="defaultBtn">' . $i . '</a> ';
+						}
+						$i = $i - 1;
+						}
+						?>
+
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
+<script>
+    window.addEventListener('click',()=>{
+        let switchBtn = document.querySelector('#switch')
+        let mem = document.querySelector('.member')
+        let half = document.querySelector('.half')
+        let con = mem.getAttribute('data-val')
+
+        switchBtn.addEventListener('click',()=>{
+            console.log(con)
+            if( con == 1 ){
+                switchBtn.textContent = '中途會員'
+                mem.style.display = 'table'
+                half.style.display = 'none'
+                mem.setAttribute('data-val', '0')
+            }else{
+                switchBtn.textContent = '一般會員'
+                mem.style.display = 'none'
+                half.style.display = 'table'
+                mem.setAttribute('data-val', '1')
+            }
+        })
+    })
+</script>
 </body>
 </html>

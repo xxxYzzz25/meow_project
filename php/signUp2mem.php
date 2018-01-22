@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>會員註冊</title>
+	<title>會員註冊</title>
+	<style>
+        a {
+            cursor: pointer;
+            color: #44f;
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -79,11 +85,20 @@ try {
 } catch (Exception $e) {
 	echo "<center>因為小精靈在搗亂伺服器所以失敗了唷<br>請稍後再試</center>";
 }
+echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext'>或點此直接回到原網址</a></center>";
+
 ?>
-<script type='text/javascript'>
-    setTimeout(function back() {
-        history.back()
+<script>
+    window.addEventListener('load', () => {
+    let back = document.getElementById('backNext')
+    setTimeout(function(){
+        window.history.back()
     }, 5000)
+    back.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.history.back()
+    })
+})
 </script>
 </body>
 </html>

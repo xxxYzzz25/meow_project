@@ -29,21 +29,21 @@ try {
 			$searchText = '';
 		}
 			//進階搜尋
-		if(isset($_GET['color'])){
+		if(!empty($_GET['color'])){
 			$colorJS = $_GET['color'];
 			$colorArr = explode(",", "$colorJS");
 			$colorAdv = "and (cat_color like '%";
 			$colorAdv .= implode("%' or cat_color like '%", $colorArr);
 			$colorAdv .= "%')";
 		}else $colorAdv = null;
-		if (isset($_GET['location'])) {
+		if (!empty($_GET['location'])) {
 			$locationJS = $_GET['location'];
 			$locationArr = explode(",", "$locationJS");
 			$locationAdv = "and (cat_location like '%";
 			$locationAdv .= implode("%' or cat_location like '%", $locationArr);
 			$locationAdv .= "%')";
 		}else $locationAdv = null;
-		if (isset($_GET['gender'])) {
+		if (!empty($_GET['gender'])) {
 			$genderJS = $_GET['gender'];
 			$locationArr = explode(",", "$genderJS");
 			$genderAdv = "and (cat_sex like '%";
