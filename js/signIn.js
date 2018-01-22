@@ -5,11 +5,12 @@ window.addEventListener('load', function () {
     let signIn = document.getElementById('formShape1')
     let signUp = document.getElementById('formShape2')
     let img = document.getElementById('bgImg')
-
     let path = location.pathname;
-    path = path.split('/');
-    path = path[path.length - 1];
-    if (path = 'index.php') {
+    
+    // path = path.split('/');
+    // path = path[path.length - 1];
+    
+    if (path == '/index.php') {
         in2up.addEventListener('click', () => {
             signIn.style.display = 'none'
             signUp.style.display = 'block'
@@ -83,6 +84,7 @@ window.addEventListener('load', function () {
             memHeadInput.setAttribute("placeholder", "請輸入您的負責人姓名")
             memHeadInput.setAttribute("name", "userHead");
             memAddLabel.innerHTML = "中途店址"
+            
         })
     } else {
         in2up.addEventListener('click', () => {

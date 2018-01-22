@@ -66,7 +66,7 @@ try {
     $orderlist->execute();
 
     if ($orderlist->rowCount() == 0) {
-        echo "<center>查無此訂單資料</center>";
+        echo "<center>查無訂單資料</center>";
     } else {
 ?>
             <table>

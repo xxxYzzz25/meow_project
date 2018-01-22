@@ -25,7 +25,7 @@ try {
             <th>被檢舉文章</th>
             <th>被檢舉人名稱</th>
             <th>檢舉內容</th>
-            <th>審核檢舉</th>
+            <th>停權/駁回</th>
         </tr>
 <?php
     if ($rownum == 0) {

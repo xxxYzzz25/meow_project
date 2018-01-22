@@ -118,26 +118,30 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
     <nav>
         <ul>
             <li>
-                <a href="../html/catSearch.html">尋喵</a>
+                <a href="../html/catSearch.php">尋喵</a>
             </li>
             <li>
-                <a href="../html/halfway_house_search.html">中途之家</a>
+                <a href="../html/halfway_house_search.php">中途之家</a>
             </li>
             <li>
-                <a href="../html/Cat_ShoppingStore.html" title="前往商城">商城</a>
+                <a href="../html/Cat_ShoppingStore.php" title="前往商城">商城</a>
             </li>
             <li>
-                <a href="../html/forum.html">討論區</a>
+                <a href="../html/forum.php">討論區</a>
             </li>
             <li>
                 <?php
-                    if($_SESSION['HALF_NO'] == null){
-                        echo "<a href='member.html'>會員專區</a>";
+                    if($_SESSION['MEM_NO'] == null && $_SESSION['HALF_NO'] == null){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if($_SESSION['HALF_NO'] == null){
+                            echo "<a href='member.html'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                        }
                     }
-                    else{
-                        echo "<a href='halfMem.html'>中途會員專區</a>";
-                    }
-                ?>
+                    ?>
             </li>
         </ul>
     </nav>
