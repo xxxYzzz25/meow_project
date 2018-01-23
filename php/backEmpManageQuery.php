@@ -20,9 +20,24 @@
             header("Location:../html/backEmpManage.php");
             
         }else if($cmd == "update"){
-            
-            $sql= "update EMP set EMP_ID = :empId,EMP_PSW = md5(:empPsw),EMP_POST = :empOffice where EMP_NO = :empNo";
+            $sql = "select count(*) count 
+                    from emp
+                    where EMP_ID = :empId and EMP_PSW = :empPsw";
+            $data = $pdo -> prepare($sql);
+            $empId = $_POST["empId"];
+            $empPsw = $_POST["empPsw"];
+            $data -> bindParam(":empId",$empId);
+            $data -> bindParam(":empPsw",$empPsw);
+            $data -> execute();
+            $dataRow = $data -> fetchObject();
 
+            if($dataRow -> count == 0){
+                $sql= "update EMP set EMP_ID = :empId,EMP_PSW = md5(:empPsw),
+                        EMP_POST = :empOffice where EMP_NO = :empNo";
+            }else if($dataRow -> count == 1){
+                $sql= "update EMP set EMP_ID = :empId,
+                        EMP_POST = :empOffice where EMP_NO = :empNo";
+            }
             $data = $pdo -> prepare($sql);
             $empId = $_POST["empId"];
             $empPsw = $_POST["empPsw"];
@@ -43,16 +58,26 @@
 
         }else if($cmd == "query"){
 
-            $sql = "select EMP_NO,EMP_ID,EMP_POST from emp";
+            $sql = "select EMP_NO,EMP_ID,EMP_POST,EMP_PSW from emp";
             $data = $pdo -> query($sql);
             $resJson = array();
 
             while ($dataRow = $data -> fetchObject()) {
-            $arr = array($dataRow -> EMP_ID =>  $dataRow -> EMP_POST, "No" => $dataRow -> EMP_NO);
+            $arr = array("id" => $dataRow -> EMP_ID , "post" => $dataRow -> EMP_POST, "No" => $dataRow -> EMP_NO,"odd" => $dataRow -> EMP_PSW);
             array_push($resJson,$arr);
 
             }
             echo json_encode($resJson);
+        }else if($cmd == "md"){
+            $sql = "select EMP_PSW
+                    from emp
+                    where EMP_ID = :empId and EMP_NO = :empNo";
+            $data = $pdo -> prepare($sql);
+            $data -> bindParam(":empId",$_POST["empId"]);
+            $data -> bindParam(":empNo",$_POST["empNo"]);
+            $data -> execute();
+            $dataRow = $data -> fetchObject();
+            echo $dataRow -> EMP_PSW;
         }
     }catch(PDOException $e){
         echo $e -> getLine();

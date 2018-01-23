@@ -17,15 +17,17 @@
 <?php
 try {
     require_once "connectBD103G2.php";
-    $sql = "update product set PRODUCT_NAME,
-                                PRODUCT_PART,
-                                PRODUCT_PRICE,
-                                PRODUCT_WEIGHT,
-                                PRODUCT_LOC,
-                                PRODUCT_COMPONENT,
-                                PRODUCT_SIZE,
-                                PRODUCT_NARRATIIVE";
+    $sql = "update product set PRODUCT_NAME=:name,
+                                PRODUCT_PART=:part,
+                                PRODUCT_PRICE=:price,
+                                PRODUCT_WEIGHT=:weight,
+                                PRODUCT_LOC=:loc,
+                                PRODUCT_COMPONENT=:component,
+                                PRODUCT_SIZE=:size,
+                                PRODUCT_NARRATIVE=:narrative
+            where PRODUCT_NO=:no";
     $products = $pdo->prepare($sql);
+    $products->bindValue(":no", $_REQUEST["no"]);
     $products->bindValue(":name", $_REQUEST["name"]);
     $products->bindValue(":part", $_REQUEST["part"]);
     $products->bindValue(":price", $_REQUEST["price"]);
@@ -35,7 +37,7 @@ try {
     $products->bindValue(":size", $_REQUEST["size"]);
     $products->bindValue(":narrative", $_REQUEST["narrative"]);
     $products->execute();
-    echo "<center>新增成功</center><br>
+    echo "<center>修改成功</center><br>
         <center>將在五秒後回到原網址</center><br>
         <center><a id='backNext'>或者點此直接回到原網址</a></center>";
 } catch (Exception $e) {

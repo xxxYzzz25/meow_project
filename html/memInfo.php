@@ -18,37 +18,31 @@ try {
     } else {
         $memRow = $mem->fetchObject();
         ?>
-    <form action="memInfoUpdateToDb.php">
+    <form action="../php/memInfoUpdateToDb.php">
         <input type="hidden" name="no" value="<?php echo $memRow->MEM_NO; ?>">
         <table>
             <tr>
                 <th>會員密碼</th>
                 <td>
-                    <input type="psw" name="mempsw" placeholder="<?php echo $memRow->MEM_PSW; ?>">
+                    <input type="password" name="mempsw" value="<?php echo $memRow->MEM_PSW; ?>">
                 </td>
             </tr>
             <tr>
                 <th>會員姓名</th>
                 <td>
-                    <input type="text" name="memname" placeholder="<?php echo $memRow->MEM_NAME; ?>">
+                    <input type="text" name="memname" value="<?php echo $memRow->MEM_NAME; ?>">
                 </td>
             </tr>
             <tr>
                 <th>會員電話</th>
                 <td>
-                    <input type="tel" name="memtel" placeholder="<?php echo $memRow->MEM_TEL; ?>">
+                    <input type="tel" name="memtel" value="<?php echo $memRow->MEM_TEL; ?>">
                 </td>
             </tr>
             <tr>
                 <th>會員地址</th>
                 <td>
-                    <input type="address" name="memaddress" placeholder="<?php echo $memRow->MEM_ADDRESS; ?>">
-                </td>
-            </tr>
-            <tr>
-                <th>會員大頭貼</th>
-                <td>
-                    <input type="file" name="mempic">
+                    <input type="address" name="memaddress" value="<?php echo $memRow->MEM_ADDRESS; ?>">
                 </td>
             </tr>
             <tr>
