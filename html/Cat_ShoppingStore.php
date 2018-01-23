@@ -43,7 +43,7 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="./catSearch.html">尋喵</a>
+					<a href="./catSearch.php">尋喵</a>
 				</li>
 				<li>
 					<a href="./halfway_house_search.php">中途之家</a>
@@ -52,10 +52,10 @@
 					<a href="./Cat_ShoppingStore.php" title="前往商城">商城</a>
 				</li>
 				<li>
-					<a href="./forum.html">討論區</a>
+					<a href="./forum.php">討論區</a>
 				</li>
 				<li>
-					<a href="./member.html">會員專區</a>
+					<a href="./member.php">會員專區</a>
 				</li>
 			</ul>
 		</nav>
@@ -457,7 +457,7 @@
 
 		</script>  
 <?php 
-	if($_REQUEST["pd_class"]){
+	if(isset($_REQUEST["pd_class"])){
 		$pd_class = $_REQUEST["pd_class"];
 		echo "<script>
 				$(document).ready(function(){
