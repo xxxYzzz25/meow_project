@@ -11,9 +11,6 @@
 </head>
 
 <body>
-
-
-
 <?php
 
     echo "
@@ -26,10 +23,6 @@
     </script>" ;
 
 ?>
-
-  
-
-
 </body>
 
 </html>
