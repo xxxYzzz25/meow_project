@@ -210,33 +210,34 @@
                         <hr>
                         <h2>尋找您未來的喵喵</h2>
                         <div class="search">
-                            <select name="searchColor" id="searchColor">
-                                <option value="">毛色</option>
-                                <option value="">虎斑</option>
-                                <option value="">豹紋</option>
-                                <option value="">三花</option>
-                                <option value="">玳瑁</option>
-                                <option value="">純色</option>
-                            </select>
-                            <select name="searchGender" id="searchGender">
-                                <option value="">性別</option>
-                                <option value="">男孩</option>
-                                <option value="">女孩</option>
-                            </select>
-                            <select name="searchLoc" id="searchLoc">
-                                <option value="">地區</option>
-                                <option value="">北部</option>
-                                <option value="">中部</option>
-                                <option value="">南部</option>
-                                <option value="">東部</option>
-                                <option value="">離島</option>
-                            </select>
-                            <div class="go">
-                                <input type="text" placeholder="或輸入喵喵的名字">
-                                <a href="#">
-                                    <i class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
-                                </a>
-                            </div>
+                            <form action="./html/catSearch.php" id="searchBar" method="get">
+                            <input type="hidden" name="searchBar" value="true">
+                                <select name="catColor" id="searchColor">
+                                    <option value="">毛色</option>
+                                    <option value="黑白">黑白</option>
+                                    <option value="虎斑">虎斑</option>
+                                    <option value="橘白">橘白</option>
+                                    <option value="橘色">橘色</option>
+                                    <option value="黑色">黑色</option>
+                                </select>
+                                <select name="catSex" id="searchGender">
+                                    <option value="">性別</option>
+                                    <option value="0">男孩</option>
+                                    <option value="1">女孩</option>
+                                </select>
+                                <select name="catLocation" id="searchLoc">
+                                    <option value="">地區</option>
+                                    <option value="north">北部</option>
+                                    <option value="center">中部</option>
+                                    <option value="south">南部</option>
+                                    <option value="east">東部</option>
+                                    <option value="out">離島</option>
+                                </select>
+                                <div class="go">
+                                    <input type="text" name="catName" placeholder="或輸入喵喵的名字">
+                                        <i style="cursor:pointer;" id="searchBtn" class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
+                                </div>
+                            </form>
                         </div>
                         <div class="scroll-down">
                             領養前先於下頁完成小測驗看看自己適不適合領養!
@@ -545,6 +546,13 @@
                 $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });
                 $('#loginBox').css('display', 'block');
             }
+            window.addEventListener('load',()=>{
+                let searchBar = document.getElementById('searchBar');
+                let searchBtn = document.getElementById('searchBtn');
+                searchBtn.addEventListener('click',()=>{
+                    searchBar.submit();
+                })
+            });
         </script>
         
 </body>

@@ -282,19 +282,84 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 				$desc = 'desc';
 			}
 
+            if(isset($_REQUEST["searchBar"])){
 
-			$sql = "select count(1) from cat where `ADOPT_STATUS` = 0";    // 計算資料筆數
-			$total = $pdo->query($sql);
-			$rownum = $total->fetchcolumn();                            // 總共欄位數
-			$perPage = 9;                                               // 每頁顯示筆數
-			$totalpage = ceil($rownum / $perPage);                        // 計算總頁數
-			$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
-			// 若無當前頁數則進入第一頁 若有則進入該頁
-			$start = ($pageNo - 1) * $perPage;                            // 計算起始頁數
-			$sql = "select * from cat where `ADOPT_STATUS` = 0 order by CAT_NO $desc limit $start, $perPage";
-			// 設定每頁呈現內容
-			$cat = $pdo->query($sql);
-			$catRow = $cat->fetchAll(PDO::FETCH_ASSOC);
+                $north = "and CAT_LOCATION in ('台北市','新北市','基隆市','桃園市','新竹市','新竹縣','宜蘭縣')";
+                $east = "and CAT_LOCATION in ('花蓮縣','台東縣')";
+                $center = "and CAT_LOCATION in ('苗栗縣','台中市','彰化縣','南投縣','雲林縣','嘉義縣','嘉義市')";
+                $out = "and CAT_LOCATION in ('金門縣','連江縣','澎湖縣')";
+                $south = "and CAT_LOCATION in ('台南市','高雄市','屏東縣')";
+                $catLocation = "";
+
+                if(!empty($_REQUEST["catLocation"])){
+
+                    switch ($_REQUEST["catLocation"]) {
+                        
+                        case 'north':
+                        $catLocation = $north;
+                            break;
+
+                        case 'east':
+                        $catLocation = $east;
+                            break;
+
+                        case 'center':
+                        $catLocation = $center;
+                            break;
+
+                        case 'out':
+                        $catLocation = $out;
+                            break;
+
+                        case 'south':
+                        $catLocation = $south;
+                            break;
+                    }
+                }
+                $catColor = $_REQUEST["catColor"];
+                $catColor = empty($catColor) ? "" : "and CAT_COLOR = '$catColor'";
+
+                $catSex = $_REQUEST["catSex"];
+                $catSex = $_REQUEST["catSex"] == '' ? "" : "and CAT_SEX = '$catSex'";
+
+                $catName = $_REQUEST["catName"];
+                $catName = empty($_REQUEST["catName"]) ? "" : "and CAT_NAME like('%$catName%')";
+
+                $sql = "select count(1) from cat where `ADOPT_STATUS` = 0 $catLocation $catColor $catSex $catName";    // 計算資料筆數
+                $total = $pdo->query($sql);
+                $rownum = $total->fetchcolumn();                            // 總共欄位數
+                $perPage = 9;                                               // 每頁顯示筆數
+                $totalpage = ceil($rownum / $perPage);                        // 計算總頁數
+                $pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
+                // 若無當前頁數則進入第一頁 若有則進入該頁
+                $start = ($pageNo - 1) * $perPage;                            // 計算起始頁數
+                $sql = "select * from cat 
+                        where `ADOPT_STATUS` = 0 $catLocation $catColor $catSex $catName
+                        order by CAT_NO $desc 
+                        limit $start, $perPage";
+                $cat = $pdo -> query($sql);
+                // $cat = $pdo -> prepare($sql);
+                // $cat -> bindParam(":catLocation",$catLocation);
+                // $cat -> bindParam(":catColor",$catColor);
+                // $cat -> bindParam(":catSex",$catSex);
+                // $cat -> bindParam(":catName",$catName);
+                // $cat -> execute();
+                // 設定每頁呈現內容
+                $catRow = $cat->fetchAll(PDO::FETCH_ASSOC);
+            }else{
+                $sql = "select count(1) from cat where `ADOPT_STATUS` = 0";    // 計算資料筆數
+                $total = $pdo->query($sql);
+                $rownum = $total->fetchcolumn();                            // 總共欄位數
+                $perPage = 9;                                               // 每頁顯示筆數
+                $totalpage = ceil($rownum / $perPage);                        // 計算總頁數
+                $pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
+                // 若無當前頁數則進入第一頁 若有則進入該頁
+                $start = ($pageNo - 1) * $perPage;                            // 計算起始頁數
+                $sql = "select * from cat where `ADOPT_STATUS` = 0 order by CAT_NO $desc limit $start, $perPage";
+                // 設定每頁呈現內容
+                $cat = $pdo->query($sql);
+			    $catRow = $cat->fetchAll(PDO::FETCH_ASSOC);
+            }
 
 
 			if ($rownum == 0) {
@@ -373,6 +438,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
     </div>
 </div>
 <?php
+    
 } catch (PDOException $e) {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";
