@@ -8,9 +8,9 @@
 try {
     require_once("../php/connectBD103G2.php");
 
-    $sql = "select * from halfway_member where HALF_NO =?";
+    $sql = "select * from halfway_member where HALF_NO =1";
     $HWmem = $pdo->prepare( $sql );
-    $HWmem->bindValue(1, $_SESSION["HALF_NO"]);//session
+    // $HWmem->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWmem->execute();
     
     if( $HWmem->rowCount()==0){
@@ -24,19 +24,13 @@ try {
             <tr>
                 <th>中途之家會員密碼</th>
                 <td>
-                    <input type="psw" name="hwmempsw" placeholder="<?php echo $HWmemRow->HALF_PSW;?>">
+                    <input type="password" name="hwmempsw" value="<?php echo $HWmemRow->HALF_PSW;?>">
                 </td>
             </tr>
             <tr>
                 <th>中途之家負責人姓名</th>
                 <td>
-                    <input type="text" name="hwmemhead" placeholder="<?php echo $HWmemRow->HALF_HEAD;?>">
-                </td>
-            </tr>
-            <tr>
-                <th>中途之家會員頭貼</th>
-                <td>
-                    <input type="file" name="hwmempic">
+                    <input type="text" name="hwmemhead" value="<?php echo $HWmemRow->HALF_HEAD;?>">
                 </td>
             </tr>
             <tr>

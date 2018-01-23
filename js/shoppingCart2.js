@@ -7,7 +7,7 @@ function doFirst(){
 	var items = itemString.substr(0,itemString.length-2).split(', ');
 
 	newSection = document.createElement('section');
-	newTable = document.createElement('table');
+	newTable = document.createElement('div');
 
 	//每購買一個品項，就呼叫函數createCartList新增一個tr
 	subtotal = 0;
@@ -15,8 +15,8 @@ function doFirst(){
 		var itemInfo = storage.getItem(items[key]);
 		createCartList(items[key],itemInfo);
 
-		var itemPrice = parseInt(itemInfo.split('|')[2]);
-		subtotal += itemPrice;
+		// var itemPrice = parseInt(itemInfo.split('|')[2]);
+		// subtotal += itemPrice;
 	}
 
 	document.getElementById('subtotal').innerText = subtotal;
@@ -30,16 +30,18 @@ function createCartList(itemKey,itemValue){
 	var itemTitle = itemValue.split('|')[0];
 	var itemImage = itemValue.split('|')[1];
 	var itemPrice = parseInt(itemValue.split('|')[2]);
+	var amount = parseInt(itemValue.split('|')[3]);
 
 	//建立每個品項的清單區域 -- tr
 	var trItemList = document.createElement('tr');
-	trItemList.className = 'item';
+	trItemList.className = 'itemHead';
 
 	newTable.appendChild(trItemList);
 
 	//商品圖片 -- 第一個td
 	var tdImage = document.createElement('td');
-	tdImage.style.width = '200px';
+	tdImage.style.width = '20%';
+	tdImage.valign = 'middle';
 
 	var image = document.createElement('img');
 	// console.log(itemImage);
@@ -51,8 +53,9 @@ function createCartList(itemKey,itemValue){
 
 	//商品名稱 -- 第二個td
 	var tdTitle = document.createElement('td');
-	tdTitle.style.width = '300px';
-	tdTitle.id = itemKey;
+	tdTitle.style.width = '35%';
+	tdTitle.className = itemKey;
+	tdTitle.valign = 'center';
 
 	var pTitle = document.createElement('p');
 	pTitle.innerText = itemTitle;
@@ -64,26 +67,30 @@ function createCartList(itemKey,itemValue){
 
 	//單價 -- 第三個td
 	var tdPrice = document.createElement('td');
-	tdPrice.style.width = '100px';
-	tdPrice.setAttribute('data-price',itemPrice);
+	tdPrice.style.width = '15%';
+	tdPrice.setAttribute('data-price', itemPrice);
 	tdPrice.innerText = itemPrice;
 
 	trItemList.appendChild(tdPrice);
 
 	//數量 -- 第四個td
 	var tdItemCount = document.createElement('td');
-	tdItemCount.style.width = '100px';
-	
+	tdItemCount.style.width = '15%';
+
 	var itemCount = document.createElement('input');
 	itemCount.type = 'number';
 	itemCount.min = 0;
-	itemCount.value = 1;
-	itemCount.id = 'count';
-	// itemCount.id.style.width = 10;
+	itemCount.value = amount;
+	itemCount.className = 'count';
+	// itemCount.id.style.width = '10';
 	itemCount.addEventListener('input', changeItemCount);
 
 	tdItemCount.appendChild(itemCount);
 	trItemList.appendChild(tdItemCount);
+
+	//total
+	itemPrice *= amount;
+	subtotal += itemPrice;
 
 }
 

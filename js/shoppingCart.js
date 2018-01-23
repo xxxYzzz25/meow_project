@@ -4,14 +4,6 @@
 function doFirst() {
 	
 	var storage = localStorage;
-	
-	// if(storage['addItemList']== null){
-	// 	storage['addItemList'] = '';
-	// }
-
-	
-	
-	// var amount = storage.getItem('item');
 
 
 
