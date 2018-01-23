@@ -630,6 +630,16 @@ header ul li:nth-child(5):after {
   }
 }
 
+@media all and (max-width: 767px) {
+  header {
+    width: 90%;
+    height: 75vh;
+  }
+  header .logo img {
+    width: 70%;
+  }
+}
+
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100vw;

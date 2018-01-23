@@ -1644,6 +1644,16 @@ footer {
   }
 }
 
+@media all and (max-width: 767px) {
+  header {
+    width: 90%;
+    height: 75vh;
+  }
+  header .logo img {
+    width: 70%;
+  }
+}
+
 @media all and (max-width: 991px) {
   .margin-200 {
     margin-left: 0;
