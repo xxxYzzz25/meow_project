@@ -96,7 +96,7 @@
                             <form action="../php/backHalfAudit.php" method="get" class="halfForm">
                                 <tr>
                                     <td>
-                                        <input type="hidden" name="halfNo" value="<?echo $halfRow['HALF_NO']; ?>">
+                                        <input type="hidden" name="halfNo" value="<?php echo $halfRow['HALF_NO']; ?>">
                                         <input type="text" name="halfId" readonly="readonly" value="<?php echo $halfRow['HALF_ID']; ?>">
                                     </td>
                                     <td>

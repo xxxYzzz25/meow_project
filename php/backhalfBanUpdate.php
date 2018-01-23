@@ -19,7 +19,7 @@
     	    echo "異動失敗";
 		}
 	?>
-	<?	// 跳轉到：
+	<?php	// 跳轉到：
 		header('location:../html/backMemManage.php');
 	?>
 </body>

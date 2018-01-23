@@ -196,7 +196,7 @@ $catRow = $cats->fetchObject();
         <div class="breadcrumbs">
             <a href="../index.php" class="defaultBtn" title="前往首頁">尋喵啟事</a> >
             <a href="catSearch.php" class="defaultBtn" title="前往尋喵">尋喵</a> >
-            <a href="catContent.html" class="defaultBtn" title="瀏覽喵航航"><?php echo $catRow->CAT_NAME; ?></a>
+            <a href="catContent.php?catNo=<?php echo $catRow->CAT_NO?>" class="defaultBtn" title="瀏覽<?php echo $catRow->CAT_NAME?>"><?php echo $catRow->CAT_NAME; ?></a>
         </div>
         <picture class="catItem">
             <div class="img">
@@ -260,7 +260,7 @@ $catRow = $cats->fetchObject();
 				}
 				?>
                 <div class="btn">
-                    <?
+                    <?php
                     if(( $_SESSION['MEM_NO']) !== null ){
                         echo "<button class='defaultBtn' data-val=";
                         echo $catRow->CAT_NO.' ';
