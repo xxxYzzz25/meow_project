@@ -448,6 +448,13 @@
                         padding: 15px 0;
                         font-size: $font-size-h4;
                     }
+                    .statement{
+                        width: 100%;
+                        overflow:hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        text-align: center;
+                    }
                 }
             }
             .backed{

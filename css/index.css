@@ -741,6 +741,12 @@ header.active {
           .shop ul.prod-list li.prod-item .front .prod-text h4 {
             padding: 15px 0;
             font-size: 18px; }
+          .shop ul.prod-list li.prod-item .front .prod-text .statement {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: center; }
       .shop ul.prod-list li.prod-item .backed {
         width: 95%;
         height: 95%;

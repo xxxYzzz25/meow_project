@@ -470,7 +470,7 @@
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵肚子餓</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">罐頭、乾糧、貓奶粉</div>
                                         </div>
                                     </div>
                                     <div class="backed hungry"></div>
@@ -482,7 +482,7 @@
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵待在家</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓咪日常用品、貓抓板、跳台</div>
                                         </div>
                                     </div>
                                     <div class="backed home"></div>
@@ -494,7 +494,7 @@
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>精選喵草</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓草、貓草膏、貓草相關製品</div>
                                         </div>
                                     </div>
                                     <div class="backed grass"></div>
@@ -506,7 +506,7 @@
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵愛玩耍</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓咪玩具、逗貓棒、雷射筆</div>
                                         </div>
                                     </div>
                                     <div class="backed play"></div>
