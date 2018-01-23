@@ -15,8 +15,9 @@
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://maps.google.com/maps/api/js?key=AIzaSyDKPVIamuQGV_Yi0y8zXQl5bUGs7bfxW04"></script>
     <script src="../js/signIn.js"></script>
+    <script src="../js/cat/like.js"></script>
 	<script src="../js/halfway/showlarge.js"></script>
-	<script src="../js/halfway/star.js"></script>
+	<!-- <script src="../js/halfway/star.js"></script> -->
 	<link rel="stylesheet" href="../css/halfway_house_detail.css">
 	<title>中途之家</title>
 </head>
