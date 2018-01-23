@@ -1,3 +1,4 @@
+@include navNow(4);
 //clearfix
 @mixin clearfix {
   &:after,
@@ -57,7 +58,7 @@ h1 {
 
 .row {
   display: table;
-  margin-top: 40px;
+  margin: 10px 0 80px 0;
 }
 
 .col {
@@ -85,7 +86,6 @@ h1 {
 
 .post-list {
   background-color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 2px;
   padding: 5%;
   width: 39%;
   border: 2px solid #ccc;
@@ -93,11 +93,11 @@ h1 {
     margin-top: 6%;
     text-align: left;
     a {
-      color: #000;
+      color: #EAAF88;
+      text-decoration: none;
     }
     a:hover {
-      cursor: pointer;
-      color: #EAAF88;
+      color: rgb(136, 195, 234);
       transition: .3s;
     }
     &:last-child {
@@ -110,10 +110,12 @@ h1 {
 .cat-img {
   width: 59%;
   background-color: #fff;
+  padding-right: 20px;
 }
 
 .post-header {
   text-align: left;
+  font-size: $font-size-h2;
   &::after {
     content: "";
     display: block;
@@ -122,21 +124,6 @@ h1 {
     border-bottom: 2px solid #ccc;
   }
 }
-
-.button {
-  border: #000 2px solid;
-  border-radius: 24px;
-  padding: 4px 30px;
-  background-color: transparent;
-  cursor: pointer;
-  &:hover {
-    color: #fff;
-    border: 2px solid #ccc;
-    background-color: #EAAF88;
-    transition: .3s;
-  }
-}
-
 @media screen and (min-width: 992px) {
   .m-box {
     margin-left: 200px;
@@ -162,10 +149,10 @@ h1 {
         position: relative;
       }
       .cat-img {
-        right: -40%
+        right: -41%
       }
       .post-list {
-        right: 60%;
+        right: 59%;
       }
     }
   }

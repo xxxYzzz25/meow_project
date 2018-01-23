@@ -151,7 +151,7 @@ body {
 }
 
 header {
-  background-color: #c2eaeb;
+  background-color: rgba(90, 197, 188, 0.85);
   width: 205px;
   height: 100vh;
   position: fixed;

@@ -85,7 +85,8 @@ session_start();
                                 重量<input type="text" name="weight"><br>
                                 產地<input type="text" name="loc"><br>
                                 成分<input type="text" name="component"><br>
-                                尺寸<input type="text" name="size">
+                                尺寸<input type="text" name="size"><br>
+                                材質<input type="text" name="material">
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
@@ -95,9 +96,16 @@ session_start();
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
+                            <th>商品封面圖片(只能選擇一張)*</th>
+                            <td>
+                                <input type="file" name="upCover" required="required">
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr class="newEmpTR newEmpTROff">
                             <th>商品圖片(最多可選擇三張)*</th>
                             <td>
-                                <input type="file" name=" upFile[]" multiple="multiple" required="required">
+                                <input type="file" name="upFile[]" multiple="multiple" required="required">
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
@@ -115,8 +123,9 @@ session_start();
                         <th>商品編號</th>
                         <th>商品名稱</th>
                         <th>商品價錢</th>
+                        <th>商品分類</th>
                         <th>商品狀態</th>
-                        <th>商品明細</th>
+                        <th>商品詳情</th>
                     </tr>
 <?php
 try {
@@ -135,7 +144,28 @@ try {
                         <td><?php echo $productRow->PRODUCT_NO; ?></td>
                         <td><?php echo $productRow->PRODUCT_NAME; ?></td>
                         <td>$<?php echo $productRow->PRODUCT_PRICE; ?></td>
-                        <td><?php echo $productRow->PRODUCT_STATUS; ?></td>
+                        <td>
+                            <?php 
+                                if($productRow->PRODUCT_PART == 1){
+                                    echo "喵喵肚子餓";
+                                }elseif($productRow->PRODUCT_PART == 2){
+                                    echo "喵喵待在家";
+                                }elseif($productRow->PRODUCT_PART == 3){
+                                    echo "精選喵草";
+                                }else{
+                                    echo "喵喵愛玩耍";
+                                }
+                            ?>
+                        </td>
+                        <td>
+                            <?php 
+                                if($productRow->PRODUCT_STATUS == 0){
+                                    echo "商品上架中";
+                                }else{
+                                    echo "商品下架中";
+                                }
+                            ?>
+                        </td>
                         <td>
                             <button class="defaultBtn" onclick="add('../php/backProductDetail.php?PRODUCT_NO=<?php echo $productRow->PRODUCT_NO; ?>');">商品詳情</button>
                         </td>

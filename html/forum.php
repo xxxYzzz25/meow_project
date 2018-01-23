@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/forum.css">
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="../js/signIn.js"></script>
 </head>
 <body>
 <div class="signUpLightboxBlack" style="display:none;"></div>
@@ -186,7 +187,7 @@
 				  }
 				?>
 						<li>
-							<button class="button" id="b-1">more</button>
+							<button class="defaultBtn" id="b-1">more</button>
 						</li>
 					</ul>
 				</div>
@@ -221,7 +222,7 @@
 				  }
 				?>
 						<li>
-							<button class="button" id="b-2">more</button>
+							<button class="defaultBtn" id="b-2">more</button>
 						</li>
 					</ul>
 				</div>
@@ -256,7 +257,7 @@
 				  }
 				?>
 						<li>
-							<button class="button" id="b-3">more</button>
+							<button class="defaultBtn" id="b-3">more</button>
 						</li>
 					</ul>
 				</div>
