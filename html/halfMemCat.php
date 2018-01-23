@@ -123,9 +123,9 @@ session_start();
 try {
     require_once "../php/connectBD103G2.php";
 
-    $sql   = "select * from cat where HALF_NO =1";
+    $sql   = "select * from cat where HALF_NO =?";
     $HWcat = $pdo->prepare($sql);
-    // $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
+    $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWcat->execute();
 
     if ($HWcat->rowCount() == 0) {

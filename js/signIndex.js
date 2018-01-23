@@ -7,20 +7,20 @@ window.addEventListener('load', () => {
     let img = document.getElementById('bgImg')
     let path = location.pathname;
 
-    // path = path.split('/');
-    // path = path[path.length - 1];
-
-    if (path == '/index.php') {
+    path = path.split('/');
+    path = path[path.length - 1];
+    
+    if (path == 'index.php') {
         in2up.addEventListener('click', () => {
             signIn.style.display = 'none'
             signUp.style.display = 'block'
-            img.style.backgroundImage = "url('images/memberBG2.jpg')"
+            img.style.backgroundImage = "url(images/memberBG2.jpg)"
         })
 
         up2in.addEventListener('click', () => {
             signUp.style.display = 'none'
             signIn.style.display = 'block'
-            img.style.backgroundImage = "url('images/memberBG.jpg')"
+            img.style.backgroundImage = "url(images/memberBG.jpg)"
         })
 
         let mem1 = document.getElementById('member1')

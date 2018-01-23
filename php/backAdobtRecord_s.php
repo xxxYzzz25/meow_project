@@ -21,20 +21,16 @@
             if($order == '1'){
                 $sql = "select a.CAT_NO catNo,m.MEM_ID memId,a.ADOPT_DATE adoptDate 
                         from adoption a 
-                        join CAT c on a.CAT_NO = c.CAT_NO
                         join MEMBER m on a.MEM_NO = m.MEM_NO
-                        where c.ADOPT_STATUS = '2'
                         group by a.CAT_NO 
                         order by a.ADOPT_DATE desc 
                         limit $qty,20";
             }else if($order == '2'){
                 $sql = "select a.CAT_NO catNo,m.MEM_ID memId,a.ADOPT_DATE adoptDate 
                         from adoption a 
-                        join CAT c on a.CAT_NO = c.CAT_NO
                         join MEMBER m on a.MEM_NO = m.MEM_NO
-                        where c.ADOPT_STATUS = '2'
                         group by a.CAT_NO 
-                        order by a.ADOPT_DATE desc 
+                        order by a.ADOPT_DATE
                         limit $qty,20";
             }
             $data = $pdo -> query($sql);

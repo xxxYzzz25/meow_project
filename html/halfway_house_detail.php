@@ -112,7 +112,7 @@
     </div>
     <header>
         <div class="logo">
-            <a href="../index.html">
+            <a href="../index.php">
                 <h1>
                     <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -127,10 +127,10 @@
                     <a href="halfway_house_search.php">中途之家</a>
                 </li>
                 <li>
-                    <a href="Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="forum.html">討論區</a>
+                    <a href="forum.php">討論區</a>
                 </li>
                 <li>
                     <?php
@@ -147,21 +147,19 @@
         <div class="icons">
             <a href="#">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            </a>
-            <?php
-                if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-                    echo "<a href='../php/memberLogOut.php'>
-                        <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
-                        </a>";
-                }else{
-                    echo "<a href='#' class='login'>
-                        <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
-                        </a>";
-                }
+            </a><?php
+                    if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
+                        echo "<a href='../php/memberLogOut.php' id='loginBtn'>
+                            <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }else{
+                        echo "<a href='#' class='login' id='loginBtn'>
+                            <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }
             ?>
-            <a href="#">
+            <a href="#" id="likeBox">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-                <span id="like">6</span>
             </a>
         </div>
         <div class="hb">
