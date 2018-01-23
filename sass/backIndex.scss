@@ -1,0 +1,33 @@
+@import 'base/_var.scss';
+@import 'base/_reset.scss';
+@import 'base/_btn.scss';
+body {
+    background-image: url('../images/back/backIMG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loginBox {
+    width: 300px;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    margin-top: -200px;
+    left: 50%;
+    margin-left: -150px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0.9);
+    border-radius: 10px;
+    h1 {
+        margin-top: 20px;
+    }
+    input {
+        margin: 20px auto;
+        outline: none;
+    }
+    input[type=submit] {
+        margin-top: 6px;
+        padding: 2px 12px;
+        font-size: $font-size-small;
+    }
+}
