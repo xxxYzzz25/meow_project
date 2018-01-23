@@ -145,13 +145,13 @@
                     <a href="html/catSearch.php" title="前往尋喵">尋喵</a>
                 </li>
                 <li>
-                    <a href="html/halfway_house_search.html" title="前往中途之家">中途之家</a>
+                    <a href="html/halfway_house_search.php" title="前往中途之家">中途之家</a>
                 </li>
                 <li>
-                    <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="html/Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="html/forum.html" title="前往討論區">討論區</a>
+                    <a href="html/forum.php" title="前往討論區">討論區</a>
                 </li>
                 <li>
                     <?php
@@ -465,7 +465,7 @@
 
                         <ul class="prod-list" id="prod-list">
                             <li class="prod-item">
-                                <a href="#">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_food">
                                     <div class="front hungry">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
@@ -477,7 +477,7 @@
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_home">
                                     <div class="front home">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
@@ -489,7 +489,7 @@
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_grass">
                                     <div class="front grass">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
@@ -501,7 +501,7 @@
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_play">
                                     <div class="front play">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">

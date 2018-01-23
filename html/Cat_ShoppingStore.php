@@ -126,7 +126,7 @@
 					<div class="typeName wow zoomIn">喵喵肚子餓</div>
 					
 					<div class="typeBanner typeBanner1 wow zoomIn">
-						<a href="Cat_ShoppingStore_food.php">前往
+						<a href="../php/Cat_ShoppingStore_food.php">前往
 							<b>喵喵肚子餓</b> ｜ 30 項商品</a>
 					</div>
 
@@ -431,8 +431,7 @@
 
 		function getProducts(e){
 			var pdType = e.target.value;
-			console.log(pdType);
-			var url = "Cat_ShoppingStore_food.php?pdType=" + pdType;
+			var url = "../php/Cat_ShoppingStore_food.php?pdType=" + pdType;
 			
 			var xhr = new XMLHttpRequest();
 			xhr.open("Get",url, true);
@@ -451,8 +450,16 @@
 
 
 		</script>  
-
-
+<?php 
+	if($_REQUEST["pd_class"]){
+		$pd_class = $_REQUEST["pd_class"];
+		echo "<script>
+				$(document).ready(function(){
+					document.getElementById('$pd_class').click();
+				});
+			</script>";
+	}
+?>
 
 </body>
 
