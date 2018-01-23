@@ -111,7 +111,7 @@
     </div>
     <header>
         <div class="logo">
-            <a href="../index.html">
+            <a href="../index.php">
                 <h1>
                     <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -120,16 +120,16 @@
         <nav>
             <ul>
                 <li>
-                    <a href="catSearch.html">尋喵</a>
+                    <a href="catSearch.php">尋喵</a>
                 </li>
                 <li>
                     <a href="halfway_house_search.php">中途之家</a>
                 </li>
                 <li>
-                    <a href="Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="forum.html">討論區</a>
+                    <a href="forum.php">討論區</a>
                 </li>
                 <li>
                     <?php
