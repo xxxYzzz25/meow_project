@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="plugin/jquery.fullPage.css">
     <link rel="stylesheet" href="css/number.css">
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="plugin/jquery.fullPage.js"></script>
     <script src="js/loading&Card.js"></script>
     <script src="js/pointGame.js"></script>
     <script src="js/noticeGame.js"></script>
-    <script src="js/signIn.js"></script>
+
 </head>
 <body>
     <?php
@@ -37,7 +38,7 @@
             $dataObj = $data -> fetchObject();
             echo "<script>var waitQty='".$dataObj->COUNT."';</script>";
             //取出登記日期最早的六筆資料
-            $sql = "select C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName,C.CAT_COVER catPic from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by CAT_DATE limit 6";
+            $sql = "select C.CAT_NO catNo,C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName,C.CAT_COVER catPic from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by CAT_DATE limit 6";
             $data = $pdo -> query($sql);
     ?>
     <div id="loading">
@@ -145,24 +146,28 @@
                     <a href="html/catSearch.php" title="前往尋喵">尋喵</a>
                 </li>
                 <li>
-                    <a href="html/halfway_house_search.html" title="前往中途之家">中途之家</a>
+                    <a href="html/halfway_house_search.php" title="前往中途之家">中途之家</a>
                 </li>
                 <li>
-                    <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="html/Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="html/forum.html" title="前往討論區">討論區</a>
+                    <a href="html/forum.php" title="前往討論區">討論區</a>
                 </li>
                 <li>
-                    <?php
-                        if($_SESSION['HALF_NO'] == null){
-                            echo "<a href='member.html'>會員專區</a>";
+                <?php
+                    if(!isset($_SESSION['MEM_NO']) && !isset($_SESSION['HALF_NO'])){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if(!isset($_SESSION['HALF_NO'])){
+                            echo "<a href='./html/member.html'>會員專區</a>";
                         }
                         else{
-                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                            echo "<a href='./html/halfMem.html'>中途會員專區</a>";
                         }
-                    ?>
-                </li>
+                    }
+                ?>
+            </li>
             </ul>
         </nav>
         <div class="icons">
@@ -310,7 +315,7 @@
                         ?>
                         <li>
                             <div class="cat_list_bg">
-                                <a href="html/catContent.html">
+                                <a href="./html/catContent.php?catNo=<?php echo $dataObj -> catNo ?>">
                                     <div class="cat_list" style="background-image: url(<?php echo mb_substr( $dataObj -> catPic , 3 , mb_strlen($dataObj -> catPic)-1 ); ?>);">
                                         <div class="bubble">
                                             <span class="kit-name"><?php echo $dataObj -> catName ?></span>
@@ -465,51 +470,51 @@
 
                         <ul class="prod-list" id="prod-list">
                             <li class="prod-item">
-                                <a href="#">
-                                    <div class="front">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_food">
+                                    <div class="front hungry">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵肚子餓</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">罐頭、乾糧、貓奶粉</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed hungry"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
-                                    <div class="front">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_home">
+                                    <div class="front home">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵待在家</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓咪日常用品、貓抓板、跳台</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed home"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
-                                    <div class="front">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_grass">
+                                    <div class="front grass">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>精選喵草</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓草、貓草膏、貓草相關製品</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed grass"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
-                                    <div class="front">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_play">
+                                    <div class="front play">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵愛玩耍</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓咪玩具、逗貓棒、雷射筆</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed play"></div>
                                 </a>
                             </li>
                         </ul>
@@ -541,6 +546,7 @@
 
         <script src="js/sliderKit.js"></script>
         <script src="js/sliderHalf.js"></script>
+        <script src="js/signIndex.js"></script>
         <script>
             function showLogin() {
                 $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });

@@ -45,6 +45,10 @@ table {
 }
 
 * {
+  outline: none;
+}
+
+* {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -151,7 +155,7 @@ body {
 }
 
 header {
-  background-color: rgba(112, 228, 230, 0.85);
+  background-color: rgba(90, 197, 188, 0.85);
   width: 205px;
   height: 100vh;
   position: fixed;

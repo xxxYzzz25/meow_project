@@ -16,20 +16,21 @@ try {
 	}
 	
 	$PRODUCT->execute();
-	$PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
 	$result = "";
-	foreach( $PRODUCT as $i=>$PRODUCT){
+	
+	while ($PRODUCTROW = $PRODUCT->fetchObject()) {
+	
 
-		$PRODUCT_NO = $PRODUCT['PRODUCT_NO'];
-		$PRODUCT_COVER = $PRODUCT['PRODUCT_COVER'];
-		$PRODUCT_NAME = $PRODUCT['PRODUCT_NAME'];
-		$PRODUCT_PRICE = $PRODUCT['PRODUCT_PRICE'];
-		$PRODUCT_NAME = explode(" ",$PRODUCT_NAME);
-		$PRODUCT_EN = $PRODUCT_NAME[0];
-		$PRODUCT_CH = $PRODUCT_NAME[1];
+		$PRODUCT_NO = $PRODUCTROW -> PRODUCT_NO;
+		$PRODUCT_COVER = $PRODUCTROW -> PRODUCT_COVER;
+		$PRODUCT_NAME = $PRODUCTROW -> PRODUCT_NAME;
+		$PRODUCT_PRICE = $PRODUCTROW -> PRODUCT_PRICE;
+		$PRODUCT_NEWNAME = explode(" ",$PRODUCT_NAME);
+		$PRODUCT_EN = $PRODUCT_NEWNAME[0];
+		$PRODUCT_CH = $PRODUCT_NEWNAME[1];
 
 	$result.="<div class='product product2'>
-		<a href='Cat_ShoppingStore_product.php?PRODUCT_NO=$PRODUCT_NO'>
+		<a href='../php/Cat_ShoppingStore_product.php?PRODUCT_NO=$PRODUCT_NO'>
 			<div class='pic  wow zoomIn'>
 				<img src='$PRODUCT_COVER' alt='$PRODUCT_NAME'>
 			</div>

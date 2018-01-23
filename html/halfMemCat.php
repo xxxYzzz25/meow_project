@@ -1,12 +1,13 @@
 <?php
 ob_start();
 session_start();
-?>
+?> 
 
 <div class="halfMemCat" id="halfMemCat">
 <!-- 新增喵開始 -->
     <button id="newEmp" class="newbtn defaultBtn">新增喵小孩</button>
-    <form action="../php/halfMemCatInsertToDb.php" method="post">
+    <form action="../php/halfMemCatInsertToDb.php" method="post" enctype="multipart/form-data">
+    
         <input type="hidden" name="no" value="<?php echo $_SESSION["HALF_NO"]; ?>">
         <h4 class="newEmpTR newEmpTROff">新增一隻喵小孩 (*為必填項目)</h4>
         <table>
@@ -42,7 +43,7 @@ session_start();
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
-                <th>喵小孩地區</th>
+                <th>喵小孩地區*</th>
                 <td>
                     <select name="location" required="required">
                     <option></option>
@@ -103,12 +104,12 @@ session_start();
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩大頭貼*</th>
                 <td>
-                    <input type="file" name="catpic" required="required">
+                    <input type="file" name="upCover" required>
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
                 <td colspan="2">
-                    <button type="submit" id="ensureBtn" class="defaultBtn">確定修改</button>
+                    <button type="submit" id="ensureBtn" class="defaultBtn">確定新增</button>
                     <button type="reset" class="defaultBtn">清除內容</button>
                 </td>
             </tr>
@@ -122,9 +123,9 @@ session_start();
 try {
     require_once "../php/connectBD103G2.php";
 
-    $sql   = "select * from cat where HALF_NO =1";
+    $sql   = "select * from cat where HALF_NO =?";
     $HWcat = $pdo->prepare($sql);
-    // $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
+    $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
     $HWcat->execute();
 
     if ($HWcat->rowCount() == 0) {

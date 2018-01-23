@@ -15,8 +15,9 @@
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://maps.google.com/maps/api/js?key=AIzaSyDKPVIamuQGV_Yi0y8zXQl5bUGs7bfxW04"></script>
     <script src="../js/signIn.js"></script>
+    <script src="../js/cat/like.js"></script>
 	<script src="../js/halfway/showlarge.js"></script>
-	<script src="../js/halfway/star.js"></script>
+	<!-- <script src="../js/halfway/star.js"></script> -->
 	<link rel="stylesheet" href="../css/halfway_house_detail.css">
 	<title>中途之家</title>
 </head>
@@ -111,7 +112,7 @@
     </div>
     <header>
         <div class="logo">
-            <a href="../index.html">
+            <a href="../index.php">
                 <h1>
                     <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -120,16 +121,16 @@
         <nav>
             <ul>
                 <li>
-                    <a href="catSearch.html">尋喵</a>
+                    <a href="catSearch.php">尋喵</a>
                 </li>
                 <li>
                     <a href="halfway_house_search.php">中途之家</a>
                 </li>
                 <li>
-                    <a href="Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="forum.html">討論區</a>
+                    <a href="forum.php">討論區</a>
                 </li>
                 <li>
                     <?php
@@ -146,21 +147,19 @@
         <div class="icons">
             <a href="#">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            </a>
-            <?php
-                if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-                    echo "<a href='../php/memberLogOut.php'>
-                        <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
-                        </a>";
-                }else{
-                    echo "<a href='#' class='login'>
-                        <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
-                        </a>";
-                }
+            </a><?php
+                    if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
+                        echo "<a href='../php/memberLogOut.php' id='loginBtn'>
+                            <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }else{
+                        echo "<a href='#' class='login' id='loginBtn'>
+                            <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }
             ?>
-            <a href="#">
+            <a href="#" id="likeBox">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-                <span id="like">6</span>
             </a>
         </div>
         <div class="hb">
@@ -370,17 +369,18 @@ try {
 try {
 	require_once "../php/connectBD103G2.php";
 	
-	$sql = "select count(1) from cat where HALF_NO=$halfno";    // 計算資料筆數
+	$sql = "select count(1) from cat where HALF_NO=$halfno and ADOPT_STATUS = 0";    // 計算資料筆數
 	$total = $pdo->query($sql);
 	$rownum = $total->fetchcolumn();                            // 總共欄位數
-	$perPage = 3;                                               // 每頁顯示筆數
+	$perPage = 6;                                               // 每頁顯示筆數
 	$totalpage = ceil($rownum / $perPage);                      // 計算總頁數
 	$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
 	// 若無當前頁數則進入第一頁 若有則進入該頁
 	$start = ($pageNo - 1) * $perPage;   
 	// 設定每頁呈現內容
-    $sql     = "select * from cat where HALF_NO=$halfno limit $start, $perPage";
+    $sql = "select * from cat where HALF_NO=$halfno and ADOPT_STATUS = 0 limit $start, $perPage";
     $halfway = $pdo->prepare($sql);
+    $halfway->bindColumn("CAT_NO", $CNO);
     $halfway->bindColumn("CAT_NAME", $CNAME);
     $halfway->bindColumn("CAT_COVER", $COVER);
     $halfway->bindColumn("CAT_DATE", $DATE);
@@ -393,7 +393,7 @@ try {
     	while ($row = $halfway->fetchObject()) {
 ?>
 			<div class="catitem">
-				<i class="fa fa-heart-o favorite" aria-hidden="true"></i>
+				
 				<div class="catpic">
 					<img src="<?php echo $COVER ?>" alt="cat">
 				</div>

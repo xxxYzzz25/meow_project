@@ -112,7 +112,7 @@ try {
                             echo "訂單已完成";
                         }
                     ?></td>
-                    <td><button class="defaultBtn" onclick="add('../php/memOrderlistDetail.php?ORDER_NO=<?php echo $orderlistRow->ORDER_NO; ?>');">訂單詳情</button></td>
+                    <td><button class="defaultBtn" onclick="add('../php/backOrderlistDetail.php?ORDER_NO=<?php echo $orderlistRow->ORDER_NO; ?>');">訂單詳情</button></td>
                 </tr>
 <?php
         }
@@ -139,6 +139,7 @@ try {
     function add(data) {
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
+            console.log(data);
             if (xhr.status == 200) {
                 //modify here
                 let odTable = document.getElementById('odTable');
@@ -147,8 +148,7 @@ try {
                 alert(xhr.status);
             }
         }
-        let url = data;
-        xhr.open("get", url, true);
+        xhr.open("get", data, true);
         xhr.send(null);
     }
 </script>

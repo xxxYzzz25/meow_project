@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/forum-p1.css">
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="../js/signIn.js"></script>
 </head>
 <body>
 	<div class="signUpLightboxBlack" style="display:none;"></div>
@@ -178,7 +179,7 @@
 			<div class="post-ft">
 				<form action="../php/forum-report.php" method="post">
 					<input type="hidden" name="ARTICLE_NO" value="<?php echo $ARTICLE_NO ?>">
-					<button type="submit" class="btn reportBtns">檢舉</button>
+					<button type="submit" class="defaultBtn reportBtns">檢舉</button>
 				</form>
 			</div>
 		</div>
@@ -207,7 +208,7 @@
 			<div class="post-ft">
 				<form action="../php/forum-report.php" method="post">
 					<input type="hidden" name="MESSAGE_NO" value="<?php echo $dataRow -> MESSAGE_NO ?>">
-					<button class="btn reportBtns">檢舉</button>
+					<button class="defaultBtn reportBtns">檢舉</button>
 				</form>
 			</div>
 		</div>
@@ -228,10 +229,10 @@
 				<textarea id="textArea" name="MESSAGE_CONTENT" placeholder="請輸入內容..." rows="7" cols="7" required></textarea>
 			</div>
 			<div class="btns">
-				<button type="reset" class="btn">
+				<button type="reset" class="defaultBtn">
 					清除內容
 				</button>
-				<button type="submit" class="btn">
+				<button type="submit" class="defaultBtn">
 					回覆文章
 				</button>
 			</div>
@@ -252,7 +253,7 @@
 				}
 				else{
 					$('.signUpLightboxBlack').css({
-				 		'display': 'block', 'top': '0' 
+						'display': 'block', 'top': '0' 
 					}); 
 					$('#loginBox').css('display', 'block'); 
 				}
