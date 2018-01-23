@@ -166,7 +166,6 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
         ?>
         <a href="#">
             <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-            <span id="like">6</span>
         </a>
     </div>
     <div class="hb">
@@ -358,16 +357,17 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
                 $sql = "select * from cat where `ADOPT_STATUS` = 0 order by CAT_NO $desc limit $start, $perPage";
                 // 設定每頁呈現內容
                 $cat = $pdo->query($sql);
-			    $catRow = $cat->fetchAll(PDO::FETCH_ASSOC);
+                $catRow = $cat->fetchAll(PDO::FETCH_ASSOC);
+                
             }
 
 
 			if ($rownum == 0) {
-				echo "這裡已經沒有需要認養的喵喵了~~";
+                echo "這裡已經沒有需要認養的喵喵了~~";
 			}else{
-			try {
-			foreach ($catRow as $i => $cat_Row) {
-				?>
+			    try {
+			        foreach ($catRow as $i => $cat_Row) {
+			?>
                 <picture class="catItem">
 					<?php
 					if ($_SESSION['MEM_NO'] !== null) {
@@ -382,15 +382,13 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 							$heart = "fa fa-heart-o favorite";
 							$likeNot = "0";
 						}
-					}else{
-                        $heart = "fa fa-heart-o favorite";
+                    }
+                    else{
+                        $heart = "fa fa-heart-o favorite login";
                         $likeNot = "0";
                     }
 					?>
-                    <i class="<?php echo $heart ;?>" 
-                    aria-hidden="true" 
-                    data-boolean="<?php echo $likeNot ;?>" 
-                    data-val="<?php echo $cat_Row['CAT_NO'] ;?>"></i>
+                    <i class="<?php echo $heart ;?>" aria-hidden="true" data-boolean="<?php echo $likeNot ;?>" data-val="<?php echo $cat_Row['CAT_NO'] ;?>"></i>
                     <div class="catContent">
                         <a href="catContent.php?catNo=<?php
 						echo $cat_Row['CAT_NO'];?>" title="瀏覽<?php
@@ -403,7 +401,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
                         </a>
                         <button type="button" class="quickView" data-val="<?php
 						echo $cat_Row['CAT_NO'];?>">
-                            Quick View
+                            點擊看大圖
                         </button>
                     </div>
                     <figure>
@@ -425,7 +423,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
                     </figure>
                 </picture>
 				<?php
-			}
+            }
 			?>
             <div class="page">
 				<?php
@@ -444,7 +442,13 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 	echo "訊息: ", $e->getMessage(), "<br>";
 }
 }
+echo "</div>";
+echo "</div>";
+echo "</div>";
 ?>
+
+<script src="../js/cat/catSearchAjax.js"></script>
+<script src="../js/cat/advanceSearch_JQuery.js"></script>
 <footer>
     <div class="container">
         <div class="follow">
@@ -466,8 +470,6 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
         </div>
     </div>
 </footer>
-<script src="../js/cat/catSearchAjax.js"></script>
-<script src="../js/cat/advanceSearch_JQuery.js"></script>
 </body>
 
 </html>

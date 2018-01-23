@@ -2,24 +2,6 @@
 # Sequel Pro SQL dump
 # Version 45412
 #
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: 127.0.0.1 (MySQL 5.6.35)
-# Database: BD103G2
-# Generation Time: 2018-01-05 12:31:24 +0000
-# ************************************************************
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
 # Dump of table HALFWAY_MEMBER
 # ------------------------------------------------------------
 
@@ -67,9 +49,9 @@ CREATE TABLE `MEMBER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `MEMBER` (`MEM_NO`, `MEM_ID`, `MEM_PSW`, `MEM_NAME`, `MEM_BIRTHDAY`, `MEM_TEL`, `MEM_ADDRESS`, `MEM_SCORE`, `MEM_PIC`, `MEM_DISCOUNT`, `MEM_BAN`)
 VALUES
-	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', NULL, '../images/memberPic/default.jpg', 0, 0),
-	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', NULL, '../images/memberPic/default.jpg', 0, 0),
-	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', NULL, '../images/memberPic/default.jpg', 0, 0);
+	(1, 'sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', NULL, '../images/memberPic/default.jpg', 0, 0),
+	(2, 'handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', NULL, '../images/memberPic/default.jpg', 0, 0),
+	(3, 'silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', NULL, '../images/memberPic/default.jpg', 0, 0);
 
 
 # Dump of table PRODUCT
@@ -124,11 +106,11 @@ CREATE TABLE `EMP` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `EMP` (`EMP_NO`, `EMP_ID`, `EMP_PSW`, `EMP_POST`)
 VALUES
-	(1, '詹阿儒', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
-	(2, '陳阿瑄', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
+	(1, 'acqq', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
+	(2, 'kevin', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
 	(3, '林阿雄', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
-	(4, '黃阿彥', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
-	(5, '黃阿函', '96e79218965eb72c92a549dd5a330112', 'Super_Admin');
+	(4, 'xxxzz25', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
+	(5, 'cherry', '96e79218965eb72c92a549dd5a330112', 'Super_Admin');
 
 
 # Dump of table CAT
@@ -233,17 +215,17 @@ VALUES
 
 
 
-# Dump of table ARTICLE_PIC
-# ------------------------------------------------------------
+-- # Dump of table ARTICLE_PIC
+-- # ------------------------------------------------------------
 
-CREATE TABLE `ARTICLE_PIC` (
-  `ARTICLE_PIC_NO` int(10) NOT NULL AUTO_INCREMENT,
-  `ARTICLE_NO` int(10) NOT NULL,
-  `ARTICLE_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`ARTICLE_PIC_NO`),
-  KEY `ARTICLE_NO` (`ARTICLE_NO`),
-  CONSTRAINT `article_pic_ibfk_1` FOREIGN KEY (`ARTICLE_NO`) REFERENCES `ARTICLE` (`ARTICLE_NO`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `ARTICLE_PIC` (
+--   `ARTICLE_PIC_NO` int(10) NOT NULL AUTO_INCREMENT,
+--   `ARTICLE_NO` int(10) NOT NULL,
+--   `ARTICLE_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
+--   PRIMARY KEY (`ARTICLE_PIC_NO`),
+--   KEY `ARTICLE_NO` (`ARTICLE_NO`),
+--   CONSTRAINT `article_pic_ibfk_1` FOREIGN KEY (`ARTICLE_NO`) REFERENCES `ARTICLE` (`ARTICLE_NO`) ON DELETE CASCADE ON UPDATE CASCADE
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -252,6 +234,7 @@ CREATE TABLE `ARTICLE_PIC` (
 
 CREATE TABLE `ARTICLE_REPORT` (
   `ARTICLE_REPORT_NO` int(10) NOT NULL AUTO_INCREMENT,
+  `ARTICLE_NO` int(10) NOT NULL,
   `MEM_NO` int(5) DEFAULT NULL,
   `HALF_NO` int(5) DEFAULT NULL,
   `AUDIT_STATUS` tinyint(1) NOT NULL,
@@ -260,23 +243,25 @@ CREATE TABLE `ARTICLE_REPORT` (
   PRIMARY KEY (`ARTICLE_REPORT_NO`),
   KEY `MEM_NO` (`MEM_NO`),
   KEY `HALF_NO` (`HALF_NO`),
+  KEY `ARTICLE_NO` (`ARTICLE_NO`),
   CONSTRAINT `article_report_ibfk_1` FOREIGN KEY (`MEM_NO`) REFERENCES `MEMBER` (`MEM_NO`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `article_report_ibfk_2` FOREIGN KEY (`HALF_NO`) REFERENCES `HALFWAY_MEMBER` (`HALF_NO`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `article_report_ibfk_2` FOREIGN KEY (`HALF_NO`) REFERENCES `HALFWAY_MEMBER` (`HALF_NO`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `article_report_ibfk_3` FOREIGN KEY (`ARTICLE_NO`) REFERENCES `ARTICLE` (`ARTICLE_NO`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 
 
-# Dump of table CAT_PIC
-# ------------------------------------------------------------
+-- # Dump of table CAT_PIC
+-- # ------------------------------------------------------------
 
-CREATE TABLE `CAT_PIC` (
-  `CAT_PIC_NO` int(8) NOT NULL AUTO_INCREMENT,
-  `CAT_NO` int(6) NOT NULL,
-  `CAT_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`CAT_PIC_NO`),
-  KEY `CAT_NO` (`CAT_NO`),
-  CONSTRAINT `cat_pic_ibfk_1` FOREIGN KEY (`CAT_NO`) REFERENCES `CAT` (`CAT_NO`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `CAT_PIC` (
+--   `CAT_PIC_NO` int(8) NOT NULL AUTO_INCREMENT,
+--   `CAT_NO` int(6) NOT NULL,
+--   `CAT_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
+--   PRIMARY KEY (`CAT_PIC_NO`),
+--   KEY `CAT_NO` (`CAT_NO`),
+--   CONSTRAINT `cat_pic_ibfk_1` FOREIGN KEY (`CAT_NO`) REFERENCES `CAT` (`CAT_NO`) ON DELETE CASCADE ON UPDATE CASCADE
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -286,7 +271,7 @@ CREATE TABLE `CAT_PIC` (
 CREATE TABLE `DONATE` (
   `DONATE_NO` int(10) NOT NULL AUTO_INCREMENT,
   `CAT_NO` int(6) NOT NULL,
-  `DONATE_NAME` varchar(5) NOT NULL DEFAULT '',
+  `DONATE_NAME` varchar(10) NOT NULL DEFAULT '',
   `DONATE_PRICE` int(5) NOT NULL,
   `DONATE_DATE` date NOT NULL,
   PRIMARY KEY (`DONATE_NO`),
@@ -295,8 +280,8 @@ CREATE TABLE `DONATE` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `DONATE` (`DONATE_NO`, `CAT_NO`, `DONATE_NAME`, `DONATE_PRICE`, `DONATE_DATE`)
 VALUES
-	(1, 1, '硯硯', 10000, '2018-01-02'),
-	(2, 5, '宇宇', 8700, '2017-12-17');
+	(1, 1, '硯硯', 1000 '2018-01-02'),
+	(2, 5, '宇宇', 870, '2017-12-17');
 
 
 
@@ -449,7 +434,7 @@ CREATE TABLE `EVALUATION` (
   `EVALUATION_NO` int(10) NOT NULL AUTO_INCREMENT,
   `MEM_NO` int(5) NOT NULL,
   `HALF_NO` int(5) NOT NULL,
-  `EVALUATION_STARS` int(1) NOT NULL COMMENT '1~5',
+  `EVALUATION_STARS` float NOT NULL COMMENT '1~5',
   PRIMARY KEY (`EVALUATION_NO`),
   KEY `MEM_NO` (`MEM_NO`,`HALF_NO`),
   KEY `HALF_NO` (`HALF_NO`),
@@ -467,12 +452,3 @@ VALUES
 	(7, 1, 3, 5),
 	(8, 2, 3, 5),
 	(9, 3, 3, 5);
-
-
-
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -9,12 +9,13 @@ window.addEventListener('load', () => {
 
     path = path.split('/');
     path = path[path.length - 1];
-    
-    if (path == 'index.php') {
+
+    if (path == 'index.php' || path == '') {
         in2up.addEventListener('click', () => {
             signIn.style.display = 'none'
             signUp.style.display = 'block'
             img.style.backgroundImage = "url(images/memberBG2.jpg)"
+            
         })
 
         up2in.addEventListener('click', () => {
@@ -22,7 +23,7 @@ window.addEventListener('load', () => {
             signIn.style.display = 'block'
             img.style.backgroundImage = "url(images/memberBG.jpg)"
         })
-
+        
         let mem1 = document.getElementById('member1')
         let halfMem1 = document.getElementById('halfMember1')
         let signInForm = document.getElementById('signInForm')

@@ -213,7 +213,7 @@ $catRow = $cats->fetchObject();
 						$likeNot = "0";
 					}
 				} else {
-					$heart = "fa fa-heart-o favorite";
+					$heart = "fa fa-heart-o favorite login";
 					$likeNot = "0";
 				}
 				?>
