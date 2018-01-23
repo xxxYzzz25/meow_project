@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/backIndex.css">
+    <title>管理員登入</title>
+</head>
+
+<body>
+    <div class="block">
+        <div class="loginBox">
+            <form action="../php/signInEmp.php" method="post">
+                <h1>管理者登入</h1>
+                <label for="empId">帳號</label>
+                <input type="text" name="empId" id="empId">
+                <br>
+                <label for="empPsw">密碼</label>
+                <input type="password" name="empPsw" id="empPsw">
+                <br>
+                <input type="submit" value="登入" class="defaultBtn">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
