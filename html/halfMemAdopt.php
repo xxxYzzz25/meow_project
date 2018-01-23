@@ -5,15 +5,6 @@
 <div class="halfMemAdopt">
     <h4>審核領養案件</h4>
     <form action="../php/halfMemAdoptToDb.php">
-        <table>
-            <tr>
-                <th>喵小孩名字</th>
-                <th>領養者</th>
-                <th>領養案件時間</th>
-                <th>審核狀態</th>
-                <th>審核此筆紀錄</th>
-                <th>送出審核</th>
-            </tr>
 <?php
 try {
     require_once("../php/connectBD103G2.php");
@@ -33,6 +24,17 @@ try {
     if( $adopt->rowCount()==0){
         echo "<center>查無領養案件紀錄</center>";
     }else{
+?>
+        <table>
+            <tr>
+                <th>喵小孩名字</th>
+                <th>領養者</th>
+                <th>領養案件時間</th>
+                <th>審核狀態</th>
+                <th>審核此筆紀錄</th>
+                <th>送出審核</th>
+            </tr>
+<?php
         while ($adoptRow = $adopt->fetchObject()) {
 ?>
         <input type="hidden" name="no" value="<?php echo $adoptRow->CAT_NO;?>">

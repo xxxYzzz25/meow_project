@@ -136,10 +136,10 @@
                         echo "<a href='#' class='login'>會員專區</a>";
                     }else{
                         if($_SESSION['HALF_NO'] == null){
-                            echo "<a href='member.html'>會員專區</a>";
+                            echo "<a href='member.php'>會員專區</a>";
                         }
                         else{
-                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                            echo "<a href='halfMem.php'>中途會員專區</a>";
                         }
                     }
                     ?>

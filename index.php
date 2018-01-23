@@ -160,10 +160,10 @@
                         echo "<a href='#' class='login'>會員專區</a>";
                     }else{
                         if(!isset($_SESSION['HALF_NO'])){
-                            echo "<a href='./html/member.html'>會員專區</a>";
+                            echo "<a href='./html/member.php'>會員專區</a>";
                         }
                         else{
-                            echo "<a href='./html/halfMem.html'>中途會員專區</a>";
+                            echo "<a href='./html/halfMem.php'>中途會員專區</a>";
                         }
                     }
                 ?>

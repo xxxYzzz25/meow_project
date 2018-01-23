@@ -548,6 +548,10 @@ body {
   color: #EAAF88;
 }
 
+header {
+  text-align: left;
+}
+
 h1 {
   font-size: 28px;
   transition: .3s;
