@@ -66,7 +66,11 @@ table{
     width: 90%;
 }
 
-.radioButton{
+.mail input{
+    width: 3%;
+}
+
+.payWay input{
     width: 3%;
 }
 

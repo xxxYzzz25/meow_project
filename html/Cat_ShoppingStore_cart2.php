@@ -126,10 +126,16 @@
                 </tr>
                 <tr>
                     <th>配送方式</th>
-                    <td>
-                        <input calss="radioButton" type="radio" value="1">宅配
-                        <input calss="radioButton" type="radio" value="0">超商
-                        
+                    <td class="mail">
+                        <input type="radio" name="delivery" value="1">宅配
+                        <input type="radio" name="super" value="0">超商
+                    </td>
+                </tr>
+                <tr>
+                    <th>付款方式</th>
+                    <td class="payWay">
+                        <input type="radio" name="superPay" value="1">超商付款
+                        <input type="radio" name="cardPay" value="0">信用卡付款
                     </td>
                 </tr>
             </table>
