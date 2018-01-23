@@ -84,10 +84,9 @@
             <div id="cartList">
                 <table>
                     <tr class="itemHead">
-                        <td style="width:500px;">商品</td>
-                        <td style="width:100px;">單價</td>
-                        <td style="width:100px;">數量</td>
-                        <!-- <td style="width:150px;">總計</td> -->
+                        <td style="width:55%;">商品</td>
+                        <td style="width:15%;text-align:center;">價錢</td>
+                        <td style="width:15%;text-align:center;">數量</td>
                     </tr>
                 </table>
             </div>

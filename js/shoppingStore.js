@@ -8,26 +8,64 @@ function doFirst(){
 
 
 	//幫每個add cart建事件聆聽功能
-			var list = document.getElementsByClassName('addButton');
-			//console.log(list.length);
-			for(let i=0; i<list.length; i++){
-				//console.log(list[i].id);	
-				list[i].addEventListener('click', function(){
-					//console.log(this);
-					let teddyInfo = this.childNodes[1].value;
-					//console.log(this.id);
-					addItem(this.id,teddyInfo);
+	var list = document.getElementsByClassName('addButton');
+	//console.log(list.length);
+	for(let i=0; i<list.length; i++){
+		//console.log(list[i].id);	
+		list[i].addEventListener('click', function(){
+			//console.log(this);
+			let teddyInfo = this.childNodes[1].value;
+			//console.log(this.id);
+			addItem(this.id,teddyInfo);
 
-				});
+		});
 
-			}
+	}
+
+	
 	
 	if(storage['addItemList'] == null){
 		storage['addItemList'] = ''; //storage.setItem('addItemList','');
 	}
 
+	let searchName = '';
+    let searchBtn = document.getElementsByClassName('searchBtn')[0];
+    searchBtn.addEventListener('click', ajaxData);
+
+    //getData();
+
 	
 }
+
+
+function ajaxData(e) {
+
+	var searchName = document.getElementsByClassName('searchName')[0].value;
+    
+	if (searchName !== '') {
+		//getData('searchName=' + searchName);
+		var url = "Cat_ShoppingStore_food.php?searchValue=" + searchName;
+		
+		var xhr = new XMLHttpRequest();
+		
+		xhr.onload = function(){
+		
+			if( xhr.status == 200 ){
+				document.getElementById("pdContent").innerHTML = this.responseText;
+			}else{
+				alert(xhr.status);
+			}
+		
+		}
+		xhr.open("Get",url, true);
+		xhr.send( null );
+	} else if (searchName === '') {
+		alert("請輸入喵喵商品關鍵字！");
+	}
+	
+}
+
+    
 
 
 

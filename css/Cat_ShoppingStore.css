@@ -53,44 +53,48 @@ h2 {
 }
 
 .menuTitle {
-	text-decoration: none;
+	display: inline-block;
 	color: #333;
-	margin: 3% 0%;
+	margin: 3% 1%;
 	cursor: pointer;
-	padding: 5px 30px;
-	border-radius: 30px;
-	border: 1px solid transparent;
+	padding: 1% 2%;
+	border-radius: 100px;
+	font-size: 14px;
+	letter-spacing: 3px;
+	background-color: #fff;
+	text-decoration: none;
+	border: 3px solid #fff;
 }
 
-@media only screen and (max-width: 1170px) {
-	.menuTitle{
-		padding: 5px 15px;
-	}
+.menuTitle:hover {
+	color: #333;
+	background-color: #fff;
+	border: 3px solid #EAAF88;
 }
 
-/* 
-.menu a{
-	cursor: url(../img/cursor.png),auto;
-} */
-
-.menu a:hover {
+#pd_all{
 	color: #fff;
 	background-color: #EAAF88;
-	border: 1px solid #EAAF88;
-}
-
-.menuTitle {
-	display: inline-block;
+	border: 3px solid #EAAF88;
 }
 
 @media only screen and (max-width: 991px) {
 	.menuTitle {
-		display: block;
+		
 	}
-	form {
+	/* form {
 		display: none;
+	} */
+}
+
+@media only screen and (max-width: 767px) {
+	.menuTitle {
+		display: block;
+		width: 80%;
+		margin: 3% auto;
 	}
 }
+
 
 .menuNow {
 	color: #fff;
@@ -121,6 +125,19 @@ h2 {
 	border: 2px solid #333;
 	padding: 5px 30px;
 	border-radius: 30px;
+}
+
+.searchBtn{
+	border:2px solid #333;
+	padding: 7px 9px;
+	border-radius: 100px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.searchBtn:hover{
+	border:2px solid #EAAF88;
+	background-color: #EAAF88;
 }
 
 .allTitle {
@@ -236,6 +253,13 @@ h2 {
 	padding-bottom: 6%;
 }
 
+.product2{
+	width: 30%;
+	margin: 1.66666%;
+	margin-bottom: 4%;
+	padding-bottom: 8%;
+}
+
 .addButton{
     border-radius: 100px;
     cursor: pointer;
@@ -263,6 +287,9 @@ h2 {
 	.rwd img {
 		display: none;
 	}
+}
+
+@media only screen and (max-width: 767px) {
 	.product {
 		width: 50%;
 	}
@@ -291,27 +318,3 @@ h2 {
 .cost {
 	padding: 20%;
 }
-
-/* header ul li:nth-child(3) {
-	background-color: #fff;
-	box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
-}
-
-header ul li:nth-child(3) a {
-	color: #333;
-	font-family: notoSans_r;
-}
-
-header ul li:nth-child(3):after {
-	z-index: -1;
-	content: '';
-	display: block;
-	width: 34px;
-	height: 34px;
-	background-color: #fff;
-	position: absolute;
-	top: 7px;
-	right: -17px;
-	transform: rotate(45deg);
-	box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
-} */

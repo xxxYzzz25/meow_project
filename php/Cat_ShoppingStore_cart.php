@@ -112,14 +112,14 @@
             </div>
 
             <div class="confirm pay">
-                <a href="Cat_ShoppingStore_cart2.html">前往結帳</a>
+                <a href="Cat_ShoppingStore_cart2.php">前往結帳</a>
             </div>
 
             <div id="result"></div>
 
             <script>
             function print_value() {
-                <!-- 將 select 的值在印出 -->
+                // 將 select 的值在印出
                 document.getElementById("result").innerHTML = document.getElementById("hi").value;
             }
             </script>

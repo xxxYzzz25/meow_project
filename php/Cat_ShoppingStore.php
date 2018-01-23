@@ -82,7 +82,7 @@
 
 			<div class="menu">
 
-				<a href="Cat_ShoppingStore.php" class="menuTitle menuNow ">全部喵喵商品</a>
+				<button value="0" class="menuTitle" id="pd_all">全部商品</button>
 
 				<button value="1" class="menuTitle" id="pd_food">喵喵肚子餓</button>
 
@@ -108,15 +108,17 @@
 			</form>
 
 			<div class="search">
-				<input type="text" placeholder="尋 找 喵 喵 商 品">
-				<i class="fa fa-search" aria-hidden="true"></i>
+				<input type="text" class="searchName" placeholder="尋找喵喵商品">
+				<button class="searchBtn">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</button>
 			</div>
 
 			<br>
 			<br>
 
 
-		<div id="pdContent">
+		<div id = "pdContent">
 			<div class="allProduct">
 				
 				<div class="type1">
@@ -374,14 +376,62 @@
 
 	<script>
 
+	$(document).ready(function(){
+
+		$('#pd_food').click(function(){
+			$('#pd_food').css({"color":"#fff","background-color":"#EAAF88","border":"3px solid #EAAF88"});
+			$('#pd_home').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_grass').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_play').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_all').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('.banner').html('<img src="../img/shopping_foodBanner.jpg">');
+		});
+
+		$('#pd_home').click(function(){
+			$('#pd_food').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_home').css({"color":"#fff","background-color":"#EAAF88","border":"3px solid #EAAF88"});
+			$('#pd_grass').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_play').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_all').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('.banner').html('<img src="../img/shopping_homeBanner.jpg">');
+		});
+
+		$('#pd_grass').click(function(){
+			$('#pd_food').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_home').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_grass').css({"color":"#fff","background-color":"#EAAF88","border":"3px solid #EAAF88"});
+			$('#pd_play').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_all').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('.banner').html('<img src="../img/shopping_grassBanner.jpg">');		
+		});
+
+		$('#pd_play').click(function(){
+			$('#pd_food').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_home').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_grass').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('#pd_play').css({"color":"#fff","background-color":"#EAAF88","border":"3px solid #EAAF88"});
+			$('#pd_all').css({"color":"#333","background-color":"#fff","border":"3px solid #fff"});
+			$('.banner').html('<img src="../img/shopping_playBanner.jpg">');	
+		});
+
+		
+
+			
+	});		
+
 		var type = document.querySelectorAll(".menuTitle");  
 		
-		for( var i=1 ; i<type.length ; i++ ){
-			type[i].addEventListener("click" , getProducts , false)
+		for( var i=0 ; i<type.length ; i++ ){
+			type[i].addEventListener("click" , getProducts , false);
+			type[0].addEventListener("click" , function(){
+				location.reload();
+			})
+
 		}
 
 		function getProducts(e){
 			var pdType = e.target.value;
+			console.log(pdType);
 			var url = "Cat_ShoppingStore_food.php?pdType=" + pdType;
 			
 			var xhr = new XMLHttpRequest();
