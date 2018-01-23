@@ -466,50 +466,50 @@
                         <ul class="prod-list" id="prod-list">
                             <li class="prod-item">
                                 <a href="#">
-                                    <div class="front">
+                                    <div class="front hungry">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵肚子餓</h4>
                                             <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed hungry"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
                                 <a href="#">
-                                    <div class="front">
+                                    <div class="front home">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵待在家</h4>
                                             <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed home"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
                                 <a href="#">
-                                    <div class="front">
+                                    <div class="front grass">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>精選喵草</h4>
                                             <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed grass"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
                                 <a href="#">
-                                    <div class="front">
+                                    <div class="front play">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵愛玩耍</h4>
                                             <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed play"></div>
                                 </a>
                             </li>
                         </ul>

@@ -601,16 +601,29 @@ header ul li:nth-child(5):after {
 @media all and (max-width: 991px) {
   header {
     top: 0;
-    left: 0;
-    right: 0;
+    right: 5%;
     margin: auto;
-    width: 90%;
-    height: 80vh;
+    width: 30%;
+    height: 70vh;
     transform: translateY(-100%);
     border-radius: 0 0 0 30px;
   }
   header .logo {
     left: calc(50% - 90px);
+    top: 10px;
+  }
+  header ul {
+    width: 90%;
+    bottom: 120px;
+  }
+  header ul li a {
+    width: 100%;
+    text-align: center;
+  }
+  header .icons {
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .hb {
     display: block;
