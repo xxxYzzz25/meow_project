@@ -186,7 +186,7 @@
 				  }
 				?>
 						<li>
-							<button class="btn" id="b-1">more</button>
+							<button class="button" id="b-1">more</button>
 						</li>
 					</ul>
 				</div>
@@ -221,7 +221,7 @@
 				  }
 				?>
 						<li>
-							<button class="btn" id="b-2">more</button>
+							<button class="button" id="b-2">more</button>
 						</li>
 					</ul>
 				</div>
@@ -256,7 +256,7 @@
 				  }
 				?>
 						<li>
-							<button class="btn" id="b-3">more</button>
+							<button class="button" id="b-3">more</button>
 						</li>
 					</ul>
 				</div>
@@ -394,10 +394,10 @@
 					<textarea id="textArea" name="ARTICLE_CONTENT" placeholder="請輸入內容..." rows="7" cols="7" required></textarea>
 				</div>
 				<div class="btns">
-					<button type="reset" class="btn">
+					<button type="reset" class="defaultBtn">
 						清除內容
 					</button>
-					<button type="submit" class="btn">
+					<button type="submit" class="defaultBtn">
 						發表文章
 					</button>
 				</div>
@@ -406,6 +406,30 @@
 			</div>
 		</div>
 	</div>
+
+	<footer>
+        <div class="container">
+            <div class="follow">
+                <div class="btns">
+                    <span>follow us on</span>
+                    <a href="#" class="btn facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" class="btn youtube">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                    <a href="#" class="btn twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn google">
+                        <i class="fa fa-google"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+	</footer>
+	
+	
 	<script src="../js/forum.js"></script>
 	<!--  -->
 	<script type="text/javascript">
@@ -422,7 +446,7 @@
 					no.value = localStorage.getItem('halfNo');
 				}else{
 					$('.signUpLightboxBlack').css({
-				 		'display': 'block', 'top': '0' 
+						'display': 'block', 'top': '0' 
 					}); 
 					$('#loginBox').css('display', 'block'); 
 				}
@@ -430,8 +454,6 @@
 			let selector = document.getElementById('post-select');
 			selector.addEventListener('change',qq);
 		});
-
-
 	</script>
 
 </body>
