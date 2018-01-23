@@ -125,14 +125,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>配送時段</th>
-                    <td>
-                        <input type="radio" name="time" value="1"> 8 AM - 1 PM
-                        <input type="radio" name="time" value="1"> 4 PM - 6 PM
-                        <input type="radio" name="time" value="1"> 不指定
-                    </td>
-                </tr>
-                <tr>
                     <th>備註</th>
                     <td>
                         <input type="textbox">

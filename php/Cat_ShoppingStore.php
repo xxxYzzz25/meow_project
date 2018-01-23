@@ -425,7 +425,7 @@
 			type[i].addEventListener("click" , getProducts , false);
 			type[0].addEventListener("click" , function(){
 				location.reload();
-			})
+			});
 
 		}
 

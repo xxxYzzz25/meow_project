@@ -7,7 +7,7 @@ function doFirst(){
 	var items = itemString.substr(0,itemString.length-2).split(', ');
 
 	newSection = document.createElement('section');
-	newTable = document.createElement('table');
+	newTable = document.createElement('div');
 
 	//每購買一個品項，就呼叫函數createCartList新增一個tr
 	subtotal = 0;
@@ -15,8 +15,8 @@ function doFirst(){
 		var itemInfo = storage.getItem(items[key]);
 		createCartList(items[key],itemInfo);
 
-		var itemPrice = parseInt(itemInfo.split('|')[2]);
-		subtotal += itemPrice;
+		// var itemPrice = parseInt(itemInfo.split('|')[2]);
+		// subtotal += itemPrice;
 	}
 
 	document.getElementById('subtotal').innerText = subtotal;

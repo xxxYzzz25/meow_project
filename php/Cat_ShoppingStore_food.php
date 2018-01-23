@@ -9,7 +9,8 @@ try {
 		$PRODUCT = $pdo->prepare($sql);
 		$PRODUCT->bindValue(":TYPE",$pdType);
 	}else{
-		$sql = "select * from PRODUCT where PRODUCT_NAME like '%{$_REQUEST["searchName"]}%' ";
+		$text = $_REQUEST["searchValue"];
+		$sql = "select * from PRODUCT where PRODUCT_NAME like '%$text%' ";
 		$PRODUCT = $pdo->prepare($sql);
 
 	}
