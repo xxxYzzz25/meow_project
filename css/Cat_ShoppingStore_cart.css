@@ -66,6 +66,10 @@ table{
     width: 90%;
 }
 
+.radioButton{
+    width: 3%;
+}
+
 .itemHead{
    
     margin-top: 0;

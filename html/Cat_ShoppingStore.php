@@ -106,12 +106,12 @@
 				<img src="../img/shoppingBanner.jpg">
 			</div>
 
-			<form>
+			<!-- <form>
 				<select name="price" class="select">
 					<option value="priceDown">價格由高到低</option>
 					<option value="priceUp">價格由低到高</option>
 				</select>
-			</form>
+			</form> -->
 
 			<div class="search">
 				<input type="text" class="searchName" placeholder="尋找喵喵商品">

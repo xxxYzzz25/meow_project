@@ -19,6 +19,8 @@
     echo "
     <script>
         var storage = localStorage;
+        var itemString = storage.getItem('addItemList');
+        var items = itemString.substr(0,itemString.length-2).split(', ');
         var itemInfo = storage.getItem(items[key])
         console.log(itemInfo)
     </script>" ;
