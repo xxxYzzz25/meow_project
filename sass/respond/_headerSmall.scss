@@ -1,3 +1,11 @@
 @include respond-to(small) {
-    
+    header{
+        width: 90%;
+        height: 75vh;
+        .logo{
+            img{
+                width: 70%;
+            }
+        }
+    }
 }
