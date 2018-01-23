@@ -8,7 +8,7 @@
 try {
     require_once "connectBD103G2.php";
 
-    $sql = "select p.PRODUCT_NAME name,od.PRODUCT_PRICE price,od.COUNT count
+    $sql = "select p.PRODUCT_NAME name,p.PRODUCT_NO no,od.PRODUCT_PRICE price,od.COUNT count
             from orderlist o,orderlist_details od,product p
             where o.ORDER_NO = od.ORDER_NO
             and od.PRODUCT_NO = p.PRODUCT_NO
@@ -19,7 +19,7 @@ try {
     while($productRow = $product->fetchObject()){;
 ?>   
     <tr>
-        <td><a href="#"><?php echo $productRow->name ?></a></td>
+        <td><a href="../html/Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $productRow->no ?>"><?php echo $productRow->name ?></a></td>
         <td><?php echo $productRow->price ?></td>
         <td><?php echo $productRow->count ?></td>
     </tr>

@@ -756,6 +756,7 @@ body {
 }
 
 .right .container1 {
+  min-height: 80vh;
   width: 100%;
   position: relative;
   padding-top: 40px;

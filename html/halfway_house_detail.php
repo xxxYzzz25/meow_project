@@ -135,10 +135,10 @@
                 <li>
                     <?php
                         if($_SESSION['HALF_NO'] == null){
-                            echo "<a href='member.html'>會員專區</a>";
+                            echo "<a href='member.php'>會員專區</a>";
                         }
                         else{
-                            echo "<a href='halfMem.html'>中途會員專區</a>";
+                            echo "<a href='halfMem.php'>中途會員專區</a>";
                         }
                     ?>
                 </li>
@@ -395,7 +395,7 @@ try {
 			<div class="catitem">
 				
 				<div class="catpic">
-					<img src="<?php echo $COVER ?>" alt="cat">
+					<a href="../html/catContent.php?halfno=<?php echo $halfno ?>&catNo=<?php echo $CNO ?>"><img src="<?php echo $COVER ?>" alt="cat"></a>
 				</div>
 				<div class="text">
 					<h3>

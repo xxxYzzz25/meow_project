@@ -30,7 +30,7 @@ try {
 		$PRODUCT_CH = $PRODUCT_NEWNAME[1];
 
 	$result.="<div class='product product2'>
-		<a href='Cat_ShoppingStore_product.php?PRODUCT_NO=$PRODUCT_NO'>
+		<a href='../php/Cat_ShoppingStore_product.php?PRODUCT_NO=$PRODUCT_NO'>
 			<div class='pic  wow zoomIn'>
 				<img src='$PRODUCT_COVER' alt='$PRODUCT_NAME'>
 			</div>

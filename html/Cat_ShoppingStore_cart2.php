@@ -99,8 +99,8 @@
             <form class="payCard">
                 請選擇配送方式：
                 <select name="send" class="select">
-                    <option value="payHome">宅配</option>
-                    <option value="pay711">超商</option>
+                    <option value="1">宅配</option>
+                    <option value="0">超商</option>
                 </select>
             </form>
 
@@ -125,9 +125,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>備註</th>
-                    <td>
-                        <input type="textbox">
+                    <th>配送方式</th>
+                    <td class="mail">
+                        <input type="radio" name="delivery" value="1">宅配
+                        <input type="radio" name="super" value="0">超商
+                    </td>
+                </tr>
+                <tr>
+                    <th>付款方式</th>
+                    <td class="payWay">
+                        <input type="radio" name="superPay" value="1">超商付款
+                        <input type="radio" name="cardPay" value="0">信用卡付款
                     </td>
                 </tr>
             </table>
@@ -135,7 +143,7 @@
            
 
             <div class="confirm pay">
-                <a href="">確認購買</a>
+                <a href="../php/Cat_ShoppingStore_cart2todb.php">確認購買</a>
             </div>
 
         </div>

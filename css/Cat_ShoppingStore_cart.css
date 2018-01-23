@@ -66,6 +66,14 @@ table{
     width: 90%;
 }
 
+.mail input{
+    width: 3%;
+}
+
+.payWay input{
+    width: 3%;
+}
+
 .itemHead{
    
     margin-top: 0;
