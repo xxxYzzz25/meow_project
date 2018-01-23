@@ -125,9 +125,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>備註</th>
+                    <th>配送方式</th>
                     <td>
-                        <input type="textbox">
+                        <input calss="radioButton" type="radio" value="1">宅配
+                        <input calss="radioButton" type="radio" value="0">超商
+                        
                     </td>
                 </tr>
             </table>
@@ -135,7 +137,7 @@
            
 
             <div class="confirm pay">
-                <a href="">確認購買</a>
+                <a href="../php/Cat_ShoppingStore_cart2todb.php">確認購買</a>
             </div>
 
         </div>
