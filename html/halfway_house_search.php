@@ -149,21 +149,19 @@
         <div class="icons">
             <a href="#">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            </a>
-            <?php
-                if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-                    echo "<a href='../php/memberLogOut.php'>
-                        <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
-                        </a>";
-                }else{
-                    echo "<a href='#' class='login'>
-                        <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
-                        </a>";
-                }
+            </a><?php
+                    if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
+                        echo "<a href='../php/memberLogOut.php' id='loginBtn'>
+                            <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }else{
+                        echo "<a href='#' class='login' id='loginBtn'>
+                            <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }
             ?>
-            <a href="#">
+            <a href="#" id="likeBox">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-                <span id="like">6</span>
             </a>
         </div>
         <div class="hb">
