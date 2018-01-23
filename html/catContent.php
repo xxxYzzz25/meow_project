@@ -174,7 +174,6 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
         ?>
         <a href="#">
             <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-            <span id="like">6</span>
         </a>
     </div>
     <div class="hb">
