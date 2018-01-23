@@ -45,6 +45,10 @@ table {
   border-spacing: 0;
 }
 
+* {
+  outline: none;
+}
+
 input, select {
   font-family: 'Noto Sans TC';
   font-weight: bolder;
