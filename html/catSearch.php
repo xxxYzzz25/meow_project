@@ -382,15 +382,13 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 							$heart = "fa fa-heart-o favorite";
 							$likeNot = "0";
 						}
-					}else{
-                        $heart = "fa fa-heart-o favorite";
+                    }
+                    else{
+                        $heart = "fa fa-heart-o favorite login";
                         $likeNot = "0";
                     }
 					?>
-                    <i class="<?php echo $heart ;?>" 
-                    aria-hidden="true" 
-                    data-boolean="<?php echo $likeNot ;?>" 
-                    data-val="<?php echo $cat_Row['CAT_NO'] ;?>"></i>
+                    <i class="<?php echo $heart ;?>" aria-hidden="true" data-boolean="<?php echo $likeNot ;?>" data-val="<?php echo $cat_Row['CAT_NO'] ;?>"></i>
                     <div class="catContent">
                         <a href="catContent.php?catNo=<?php
 						echo $cat_Row['CAT_NO'];?>" title="瀏覽<?php
@@ -403,7 +401,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
                         </a>
                         <button type="button" class="quickView" data-val="<?php
 						echo $cat_Row['CAT_NO'];?>">
-                            Quick View
+                            點擊看大圖
                         </button>
                     </div>
                     <figure>
