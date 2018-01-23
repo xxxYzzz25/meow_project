@@ -5,14 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>檢舉審核</title>
     <link rel="stylesheet" href="../css/backReport.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <style>
+        header .logo{
+            top:30px;
+        }
+        .link{
+            cursor:pointer;
+            display: inline-block;
+            padding: 4px 10px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>檢舉審核</title>
 </head>
 
 <body>
     <header>
+        <div class="logo">
+            <h1>
+                <div class="svg-space">
+                    <div id="logo"></div>
+                </div>
+            </h1>
+        </div>
         <nav>
             <ul>
                 <li>
@@ -41,14 +59,19 @@
                 </li>
             </ul>
         </nav>
+        <div class="icons">
+            <a href='./guide.html' id='loginBtn'>
+                <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+            </a>
+        </div>
     </header>
     <div class="right">
         <div class="container container1">
             <div class="bigImg">
                 <img src="../images/back/catAdoptRecord.jpg" alt="">
             </div>
-            <a onclick="getData('../php/backReportArt.php');" class="link">文章</a>
-            <a onclick="getData('../php/backReportMes.php');" class="link">留言</a>
+            <a onclick="getData('../php/backReportArt.php');" class="link defaultBtn">文章</a>
+            <a onclick="getData('../php/backReportMes.php');" class="link defaultBtn">留言</a>
             <div class="adoptInfomation" id="adoptInfomation"></div>
         </div>
     </div>
@@ -97,4 +120,6 @@
         });
     }
 </script>
+<script src="../js/jquery.lazylinepainter-1.7.0.min.js"></script>
+<script src="../js/guideSvg.js"></script>
 </html>

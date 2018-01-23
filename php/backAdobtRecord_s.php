@@ -23,7 +23,7 @@
                         from adoption a 
                         join CAT c on a.CAT_NO = c.CAT_NO
                         join MEMBER m on a.MEM_NO = m.MEM_NO
-                        where c.ADOPT_STATUS = '1'
+                        where c.ADOPT_STATUS = '2'
                         group by a.CAT_NO 
                         order by a.ADOPT_DATE desc 
                         limit $qty,20";
@@ -32,7 +32,7 @@
                         from adoption a 
                         join CAT c on a.CAT_NO = c.CAT_NO
                         join MEMBER m on a.MEM_NO = m.MEM_NO
-                        where c.ADOPT_STATUS = '1'
+                        where c.ADOPT_STATUS = '2'
                         group by a.CAT_NO 
                         order by a.ADOPT_DATE desc 
                         limit $qty,20";

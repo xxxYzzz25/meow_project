@@ -940,7 +940,6 @@ header.active {
 .shop ul.prod-list li.prod-item .front {
   width: 95%;
   height: 95%;
-  background-image: url(../img/food1.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -959,7 +958,7 @@ header.active {
   width: 100%;
   height: 100%;
   background-color: #000;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .shop ul.prod-list li.prod-item .front .prod-text {
@@ -983,10 +982,17 @@ header.active {
   font-size: 18px;
 }
 
+.shop ul.prod-list li.prod-item .front .prod-text .statement {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
 .shop ul.prod-list li.prod-item .backed {
   width: 95%;
   height: 95%;
-  background-image: url(../img/food1.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -999,6 +1005,22 @@ header.active {
   backface-visibility: hidden;
   transform: rotateY(180deg);
   transition: .6s;
+}
+
+.shop ul.prod-list li.prod-item .hungry {
+  background-image: url(../img/index_shop1.jpg);
+}
+
+.shop ul.prod-list li.prod-item .home {
+  background-image: url(../img/index_shop2.jpg);
+}
+
+.shop ul.prod-list li.prod-item .grass {
+  background-image: url(../img/index_shop3.jpg);
+}
+
+.shop ul.prod-list li.prod-item .play {
+  background-image: url(../img/index_shop4.jpg);
 }
 
 footer {
@@ -1601,19 +1623,42 @@ footer {
 @media all and (max-width: 991px) {
   header {
     top: 0;
-    left: 0;
-    right: 0;
+    right: 5%;
     margin: auto;
-    width: 90%;
-    height: 80vh;
+    width: 30%;
+    height: 70vh;
     transform: translateY(-100%);
     border-radius: 0 0 0 30px;
   }
   header .logo {
     left: calc(50% - 90px);
+    top: 10px;
+  }
+  header ul {
+    width: 90%;
+    bottom: 120px;
+  }
+  header ul li a {
+    width: 100%;
+    text-align: center;
+  }
+  header .icons {
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .hb {
     display: block;
+  }
+}
+
+@media all and (max-width: 767px) {
+  header {
+    width: 90%;
+    height: 75vh;
+  }
+  header .logo img {
+    width: 70%;
   }
 }
 

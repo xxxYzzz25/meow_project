@@ -145,13 +145,13 @@
                     <a href="html/catSearch.php" title="前往尋喵">尋喵</a>
                 </li>
                 <li>
-                    <a href="html/halfway_house_search.html" title="前往中途之家">中途之家</a>
+                    <a href="html/halfway_house_search.php" title="前往中途之家">中途之家</a>
                 </li>
                 <li>
-                    <a href="html/Cat_ShoppingStore.html" title="前往商城">商城</a>
+                    <a href="html/Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="html/forum.html" title="前往討論區">討論區</a>
+                    <a href="html/forum.php" title="前往討論區">討論區</a>
                 </li>
                 <li>
                     <?php
@@ -210,33 +210,34 @@
                         <hr>
                         <h2>尋找您未來的喵喵</h2>
                         <div class="search">
-                            <select name="searchColor" id="searchColor">
-                                <option value="">毛色</option>
-                                <option value="">虎斑</option>
-                                <option value="">豹紋</option>
-                                <option value="">三花</option>
-                                <option value="">玳瑁</option>
-                                <option value="">純色</option>
-                            </select>
-                            <select name="searchGender" id="searchGender">
-                                <option value="">性別</option>
-                                <option value="">男孩</option>
-                                <option value="">女孩</option>
-                            </select>
-                            <select name="searchLoc" id="searchLoc">
-                                <option value="">地區</option>
-                                <option value="">北部</option>
-                                <option value="">中部</option>
-                                <option value="">南部</option>
-                                <option value="">東部</option>
-                                <option value="">離島</option>
-                            </select>
-                            <div class="go">
-                                <input type="text" placeholder="或輸入喵喵的名字">
-                                <a href="#">
-                                    <i class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
-                                </a>
-                            </div>
+                            <form action="./html/catSearch.php" id="searchBar" method="get">
+                            <input type="hidden" name="searchBar" value="true">
+                                <select name="catColor" id="searchColor">
+                                    <option value="">毛色</option>
+                                    <option value="黑白">黑白</option>
+                                    <option value="虎斑">虎斑</option>
+                                    <option value="橘白">橘白</option>
+                                    <option value="橘色">橘色</option>
+                                    <option value="黑色">黑色</option>
+                                </select>
+                                <select name="catSex" id="searchGender">
+                                    <option value="">性別</option>
+                                    <option value="0">男孩</option>
+                                    <option value="1">女孩</option>
+                                </select>
+                                <select name="catLocation" id="searchLoc">
+                                    <option value="">地區</option>
+                                    <option value="north">北部</option>
+                                    <option value="center">中部</option>
+                                    <option value="south">南部</option>
+                                    <option value="east">東部</option>
+                                    <option value="out">離島</option>
+                                </select>
+                                <div class="go">
+                                    <input type="text" name="catName" placeholder="或輸入喵喵的名字">
+                                        <i style="cursor:pointer;" id="searchBtn" class="fa fa-search fa-lg" title="跳轉至搜尋結果" aria-hidden="true"></i>
+                                </div>
+                            </form>
                         </div>
                         <div class="scroll-down">
                             領養前先於下頁完成小測驗看看自己適不適合領養!
@@ -464,51 +465,51 @@
 
                         <ul class="prod-list" id="prod-list">
                             <li class="prod-item">
-                                <a href="#">
-                                    <div class="front">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_food">
+                                    <div class="front hungry">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵肚子餓</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">罐頭、乾糧、貓奶粉</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed hungry"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
-                                    <div class="front">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_home">
+                                    <div class="front home">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵待在家</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓咪日常用品、貓抓板、跳台</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed home"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
-                                    <div class="front">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_grass">
+                                    <div class="front grass">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>精選喵草</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓草、貓草膏、貓草相關製品</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed grass"></div>
                                 </a>
                             </li>
                             <li class="prod-item">
-                                <a href="#">
-                                    <div class="front">
+                                <a href="./html/Cat_ShoppingStore.php?pd_class=pd_play">
+                                    <div class="front play">
                                         <div class="prod-content"></div>
                                         <div class="prod-text">
                                             <h4>喵喵愛玩耍</h4>
-                                            <div class="statement">Lorem ipsum dolor sit amet consectetur.</div>
+                                            <div class="statement">貓咪玩具、逗貓棒、雷射筆</div>
                                         </div>
                                     </div>
-                                    <div class="backed"></div>
+                                    <div class="backed play"></div>
                                 </a>
                             </li>
                         </ul>
@@ -545,6 +546,13 @@
                 $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });
                 $('#loginBox').css('display', 'block');
             }
+            window.addEventListener('load',()=>{
+                let searchBar = document.getElementById('searchBar');
+                let searchBtn = document.getElementById('searchBtn');
+                searchBtn.addEventListener('click',()=>{
+                    searchBar.submit();
+                })
+            });
         </script>
         
 </body>

@@ -6,10 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/backMemManage.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <style>
+        header .logo{
+            top:30px;
+        }
+    </style>
     <title>會員帳號管理</title>
 </head>
 <body>
 <header>
+    <div class="logo">
+        <h1>
+            <div class="svg-space">
+                <div id="logo"></div>
+            </div>
+        </h1>
+    </div>
     <nav>
         <ul>
             <li>
@@ -38,6 +51,11 @@
             </li>
         </ul>
     </nav>
+    <div class="icons">
+        <a href='./guide.html' id='loginBtn'>
+            <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+        </a>
+    </div>
 </header>
 <div class="right">
     <div class="container container1">
@@ -191,5 +209,7 @@
         })
     })
 </script>
+<script src="../js/jquery.lazylinepainter-1.7.0.min.js"></script>
+<script src="../js/guideSvg.js"></script>
 </body>
 </html>
