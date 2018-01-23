@@ -99,8 +99,8 @@
             <form class="payCard">
                 請選擇配送方式：
                 <select name="send" class="select">
-                    <option value="payHome">宅配</option>
-                    <option value="pay711">超商</option>
+                    <option value="1">宅配</option>
+                    <option value="0">超商</option>
                 </select>
             </form>
 
