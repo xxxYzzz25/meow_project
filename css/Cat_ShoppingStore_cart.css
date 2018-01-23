@@ -59,12 +59,13 @@ table{
 
 .info th{
     width: 30%;
-    padding: 3%;
+    padding: 2.5% 0 2.5% 2.5%;
 }
 
-.info td{
-    width: 45%;
+.info input{
+    width: 90%;
 }
+
 .itemHead{
    
     margin-top: 0;
