@@ -77,8 +77,6 @@ body {
   padding: 4px 30px;
   background-color: transparent;
   cursor: pointer;
-  -webkit-transition: .3s all;
-  -o-transition: .3s all;
   transition: .3s all;
   outline: none;
 }
@@ -100,35 +98,6 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 2;
-<<<<<<< HEAD
-  font-family: notoSans_r; }
-  .btn-more:hover {
-    color: #fff; }
-  .btn-more:before {
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    content: '';
-    position: absolute;
-    left: -100%;
-    background-color: transparent;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-    z-index: -1; }
-  .btn-more:hover:before {
-    left: 0;
-    background-color: #333; }
-  .btn-more:after {
-    margin-top: -7px;
-    width: 7px;
-    height: 13px;
-    background: url(../images/icon01.png) no-repeat right center;
-    position: absolute;
-    top: 50%;
-    right: 18px;
-    content: ""; }
-=======
   font-family: notoSans_r;
 }
 
@@ -163,7 +132,6 @@ body {
   right: 18px;
   content: "";
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 .breadcrumbs {
   margin-bottom: 40px;
@@ -225,82 +193,7 @@ header {
   height: 100vh;
   position: fixed;
   padding-left: 15px;
-  -webkit-box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
   box-shadow: 2px 0 10px rgba(153, 153, 153, 0.315);
-<<<<<<< HEAD
-  z-index: 999; }
-  header .logo {
-    position: relative;
-    top: 60px;
-    width: 180px;
-    text-align: center; }
-    header .logo a {
-      text-decoration: none;
-      color: #fff; }
-    header .logo img {
-      width: 80%; }
-  header ul {
-    position: absolute;
-    bottom: 180px; }
-    header ul li {
-      margin: 1px 0;
-      position: relative; }
-      header ul li:hover {
-        background-color: #fff;
-        -webkit-box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
-        box-shadow: -2px 3px 6px rgba(63, 62, 62, 0.397);
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s; }
-      header ul li:hover a {
-        color: #000;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s; }
-      header ul li a {
-        width: 185px;
-        display: block;
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 15px 20px; }
-  header .icons {
-    width: 180px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 15px;
-    padding-right: 20px;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 40px; }
-    header .icons #like {
-      font-size: 12px;
-      text-align: center;
-      line-height: 20px;
-      display: block;
-      width: 15px;
-      height: 15px;
-      position: relative;
-      color: #d33;
-      top: -17px;
-      right: -25px;
-      font-family: 'Noto Sans TC';
-      font-weight: 700; }
-    header .icons a {
-      text-decoration: none;
-      color: #fff; }
-      header .icons a:hover {
-        -webkit-transform: scale(1.15);
-        -ms-transform: scale(1.15);
-        transform: scale(1.15);
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s; }
-=======
   z-index: 999;
 }
 
@@ -384,7 +277,6 @@ header .icons a:hover {
   transform: scale(1.15);
   transition: .3s;
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 .hb {
   position: absolute;
@@ -399,17 +291,9 @@ header .icons a:hover {
 }
 
 header.active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
   transform: translateY(0);
-<<<<<<< HEAD
-  -webkit-transition: .6s;
-  -o-transition: .6s;
-  transition: .6s; }
-=======
   transition: .6s;
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 .hamburger .line {
   width: 40px;
@@ -467,56 +351,6 @@ header.active {
 footer {
   background-color: #f5eae3;
   margin-left: 200px;
-<<<<<<< HEAD
-  padding: 15px; }
-  footer .follow {
-    padding: 15px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center; }
-  footer nav {
-    margin: auto; }
-    footer nav ul {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-      justify-content: space-around; }
-      footer nav ul li {
-        width: 20%;
-        margin: 15px; }
-        footer nav ul li:hover {
-          -webkit-transform: translateY(-3px);
-          -ms-transform: translateY(-3px);
-          transform: translateY(-3px);
-          -webkit-transition: .35s;
-          -o-transition: .35s;
-          transition: .35s; }
-        footer nav ul li a {
-          text-align: center;
-          border: 1px solid #333;
-          text-decoration: none;
-          color: #333;
-          display: block;
-          width: 100%;
-          padding: 15px; }
-  footer span {
-    display: inline-block;
-    position: relative;
-    top: -20px;
-    padding: 10px; }
-=======
   padding: 15px;
 }
 
@@ -562,7 +396,6 @@ footer span {
   top: -20px;
   padding: 10px;
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 @media all and (max-width: 991px) {
   footer {
@@ -595,37 +428,10 @@ footer span {
   overflow: hidden;
   position: relative;
   border-radius: 50%;
-  -webkit-transition: .35s;
-  -o-transition: .35s;
   transition: .35s;
-  -webkit-box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
   padding-left: 3px;
   padding-bottom: 3px;
-<<<<<<< HEAD
-  z-index: 1; }
-  .btns .btn:hover:before {
-    -webkit-transition: .35s;
-    -o-transition: .35s;
-    transition: .35s;
-    -webkit-transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    -o-transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    top: -10%;
-    left: -10%; }
-  .btns .btn:before {
-    content: '';
-    display: block;
-    width: 120%;
-    height: 120%;
-    position: absolute;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 90%;
-    left: -110%;
-    z-index: -1; }
-=======
   z-index: 1;
 }
 
@@ -647,7 +453,6 @@ footer span {
   left: -110%;
   z-index: -1;
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 .btns .fa {
   vertical-align: middle;
@@ -713,145 +518,6 @@ footer span {
 .signUpLightbox {
   z-index: 1001;
   position: fixed;
-<<<<<<< HEAD
-  display: none; }
-  .signUpLightbox .cancel {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 20px;
-    z-index: 1002;
-    cursor: pointer; }
-  .signUpLightbox .bgImg {
-    width: 400px;
-    height: 600px;
-    float: left;
-    background-color: #333;
-    border-radius: 10px 0 0 10px;
-    background-image: url("../images/memberBG.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; }
-  .signUpLightbox .formShape {
-    background-color: #91989f;
-    width: 400px;
-    height: 600px;
-    float: left;
-    border-radius: 0 10px 10px 0;
-    position: relative; }
-    .signUpLightbox .formShape .chioce {
-      text-align: center; }
-      .signUpLightbox .formShape .chioce:last-child {
-        margin-top: 20px; }
-      .signUpLightbox .formShape .chioce button {
-        background-color: transparent;
-        border: none;
-        display: inline-block;
-        line-height: 2em;
-        -webkit-transition: .1s;
-        -o-transition: .1s;
-        transition: .1s;
-        outline: none;
-        color: rgba(245, 245, 245, 0.7);
-        font-size: 30px;
-        cursor: pointer; }
-        .signUpLightbox .formShape .chioce button:hover {
-          color: #fff; }
-      .signUpLightbox .formShape .chioce .selected {
-        border-bottom: 1px solid #eaaf88;
-        color: #fff; }
-    .signUpLightbox .formShape form {
-      padding: 10px 50px;
-      margin: 0 auto;
-      color: #fff;
-      font-family: 'Noto Sans TC';
-      font-weight: 300; }
-      .signUpLightbox .formShape form label {
-        margin-top: 10px;
-        margin-bottom: 4px;
-        display: block;
-        font-size: 18px; }
-        .signUpLightbox .formShape form label:first-child {
-          margin-top: 0; }
-        .signUpLightbox .formShape form label small {
-          font-size: 12px;
-          color: rgba(245, 245, 245, 0.7); }
-      .signUpLightbox .formShape form .formBtn {
-        width: 240px;
-        border: 1px solid #333;
-        display: block;
-        line-height: 1.5em;
-        text-align: center;
-        border-radius: 1000px;
-        letter-spacing: 1px;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s;
-        color: #333;
-        margin: 0 auto 30px;
-        cursor: pointer; }
-        .signUpLightbox .formShape form .formBtn:hover {
-          background-color: #eaaf88;
-          border: 1px solid #eaaf88;
-          color: #fff; }
-      .signUpLightbox .formShape form input {
-        border: none;
-        background-color: transparent;
-        border-bottom: 1px solid rgba(245, 245, 245, 0.7);
-        width: 100%; }
-        .signUpLightbox .formShape form input:-ms-input-placeholder {
-          line-height: 1em;
-          padding: 5px 15px;
-          color: rgba(245, 245, 245, 0.7);
-          font-style: italic;
-          font-size: 12px; }
-        .signUpLightbox .formShape form input:-moz-placeholder {
-          line-height: 1em;
-          padding: 5px 15px;
-          color: rgba(245, 245, 245, 0.7);
-          font-style: italic;
-          font-size: 12px; }
-        .signUpLightbox .formShape form input::-moz-placeholder {
-          line-height: 1em;
-          padding: 5px 15px;
-          color: rgba(245, 245, 245, 0.7);
-          font-style: italic;
-          font-size: 12px; }
-        .signUpLightbox .formShape form input::-webkit-input-placeholder {
-          line-height: 1em;
-          padding: 5px 15px;
-          color: rgba(245, 245, 245, 0.7);
-          font-style: italic;
-          font-size: 12px; }
-      .signUpLightbox .formShape form #userPhoto {
-        display: none; }
-      .signUpLightbox .formShape form .formSubmitBtn {
-        display: inline-block;
-        width: 100px;
-        font-size: 14px; }
-      .signUpLightbox .formShape form .chioce {
-        margin-top: 20px; }
-      .signUpLightbox .formShape form .signInUpPos {
-        width: 170px;
-        position: absolute;
-        left: 50%;
-        margin-left: -85px;
-        bottom: 14px;
-        color: #eee;
-        font-size: 12px; }
-        .signUpLightbox .formShape form .signInUpPos span {
-          background-color: transparent;
-          color: #eee;
-          border-bottom: #eee 1px solid;
-          cursor: pointer;
-          outline: none;
-          letter-spacing: 0; }
-  .signUpLightbox .formShape2 {
-    display: none;
-    background-color: #bdc0ba; }
-    .signUpLightbox .formShape2 .chioce .selected {
-      border-bottom-color: #876633; }
-=======
   display: none;
 }
 
@@ -1038,7 +704,6 @@ footer span {
 .signUpLightbox .formShape2 .chioce .selected {
   border-bottom-color: #876633;
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 @media all and (max-width: 991px) {
   .signUpLightbox .bgImg {
@@ -1079,13 +744,8 @@ footer span {
 
 header ul li:nth-child(2) {
   background-color: #fff;
-<<<<<<< HEAD
-  -webkit-box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
-  box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199); }
-=======
   box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199);
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 header ul li:nth-child(2) a {
   color: #333;
@@ -1103,16 +763,9 @@ header ul li:nth-child(2):after {
   position: absolute;
   top: 6.5px;
   right: -16px;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-<<<<<<< HEAD
-  -webkit-box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
-  box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199); }
-=======
   box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199);
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 .right {
   position: relative;
@@ -1121,113 +774,6 @@ header ul li:nth-child(2):after {
   background-image: url(../images/marble.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-<<<<<<< HEAD
-  z-index: 0; }
-  .right h2 {
-    font-size: 36px;
-    text-align: center;
-    padding: 50px 0;
-    letter-spacing: 15px;
-    font-weight: bold; }
-  .right .searchsection {
-    margin: 40px 0; }
-    .right .searchsection .formInsert {
-      text-align: center; }
-      .right .searchsection .formInsert .select:hover {
-        color: #000;
-        background-color: transparent;
-        border-color: #000; }
-      .right .searchsection .formInsert .searchBtn {
-        height: 38px; }
-      .right .searchsection .formInsert .searchBar {
-        width: 260px;
-        height: 38px;
-        border-radius: 100px;
-        border: 2px solid black;
-        font-size: 14px;
-        text-indent: 4px;
-        margin-right: 6px;
-        background-color: transparent; }
-        .right .searchsection .formInsert .searchBar:focus {
-          outline: none; }
-        .right .searchsection .formInsert .searchBar:-ms-input-placeholder {
-          font-size: 14px;
-          line-height: 30px;
-          letter-spacing: 4px;
-          padding: 5px 15px; }
-        .right .searchsection .formInsert .searchBar:-moz-placeholder {
-          font-size: 14px;
-          line-height: 30px;
-          letter-spacing: 4px;
-          padding: 5px 15px; }
-        .right .searchsection .formInsert .searchBar::-moz-placeholder {
-          font-size: 14px;
-          line-height: 30px;
-          letter-spacing: 4px;
-          padding: 5px 15px; }
-        .right .searchsection .formInsert .searchBar::-webkit-input-placeholder {
-          font-size: 14px;
-          line-height: 30px;
-          letter-spacing: 4px;
-          padding: 5px 15px; }
-  .right form {
-    text-align: right; }
-    .right form .more {
-      display: inline-block;
-      border-style: none;
-      margin-right: 20px;
-      background-color: transparent;
-      color: #EAAF88; }
-      .right form .more:hover {
-        outline: none;
-        cursor: pointer;
-        color: #333; }
-  .right .result .container .item {
-    width: 90%;
-    margin: 200px auto 150px auto;
-    position: relative; }
-    .right .result .container .item .text {
-      width: 50%;
-      background-color: #fff;
-      font-size: 14px;
-      line-height: 30px;
-      padding: 0 0 3% 5%;
-      -webkit-box-shadow: 12px 10px 20px -10px #333;
-      box-shadow: 12px 10px 20px -10px #333; }
-      .right .result .container .item .text h3 {
-        font-size: 24px;
-        padding: 8% 0;
-        letter-spacing: 10px; }
-    .right .result .container .item .pic {
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      -webkit-box-shadow: 12px 10px 20px -10px #333;
-      box-shadow: 12px 10px 20px -10px #333; }
-      .right .result .container .item .pic img {
-        width: 100%; }
-    .right .result .container .item .bg {
-      position: absolute;
-      top: 13%;
-      left: 5%;
-      width: 100%;
-      height: 120%;
-      -webkit-box-shadow: 12px 10px 10px -4px #aaa;
-      box-shadow: 12px 10px 10px -4px #aaa;
-      z-index: -3; }
-    .right .result .container .item .color1 {
-      background-color: rgba(66, 136, 115, 0.767); }
-    .right .result .container .item .color2 {
-      background-color: rgba(199, 79, 73, 0.767); }
-    .right .result .container .item .color3 {
-      background-color: rgba(139, 105, 73, 0.767); }
-    .right .result .container .item .color4 {
-      background-color: rgba(66, 136, 115, 0.767); }
-    .right .result .container .item .color5 {
-      background-color: rgba(199, 79, 73, 0.767); }
-    .right .result .container .item .color6 {
-      background-color: rgba(139, 105, 73, 0.767); }
-=======
   z-index: 0;
 }
 
@@ -1383,7 +929,6 @@ header ul li:nth-child(2):after {
 .right .result .container .item .color6 {
   background-color: rgba(139, 105, 73, 0.767);
 }
->>>>>>> a88129f9376b9b8fd2d9001175b7fa33cc81817f
 
 @media all and (max-width: 991px) {
   header {
