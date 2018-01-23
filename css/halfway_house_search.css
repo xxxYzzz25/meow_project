@@ -772,6 +772,7 @@ header ul li:nth-child(2):after {
 }
 
 .right {
+  min-height: 85vh;
   position: relative;
   margin-left: 200px;
   padding-bottom: 50px;

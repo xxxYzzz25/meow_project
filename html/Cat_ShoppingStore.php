@@ -132,7 +132,7 @@
 					<div class="typeName wow zoomIn">喵喵肚子餓</div>
 					
 					<div class="typeBanner typeBanner1 wow zoomIn">
-						<a href="../php/Cat_ShoppingStore_food.php">前往
+						<a id="btnHungry" data-ohclass="1">前往
 							<b>喵喵肚子餓</b> ｜ 30 項商品</a>
 					</div>
 
@@ -193,7 +193,7 @@
 									<div class="typeName wow zoomIn">喵喵待在家</div>
 									
 									<div class="typeBanner typeBanner2 wow zoomIn">
-										<a href="#">前往
+										<a id="btnHome" data-ohclass="2">前往
 											<b>喵喵待在家</b> ｜ 46 項商品</a>
 									</div>
 						
@@ -254,7 +254,7 @@
 									<div class="typeName wow zoomIn">精選喵草</div>
 									
 									<div class="typeBanner typeBanner3 wow zoomIn">
-										<a href="#">前往
+										<a id="btnGrass" data-ohclass="3">前往
 											<b>精選喵草</b> ｜ 46 項商品</a>
 									</div>
 						
@@ -315,7 +315,7 @@
 									<div class="typeName wow zoomIn">喵喵愛玩耍</div>
 									
 									<div class="typeBanner typeBanner4 wow zoomIn">
-										<a href="#">前往
+										<a id="btnPlay" data-ohclass="4">前往
 											<b>喵喵愛玩耍</b> ｜ 46 項商品</a>
 									</div>
 						
@@ -421,12 +421,13 @@
 		});
 
 		
-
-			
-	});		
-
-		var type = document.querySelectorAll(".menuTitle");  
+		var type = document.querySelectorAll(".menuTitle");
 		
+		let pd_play = document.getElementById("pd_play");
+		let pd_grass = document.getElementById("pd_grass");
+		let pd_home = document.getElementById("pd_home");
+		let pd_food = document.getElementById("pd_food");
+
 		for( var i=0 ; i<type.length ; i++ ){
 			type[i].addEventListener("click" , getProducts , false);
 			type[0].addEventListener("click" , function(){
@@ -434,13 +435,36 @@
 			});
 
 		}
-
+		
 		function getProducts(e){
 			var pdType = e.target.value;
 			var url = "../php/Cat_ShoppingStore_food.php?pdType=" + pdType;
-			
+			ajax(url);
+		}
+		
+		function qqq(e){
+			e.preventDefault();
+			let ca = this.dataset.ohclass;
+			switch (ca) {
+				case '1':
+					pd_food.click();
+					break;
+				case '2':
+					pd_home.click();
+					break;
+				case '3':
+					pd_grass.click();
+					break;
+				case '4':
+					pd_play.click();
+					break;
+			}
+			$(window).scrollTop(0);
+		}
+
+		function ajax(dataInfo){
 			var xhr = new XMLHttpRequest();
-			xhr.open("Get",url, true);
+			xhr.open("Get",dataInfo, true);
 			xhr.onload = function(){
 			
 				if( xhr.status == 200 ){
@@ -448,11 +472,24 @@
 				}else{
 					alert(xhr.status);
 				}
-			
 		}
 		xhr.send( null );
 	}
 
+		let btnHome = document.getElementById("btnHome");
+		let btnHungry = document.getElementById("btnHungry");
+		let btnGrass = document.getElementById("btnGrass");
+		let btnPlay = document.getElementById("btnPlay");
+
+		btnHome.addEventListener("click" , qqq);
+		btnHungry.addEventListener("click" , qqq);
+		btnGrass.addEventListener("click" , qqq);
+		btnPlay.addEventListener("click" , qqq);
+			
+	});		
+
+		
+		
 
 
 		</script>  
