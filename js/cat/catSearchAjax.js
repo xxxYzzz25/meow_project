@@ -120,19 +120,19 @@ window.addEventListener('load', () => {
                 
                 if (advancedSearch[i].className.match('conditionSelected')) {
                     if (advancedSearch[i].getAttribute('data-name') == 'color') {
-                        removeByValue(color, val)
-                    } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
-                        removeByValue(location, val)
-                    } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
-                        removeByValue(gender, val)
-                    }
-                } else {
-                    if (advancedSearch[i].getAttribute('data-name') == 'color') {
                         color.push(val)
                     } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
                         location.push(val)
                     } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
                         gender.push(val)
+                    }
+                } else {
+                    if (advancedSearch[i].getAttribute('data-name') == 'color') {
+                        removeByValue(color, val)
+                    } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
+                        removeByValue(location, val)
+                    } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
+                        removeByValue(gender, val)
                     }
                 }
                 
