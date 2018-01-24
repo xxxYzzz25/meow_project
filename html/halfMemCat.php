@@ -1,26 +1,26 @@
 <?php
- ob_start();
- session_start();
- isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <div class="halfMemCat" id="halfMemCat">
 <!-- 新增喵開始 -->
     <button id="newEmp" class="newbtn defaultBtn">新增喵小孩</button>
     <form action="../php/halfMemCatInsertToDb.php" method="post" enctype="multipart/form-data">
-    
+
         <input type="hidden" name="no" value="<?php echo $_SESSION["HALF_NO"]; ?>">
         <h4 class="newEmpTR newEmpTROff">新增一隻喵小孩 (*為必填項目)</h4>
         <table>
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩名稱*</th>
                 <td>
-                    <input type="text" name="name" required="required">
+                    <input type="text" onfocus="this.select()" name="name" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩出生年月*</th>
                 <td>
-                    <input type="text" name="date" required="required">
+                    <input type="text" onfocus="this.select()" name="date" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
@@ -33,13 +33,13 @@
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩個性*</th>
                 <td>
-                    <input type="text" name="narrative" required="required">
+                    <input type="text" onfocus="this.select()" name="narrative" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩毛色*</th>
                 <td>
-                    <input type="text" name="color" required="required">
+                    <input type="text" onfocus="this.select()" name="color" required="required">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
@@ -88,29 +88,30 @@
                 <th>喵小孩簡單介紹(若不填就不會在頁面上顯示哦)</th>
                 <td id="simple">
                     <p>個性
-                        <input type="text" class="simple" name="individuality">
+                        <input type="text" class="simple" onfocus="this.select()" name="individuality">
                     </p>
                     <p>適合對象
-                        <input type="text" class="simple" name="fit">
+                        <input type="text" class="simple" onfocus="this.select()" name="fit">
                     </p>
                     <p>優點
-                        <input type="text" class="simple" name="advantage">
+                        <input type="text" class="simple" onfocus="this.select()" name="advantage">
                     </p>
                     <p>缺點
-                        <input type="text" class="simple" name="disadvantage">
+                        <input type="text" class="simple" onfocus="this.select()" name="disadvantage">
                     </p>
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩大頭貼*</th>
                 <td>
-                    <input type="file" name="upCover" required>
+                    <input type="file" name="upCover" id="files" required>
+                    <output id="picList"></output>
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
                 <td colspan="2">
                     <button type="submit" id="ensureBtn" class="defaultBtn">確定新增</button>
-                    <button type="reset" class="defaultBtn">清除內容</button>
+                    <button type="reset" class="defaultBtn" id="resetBtn">清除重填</button>
                 </td>
             </tr>
         </table>
@@ -125,7 +126,7 @@ try {
 
     $sql   = "select * from cat where HALF_NO =?";
     $HWcat = $pdo->prepare($sql);
-    $HWcat->bindValue(1, $_SESSION["HALF_NO"]);//session
+    $HWcat->bindValue(1, $_SESSION["HALF_NO"]); //session
     $HWcat->execute();
 
     if ($HWcat->rowCount() == 0) {

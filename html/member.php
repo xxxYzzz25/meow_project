@@ -190,9 +190,7 @@
         <div class="container">
             <h2>我的會員專區</h2>
             <div class="leftselect">
-                <div class="lefttitle">
-                    <img src="../images/left_list_title2.jpg" alt="">
-                </div>
+                <div class="lefttitle"></div>
                 <div class="leftlist">
                     <ul>
                         <li onclick="getData('memInfo.php');" class="li">
@@ -203,9 +201,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="leftbottom">
-                    <img src="../images/left_list_bottom.jpg" alt="">
-                </div>
+                <div class="leftbottom"></div>
             </div>
 
             <div class="smalllist">

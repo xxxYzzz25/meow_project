@@ -22,9 +22,6 @@
         width: 20%;
         float: left;
         margin-right: 30px;
-        img {
-            width: 100%;
-        }
         .leftlist {
             width: 100%;
             li {
@@ -44,7 +41,7 @@
             }
         }
         .leftbottom {
-            margin-bottom: 260px;
+            margin-bottom: 150px;
         }
     }
     .smalllist {
@@ -54,6 +51,20 @@
         width: 76%;
         float: left;
         padding-bottom: 50px;
+        input {
+            &:focus {
+                border: 1px solid #EAAF88;
+                box-shadow: 0 0 10px rgb(141, 91, 51);
+            }
+        }
+        textarea {
+            resize: none;
+            &:focus {
+                border: 1px solid #EAAF88;
+                box-shadow: 0 0 10px rgb(141, 91, 51);
+                height: 200px;
+            }
+        }
         h4 {
             text-align: center;
             font-size: $font-size-h3;
@@ -83,7 +94,6 @@
                     input {
                         width: 90%;
                         height: 30px;
-                        border: none;
                     }
                 }
             }

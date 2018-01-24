@@ -25,25 +25,25 @@ try {
             <tr>
                 <th>會員密碼</th>
                 <td>
-                    <input type="password" name="mempsw" value="<?php echo $memRow->MEM_PSW; ?>">
+                    <input type="password"  onfocus="this.select()" name="mempsw" value="<?php echo $memRow->MEM_PSW; ?>">
                 </td>
             </tr>
             <tr>
                 <th>會員姓名</th>
                 <td>
-                    <input type="text" name="memname" value="<?php echo $memRow->MEM_NAME; ?>">
+                    <input type="text"  onfocus="this.select()" name="memname" value="<?php echo $memRow->MEM_NAME; ?>">
                 </td>
             </tr>
             <tr>
                 <th>會員電話</th>
                 <td>
-                    <input type="tel" name="memtel" value="<?php echo $memRow->MEM_TEL; ?>">
+                    <input type="tel"  onfocus="this.select()" name="memtel" value="<?php echo $memRow->MEM_TEL; ?>">
                 </td>
             </tr>
             <tr>
                 <th>會員地址</th>
                 <td>
-                    <input type="address" name="memaddress" value="<?php echo $memRow->MEM_ADDRESS; ?>">
+                    <input type="address"  onfocus="this.select()" name="memaddress" value="<?php echo $memRow->MEM_ADDRESS; ?>">
                 </td>
             </tr>
             <tr>

@@ -1,7 +1,7 @@
 <?php
- ob_start();
- session_start();
- isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <!DOCTYPE html>
 <html>
@@ -134,17 +134,16 @@
             </li>
             <li>
             <?php
-                    if(!isset($_SESSION['MEM_NO']) && !isset($_SESSION['HALF_NO'])){
-                        echo "<a href='#' class='login'>會員專區</a>";
-                    }else{
-                        if(!isset($_SESSION['HALF_NO'])){
-                            echo "<a href='./html/member.php'>會員專區</a>";
-                        }
-                        else{
-                            echo "<a href='./html/halfMem.php'>中途會員專區</a>";
-                        }
-                    }
-                ?>
+if (!isset($_SESSION['MEM_NO']) && !isset($_SESSION['HALF_NO'])) {
+    echo "<a href='#' class='login'>會員專區</a>";
+} else {
+    if (!isset($_SESSION['HALF_NO'])) {
+        echo "<a href='./html/member.php'>會員專區</a>";
+    } else {
+        echo "<a href='./html/halfMem.php'>中途會員專區</a>";
+    }
+}
+?>
             </li>
         </ul>
     </nav>
@@ -153,23 +152,23 @@
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             </a>
             <?php
-                    if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-                        echo "<a href='../php/memberLogOut.php' id='loginBtn'>
+if (isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])) {
+    echo "<a href='../php/memberLogOut.php' id='loginBtn'>
                             <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
                             </a>";
-                    }else{
-                        echo "<a href='#' class='login' id='loginBtn'>
+} else {
+    echo "<a href='#' class='login' id='loginBtn'>
                             <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
                             </a>";
-                    }
-            ?>
+}
+?>
             <?php
-                if(isset($_SESSION["MEM_NO"])){
-                    echo "<a href='#' id='likeBoxBtn'>
+if (isset($_SESSION["MEM_NO"])) {
+    echo "<a href='#' id='likeBoxBtn'>
                             <i class='fa fa-heart-o fa-2x' aria-hidden='true'></i>
                         </a>";
-                }
-            ?>
+}
+?>
     </div>
     <div class="hb">
         <div class="hamburger" id="hamburger-6">
@@ -192,15 +191,13 @@
         <div class="container">
             <h2>我的中途之家會員專區</h2>
             <div class="leftselect">
-                <div class="lefttitle">
-                    <img src="../images/left_list_title2.jpg" alt="">
-                </div>
+                <div class="lefttitle"></div>
                 <div class="leftlist">
                     <ul>
                         <li onclick="getData('halfMemInfo.php');" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 修改會員資料
                         </li>
-                        <li onclick="getData('halfMemHalfway.php');" class="li">
+                        <li onclick="getData('halfMemHalfway.php',callpic);" class="li">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 編輯中途之家資料
                         </li>
                         <li onclick="getData('halfMemCat.php',tempQQName);" class="li">
@@ -217,9 +214,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="leftbottom">
-                    <img src="../images/left_list_bottom.jpg" alt="">
-                </div>
+                <div class="leftbottom"></div>
             </div>
 
             <div class="smalllist">
@@ -227,7 +222,7 @@
                     <li onclick="getData('halfMeminfo.php');" class="li">
                         修改會員資料
                     </li>
-                    <li onclick="getData('halfMemHalfway.php');" class="li">
+                    <li onclick="getData('halfMemHalfway.php',callpic);" class="li">
                         編輯中途之家資料
                     </li>
                     <li onclick="getData('halfMemCat.php,tempQQName');" class="li">
@@ -316,9 +311,54 @@
                 newEmp.innerHTML = "新增喵小孩";
             }
         });
+
         let ensureBtn = document.getElementById('ensureBtn')
         ensureBtn.addEventListener('click', function () {
             confirm('您確定要新增嗎?')
+        });
+
+        function handleFileSelect(evt) {
+            let files = evt.target.files;
+            for (let i = 0, f; f = files[i]; i++) {
+                let reader = new FileReader();
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                    let span = document.createElement('span');
+                    span.innerHTML = ['<img class="filePic" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                    document.getElementById('picList').insertBefore(span, null);
+                    };
+                })(f);
+                reader.readAsDataURL(f);
+            }
+        }
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
+        document.getElementById('resetBtn').addEventListener('click', function(){
+            document.getElementById('picList').textContent='';
+        });
+    }
+
+    function callpic() {
+        function handleFileSelect(evt) {
+            let files = evt.target.files;
+            for (let i = 0, f; f = files[i]; i++) {
+                let reader = new FileReader();
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                    let span = document.createElement('span');
+                    span.innerHTML = ['<img class="filePic" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                    document.getElementById('picList').insertBefore(span, null);
+                    };
+                })(f);
+                reader.readAsDataURL(f);
+            }
+        }
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
+        document.getElementById('resetBtn').addEventListener('click', function(){
+            document.getElementById('picList').textContent='';
         });
     }
 </script>
@@ -342,9 +382,9 @@
                 let halfMemCat = document.getElementById('halfMemCat');
                 halfMemCat.innerHTML = this.responseText;
 
-                let back = document.getElementById('back'); 
+                let back = document.getElementById('back');
                 back.addEventListener('click',function () {
-                    window.location.reload(); 
+                    window.location.reload();
                 });
             } else {
                 alert(xhr.status);

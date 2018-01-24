@@ -1,7 +1,7 @@
 <?php
- ob_start();
- session_start();
- isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <div class="halfMemInfo">
     <h4>新增助養資訊</h4>
@@ -18,26 +18,26 @@ try {
     $donate->bindValue(1, $_SESSION["HALF_NO"]); //session
     $donate->execute();
     $donateRow = $donate->fetchObject()
-?>
+    ?>
     <form action="../php/halfMemDonateInserToDb.php">
         <input type="hidden" name="no" value="<?php echo $donateRow->HALF_NO; ?>">
         <table>
             <tr>
                 <th>助養者名字</th>
                 <td>
-                    <input type="text" name="memName">
+                    <input type="text" onfocus="this.select()" name="memName">
                 </td>
             </tr>
             <tr>
                 <th>助養的喵喵名字</th>
                 <td>
-                    <input type="text" name="catName">
+                    <input type="text" onfocus="this.select()" name="catName">
                 </td>
             </tr>
             <tr>
                 <th>助養金額</th>
                 <td>
-                    <input type="text" name="price">
+                    <input type="text" onfocus="this.select()" name="price">
                 </td>
             </tr>
             <tr>

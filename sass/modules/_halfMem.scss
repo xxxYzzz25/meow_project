@@ -22,8 +22,8 @@
         width: 20%;
         float: left;
         margin-right: 30px;
-        img {
-            width: 100%;
+        .lefttitle{
+            // background-color: rgba(236, 181, 118, 0.705);
         }
         .leftlist {
             width: 100%;
@@ -44,7 +44,7 @@
             }
         }
         .leftbottom {
-            margin-bottom: 260px;
+            margin-bottom: 150px;
         }
     }
     .smalllist {
@@ -54,8 +54,19 @@
         width: 76%;
         float: left;
         padding-bottom: 50px;
+        input {
+            &:focus {
+                border: 1px solid #EAAF88;
+                box-shadow: 0 0 10px rgb(141, 91, 51);
+            }
+        }
         textarea {
             resize: none;
+            &:focus {
+                border: 1px solid #EAAF88;
+                box-shadow: 0 0 10px rgb(141, 91, 51);
+                height: 200px;
+            }
         }
         h4 {
             text-align: center;
@@ -86,7 +97,13 @@
                     input {
                         width: 90%;
                         height: 30px;
-                        border: none;
+                    }
+                    span {
+                        display: block;
+                        border: 1px dashed #EAAF88;
+                        .filePic {
+                            height: 90px;
+                        }
                     }
                 }
             }
@@ -106,6 +123,13 @@
             .newblock {
                 display: block;
             }
+            span {
+                display: block;
+                border: 1px dashed #EAAF88;
+                .filePic {
+                    height: 90px;
+                }
+            }
             .catInfo {
                 width: 100%;
                 tr {
@@ -124,7 +148,6 @@
                     input {
                         width: 90%;
                         height: 30px;
-                        border: none;
                     }
                     .radio {
                         width: 10%;
@@ -156,7 +179,6 @@
                     input {
                         width: 90%;
                         height: 30px;
-                        border: none;
                     }
                     .radio {
                         width: 10%;
@@ -205,7 +227,7 @@
                     border: 2px solid #ccc;
                     padding: 20px;
                     text-align: center;
-                    .defaultBtn{
+                    .defaultBtn {
                         font-size: 12px;
                     }
                     .circle {

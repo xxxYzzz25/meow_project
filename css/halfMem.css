@@ -793,10 +793,6 @@ header ul li:nth-child(5):after {
   margin-right: 30px;
 }
 
-.right .leftselect img {
-  width: 100%;
-}
-
 .right .leftselect .leftlist {
   width: 100%;
 }
@@ -820,7 +816,7 @@ header ul li:nth-child(5):after {
 }
 
 .right .leftselect .leftbottom {
-  margin-bottom: 260px;
+  margin-bottom: 150px;
 }
 
 .right .smalllist {
@@ -833,8 +829,19 @@ header ul li:nth-child(5):after {
   padding-bottom: 50px;
 }
 
+.right .content input:focus {
+  border: 1px solid #EAAF88;
+  box-shadow: 0 0 10px #8d5b33;
+}
+
 .right .content textarea {
   resize: none;
+}
+
+.right .content textarea:focus {
+  border: 1px solid #EAAF88;
+  box-shadow: 0 0 10px #8d5b33;
+  height: 200px;
 }
 
 .right .content h4 {
@@ -873,7 +880,15 @@ header ul li:nth-child(5):after {
 .right .content .halfMemInfo form td input {
   width: 90%;
   height: 30px;
-  border: none;
+}
+
+.right .content .halfMemInfo form td span {
+  display: block;
+  border: 1px dashed #EAAF88;
+}
+
+.right .content .halfMemInfo form td span .filePic {
+  height: 90px;
 }
 
 .right .content .halfMemCat .newbtn {
@@ -892,6 +907,15 @@ header ul li:nth-child(5):after {
 
 .right .content .halfMemCat .newblock {
   display: block;
+}
+
+.right .content .halfMemCat span {
+  display: block;
+  border: 1px dashed #EAAF88;
+}
+
+.right .content .halfMemCat span .filePic {
+  height: 90px;
 }
 
 .right .content .halfMemCat .catInfo {
@@ -918,7 +942,6 @@ header ul li:nth-child(5):after {
 .right .content .halfMemCat .catInfo td input {
   width: 90%;
   height: 30px;
-  border: none;
 }
 
 .right .content .halfMemCat .catInfo td .radio {
@@ -958,7 +981,6 @@ header ul li:nth-child(5):after {
 .right .content .halfMemCat form td input {
   width: 90%;
   height: 30px;
-  border: none;
 }
 
 .right .content .halfMemCat form td .radio {
