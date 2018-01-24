@@ -1,3 +1,7 @@
+<?php
+    ob_start();
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,60 +99,104 @@
                 總共：
                 <span id="subtotal">0</span>
             </div>
-
-            <form class="payCard">
-                請選擇配送方式：
-                <select name="send" class="select">
-                    <option value="1">宅配</option>
-                    <option value="0">超商</option>
-                </select>
-            </form>
-
             
-            <table class="info">
-                <tr>
-                    <th>收件人姓名</th>
-                    <td>
-                        <input type="textbox">
-                    </td>
-                </tr>
-                <tr>
-                    <th>收件人地址</th>
-                    <td>
-                        <input type="textbox">
-                    </td>
-                </tr>
-                <tr>
-                    <th>聯絡電話</th>
-                    <td>
-                        <input type="textbox">
-                    </td>
-                </tr>
-                <tr>
-                    <th>配送方式</th>
-                    <td class="mail">
-                        <input type="radio" name="delivery" value="1">宅配
-                        <input type="radio" name="super" value="0">超商
-                    </td>
-                </tr>
-                <tr>
-                    <th>付款方式</th>
-                    <td class="payWay">
-                        <input type="radio" name="superPay" value="1">超商付款
-                        <input type="radio" name="cardPay" value="0">信用卡付款
-                    </td>
-                </tr>
-            </table>
-
-           
-
-            <div class="confirm pay">
-                <a href="../php/Cat_ShoppingStore_cart2todb.php">確認購買</a>
-            </div>
-
+            <form action="../php/Cat_ShoppingStore_cart2todb/php" id="orderList" method="post">
+                <table class="info pay">
+                    <tr>
+                        <th>收件人姓名</th>
+                        <td>
+                            <input type="text" name="name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>收件人地址</th>
+                        <td>
+                            <input type="address" name="address" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>聯絡電話</th>
+                        <td>
+                            <input type="tel" name="tel" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>配送方式</th>
+                        <td class="mail">
+                            <input type="radio" name="delivery" value="1" required>宅配
+                            <input type="radio" name="delivery" value="0" required>超商
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>付款方式</th>
+                        <td class="payWay">
+                            <input type="radio" name="pay" value="0" required>超商付款
+                            <input type="radio" name="pay" value="1" required>信用卡付款
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" class="confirm">確認購買</button></td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
 
+<script>
+    // let storage = localStorage;
+    window.addEventListener('load',()=>{
+        let itemString = storage.getItem('addItemList');
+        let items = itemString.substr(0,itemString.length-2).split(', ');
+        function Prod(name,price,count){
+            this.name = name;
+            this.price = price;
+            this.count = count;
+        }
+        let json = [];
+
+        for(let key in items){		//use items[key]
+            let itemInfo = storage.getItem(items[key]);	//let itemInfo = storage[items[key]];
+            let itemSplit = itemInfo.split('|');
+            let itemName = itemSplit[0];
+            let itemPrice = itemSplit[2];
+            let itemCount = itemSplit[3];
+            let obj = new Prod(itemName,itemPrice,itemCount);
+            json.push(obj);
+        }
+        json = JSON.stringify(json);
+
+        function ajax(callback,dataInfo){
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('post','../php/Cat_ShoppingStore_cart2todb.php');
+            xhr.onload = callback;
+            xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+            xhr.send(dataInfo);
+
+        }
+        function sendList(e){
+            e.preventDefault();
+
+            let orderList = document.forms['orderList'];
+            let price = document.getElementById('subtotal').textContent;
+            let name = orderList.elements.name.value;
+            let address = orderList.elements.address.value;
+            let pay = orderList.elements.pay.value;
+            let delivery = orderList.elements.delivery.value;
+            let tel = orderList.elements.tel.value;
+
+            let dataInfo = `list=${json}&tel=${tel}&price=${price}&name=${name}&address=${address}&pay=${pay}&delivery=${delivery}`;
+            
+            ajax(function(){
+                window.location.href = './Cat_ShoppingStore.php';
+            },dataInfo);
+        
+        }
+
+        let orderList = document.getElementById('orderList');
+        orderList.addEventListener('submit',sendList);
+    });
+</script>
 
 </body>
 

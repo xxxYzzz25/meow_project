@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>會員專區</title>
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/signIn.js"></script>
     <link rel="stylesheet" href="../css/member.css">
 </head>
@@ -159,7 +160,6 @@
         ?>
         <a href="#">
             <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-            <span id="like">6</span>
         </a>
     </div>
     <div class="hb">
