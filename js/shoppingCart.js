@@ -84,6 +84,7 @@ function doFirst() {
 		var itemCount = document.createElement('input');
 		itemCount.type = 'number';
 		itemCount.min = 0;
+		Object.assign(itemCount,{min:'1'});
 		itemCount.value = amount;
 		itemCount.className = 'count';
 		// itemCount.id.style.width = '10';
@@ -115,21 +116,15 @@ function doFirst() {
 
 	function changeItemCount() {
 		let inputValue = parseInt(this.value);
-		console.log(inputValue);
 		let itemTr = this.parentNode.parentNode.parentNode.childNodes;
-		console.log(itemTr);
 		let total = 0;
-		
 		for (let i = 0; i < itemTr.length; i++) {
 			var cost = parseInt(itemTr[i].childNodes[2].textContent); //價錢
-			console.log(cost);
 			var amount = parseInt(itemTr[i].childNodes[3].firstChild.value); //數量
-			console.log(amount);
 
 			total += cost * amount;
 		}
 
-		console.log(total);
 		document.getElementById('subtotal').textContent = total;
 
 	}
@@ -137,22 +132,17 @@ function doFirst() {
 	
 
 	function deleteItem() {
-
-		var inputValue = parseInt(this.parentNode.parentNode.childNodes[3].childNodes[0].value);
+		
+		var qty = parseInt(this.parentNode.parentNode.childNodes[3].childNodes[0].value);
 		var itemId = this.parentNode.parentNode.childNodes[1].getAttribute('class');
-
+		let price = this.parentNode.parentNode.childNodes[2].dataset.price;
 		//刪除該筆資料之前，先將金額扣除
-		var itemValue = storage.getItem(itemId);
-		subtotal -= inputValue * parseInt(itemValue.split('|')[2]);
+		let totalBox = document.getElementById('subtotal');
+		let subtotal = totalBox.textContent;
+		
+		subtotal -= (qty * price);
 
-		if(isNaN(subtotal)){
-			document.getElementById('subtotal').innerText = 0
-		}else{
-			document.getElementById('subtotal').innerText = subtotal;
-
-		}
-		console.log(inputValue)
-		console.log(itemId)
+		totalBox.textContent = subtotal;
 		//清除storage的資料
 		storage.removeItem(itemId);
 		storage['addItemList'] = storage['addItemList'].replace(itemId + ', ', '');

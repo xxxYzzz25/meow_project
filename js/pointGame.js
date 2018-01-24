@@ -247,6 +247,6 @@ window.addEventListener('load',()=>{
         xhr.send(dataInfo);
 
     }
-    let likeBox = document.getElementById('likeBox');
-    likeBox.addEventListener('click',ajax);
+    // let likeBox = document.getElementById('likeBox');
+    // likeBox.addEventListener('click',ajax);
 });

@@ -70,7 +70,7 @@
             </a>
             <a href="#">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-                <span id="like">6</span>
+                
             </a>
         </div>
     </header>
@@ -108,7 +108,7 @@
             </div>
 
             <div class="confirm">
-                <a href="../php/Cat_ShoppingStore.php">繼續購買</a>
+                <a href="../html/Cat_ShoppingStore.php">繼續購買</a>
             </div>
 
             <div class="confirm pay">

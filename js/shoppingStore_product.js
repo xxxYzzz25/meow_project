@@ -7,7 +7,7 @@ function doFirst(){
 	//幫每個add cart建事件聆聽功能
 
 	
-			var list = document.getElementsByClassName('addButton');
+			var list = document.getElementsByClassName('cartBtn');
 			//console.log(list.length);
 			for(let i=0; i<list.length; i++){
 				//console.log(list[i].id);	
@@ -18,7 +18,7 @@ function doFirst(){
 					addItem(this.parentNode.id,info);
     				// localStorage.setItem('item',inputValue);
 					if(i ==1){
-						document.location.href='../php/Cat_ShoppingStore_cart.php';
+						document.location.href='../html/Cat_ShoppingStore_cart.php';
 					}
 				});
 

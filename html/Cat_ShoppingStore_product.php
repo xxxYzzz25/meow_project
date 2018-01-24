@@ -69,7 +69,6 @@
             </a>
             <a href="#">
                 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-                <span id="like">6</span>
             </a>
         </div>
     </header>
@@ -126,16 +125,16 @@
                             </div>
                             
                             <div id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="buy wow zoomIn">
-                                    <span  class="addButton">
+                                    <span  class="addButton cartBtn">
                                         加入購物車
                                         <input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
                                     </span>
                     
                                     <!-- <a href="Cat_ShoppingStore_cart.html"> -->
-                                        <span class="addButton">
+                                        <a class="addButton" href="./Cat_ShoppingStore_cart.php">
                                             直接購買
                                             <input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-                                        </span>
+                                        </a>
                                     <!-- </a> -->
                                         
                                     
