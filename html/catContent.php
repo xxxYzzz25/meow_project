@@ -31,6 +31,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
     <!-- 引用加入追蹤 -->
     <script src="../js/cat/like.js"></script>
     <!-- 引用助養資訊表格 -->
+    <script src="../js/hb.js"></script>
     <script src="../js/cat/createTable.js"></script>
     <script src="../js/cat/adopt.js"></script>
     <title><?php echo $nameRow['CAT_NAME']; ?></title>
@@ -124,6 +125,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
         </form>
     </div>
 </div>
+
 <header>
     <div class="logo">
         <a href="../index.php">
@@ -188,6 +190,13 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
             <span class="line"></span>
         </div>
     </div>
+    <div class="hb">
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
 </header>
 <?php
 try{

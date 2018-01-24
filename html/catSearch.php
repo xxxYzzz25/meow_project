@@ -17,6 +17,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
     <script src="../js/signIn.js"></script>
     <script src="../js/cat/arrowSwitch.js"></script>
     <title>尋喵</title>
+    <script src="../js/hb.js"></script>
 </head>
 <body>
 <div class="signUpLightboxBlack">
@@ -107,6 +108,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
         </form>
     </div>
 </div>
+
 <header>
     <div class="logo">
         <a href="../index.php">
@@ -175,6 +177,13 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
             <span class="line"></span>
         </div>
     </div>
+    <div class="hb">
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
 </header>
 <div class="right">
     <div class="container container1">

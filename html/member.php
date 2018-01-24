@@ -15,6 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/signIn.js"></script>
     <link rel="stylesheet" href="../css/member.css">
+    <script src="../js/hb.js"></script>
 </head>
 
 <body onload="getData('memInfo.php');">
@@ -105,6 +106,7 @@
         </form>
     </div>
 </div>
+
 <!-- header -->
 <header>
     <div class="logo">
@@ -174,6 +176,13 @@
             <span class="line"></span>
         </div>
     </div>
+    <div class="hb">
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
 </header>
 
     <div class="right">

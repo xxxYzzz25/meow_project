@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/forum.css">
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="../js/hb.js"></script>
 </head>
 <body>
 <div class="signUpLightboxBlack" style="display:none;"></div>
@@ -101,7 +102,8 @@
                 </p>
             </form>
         </div>
-    </div>
+	</div>
+
 	<header class="header">
 		<div class="logo">
 			<a href="../index.php">
@@ -151,6 +153,13 @@
                         </a>";
                 }
             ?>
+		</div>
+		<div class="hb">
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
         </div>
 	</header>
 	<!--  -->

@@ -406,10 +406,6 @@ header ul li:nth-child(3):after {
   transform: rotate(45deg);
   box-shadow: 3px 3px 5px rgba(63, 62, 62, 0.199); }
 
-@media only screen and (max-width: 991px) {
-  header {
-    visibility: hidden; } }
-
 .wrap {
   margin-left: 200px;
   line-height: 22px; }
@@ -840,7 +836,8 @@ h2 {
     width: 30%;
     height: 70vh;
     transform: translateY(-100%);
-    border-radius: 0 0 0 30px; }
+    border-radius: 0 0 0 30px;
+    display: block !important; }
     header .logo {
       left: calc(50% - 90px);
       top: 10px; }
