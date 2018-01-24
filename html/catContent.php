@@ -1,11 +1,6 @@
 <?php
  ob_start();
  session_start();
- isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
-?>
-<?php
-ob_start();
-session_start();
 isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
 isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
@@ -357,7 +352,7 @@ $catRow = $cats->fetchObject();
                 <li>→到店實際與毛孩互動、深入了解其個性</li>
                 <li>→認養人填答問卷</li>
                 <li>→雙方面談(網路or見面皆可)</li>
-                <li>→確認想養後需到府家訪(觀看毛孩將來的生活環境並提醒需要注意的地方)、交付認養協議書雙方細閱討論</li>
+                <li>→確認想養後需到府家訪、交付認養協議書雙方細閱討論</li>
                 <li>→認養費用一位孩子$3000.NT-</li>
                 <li>→帶毛孩回家疼</li>
             </ul>

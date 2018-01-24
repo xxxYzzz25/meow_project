@@ -6,6 +6,9 @@
         width: 100%;
         margin: 0;
         .container1 {
+            #sortCat {
+                left: 22px;
+            }
             #quickViewArea {
                 height: 400px;
                 width: 300px;
@@ -23,10 +26,11 @@
                     }
                 }
                 .advanceSearch {
-                    right: 5%
+                    right: 5%;
+                    font-size: $font-size-h4;
                 }
                 #advanced:checked~div {
-                    height: 500px;
+                    height: 640px;
                 }
                 .advanceSearchItem {
                     padding-left: 20px;
@@ -34,13 +38,21 @@
                     .selectTitle {
                         display: block;
                         margin-top: 20px;
+                        font-size: $font-size-large;
+                        margin-bottom: 10px;
                     }
                     .condition {
-                        padding: 3px 8px;
+                        padding: 8px 14px;
                         margin: 4px 2px;
+                        font-size: $font-size-h5;
                     }
                     .forRWD {
                         display: block;
+                    }
+                    div {
+                        label.toMiddle {
+                            top: 0;
+                        }
                     }
                 }
             }
@@ -51,6 +63,9 @@
                     .catContent,
                     figure {
                         display: inline-block;
+                    }
+                    figure{
+                        padding-top: 10px;
                     }
                 }
             }

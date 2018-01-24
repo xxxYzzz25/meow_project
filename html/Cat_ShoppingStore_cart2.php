@@ -42,7 +42,7 @@
         <div class="logo">
             <a href="../index.php">
                 <h1>
-                    <img src="../img/logo_white.png" alt="尋喵啟事" title="回首頁">
+                    <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
             </a>
         </div>

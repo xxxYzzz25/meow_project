@@ -48,15 +48,17 @@ window.addEventListener('load', function () {
         tr3.appendChild(td5);
         tr3.appendChild(td6);
         tr3.appendChild(td7);
-        textNode = document.createTextNode("信用卡卡號:");
+        textNode = document.createTextNode("信用卡號:");
         input = document.createElement("input");
         input2 = document.createElement("input");
         td5.appendChild(textNode);
         td6.appendChild(input);
         td7.appendChild(input2);
 
-        input.setAttribute("placeholder", "ex: 1234 5678 9876 5432");
+        input.setAttribute("placeholder", "4705-7777-6666-5888");
+        input.setAttribute("pattern", "[0-9]{4}[-][0-9]{4}[-][0-9]{4}[-][0-9]{4}");        
         input2.setAttribute("placeholder", "請輸入安全碼");
+        input2.setAttribute("pattern", "[0-9]{3}");        
 
 
 

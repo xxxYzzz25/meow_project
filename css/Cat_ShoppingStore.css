@@ -250,6 +250,7 @@ body {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
+<<<<<<< HEAD
     text-align: center;
   }
   .breadcrumbs a {
@@ -262,6 +263,13 @@ body {
     border-color: transparent;
   }
 }
+=======
+    text-align: center; }
+    .breadcrumbs a:hover {
+      color: #333;
+      background-color: transparent;
+      border-color: transparent; } }
+>>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 footer {
   background-color: #f5eae3;
@@ -314,15 +322,21 @@ footer span {
 
 @media all and (max-width: 991px) {
   footer {
+<<<<<<< HEAD
     margin-left: 0;
     width: 100%;
   }
 }
+=======
+    margin-left: 0 !important;
+    width: 100% !important; } }
+>>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 767px) {
-  .section footer {
+  footer {
     margin-left: 0;
     width: 100%;
+<<<<<<< HEAD
     height: 20vh;
   }
   .section footer span {
@@ -331,6 +345,13 @@ footer span {
     top: -10px;
   }
 }
+=======
+    height: 20vh; }
+    footer span {
+      display: block;
+      text-align: center;
+      top: -10px; } }
+>>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 header {
   background-color: #eaaf88;
@@ -428,9 +449,9 @@ header .icons a:hover {
   z-index: 999999999;
   background-color: #eaaf88;
   padding: 2px 5px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 50px 50px;
   display: none;
-  bottom: -68px;
+  bottom: -40px;
   right: 0;
   padding: 15px 10px 10px 10px;
 }
@@ -441,11 +462,11 @@ header.active {
 }
 
 .hamburger .line {
-  width: 40px;
+  width: 20px;
   height: 4px;
   background-color: #ffffff;
   display: block;
-  margin: 8px auto;
+  margin: 4px auto;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -487,11 +508,18 @@ header.active {
 }
 
 #hamburger-6.is-active .line:nth-child(3) {
+<<<<<<< HEAD
   -webkit-transform: translateY(-14px) rotate(90deg);
   -ms-transform: translateY(-14px) rotate(90deg);
   -o-transform: translateY(-14px) rotate(90deg);
   transform: translateY(-14px) rotate(90deg);
 }
+=======
+  -webkit-transform: translateY(-6px) rotate(90deg);
+  -ms-transform: translateY(-6px) rotate(90deg);
+  -o-transform: translateY(-6px) rotate(90deg);
+  transform: translateY(-6px) rotate(90deg); }
+>>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 body {
   background-image: url(../img/marble.jpg);
@@ -770,6 +798,14 @@ h2 {
   padding-bottom: 8%;
 }
 
+#pdContent {
+  position: relative; }
+
+#pdContent:after {
+  content: '';
+  display: block;
+  clear: both; }
+
 .addButton {
   border-radius: 100px;
   cursor: pointer;
@@ -800,9 +836,14 @@ h2 {
 
 @media only screen and (max-width: 767px) {
   .product {
+<<<<<<< HEAD
     width: 50%;
   }
 }
+=======
+    width: 100%;
+    margin: auto; } }
+>>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 .pic:hover {
   transform: scale(1.1);
