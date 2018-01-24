@@ -199,7 +199,6 @@
         let con = mem.getAttribute('data-val')
 
         switchBtn.addEventListener('click',()=>{
-            console.log(con)
             if( con == 1 ){
                 switchBtn.textContent = '中途會員'
                 mem.style.display = 'table'

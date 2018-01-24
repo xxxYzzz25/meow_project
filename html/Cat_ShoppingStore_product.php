@@ -66,7 +66,7 @@
             </ul>
         </nav>
         <div class="icons">
-            <a href="html/Cat_ShoppingStore_cart.php">
+            <a href="Cat_ShoppingStore_cart.php">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             </a>
             <?php
@@ -148,7 +148,7 @@
                                     </span>
                     
                                     <!-- <a href="Cat_ShoppingStore_cart.html"> -->
-                                        <a class="addButton" href="./Cat_ShoppingStore_cart.php">
+                                        <a style="text-decoration:none" class="addButton" href="./Cat_ShoppingStore_cart.php">
                                             直接購買
                                             <input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
                                         </a>
@@ -214,7 +214,8 @@
                 spec[i].style.display = "none";
             }
         }
-    })
+        
+    });
 </script>
 
 

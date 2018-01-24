@@ -566,7 +566,7 @@
                 searchBtn.addEventListener('click',()=>{
                     searchBar.submit();
                 })
-            
+            });
         </script>
         
 </body>

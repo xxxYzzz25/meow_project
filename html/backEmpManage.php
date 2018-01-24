@@ -172,7 +172,6 @@
                     let empPswTd = tr.childNodes[2];
                     let empPsw = empPswTd.firstChild;
                     let empPswText = empPsw.value;
-                    console.log(empPswText);
                     let empOfficeTd = tr.childNodes[3]
                     let empOffice = empOfficeTd.firstChild;
                     let empOfficeText = empOffice.value;

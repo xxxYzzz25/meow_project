@@ -33,7 +33,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
         background-size: cover;
         background-repeat: no-repeat;
     }
-    #formShape {
+    .formShape {
         background-color: rgb(145, 152, 159);
         width: 400px;
         height: 600px;
@@ -94,6 +94,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 transition: .3s;
                 color: #333;
                 margin: 0 auto 30px;
+                cursor: pointer;
                 &:hover {
                     background-color: $navColor;
                     border: 1px solid $navColor;
@@ -142,22 +143,34 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 width: 100px;
                 font-size: $font-size-base;
             }
-        }
-        .signInUpPos {
-            width: 170px;
-            position: absolute;
-            left: 50%;
-            margin-left: -85px;
-            bottom: 14px;
-            color: #eee;
-            font-size: $font-size-small;
-            a {
+            .chioce {
+                margin-top: 20px;
+            }
+            .signInUpPos {
+                width: 170px;
+                position: absolute;
+                left: 50%;
+                margin-left: -85px;
+                bottom: 14px;
                 color: #eee;
-                border-bottom: #eee 1px solid;
-                cursor: pointer;
-                outline: none;
-                letter-spacing: 0;
-                text-decoration: none;
+                font-size: $font-size-small;
+                span {
+                    background-color: transparent;
+                    color: #eee;
+                    border-bottom: #eee 1px solid;
+                    cursor: pointer;
+                    outline: none;
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+    .formShape2 {
+        display: none;
+        background-color: rgb(189, 192, 186);
+        .chioce {
+            .selected {
+                border-bottom-color: #876633; 
             }
         }
     }
@@ -171,7 +184,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
             width: 0;
             height: 0;
         }
-        #formShape {
+        .formShape {
             border-radius: 10px;
         }
     }
@@ -185,7 +198,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
             width: 0;
             height: 0;
         }
-        #formShape {
+        .formShape {
             width: 300px;
             border-radius: 10px;
             .chioce {

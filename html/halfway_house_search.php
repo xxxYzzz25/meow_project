@@ -147,7 +147,7 @@
             </ul>
         </nav>
         <div class="icons">
-            <a href="html/Cat_ShoppingStore_cart.php">
+            <a href="Cat_ShoppingStore_cart.php">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             </a>
             <?php

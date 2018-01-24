@@ -13,7 +13,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/forum.css">
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="../js/signIn.js"></script>
 </head>
 <body>
 <div class="signUpLightboxBlack" style="display:none;"></div>
@@ -107,7 +106,7 @@
 		<div class="logo">
 			<a href="../index.php">
 				<h1>
-					<img src="../img/logo_white.png" alt="尋喵啟事">
+					<img src="../images/logo_white.png" alt="尋喵啟事">
 				</h1>
 			</a>
 		</div>
@@ -126,12 +125,12 @@
 					<a href="./forum.php">討論區</a>
 				</li>
 				<li>
-					<a href="./member.php">會員專區</a>
+					<a href="#" class="login">會員專區</a>
 				</li>
 			</ul>
 		</nav>
 		<div class="icons">
-            <a href="html/Cat_ShoppingStore_cart.php">
+            <a href="Cat_ShoppingStore_cart.php">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             </a>
             <?php
@@ -470,9 +469,10 @@
 			}
 			let selector = document.getElementById('post-select');
 			selector.addEventListener('change',qq);
+			
 		});
 	</script>
-
+	<script src="../js/signIn.js"></script>
 </body>
 
 </html>

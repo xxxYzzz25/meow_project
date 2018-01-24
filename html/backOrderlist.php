@@ -144,7 +144,6 @@ try {
     function add(data) {
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
-            console.log(data);
             if (xhr.status == 200) {
                 //modify here
                 let odTable = document.getElementById('odTable');

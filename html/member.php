@@ -117,16 +117,16 @@
     <nav>
         <ul>
             <li>
-                <a href="html/catSearch.php">尋喵</a>
+                <a href="catSearch.php">尋喵</a>
             </li>
             <li>
-                <a href="html/halfway_house_search.php">中途之家</a>
+                <a href="halfway_house_search.php">中途之家</a>
             </li>
             <li>
-                <a href="html/Cat_ShoppingStore.php" title="前往商城">商城</a>
+                <a href="Cat_ShoppingStore.php" title="前往商城">商城</a>
             </li>
             <li>
-                <a href="html/forum.php">討論區</a>
+                <a href="forum.php">討論區</a>
             </li>
             <li>
                 <?php
@@ -145,7 +145,7 @@
         </ul>
     </nav>
     <div class="icons">
-            <a href="html/Cat_ShoppingStore_cart.php">
+            <a href="Cat_ShoppingStore_cart.php">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             </a>
             <?php

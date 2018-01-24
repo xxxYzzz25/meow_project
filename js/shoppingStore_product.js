@@ -18,7 +18,7 @@ function doFirst(){
 					addItem(this.parentNode.id,info);
     				// localStorage.setItem('item',inputValue);
 					if(i ==1){
-						document.location.href='../html/Cat_ShoppingStore_cart.php';
+						document.location.href='Cat_ShoppingStore_cart.php';
 					}
 				});
 

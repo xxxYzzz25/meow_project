@@ -1,0 +1,320 @@
+body {
+	background-image: url(../img/marble.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+@include navNow(3);
+@media only screen and (max-width: 991px) {
+	header {
+		visibility: hidden;
+	}
+}
+
+.wrap {
+	margin-left: 200px;
+	line-height: 22px;
+}
+
+.wrapCenter {
+	letter-spacing: 3px;
+	font-size: 14px;
+	width: 80%;
+	margin: auto;
+}
+
+@media only screen and (max-width: 991px) {
+	.wrap {
+		margin-left: 0;
+	}
+	.wrapCenter {
+		width: 95%;
+	}
+}
+
+h2 {
+	text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 26px;
+    letter-spacing: 15px;
+	text-align: center;
+	padding: 5%;
+	margin: 0;
+}
+
+.menu {
+	/*background-color: #ccc;*/
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+	border: 2px solid #333;
+}
+
+.menuTitle {
+	display: inline-block;
+	color: #333;
+	margin: 3% 1%;
+	cursor: pointer;
+	padding: 1% 2%;
+	border-radius: 100px;
+	font-size: 14px;
+	letter-spacing: 3px;
+	background-color: #fff;
+	text-decoration: none;
+	border: 3px solid #fff;
+}
+
+.menuTitle:hover {
+	color: #333;
+	background-color: #fff;
+	border: 3px solid #EAAF88;
+}
+
+#pd_all{
+	color: #fff;
+	background-color: #EAAF88;
+	border: 3px solid #EAAF88;
+}
+
+@media only screen and (max-width: 991px) {
+	.menuTitle {
+		
+	}
+	/* form {
+		display: none;
+	} */
+}
+
+@media only screen and (max-width: 767px) {
+	.menuTitle {
+		display: block;
+		width: 80%;
+		margin: 3% auto;
+	}
+}
+
+
+.menuNow {
+	color: #fff;
+	background-color: #EAAF88;
+	border: 1px solid #EAAF88;
+}
+
+.banner {
+	/*background-color: #cfc;*/
+	width: 100%;
+	text-align: center;
+}
+
+.banner img {
+	margin: 3% 0;
+	width: 100%;
+}
+
+.select {
+	float: left;
+}
+
+.search {
+	float: right;
+}
+
+.search input {
+	border: 2px solid #333;
+	padding: 5px 30px;
+	border-radius: 30px;
+}
+
+.searchBtn{
+	border:2px solid #333;
+	padding: 7px 9px;
+	border-radius: 100px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.searchBtn:hover{
+	border:2px solid #EAAF88;
+	background-color: #EAAF88;
+}
+
+.allTitle {
+	text-align: center;
+	padding: 2%;
+}
+
+.allProduct {
+	/* background-color: #ccc; */
+	margin-top: 1%;
+}
+
+.typeName {
+	float: left;
+	/* background-color: #EAAF88; */
+	color: #fff;
+	background-color: #EAAF88;
+	width: 29%;
+	padding: 4.8%;
+	box-sizing: border-box;
+	text-align: center;
+	margin-right: 1%;
+	font-size: 18px;
+}
+
+.typeBanner {
+	float: left;
+	background-color: #caa;
+	width: 70%;
+	box-sizing: border-box;
+	padding: 5%;
+	background-size: cover;
+	font-size: 10px;
+}
+
+.typeBannerRWD {
+	display: none;
+}
+
+@media only screen and (max-width: 991px) {
+	.title span {
+		margin-top: 20px;
+		display: block;
+		font-size: 15px;
+	}
+	.typeName {
+		float: none;
+		width: 100%;
+		background-color: transparent;
+		color: #333;
+	}
+	.typeBanner {
+		display: none;
+	}
+	.typeBannerRWD {
+		display: block;
+		float: none;
+		width: 100%;
+		text-align: center;
+		margin: 0 0 50px 0;
+	}
+	.allProduct {
+		margin-top: 5%;
+	}
+}
+
+.typeBanner1 {
+	background-image: url(../img/eatBanner.jpg);
+}
+
+.typeBanner2 {
+	background-image: url(../img/homeBanner.jpg);
+}
+
+.typeBanner3 {
+	background-image: url(../img/grassBanner.jpg);
+}
+
+.typeBanner4 {
+	background-image: url(../img/playCatBanner.jpg);
+}
+
+.typeBanner a {
+	text-decoration: none;
+	color: #333;
+	padding: 5px 30px;
+	border: 2px solid #333;
+	border-radius: 30px;
+}
+
+.typeBannerRWD a {
+	text-decoration: none;
+	color: #333;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 5px 30px;
+	border: 2px solid #333;
+	border-radius: 30px;
+}
+
+.typeBanner a:hover {
+	color: #fff;
+	background-color: #EAAF88;
+	border: 1px solid #EAAF88;
+}
+
+.product {
+	float: left;
+	width: 25%;
+	background-color: #fff;
+	margin-top: 1%;
+	text-align: center;
+	margin-bottom: 10%;
+	padding-bottom: 6%;
+}
+
+.product2{
+	width: 30%;
+	margin: 1.66666%;
+	margin-bottom: 4%;
+	padding-bottom: 8%;
+}
+
+.addButton{
+    border-radius: 100px;
+    cursor: pointer;
+	letter-spacing: 3px;
+	padding: 2% 8% 2% 10%;
+    border: 2px solid #333333;
+	background-color: transparent;
+	color: #333;
+}
+
+.addButton:hover{
+	
+	background-color: #EAAF88;
+	border: 1px solid #EAAF88;
+	color: #fff;
+}
+
+@media only screen and (max-width: 991px) {
+	.typeBanner a {
+		background-color: rgba(255, 255, 255, 0.7);
+	}
+	.rwd {
+		display: none;
+	}
+	.rwd img {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.product {
+		width: 50%;
+	}
+}
+
+.pic:hover {
+	transform: scale(1.1);
+}
+
+.pic {
+	box-sizing: border-box;
+	padding: 15%;
+	transition: 0.5s all ease-in-out;
+}
+
+.pic img {
+	width: 80%;
+}
+
+.text {
+	text-align: center;
+	box-sizing: border-box;
+	
+}
+
+.cost {
+	padding: 20%;
+}
