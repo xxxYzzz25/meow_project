@@ -567,76 +567,108 @@ body {
 
 .right {
   width: calc(100% - 200px);
-  margin-left: 200px; }
-  .right .container1 {
-    min-height: 80vh;
-    width: 100%;
-    position: relative;
-    padding-top: 40px;
-    margin-bottom: 40px; }
-    .right .container1 #sortCat {
-      left: 10px; }
-    .right .container1 #black {
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      display: none;
-      background-color: rgba(0, 0, 0, 0.8); }
-    .right .container1 #quickViewArea {
-      position: fixed;
-      height: 600px;
-      width: 450px;
-      z-index: 1001;
-      display: none;
-      box-sizing: border-box;
-      border: 10px solid #fff; }
-      .right .container1 #quickViewArea #cancelQkv {
-        position: absolute;
-        top: 4px;
-        right: 4px;
-        cursor: pointer; }
-      .right .container1 #quickViewArea img {
-        width: 100%;
-        height: 100%; }
-    .right .container1 a {
-      text-decoration: none; }
-    .right .container1 h2 {
-      text-align: center;
-      font-size: 36px;
-      font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      line-height: 26px;
-      letter-spacing: 15px;
-      text-align: center; }
-      .right .container1 h2 small {
-        font-size: 14px;
-        color: #666;
-        letter-spacing: 30px; }
-    .right .container1 .selectForm {
-      user-select: none;
-      margin-left: 10px;
-      margin-top: 20px;
-      width: 500px;
-      margin: 0 auto;
-      position: relative;
-      text-align: center; }
-      .right .container1 .selectForm .advanceSearch {
-        position: absolute;
-        right: 64px;
-        top: 50px;
-        cursor: pointer; }
-      .right .container1 .selectForm .fa-angle-down {
-        padding-left: 5px; }
-      .right .container1 .selectForm .fa-angle-up {
-        padding-left: 5px; }
-      .right .container1 .selectForm .advanceSearch:hover .fa-angle-down {
-        animation: 1s transYDown infinite linear; }
-      .right .container1 .selectForm .advanceSearch:hover .fa-angle-up {
-        animation: 1s transYUp infinite linear; }
+  margin-left: 200px;
+}
+
+.right .container1 {
+  min-height: 80vh;
+  width: 100%;
+  position: relative;
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+
+.right .container1 #sortCat {
+  left: 10px;
+}
+
+.right .container1 #black {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.right .container1 #quickViewArea {
+  position: fixed;
+  height: 600px;
+  width: 450px;
+  z-index: 1001;
+  display: none;
+  box-sizing: border-box;
+  border: 10px solid #fff;
+}
+
+.right .container1 #quickViewArea #cancelQkv {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+}
+
+.right .container1 #quickViewArea img {
+  width: 100%;
+  height: 100%;
+}
+
+.right .container1 a {
+  text-decoration: none;
+}
+
+.right .container1 h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 26px;
+  letter-spacing: 15px;
+  text-align: center;
+}
+
+.right .container1 h2 small {
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 30px;
+}
+
+.right .container1 .selectForm {
+  user-select: none;
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.right .container1 .selectForm .advanceSearch {
+  position: absolute;
+  right: 64px;
+  top: 50px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.right .container1 .selectForm .fa-angle-down {
+  padding-left: 5px;
+}
+
+.right .container1 .selectForm .fa-angle-up {
+  padding-left: 5px;
+}
+
+.right .container1 .selectForm .advanceSearch:hover .fa-angle-down {
+  animation: 1s transYDown infinite linear;
+}
+
+.right .container1 .selectForm .advanceSearch:hover .fa-angle-up {
+  animation: 1s transYUp infinite linear;
+}
 
 @keyframes transYDown {
   from {
@@ -648,236 +680,320 @@ body {
   from {
     transform: translateY(4px); }
   to {
-    transform: translateY(-6px); } }
-      .right .container1 .selectForm #advanced {
-        position: fixed;
-        left: -100px; }
-        .right .container1 .selectForm #advanced ~ div {
-          margin-top: 40px;
-          height: 0;
-          overflow: hidden;
-          transition: 1s ease; }
-        .right .container1 .selectForm #advanced:checked ~ div {
-          height: 280px; }
-      .right .container1 .selectForm .advanceSearchItem {
-        text-align: left; }
-        .right .container1 .selectForm .advanceSearchItem div {
-          position: relative; }
-          .right .container1 .selectForm .advanceSearchItem div label {
-            font-family: 'Noto Sans TC';
-            position: relative;
-            top: 0px;
-            left: 0; }
-          .right .container1 .selectForm .advanceSearchItem div label.toMiddle {
-            top: -134px; }
-      .right .container1 .selectForm .selectTitle {
-        font-size: 14px;
-        vertical-align: middle; }
-      .right .container1 .selectForm .toMiddle:before {
-        content: '';
-        width: 0;
-        height: 100%;
-        display: inline-block;
-        position: relative;
-        vertical-align: middle;
-        background: #f00; }
-      .right .container1 .selectForm .formInsert {
-        display: inline-block; }
-        .right .container1 .selectForm .formInsert .searchBar {
-          width: 260px;
-          height: 30px;
-          border-radius: 100px;
-          border: 2px solid black;
-          font-size: 14px;
-          text-indent: 4px;
-          margin-right: 6px;
-          padding-left: 5px; }
-          .right .container1 .selectForm .formInsert .searchBar:focus {
-            outline: none; }
-          .right .container1 .selectForm .formInsert .searchBar:-ms-input-placeholder {
-            font-size: 14px;
-            line-height: 30px;
-            letter-spacing: 4px;
-            padding: 5px 15px; }
-          .right .container1 .selectForm .formInsert .searchBar:-moz-placeholder {
-            font-size: 14px;
-            line-height: 30px;
-            letter-spacing: 4px;
-            padding: 5px 15px; }
-          .right .container1 .selectForm .formInsert .searchBar::-moz-placeholder {
-            font-size: 14px;
-            line-height: 30px;
-            letter-spacing: 4px;
-            padding: 5px 15px; }
-          .right .container1 .selectForm .formInsert .searchBar::-webkit-input-placeholder {
-            font-size: 14px;
-            line-height: 30px;
-            letter-spacing: 4px;
-            padding: 5px 15px; }
-        .right .container1 .selectForm .formInsert .condition {
-          padding: 5px 10px;
-          border: 1px solid transparent;
-          font-family: 'Noto Sans TC';
-          font-weight: 500;
-          background-color: #fff;
-          color: #333;
-          line-height: 20px;
-          border-radius: 4px;
-          cursor: pointer;
-          margin: 6px;
-          outline: none;
-          transition: .3s all;
-          letter-spacing: 1.5px; }
-          .right .container1 .selectForm .formInsert .condition:hover {
-            background-color: #fefefe;
-            color: #EAAF88;
-            border: 1px solid #EAAF88; }
-        .right .container1 .selectForm .formInsert .condition1 {
-          margin-left: 20px; }
-        .right .container1 .selectForm .formInsert .conditionSelected {
-          background-color: #EAAF88;
-          color: #ffffff;
-          border: 1px solid #EAAF88; }
-        .right .container1 .selectForm .formInsert .forRWD {
-          display: none; }
-    .right .container1 #sortCat {
-      border: solid #333 1px;
-      background-color: #fffffb;
-      text-align: center;
-      position: absolute; }
-    .right .container1 .catPic {
-      width: 100%;
-      margin: 60px auto 0;
-      position: relative; }
-      .right .container1 .catPic .catItem {
-        width: 300px;
-        background-size: 100%;
-        display: inline-block;
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-bottom: 30px;
-        position: relative; }
-        .right .container1 .catPic .catItem .favorite {
-          position: absolute;
-          left: 14px;
-          top: 14px;
-          color: #fa3737;
-          font-size: 30px;
-          z-index: 3; }
-        .right .container1 .catPic .catItem .catContent {
-          position: relative;
-          width: 300px;
-          height: auto;
-          border: 8px solid #fff;
-          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-          overflow: hidden; }
-          .right .container1 .catPic .catItem .catContent .img {
-            -webkit-transition: all 0.35s ease-in-out;
-            -moz-transition: all 0.35s ease-in-out;
-            transition: all 0.35s ease-in-out;
-            z-index: -1;
-            position: relative; }
-            .right .container1 .catPic .catItem .catContent .img img {
-              width: 100%; }
-          .right .container1 .catPic .catItem .catContent:hover .img {
-            -webkit-transform: translateY(-40px);
-            -moz-transform: translateY(-40px);
-            -ms-transform: translateY(-40px);
-            -o-transform: translateY(-40px);
-            transform: translateY(-40px); }
-          .right .container1 .catPic .catItem .catContent:hover .quickView {
-            visibility: visible;
-            opacity: 1;
-            -webkit-transform: translateY(-2px);
-            -moz-transform: translateY(-2px);
-            -ms-transform: translateY(-2px);
-            -o-transform: translateY(-2px);
-            transform: translateY(-2px); }
-        .right .container1 .catPic .catItem .quickView {
-          position: absolute;
-          left: 0;
-          bottom: 0px;
-          width: 100%;
-          text-align: center;
-          visibility: hidden;
-          height: 60px;
-          line-height: 60px;
-          background: #EAAF88;
-          opacity: 0;
-          cursor: pointer;
-          -webkit-transition: all 0.3s ease-in-out;
-          -moz-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-          -webkit-transform: translateY(100%);
-          -moz-transform: translateY(100%);
-          -ms-transform: translateY(100%);
-          -o-transform: translateY(100%);
-          transform: translateY(100%);
-          display: block;
-          text-align: center;
-          text-transform: uppercase;
-          color: #fff;
-          text-align: center;
-          font-size: 18px;
-          z-index: 2;
-          border: none;
-          outline: none; }
-        .right .container1 .catPic .catItem figure {
-          font-size: 14px;
-          line-height: 1.5em;
-          color: #000000;
-          padding-left: 20px;
-          margin-top: 6px; }
-          .right .container1 .catPic .catItem figure h3 {
-            font-size: 24px;
-            margin-left: -10px;
-            font-weight: 400; }
-      .right .container1 .catPic .page {
-        text-align: center; }
-        .right .container1 .catPic .page .pageNo {
-          border-width: 1px;
-          border-radius: 0px;
-          padding: 2px;
-          padding-left: 5px;
-          width: 20px;
-          line-height: 1.5em;
-          display: inline-block;
-          text-align: center;
-          margin-left: 5px;
-          margin-right: 5px; }
+    transform: translateY(-6px);
+  }
+}
+
+.right .container1 .selectForm #advanced {
+  position: fixed;
+  left: -100px;
+}
+
+.right .container1 .selectForm #advanced ~ div {
+  margin-top: 40px;
+  height: 0;
+  overflow: hidden;
+  transition: 1s ease;
+}
+
+.right .container1 .selectForm #advanced:checked ~ div {
+  height: 280px;
+}
+
+.right .container1 .selectForm .advanceSearchItem {
+  text-align: left;
+}
+
+.right .container1 .selectForm .advanceSearchItem div {
+  position: relative;
+}
+
+.right .container1 .selectForm .advanceSearchItem div label {
+  font-family: 'Noto Sans TC';
+  position: relative;
+  top: 0px;
+  left: 0;
+}
+
+.right .container1 .selectForm .advanceSearchItem div label.toMiddle {
+  top: -134px;
+}
+
+.right .container1 .selectForm .selectTitle {
+  font-size: 18px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.right .container1 .selectForm .toMiddle:before {
+  content: '';
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  background: #f00;
+}
+
+.right .container1 .selectForm .formInsert {
+  display: inline-block;
+}
+
+.right .container1 .selectForm .formInsert .searchBar {
+  width: 260px;
+  height: 30px;
+  border-radius: 100px;
+  border: 2px solid black;
+  font-size: 14px;
+  text-indent: 4px;
+  margin-right: 6px;
+  padding-left: 5px;
+}
+
+.right .container1 .selectForm .formInsert .searchBar:focus {
+  outline: none;
+}
+
+.right .container1 .selectForm .formInsert .searchBar:-ms-input-placeholder {
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 4px;
+  padding: 5px 15px;
+}
+
+.right .container1 .selectForm .formInsert .searchBar:-moz-placeholder {
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 4px;
+  padding: 5px 15px;
+}
+
+.right .container1 .selectForm .formInsert .searchBar::-moz-placeholder {
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 4px;
+  padding: 5px 15px;
+}
+
+.right .container1 .selectForm .formInsert .searchBar::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 4px;
+  padding: 5px 15px;
+}
+
+.right .container1 .selectForm .formInsert .condition {
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  background-color: #fff;
+  color: #333;
+  line-height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 6px;
+  outline: none;
+  transition: .3s all;
+  letter-spacing: 1.5px;
+}
+
+.right .container1 .selectForm .formInsert .condition:hover {
+  background-color: #fefefe;
+  color: #EAAF88;
+  border: 1px solid #EAAF88;
+}
+
+.right .container1 .selectForm .formInsert .condition1 {
+  margin-left: 20px;
+}
+
+.right .container1 .selectForm .formInsert .conditionSelected {
+  background-color: #EAAF88;
+  color: #ffffff;
+  border: 1px solid #EAAF88;
+}
+
+.right .container1 .selectForm .formInsert .forRWD {
+  display: none;
+}
+
+.right .container1 #sortCat {
+  border: solid #333 1px;
+  background-color: #fffffb;
+  text-align: center;
+  position: absolute;
+}
+
+.right .container1 .catPic {
+  width: 100%;
+  margin: 60px auto 0;
+  position: relative;
+}
+
+.right .container1 .catPic .catItem {
+  width: 300px;
+  background-size: 100%;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.right .container1 .catPic .catItem .favorite {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  color: #fa3737;
+  font-size: 30px;
+  z-index: 3;
+}
+
+.right .container1 .catPic .catItem .catContent {
+  position: relative;
+  width: 300px;
+  height: auto;
+  border: 8px solid #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.right .container1 .catPic .catItem .catContent .img {
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  z-index: -1;
+  position: relative;
+}
+
+.right .container1 .catPic .catItem .catContent .img img {
+  width: 100%;
+}
+
+.right .container1 .catPic .catItem .catContent:hover .img {
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px);
+}
+
+.right .container1 .catPic .catItem .catContent:hover .quickView {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.right .container1 .catPic .catItem .quickView {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  height: 60px;
+  line-height: 60px;
+  background: #EAAF88;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  z-index: 2;
+  border: none;
+  outline: none;
+}
+
+.right .container1 .catPic .catItem figure {
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #000000;
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+.right .container1 .catPic .catItem figure h3 {
+  font-size: 24px;
+  margin-left: -10px;
+  font-weight: 400;
+}
+
+.right .container1 .catPic .page {
+  text-align: center;
+}
+
+.right .container1 .catPic .page .pageNo {
+  border-width: 1px;
+  border-radius: 0px;
+  padding: 2px;
+  padding-left: 5px;
+  width: 20px;
+  line-height: 1.5em;
+  display: inline-block;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
 @media all and (max-width: 991px) {
   header {
     display: none; }
   .right {
     width: 100%;
-    margin: 0; }
-    .right .container1 #sortCat {
-      left: 130px; }
-    .right .container1 #quickViewArea {
-      height: 540px;
-      width: 360px; }
-    .right .container1 .selectForm .advanceSearch {
-      right: 14%; }
-    .right .container1 .catPic #sortCat {
-      left: 100px; }
-    .right .container1 .catPic .catItem {
-      width: 80%;
-      display: block;
-      margin: 0 auto 100px; }
-      .right .container1 .catPic .catItem .catContent,
-      .right .container1 .catPic .catItem figure {
-        display: inline-block;
-        vertical-align: top; }
-      .right .container1 .catPic .catItem figure {
-        padding-top: 40px;
-        font-size: 18px; }
-        .right .container1 .catPic .catItem figure h3 {
-          font-size: 30px; }
-    .right .container1 .catPic .page .pageNo {
-      width: 30px;
-      padding: 6px;
-      padding-left: 8px; }
+    margin: 0;
+  }
+  .right .container1 #sortCat {
+    left: 134px;
+    padding: 2px 6px;
+  }
+  .right .container1 #quickViewArea {
+    height: 540px;
+    width: 360px;
+  }
+  .right .container1 .selectForm .advanceSearch {
+    right: 14%;
+  }
+  .right .container1 .catPic #sortCat {
+    left: 100px;
+  }
+  .right .container1 .catPic .catItem {
+    width: 80%;
+    display: block;
+    margin: 0 auto 100px;
+  }
+  .right .container1 .catPic .catItem .catContent,
+  .right .container1 .catPic .catItem figure {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .right .container1 .catPic .catItem figure {
+    padding-top: 40px;
+    font-size: 18px;
+  }
+  .right .container1 .catPic .catItem figure h3 {
+    font-size: 30px;
+  }
+  .right .container1 .catPic .page .pageNo {
+    width: 30px;
+    padding: 6px;
+    padding-left: 8px;
+  }
   footer {
     margin-left: 0; } }
 
@@ -886,45 +1002,67 @@ body {
     display: none; }
   .right {
     width: 100%;
-    margin: 0; }
-    .right .container1 #sortCat {
-      left: 22px; }
-    .right .container1 #quickViewArea {
-      height: 400px;
-      width: 300px; }
-    .right .container1 .selectForm {
-      width: 100%; }
-      .right .container1 .selectForm .formInsert {
-        width: 100%; }
-        .right .container1 .selectForm .formInsert .searchBar {
-          width: 80%;
-          margin-left: 0; }
-        .right .container1 .selectForm .formInsert .defaultBtn {
-          padding: 4px 14px; }
-      .right .container1 .selectForm .advanceSearch {
-        right: 5%; }
-      .right .container1 .selectForm #advanced:checked ~ div {
-        height: 500px; }
-      .right .container1 .selectForm .advanceSearchItem {
-        padding-left: 20px;
-        padding-right: 20px; }
-        .right .container1 .selectForm .advanceSearchItem .selectTitle {
-          display: block;
-          margin-top: 20px; }
-        .right .container1 .selectForm .advanceSearchItem .condition {
-          padding: 3px 8px;
-          margin: 4px 2px; }
-        .right .container1 .selectForm .advanceSearchItem .forRWD {
-          display: block; }
-        .right .container1 .selectForm .advanceSearchItem div label.toMiddle {
-          top: 0; }
-    .right .container1 .catPic .catItem {
-      display: block;
-      margin: 0 auto 100px; }
-      .right .container1 .catPic .catItem .catContent,
-      .right .container1 .catPic .catItem figure {
-        display: inline-block;
-        padding-top: 10px; }
+    margin: 0;
+  }
+  .right .container1 #sortCat {
+    left: 22px;
+  }
+  .right .container1 #quickViewArea {
+    height: 400px;
+    width: 300px;
+  }
+  .right .container1 .selectForm {
+    width: 100%;
+  }
+  .right .container1 .selectForm .formInsert {
+    width: 100%;
+  }
+  .right .container1 .selectForm .formInsert .searchBar {
+    width: 80%;
+    margin-left: 0;
+  }
+  .right .container1 .selectForm .formInsert .defaultBtn {
+    padding: 4px 14px;
+  }
+  .right .container1 .selectForm .advanceSearch {
+    right: 5%;
+    font-size: 18px;
+  }
+  .right .container1 .selectForm #advanced:checked ~ div {
+    height: 640px;
+  }
+  .right .container1 .selectForm .advanceSearchItem {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .right .container1 .selectForm .advanceSearchItem .selectTitle {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .right .container1 .selectForm .advanceSearchItem .condition {
+    padding: 8px 14px;
+    margin: 4px 2px;
+    font-size: 14px;
+  }
+  .right .container1 .selectForm .advanceSearchItem .forRWD {
+    display: block;
+  }
+  .right .container1 .selectForm .advanceSearchItem div label.toMiddle {
+    top: 0;
+  }
+  .right .container1 .catPic .catItem {
+    display: block;
+    margin: 0 auto 100px;
+  }
+  .right .container1 .catPic .catItem .catContent,
+  .right .container1 .catPic .catItem figure {
+    display: inline-block;
+  }
+  .right .container1 .catPic .catItem figure {
+    padding-top: 10px;
+  }
   footer {
     margin-left: 0; } }
 
