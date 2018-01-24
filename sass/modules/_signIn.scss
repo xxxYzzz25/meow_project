@@ -78,7 +78,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 }
                 small {
                     font-size: $font-size-small;
-                    color: $colorPlaceholder;
+                    color: hsla(0, 0%, 100%, 0.9);
                 }
             }
             .formBtn {
@@ -100,10 +100,13 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                 }
             }
             input {
+                color: #fff;
+                padding-left: 4px;
                 border: none;
                 background-color: transparent;
                 border-bottom: 1px solid $colorPlaceholder;
                 width: 100%;
+                transition: 1s;
                 &:-ms-input-placeholder {
                     line-height: 1em;
                     padding: 5px 15px;
@@ -132,6 +135,10 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
                     font-style: italic;
                     font-size: $font-size-small;
                 }
+            }
+            input:focus {
+                border-bottom: 1px solid $navColor;
+                transition: 1s;
             }
             #userPhoto {
                 display: none;
@@ -168,7 +175,7 @@ $colorPlaceholder: hsla(0, 0%, 96%, 0.7);
         background-color: rgb(189, 192, 186);
         .chioce {
             .selected {
-                border-bottom-color: #876633; 
+                border-bottom-color: #876633;
             }
         }
     }

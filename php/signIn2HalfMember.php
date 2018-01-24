@@ -7,12 +7,6 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title>會員登入</title>
-    <style>
-        a {
-            cursor: pointer;
-            color: #44f;
-        }
-    </style>
 </head>
 
 <body>
@@ -31,42 +25,33 @@ try {
 	$statement->execute();
 	//檢查是否有此帳密
 	if ($statement->rowCount() === 0) { //帳密錯誤
-		echo "<center>帳密錯誤 , 請重新登入</center>";
+		echo "<script>alert('帳密錯誤 , 請重新登入')</script>";
 	} else {//帳密存在
 		$halfRow = $statement->fetch(PDO::FETCH_ASSOC);//取回資料錄
 		if ($halfRow["HALF_BAN"]) {
-			echo "<center>此帳號已被停權, 若有疑問請來信客服。</center>";
+			echo "<script>alert('此帳號已被停權, 若有疑問請來信客服。')</script>";
 		}else if ( $halfRow["HALF_AUDIT_STATUS"] != 1 ) {
-			echo "<center>此帳號尚未審核, 請稍候, 我們將盡快為您審核。</center>";
+			echo "<script>alert('此帳號尚未審核, 請稍候, 我們將盡快為您審核。')</script>";
         }else {
 				$halfNo = $halfRow["HALF_NO"];
+				$halfName = $halfRow["HALF_NAME"];
 				echo "<script>
 				window.addEventListener('load',()=>{
 					localStorage.setItem('halfNo',$halfNo);
 				});
+				alert('登入成功\\n\\n$halfName, 您好')
+				history.back()
 				</script>";
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];
-			echo "<center>", $halfRow["HALF_NAME"], "您好~</center>";//致歡迎詞
 		}
 	}
 } catch (PDOException $e) {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";
 }
-echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext'>或點此直接回到原網址</a></center>";
-
+echo"<script>
+		history.back()
+	</script>";
 ?>
-<script>
-    window.addEventListener('load', () => {
-    let back = document.getElementById('backNext')
-    setTimeout(function(){
-        window.history.back()
-    }, 5000)
-    back.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.history.back()
-    })
-})
-</script>
 </body>
 </html>

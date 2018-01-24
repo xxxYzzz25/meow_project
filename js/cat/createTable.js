@@ -22,6 +22,7 @@ window.addEventListener('load', function () {
         td2.setAttribute("colspan", "2");
         input.setAttribute("placeholder", "請輸入您的大名");
         input.setAttribute("name", "donateName");
+        input.setAttribute("required", "required");
 
         // 第二行
         tr2 = document.createElement("tr");
@@ -38,6 +39,8 @@ window.addEventListener('load', function () {
         td4.setAttribute("colspan", "2");
         input.setAttribute("placeholder", "請輸入您的助養金額");
         input.setAttribute("name", "donatePrice");
+        input.setAttribute("pattern", "[0-9]{1-10}");
+        input.setAttribute("required", "required");
 
         // 第三行
         tr3 = document.createElement("tr");
@@ -57,8 +60,10 @@ window.addEventListener('load', function () {
 
         input.setAttribute("placeholder", "4705-7777-6666-5888");
         input.setAttribute("pattern", "[0-9]{4}[-][0-9]{4}[-][0-9]{4}[-][0-9]{4}");        
+        input.setAttribute("required", "required");
         input2.setAttribute("placeholder", "請輸入安全碼");
         input2.setAttribute("pattern", "[0-9]{3}");        
+        input2.setAttribute("required", "required");
 
 
 

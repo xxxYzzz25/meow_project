@@ -259,29 +259,38 @@ body {
                         transition: all 0.35s ease-in-out;
                         z-index: -1;
                         position: relative;
+                        image-rendering: optimizeSpeed;
+                        image-rendering: -moz-crisp-edges;
+                        image-rendering: -o-crisp-edges;
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: optimize-contrast;
+                        -ms-interpolation-mode: nearest-neighbor;
+                        -webkit-backface-visibility: hidden;
+                        backface-visibility: hidden;
                         img {
                             width: 100%;
                         }
                     }
                     &:hover .img {
-                        -webkit-transform: translateY(-40px);
-                        -moz-transform: translateY(-40px);
-                        -ms-transform: translateY(-40px);
-                        -o-transform: translateY(-40px);
-                        transform: translateY(-40px);
+                        -webkit-transform: translateY(-30px);
+                        -moz-transform: translateY(-30px);
+                        -ms-transform: translateY(-30px);
+                        -o-transform: translateY(-30px);
+                        transform: translateY(-30px);
                     }
                     &:hover .quickView {
                         visibility: visible;
                         opacity: 1;
-                        -webkit-transform: translateY(-2px);
-                        -moz-transform: translateY(-2px);
-                        -ms-transform: translateY(-2px);
-                        -o-transform: translateY(-2px);
-                        transform: translateY(-2px);
+                        -webkit-transform: translateY(0px);
+                        -moz-transform: translateY(0px);
+                        -ms-transform: translateY(0px);
+                        -o-transform: translateY(0px);
+                        transform: translateY(0px);
                     }
                 }
                 .quickView {
                     position: absolute;
+                    letter-spacing: 2px;
                     left: 0;
                     bottom: 0px;
                     width: 100%;

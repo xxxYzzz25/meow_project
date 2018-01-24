@@ -29,11 +29,11 @@ try {
 	$stmt->bindValue(1, $id);
 	$stmt->execute();
 	if ($stmt->rowCount() != 0) {
-		echo "<center>帳號已存在！</center>";
+		echo "<script>alert('帳號已存在！')</script>";
 		return;
 	} else {
 		if (!isset($_FILES['image'])) {
-			echo "<center>請上傳大頭貼!</center>";
+			echo "<script>alert('請上傳大頭貼!')</script>";
 		} else if (($_FILES['image']['type'] == "image/gif" || $_FILES['image']['type'] == "image/png" || $_FILES['image']['type'] == "image/jpeg" || $_FILES['image']['type'] == "image/JPEG" || $_FILES['image']['type'] == "image/PNG" || $_FILES['image']['type'] == "image/GIF")) {
 			if ($_FILES['image']['error'] === 0) {
 				$dir = "../images/halfMemberPic";
@@ -61,45 +61,35 @@ try {
 						$stmt->bindValue(6, $address);
 						$stmt->bindValue(7, $dest);
 						$stmt->execute();
-						echo "<center>註冊成功<br>請靜候審核</center><br>";
+						echo "<script>alert('註冊成功\\n請靜候審核')</script>";
 					} else {
-						echo "<center>您的資料輸入未完全, 請檢查</center>";
+						echo "<script>alert('您的資料輸入未完全, 請檢查')</script>";
 					}
 				} else {
-					echo "<center>上傳圖片至伺服器失敗</center>";
+					echo "<script>alert('上傳圖片至伺服器失敗')</script>";
 				}
 			} elseif ($_FILES['image']['error'] === 1) {
 				echo "<center>上傳檔案太大, 不可超過", ini_get("upload_max_filesize"), "</center>";
 			} elseif ($_FILES['image']['error'] === 2) {
 				echo "<center>上傳檔案太大, 不可超過", $_POST['MAX_FILE_SIZE'], "Byte(1024kb)</center>";
 			} elseif ($_FILES['image']['error'] === 3) {
-				echo "<center>上傳檔案不完整, 請檢查您的網路狀態</center>";
+				echo "<script>alert('上傳檔案不完整, 請檢查您的網路狀態')</script>";
 			} elseif ($_FILES['image']['error'] === 4) {
-				echo "<center>未指定上傳檔案, 請重新確認</center>";
+				echo "<script>alert('未指定上傳檔案, 請重新確認')</script>";
 			} else {
-				echo "<center>上傳圖片失敗</center>";
+				echo "<script>alert('上傳圖片失敗')</script>";
 			}
 		} else {
-			echo "<center>檔案格式錯誤須為jpg/gif/png/jpeg</center>";
+			echo "<script>alert('檔案格式錯誤須為jpg/gif/png/jpeg<')/script>";
 		}
 	}
 } catch (Exception $e) {
-	echo "<center>因為小精靈在搗亂伺服器所以失敗了唷<br>請稍後再試</center>";
+	echo "<script>alert('因為小精靈在搗亂伺服器所以失敗了唷\\n請稍後再試')</script>";
 }
-echo "<center>將在五秒後回到原網址</center><br><center><a id='backNext'>或點此直接回到原網址</a></center>";
+echo"<script>
+		history.back()
+	</script>";
 
 ?>
-<script>
-    window.addEventListener('load', () => {
-    let back = document.getElementById('backNext')
-    setTimeout(function(){
-        window.history.back()
-    }, 5000)
-    back.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.history.back()
-    })
-})
-</script>
 </body>
 </html>

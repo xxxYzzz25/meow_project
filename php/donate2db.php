@@ -18,15 +18,13 @@ try {
 	$statement->bindValue(3, $donatePrice);
 	$statement->bindValue(4, date("Y-m-d"));
 	$statement->execute();
-	echo "異動成功";
+	echo "<script>alert('助養成功, 感謝您對喵喵的捐助')</script>";
+	echo "<script>history.back()</script>";
 } catch (Exception $e) {
 	echo "錯誤原因 : ", $e->getMessage(), "<br>";
 	echo "錯誤行號 : ", $e->getLine(), "<br>";
 	echo "異動失敗";
 }
-?>
-<?php // 跳轉到：
-header("location:../html/catContent.php?catNo=$catNo");
 ?>
 </body>
 </html>

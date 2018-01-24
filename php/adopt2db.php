@@ -10,11 +10,6 @@ $catNo = $_GET['CATNO'];
 <head>
     <meta charset="UTF-8">
     <title>領養要求送出</title>
-    <style>
-        a {
-            color: #44c;
-        }
-    </style>
 </head>
 <body>
 <?php
@@ -28,16 +23,16 @@ try {
         try {
             $sql = "update CAT SET ADOPT_STATUS = 1 WHERE CAT_NO = $catNo";
             $statement = $pdo->query($sql);
-            echo "<center>已送出領養請求, 請等候中途之家通知</center>";
-            echo "<center><a href='../html/catSearch.php'>請按此回到尋喵頁面</a></center>";
+            echo "<script>alert('已送出領養請求, 請等候中途之家通知')</script>";
+            echo "<script>history.back()</script>";
         } catch (Exception $e) {
             echo "錯誤原因 : ", $e->getMessage(), "<br>";
             echo "錯誤行號 : ", $e->getLine(), "<br>";
             echo "異動失敗";
         }
     }else{
-        echo "<center>您的答對題數為：$score 題</center>";
-        echo "<center>您的養貓知識還不足夠, <a href='../index.php'>點我去首頁學習！</a></center>";
+        echo "<script>alert('您的答對題數為：$score 題\\n您的養貓知識還不足夠, 前往首頁學習！')</script>";
+        echo "<script>document.location.href='../index.php'</script>";
     }
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
