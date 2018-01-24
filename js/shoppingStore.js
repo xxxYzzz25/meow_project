@@ -44,7 +44,7 @@ function ajaxData(e) {
     
 	if (searchName !== '') {
 		//getData('searchName=' + searchName);
-		var url = "Cat_ShoppingStore_food.php?searchValue=" + searchName;
+		var url = "../php/Cat_ShoppingStore_food.php?searchValue=" + searchName;
 		
 		var xhr = new XMLHttpRequest();
 		
