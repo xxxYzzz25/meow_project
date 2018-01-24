@@ -6,7 +6,10 @@
                 width: 100%;
                 margin: 0;
                 .container1 {
-                    #quickViewArea{
+                    #sortCat {
+                        left: 130px;
+                    }
+                    #quickViewArea {
                         height: 540px;
                         width: 360px;
                     }
@@ -16,7 +19,7 @@
                         }
                     }
                     .catPic {
-                        #sortCat{
+                        #sortCat {
                             left: 100px;
                         }
                         .catItem {
@@ -28,8 +31,20 @@
                                 display: inline-block;
                                 vertical-align: top;
                             }
-                            figure{
-                                padding-top: 60px;
+                            figure {
+                                padding-top: 40px;
+                                font-size: $font-size-large;
+
+                                h3{
+                                    font-size: $font-size-h2;
+                                }
+                            }
+                        }
+                        .page{
+                            .pageNo{
+                                width: 30px;
+                                padding: 6px;
+                                padding-left: 8px;
                             }
                         }
                     }
