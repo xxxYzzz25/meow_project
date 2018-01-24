@@ -25,7 +25,7 @@
                 <button id="halfMember1">中途之家會員</button>
                 <button id="member1" class="selected">一般會員</button>
             </div>
-            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
+            <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
                 <br>
                 <br>
                 <br>
@@ -127,7 +127,20 @@
 					<a href="./forum.php">討論區</a>
 				</li>
 				<li>
-					<a href="#" class="login">會員專區</a>
+				
+					<?php
+						if($_SESSION['MEM_NO'] == null && $_SESSION['HALF_NO'] == null){
+							echo "<a href='#' class='login'>會員專區</a>";
+						}else{
+							if($_SESSION['HALF_NO'] == null){
+								echo "<a href='member.php'>會員專區</a>";
+							}
+							else{
+								echo "<a href='halfMem.php'>中途會員專區</a>";
+							}
+						}
+					?>
+				
 				</li>
 			</ul>
 		</nav>
