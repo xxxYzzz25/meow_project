@@ -480,18 +480,18 @@ footer span {
 
 @media all and (max-width: 991px) {
   footer {
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
 
 @media all and (max-width: 767px) {
-  .section footer {
+  footer {
     margin-left: 0;
     width: 100%;
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
@@ -1183,18 +1183,18 @@ header ul li:nth-child(5):after {
 
 @media all and (max-width: 991px) {
   footer {
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
 
 @media all and (max-width: 767px) {
-  .section footer {
+  footer {
     margin-left: 0;
     width: 100%;
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
