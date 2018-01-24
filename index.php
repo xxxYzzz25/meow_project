@@ -44,6 +44,7 @@
     <div id="loading">
         <img src="images/loading.svg" id="loadingCat" alt="loading">
     </div>
+    
     <div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
@@ -173,7 +174,8 @@
         <div class="icons">
             <a href="#">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            </a><?php
+            </a>
+            <?php
                     if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
                         echo "<a href='php/memberLogOut.php' id='loginBtn'>
                             <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
@@ -184,9 +186,13 @@
                             </a>";
                     }
             ?>
-            <a href="#" id="likeBox">
-                <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-            </a>
+            <?php
+                if(isset($_SESSION["MEM_NO"])){
+                    echo "<a href='#' id='likeBoxBtn'>
+                            <i class='fa fa-heart-o fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }
+            ?>
         </div>
         <div class="hb">
             <div class="hamburger" id="hamburger-6">
@@ -543,7 +549,9 @@
                 </div>
             </div>
         </div>
-
+        <div class="likeBox">
+            
+        </div>
         <script src="js/sliderKit.js"></script>
         <script src="js/sliderHalf.js"></script>
         <script src="js/signIndex.js"></script>
@@ -558,7 +566,7 @@
                 searchBtn.addEventListener('click',()=>{
                     searchBar.submit();
                 })
-            });
+            
         </script>
         
 </body>
