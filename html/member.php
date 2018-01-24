@@ -19,7 +19,7 @@
 </head>
 
 <body onload="getData('memInfo.php');">
-   <div class="signUpLightboxBlack"></div>
+<div class="signUpLightboxBlack"></div>
 <div class="signUpLightbox" id="loginBox">
     <i class="fa fa-times cancel"></i>
     <div class="bgImg" id="bgImg"></div>

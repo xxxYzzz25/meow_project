@@ -26,7 +26,7 @@ try {
 	if(isset($_FILES["upFile"])){
 		foreach( $_FILES["upFile"]["error"] as $i=>$error){
 			if ($_FILES['upFile']['type'][$i] == "image/gif" || $_FILES['upFile']['type'][$i] == "image/png" || $_FILES['upFile']['type'][$i] == "image/jpeg" || $_FILES['upFile']['type'][$i] == "image/JPEG" || $_FILES['upFile']['type'][$i] == "image/PNG" || $_FILES['upFile']['type'][$i] == "image/GIF") {
-				if(count($_FILES["upFile"]["name"]) < 4){
+				if(count($_FILES["upFile"]["name"]) < 5){
 					switch($_FILES["upFile"]["error"][$i]){
 						case UPLOAD_ERR_OK:	
 							$dir = "../images/halfwayPic";

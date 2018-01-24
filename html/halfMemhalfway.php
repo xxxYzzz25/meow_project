@@ -50,7 +50,7 @@ try {
             <tr>
                 <th>中途之家敘述</th>
                 <td>
-                    <textarea name="intro" id="" cols="40" rows="10"></textarea>
+                    <textarea name="intro" id="" cols="60" rows="20"></textarea>
                 </td>
             </tr>
             <tr>

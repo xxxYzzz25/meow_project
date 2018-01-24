@@ -71,6 +71,7 @@
     form {
         text-align: right;
         .more {
+            font-size: $font-size-large;
             display: inline-block;
             border-style: none;
             margin-right: 20px;
@@ -109,6 +110,7 @@
                     box-shadow: 12px 10px 20px -10px #333;
                     img {
                         width: 100%;
+                        vertical-align: top;
                     }
                 }
                 .bg {
@@ -136,6 +138,15 @@
                     background-color: rgba(199, 79, 73, 0.767);
                 }
                 .color6 {
+                    background-color: rgba(139, 105, 73, 0.767);
+                }
+                .color7 {
+                    background-color: rgba(66, 136, 115, 0.767);
+                }
+                .color8 {
+                    background-color: rgba(199, 79, 73, 0.767);
+                }
+                .color9 {
                     background-color: rgba(139, 105, 73, 0.767);
                 }
             }
