@@ -20,6 +20,7 @@
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="../js/signIn.js"></script>
     <link rel="stylesheet" href="../css/halfMem.css">
+    <script src="../js/hb.js"></script>
 </head>
 
 <body onload="getData('halfMeminfo.php');">
@@ -110,7 +111,9 @@
         </form>
     </div>
 </div>
+
 <!-- header -->
+
 <header>
     <div class="logo">
         <a href="../index.php">
@@ -179,6 +182,13 @@
             <span class="line"></span>
         </div>
     </div>
+    <div class="hb">
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
 </header>
 
     <div class="right">

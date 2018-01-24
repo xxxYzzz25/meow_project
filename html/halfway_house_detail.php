@@ -18,7 +18,8 @@
     <script src="../js/cat/like.js"></script>
 	<script src="../js/halfway/showlarge.js"></script>
 	<!-- <script src="../js/halfway/star.js"></script> -->
-	<link rel="stylesheet" href="../css/halfway_house_detail.css">
+    <link rel="stylesheet" href="../css/halfway_house_detail.css">
+    <script src="../js/hb.js"></script>
 	<title>中途之家</title>
 </head>
 
@@ -110,6 +111,7 @@
             </form>
         </div>
     </div>
+   
     <header>
         <div class="logo">
             <a href="../index.php">
@@ -166,6 +168,13 @@
                         </a>";
                 }
             ?>
+        </div>
+        <div class="hb">
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
         </div>
         <div class="hb">
             <div class="hamburger" id="hamburger-6">

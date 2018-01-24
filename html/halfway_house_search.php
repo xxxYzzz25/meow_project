@@ -17,6 +17,7 @@
     <script src="../js/signIn.js"></script>
     <script src="../js/halfway/halfSearch.js"></script>
     <link rel="stylesheet" href="../css/halfway_house_search.css">
+    <script src="../js/hb.js"></script>
     <title>搜尋中途之家</title>
 </head>
 
@@ -108,6 +109,7 @@
             </form>
         </div>
     </div>
+    
     <header>
         <div class="logo">
             <a href="../index.php">

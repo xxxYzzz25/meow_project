@@ -16,3 +16,5 @@
 @import 'respond/_catContentMedium.scss';
 @import 'respond/_catContentSmall.scss';
 @include navNow(1);
+@import './respond/_headerMedium.scss';
+@import './respond/_headerSmall.scss';

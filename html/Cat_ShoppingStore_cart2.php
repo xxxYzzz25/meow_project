@@ -24,7 +24,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/Cat_ShoppingStore_cart.css">
     <script src="../js/wow.js"></script>
-
+    <script src="../js/hb.js"></script>
     <script src="../js/shoppingCart2.js"></script>
 
     <script>
@@ -87,6 +87,13 @@
                         </a>";
                 }
             ?>
+        </div>
+        <div class="hb">
+            <div class="hamburger" id="hamburger-6">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
         </div>
     </header>
 
