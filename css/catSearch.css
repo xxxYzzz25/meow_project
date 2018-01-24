@@ -832,6 +832,7 @@ body {
   right: 64px;
   top: 50px;
   cursor: pointer;
+  font-weight: 400;
 }
 
 .right .container1 .selectForm .fa-angle-down {
@@ -904,8 +905,9 @@ body {
 }
 
 .right .container1 .selectForm .selectTitle {
-  font-size: 14px;
+  font-size: 18px;
   vertical-align: middle;
+  font-weight: 400;
 }
 
 .right .container1 .selectForm .toMiddle:before {
@@ -1143,7 +1145,8 @@ body {
     margin: 0;
   }
   .right .container1 #sortCat {
-    left: 130px;
+    left: 134px;
+    padding: 2px 6px;
   }
   .right .container1 #quickViewArea {
     height: 540px;
@@ -1212,9 +1215,10 @@ body {
   }
   .right .container1 .selectForm .advanceSearch {
     right: 5%;
+    font-size: 18px;
   }
   .right .container1 .selectForm #advanced:checked ~ div {
-    height: 500px;
+    height: 640px;
   }
   .right .container1 .selectForm .advanceSearchItem {
     padding-left: 20px;
@@ -1223,10 +1227,13 @@ body {
   .right .container1 .selectForm .advanceSearchItem .selectTitle {
     display: block;
     margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
   }
   .right .container1 .selectForm .advanceSearchItem .condition {
-    padding: 3px 8px;
+    padding: 8px 14px;
     margin: 4px 2px;
+    font-size: 14px;
   }
   .right .container1 .selectForm .advanceSearchItem .forRWD {
     display: block;
@@ -1241,6 +1248,8 @@ body {
   .right .container1 .catPic .catItem .catContent,
   .right .container1 .catPic .catItem figure {
     display: inline-block;
+  }
+  .right .container1 .catPic .catItem figure {
     padding-top: 10px;
   }
   footer {
