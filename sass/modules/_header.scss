@@ -81,9 +81,9 @@ header {
     z-index: 999999999;
     background-color: $navColor;
     padding: 2px 5px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 50px 50px;
     display: none;
-    bottom: -68px;
+    bottom: -40px;
     right:0;
     padding: 15px 10px 10px 10px;
 }
@@ -93,11 +93,11 @@ header.active{
 }
 
 .hamburger .line {
-    width: 40px;
+    width: 20px;
     height: 4px;
     background-color: #ffffff;
     display: block;
-    margin: 8px auto;
+    margin: 4px auto;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -138,8 +138,8 @@ header.active{
 }
 
 #hamburger-6.is-active .line:nth-child(3) {
-    -webkit-transform: translateY(-14px) rotate(90deg);
-    -ms-transform: translateY(-14px) rotate(90deg);
-    -o-transform: translateY(-14px) rotate(90deg);
-    transform: translateY(-14px) rotate(90deg);
+    -webkit-transform: translateY(-6px) rotate(90deg);
+    -ms-transform: translateY(-6px) rotate(90deg);
+    -o-transform: translateY(-6px) rotate(90deg);
+    transform: translateY(-6px) rotate(90deg);
 }

@@ -6,6 +6,9 @@
         width: 100%;
         margin: 0;
         .container1 {
+            #sortCat {
+                left: 22px;
+            }
             #quickViewArea {
                 height: 400px;
                 width: 300px;
@@ -42,6 +45,11 @@
                     .forRWD {
                         display: block;
                     }
+                    div {
+                        label.toMiddle {
+                            top: 0;
+                        }
+                    }
                 }
             }
             .catPic {
@@ -51,6 +59,7 @@
                     .catContent,
                     figure {
                         display: inline-block;
+                        padding-top: 10px;
                     }
                 }
             }

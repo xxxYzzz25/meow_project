@@ -12,7 +12,10 @@ body {
         position: relative;
         padding-top: 40px;
         margin-bottom: 40px;
-        #black{
+        #sortCat {
+            left: 10px;
+        }
+        #black {
             width: 100vw;
             height: 100vh;
             position: fixed;
@@ -22,21 +25,21 @@ body {
             display: none;
             background-color: rgba(0, 0, 0, 0.8);
         }
-        #quickViewArea{
+        #quickViewArea {
             position: fixed;
             height: 600px;
             width: 450px;
             z-index: 1001;
             display: none;
             box-sizing: border-box;
-            border:10px solid #fff;
-            #cancelQkv{
+            border: 10px solid #fff;
+            #cancelQkv {
                 position: absolute;
                 top: 4px;
                 right: 4px;
                 cursor: pointer;
             }
-            img{
+            img {
                 width: 100%;
                 height: 100%;
             }
@@ -117,8 +120,17 @@ body {
             }
             .advanceSearchItem {
                 text-align: left;
-                label {
-                    font-family: 'Noto Sans TC';
+                div {
+                    position: relative;
+                    label {
+                        font-family: 'Noto Sans TC';
+                        position: relative;
+                        top: 0px;
+                        left: 0;
+                    }
+                    label.toMiddle {
+                        top: -134px;
+                    }
                 }
             }
             .selectTitle {
@@ -305,6 +317,7 @@ body {
                     h3 {
                         font-size: $font-size-h3;
                         margin-left: -10px;
+                        font-weight: 400;
                     }
                 }
             }
