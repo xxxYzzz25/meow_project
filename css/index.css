@@ -250,12 +250,7 @@ body {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-<<<<<<< HEAD
     text-align: center;
-  }
-  .breadcrumbs a {
-    border: none;
-    padding: 0;
   }
   .breadcrumbs a:hover {
     color: #333;
@@ -263,13 +258,6 @@ body {
     border-color: transparent;
   }
 }
-=======
-    text-align: center; }
-    .breadcrumbs a:hover {
-      color: #333;
-      background-color: transparent;
-      border-color: transparent; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 .container {
   max-width: 991px;
@@ -331,36 +319,23 @@ footer span {
 
 @media all and (max-width: 991px) {
   footer {
-<<<<<<< HEAD
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
-=======
-    margin-left: 0 !important;
-    width: 100% !important; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
   }
 }
-=======
-    height: 20vh; }
-    footer span {
-      display: block;
-      text-align: center;
-      top: -10px; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 header {
   background-color: #eaaf88;
@@ -517,18 +492,11 @@ header.active {
 }
 
 #hamburger-6.is-active .line:nth-child(3) {
-<<<<<<< HEAD
-  -webkit-transform: translateY(-14px) rotate(90deg);
-  -ms-transform: translateY(-14px) rotate(90deg);
-  -o-transform: translateY(-14px) rotate(90deg);
-  transform: translateY(-14px) rotate(90deg);
-}
-=======
   -webkit-transform: translateY(-6px) rotate(90deg);
   -ms-transform: translateY(-6px) rotate(90deg);
   -o-transform: translateY(-6px) rotate(90deg);
-  transform: translateY(-6px) rotate(90deg); }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
+  transform: translateY(-6px) rotate(90deg);
+}
 
 .pick-kit .pick-title h2, .half .half-title h2, .shop .shop-title h2, .game-point h2, .noticegame .game-point-title h2 {
   font-size: 18px;
@@ -708,86 +676,10 @@ header.active {
 .scroll-down i {
   top: 0;
   position: relative;
-<<<<<<< HEAD
   animation: scrollDown 1.2s ease-out infinite;
   color: #fff;
   text-decoration: none;
 }
-=======
-  background-image: url(../images/wood.jpg); }
-  .pick-kit .pick-title {
-    height: 15vh;
-    display: flex;
-    align-items: center; }
-    .pick-kit .pick-title h2 {
-      height: 40px;
-      line-height: 10px; }
-  .pick-kit ul {
-    width: 200%;
-    position: absolute;
-    display: flex;
-    justify-content: space-around;
-    align-items: center; }
-    .pick-kit ul li {
-      width: 16%;
-      float: left; }
-      .pick-kit ul li .cat_list_bg {
-        width: 100%;
-        height: 70vh;
-        background-color: #fff;
-        padding: 10px; }
-        .pick-kit ul li .cat_list_bg a {
-          text-decoration: none;
-          color: #333; }
-          .pick-kit ul li .cat_list_bg a .cat_list {
-            height: 100%;
-            background: #369;
-            box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.76), -1px -1px 6px rgba(0, 0, 0, 0.555); }
-            .pick-kit ul li .cat_list_bg a .cat_list .bubble {
-              width: 250px;
-              height: 250px;
-              border-radius: 50%;
-              display: block;
-              background-color: rgba(255, 255, 255, 0.548);
-              margin: 0 auto;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center; }
-              .pick-kit ul li .cat_list_bg a .cat_list .bubble span {
-                display: block;
-                padding: 5px; }
-      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list {
-        background-image: url(../images/catcat_171225_0010.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center; }
-      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list {
-        background-image: url(../images/catcat_171225_0011.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center; }
-      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
-        position: relative;
-        top: 50%; }
-      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
-        position: relative;
-        top: 10%; }
-  .pick-kit .arrow {
-    width: 50px;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.411);
-    position: absolute;
-    top: 70vh;
-    z-index: 666;
-    cursor: pointer; }
-    .pick-kit .arrow i {
-      color: #fff;
-      position: relative;
-      top: 12px; }
-  .pick-kit .right-arrow {
-    right: 0; }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 .scroll-down small {
   font-size: 14px;
@@ -800,12 +692,8 @@ header.active {
   background-image: url(../images/wood.jpg);
 }
 
-<<<<<<< HEAD
 .pick-kit .pick-title {
   height: 15vh;
-=======
-footer {
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   display: flex;
   align-items: center;
 }
@@ -851,7 +739,7 @@ footer {
   height: 250px;
   border-radius: 50%;
   display: block;
-  background-color: rgba(255, 255, 255, 0.687);
+  background-color: rgba(255, 255, 255, 0.548);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1136,7 +1024,6 @@ footer {
 }
 
 footer {
-  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1792,11 +1679,8 @@ footer {
   .banner .findBox, .banner .waitBox {
     display: block;
     text-align: center;
-<<<<<<< HEAD
+    margin-bottom: 30px;
   }
-=======
-    margin-bottom: 30px; }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   .search {
     display: flex;
     justify-content: center;

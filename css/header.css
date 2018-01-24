@@ -220,17 +220,10 @@ header.active {
 }
 
 #hamburger-6.is-active .line:nth-child(3) {
-<<<<<<< HEAD
-  -webkit-transform: translateY(-14px) rotate(90deg);
-  -ms-transform: translateY(-14px) rotate(90deg);
-  -o-transform: translateY(-14px) rotate(90deg);
-  transform: translateY(-14px) rotate(90deg);
-}
-
-/*# sourceMappingURL=header.css.map */
-=======
   -webkit-transform: translateY(-6px) rotate(90deg);
   -ms-transform: translateY(-6px) rotate(90deg);
   -o-transform: translateY(-6px) rotate(90deg);
-  transform: translateY(-6px) rotate(90deg); }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
+  transform: translateY(-6px) rotate(90deg);
+}
+
+/*# sourceMappingURL=header.css.map */

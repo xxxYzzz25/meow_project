@@ -214,24 +214,18 @@ footer span {
 
 @media all and (max-width: 991px) {
   footer {
-<<<<<<< HEAD
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
-=======
-    margin-left: 0 !important;
-    width: 100% !important; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
@@ -240,31 +234,18 @@ footer span {
 
 @media all and (max-width: 991px) {
   footer {
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
-=======
-    height: 20vh; }
-    footer span {
-      display: block;
-      text-align: center;
-      top: -10px; } }
-
-@media all and (max-width: 991px) {
-  footer {
-    margin-left: 0 !important;
-    width: 100% !important; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
@@ -272,10 +253,3 @@ footer span {
 }
 
 /*# sourceMappingURL=footer.css.map */
-=======
-    height: 20vh; }
-    footer span {
-      display: block;
-      text-align: center;
-      top: -10px; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6

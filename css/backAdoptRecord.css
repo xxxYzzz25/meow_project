@@ -341,12 +341,7 @@ header .icons a:hover {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-<<<<<<< HEAD
     text-align: center;
-  }
-  .breadcrumbs a {
-    border: none;
-    padding: 0;
   }
   .breadcrumbs a:hover {
     color: #333;
@@ -354,13 +349,6 @@ header .icons a:hover {
     border-color: transparent;
   }
 }
-=======
-    text-align: center; }
-    .breadcrumbs a:hover {
-      color: #333;
-      background-color: transparent;
-      border-color: transparent; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 header ul li:nth-child(6) {
   background-color: #fff;

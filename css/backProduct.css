@@ -161,12 +161,7 @@ body {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-<<<<<<< HEAD
     text-align: center;
-  }
-  .breadcrumbs a {
-    border: none;
-    padding: 0;
   }
   .breadcrumbs a:hover {
     color: #333;
@@ -174,13 +169,6 @@ body {
     border-color: transparent;
   }
 }
-=======
-    text-align: center; }
-    .breadcrumbs a:hover {
-      color: #333;
-      background-color: transparent;
-      border-color: transparent; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 .btns .btn {
   font-size: 30px;

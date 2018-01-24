@@ -161,12 +161,7 @@ body {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-<<<<<<< HEAD
     text-align: center;
-  }
-  .breadcrumbs a {
-    border: none;
-    padding: 0;
   }
   .breadcrumbs a:hover {
     color: #333;
@@ -174,13 +169,6 @@ body {
     border-color: transparent;
   }
 }
-=======
-    text-align: center; }
-    .breadcrumbs a:hover {
-      color: #333;
-      background-color: transparent;
-      border-color: transparent; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 .container {
   max-width: 991px;
@@ -242,36 +230,23 @@ footer span {
 
 @media all and (max-width: 991px) {
   footer {
-<<<<<<< HEAD
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
-=======
-    margin-left: 0 !important;
-    width: 100% !important; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
   }
 }
-=======
-    height: 20vh; }
-    footer span {
-      display: block;
-      text-align: center;
-      top: -10px; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 .btns .btn {
   font-size: 30px;
@@ -744,36 +719,23 @@ h2 {
 
 @media all and (max-width: 991px) {
   footer {
-<<<<<<< HEAD
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
-=======
-    margin-left: 0 !important;
-    width: 100% !important; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
   }
 }
-=======
-    height: 20vh; }
-    footer span {
-      display: block;
-      text-align: center;
-      top: -10px; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 header {
   background-color: #eaaf88;
@@ -930,18 +892,11 @@ header.active {
 }
 
 #hamburger-6.is-active .line:nth-child(3) {
-<<<<<<< HEAD
-  -webkit-transform: translateY(-14px) rotate(90deg);
-  -ms-transform: translateY(-14px) rotate(90deg);
-  -o-transform: translateY(-14px) rotate(90deg);
-  transform: translateY(-14px) rotate(90deg);
-}
-=======
   -webkit-transform: translateY(-6px) rotate(90deg);
   -ms-transform: translateY(-6px) rotate(90deg);
   -o-transform: translateY(-6px) rotate(90deg);
-  transform: translateY(-6px) rotate(90deg); }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
+  transform: translateY(-6px) rotate(90deg);
+}
 
 @media all and (max-width: 991px) {
   header {

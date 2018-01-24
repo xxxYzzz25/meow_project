@@ -214,36 +214,23 @@ footer span {
 
 @media all and (max-width: 991px) {
   footer {
-<<<<<<< HEAD
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
-=======
-    margin-left: 0 !important;
-    width: 100% !important; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
   }
 }
-=======
-    height: 20vh; }
-    footer span {
-      display: block;
-      text-align: center;
-      top: -10px; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 header {
   background-color: #eaaf88;
@@ -400,18 +387,11 @@ header.active {
 }
 
 #hamburger-6.is-active .line:nth-child(3) {
-<<<<<<< HEAD
-  -webkit-transform: translateY(-14px) rotate(90deg);
-  -ms-transform: translateY(-14px) rotate(90deg);
-  -o-transform: translateY(-14px) rotate(90deg);
-  transform: translateY(-14px) rotate(90deg);
-}
-=======
   -webkit-transform: translateY(-6px) rotate(90deg);
   -ms-transform: translateY(-6px) rotate(90deg);
   -o-transform: translateY(-6px) rotate(90deg);
-  transform: translateY(-6px) rotate(90deg); }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
+  transform: translateY(-6px) rotate(90deg);
+}
 
 .defaultBtn {
   font-size: 16px;
@@ -509,12 +489,7 @@ header.active {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-<<<<<<< HEAD
     text-align: center;
-  }
-  .breadcrumbs a {
-    border: none;
-    padding: 0;
   }
   .breadcrumbs a:hover {
     color: #333;
@@ -522,13 +497,6 @@ header.active {
     border-color: transparent;
   }
 }
-=======
-    text-align: center; }
-    .breadcrumbs a:hover {
-      color: #333;
-      background-color: transparent;
-      border-color: transparent; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 .fa-mars {
   color: deepskyblue;
@@ -791,13 +759,10 @@ body {
   margin-bottom: 40px;
 }
 
-<<<<<<< HEAD
-=======
 .right .container1 #sortCat {
   left: 10px;
 }
 
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 .right .container1 #black {
   width: 100vw;
   height: 100vh;
@@ -867,10 +832,7 @@ body {
   right: 64px;
   top: 50px;
   cursor: pointer;
-<<<<<<< HEAD
-=======
   font-weight: 400;
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 }
 
 .right .container1 .selectForm .fa-angle-down {
@@ -927,15 +889,6 @@ body {
   text-align: left;
 }
 
-<<<<<<< HEAD
-.right .container1 .selectForm .advanceSearchItem label {
-  font-family: 'Noto Sans TC';
-}
-
-.right .container1 .selectForm .selectTitle {
-  font-size: 14px;
-  vertical-align: middle;
-=======
 .right .container1 .selectForm .advanceSearchItem div {
   position: relative;
 }
@@ -955,7 +908,6 @@ body {
   font-size: 18px;
   vertical-align: middle;
   font-weight: 400;
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 }
 
 .right .container1 .selectForm .toMiddle:before {
@@ -1164,10 +1116,7 @@ body {
 .right .container1 .catPic .catItem figure h3 {
   font-size: 24px;
   margin-left: -10px;
-<<<<<<< HEAD
-=======
   font-weight: 400;
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 }
 
 .right .container1 .catPic .page {
@@ -1195,13 +1144,10 @@ body {
     width: 100%;
     margin: 0;
   }
-<<<<<<< HEAD
-=======
   .right .container1 #sortCat {
     left: 134px;
     padding: 2px 6px;
   }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   .right .container1 #quickViewArea {
     height: 540px;
     width: 360px;
@@ -1223,9 +1169,6 @@ body {
     vertical-align: top;
   }
   .right .container1 .catPic .catItem figure {
-<<<<<<< HEAD
-    padding-top: 60px;
-=======
     padding-top: 40px;
     font-size: 18px;
   }
@@ -1236,7 +1179,6 @@ body {
     width: 30px;
     padding: 6px;
     padding-left: 8px;
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   }
   footer {
     margin-left: 0;
@@ -1251,12 +1193,9 @@ body {
     width: 100%;
     margin: 0;
   }
-<<<<<<< HEAD
-=======
   .right .container1 #sortCat {
     left: 22px;
   }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   .right .container1 #quickViewArea {
     height: 400px;
     width: 300px;
@@ -1276,16 +1215,10 @@ body {
   }
   .right .container1 .selectForm .advanceSearch {
     right: 5%;
-<<<<<<< HEAD
-  }
-  .right .container1 .selectForm #advanced:checked ~ div {
-    height: 500px;
-=======
     font-size: 18px;
   }
   .right .container1 .selectForm #advanced:checked ~ div {
     height: 640px;
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   }
   .right .container1 .selectForm .advanceSearchItem {
     padding-left: 20px;
@@ -1294,12 +1227,6 @@ body {
   .right .container1 .selectForm .advanceSearchItem .selectTitle {
     display: block;
     margin-top: 20px;
-<<<<<<< HEAD
-  }
-  .right .container1 .selectForm .advanceSearchItem .condition {
-    padding: 3px 8px;
-    margin: 4px 2px;
-=======
     font-size: 18px;
     margin-bottom: 10px;
   }
@@ -1307,17 +1234,13 @@ body {
     padding: 8px 14px;
     margin: 4px 2px;
     font-size: 14px;
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   }
   .right .container1 .selectForm .advanceSearchItem .forRWD {
     display: block;
   }
-<<<<<<< HEAD
-=======
   .right .container1 .selectForm .advanceSearchItem div label.toMiddle {
     top: 0;
   }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   .right .container1 .catPic .catItem {
     display: block;
     margin: 0 auto 100px;
@@ -1326,12 +1249,9 @@ body {
   .right .container1 .catPic .catItem figure {
     display: inline-block;
   }
-<<<<<<< HEAD
-=======
   .right .container1 .catPic .catItem figure {
     padding-top: 10px;
   }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   footer {
     margin-left: 0;
   }

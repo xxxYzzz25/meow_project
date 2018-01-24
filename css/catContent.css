@@ -214,36 +214,23 @@ footer span {
 
 @media all and (max-width: 991px) {
   footer {
-<<<<<<< HEAD
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
-=======
-    margin-left: 0 !important;
-    width: 100% !important; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 767px) {
   footer {
     margin-left: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 20vh;
   }
-  .section footer span {
+  footer span {
     display: block;
     text-align: center;
     top: -10px;
   }
 }
-=======
-    height: 20vh; }
-    footer span {
-      display: block;
-      text-align: center;
-      top: -10px; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 header {
   background-color: #eaaf88;
@@ -400,18 +387,11 @@ header.active {
 }
 
 #hamburger-6.is-active .line:nth-child(3) {
-<<<<<<< HEAD
-  -webkit-transform: translateY(-14px) rotate(90deg);
-  -ms-transform: translateY(-14px) rotate(90deg);
-  -o-transform: translateY(-14px) rotate(90deg);
-  transform: translateY(-14px) rotate(90deg);
-}
-=======
   -webkit-transform: translateY(-6px) rotate(90deg);
   -ms-transform: translateY(-6px) rotate(90deg);
   -o-transform: translateY(-6px) rotate(90deg);
-  transform: translateY(-6px) rotate(90deg); }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
+  transform: translateY(-6px) rotate(90deg);
+}
 
 .defaultBtn {
   font-size: 16px;
@@ -509,12 +489,7 @@ header.active {
   .breadcrumbs {
     margin-top: 40px;
     margin-bottom: 40px;
-<<<<<<< HEAD
     text-align: center;
-  }
-  .breadcrumbs a {
-    border: none;
-    padding: 0;
   }
   .breadcrumbs a:hover {
     color: #333;
@@ -522,13 +497,6 @@ header.active {
     border-color: transparent;
   }
 }
-=======
-    text-align: center; }
-    .breadcrumbs a:hover {
-      color: #333;
-      background-color: transparent;
-      border-color: transparent; } }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 .fa-mars {
   color: deepskyblue;
@@ -776,7 +744,6 @@ header.active {
 
 .right {
   width: calc(100% - 200px);
-<<<<<<< HEAD
   margin-left: 200px;
 }
 
@@ -828,6 +795,7 @@ header.active {
   position: relative;
   width: calc(100% - 310px);
   height: 400px;
+  font-size: 18px;
 }
 
 .right .container1 .catItem figure h1 {
@@ -908,8 +876,8 @@ header.active {
 
 .right .container1 .introduction {
   letter-spacing: 2px;
-  line-height: 1.5em;
-  font-size: 14px;
+  line-height: 2em;
+  font-size: 18px;
 }
 
 .right .container1 .introduction .title {
@@ -917,6 +885,7 @@ header.active {
   margin-top: 30px;
   margin-bottom: 10px;
   font-weight: bold;
+  font-size: 18px;
 }
 
 .right .container1 .introduction small {
@@ -927,128 +896,14 @@ header.active {
 .right .container1 .introduction ol .cost {
   color: #6969f0;
   margin-top: 10px;
-  font-size: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
   font-weight: bold;
-}
-
-.right .container1 .introduction ol p {
-  padding-left: 86px;
+  display: inline-block;
 }
 
 .right .container1 .introduction ol p span {
   color: #fa9c29;
 }
-=======
-  margin-left: 200px; }
-  .right .container1 {
-    width: 100%;
-    position: relative;
-    margin-bottom: 100px;
-    padding: 60px 50px 0; }
-    .right .container1,
-    .right .container1 * {
-      outline: none; }
-    .right .container1 .catItem {
-      display: block;
-      position: relative; }
-      .right .container1 .catItem .img {
-        width: 300px;
-        height: auto;
-        border: 8px #fff solid;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        position: relative; }
-        .right .container1 .catItem .img .favorite {
-          position: absolute;
-          top: 14px;
-          left: 14px;
-          color: #fa3737;
-          font-size: 30px;
-          z-index: 3; }
-      .right .container1 .catItem .img,
-      .right .container1 .catItem figure {
-        display: inline-block; }
-      .right .container1 .catItem figure {
-        vertical-align: top;
-        line-height: 1.5em;
-        padding-top: 20px;
-        padding-left: 60px;
-        position: relative;
-        width: calc(100% - 310px);
-        height: 400px;
-        font-size: 18px; }
-        .right .container1 .catItem figure h1 {
-          font-size: 30px;
-          font-weight: bold; }
-        .right .container1 .catItem figure .btn {
-          position: absolute;
-          display: block;
-          width: 100%;
-          bottom: 0; }
-    .right .container1 .donateForm {
-      width: 500px;
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.5em;
-      margin-left: 320px;
-      margin-top: 50px; }
-      .right .container1 .donateForm table {
-        height: 200px;
-        width: 100%;
-        border: 1px solid #000; }
-        .right .container1 .donateForm table td {
-          vertical-align: middle;
-          border: 1px solid #000; }
-          .right .container1 .donateForm table td:last-child {
-            width: 30%; }
-          .right .container1 .donateForm table td input {
-            width: 100%;
-            height: 100%;
-            font-size: 14px;
-            line-height: 2em;
-            outline: none;
-            border: none;
-            text-align: center; }
-            .right .container1 .donateForm table td input::-webkit-input-placeholder {
-              font-style: italic;
-              font-size: 14px; }
-      .right .container1 .donateForm input[type=submit] {
-        margin-top: 20px; }
-    .right .container1 .donateInfo {
-      letter-spacing: 2px;
-      line-height: 1.5em;
-      padding-left: 4px;
-      margin: 20px; }
-      .right .container1 .donateInfo span {
-        color: #ff9f56; }
-      .right .container1 .donateInfo h2 {
-        font-size: 18px;
-        text-align: center; }
-      .right .container1 .donateInfo #canvas {
-        display: block;
-        margin: 0 auto; }
-    .right .container1 .introduction {
-      letter-spacing: 2px;
-      line-height: 2em;
-      font-size: 18px; }
-      .right .container1 .introduction .title {
-        display: block;
-        margin-top: 30px;
-        margin-bottom: 10px;
-        font-weight: bold;
-        font-size: 18px; }
-      .right .container1 .introduction small {
-        font-size: 12px;
-        padding-left: 20px; }
-      .right .container1 .introduction ol .cost {
-        color: #6969f0;
-        margin-top: 10px;
-        font-size: 18px;
-        font-weight: bold;
-        display: inline-block; }
-      .right .container1 .introduction ol p span {
-        color: #fa9c29; }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
 
 @media all and (max-width: 991px) {
   header {
@@ -1056,10 +911,10 @@ header.active {
   }
   .right {
     width: 100%;
-<<<<<<< HEAD
     margin: 0;
   }
   .right .container1 {
+    margin-top: 60px;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -1103,45 +958,6 @@ header.active {
   .right .container1 .introduction {
     margin-top: 40px;
   }
-=======
-    margin: 0; }
-    .right .container1 {
-      margin-top: 60px;
-      padding-left: 50px;
-      padding-right: 50px; }
-      .right .container1 .catItem .img,
-      .right .container1 .catItem figure {
-        display: block;
-        margin: 0 auto; }
-      .right .container1 .catItem figure {
-        height: auto;
-        padding-left: 0;
-        width: 100%;
-        margin: 0 auto; }
-      .right .container1 .catItem div.btn {
-        position: relative;
-        bottom: auto;
-        margin: 20px auto 0;
-        font-size: 0;
-        width: 60%; }
-        .right .container1 .catItem div.btn button.defaultBtn {
-          display: block;
-          float: right;
-          width: 48%;
-          max-width: 200px; }
-          .right .container1 .catItem div.btn button.defaultBtn:first-child {
-            margin-right: 10px;
-            float: left; }
-        .right .container1 .catItem div.btn:after {
-          content: '';
-          clear: both;
-          display: block; }
-      .right .container1 .donateForm {
-        width: 60%;
-        margin: 20px auto 0; }
-      .right .container1 .introduction {
-        margin-top: 40px; }
->>>>>>> 458bd6d2d22bbcc58d51368f14fee8dd559a1cf6
   footer {
     margin-left: 0;
     width: 100%;
