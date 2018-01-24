@@ -338,7 +338,7 @@
                         ?>
                     </ul>
                     <div class="more">
-                        <a href="html/catSearch.html" class="btn-more">More</a>
+                        <a href="html/catSearch.php" class="btn-more">More</a>
                     </div>
                 </div>
             </div>
@@ -405,6 +405,7 @@
                             group by c.HALF_NO 
                             order by avg(e.EVALUATION_STARS) desc
                             limit 3";
+
                             $data = $pdo -> query($sql);
                             $pdo2 = new PDO( $dsn, $user,$psw, $options );
                             
@@ -417,11 +418,12 @@
                             <div class="half-item">
                                 <div class="half-qty">
                         <?php
-                            $sql2 = "select count(*) count from CAT where HALF_NO = ".$dataObj -> halfNo;
+                            $sql2 = "select count(*) count from CAT where HALF_NO = ".$dataObj -> halfNo." and ADOPT_STATUS != 2";
                             $data2 = $pdo2 -> query($sql2);
                             while ($dataObj2 = $data2 -> fetchObject()) { 
                                     $str = $dataObj2 -> count;
                                     $str = str_split($str,1);
+
                                     foreach ($str as $key => $value) {
                                         # code...
                                     
@@ -455,7 +457,7 @@
                         ?>
                     </ul>
                     <div class="more">
-                        <a href="html/halfway_house_search.html" class="btn-more">More</a>
+                        <a href="html/halfway_house_search.php" class="btn-more">More</a>
                     </div>
                 </div>
             </div>

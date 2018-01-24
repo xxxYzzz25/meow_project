@@ -1,12 +1,12 @@
 @include respond-to(medium) {
     footer {
-        margin-left: 0;
-        width: 100%;
+        margin-left: 0 !important;
+        width: 100% !important;
     }
 }
 
 @include respond-to(small) {
-    .section {
+    
         footer {
             margin-left: 0;
             width: 100%;
@@ -17,5 +17,5 @@
                 top: -10px;
             }
         }
-    }
+    
 }
