@@ -1,0 +1,174 @@
+body{
+    background-color: #eee;
+    
+    /* background-image: url(../img/marble.jpg);
+    background-size: cover;
+    background-attachment: fixed; */
+}
+
+
+.wrap{
+    margin-left: 200px;
+    line-height: 28px;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.wrapCenter{
+	width: 70%;
+	margin: auto;
+}
+
+@media only screen and (max-width: 768px){
+    .wrap{
+        margin-left: 0;
+    }
+
+    .wrapCenter{
+        width: 95%;
+    }
+}
+
+h2{
+	text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 26px;
+    letter-spacing: 15px;
+    text-align: center;
+    padding: 5%;
+	margin: 0;
+}
+
+table{
+    margin: 3% auto 0 auto;
+}
+
+.info{
+    background-color: #fff;
+    margin-bottom: 5%;
+}
+
+.info th{
+    width: 30%;
+    padding: 2.5% 0 2.5% 2.5%;
+}
+
+.info input{
+    width: 90%;
+}
+
+.mail input{
+    width: 3%;
+}
+
+.payWay input{
+    width: 3%;
+}
+
+.itemHead{
+   
+    margin-top: 0;
+}
+.itemHead td{
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 2px solid #333;
+}
+
+.itemHead td:nth-child(1){
+    text-align: left;
+}
+
+.confirm{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.pay{
+    margin-top: 3%;
+    margin-bottom: 10%;
+}
+
+
+.confirm a{
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 100px;
+    width: 150px;
+    padding: 1% 5%;
+    color: #333;
+}
+
+.confirm a:hover{
+    background-color: #EAAF88;
+    border: 2px solid #EAAF88;
+    color: #fff;
+}
+
+table{
+  width: 100%;
+}
+
+td img{
+    width: 80%;
+    vertical-align: middle;
+    margin: 10% 0;
+}
+
+p{
+    text-align: left;
+}
+
+.count{
+    width: 50px;
+}
+
+.saleCard,.payCard{
+    padding: 4% 10%;
+    border: 3px solid #EAAF88;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    margin: 5% 15%;
+    text-align: center;
+}
+.select{
+    margin-left: 2%;
+}
+
+.delButton{
+    /* padding: 10%; */
+    border:2px solid #333;
+    border-radius: 100px;
+}
+
+/* @media only screen and (max-width: 768px){
+
+    .itemHead td{
+        display: block;
+    }
+    
+    .tdTitle {
+        display: none;
+    }
+
+    .itemHead:nth-child(1):before{
+        content: '商品';
+    }
+
+    .itemHead:nth-child(2):before{
+        content: '價錢';
+    }
+
+    .itemHead:nth-child(3):before{
+        content: '數量';
+    }
+
+    .itemHead:nth-child(4):before{
+        content: '刪除';
+    }
+
+    
+} */

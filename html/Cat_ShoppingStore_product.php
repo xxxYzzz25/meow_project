@@ -128,7 +128,7 @@
         <div class="logo">
             <a href="../index.php">
                 <h1>
-                    <img src="../img/logo_white.png" alt="尋喵啟事" title="回首頁">
+                    <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
             </a>
         </div>
@@ -147,7 +147,18 @@
                     <a href="./member.php">討論區</a>
                 </li>
                 <li>
-                    <a href="member.php">會員專區</a>
+                <?php
+                    if(!isset($_SESSION['MEM_NO']) && !isset($_SESSION['HALF_NO'])){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if(!isset($_SESSION['HALF_NO'])){
+                            echo "<a href='./html/member.php'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='./html/halfMem.php'>中途會員專區</a>";
+                        }
+                    }
+                ?>
                 </li>
             </ul>
         </nav>
