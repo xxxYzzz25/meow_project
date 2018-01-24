@@ -1,6 +1,7 @@
 <?php
-    ob_start();
-    session_start();
+ ob_start();
+ session_start();
+ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <div class="halfMemAdopt">
     <h4>審核領養案件</h4>

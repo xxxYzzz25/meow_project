@@ -1,4 +1,9 @@
 <?php
+ ob_start();
+ session_start();
+ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+?>
+<?php
     ob_start();
     session_start();
 ?>
@@ -145,23 +150,27 @@
         </ul>
     </nav>
     <div class="icons">
-        <a href="#">
-            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-        </a>
-        <?php
-            if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-                echo "<a href='../php/memberLogOut.php'>
-                    <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
-                    </a>";
-            }else{
-                echo "<a href='#' class='login'>
-                    <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
-                    </a>";
-            }
-        ?>
-        <a href="#">
-            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-        </a>
+            <a href="html/Cat_ShoppingStore_cart.php">
+                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+            </a>
+            <?php
+                    if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
+                        echo "<a href='../php/memberLogOut.php' id='loginBtn'>
+                            <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }else{
+                        echo "<a href='#' class='login' id='loginBtn'>
+                            <i class='fa fa-user-circle-o fa-2x' aria-hidden='true'></i>
+                            </a>";
+                    }
+            ?>
+            <?php
+                if(isset($_SESSION["MEM_NO"])){
+                    echo "<a href='#' id='likeBoxBtn'>
+                            <i class='fa fa-heart-o fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }
+            ?>
     </div>
     <div class="hb">
         <div class="hamburger" id="hamburger-6">

@@ -1,6 +1,7 @@
 <?php
-ob_start();
-session_start();
+ ob_start();
+ session_start();
+ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <div class="halfMemOrderlist" id="halfMemCat">
     <h4>查詢訂單記錄</h4>

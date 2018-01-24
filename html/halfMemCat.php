@@ -1,8 +1,8 @@
 <?php
-ob_start();
-session_start();
-?> 
-
+ ob_start();
+ session_start();
+ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+?>
 <div class="halfMemCat" id="halfMemCat">
 <!-- 新增喵開始 -->
     <button id="newEmp" class="newbtn defaultBtn">新增喵小孩</button>

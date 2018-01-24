@@ -1,6 +1,7 @@
 <?php
-    ob_start();
-    session_start();
+ ob_start();
+ session_start();
+ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <div class="halfMemInfo">
     <h4>修改中途之家會員資料</h4>

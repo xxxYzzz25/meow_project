@@ -1,3 +1,8 @@
+<?php
+ ob_start();
+ session_start();
+ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,9 +65,10 @@
 			</ul>
 		</nav>
 		<div class="icons">
-            <a href="#">
+            <a href="html/Cat_ShoppingStore_cart.php">
                 <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            </a><?php
+            </a>
+            <?php
                     if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
                         echo "<a href='../php/memberLogOut.php' id='loginBtn'>
                             <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
@@ -73,9 +79,13 @@
                             </a>";
                     }
             ?>
-            <a href="#" id="likeBox">
-                <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-            </a>
+            <?php
+                if(isset($_SESSION["MEM_NO"])){
+                    echo "<a href='#' id='likeBoxBtn'>
+                            <i class='fa fa-heart-o fa-2x' aria-hidden='true'></i>
+                        </a>";
+                }
+            ?>
         </div>
 	</header>
 
