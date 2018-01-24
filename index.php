@@ -396,15 +396,17 @@
                     </div>
                     <ul class="half-list" id="half-list">
                         <?php
-                            $sql = "select h.HALF_NO halfNo,h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,h.HALF_TEL halfTel,h.HALF_OPEN halfTime,h.HALF_COVER halfPic,count(c.HALF_NO) count,avg(e.EVALUATION_STARS) stars
-                            from HALFWAY_MEMBER h 
-                            join CAT c 
-                            on h.HALF_NO = c.HALF_NO
-                            join EVALUATION e 
-                            on c.HALF_NO = e.HALF_NO
-                            group by c.HALF_NO 
-                            order by avg(e.EVALUATION_STARS) desc
-                            limit 3";
+                            $sql = "select h.HALF_NO halfNo,h.HALF_NAME halfName,h.HALF_ADDRESS halfAddress,
+                                    h.HALF_TEL halfTel,h.HALF_OPEN halfTime,h.HALF_COVER halfPic,
+                                    count(c.HALF_NO) count,avg(e.EVALUATION_STARS) stars
+                                    from HALFWAY_MEMBER h 
+                                    join CAT c 
+                                    on h.HALF_NO = c.HALF_NO
+                                    join EVALUATION e 
+                                    on c.HALF_NO = e.HALF_NO
+                                    group by c.HALF_NO 
+                                    order by avg(e.EVALUATION_STARS) desc
+                                    limit 3";
 
                             $data = $pdo -> query($sql);
                             $pdo2 = new PDO( $dsn, $user,$psw, $options );
@@ -439,7 +441,7 @@
                                 <div class="half-pic" style="background-image: url(<?php echo mb_substr( $dataObj -> halfPic , 3 , mb_strlen($dataObj -> halfPic)-1 ); ?>);"></div>
                                 <div class="half-text">
                                     <a href="html/halfway_house_detail.php?halfno=<?php echo $dataObj -> halfNo ?>">
-                                        <span class="half-name"><?php echo $dataObj -> halfName ?></span>
+                                        <span class="half-name"><?php echo $dataObj -> halfName ." ★ ".round($dataObj -> stars , 1) ?></span>
                                     </a>
                                     <span class="half-address"><?php echo $dataObj -> halfAddress ?></span>
                                     <span class="half-tel"><?php echo $dataObj -> halfTel ?></span>
