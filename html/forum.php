@@ -177,7 +177,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 	<!--  -->
 	<div class="m-box">
 		<div class="container ">
-			<h1 class="forum-title test" id="f-1">尋 喵 啟 事 &nbsp;|&nbsp; 討 論 區</h1>
+			<h1 class="forum-title test" id="f-1">討 論 區</h1>
 			<ul class="forum-list">
 				<li id="f-2" class="test">
 					<h2>飼養討論</h2>
