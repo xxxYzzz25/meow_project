@@ -112,12 +112,10 @@ window.addEventListener('load', () => {
         var color = new Array
         var location = new Array
         var gender = new Array
-
         for (let i = 0, len = advancedSearch.length; i < len; i++) {
             advancedSearch[i].addEventListener('click', () => {
                 var name = advancedSearch[i].getAttribute('data-name')
                 var val = advancedSearch[i].getAttribute('data-val')
-                
                 if (advancedSearch[i].className.match('conditionSelected')) {
                     if (advancedSearch[i].getAttribute('data-name') == 'color') {
                         color.push(val)
@@ -135,11 +133,7 @@ window.addEventListener('load', () => {
                         removeByValue(gender, val)
                     }
                 }
-                
                 getData("color=" + color + "&location=" + location + "&gender=" + gender )
-                
-                
-                
             })
         }
         
