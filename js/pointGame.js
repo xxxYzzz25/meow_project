@@ -11,6 +11,7 @@ window.addEventListener('load', function () {
     let tempAnswer = '';
     let combon = document.getElementById('combon');
     let windowWidth = document.body.clientWidth;
+    let playerPoint = 1;
     let subject = {
         questions: [{
                 question: '您有過敏嗎?',
@@ -70,21 +71,33 @@ window.addEventListener('load', function () {
 
     function adjudge() {
         tempAnswer = this.dataset.answer;
-        if (count > 8 && bingo >= 5) {
+
+        
+        if (count > 8 && bingo >= 2) {
+            
             know.textContent = '及格！現在去領養';
-            know.addEventListener('click', function () {
+            know.removeEventListener('click',iKnow);
+            know.addEventListener('click', function (e) {
+                e.preventDefault;
+                
                 if(localStorage.getItem('memNo')){
                     // 叫php寫入分數後轉址
+                    let memNo = localStorage.getItem('memNo');
+                    window.location.href = `./php/score.php?memNo=${memNo}&score=${playerPoint}`;
                 }else if(localStorage.getItem('halfNo')){
+                    
                     alert('中途會員不可進行領養!');
                     reset();
                 }else{
                     alert('請登入一般會員(中途會員不可領養)')
-                        showLogin();
+                    localStorage.setItem('score',playerPoint);
+                
+                    document.getElementById('score').value = playerPoint;
+                    showLogin();
                 }
                 
             });
-        } else if (count > 8 && bingo < 5) {
+        } else if (count > 8 && bingo < 2) {
             know.textContent = '失敗..再來一次?';
             know.addEventListener('click', reset);
         }
@@ -117,6 +130,7 @@ window.addEventListener('load', function () {
         count = 1;
         tempAnswer = '';
         bingo = 1;
+        playerPoint = 0;
         know.textContent = '我知道了!';
         know.removeEventListener('click', reset);
         showData(subject);
@@ -182,6 +196,7 @@ window.addEventListener('load', function () {
         if (bingo > 8){
             bingo = 8;
         }
+        playerPoint++;
         bingo++;
         Object.assign(hug, {
             style: 'right:' + (width * bingo) + 'px;'

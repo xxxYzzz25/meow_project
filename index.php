@@ -38,7 +38,7 @@
             $dataObj = $data -> fetchObject();
             echo "<script>var waitQty='".$dataObj->COUNT."';</script>";
             //取出登記日期最早的六筆資料
-            $sql = "select C.CAT_NO catNo,C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName,C.CAT_COVER catPic from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO order by CAT_DATE limit 6";
+            $sql = "select C.CAT_NO catNo,C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName,C.CAT_COVER catPic from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO where c.adopt_status != 2 order by CAT_DATE limit 6";
             $data = $pdo -> query($sql);
     ?>
     <div id="loading">
@@ -59,6 +59,7 @@
                 <br>
                 <br>
                 <br>
+                <input type="hidden" name="score" id="score">
                 <label for="userId">會員帳號
                     <br>
                     <small>請輸入您的電子郵件</small>
