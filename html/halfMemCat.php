@@ -3,7 +3,7 @@ ob_start();
 session_start();
 isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
-<div class="halfMemCat" id="halfMemCat">
+<div class="halfMemCat" id="odTable">
 <!-- 新增喵開始 -->
     <button id="newEmp" class="newbtn defaultBtn">新增喵小孩</button>
     <form action="../php/halfMemCatInsertToDb.php" method="post" enctype="multipart/form-data">
@@ -154,7 +154,7 @@ while ($HWcatRow = $HWcat->fetchObject()) {
             }
             ?>
             </td>
-            <td><button class="defaultBtn" onclick="add('../php/halfMemCatDetail.php?CAT_NO=<?php echo $HWcatRow->CAT_NO; ?>');">查看喵小孩</button></td>
+            <td><button class="defaultBtn" onclick="add('../php/halfMemCatDetail.php?CAT_NO=<?php echo $HWcatRow->CAT_NO; ?>',catback);">查看喵小孩</button></td>
         </tr>
 
 <?php

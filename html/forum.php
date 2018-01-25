@@ -2,6 +2,7 @@
  ob_start();
  session_start();
  isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
 ?>
 <!DOCTYPE html>
 <html lang="tw">
@@ -127,20 +128,18 @@
 					<a href="./forum.php">討論區</a>
 				</li>
 				<li>
-				
 					<?php
-						if($_SESSION['MEM_NO'] == null && $_SESSION['HALF_NO'] == null){
-							echo "<a href='#' class='login'>會員專區</a>";
-						}else{
-							if($_SESSION['HALF_NO'] == null){
-								echo "<a href='member.php'>會員專區</a>";
-							}
-							else{
-								echo "<a href='halfMem.php'>中途會員專區</a>";
-							}
-						}
-					?>
-				
+                    if($_SESSION['MEM_NO'] == null && $_SESSION['HALF_NO'] == null){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if($_SESSION['HALF_NO'] == null){
+                            echo "<a href='member.php'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='halfMem.php'>中途會員專區</a>";
+                        }
+                    }
+                    ?>
 				</li>
 			</ul>
 		</nav>

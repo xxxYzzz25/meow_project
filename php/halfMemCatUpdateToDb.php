@@ -21,14 +21,14 @@ try {
 							CAT_DATE=:date,
 							CAT_SEX=:sex,
 							CAT_NARRATIVE=:narrative,
+							CAT_COLOR=:color,
 							CAT_LOCATION=:location,
 							CAT_VACCINE=:vaccine,
 							CAT_LIGATION=:ligation,
 							CAT_INDIVIDUALITY=:individuality,
 							CAT_FIT=:fit,
 							CAT_ADVANTAGE=:advantage,
-							CAT_DISADVANTAGE=:disadvantage,
-							CAT_COVER=:catpic
+							CAT_DISADVANTAGE=:disadvantage
 			where CAT_NO=:no";
     $products = $pdo->prepare($sql);
     $products->bindValue(":no", $_REQUEST["no"]);
@@ -36,6 +36,7 @@ try {
     $products->bindValue(":date", $_REQUEST["date"]);
     $products->bindValue(":sex", $_REQUEST["sex"]);
     $products->bindValue(":narrative", $_REQUEST["narrative"]);
+    $products->bindValue(":color", $_REQUEST["color"]);
     $products->bindValue(":location", $_REQUEST["location"]);
     $products->bindValue(":vaccine", $_REQUEST["vaccine"]);
     $products->bindValue(":ligation", $_REQUEST["ligation"]);
@@ -43,7 +44,6 @@ try {
     $products->bindValue(":fit", $_REQUEST["fit"]);
     $products->bindValue(":advantage", $_REQUEST["advantage"]);
     $products->bindValue(":disadvantage", $_REQUEST["disadvantage"]);
-    $products->bindValue(":catpic", $_REQUEST["catpic"]);
     $products->execute();
     echo "<center>新增成功</center><br>
         <center>將在五秒後回到原網址</center><br>

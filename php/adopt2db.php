@@ -23,6 +23,11 @@ try {
         try {
             $sql = "update CAT SET ADOPT_STATUS = 1 WHERE CAT_NO = $catNo";
             $statement = $pdo->query($sql);
+            $newdate = date("Y-m-d");
+            $sql = "insert into adoption SET cat_no = $catNo, mem_no = $memNo, adopt_date = ?";
+            $statement = $pdo->prepare($sql);
+            $statement -> bindValue(1, date("Y-m-d"));
+            $statement->execute();
             echo "<script>alert('已送出領養請求, 請等候中途之家通知')</script>";
             echo "<script>history.back()</script>";
         } catch (Exception $e) {
@@ -32,7 +37,7 @@ try {
         }
     }else{
         echo "<script>alert('您的答對題數為：$score 題\\n您的養貓知識還不足夠, 前往首頁學習！')</script>";
-        echo "<script>document.location.href='../index.php'</script>";
+        echo "<script>document.location.href='../index.php#page2'</script>";
     }
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";

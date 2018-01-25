@@ -8,6 +8,7 @@ try {
     $HWcat->execute();
     while ($HWcatRow = $HWcat->fetchObject()) {
         ?>
+    <button id="catbackPre" class="newbtn defaultBtn">返回上一頁</button>
     <h4>修改喵小孩資料</h4>
     <form action="../php/halfMemCatUpdateToDb.php" method="post">
         <input type="hidden" name="no" value="<?php echo $HWcatRow->CAT_NO; ?>">
@@ -21,7 +22,7 @@ try {
             <tr>
                 <th>喵小孩出生年月</th>
                 <td>
-                    <input type="text" name="date" value="<?php echo $HWcatRow->CAT_DATE; ?>">
+                    <input type="text" name="date" placeholder="<?php echo $HWcatRow->CAT_DATE; ?>" required>
                 </td>
             </tr>
             <tr>

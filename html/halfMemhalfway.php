@@ -50,7 +50,7 @@ try {
             <tr>
                 <th>中途之家敘述</th>
                 <td>
-                    <textarea onfocus="this.select()" name="intro" id="" cols="60" rows="5" id="textarea"></textarea>
+                    <textarea onfocus="this.select()" name="intro" id="" cols="60" rows="5" id="textarea"><?php echo $HWmemRow->HALF_INTRO ?></textarea>
                 </td>
             </tr>
             <tr>

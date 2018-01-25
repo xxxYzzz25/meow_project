@@ -11,18 +11,9 @@
 <?php
 try {
     require_once "../php/connectBD103G2.php";
-    $sql = "select count(*) from orderlist";    // 計算資料筆數
-	$total = $pdo->query($sql);
-	$rownum = $total->fetchcolumn();                            // 總共欄位數
-	$perPage = 10;                                               // 每頁顯示筆數
-	$totalpage = ceil($rownum / $perPage);                      // 計算總頁數
-	$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
-	// 若無當前頁數則進入第一頁 若有則進入該頁
-	$start = ($pageNo - 1) * $perPage;   
-	// 設定每頁呈現內容
-    $sql = "select * from orderlist where MEM_NO = 1 limit $start, $perPage";
+    $sql = "select * from orderlist where MEM_NO = ?";
     $orderlist = $pdo->prepare($sql);
-    // $orderlist->bindValue(1, $_SESSION["MEM_NO"]); //session
+    $orderlist->bindValue(1, $_SESSION["MEM_NO"]); //session
     $orderlist->execute();
 
     if ($orderlist->rowCount() == 0) {
@@ -67,14 +58,7 @@ try {
 ?>
 
         </table>
-        <table id="odTable" class="odTable"></table>
-        <div class="page">
-            <?php
-                for ($i = 1; $i <= $totalpage; $i++) {
-                    echo "<a href='?pageNo=$i' class='pageNo defaultBtn'>" . $i . "</a>";
-                }
-            ?>
-        </div>
+        <div id="odTable" class="odTable"></div>
 
     <h4>備註說明</h4>
     <h5>「集貨時間」說明：</h5>

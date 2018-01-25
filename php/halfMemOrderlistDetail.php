@@ -1,5 +1,5 @@
-<h4>訂單詳情(訂單編號<?php echo $_REQUEST["ORDER_NO"]?>)</h4>
-<table class="odTable">
+    <h4>訂單詳情(訂單編號<?php echo $_REQUEST["ORDER_NO"]?>)</h4>
+    <table>
     <tr>
         <th>客戶名字</th>
         <th>商品名稱</th>
@@ -25,11 +25,11 @@ try {
 ?>   
     <tr>
         <td><?php echo $productRow->CUS_NAME?></td>
-        <td><a href="<?php echo $productRow->PRODUCT_NAME?>"><?php echo $productRow->PRODUCT_NAME?></a></td>
+        <td><a href="../html/Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $productRow->PRODUCT_NO?>"><?php echo $productRow->PRODUCT_NAME?></a></td>
         <td><?php echo $productRow->PRODUCT_PRICE?></td>
         <td><?php echo $productRow->COUNT?></td>
     </tr>
-</table>
+    </table>
 <?php
     }
 } catch (Exception $e) {
