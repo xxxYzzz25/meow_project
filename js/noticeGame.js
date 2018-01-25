@@ -67,10 +67,34 @@ function doFirst() {
             }
         }
         if (num == 5) {
-            know.textContent = '恭喜您~全部答對囉! 您可以獲得50元商城首購優惠 現在馬上前往商城購物吧!';
-            know.addEventListener('click', function () {
-                window.location.href = "html/Cat_ShoppingStore.php";
+            if(localStorage.getItem('memNo')){
+                know.textContent = '恭喜您~全部答對囉!(獎品只能拿一次喔!)';
+                know.addEventListener('click', function () {
+                    window.location.href = '../html/Cat_ShoppingStore.php';
+                });
+            }else{
+                know.textContent = '恭喜您~全部答對囉! 您可以獲得50元商城首購優惠 現在馬上前往商城購物吧!';
+                know.addEventListener('click', function () {
+                e.preventDefault;
+                if(localStorage.getItem('memNo')){
+                    // 叫php寫入分數後轉址
+                    let memNo = localStorage.getItem('memNo');
+                    window.location.href = `./php/discount.php?memNo=${memNo}&discount=${discount}`;
+
+                }else if(localStorage.getItem('halfNo')){
+                    
+                    let halfNo = localStorage.getItem('halfNo');
+                    window.location.href = `./php/discount.php?halfNo=${halfNo}&discount=${discount}`;
+
+                }else{
+                    alert('請登入會員')
+                    localStorage.setItem('discount',1);
+                    document.getElementById('discount').value = 1;
+                    showLogin();
+                }
             });
+            }
+            
         }
     }
 

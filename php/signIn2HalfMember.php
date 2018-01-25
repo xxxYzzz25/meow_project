@@ -39,18 +39,26 @@ try {
 				if(isset($_REQUEST["discount"])){
 
 					$discount = $_REQUEST["discount"];
-					$sql = "update halfway_member set half_discount = $discount";
+					$sql = "update halfway_member set half_discount = $discount where half_no = $halfNo";
 					//執行該指令
 					$pdo->query($sql);
-
+					echo "<script>
+					window.addEventListener('load',()=>{
+						localStorage.setItem('halfNo',$halfNo);
+					});
+					alert('登入成功\\n\\n$halfName, 您好')
+					history.back()
+					</script>";
+				}else{
+					echo "<script>
+					window.addEventListener('load',()=>{
+						localStorage.setItem('halfNo',$halfNo);
+					});
+					alert('登入成功\\n\\n$halfName, 您好')
+					history.back()
+					</script>";
 				}
-				echo "<script>
-				window.addEventListener('load',()=>{
-					localStorage.setItem('halfNo',$halfNo);
-				});
-				alert('登入成功\\n\\n$halfName, 您好')
-				history.back()
-				</script>";
+				
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];
 		}
 	}
