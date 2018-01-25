@@ -36,6 +36,7 @@ try {
 				$memName = $memRow["MEM_NAME"];
 				//判斷分數
 				isset($_REQUEST["score"])?$_REQUEST["score"]=$_REQUEST["score"]:$_REQUEST["score"]=null;
+
 				if($_REQUEST["score"] != null){
 
 					$score = $_REQUEST["score"];
@@ -51,7 +52,8 @@ try {
 						</script>";
 			
 				}
-				if(isset($_REQUEST["discount"])){
+				isset($_REQUEST["discount"])?$_REQUEST["discount"]=$_REQUEST["discount"]:$_REQUEST["discount"]=null;
+				if($_REQUEST["discount"] != null){
 
 					$discount = $_REQUEST["discount"];
 					$sql = "update member set mem_discount = $discount where mem_no = $memNo";
@@ -72,12 +74,15 @@ try {
 							localStorage.setItem('memNo',$memNo);
 						});
 						alert('登入成功\\n\\n$memName, 您好')
-						history.back()
+						
 					</script>";
 				}
 				
 			}
 		}
+		echo"<script>
+		history.back()
+	</script>";
 } catch (PDOException $e) {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";

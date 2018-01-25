@@ -48,7 +48,7 @@
                         <a href="backOrderlist.php" title="訂單管理">訂單管理</a>
                     </li>
                     <li>
-                        <a href="backAdobtRecord.php" title="領養紀錄查詢">領養紀錄查詢</a>
+                        <a href="backadoptRecord.php" title="領養紀錄查詢">領養紀錄查詢</a>
                     </li>
                     <li>
                         <a href="backSaleRecord.php" title="銷售紀錄查詢">銷售紀錄查詢</a>
@@ -70,11 +70,11 @@
                     <img src="../images/back/catAdoptRecord.jpg" alt="">
                 </div>
                 <div class="adoptInfomation" id="adoptInfomation">
-                    <select name="sort" id="adobtOrder">
+                    <select name="sort" id="adoptOrder">
                         <option value="1">領養日期從新到舊</option>
                         <option value="2">領養日期從舊到新</option>
                     </select>
-                    <table id="adobtList">
+                    <table id="adoptList">
                         <tr id="listTitle">
                             <th>喵小孩編號</th>
                             <th>領養者</th>
@@ -91,16 +91,16 @@
 
                 function getData() {
                     let obj = JSON.parse(this.responseText);
-                    let adobtList = document.getElementById('adobtList');
+                    let adoptList = document.getElementById('adoptList');
                     let fragment = document.createDocumentFragment();
-                    let listLen = adobtList.childElementCount;
+                    let listLen = adoptList.childElementCount;
                     let linkArea = document.getElementById('linkArea');
 
                     while (linkArea.firstChild) {
                         linkArea.removeChild(linkArea.firstChild);
                     }
                     for (let i = listLen; i > 1; i--) {
-                        adobtList.lastChild.remove();
+                        adoptList.lastChild.remove();
                     }
                     for (const i of obj) {
                         let tr = document.createElement('tr');
@@ -118,7 +118,7 @@
                         tr.appendChild(timeTd);
                         fragment.appendChild(tr);
                     }
-                    adobtList.appendChild(fragment);
+                    adoptList.appendChild(fragment);
 
                     ajax(showPages, `order=${order}&qty=${qty}&pages=true`);
                 }
@@ -158,8 +158,8 @@
 
                 function changeOrder() { //換排序 1:降冪 2: 升冪
                     order = this.value;
-                    let adobtList = document.getElementById('adobtList');
-                    let listLen = adobtList.childElementCount;
+                    let adoptList = document.getElementById('adoptList');
+                    let listLen = adoptList.childElementCount;
                     
                     ajax(getData, `order=${order}&qty=${qty}`);
                 }
@@ -167,14 +167,14 @@
                 function ajax(cb, dataInfo) {
 
                     let xhr = new XMLHttpRequest();
-                    xhr.open('post', '../php/backAdobtRecord_s.php');
+                    xhr.open('post', '../php/backadoptRecord_s.php');
                     xhr.onload = cb;
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     xhr.send(dataInfo);
 
                 }
 
-                let selector = document.getElementById('adobtOrder');
+                let selector = document.getElementById('adoptOrder');
                 let qty = 0;
                 let limit = 20;
                 let order = 1;

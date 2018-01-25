@@ -60,6 +60,7 @@
                 <br>
                 <br>
                 <input type="hidden" name="score" id="score">
+                <input type="hidden" name="discount" id="discount">
                 <label for="userId">會員帳號
                     <br>
                     <small>請輸入您的電子郵件</small>
@@ -401,9 +402,9 @@
                                     h.HALF_TEL halfTel,h.HALF_OPEN halfTime,h.HALF_COVER halfPic,
                                     count(c.HALF_NO) count,avg(e.EVALUATION_STARS) stars
                                     from HALFWAY_MEMBER h 
-                                    join CAT c 
+                                    left join CAT c 
                                     on h.HALF_NO = c.HALF_NO
-                                    join EVALUATION e 
+                                    left join EVALUATION e 
                                     on c.HALF_NO = e.HALF_NO
                                     group by c.HALF_NO 
                                     order by avg(e.EVALUATION_STARS) desc

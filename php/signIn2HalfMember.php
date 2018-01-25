@@ -39,28 +39,35 @@ try {
 				if(isset($_REQUEST["discount"])){
 
 					$discount = $_REQUEST["discount"];
-					$sql = "update halfway_member set half_discount = $discount";
+					$sql = "update halfway_member set half_discount = $discount where half_no = $halfNo";
 					//執行該指令
 					$pdo->query($sql);
-
+					echo "<script>
+					window.addEventListener('load',()=>{
+						localStorage.setItem('halfNo',$halfNo);
+					});
+					alert('登入成功\\n\\n$halfName, 您好')
+					</script>";
+				}else{
+					echo "<script>
+					window.addEventListener('load',()=>{
+						localStorage.setItem('halfNo',$halfNo);
+					});
+					alert('登入成功\\n\\n$halfName, 您好')
+					</script>";
 				}
-				echo "<script>
-				window.addEventListener('load',()=>{
-					localStorage.setItem('halfNo',$halfNo);
-				});
-				alert('登入成功\\n\\n$halfName, 您好')
-				history.back()
-				</script>";
+				
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];
 		}
 	}
+	echo"<script>
+		history.back()
+	</script>";
 } catch (PDOException $e) {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";
 }
-echo"<script>
-		history.back()
-	</script>";
+
 ?>
 </body>
 </html>

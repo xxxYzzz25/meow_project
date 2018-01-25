@@ -48,7 +48,7 @@
                     <a href="backOrderlist.php" title="訂單管理">訂單管理</a>
                 </li>
                 <li>
-                    <a href="backAdobtRecord.php" title="領養紀錄查詢">領養紀錄查詢</a>
+                    <a href="backadoptRecord.php" title="領養紀錄查詢">領養紀錄查詢</a>
                 </li>
                 <li>
                     <a href="backSaleRecord.php" title="銷售紀錄查詢">銷售紀錄查詢</a>

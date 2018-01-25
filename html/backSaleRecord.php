@@ -49,7 +49,7 @@
                     <a href="backOrderlist.php" title="訂單管理">訂單管理</a>
                 </li>
                 <li>
-                    <a href="backAdobtRecord.php" title="領養紀錄查詢">領養紀錄查詢</a>
+                    <a href="backadoptRecord.php" title="領養紀錄查詢">領養紀錄查詢</a>
                 </li>
                 <li>
                     <a href="backSaleRecord.php" title="銷售紀錄查詢">銷售紀錄查詢</a>
@@ -71,7 +71,7 @@
                 <img src="../images/back/catAdoptRecord.jpg" alt="">
             </div>
             <div class="adoptInfomation" id="adoptInfomation">
-                <select name="sort" id="adobtOrder">
+                <select name="sort" id="adoptOrder">
                     <option value="1">購買日期從新到舊</option>
                     <option value="2">購買日期從舊到新</option>
                 </select>
@@ -181,7 +181,7 @@
 
             }
 
-            let selector = document.getElementById('adobtOrder');
+            let selector = document.getElementById('adoptOrder');
             let qty = 0;
             let limit = 20;
             let order = 1;
