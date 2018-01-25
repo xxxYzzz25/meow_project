@@ -74,12 +74,15 @@ try {
 							localStorage.setItem('memNo',$memNo);
 						});
 						alert('登入成功\\n\\n$memName, 您好')
-						history.back()
+						
 					</script>";
 				}
 				
 			}
 		}
+		echo"<script>
+		history.back()
+	</script>";
 } catch (PDOException $e) {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";

@@ -47,7 +47,6 @@ try {
 						localStorage.setItem('halfNo',$halfNo);
 					});
 					alert('登入成功\\n\\n$halfName, 您好')
-					history.back()
 					</script>";
 				}else{
 					echo "<script>
@@ -55,20 +54,20 @@ try {
 						localStorage.setItem('halfNo',$halfNo);
 					});
 					alert('登入成功\\n\\n$halfName, 您好')
-					history.back()
 					</script>";
 				}
 				
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];
 		}
 	}
+	echo"<script>
+		history.back()
+	</script>";
 } catch (PDOException $e) {
 	echo "行號: ", $e->getLine(), "<br>";
 	echo "訊息: ", $e->getMessage(), "<br>";
 }
-echo"<script>
-		history.back()
-	</script>";
+
 ?>
 </body>
 </html>
