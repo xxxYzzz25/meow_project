@@ -35,6 +35,15 @@ try {
         }else {
 				$halfNo = $halfRow["HALF_NO"];
 				$halfName = $halfRow["HALF_NAME"];
+
+				if(isset($_REQUEST["discount"])){
+
+					$discount = $_REQUEST["discount"];
+					$sql = "update halfway_member set half_discount = $discount";
+					//執行該指令
+					$pdo->query($sql);
+
+				}
 				echo "<script>
 				window.addEventListener('load',()=>{
 					localStorage.setItem('halfNo',$halfNo);

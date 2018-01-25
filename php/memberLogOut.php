@@ -18,6 +18,17 @@
 	<?php
 		session_destroy();
 	?>
+	<script>
+		if(localStorage.getItem('memNo')){
+
+			localStorage.removeItem('memNo');
+
+		}else if(localStorage.getItem('halfNo')){
+
+			localStorage.removeItem('halfNo');
+
+		}
+	</script>
 	<script>alert('已登出，歡迎再回來')</script>
 	<script>history.back()</script>
 

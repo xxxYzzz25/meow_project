@@ -59,6 +59,7 @@
                 <br>
                 <br>
                 <br>
+                <input type="hidden" name="score" id="score">
                 <label for="userId">會員帳號
                     <br>
                     <small>請輸入您的電子郵件</small>
