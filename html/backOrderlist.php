@@ -83,7 +83,7 @@ try {
 	// 若無當前頁數則進入第一頁 若有則進入該頁
 	$start = ($pageNo - 1) * $perPage;   
 	// 設定每頁呈現內容
-    $sql = "select * from orderlist order by ORDER_NO desc limit $start, $perPage";
+    $sql = "select * from orderlist where ORDER_STATUS = 0 order by ORDER_NO desc limit $start, $perPage";
     $orderlist = $pdo->prepare($sql);
     $orderlist->execute();
 
@@ -99,6 +99,7 @@ try {
                     <th>訂單時間</th>
                     <th>訂單狀態</th>
                     <th>訂單明細</th>
+                    <th>確認出貨</th>
                 </tr>
 <?php
         while ($orderlistRow = $orderlist->fetchObject()) {
@@ -106,7 +107,7 @@ try {
                 <tr>
                     <td><?php echo $orderlistRow->ORDER_NO; ?></td>
                     <td><?php echo $orderlistRow->CUS_NAME; ?></td>
-                    <td><?php echo $orderlistRow->ORDER_PRICE; ?></td>
+                    <td>$<?php echo $orderlistRow->ORDER_PRICE; ?></td>
                     <td><?php echo $orderlistRow->ORDER_TIME; ?></td>
                     <td><?php
                         if( $orderlistRow->ORDER_STATUS == 0){
@@ -118,6 +119,14 @@ try {
                         }
                     ?></td>
                     <td><button class="defaultBtn" onclick="add('../php/backOrderlistDetail.php?ORDER_NO=<?php echo $orderlistRow->ORDER_NO; ?>');">訂單詳情</button></td>
+                    <td>
+                        <form action="../php/backOrderDeliver.php">
+                            <button type="submit" class="defaultBtn">出貨
+                                <input type="hidden" value="1" name="deliver">
+                                <input type="hidden" value="<?php echo $orderlistRow->ORDER_NO; ?>" name="orderno">
+                            </button>
+                        </form>
+                    </td>
                 </tr>
 <?php
         }

@@ -383,7 +383,7 @@ try {
 try {
 	require_once "../php/connectBD103G2.php";
 	
-	$sql = "select count(1) from cat where HALF_NO=$halfno and ADOPT_STATUS = 0";    // 計算資料筆數
+	$sql = "select count(1) from cat where HALF_NO=$halfno and (ADOPT_STATUS = 0 or ADOPT_STATUS = 1)";    // 計算資料筆數
 	$total = $pdo->query($sql);
 	$rownum = $total->fetchcolumn();                            // 總共欄位數
 	$perPage = 6;                                               // 每頁顯示筆數
@@ -392,7 +392,7 @@ try {
 	// 若無當前頁數則進入第一頁 若有則進入該頁
 	$start = ($pageNo - 1) * $perPage;   
 	// 設定每頁呈現內容
-    $sql = "select * from cat where HALF_NO=$halfno and ADOPT_STATUS = 0 limit $start, $perPage";
+    $sql = "select * from cat where HALF_NO=$halfno and (ADOPT_STATUS = 0 or ADOPT_STATUS = 1) limit $start, $perPage";
     $halfway = $pdo->prepare($sql);
     $halfway->bindColumn("CAT_NO", $CNO);
     $halfway->bindColumn("CAT_NAME", $CNAME);

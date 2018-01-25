@@ -53,13 +53,23 @@ try {
                     <textarea onfocus="this.select()" name="intro" id="" cols="60" rows="5" id="textarea"><?php echo $HWmemRow->HALF_INTRO ?></textarea>
                 </td>
             </tr>
-            <tr>
-                <th>新增中途之家的詳細圖片(最多可選擇4張)</th>
-                <td>
-                    <input type="file" name="upFile[]" id="files" multiple="multiple">
-                    <output id="picList"></output>
-                </td>
-            </tr>
+            <?php
+                $sql = "select count(1) c from half_pic where HALF_NO =?";
+                $hw = $pdo->prepare($sql);
+                $hw->bindValue(1, $_SESSION["HALF_NO"]); //session
+                $hw->execute();
+                $hwtRow = $hw->fetchObject();
+                $piccount = $hwtRow->c;
+                if($piccount == 0){
+                    echo "<tr>
+                            <th>新增中途之家的詳細圖片(最多可選擇4張)</th>
+                            <td>
+                                <input type='file' name='upFile[]' id='files' multiple='multiple'>
+                                <output id='picList'></output>
+                            </td>
+                        </tr>";
+                }
+            ?>
             <tr>
                 <td colspan="2">
                     <button type="submit" class="defaultBtn">確定修改</button>
