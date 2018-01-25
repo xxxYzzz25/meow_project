@@ -7,7 +7,8 @@ try {
     $product->bindValue(":no", $_REQUEST["PRODUCT_NO"]);
     $product->execute();
     while ($productRow = $product->fetchObject()) {
-        ?>
+?>
+    <button id="backPre" class="defaultBtn">返回上一頁</button>
     <h4>修改商品資料 商品編號<?php echo $productRow->PRODUCT_NO; ?></h4>
     <form action="../php/backProductUpdateToDb.php" method="post">
         <input type="hidden" name="no" value="<?php echo $productRow->PRODUCT_NO; ?>">
@@ -48,7 +49,7 @@ try {
             <tr>
                 <th>商品敘述</th>
                 <td>
-                    <textarea name="narrative" cols="40" rows="10"><?php echo $productRow->PRODUCT_NARRATIVE; ?></textarea>
+                    <textarea name="narrative" cols="75" rows="10"><?php echo $productRow->PRODUCT_NARRATIVE; ?></textarea>
                 </td>
             </tr>
             <tr>

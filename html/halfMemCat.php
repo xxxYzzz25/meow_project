@@ -124,7 +124,8 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 try {
     require_once "../php/connectBD103G2.php";
 
-    $sql   = "select * from cat where HALF_NO =?";
+    $sql   = "select * 
+    from cat where (ADOPT_STATUS = 0 or ADOPT_STATUS = 1) and HALF_NO =?";
     $HWcat = $pdo->prepare($sql);
     $HWcat->bindValue(1, $_SESSION["HALF_NO"]); //session
     $HWcat->execute();

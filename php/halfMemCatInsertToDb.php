@@ -46,14 +46,15 @@ try {
                     if(copy( $from, $to) ){
                         // 新增喵喵
                         $sql = "insert into
-                                cat (HALF_NO,CAT_NAME,CAT_DATE,CAT_SEX,CAT_NARRATIVE,CAT_LOCATION,CAT_VACCINE,CAT_LIGATION,CAT_INDIVIDUALITY,CAT_FIT,CAT_ADVANTAGE,CAT_DISADVANTAGE,CAT_COVER)
-                                values (:no,:name,:date,:sex,:narrative,:location,:vaccine,:ligation,:individuality,:fit,:advantage,:disadvantage,:catpic)";
+                                cat (HALF_NO,CAT_NAME,CAT_DATE,CAT_SEX,CAT_NARRATIVE,CAT_COLOR,CAT_LOCATION,CAT_VACCINE,CAT_LIGATION,CAT_INDIVIDUALITY,CAT_FIT,CAT_ADVANTAGE,CAT_DISADVANTAGE,CAT_COVER)
+                                values (:no,:name,:date,:sex,:narrative,:color,:location,:vaccine,:ligation,:individuality,:fit,:advantage,:disadvantage,:catpic)";
                         $products = $pdo->prepare($sql);
                         $products->bindValue(":no", $_REQUEST["no"]);
                         $products->bindValue(":name", $_REQUEST["name"]);
                         $products->bindValue(":date", $_REQUEST["date"]);
                         $products->bindValue(":sex", $_REQUEST["sex"]);
                         $products->bindValue(":narrative", $_REQUEST["narrative"]);
+                        $products->bindValue(":color", $_REQUEST["color"]);
                         $products->bindValue(":location", $_REQUEST["location"]);
                         $products->bindValue(":vaccine", $_REQUEST["vaccine"]);
                         $products->bindValue(":ligation", $_REQUEST["ligation"]);

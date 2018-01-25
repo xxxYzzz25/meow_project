@@ -20,7 +20,7 @@ try {
 ?>   
     <tr>
         <td><a href="../html/Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $productRow->no ?>"><?php echo $productRow->name ?></a></td>
-        <td><?php echo $productRow->price ?></td>
+        <td>$<?php echo $productRow->price ?></td>
         <td><?php echo $productRow->count ?></td>
     </tr>
     

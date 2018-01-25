@@ -22,7 +22,7 @@ try {
 	$products->bindValue(":no" , $_REQUEST["no"]);
 	$products->bindValue(":status" , $_REQUEST["status"]);
 	$products->execute();
-	echo "<center>新增成功</center><br>
+	echo "<center>審核成功</center><br>
         <center>將在五秒後回到原網址</center><br>
         <center><a id='backNext'>或者點此直接回到原網址</a></center>";
 } catch (Exception $e) {
