@@ -640,8 +640,8 @@ h2 {
 
 @media only screen and (max-width: 767px) {
   .product {
-    width: 100%;
-    margin: auto; } }
+    width: 40%;
+    margin: 5%; } }
 
 .pic:hover {
   transform: scale(1.1); }
@@ -660,6 +660,10 @@ h2 {
 
 .cost {
   padding: 20%; }
+
+@media only screen and (max-width: 767px) {
+  .cost {
+    padding: 15%; } }
 
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);

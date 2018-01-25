@@ -273,7 +273,6 @@ h2 {
 }
 
 .addButton:hover{
-	
 	background-color: #EAAF88;
 	border: 1px solid #EAAF88;
 	color: #fff;
@@ -293,8 +292,8 @@ h2 {
 
 @media only screen and (max-width: 767px) {
 	.product {
-		width: 100%;
-		margin: auto;
+		width: 40%;
+		margin: 5%;
 	}
 }
 
@@ -320,4 +319,10 @@ h2 {
 
 .cost {
 	padding: 20%;
+}
+
+@media only screen and (max-width: 767px){
+	.cost {
+		padding: 15%;
+	}
 }
