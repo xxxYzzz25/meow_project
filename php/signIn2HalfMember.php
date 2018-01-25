@@ -33,29 +33,28 @@ try {
 		}else if ( $halfRow["HALF_AUDIT_STATUS"] != 1 ) {
 			echo "<script>alert('此帳號尚未審核, 請稍候, 我們將盡快為您審核。')</script>";
         }else {
-				$halfNo = $halfRow["HALF_NO"];
-				$halfName = $halfRow["HALF_NAME"];
-
-				if(isset($_REQUEST["discount"])){
-
-					$discount = $_REQUEST["discount"];
-					$sql = "update halfway_member set half_discount = $discount where half_no = $halfNo";
-					//執行該指令
-					$pdo->query($sql);
-					echo "<script>
-					window.addEventListener('load',()=>{
-						localStorage.setItem('halfNo',$halfNo);
-					});
-					alert('登入成功\\n\\n$halfName, 您好')
-					</script>";
-				}else{
-					echo "<script>
-					window.addEventListener('load',()=>{
-						localStorage.setItem('halfNo',$halfNo);
-					});
-					alert('登入成功\\n\\n$halfName, 您好')
-					</script>";
-				}
+			$halfNo = $halfRow["HALF_NO"];
+			$halfName = $halfRow["HALF_NAME"];
+			isset($_REQUEST["discount"])?$_REQUEST["discount"]=$_REQUEST["discount"]:$_REQUEST["discount"]=null;
+			if($_REQUEST["discount"] != null ){
+				$discount = $_REQUEST["discount"];
+				$sql = "update halfway_member set half_discount = $discount where half_no = $halfNo";
+				//執行該指令
+				$pdo->query($sql);
+				echo "<script>
+				window.addEventListener('load',()=>{
+					localStorage.setItem('halfNo',$halfNo);
+				});
+				alert('登入成功\\n\\n$halfName, 您好')
+				</script>";
+			}else{
+				echo "<script>
+				window.addEventListener('load',()=>{
+					localStorage.setItem('halfNo',$halfNo);
+				});
+				alert('登入成功\\n\\n$halfName, 您好')
+				</script>";
+			}
 				
 			$_SESSION["HALF_NO"] = $halfRow["HALF_NO"];
 		}
