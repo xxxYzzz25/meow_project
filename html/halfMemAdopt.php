@@ -16,8 +16,7 @@ try {
                 and a.MEM_NO = m.MEM_NO
                 and c.HALF_NO = h.HALF_NO
                 and c.ADOPT_STATUS = 1
-                and h.HALF_NO = ?
-                order by ADOPT_DATE desc";
+                and c.HALF_NO = ?";
     $adopt = $pdo->prepare($sql);
     $adopt->bindValue(1, $_SESSION["HALF_NO"]); //session
     $adopt->execute();

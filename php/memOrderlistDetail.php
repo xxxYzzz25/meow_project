@@ -1,4 +1,5 @@
-<caption>訂單詳情(訂單編號<?php echo $_REQUEST["ORDER_NO"]?>)</caption>
+    <h4>訂單詳情(訂單編號<?php echo $_REQUEST["ORDER_NO"]?>)</h4>
+    <table>
     <tr>
         <th>商品名稱</th>
         <th>商品價錢</th>
@@ -22,11 +23,11 @@ try {
     while($productRow = $product->fetchObject()){;
 ?>   
     <tr>
-        <td><a href="<?php echo $productRow->PRODUCT_NAME?>"><?php echo $productRow->PRODUCT_NAME?></a></td>
+        <td><a href="../html/Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $productRow->PRODUCT_NO?>"><?php echo $productRow->PRODUCT_NAME?></a></td>
         <td><?php echo $productRow->PRODUCT_PRICE?></td>
         <td><?php echo $productRow->COUNT?></td>
     </tr>
-
+    </table>
 <?php
     }
 } catch (Exception $e) {

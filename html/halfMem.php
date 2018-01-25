@@ -337,6 +337,7 @@ if (isset($_SESSION["MEM_NO"])) {
         document.getElementById('resetBtn').addEventListener('click', function(){
             document.getElementById('picList').textContent='';
         });
+        
     }
 
     function callpic() {
@@ -374,18 +375,16 @@ if (isset($_SESSION["MEM_NO"])) {
     }
 </script>
 <script>
-    function add(data) {
+    function add(data,action) {
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
                 //modify here
-                let halfMemCat = document.getElementById('halfMemCat');
-                halfMemCat.innerHTML = this.responseText;
-
-                let back = document.getElementById('back');
-                back.addEventListener('click',function () {
-                    window.location.reload();
-                });
+                let odTable = document.getElementById('odTable');
+                odTable.innerHTML = this.responseText;
+                if(action != null){
+                    action();
+                }
             } else {
                 alert(xhr.status);
             }
@@ -393,6 +392,13 @@ if (isset($_SESSION["MEM_NO"])) {
         let url = data;
         xhr.open("get", url, true);
         xhr.send(null);
+    }
+
+    function catback() {
+        let catbackPre = document.getElementById('catbackPre');
+        catbackPre.addEventListener('click',function () {
+            getData('halfMemCat.php',tempQQName);
+        });
     }
 </script>
 
