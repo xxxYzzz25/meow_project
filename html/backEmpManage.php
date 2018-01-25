@@ -241,7 +241,7 @@
                 let empOffice = tr.childNodes[3];
                 tempOffice = tr.childNodes[3].textContent;
                 let op1 = document.createElement('option');
-                let op1Text = document.createTextNode('Supper Admin');
+                let op1Text = document.createTextNode('Super Admin');
                 let op2 = document.createElement('option');
                 let op2Text = document.createTextNode('Sales');
                 let op3 = document.createElement('option');
