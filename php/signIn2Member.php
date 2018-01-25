@@ -35,7 +35,8 @@ try {
 				$memNo = $memRow["MEM_NO"];
 				$memName = $memRow["MEM_NAME"];
 				//判斷分數
-				if(isset($_REQUEST["score"])){
+				isset($_REQUEST["score"])?$_REQUEST["score"]=$_REQUEST["score"]:$_REQUEST["score"]=null;
+				if($_REQUEST["score"] != null){
 
 					$score = $_REQUEST["score"];
 					$sql = "update member set mem_score = $score where mem_no = $memNo";
