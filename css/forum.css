@@ -428,7 +428,15 @@ header {
   text-align: left; }
 
 h1 {
-  font-size: 28px;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 26px;
+  letter-spacing: 15px;
+  text-align: center;
+  padding: 5%;
+  margin: 0;
   transition: .3s; }
 
 .rwd-img {
@@ -449,7 +457,8 @@ h1 {
     clear: both; }
 
 .forum-list {
-  margin-top: 5%; }
+  margin-top: 5%;
+  margin-bottom: 9%; }
   .forum-list li {
     letter-spacing: 2px;
     padding: 20px 0;
@@ -465,7 +474,7 @@ h1 {
       transition: .3s; }
 
 .post-list {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.801);
   padding: 5%;
   width: 40%;
   border: 2px solid #ccc;
@@ -544,9 +553,9 @@ h1 {
 
 @media screen and (min-width: 652px) {
   .po-list {
-    margin: 0 3%;
+    margin-bottom: 3%;
     padding: 2%;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.801);
     border: 1px solid rgba(0, 0, 0, 0.1); }
   .po-title {
     text-align: left;
@@ -563,7 +572,7 @@ h1 {
       margin-left: 5%; }
   .po-time {
     display: inline-block;
-    width: 34%;
+    width: 30%;
     text-align: right; }
     .po-time span {
       margin: 0 5%; } }

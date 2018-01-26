@@ -19,7 +19,12 @@ body{
 	margin: auto;
 }
 
-@media only screen and (max-width: 768px){
+#pdDetail{
+    background-color: #fff;
+    padding: 10%;
+}
+
+@media only screen and (max-width: 991px){
     .wrap{
         margin-left: 0;
     }
@@ -77,7 +82,7 @@ h2{
 	display: inline-block;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 991px){
 	.menuTitle{
 		display: block;
 	}
@@ -116,10 +121,10 @@ hr{
 
 .bigPic img{
     width: 90%;
-    border: 3px solid #333333;
+    // border: 3px solid #333333;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 991px){
     
     hr{
         visibility: hidden;
@@ -158,7 +163,7 @@ hr{
     color: #333333 ;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 991px){
     .right{
         width: 100%;
         /* text-align: center; */
@@ -235,7 +240,7 @@ input.qtyminus:hover{
 }
 
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 991px){
     button{
         margin-bottom: 0px;
     }

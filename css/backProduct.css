@@ -307,6 +307,11 @@ header ul li:nth-child(8):after {
       .right .container1 .bigImg img {
         width: 100%;
         max-width: 1000px; }
+    .right .container1 h4 {
+      text-align: center;
+      font-size: 24px;
+      margin: 30px 0;
+      font-weight: bold; }
     .right .container1 .adoptInfomation {
       width: 80%;
       margin: 100px auto 100px; }
@@ -351,10 +356,18 @@ header ul li:nth-child(8):after {
             .right .container1 .adoptInfomation table tr td button {
               display: inline-block;
               text-align: center; }
+            .right .container1 .adoptInfomation table tr th span,
+            .right .container1 .adoptInfomation table tr td span {
+              display: block;
+              border: 1px dashed #EAAF88; }
+              .right .container1 .adoptInfomation table tr th span .filePic,
+              .right .container1 .adoptInfomation table tr td span .filePic {
+                height: 120px; }
           .right .container1 .adoptInfomation table tr th {
             font-size: 18px;
             letter-spacing: 2px;
-            font-weight: bold; }
+            font-weight: bold;
+            vertical-align: middle; }
       .right .container1 .adoptInfomation a {
         text-align: center;
         text-decoration: none;
