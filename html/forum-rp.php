@@ -106,7 +106,7 @@
 	
 	<header class="header">
 		<div class="logo">
-			<a href="../index.php">
+			<a href="../homepage.php">
 				<h1>
 					<img src="../images/logo_white.png" alt="尋喵啟事">
 				</h1>

@@ -114,7 +114,7 @@
    
     <header>
         <div class="logo">
-            <a href="../index.php">
+            <a href="../homepage.php">
                 <h1>
                     <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -216,7 +216,7 @@ try {
 
 	<div class="right">
 		<div class="breadcrumbs">
-			<a href="../index.php" class="defaultBtn">尋喵啟事</a> >
+			<a href="../homepage.php" class="defaultBtn">尋喵啟事</a> >
 			<a href="halfway_house_search.php" class="defaultBtn">搜尋中途之家</a> >
 			<a href="halfway_house_detail.php?halfno=<?php echo $halfno ?>" class="defaultBtn">
 				<?php echo $NAME ?>
