@@ -56,7 +56,9 @@ h2 {
   margin: 0 auto;
   margin-top: 2%;
 }
-
+.m-box{
+  margin-bottom: 80px;
+}
 .pobox {
   margin-bottom: 8%;
   .post-header {
@@ -116,7 +118,7 @@ h2 {
 //
 .postfrom {
   max-width: 991px;
-  width: 100%;
+  width: 90%;
   margin: 2% auto;
   background-color: red;
   text-align: left;

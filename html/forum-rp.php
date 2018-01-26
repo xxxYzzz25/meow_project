@@ -276,6 +276,27 @@
 			</form>
 		</div>
 	</div>
+	<footer>
+        <div class="aaa">
+            <div class="follow">
+                <div class="btns">
+                    <span>follow us on</span>
+                    <a href="#" class="btn facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" class="btn youtube">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                    <a href="#" class="btn twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn google">
+                        <i class="fa fa-google"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 	<script type="text/javascript">
 		window.addEventListener('load',()=>{
 
