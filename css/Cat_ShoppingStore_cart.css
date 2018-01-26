@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
 v2.0 | 20110126
 License: none (public domain)
@@ -448,6 +447,15 @@ table {
   text-align: center;
   margin-top: 5%; }
 
+td .confirm {
+  border-radius: 100px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  padding: 2% 8% 2% 10%;
+  border: 2px solid #333333;
+  background-color: transparent;
+  color: #333; }
+
 .pay {
   margin-top: 3%;
   margin-bottom: 10%; }
@@ -495,34 +503,6 @@ p {
   border: 2px solid #333;
   border-radius: 100px; }
 
-/* @media only screen and (max-width: 768px){
-
-    .itemHead td{
-        display: block;
-    }
-    
-    .tdTitle {
-        display: none;
-    }
-
-    .itemHead:nth-child(1):before{
-        content: '商品';
-    }
-
-    .itemHead:nth-child(2):before{
-        content: '價錢';
-    }
-
-    .itemHead:nth-child(3):before{
-        content: '數量';
-    }
-
-    .itemHead:nth-child(4):before{
-        content: '刪除';
-    }
-
-    
-} */
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100vw;

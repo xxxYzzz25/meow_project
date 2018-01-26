@@ -9,7 +9,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>商城</title>
 
 	<link rel="stylesheet" href="../css/animate.css">
 

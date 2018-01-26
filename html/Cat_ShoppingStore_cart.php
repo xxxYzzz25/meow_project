@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Shopping Cart</title>
+    <title>購物車</title>
 
     <link rel="stylesheet" href="../css/animate.css">
 
@@ -153,10 +153,10 @@
                         echo "<a href='#' class='login'>會員專區</a>";
                     }else{
                         if(!isset($_SESSION['HALF_NO'])){
-                            echo "<a href='./html/member.php'>會員專區</a>";
+                            echo "<a href='./member.php'>會員專區</a>";
                         }
                         else{
-                            echo "<a href='./html/halfMem.php'>中途會員專區</a>";
+                            echo "<a href='./halfMem.php'>中途會員專區</a>";
                         }
                     }
                 ?>

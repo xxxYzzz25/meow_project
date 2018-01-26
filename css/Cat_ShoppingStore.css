@@ -561,7 +561,9 @@ h2 {
     text-align: center;
     margin: 0 0 50px 0; }
   .allProduct {
-    margin-top: 5%; } }
+    margin-top: 5%; }
+  hr {
+    display: none; } }
 
 .typeBanner1 {
   background-image: url(../img/eatBanner.jpg); }

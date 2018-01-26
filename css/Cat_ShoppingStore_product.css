@@ -501,7 +501,7 @@ hr {
 
 .price {
   font-size: 25px;
-  margin: 30px 0 130px 0;
+  margin: 20% 0 5% 0;
   color: #333333; }
 
 @media only screen and (max-width: 991px) {
@@ -510,7 +510,7 @@ hr {
     /* text-align: center; */
     margin: 0 0 0 10px; }
   .price {
-    margin: 30px 0 30px 0; } }
+    margin: 10% 0; } }
 
 .qty {
   width: 30px;
@@ -551,21 +551,21 @@ input.qtyminus:hover {
 .addButton {
   border: 2px solid #333333;
   background-color: transparent;
-  height: 40px;
-  width: 150px;
   border-radius: 100px;
   cursor: pointer;
-  letter-spacing: 3px;
-  margin: 30px 10px 60px 0;
   float: left;
   text-align: center;
-  padding-top: 3px;
-  color: #333333; }
+  color: #333333;
+  margin: 5% 0;
+  padding: 1% 5%; }
 
 .addButton:hover {
   color: #fff;
   background-color: #EAAF88;
-  border: 1px solid #EAAF88; }
+  border: 2px solid #EAAF88; }
+
+.cartBtn {
+  margin-right: 3%; }
 
 @media only screen and (max-width: 991px) {
   button {
@@ -577,7 +577,14 @@ input.qtyminus:hover {
   width: 100%; }
 
 .productDetail img {
-  width: 100%; }
+  width: 100%;
+  margin-top: 5%; }
+
+@media only screen and (max-width: 991px) {
+  .productDetail img {
+    margin-top: 10%; }
+  #myform {
+    margin: 10% 0; } }
 
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);
