@@ -413,7 +413,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 				  }
 				?>
 		</div>
-		<div class="container">
+		<div class="container containerLast">
 			<div class="postfrom">
 				<p>快速發文</p>
 				<form action="../php/forum-post.php" method="post" accept-charset="utf-8">

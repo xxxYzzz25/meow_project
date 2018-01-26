@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Shopping Cart</title>
+    <title>購物車</title>
 
     <link rel="stylesheet" href="../css/animate.css">
 

@@ -51,9 +51,9 @@ CREATE TABLE `MEMBER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `MEMBER` (`MEM_NO`, `MEM_ID`, `MEM_PSW`, `MEM_NAME`, `MEM_BIRTHDAY`, `MEM_TEL`, `MEM_ADDRESS`, `MEM_SCORE`, `MEM_PIC`, `MEM_DISCOUNT`, `MEM_BAN`)
 VALUES
-	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/default.jpg', 0, 0),
-	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', 5, '../images/memberPic/default.jpg', 0, 0),
-	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/default.jpg', 0, 0);
+	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/sara@gmail.com.jpg', 0, 0),
+	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', 5, '../images/memberPic/handsome@gmail.com.jpg', 0, 0),
+	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/silvia@gmail.com.jpg', 0, 0);
 
 
 # Dump of table PRODUCT
