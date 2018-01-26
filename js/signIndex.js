@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
     path = path.split('/');
     path = path[path.length - 1];
 
-    if (path == 'index.php' || path == '') {
+    if (path == 'homepage.php' || path == '') {
         in2up.addEventListener('click', () => {
             signIn.style.display = 'none'
             signUp.style.display = 'block'

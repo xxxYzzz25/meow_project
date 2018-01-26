@@ -126,7 +126,7 @@
     </div>
     <header>
         <div class="logo">
-            <a href="../index.php">
+            <a href="../homepage.php">
                 <h1>
                     <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -144,7 +144,7 @@
                     <a href="./Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="./member.php">討論區</a>
+                    <a href="./forum.php">討論區</a>
                 </li>
                 <li>
                 <?php

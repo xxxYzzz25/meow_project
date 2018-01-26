@@ -19,7 +19,6 @@ body {
   background-size: cover;
   position: relative;
   display: block;
-  text-align: center;
   width: 100%;
   min-height: 100%;
   height: 100%;
@@ -62,7 +61,7 @@ h2 {
   margin-bottom: 8%;
   .post-header {
     .post-ab {
-      text-align: right;
+      // text-align: right;
     }
   }
 }

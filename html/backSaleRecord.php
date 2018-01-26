@@ -60,7 +60,7 @@
             </ul>
         </nav>
         <div class="icons">
-            <a href='./guide.html' id='loginBtn'>
+            <a href='../index.html' id='loginBtn'>
                 <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
             </a>
         </div>
@@ -95,37 +95,55 @@
             function getData() {
                 let obj = JSON.parse(this.responseText);
                 let saleList = document.getElementById('saleList');
-                let fragment = document.createDocumentFragment();
                 let listLen = saleList.childElementCount;
                 let linkArea = document.getElementById('linkArea');
 
-                while (linkArea.firstChild) {
-                    linkArea.removeChild(linkArea.firstChild);
-                }
-                for (let i = listLen; i > 1; i--) {
-                    saleList.lastChild.remove();
-                }
-                for (const i of obj) {
+                if(obj != ''){
+                    
+                    let fragment = document.createDocumentFragment();
+                    while (linkArea.firstChild) {
+                        linkArea.removeChild(linkArea.firstChild);
+                    }
+                    for (let i = listLen; i > 1; i--) {
+                        saleList.lastChild.remove();
+                    }
+                    for (const i of obj) {
+                        let tr = document.createElement('tr');
+                        let orderNoTd = document.createElement('td');
+                        let memIdTd = document.createElement('td');
+                        let timeTd = document.createElement('td');
+                        let statusTd = document.createElement('td');
+                        let orderNo = document.createTextNode(i["訂單編號"]);
+                        let memId = document.createTextNode(i["購買人帳號"]);
+                        let time = document.createTextNode(i["購買時間"]);
+                        let status = document.createTextNode(i["出貨狀態"]);
+                        orderNoTd.appendChild(orderNo);
+                        memIdTd.appendChild(memId);
+                        timeTd.appendChild(time);
+                        statusTd.appendChild(status);
+                        tr.appendChild(orderNoTd);
+                        tr.appendChild(memIdTd);
+                        tr.appendChild(timeTd);
+                        tr.appendChild(statusTd);
+                        fragment.appendChild(tr);
+                    }
+                    saleList.appendChild(fragment);
+                }else{
                     let tr = document.createElement('tr');
-                    let orderNoTd = document.createElement('td');
-                    let memIdTd = document.createElement('td');
-                    let timeTd = document.createElement('td');
-                    let statusTd = document.createElement('td');
-                    let orderNo = document.createTextNode(i["訂單編號"]);
-                    let memId = document.createTextNode(i["購買人帳號"]);
-                    let time = document.createTextNode(i["購買時間"]);
-                    let status = document.createTextNode(i["出貨狀態"]);
-                    orderNoTd.appendChild(orderNo);
-                    memIdTd.appendChild(memId);
-                    timeTd.appendChild(time);
-                    statusTd.appendChild(status);
-                    tr.appendChild(orderNoTd);
-                    tr.appendChild(memIdTd);
-                    tr.appendChild(timeTd);
-                    tr.appendChild(statusTd);
-                    fragment.appendChild(tr);
+                    let noneTextTd = document.createElement('td');
+                    let noneText = document.createTextNode('當前查無銷售紀錄!');
+                    while (linkArea.firstChild) {
+                        linkArea.removeChild(linkArea.firstChild);
+                    }
+                    for (let i = listLen; i > 1; i--) {
+                        saleList.lastChild.remove();
+                    }
+                    noneTextTd.appendChild(noneText);
+                    Object.assign(noneTextTd,{colSpan:4});
+                    tr.appendChild(noneTextTd);
+                    saleList.appendChild(tr);
+                    
                 }
-                saleList.appendChild(fragment);
 
                 ajax(showPages, `order=${order}&qty=${qty}&pages=true`);
             }
@@ -183,7 +201,7 @@
 
             let selector = document.getElementById('adoptOrder');
             let qty = 0;
-            let limit = 20;
+            let limit = 10;
             let order = 1;
             selector.addEventListener('change', changeOrder);
             ajax(getData, `order=${order}&qty=${qty}`);

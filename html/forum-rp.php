@@ -25,7 +25,7 @@
                 <button id="halfMember1">中途之家會員</button>
                 <button id="member1" class="selected">一般會員</button>
             </div>
-            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
+            <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
                 <br>
                 <br>
                 <br>
@@ -55,7 +55,7 @@
                 <button id="halfMember2">中途之家會員</button>
                 <button id="member2" class="selected">一般會員</button>
             </div>
-            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
+            <form action="../php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
                 <label for="userName">會員名稱
                     <br>
                     <small>不得多於8個中/英文字元</small>
@@ -106,7 +106,7 @@
 	
 	<header class="header">
 		<div class="logo">
-			<a href="../index.php">
+			<a href="../homepage.php">
 				<h1>
 					<img src="../images/logo_white.png" alt="尋喵啟事">
 				</h1>
@@ -170,7 +170,7 @@
 				try {
 					require_once("../php/connectBD103G2.php");
 					$ARTICLE_NO = $_REQUEST["ARTICLE_NO"];
-					$sql = "select a.ARTICLE_TITLE,a.ARTICLE_CONTENT,a.ARTICLE_TIME,m.MEM_NAME,h.HALF_HEAD
+					$sql = "select a.ARTICLE_TITLE,a.ARTICLE_CONTENT,a.ARTICLE_TIME,m.MEM_NAME,h.HALF_HEAD,h.HALF_COVER,m.MEM_PIC
 							from article a
 							left join MEMBER m on a.MEM_NO = m.MEM_NO
 							left join HALFWAY_MEMBER h on a.HALF_NO = h.HALF_NO
@@ -183,12 +183,14 @@
 			<div class="post-header">
 				<h2><?php echo $dataRow -> ARTICLE_TITLE ?></h2>
 				<div class="post-ab">
+				<span class="mem_pic" style="display:inline-block;vertical-align:middle;width:60px;height:60px;border-radius:50%;background-image:url(<?php echo is_null($dataRow->HALF_COVER) ? $dataRow->MEM_PIC : $dataRow->HALF_COVER ?>);background-repeat:no-repeat;background-size:cover;">
+				</span>
 					<span><?php echo is_null($dataRow->HALF_HEAD) ? $dataRow->MEM_NAME : $dataRow->HALF_HEAD ?></span>
 					<span><?php echo $dataRow -> ARTICLE_TIME ?></span>
 				</div>
 			</div>
 			<div class="post-body">
-				<?php echo $dataRow -> ARTICLE_CONTENT ?>
+				<?php echo nl2br($dataRow -> ARTICLE_CONTENT); ?>
 			</div>
 
 			<?php 
@@ -198,9 +200,9 @@
 				}
 				?>
 			<div class="post-ft">
-				<form action="../php/forum-report.php" method="post">
+				<form action="../php/forum-report.php" class="reports" method="post">
 					<input type="hidden" name="ARTICLE_NO" value="<?php echo $ARTICLE_NO ?>">
-					<button type="submit" class="defaultBtn reportBtns">檢舉</button>
+					<button type="submit" class="defaultBtn">檢舉</button>
 				</form>
 			</div>
 		</div>
@@ -208,7 +210,7 @@
 		<?php 
 			try{
 				require_once("../php/connectBD103G2.php");
-				$sql = "select me.MESSAGE_NO,m.MEM_NO,h.HALF_NO,me.MESSAGE_TIME,me.MESSAGE_CONTENT,m.MEM_NAME,h.HALF_HEAD
+				$sql = "select me.MESSAGE_NO,m.MEM_NO,h.HALF_NO,me.MESSAGE_TIME,me.MESSAGE_CONTENT,m.MEM_NAME,h.HALF_HEAD,h.HALF_COVER,m.MEM_PIC
 						from MESSAGE me
 						left join MEMBER m on m.MEM_NO = me.MEM_NO
 						left join HALFWAY_MEMBER h on h.HALF_NO = me.HALF_NO
@@ -220,16 +222,19 @@
 		?>	
 		<div class="container rebox">
 			<div class="post-ab">
+			<span class="mem_pic" style="display:inline-block;vertical-align:middle;width:60px;height:60px;border-radius:50%;background-image:url(<?php echo is_null($dataRow->HALF_COVER) ? $dataRow->MEM_PIC : $dataRow->HALF_COVER ?>);background-repeat:no-repeat;background-size:cover;">
+			</span>
 				<span><?php echo is_null($dataRow->HALF_HEAD) ? $dataRow->MEM_NAME : $dataRow->HALF_HEAD ?></span>
 				<span><?php echo $dataRow -> MESSAGE_TIME ?></span>
+				
 			</div>
 			<div class="post-body">
-				<?php echo $dataRow -> MESSAGE_CONTENT ?>
+				<?php echo nl2br($dataRow -> MESSAGE_CONTENT); ?>
 			</div>
 			<div class="post-ft">
-				<form action="../php/forum-report.php" method="post">
+				<form action="../php/forum-report.php" class="reports" method="post">
 					<input type="hidden" name="MESSAGE_NO" value="<?php echo $dataRow -> MESSAGE_NO ?>">
-					<button class="defaultBtn reportBtns">檢舉</button>
+					<button class="defaultBtn">檢舉</button>
 				</form>
 			</div>
 		</div>
@@ -280,11 +285,13 @@
 				}
 			}
 			let textArea = document.getElementById('textArea');
-			let reports = document.querySelectorAll('.reportBtns');
+			let reports = document.querySelectorAll('.reports');
 			for (const i of reports) {
-				i.addEventListener('submit',()=>{
-					alert('請先登入');
-					if(localStorage.getItem('halfNo') || localStorage.getItem('halfNo')){
+				i.addEventListener('submit',function(e){
+					if(localStorage.getItem('halfNo') || localStorage.getItem('memNo')){
+						
+					}else{
+						e.preventDefault();
 						alert('請先登入');
 						qq();
 					}

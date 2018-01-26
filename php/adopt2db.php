@@ -37,7 +37,7 @@ try {
         }
     }else{
         echo "<script>alert('您的答對題數為：$score 題\\n您的養貓知識還不足夠, 前往首頁學習！')</script>";
-        echo "<script>document.location.href='../index.php#page2'</script>";
+        echo "<script>document.location.href='../homepage.php#page2'</script>";
     }
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";

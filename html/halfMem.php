@@ -112,7 +112,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 
 <header>
     <div class="logo">
-        <a href="../index.php">
+        <a href="../homepage.php">
             <h1>
                 <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
             </h1>
