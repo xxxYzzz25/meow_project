@@ -77,6 +77,7 @@
                     <table id="adoptList">
                         <tr id="listTitle">
                             <th>喵小孩編號</th>
+                            <th>喵小孩名字</th>
                             <th>領養者</th>
                             <th>領養時間</th>
                         </tr>
@@ -105,15 +106,19 @@
                     for (const i of obj) {
                         let tr = document.createElement('tr');
                         let catNoTd = document.createElement('td');
+                        let catNameTd = document.createElement('td');
                         let memIdTd = document.createElement('td');
                         let timeTd = document.createElement('td');
                         let catNo = document.createTextNode(i["喵編號"]);
+                        let catName = document.createTextNode(i["喵名字"]);
                         let memId = document.createTextNode(i["領養者"]);
                         let time = document.createTextNode(i["領養時間"]);
                         catNoTd.appendChild(catNo);
+                        catNameTd.appendChild(catName);
                         memIdTd.appendChild(memId);
                         timeTd.appendChild(time);
                         tr.appendChild(catNoTd);
+                        tr.appendChild(catNameTd);
                         tr.appendChild(memIdTd);
                         tr.appendChild(timeTd);
                         fragment.appendChild(tr);
@@ -134,6 +139,7 @@
                     });
                     pagesOne.addEventListener('click', changePages);
                     fragment.appendChild(pagesOne);
+
                     for (let i = 1; i < count; i++) {
 
                         if (i % limit == 0) {
@@ -176,7 +182,7 @@
 
                 let selector = document.getElementById('adoptOrder');
                 let qty = 0;
-                let limit = 20;
+                let limit = 10;
                 let order = 1;
                 selector.addEventListener('change', changeOrder);
                 ajax(getData, `order=${order}&qty=${qty}`);
