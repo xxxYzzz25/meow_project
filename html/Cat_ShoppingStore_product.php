@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>商品詳情</title>
 
     <link rel="stylesheet" href="../css/animate.css">
 
