@@ -57,7 +57,7 @@
             </ul>
         </nav>
         <div class="icons">
-            <a href='./guide.html' id='loginBtn'>
+            <a href='../index.html' id='loginBtn'>
                 <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
             </a>
         </div>
