@@ -65,6 +65,7 @@ h2 {
 	color: #333;
 	background-color: #fff;
 	border: 3px solid #EAAF88;
+
 }
 
 #pd_all{
@@ -108,10 +109,6 @@ h2 {
 	width: 100%;
 }
 
-.select {
-	float: left;
-}
-
 .search {
 	float: right;
 }
@@ -135,6 +132,26 @@ h2 {
 	background-color: #EAAF88;
 }
 
+@media only screen and (max-width: 991px) {
+	.search {
+		float: none;
+	}
+
+	.search input {
+		width: 93%;
+	}
+
+	.br{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.search input {
+		width: 87%;
+	}
+}
+
 .allTitle {
 	text-align: center;
 	padding: 2%;
@@ -143,6 +160,10 @@ h2 {
 .allProduct {
 	/* background-color: #ccc; */
 	margin-top: 1%;
+}
+
+.type1{
+	float: none;
 }
 
 .typeName {
@@ -156,6 +177,7 @@ h2 {
 	text-align: center;
 	margin-right: 1%;
 	font-size: 18px;
+	clear: both;
 }
 
 .typeBanner {
@@ -181,8 +203,8 @@ h2 {
 	.typeName {
 		float: none;
 		width: 100%;
-		background-color: transparent;
-		color: #333;
+		background-color: #EAAF88;
+		color: #fff;
 	}
 	.typeBanner {
 		display: none;
@@ -196,6 +218,10 @@ h2 {
 	}
 	.allProduct {
 		margin-top: 5%;
+	}
+
+	hr{
+		display: none;
 	}
 }
 
@@ -236,6 +262,7 @@ h2 {
 	color: #fff;
 	background-color: #EAAF88;
 	border: 1px solid #EAAF88;
+	cursor: pointer;
 }
 
 .product {
@@ -293,12 +320,13 @@ h2 {
 @media only screen and (max-width: 767px) {
 	.product {
 		width: 40%;
-		margin: 5%;
+		margin: 2% 5% 5% 5%;
 	}
 }
 
 .pic:hover {
 	transform: scale(1.1);
+	cursor: pointer;
 }
 
 .pic {

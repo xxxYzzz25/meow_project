@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>商品詳情</title>
 
     <link rel="stylesheet" href="../css/animate.css">
 
@@ -126,7 +126,7 @@
     </div>
     <header>
         <div class="logo">
-            <a href="../index.php">
+            <a href="../homepage.php">
                 <h1>
                     <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -152,10 +152,10 @@
                         echo "<a href='#' class='login'>會員專區</a>";
                     }else{
                         if(!isset($_SESSION['HALF_NO'])){
-                            echo "<a href='./html/member.php'>會員專區</a>";
+                            echo "<a href='./member.php'>會員專區</a>";
                         }
                         else{
-                            echo "<a href='./html/halfMem.php'>中途會員專區</a>";
+                            echo "<a href='./halfMem.php'>中途會員專區</a>";
                         }
                     }
                 ?>
@@ -265,7 +265,7 @@
                     
                     </div>
                     
-                    <hr>
+                
                     
                     <div class="productDetail wow zoomIn">
                         

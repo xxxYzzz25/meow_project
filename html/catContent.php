@@ -123,7 +123,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 
 <header>
     <div class="logo">
-        <a href="../index.php">
+        <a href="../homepage.php">
             <h1>
                 <img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
             </h1>
@@ -144,12 +144,16 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
                 <a href="../html/forum.php">討論區</a>
             </li>
             <li>
-                <?php
-                    if($_SESSION['HALF_NO'] == null){
-                        echo "<a href='member.html'>會員專區</a>";
-                    }
-                    else{
-                        echo "<a href='halfMem.html'>中途會員專區</a>";
+            <?php
+                    if(!isset($_SESSION['MEM_NO']) && !isset($_SESSION['HALF_NO'])){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if(!isset($_SESSION['HALF_NO'])){
+                            echo "<a href='./member.php'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='./halfMem.php'>中途會員專區</a>";
+                        }
                     }
                 ?>
             </li>
@@ -202,7 +206,7 @@ $catRow = $cats->fetchObject();
 <div class="right">
     <div class="container container1">
         <div class="breadcrumbs">
-            <a href="../index.php" class="defaultBtn" title="前往首頁">尋喵啟事</a> >
+            <a href="../homepage.php" class="defaultBtn" title="前往首頁">尋喵啟事</a> >
             <a href="catSearch.php" class="defaultBtn" title="前往尋喵">尋喵</a> >
             <a href="catContent.php?catNo=<?php echo $catRow->CAT_NO?>" class="defaultBtn" title="瀏覽<?php echo $catRow->CAT_NAME?>"><?php echo $catRow->CAT_NAME; ?></a>
         </div>

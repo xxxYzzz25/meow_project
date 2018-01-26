@@ -120,9 +120,19 @@
             display: inline-block;
             align-items: center;
         }
-        .ask {
+        .ask{
+            display: none;
+        }
+        .smallask {
+            display: block;
+            margin: auto;
+            padding-right: 3%;
             margin-top: 50px;
             width: 60%;
+            img {
+                width: 100%;
+                margin: auto;
+            }
         }
         .boxcontainer {
             #rightbox,

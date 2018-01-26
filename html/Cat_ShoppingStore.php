@@ -9,7 +9,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>商城</title>
 
 	<link rel="stylesheet" href="../css/animate.css">
 
@@ -19,6 +19,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 	<link rel="stylesheet" type="text/css" href="../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="../js/like.js"></script>
 
@@ -46,7 +47,7 @@
                 <button id="halfMember1">中途之家會員</button>
                 <button id="member1" class="selected">一般會員</button>
             </div>
-            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
+            <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
                 <br>
                 <br>
                 <br>
@@ -76,7 +77,7 @@
                 <button id="halfMember2">中途之家會員</button>
                 <button id="member2" class="selected">一般會員</button>
             </div>
-            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
+            <form action="../php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
                 <label for="userName">會員名稱
                     <br>
                     <small>不得多於8個中/英文字元</small>
@@ -127,7 +128,7 @@
 	
 	<header>
 		<div class="logo">
-			<a href="../index.php">
+			<a href="../homepage.php">
 				<h1>
 					<img src="../images/logo_white.png" alt="尋喵啟事" title="回首頁">
 				</h1>
@@ -222,12 +223,6 @@
 				<img src="../img/shoppingBanner.jpg">
 			</div>
 
-			<!-- <form>
-				<select name="price" class="select">
-					<option value="priceDown">價格由高到低</option>
-					<option value="priceUp">價格由低到高</option>
-				</select>
-			</form> -->
 
 			<div class="search">
 				<input type="text" class="searchName" placeholder="尋找喵喵商品">
@@ -235,10 +230,11 @@
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</button>
 			</div>
-
-			<br>
-			<br>
-
+			
+			<div class="br">
+				<br>
+				<br>
+			</div>
 
 		<div id = "pdContent">
 			<div class="allProduct">
@@ -331,26 +327,27 @@
 						?>
 								
 								<div class="product">
-								<div class="pic  wow zoomIn">
-									<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
-										<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
-									</a>
-								 </div>
-								<div class="text">
-									<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>
+									<div class="pic  wow zoomIn">
+										<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
+											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+										</a>
+									</div>
+
+									<div class="text">
+										<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>
+									</div>
+						
+									<div class="cost">
+										<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+										<!-- $1000 -->
+									</div>
+						
+									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+										加入購物車
+										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
+									</span>
+						
 								</div>
-						
-								<div class="cost">
-									<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
-									<!-- $1000 -->
-								</div>
-						
-								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-									加入購物車
-									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-								</span>
-						
-							</div>
 						
 						<?php  
 							}
@@ -392,26 +389,26 @@
 						?>
 								
 								<div class="product">
-								<div class="pic  wow zoomIn">
-									<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
-										<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
-									</a>
-								 </div>
-								<div class="text">
-									<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>
+									<div class="pic  wow zoomIn">
+										<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
+											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+										</a>
+									</div>
+									<div class="text">
+										<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>
+									</div>
+							
+									<div class="cost">
+										<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+										<!-- $1000 -->
+									</div>
+							
+									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+										加入購物車
+										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
+									</span>
+						
 								</div>
-						
-								<div class="cost">
-									<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
-									<!-- $1000 -->
-								</div>
-						
-								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-									加入購物車
-									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-								</span>
-						
-							</div>
 						
 						<?php  
 							}
@@ -453,26 +450,26 @@
 						?>
 								
 								<div class="product">
-								<div class="pic  wow zoomIn">
-									<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
-										<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
-									</a>
-								 </div>
-								<div class="text">
-									<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>	
+									<div class="pic  wow zoomIn">
+										<a href="Cat_ShoppingStore_product.php?PRODUCT_NO=<?php echo $PRODUCT["PRODUCT_NO"] ?>">
+											<?php echo '<img src="',$PRODUCT["PRODUCT_COVER"],'" alt="',$PRODUCT["PRODUCT_NAME"],'">' ?>
+										</a>
+									</div>
+									<div class="text">
+										<?php echo $PRODUCT_EN  ,'<br>', $PRODUCT_CH?>	
+									</div>
+						
+									<div class="cost">
+										<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
+										<!-- $1000 -->
+									</div>
+							
+									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
+										加入購物車
+										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
+									</span>
+						
 								</div>
-						
-								<div class="cost">
-									<?php echo '$',$PRODUCT["PRODUCT_PRICE"] ?>
-									<!-- $1000 -->
-								</div>
-						
-								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-									加入購物車
-									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-								</span>
-						
-							</div>
 						
 						<?php  
 							}
@@ -486,15 +483,37 @@
 						
 				</div>
 					</div>
+	</div>
+
+			</div>
 		</div>
-	</div> 
+	</div>
+</div>			
 
-	<!-- <script>
-		window.onload = function(){
-        
-
-		}
-	</script> -->
+	<footer>				
+		<div class="container">
+			<div class="follow">
+				<div class="btns">
+					<span>follow us on</span>
+					<a href="#" class="btn facebook">
+						<i class="fa fa-facebook"></i>
+					</a>
+					<a href="#" class="btn youtube">
+						<i class="fa fa-youtube"></i>
+					</a>
+					<a href="#" class="btn twitter">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a href="#" class="btn google">
+						<i class="fa fa-google"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+					
+	
 
 	<script>
 
@@ -620,6 +639,8 @@
 	}
 ?>
 	<script src="../js/signIn.js"></script>
+
+	
 </body>
 
 </html>

@@ -106,7 +106,7 @@
 	
 	<header class="header">
 		<div class="logo">
-			<a href="../index.php">
+			<a href="../homepage.php">
 				<h1>
 					<img src="../images/logo_white.png" alt="尋喵啟事">
 				</h1>
@@ -127,8 +127,19 @@
 					<a href="./forum.php">討論區</a>
 				</li>
 				<li>
-					<a href="./member.php">會員專區</a>
-				</li>
+            <?php
+                    if(!isset($_SESSION['MEM_NO']) && !isset($_SESSION['HALF_NO'])){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if(!isset($_SESSION['HALF_NO'])){
+                            echo "<a href='./member.php'>會員專區</a>";
+                        }
+                        else{
+                            echo "<a href='./halfMem.php'>中途會員專區</a>";
+                        }
+                    }
+                ?>
+            	</li>
 			</ul>
 		</nav>
 		<div class="icons">
@@ -170,7 +181,7 @@
 				try {
 					require_once("../php/connectBD103G2.php");
 					$ARTICLE_NO = $_REQUEST["ARTICLE_NO"];
-					$sql = "select a.ARTICLE_TITLE,a.ARTICLE_CONTENT,a.ARTICLE_TIME,m.MEM_NAME,h.HALF_HEAD
+					$sql = "select a.ARTICLE_TITLE,a.ARTICLE_CONTENT,a.ARTICLE_TIME,m.MEM_NAME,h.HALF_HEAD,h.HALF_COVER,m.MEM_PIC
 							from article a
 							left join MEMBER m on a.MEM_NO = m.MEM_NO
 							left join HALFWAY_MEMBER h on a.HALF_NO = h.HALF_NO
@@ -183,12 +194,14 @@
 			<div class="post-header">
 				<h2><?php echo $dataRow -> ARTICLE_TITLE ?></h2>
 				<div class="post-ab">
+				<span class="mem_pic" style="display:inline-block;vertical-align:middle;width:60px;height:60px;border-radius:50%;background-image:url(<?php echo is_null($dataRow->HALF_COVER) ? $dataRow->MEM_PIC : $dataRow->HALF_COVER ?>);background-repeat:no-repeat;background-size:cover;">
+				</span>
 					<span><?php echo is_null($dataRow->HALF_HEAD) ? $dataRow->MEM_NAME : $dataRow->HALF_HEAD ?></span>
 					<span><?php echo $dataRow -> ARTICLE_TIME ?></span>
 				</div>
 			</div>
 			<div class="post-body">
-				<?php echo $dataRow -> ARTICLE_CONTENT ?>
+				<?php echo nl2br($dataRow -> ARTICLE_CONTENT); ?>
 			</div>
 
 			<?php 
@@ -208,7 +221,7 @@
 		<?php 
 			try{
 				require_once("../php/connectBD103G2.php");
-				$sql = "select me.MESSAGE_NO,m.MEM_NO,h.HALF_NO,me.MESSAGE_TIME,me.MESSAGE_CONTENT,m.MEM_NAME,h.HALF_HEAD
+				$sql = "select me.MESSAGE_NO,m.MEM_NO,h.HALF_NO,me.MESSAGE_TIME,me.MESSAGE_CONTENT,m.MEM_NAME,h.HALF_HEAD,h.HALF_COVER,m.MEM_PIC
 						from MESSAGE me
 						left join MEMBER m on m.MEM_NO = me.MEM_NO
 						left join HALFWAY_MEMBER h on h.HALF_NO = me.HALF_NO
@@ -220,11 +233,14 @@
 		?>	
 		<div class="container rebox">
 			<div class="post-ab">
+			<span class="mem_pic" style="display:inline-block;vertical-align:middle;width:60px;height:60px;border-radius:50%;background-image:url(<?php echo is_null($dataRow->HALF_COVER) ? $dataRow->MEM_PIC : $dataRow->HALF_COVER ?>);background-repeat:no-repeat;background-size:cover;">
+			</span>
 				<span><?php echo is_null($dataRow->HALF_HEAD) ? $dataRow->MEM_NAME : $dataRow->HALF_HEAD ?></span>
 				<span><?php echo $dataRow -> MESSAGE_TIME ?></span>
+				
 			</div>
 			<div class="post-body">
-				<?php echo $dataRow -> MESSAGE_CONTENT ?>
+				<?php echo nl2br($dataRow -> MESSAGE_CONTENT); ?>
 			</div>
 			<div class="post-ft">
 				<form action="../php/forum-report.php" class="reports" method="post">
@@ -260,6 +276,27 @@
 			</form>
 		</div>
 	</div>
+	<footer>
+        <div class="aaa">
+            <div class="follow">
+                <div class="btns">
+                    <span>follow us on</span>
+                    <a href="#" class="btn facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" class="btn youtube">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                    <a href="#" class="btn twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn google">
+                        <i class="fa fa-google"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 	<script type="text/javascript">
 		window.addEventListener('load',()=>{
 

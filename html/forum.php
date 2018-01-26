@@ -56,7 +56,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
                 <button id="halfMember2">中途之家會員</button>
                 <button id="member2" class="selected">一般會員</button>
             </div>
-            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
+            <form action="../php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
                 <label for="userName">會員名稱
                     <br>
                     <small>不得多於8個中/英文字元</small>
@@ -107,7 +107,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 
 	<header class="header">
 		<div class="logo">
-			<a href="../index.php">
+			<a href="../homepage.php">
 				<h1>
 					<img src="../images/logo_white.png" alt="尋喵啟事">
 				</h1>
@@ -413,7 +413,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 				  }
 				?>
 		</div>
-		<div class="container">
+		<div class="container containerLast">
 			<div class="postfrom">
 				<p>快速發文</p>
 				<form action="../php/forum-post.php" method="post" accept-charset="utf-8">

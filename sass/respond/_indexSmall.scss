@@ -71,8 +71,24 @@
             align-items: center;
         }
         .ask {
+            display: none;
+        }
+        .smallask {
+            display: block;
+            margin: auto;
+            padding-right: 3%;
             margin-top: 50px;
-            width: 80%;
+            width: 60%;
+            img {
+                width: 100%;
+                margin: auto;
+            }
+        }
+        .boxcontainer {
+            #rightbox,
+            #leftbox {
+                display: none;
+            }
         }
         .imgbox {
             display: none;

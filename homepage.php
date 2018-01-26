@@ -137,7 +137,7 @@
     <!-- header -->
     <header>
         <div class="logo">
-            <a href="index.php">
+            <a href="homepage.php">
                 <h1>
                     <img src="images/logo_white.png" alt="尋喵啟事" title="回首頁">
                 </h1>
@@ -354,6 +354,9 @@
                     <div class="ask">
                         <img src="images/noticeGame/cat_speak.png" alt="">
                     </div>
+                    <div class="smallask">
+                        <img src="images/noticeGame/cat_speak_rwd.png" alt="">
+                    </div>
                     <div class="boxcontainer">
                         <div id="leftbox">
                             <img src="images/noticeGame/refrigerator.png" alt="" data-box="left" data-role="drag-drop-container">
@@ -387,6 +390,9 @@
                         <div id="right">
                             <img src="images/noticeGame/garbage.png" alt="" data-box="right" data-role="drag-drop-container">
                         </div>
+                    </div>
+                    <div class="sssmall">
+                        
                     </div>
                 </div>
             </div>

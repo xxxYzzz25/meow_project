@@ -51,9 +51,9 @@ CREATE TABLE `MEMBER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `MEMBER` (`MEM_NO`, `MEM_ID`, `MEM_PSW`, `MEM_NAME`, `MEM_BIRTHDAY`, `MEM_TEL`, `MEM_ADDRESS`, `MEM_SCORE`, `MEM_PIC`, `MEM_DISCOUNT`, `MEM_BAN`)
 VALUES
-	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/default.jpg', 0, 0),
-	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', 5, '../images/memberPic/default.jpg', 0, 0),
-	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/default.jpg', 0, 0);
+	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/sara@gmail.com.jpg', 0, 0),
+	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', 5, '../images/memberPic/handsome@gmail.com.jpg', 0, 0),
+	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/silvia@gmail.com.jpg', 0, 0);
 
 
 # Dump of table PRODUCT
@@ -343,11 +343,10 @@ VALUES
 	(6, 2, '../images/halfwayPic/handsome@gmail.com1.jpg'),
 	(7, 2, '../images/halfwayPic/handsome@gmail.com2.jpg'),
 	(8, 2, '../images/halfwayPic/handsome@gmail.com3.jpg'),
-	(9, 2, '../images/halfwayPic/silvia@gmail.com0.jpg'),
-	(10, 2, '../images/halfwayPic/silvia@gmail.com1.jpg'),
-	(11, 2, '../images/halfwayPic/silvia@gmail.com2.jpg'),
-	(12, 2, '../images/halfwayPic/silvia@gmail.com3.jpg');
-
+	(9, 3, '../images/halfwayPic/silvia@gmail.com0.jpg'),
+	(10, 3, '../images/halfwayPic/silvia@gmail.com1.jpg'),
+	(11, 3, '../images/halfwayPic/silvia@gmail.com2.jpg'),
+	(12, 3, '../images/halfwayPic/silvia@gmail.com3.jpg');
 
 # Dump of table MESSAGE
 # ------------------------------------------------------------
@@ -446,17 +445,17 @@ VALUES
 
 
 
-# Dump of table PRODUCT_PIC
-# ------------------------------------------------------------
+-- # Dump of table PRODUCT_PIC
+-- # ------------------------------------------------------------
 
-CREATE TABLE `PRODUCT_PIC` (
-  `PRODUCT_PIC_NO` int(10) NOT NULL AUTO_INCREMENT,
-  `PRODUCT_NO` int(10) NOT NULL,
-  `PRODUCT_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`PRODUCT_PIC_NO`),
-  KEY `PRODUCT_NO` (`PRODUCT_NO`),
-  CONSTRAINT `product_pic_ibfk_1` FOREIGN KEY (`PRODUCT_NO`) REFERENCES `PRODUCT` (`PRODUCT_NO`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `PRODUCT_PIC` (
+--   `PRODUCT_PIC_NO` int(10) NOT NULL AUTO_INCREMENT,
+--   `PRODUCT_NO` int(10) NOT NULL,
+--   `PRODUCT_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
+--   PRIMARY KEY (`PRODUCT_PIC_NO`),
+--   KEY `PRODUCT_NO` (`PRODUCT_NO`),
+--   CONSTRAINT `product_pic_ibfk_1` FOREIGN KEY (`PRODUCT_NO`) REFERENCES `PRODUCT` (`PRODUCT_NO`) ON DELETE CASCADE ON UPDATE CASCADE
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 # Dump of table EVALUATION

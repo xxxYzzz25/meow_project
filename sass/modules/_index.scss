@@ -776,13 +776,16 @@ footer {
         }
     }
     .ask {
-        width: 30%;
+        width: 40%;
         margin: auto;
         padding-right: 3%;
         img {
             width: 100%;
             margin: auto;
         }
+    }
+    .smallask{
+        display: none;
     }
     .boxcontainer {
         display: inline-flex;
@@ -843,7 +846,7 @@ footer {
     }
     .imgbox {
         width: 80%;
-        margin: 50px auto 0 auto;
+        margin: 10px auto 0 auto;
         display: flex;
         justify-content: space-around;
         // flex-wrap: wrap;
