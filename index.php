@@ -355,7 +355,6 @@
                         <img src="images/noticeGame/cat_speak.png" alt="">
                     </div>
                     <div class="boxcontainer">
-
                         <div id="leftbox">
                             <img src="images/noticeGame/refrigerator.png" alt="" data-box="left" data-role="drag-drop-container">
                         </div>
@@ -379,7 +378,15 @@
                         <button id="know">我知道了!</button>
                     </div>
                     <div class="smallbox">
-                        手機版不提供此功能喔!抱歉~~~
+                        <div id="left">
+                            <img src="images/noticeGame/refrigerator.png" alt="" data-box="left" data-role="drag-drop-container">
+                        </div>
+                        <div class="center" id="center">
+                            <img src="images/noticeGame/banana.png" alt="">
+                        </div>
+                        <div id="right">
+                            <img src="images/noticeGame/garbage.png" alt="" data-box="right" data-role="drag-drop-container">
+                        </div>
                     </div>
                 </div>
             </div>

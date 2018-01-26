@@ -823,7 +823,7 @@ header ul li:nth-child(2):after {
 .right .result .container .item .text h3 {
   font-size: 24px;
   padding: 8% 0;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
 }
 
 .right .result .container .item .pic {

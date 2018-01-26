@@ -65,18 +65,32 @@
         //         width: 33.333%;
         //     }
         // }
+        .game-point-title {
+            width: 100%;
+            display: inline-block;
+            align-items: center;
+        }
         .ask {
+            margin-top: 50px;
+            width: 80%;
+        }
+        .imgbox {
             display: none;
         }
         .smallbox {
             display: block;
-            margin-top: 60px;
-        }
-        .boxcontainer {
-            display: none;
-        }
-        .imgbox {
-            display: none;
+            #right,
+            #left,
+            .center {
+                display: inline-block;
+                width: 35%;
+                img {
+                    width: 100%;
+                }
+            }
+            .center {
+                width: 25%;
+            }
         }
     }
     .shop {

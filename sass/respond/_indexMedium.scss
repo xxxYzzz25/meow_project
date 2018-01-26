@@ -37,7 +37,7 @@
                 width: 260%;
             }
         }
-        .game-point-title{
+        .game-point-title {
             text-align: center;
             width: 100%;
             display: inline-block;
@@ -51,8 +51,12 @@
         }
     }
     .half {
-        .arrowLeft{display: block;}
-        .arrowRight{display: block;}
+        .arrowLeft {
+            display: block;
+        }
+        .arrowRight {
+            display: block;
+        }
         .half-title {
             text-align: center;
             width: 100%;
@@ -116,30 +120,45 @@
             display: inline-block;
             align-items: center;
         }
-        .ask{
-            display: none;
-        }
-        .smallbox {
-            display: block;
-            margin-top: 60px;
+        .ask {
+            margin-top: 50px;
+            width: 60%;
         }
         .boxcontainer {
+            #rightbox,
+            #leftbox {
+                display: none;
+            }
+        }
+        .imgbox{
             display: none;
         }
-        .imgbox {
-            display: none;
+        .smallbox{
+            display: block;
+            #right,
+            #left,
+            .center {
+                display: inline-block;
+                width: 35%;
+                img {
+                    width: 100%;
+                }
+            }
+            .center{
+                width: 25%;
+            }
         }
     }
-    .shop{
-        .prod{
-            ul.prod-list{
+    .shop {
+        .prod {
+            ul.prod-list {
                 height: 80%;
-                top:0;
+                top: 0;
                 left: 0;
                 bottom: 0;
-                right:0;
-                margin:auto;
-                li.prod-item{
+                right: 0;
+                margin: auto;
+                li.prod-item {
                     width: 35%;
                 }
             }

@@ -1314,6 +1314,10 @@ footer {
   width: 70%;
 }
 
+.noticegame .smallbox {
+  display: none;
+}
+
 .noticegame .hintbox {
   position: absolute;
   width: 80%;
@@ -1358,7 +1362,6 @@ footer {
   margin: 50px auto 0 auto;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 .noticegame .imgbox img:hover {
@@ -1770,17 +1773,32 @@ footer {
     align-items: center;
   }
   .noticegame .ask {
-    display: none;
+    margin-top: 50px;
+    width: 60%;
   }
-  .noticegame .smallbox {
-    display: block;
-    margin-top: 60px;
-  }
-  .noticegame .boxcontainer {
+  .noticegame .boxcontainer #rightbox,
+  .noticegame .boxcontainer #leftbox {
     display: none;
   }
   .noticegame .imgbox {
     display: none;
+  }
+  .noticegame .smallbox {
+    display: block;
+  }
+  .noticegame .smallbox #right,
+  .noticegame .smallbox #left,
+  .noticegame .smallbox .center {
+    display: inline-block;
+    width: 35%;
+  }
+  .noticegame .smallbox #right img,
+  .noticegame .smallbox #left img,
+  .noticegame .smallbox .center img {
+    width: 100%;
+  }
+  .noticegame .smallbox .center {
+    width: 25%;
   }
   .shop .prod ul.prod-list {
     height: 80%;
@@ -1833,18 +1851,34 @@ footer {
   .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
     top: 5%;
   }
+  .noticegame .game-point-title {
+    width: 100%;
+    display: inline-block;
+    align-items: center;
+  }
   .noticegame .ask {
+    margin-top: 50px;
+    width: 80%;
+  }
+  .noticegame .imgbox {
     display: none;
   }
   .noticegame .smallbox {
     display: block;
-    margin-top: 60px;
   }
-  .noticegame .boxcontainer {
-    display: none;
+  .noticegame .smallbox #right,
+  .noticegame .smallbox #left,
+  .noticegame .smallbox .center {
+    display: inline-block;
+    width: 35%;
   }
-  .noticegame .imgbox {
-    display: none;
+  .noticegame .smallbox #right img,
+  .noticegame .smallbox #left img,
+  .noticegame .smallbox .center img {
+    width: 100%;
+  }
+  .noticegame .smallbox .center {
+    width: 25%;
   }
   .shop .prod {
     height: 70vh;
