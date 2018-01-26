@@ -46,7 +46,7 @@
                 <button id="halfMember1">中途之家會員</button>
                 <button id="member1" class="selected">一般會員</button>
             </div>
-            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
+            <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
                 <br>
                 <br>
                 <br>
@@ -76,7 +76,7 @@
                 <button id="halfMember2">中途之家會員</button>
                 <button id="member2" class="selected">一般會員</button>
             </div>
-            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
+            <form action="../php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
                 <label for="userName">會員名稱
                     <br>
                     <small>不得多於8個中/英文字元</small>

@@ -45,7 +45,7 @@
                 <button id="halfMember1">中途之家會員</button>
                 <button id="member1" class="selected">一般會員</button>
             </div>
-            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
+            <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
                 <br>
                 <br>
                 <br>
