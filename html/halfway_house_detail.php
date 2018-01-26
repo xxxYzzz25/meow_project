@@ -135,14 +135,18 @@
                     <a href="forum.php">討論區</a>
                 </li>
                 <li>
-                    <?php
-                        if($_SESSION['HALF_NO'] == null){
-                            echo "<a href='member.php'>會員專區</a>";
+                <?php
+                    if(!isset($_SESSION['MEM_NO']) && !isset($_SESSION['HALF_NO'])){
+                        echo "<a href='#' class='login'>會員專區</a>";
+                    }else{
+                        if(!isset($_SESSION['HALF_NO'])){
+                            echo "<a href='./member.php'>會員專區</a>";
                         }
                         else{
-                            echo "<a href='halfMem.php'>中途會員專區</a>";
+                            echo "<a href='./halfMem.php'>中途會員專區</a>";
                         }
-                    ?>
+                    }
+                ?>
                 </li>
             </ul>
         </nav>

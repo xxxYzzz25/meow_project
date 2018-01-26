@@ -190,6 +190,8 @@ header {
       color: #fff; }
     header .logo img {
       width: 90%; }
+    header .logo h1 {
+      padding: 5%; }
   header ul {
     position: absolute;
     bottom: 180px; }
