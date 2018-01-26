@@ -1301,6 +1301,10 @@ footer {
   display: none;
 }
 
+.noticegame .phone {
+  display: none;
+}
+
 .noticegame .boxcontainer {
   display: inline-flex;
   justify-content: space-around;
@@ -1787,7 +1791,6 @@ footer {
     display: block;
     margin: auto;
     padding-right: 3%;
-    margin-top: 50px;
     width: 60%;
   }
   .noticegame .smallask img {
@@ -1808,7 +1811,7 @@ footer {
   .noticegame .smallbox #left,
   .noticegame .smallbox .center {
     display: inline-block;
-    width: 35%;
+    width: 30%;
   }
   .noticegame .smallbox #right img,
   .noticegame .smallbox #left img,
@@ -1880,8 +1883,8 @@ footer {
   .noticegame .smallask {
     display: block;
     margin: auto;
-    padding-right: 3%;
-    margin-top: 50px;
+    padding-right: 5%;
+    margin-bottom: 10px;
     width: 60%;
   }
   .noticegame .smallask img {
@@ -1895,22 +1898,35 @@ footer {
   .noticegame .imgbox {
     display: none;
   }
-  .noticegame .smallbox {
+  .noticegame .phone {
     display: block;
   }
-  .noticegame .smallbox #right,
-  .noticegame .smallbox #left,
-  .noticegame .smallbox .center {
+  .noticegame .phone #right,
+  .noticegame .phone #left {
     display: inline-block;
-    width: 35%;
+    width: 30%;
+    margin-top: -50px;
   }
-  .noticegame .smallbox #right img,
-  .noticegame .smallbox #left img,
-  .noticegame .smallbox .center img {
+  .noticegame .phone #right img,
+  .noticegame .phone #left img {
     width: 100%;
   }
-  .noticegame .smallbox .center {
-    width: 25%;
+  .noticegame .phone #left {
+    margin-right: 50px;
+  }
+  .noticegame .phone #right {
+    margin-left: 50px;
+  }
+  .noticegame .phone .center {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .noticegame .phone .center img {
+    width: 40%;
+  }
+  .noticegame .smallbox {
+    display: none;
   }
   .shop .prod {
     height: 70vh;

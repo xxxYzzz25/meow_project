@@ -76,8 +76,8 @@
         .smallask {
             display: block;
             margin: auto;
-            padding-right: 3%;
-            margin-top: 50px;
+            padding-right: 5%;
+            margin-bottom: 10px;
             width: 60%;
             img {
                 width: 100%;
@@ -93,20 +93,35 @@
         .imgbox {
             display: none;
         }
-        .smallbox {
+        .phone {
             display: block;
             #right,
             #left,
-            .center {
+                {
                 display: inline-block;
-                width: 35%;
+                width: 30%;
+                margin-top: -50px;
                 img {
                     width: 100%;
                 }
             }
-            .center {
-                width: 25%;
+            #left{
+                margin-right: 50px;
             }
+            #right{
+                margin-left: 50px;
+            }
+            .center {
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                img{
+                    width: 40%;
+                }
+            }
+        }
+        .smallbox {
+            display: none;
         }
     }
     .shop {
