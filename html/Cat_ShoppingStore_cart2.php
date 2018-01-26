@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="../js/signIn.js"></script>
@@ -251,6 +252,28 @@
             </form>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="follow">
+                <div class="btns">
+                    <span>follow us on</span>
+                    <a href="#" class="btn facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" class="btn youtube">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                    <a href="#" class="btn twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn google">
+                        <i class="fa fa-google"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 <script>
     // let storage = localStorage;
