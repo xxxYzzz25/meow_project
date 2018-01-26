@@ -10,12 +10,12 @@ try {
     require_once("../php/connectBD103G2.php");
 
     $sql = "select *
-            from adoption a,cat c,member m,halfway_member h
+            from adoption a,cat c,member m
             where a.CAT_NO = c.CAT_NO 
             and a.MEM_NO = m.MEM_NO 
-            and c.HALF_NO = h.HALF_NO
-            and c.HALF_NO =?
-            order by ADOPT_DATE desc;";
+            and c.HALF_NO =2
+            and (c.ADOPT_STATUS = 2 or c.ADOPT_STATUS = 1)
+            order by ADOPT_DATE desc";
     $adopt = $pdo->prepare( $sql );
     $adopt->bindValue(1, $_SESSION["HALF_NO"]);//session
     $adopt->execute();

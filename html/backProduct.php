@@ -117,20 +117,22 @@
                         <tr class="newEmpTR newEmpTROff">
                             <th>商品封面圖片(只能選擇一張)*</th>
                             <td>
-                                <input type="file" name="upCover" required="required">
+                                <input type="file" name="upCover" id="file" required="required">
+                                <output id="coverList"></output>
                             </td>
                         </tr>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
                             <th>商品圖片(最多可選擇三張)*</th>
                             <td>
-                                <input type="file" name="upFile[]" multiple="multiple" required="required">
+                                <input type="file" name="upFile[]" multiple="multiple" id="files" required="required">
+                                <output id="picList"></output>
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
                             <td colspan="2">
                                 <button type="submit" id="ensureBtn" class="defaultBtn">確認新增</button>
-                                <button type="reset" class="defaultBtn">清除內容</button>
+                                <button type="reset" class="defaultBtn" id="resetBtn">清除內容</button>
                             </td>
                         </tr>
                 </form>
@@ -145,6 +147,7 @@
                         <th>商品分類</th>
                         <th>商品狀態</th>
                         <th>商品詳情</th>
+                        <th>上下架管理</th>
                     </tr>
 <?php
 try {
@@ -159,7 +162,7 @@ try {
     } else {
         while ($productRow = $product->fetchObject()) {
             ?>
-                    <tr>
+                    <tr class="ptr">
                         <td><?php echo $productRow->PRODUCT_NO; ?></td>
                         <td><?php echo $productRow->PRODUCT_NAME; ?></td>
                         <td>$<?php echo $productRow->PRODUCT_PRICE; ?></td>
@@ -187,6 +190,15 @@ try {
                         </td>
                         <td>
                             <button class="defaultBtn" onclick="add('../php/backProductDetail.php?PRODUCT_NO=<?php echo $productRow->PRODUCT_NO; ?>');">商品詳情</button>
+                        </td>
+                        <td>
+                            <form action="../php/backProductUpDown.php">
+                                <input type="hidden" value="<?php echo ($productRow->PRODUCT_STATUS == 0)? "1" :"0"?>" name="down">
+                                <input type="hidden" value="<?php echo $productRow->PRODUCT_NO; ?>" name="productno">
+                                <button type="submit" class="defaultBtn">
+                                <?php echo ($productRow->PRODUCT_STATUS == 0)? "下架" : "上架" ?> 
+                                </button>
+                            </form>
                         </td>
                     </tr>
 <?php
@@ -226,14 +238,51 @@ try {
                 let newEmp = document.getElementById('newEmp');
                 newEmp.innerHTML = "新增商品";
             }
-        })
+        });
+
         let ensureBtn = document.getElementById('ensureBtn')
         ensureBtn.addEventListener('click', function () {
             confirm('您確定要新增嗎?');
-        })
+        });
+                
+        document.getElementById('file').addEventListener('change', function(evt){
+            let files = evt.target.files;
+            for (let i = 0, f; f = files[i]; i++) {
+                let reader = new FileReader();
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                    let span = document.createElement('span');
+                    span.innerHTML = ['<img class="filePic" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                    
+                    document.getElementById('coverList').insertBefore(span, null);
+                    };
+                })(f);
+                reader.readAsDataURL(f);
+            }
+            document.getElementById('resetBtn').addEventListener('click', function(){
+                document.getElementById('coverList').textContent='';
+            });
+        });
+
+        document.getElementById('files').addEventListener('change', function(evt){
+            let files = evt.target.files;
+            for (let i = 0, f; f = files[i]; i++) {
+                let reader = new FileReader();
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                    let span = document.createElement('span');
+                    span.innerHTML = ['<img class="filePic" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                    document.getElementById('picList').insertBefore(span, null);
+                    };
+                })(f);
+                reader.readAsDataURL(f);
+            }
+            document.getElementById('resetBtn').addEventListener('click', function(){
+                document.getElementById('picList').textContent='';
+            });
+        });
     })
-</script>
-<script>
+
     function add(data) {
         event.preventDefault();
         let xhr = new XMLHttpRequest();
@@ -242,6 +291,13 @@ try {
                 //modify here
                 let pro = document.getElementById('adoptInfomation');
                 pro.innerHTML = this.responseText;
+
+                let backPre = document.getElementById('backPre');
+                backPre.addEventListener('click',function () {
+                    window.location.reload();
+                });
+                
+
             } else {
                 alert(xhr.status);
             }

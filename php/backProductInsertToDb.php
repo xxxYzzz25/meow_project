@@ -37,26 +37,6 @@ try {
                     $to = $dir . "/product" . $count . $fileType;
                     if(copy( $from, $to) ){
                         // 新增商品
-                        $sql = "insert into
-                                product (PRODUCT_NAME,PRODUCT_PART,PRODUCT_PRICE,PRODUCT_WEIGHT,PRODUCT_LOC,PRODUCT_COMPONENT,PRODUCT_SIZE,PRODUCT_NARRATIVE,PRODUCT_MATERIAL,PRODUCT_COVER)
-                                values (:name , :part , :price , :weight , :loc , :component , :size , :narrative , :material , :productcover)";
-                        $products = $pdo->prepare($sql);
-                        $products->bindValue(":name", $_REQUEST["name"]);
-                        $products->bindValue(":part", $_REQUEST["part"]);
-                        $products->bindValue(":price", $_REQUEST["price"]);
-                        $products->bindValue(":weight", $_REQUEST["weight"]);
-                        $products->bindValue(":loc", $_REQUEST["loc"]);
-                        $products->bindValue(":component", $_REQUEST["component"]);
-                        $products->bindValue(":size", $_REQUEST["size"]);
-                        $products->bindValue(":narrative", $_REQUEST["narrative"]);
-                        $products->bindValue(":material", $_REQUEST["material"]);
-                        $products->bindValue(":productcover" , $to);
-                        $products->execute();
-                        echo "<center>新增商品成功</center><br>
-                            <center>商品封面圖片新增成功</center><br>
-                            <center>將在五秒後回到原網址</center><br>
-                            <center><a id='backNext'>或者點此直接回到原網址</a></center><br>";
-
                         if(isset($_FILES["upFile"])){
                             foreach( $_FILES["upFile"]["error"] as $i=>$error){
                                 if ($_FILES['upFile']['type'][$i] == "image/gif" || $_FILES['upFile']['type'][$i] == "image/png" || $_FILES['upFile']['type'][$i] == "image/jpeg" || $_FILES['upFile']['type'][$i] == "image/JPEG" || $_FILES['upFile']['type'][$i] == "image/PNG" || $_FILES['upFile']['type'][$i] == "image/GIF") {
@@ -71,13 +51,35 @@ try {
                                                 $where = $_FILES['upFile']['tmp_name'][$i];
                                                 $go = $dir . "/product" . $count . "-" . $i .$type;
                                                 if(copy( $where, $go) ){
-                                                    $sql = "insert into product_pic(PRODUCT_NO,PRODUCT_PIC_PATH)
+                                                    $sql = "insert into
+                                                            product (PRODUCT_NAME,PRODUCT_PART,PRODUCT_PRICE,PRODUCT_WEIGHT,PRODUCT_LOC,PRODUCT_COMPONENT,PRODUCT_SIZE,PRODUCT_NARRATIVE,PRODUCT_MATERIAL,PRODUCT_COVER)
+                                                            values (:name , :part , :price , :weight , :loc , :component , :size , :narrative , :material , :productcover)";
+                                                    $products = $pdo->prepare($sql);
+                                                    $products->bindValue(":name", $_REQUEST["name"]);
+                                                    $products->bindValue(":part", $_REQUEST["part"]);
+                                                    $products->bindValue(":price", $_REQUEST["price"]);
+                                                    $products->bindValue(":weight", $_REQUEST["weight"]);
+                                                    $products->bindValue(":loc", $_REQUEST["loc"]);
+                                                    $products->bindValue(":component", $_REQUEST["component"]);
+                                                    $products->bindValue(":size", $_REQUEST["size"]);
+                                                    $products->bindValue(":narrative", $_REQUEST["narrative"]);
+                                                    $products->bindValue(":material", $_REQUEST["material"]);
+                                                    $products->bindValue(":productcover" , $to);
+                                                    $products->execute();
+                                                    echo "<center>新增商品成功</center><br>
+                                                        <center>商品封面圖片新增成功</center><br>
+                                                        <center>將在五秒後回到原網址</center><br>
+                                                        <center><a id='backNext'>或者點此直接回到原網址</a></center><br>";
+
+
+                                                    $sql2 = "insert into product_pic(PRODUCT_NO,PRODUCT_PIC_PATH)
                                                             values(:no,:productpic)";
-                                                    $productmem = $pdo->prepare( $sql );
+                                                    $productmem = $pdo->prepare( $sql2 );
                                                     $productmem->bindValue(":no" , $count);
                                                     $productmem->bindValue(":productpic" , $go);
                                                     $productmem->execute();
                                                     echo "<center>商品圖片第" . ($i+1) . "張新增成功</center>";
+                                                    
                                                 }else{
                                                     echo "<center>上傳圖片至伺服器失敗</center>";
                                                 }	
