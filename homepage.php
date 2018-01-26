@@ -352,34 +352,44 @@
                         <h3>Notices</h3>
                     </div>
                     <div class="ask">
-                        <img src="images/noticeGame/cat_speak.png" alt="">
+                        <img src="images/noticeGame/cat_speak.png" alt="catspeak">
+                    </div>
+                    <div class="smallask">
+                        <img src="images/noticeGame/cat_speak_rwd.png" alt="catspeak">
                     </div>
                     <div class="boxcontainer">
-
                         <div id="leftbox">
-                            <img src="images/noticeGame/refrigerator.png" alt="" data-box="left" data-role="drag-drop-container">
+                            <img src="images/noticeGame/refrigerator.png" alt="refrigerator" data-box="left" data-role="drag-drop-container">
                         </div>
                         <div class="centerbox">
-                            <img src="images/noticeGame/cat_cat.png" alt="">
+                            <img src="images/noticeGame/cat_cat.png" alt="cat">
                         </div>
                         <div id="rightbox">
-                            <img src="images/noticeGame/garbage.png" alt="" data-box="right" data-role="drag-drop-container">
+                            <img src="images/noticeGame/garbage.png" alt="garbage" data-box="right" data-role="drag-drop-container">
                         </div>
                     </div>
                     <div class="imgbox">
-                        <img src="images/noticeGame/banana.png" draggable="true">
-                        <img src="images/noticeGame/cookie.png" draggable="true">
-                        <img src="images/noticeGame/egg.png" draggable="true">
-                        <img src="images/noticeGame/milk.png" draggable="true">
-                        <img src="images/noticeGame/watermelon.png" draggable="true">
+                        <img src="images/noticeGame/banana.png" draggable="true" alt="banana">
+                        <img src="images/noticeGame/cookie.png" draggable="true" alt="cookie">
+                        <img src="images/noticeGame/egg.png" draggable="true" alt="egg">
+                        <img src="images/noticeGame/milk.png" draggable="true" alt="milk">
+                        <img src="images/noticeGame/watermelon.png" draggable="true" alt="watermelon"> 
                     </div>
                     <div class="hintbox" id="hintbox">
                         <div class="hinttext" id="hinttext"></div>
                         <img src="images/answer.png" alt="answer cat">
                         <button id="know">我知道了!</button>
                     </div>
-                    <div class="smallbox">
-                        手機版不提供此功能喔!抱歉~~~
+                    <div class="phone">
+                        <div class="center" id="center">
+                            <img src="images/noticeGame/banana.png" alt="banana">
+                        </div>
+                        <div id="left">
+                            <img src="images/noticeGame/refrigerator_rwd.png" alt="refrigerator_rwd">
+                        </div>
+                        <div id="right">
+                            <img src="images/noticeGame/garbage_rwd.png" alt="garbage_rwd">
+                        </div>
                     </div>
                 </div>
             </div>

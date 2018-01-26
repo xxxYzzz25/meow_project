@@ -776,13 +776,19 @@ footer {
         }
     }
     .ask {
-        width: 30%;
+        width: 40%;
         margin: auto;
         padding-right: 3%;
         img {
             width: 100%;
             margin: auto;
         }
+    }
+    .smallask{
+        display: none;
+    }
+    .phone{
+        display: none;
     }
     .boxcontainer {
         display: inline-flex;
@@ -801,6 +807,9 @@ footer {
                 width: 70%;
             }
         }
+    }
+    .smallbox{
+        display: none;
     }
     .hintbox {
         position: absolute;
@@ -829,7 +838,7 @@ footer {
         button {
             background-color: #e46d69;
             color: #fff;
-            padding: 10px 30px;
+            padding: 10px 30px 40px 30px;
             border-radius: 10px;
             border: 2px solid #000;
             cursor: pointer;
@@ -840,10 +849,10 @@ footer {
     }
     .imgbox {
         width: 80%;
-        margin: 50px auto 0 auto;
+        margin: 10px auto 0 auto;
         display: flex;
         justify-content: space-around;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         img {
             &:hover {
                 cursor: pointer;
