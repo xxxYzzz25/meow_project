@@ -144,7 +144,7 @@
                     <a href="./Cat_ShoppingStore.php" title="前往商城">商城</a>
                 </li>
                 <li>
-                    <a href="./member.php">討論區</a>
+                    <a href="./forum.php">討論區</a>
                 </li>
                 <li>
                 <?php

@@ -25,7 +25,7 @@
                 <button id="halfMember1">中途之家會員</button>
                 <button id="member1" class="selected">一般會員</button>
             </div>
-            <form action="php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
+            <form action="../php/signIn2Member.php" class="signUpForm" id="signInForm" method="post" autocomplete="off">
                 <br>
                 <br>
                 <br>
@@ -55,7 +55,7 @@
                 <button id="halfMember2">中途之家會員</button>
                 <button id="member2" class="selected">一般會員</button>
             </div>
-            <form action="php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
+            <form action="../php/signUp2mem.php" method="post" id="signUpForm" enctype="multipart/form-data" autocomplete="off">
                 <label for="userName">會員名稱
                     <br>
                     <small>不得多於8個中/英文字元</small>
@@ -198,9 +198,9 @@
 				}
 				?>
 			<div class="post-ft">
-				<form action="../php/forum-report.php" method="post">
+				<form action="../php/forum-report.php" class="reports" method="post">
 					<input type="hidden" name="ARTICLE_NO" value="<?php echo $ARTICLE_NO ?>">
-					<button type="submit" class="defaultBtn reportBtns">檢舉</button>
+					<button type="submit" class="defaultBtn">檢舉</button>
 				</form>
 			</div>
 		</div>
@@ -227,9 +227,9 @@
 				<?php echo $dataRow -> MESSAGE_CONTENT ?>
 			</div>
 			<div class="post-ft">
-				<form action="../php/forum-report.php" method="post">
+				<form action="../php/forum-report.php" class="reports" method="post">
 					<input type="hidden" name="MESSAGE_NO" value="<?php echo $dataRow -> MESSAGE_NO ?>">
-					<button class="defaultBtn reportBtns">檢舉</button>
+					<button class="defaultBtn">檢舉</button>
 				</form>
 			</div>
 		</div>
@@ -280,11 +280,13 @@
 				}
 			}
 			let textArea = document.getElementById('textArea');
-			let reports = document.querySelectorAll('.reportBtns');
+			let reports = document.querySelectorAll('.reports');
 			for (const i of reports) {
-				i.addEventListener('submit',()=>{
-					alert('請先登入');
-					if(localStorage.getItem('halfNo') || localStorage.getItem('halfNo')){
+				i.addEventListener('submit',function(e){
+					if(localStorage.getItem('halfNo') || localStorage.getItem('memNo')){
+						
+					}else{
+						e.preventDefault();
 						alert('請先登入');
 						qq();
 					}
