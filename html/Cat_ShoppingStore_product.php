@@ -265,7 +265,7 @@
                     
                     </div>
                     
-                    <hr>
+                
                     
                     <div class="productDetail wow zoomIn">
                         
