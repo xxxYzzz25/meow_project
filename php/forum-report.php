@@ -6,11 +6,10 @@
 
 		$who = isset($_SESSION["HALF_NO"]) ? "HALF_NO" : "MEM_NO";
 		$whoNo = isset($_SESSION["HALF_NO"]) ? $_SESSION["HALF_NO"] : $_SESSION["MEM_NO"];
-
+		$narrative = isset($_REQUEST["narrative"]) ? $_REQUEST["narrative"] : '';
 		if(isset($_REQUEST["ARTICLE_NO"])){//文章檢舉
 			
 			$ARTICLE_NO = $_REQUEST["ARTICLE_NO"];
-			$narrative = isset($_REQUEST["narrative"]) ? $_REQUEST["narrative"] : '';
 			$sql = "insert into ARTICLE_REPORT ($who,ARTICLE_NO,AUDIT_STATUS,ARTICLE_REPORT_NARRATIVE,ARTICLE_REPORT_TIME) 
 					values(:whoNo,:ARTICLE_NO,0,:NARRATIVE,now())";
 			$data = $pdo -> prepare($sql);
