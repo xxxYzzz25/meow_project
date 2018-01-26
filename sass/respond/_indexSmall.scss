@@ -65,17 +65,62 @@
         //         width: 33.333%;
         //     }
         // }
+        .game-point-title {
+            width: 100%;
+            display: inline-block;
+            align-items: center;
+        }
         .ask {
             display: none;
         }
-        .smallbox {
+        .smallask {
             display: block;
-            margin-top: 60px;
+            margin: auto;
+            padding-right: 5%;
+            margin-bottom: 10px;
+            width: 60%;
+            img {
+                width: 100%;
+                margin: auto;
+            }
         }
         .boxcontainer {
-            display: none;
+            #rightbox,
+            #leftbox {
+                display: none;
+            }
         }
         .imgbox {
+            display: none;
+        }
+        .phone {
+            display: block;
+            #right,
+            #left,
+                {
+                display: inline-block;
+                width: 30%;
+                margin-top: -50px;
+                img {
+                    width: 100%;
+                }
+            }
+            #left{
+                margin-right: 50px;
+            }
+            #right{
+                margin-left: 50px;
+            }
+            .center {
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                img{
+                    width: 40%;
+                }
+            }
+        }
+        .smallbox {
             display: none;
         }
     }
