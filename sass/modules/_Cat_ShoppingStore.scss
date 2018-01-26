@@ -65,6 +65,7 @@ h2 {
 	color: #333;
 	background-color: #fff;
 	border: 3px solid #EAAF88;
+
 }
 
 #pd_all{
@@ -236,6 +237,7 @@ h2 {
 	color: #fff;
 	background-color: #EAAF88;
 	border: 1px solid #EAAF88;
+	cursor: pointer;
 }
 
 .product {
@@ -299,6 +301,7 @@ h2 {
 
 .pic:hover {
 	transform: scale(1.1);
+	cursor: pointer;
 }
 
 .pic {

@@ -593,7 +593,8 @@ h2 {
 .typeBanner a:hover {
   color: #fff;
   background-color: #EAAF88;
-  border: 1px solid #EAAF88; }
+  border: 1px solid #EAAF88;
+  cursor: pointer; }
 
 .product {
   float: left;
@@ -646,7 +647,8 @@ h2 {
     margin: 5%; } }
 
 .pic:hover {
-  transform: scale(1.1); }
+  transform: scale(1.1);
+  cursor: pointer; }
 
 .pic {
   box-sizing: border-box;
