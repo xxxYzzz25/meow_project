@@ -1360,7 +1360,7 @@ footer {
 .noticegame .hintbox button {
   background-color: #e46d69;
   color: #fff;
-  padding: 10px 30px;
+  padding: 10px 30px 40px 30px;
   border-radius: 10px;
   border: 2px solid #000;
   cursor: pointer;
@@ -1804,22 +1804,33 @@ footer {
   .noticegame .imgbox {
     display: none;
   }
-  .noticegame .smallbox {
+  .noticegame .phone {
     display: block;
   }
-  .noticegame .smallbox #right,
-  .noticegame .smallbox #left,
-  .noticegame .smallbox .center {
+  .noticegame .phone #right,
+  .noticegame .phone #left {
     display: inline-block;
-    width: 30%;
+    width: 25%;
+    margin-top: -230px;
+    cursor: pointer;
   }
-  .noticegame .smallbox #right img,
-  .noticegame .smallbox #left img,
-  .noticegame .smallbox .center img {
+  .noticegame .phone #right img,
+  .noticegame .phone #left img {
     width: 100%;
   }
-  .noticegame .smallbox .center {
-    width: 25%;
+  .noticegame .phone #left {
+    margin-right: 150px;
+  }
+  .noticegame .phone #right {
+    margin-left: 150px;
+  }
+  .noticegame .phone .center {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .noticegame .phone .center img {
+    width: 30%;
   }
   .shop .prod ul.prod-list {
     height: 80%;
@@ -1924,9 +1935,6 @@ footer {
   }
   .noticegame .phone .center img {
     width: 40%;
-  }
-  .noticegame .smallbox {
-    display: none;
   }
   .shop .prod {
     height: 70vh;
