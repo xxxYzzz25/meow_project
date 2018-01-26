@@ -24,10 +24,10 @@ CREATE TABLE `HALFWAY_MEMBER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `HALFWAY_MEMBER` (`HALF_NO`, `HALF_ID`, `HALF_PSW`, `HALF_NAME`, `HALF_HEAD`, `HALF_TEL`, `HALF_ADDRESS`, `HALF_AUDIT_STATUS`, `HALF_DISCOUNT`, `HALF_BAN`, `HALF_OPEN`, `HALF_COVER`, `HALF_INTRO`)
 VALUES
-	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '野喵中途咖啡', '董董', '0912345678', '新北市三重區集英路65號', 1, 0, 0, '12:00~21:00（周一公休）', '../images/halfMemberPic/Sara@gmail.com.jpg', ''),
-	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '讀貓園-貓咪中途咖啡', '帥帥', '0912345678', '台北市大安區和平東路三段370號2樓', 1, 0, 0, '14:00~22:30（周一公休）', '../images/halfMemberPic/Handsome@gmail.com.jpg', ''),
-	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', '咪可思啾芭-貓中途寵物餐廳', 'Silvia', '0912345678', '新北市三重區重陽路一段60巷32號1樓', 1, 0, 0, '10:00~21:30（周一公休）', '../images/halfMemberPic/Silvia@gmail.com.jpg', ''),
-	(4, 'rain@gmail.com', '96e79218965eb72c92a549dd5a330112', 'RAIN*S CAT', '林雨潔', '097788991', '屏東市瑞光路三段53號', 1, 0, 0, '尚未登記', '../images/halfMemberPic/rain@gmail.com.jpg', ''),
+	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '野喵中途咖啡', '董董', '0912345678', '新北市三重區集英路65號', 1, 1, 0, '12:00~21:00（周一公休）', '../images/halfMemberPic/Sara@gmail.com.jpg', '位在三重的「野喵中途咖啡」，是目前所有貓中途咖啡廳在網路上搜尋度最高的一家，開業也約有3年半的時間，這期間援助了150多隻貓咪找到家，在流浪動物中途來說是相當可觀的數字，「野喵中途咖啡」主要是由4個擁有強大的耐心與愛心的女生所開設的，她們將咖啡廳與貓咪中途之家相互結合，店內供應提供各式餐點，像是義大利麵、飯類等及咖啡飲品並販售貓咪相關周邊商品。'),
+	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '讀貓園-貓咪中途咖啡', '帥帥', '0912345678', '台北市大安區和平東路三段370號2樓', 1, 0, 0, '14:00~22:30（周一公休）', '../images/halfMemberPic/Handsome@gmail.com.jpg', '讀貓園裡面有幾個位子是像吧台一樣，面對待認養貓咪櫥窗。你可以和朋友、家人一起邊喝咖啡、邊吃著好吃的鬆餅，邊觀察貓咪的一舉一動。小貓咪喜歡縮在一起取暖睡覺，整窩睡到翻肚的小貓咪就在眼前，好像在肯亞草原冒險時在樹叢底下發現一整窩虎虎大睡的小獅子畫面一樣。看著貓咪們規律起伏的肚子一邊唸書、寫功課、想事情，有一種難以言語的安全感和平靜的幸福。'),
+	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', '雅風音樂貓咪中途咖啡餐廳', 'Silvia', '0229381380', '新北市文山區木新路三段50巷7號1樓', 1, 0, 0, '12:00~21:00（周一公休）', '../images/halfMemberPic/Silvia@gmail.com.jpg', '雅風音樂咖啡餐廳原本是林老師想要做為學生練習的場地，但因使用的期間不長，才轉變成為貓咪中途咖啡廳，希望幫助更多流浪貓找到溫暖的家，餐廳內沒有華麗的裝潢，木製的吧檯兼座位，加上幾張四人桌椅、貓咪跳台，就是流浪貓咪溫暖的中途之家，也是愛貓人士聚集的所在！'),
+	(4, 'rain@gmail.com', '96e79218965eb72c92a549dd5a330112', 'RAIN*S CAT', '林雨潔', '0977889912', '屏東市瑞光路三段53號', 1, 0, 0, '尚未登記', '../images/halfMemberPic/rain@gmail.com.jpg', ''),
 	(5, 'gan@gmail.com', '96e79218965eb72c92a549dd5a330112', '貓極簡', '李璐璐', '0978493474', '台中市南區復興路二段7號', 1, 0, 0, '尚未登記', '../images/halfMemberPic/gan@gmail.com.jpg', '');
 
 
@@ -51,7 +51,7 @@ CREATE TABLE `MEMBER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `MEMBER` (`MEM_NO`, `MEM_ID`, `MEM_PSW`, `MEM_NAME`, `MEM_BIRTHDAY`, `MEM_TEL`, `MEM_ADDRESS`, `MEM_SCORE`, `MEM_PIC`, `MEM_DISCOUNT`, `MEM_BAN`)
 VALUES
-	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', 4, '../images/memberPic/default.jpg', 0, 0),
+	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/default.jpg', 0, 0),
 	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', 5, '../images/memberPic/default.jpg', 0, 0),
 	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/default.jpg', 0, 0);
 
@@ -108,11 +108,11 @@ CREATE TABLE `EMP` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `EMP` (`EMP_NO`, `EMP_ID`, `EMP_PSW`, `EMP_POST`)
 VALUES
-	(1, 'acqq', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
-	(2, 'kevin', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
-	(3, '林阿雄', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
-	(4, 'xxxzz25', '96e79218965eb72c92a549dd5a330112', 'Super_Admin'),
-	(5, 'cherry', '96e79218965eb72c92a549dd5a330112', 'Super_Admin');
+	(1, 'acqq', '96e79218965eb72c92a549dd5a330112', 'Super Admin'),
+	(2, 'kevin', '96e79218965eb72c92a549dd5a330112', 'Super Admin'),
+	(3, '林阿雄', '96e79218965eb72c92a549dd5a330112', 'Super Admin'),
+	(4, 'xxxzz25', '96e79218965eb72c92a549dd5a330112', 'Super Admin'),
+	(5, 'cherry', '96e79218965eb72c92a549dd5a330112', 'Super Admin');
 
 
 # Dump of table CAT
@@ -290,8 +290,8 @@ CREATE TABLE `DONATE` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `DONATE` (`DONATE_NO`, `CAT_NO`, `DONATE_NAME`, `DONATE_PRICE`, `DONATE_DATE`)
 VALUES
-	(1, 1, '硯硯', 1000, '2018-01-02'),
-	(2, 5, '宇宇', 870, '2017-12-17');
+	(22, 1, '硯硯', 1000, '2018-01-02'),
+	(24, 5, '宇宇', 870, '2017-12-17');
 
 
 
@@ -333,6 +333,20 @@ CREATE TABLE `HALF_PIC` (
   KEY `HALF_NO` (`HALF_NO`),
   CONSTRAINT `half_pic_ibfk_1` FOREIGN KEY (`HALF_NO`) REFERENCES `HALFWAY_MEMBER` (`HALF_NO`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `HALF_PIC` (`HALF_PIC_NO`, `HALF_NO`, `HALF_PIC_PATH`)
+VALUES
+	(1, 1, '../images/halfwayPic/sara@gmail.com0.jpg'),
+	(2, 1, '../images/halfwayPic/sara@gmail.com1.jpg'),
+	(3, 1, '../images/halfwayPic/sara@gmail.com2.jpg'),
+	(4, 1, '../images/halfwayPic/sara@gmail.com3.jpg'),
+	(5, 2, '../images/halfwayPic/handsome@gmail.com0.jpg'),
+	(6, 2, '../images/halfwayPic/handsome@gmail.com1.jpg'),
+	(7, 2, '../images/halfwayPic/handsome@gmail.com2.jpg'),
+	(8, 2, '../images/halfwayPic/handsome@gmail.com3.jpg'),
+	(9, 2, '../images/halfwayPic/silvia@gmail.com0.jpg'),
+	(10, 2, '../images/halfwayPic/silvia@gmail.com1.jpg'),
+	(11, 2, '../images/halfwayPic/silvia@gmail.com2.jpg'),
+	(12, 2, '../images/halfwayPic/silvia@gmail.com3.jpg');
 
 
 # Dump of table MESSAGE
