@@ -155,17 +155,20 @@ table {
 body {
   background-image: url("../images/back/backIMG.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 80vh;
   background-size: cover;
+}
+
+.block {
+  text-align: center;
 }
 
 .loginBox {
   width: 300px;
-  height: 200px;
-  position: fixed;
-  top: 50%;
-  margin-top: -200px;
-  left: 50%;
-  margin-left: -150px;
+  margin: 0 auto;
+  margin-top: 20%;
   text-align: center;
   background-color: rgba(238, 238, 238, 0.9);
   border-radius: 10px;
@@ -184,6 +187,15 @@ body {
   margin-top: 6px;
   padding: 2px 12px;
   font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-position: left center;
+  }
+  .loginBox {
+    margin-top: 35%;
+  }
 }
 
 /*# sourceMappingURL=backIndex.css.map */
