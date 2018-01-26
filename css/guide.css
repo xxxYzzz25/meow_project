@@ -74,7 +74,8 @@ body {
     transform: perspective(600px) translateY(-50px) translateZ(100px); } }
 
 body {
-  background-image: url(../images/marble.jpg); }
+  background-image: url(../images/colorful.jpg);
+  background-size: cover; }
 
 .svg-space {
   height: 20vh;
