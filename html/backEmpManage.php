@@ -143,8 +143,8 @@
                 let editBtn = document.createElement('input');
                 let deleteBtn = document.createElement('input');
 
-                Object.assign(editBtn,{type:'button',value:'編輯'});
-                Object.assign(deleteBtn,{type:'button',value:'刪除'});
+                Object.assign(editBtn,{type:'button',value:'編輯',className:'defaultBtn'});
+                Object.assign(deleteBtn,{type:'button',value:'刪除',className:'defaultBtn'});
 
                 editBtn.addEventListener('click',ajaxUpdate);
                 deleteBtn.addEventListener('click',ajaxDelete);
@@ -190,7 +190,7 @@
                     admin.remove();
                     admin = document.createElement('td');
                     let changeBtn = document.createElement('input');
-                    Object.assign(changeBtn,{type:'button',value:'異動'});
+                    Object.assign(changeBtn,{type:'button',value:'異動',className:'defaultBtn'});
                     changeBtn.addEventListener('click',edit);
                     admin.appendChild(changeBtn);
                     tr.appendChild(admin);
@@ -222,7 +222,7 @@
 
                     adminTd = document.createElement('td');
                     let changeBtn = document.createElement('input');
-                    Object.assign(changeBtn,{type:'button',value:'異動'});
+                    Object.assign(changeBtn,{type:'button',value:'異動',className:'defaultBtn'});
                     adminTd.appendChild(changeBtn);
                     tr.appendChild(adminTd);
 
@@ -281,8 +281,8 @@
                 admin = document.createElement('td');
                 let sureBtn = document.createElement('input');
                 let cancelBtn = document.createElement('input');
-                Object.assign(sureBtn,{type:'button',value:'完成'});
-                Object.assign(cancelBtn,{type:'button',value:'取消'});
+                Object.assign(sureBtn,{type:'button',value:'完成',className:'defaultBtn'});
+                Object.assign(cancelBtn,{type:'button',value:'取消',className:'defaultBtn'});
                 sureBtn.addEventListener('click',editDone);
                 cancelBtn.addEventListener('click',editCancel);
                 admin.appendChild(sureBtn);
@@ -305,7 +305,7 @@
                     adminTd.remove();
                     adminTd = document.createElement('td');
                     let changeBtn = document.createElement('input');
-                    Object.assign(changeBtn,{type:'button',value:'異動'});
+                    Object.assign(changeBtn,{type:'button',value:'異動',className:'defaultBtn'});
                     changeBtn.addEventListener('click',edit);
                     adminTd.appendChild(changeBtn);
                     tr.appendChild(adminTd);
@@ -339,7 +339,7 @@
 
                             Object.assign(oddPsw,{type:'password',value:name['odd']});
                             Object.assign(oddPswTd,{style: 'display:none;'});
-                            Object.assign(changeBtn,{type:'button',value:'異動'});
+                            Object.assign(changeBtn,{type:'button',value:'異動',className:'defaultBtn'});
 
                             oddPswTd.appendChild(oddPsw);
                             changeBtn.addEventListener('click',edit);
