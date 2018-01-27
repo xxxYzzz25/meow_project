@@ -15,11 +15,14 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="../js/signIn.js"></script>
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/halfMem.css">
     <script src="../js/hb.js"></script>
 </head>
 
 <body onload="getData('halfMeminfo.php');">
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
     <div class="signUpLightboxBlack"></div>
 <div class="signUpLightbox" id="loginBox">
     <i class="fa fa-times cancel"></i>
@@ -401,5 +404,6 @@ if (isset($_SESSION["MEM_NO"])) {
         });
     }
 </script>
+<script src="./js/likeList.js"></script>
 
 </html>

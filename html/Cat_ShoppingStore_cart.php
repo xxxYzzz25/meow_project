@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
@@ -37,6 +38,8 @@
 </head>
 
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 <div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
@@ -313,7 +316,7 @@
     </footer>
 
     <script src="../js/shoppingCart.js"></script>
-
+    <script src="./js/likeList.js"></script>
 </body>
 
 </html>

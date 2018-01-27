@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>尋喵啟事</title>
+    <link rel="icon" type="image/png" href="images/logo_icon.png" />
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="plugin/jquery.fullPage.css">
     <link rel="stylesheet" href="css/number.css">
@@ -41,10 +42,12 @@
             $sql = "select C.CAT_NO catNo,C.CAT_NAME catName,C.CAT_DATE catDate,H.HALF_ADDRESS halfAddress,H.HALF_NAME halfName,C.CAT_COVER catPic from CAT C join HALFWAY_MEMBER H on C.HALF_NO = H.HALF_NO where c.adopt_status != 2 order by CAT_DATE limit 6";
             $data = $pdo -> query($sql);
     ?>
+    <div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
+    </div>
     <div id="loading">
         <img src="images/loading.svg" id="loadingCat" alt="loading">
     </div>
-    
     <div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
@@ -567,12 +570,10 @@
                 </div>
             </div>
         </div>
-        <div class="likeBox">
-            
-        </div>
         <script src="js/sliderKit.js"></script>
         <script src="js/sliderHalf.js"></script>
         <script src="js/signIndex.js"></script>
+        <script src="./js/likeList.js"></script>
         <script>
             function showLogin() {
                 $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });

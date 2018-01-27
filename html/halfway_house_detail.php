@@ -18,12 +18,15 @@
     <script src="../js/cat/like.js"></script>
 	<script src="../js/halfway/showlarge.js"></script>
 	<!-- <script src="../js/halfway/star.js"></script> -->
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/halfway_house_detail.css">
     <script src="../js/hb.js"></script>
 	<title>中途之家</title>
 </head>
 
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 	<div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
@@ -364,7 +367,12 @@ try {
 
 			<div class="picture">
 				<img src="<?php echo $PATH ?>" alt="halfwaypic">
-			</div>
+            </div>
+            <script>
+                $(window).on('resize', function () {
+                    let x = $(window).width();
+                })
+            </script>
 
 <?php
 	}
@@ -730,7 +738,8 @@ try {
 				</div>
 			</div>
 		</div>
-	</footer>
+    </footer>
+    <script src="./js/likeList.js"></script>
 </body>
 
 </html>

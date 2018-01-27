@@ -16,12 +16,15 @@
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="../js/signIn.js"></script>
     <script src="../js/halfway/halfSearch.js"></script>
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/halfway_house_search.css">
     <script src="../js/hb.js"></script>
     <title>搜尋中途之家</title>
 </head>
 
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
     <div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
@@ -227,6 +230,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/likeList.js"></script>
 </body>
 
 </html>

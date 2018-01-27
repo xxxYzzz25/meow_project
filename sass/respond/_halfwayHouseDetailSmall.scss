@@ -5,6 +5,13 @@
     .right {
         padding: 0;
         margin: 0;
+        .breadcrumbs {
+            margin: 0;
+            padding-top: 30px;
+            a{
+                margin-top: 10px;
+            }
+        }
         .banner {
             h2 {
                 width: 70%;
@@ -18,23 +25,9 @@
                 display: block;
                 .bigpic {
                     width: 100%;
+                    height: 0;
                     padding-top: 65%;
                     margin: 0;
-                    animation: bb 20s linear infinite;
-                }
-                @keyframes bb {
-                    20% {
-                        background-image: url(../images/halfdetail7_resized.jpg);
-                    }
-                    40% {
-                        background-image: url(../images/halfdetail5.jpg);
-                    }
-                    60% {
-                        background-image: url(../images/halfdetail6.jpg);
-                    }
-                    80% {
-                        background-image: url(../images/halfdetail4.jpg);
-                    }
                 }
                 .text {
                     width: 100%;

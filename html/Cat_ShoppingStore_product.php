@@ -9,7 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <title>商品詳情</title>
-
+    
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/animate.css">
 
     <link rel="stylesheet" href="../css/fontawesome.min.css">
@@ -38,6 +39,8 @@
 </head>
 
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 <div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
@@ -347,6 +350,7 @@
 </script>
 
 <script src="../js/hb.js"></script>
+<script src="./js/likeList.js"></script>
 </body>
 
 </html>

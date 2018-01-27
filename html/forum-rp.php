@@ -10,12 +10,15 @@
 	<title>討論區--分頁</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
 	<link rel="stylesheet" type="text/css" href="../css/forum-p1.css">
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
 	<script src="https://use.fontawesome.com/533f4a82f0.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="../js/signIn.js"></script>
 	<script src="../js/hb.js"></script>
 </head>
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 	<div class="reportBox" id="reportBox">
 		<table>
 			<form action="#" method="post" id="reportForm">
@@ -389,6 +392,6 @@
 
 
 	</script>
-
+<script src="./js/likeList.js"></script>
 </body>
 </html>

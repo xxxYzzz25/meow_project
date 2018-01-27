@@ -15,6 +15,7 @@
 @import "modules/_catContent.scss";
 @import 'respond/_catContentMedium.scss';
 @import 'respond/_catContentSmall.scss';
+@import './modules/_likeBox.scss';
 @include navNow(1);
 @import './respond/_headerMedium.scss';
 @import './respond/_headerSmall.scss';

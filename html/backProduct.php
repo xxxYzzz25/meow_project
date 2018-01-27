@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/backProduct.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../js/jquery-2.1.1.min.js"></script>
@@ -152,11 +153,19 @@
 <?php
 try {
     require_once "../php/connectBD103G2.php";
-
-    $sql     = "select * from product";
+    
+    $sql = "select count(*) from product";    // 計算資料筆數
+	$total = $pdo->query($sql);
+	$rownum = $total->fetchcolumn();                       // 總共欄位數
+	$perPage = 10;                                          // 每頁顯示筆數
+	$totalpage = ceil($rownum / $perPage);                 // 計算總頁數
+	$pageNo = isset($_REQUEST['pageNo']) === true ? $_REQUEST['pageNo'] : $pageNo = 1;
+	// 若無當前頁數則進入第一頁 若有則進入該頁
+	$start = ($pageNo - 1) * $perPage;   
+	// 設定每頁呈現內容
+    $sql     = "select * from product limit $start, $perPage";
     $product = $pdo->prepare($sql);
     $product->execute();
-
     if ($product->rowCount() == 0) {
         echo "<center>查無商品資料</center>";
     } else {
@@ -210,6 +219,13 @@ try {
 }
 ?>
                 </table>
+                <div class="page">
+                    <?php
+                        for ($i = 1; $i <= $totalpage; $i++) {
+                            echo "<a href='?pageNo=$i' class='pageNo defaultBtn'>" . $i . "</a>";
+                        }
+                    ?>
+                </div>
             </div>
         </div>
     </div>
