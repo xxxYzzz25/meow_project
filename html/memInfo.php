@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
 ?>
 <div class="memInfo">
     <h4>修改會員資料</h4>

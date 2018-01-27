@@ -1,7 +1,7 @@
 <?php
  ob_start();
  session_start();
- isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSION['MEM_NO'] = null;
 ?>
 <div class="memOrderlist">
     <h4>查詢訂單記錄</h4>
@@ -32,24 +32,27 @@ try {
 <?php
         while ($orderlistRow = $orderlist->fetchObject()) {
 ?>
-        <tr>
-            <td><?php echo $orderlistRow->ORDER_NO; ?></td>
-            <td><?php echo $orderlistRow->CUS_NAME; ?></td>
-            <td><?php echo $orderlistRow->ORDER_PRICE; ?></td>
-            <td><?php echo $orderlistRow->ORDER_TIME; ?></td>
-            <td><?php
-                if( $orderlistRow->ORDER_STATUS == 0){
-                    echo "商品尚未出貨";
-                }elseif($orderlistRow->ORDER_STATUS == 1){
-                    echo "商品運送中";
-                }else{
-                    echo "訂單已完成";
-                }
-            ?></td>
-            <td><button class="defaultBtn" onclick="add('../php/memOrderlistDetail.php?ORDER_NO=<?php echo $orderlistRow->ORDER_NO; ?>');">訂單詳情</button></td>
-        </tr>
+            <tr>
+                <td><?php echo $orderlistRow->ORDER_NO; ?></td>
+                <td><?php echo $orderlistRow->CUS_NAME; ?></td>
+                <td><?php echo $orderlistRow->ORDER_PRICE; ?></td>
+                <td><?php echo $orderlistRow->ORDER_TIME; ?></td>
+                <td><?php
+                    if( $orderlistRow->ORDER_STATUS == 0){
+                        echo "商品尚未出貨";
+                    }elseif($orderlistRow->ORDER_STATUS == 1){
+                        echo "商品運送中";
+                    }else{
+                        echo "訂單已完成";
+                    }
+                ?></td>
+                <td><button class="defaultBtn" onclick="add('../php/memOrderlistDetail.php?ORDER_NO=<?php echo $orderlistRow->ORDER_NO; ?>');">訂單詳情</button></td>
+            </tr>
 <?php
         }
+?>
+        </table>
+<?php
     } //if...else
 } catch (PDOException $e) {
     echo "錯誤行號 : ", $e->getLine(), "<br>";

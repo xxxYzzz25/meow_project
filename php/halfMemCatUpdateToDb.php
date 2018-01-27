@@ -45,25 +45,14 @@ try {
     $products->bindValue(":advantage", $_REQUEST["advantage"]);
     $products->bindValue(":disadvantage", $_REQUEST["disadvantage"]);
     $products->execute();
-    echo "<center>新增成功</center><br>
-        <center>將在五秒後回到原網址</center><br>
-        <center><a id='backNext'>或者點此直接回到原網址</a></center>";
+    echo "  <script>
+                alert('修改成功');
+                window.location.href = '../html/halfMem.php';
+            </script> ";
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
 }
 ?>
-<script>
-    window.addEventListener('load', ()=>{
-        let back = document.getElementById('backNext')
-        setTimeout(function back(){
-            history.back()
-        }, 5000)
-        back.addEventListener('click', (e)=>{
-            e.preventDefault();
-            window.history.back()
-        })
-    })
-</script>
 </body>
 </html>

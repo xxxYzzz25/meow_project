@@ -46,6 +46,7 @@ try {
 					localStorage.setItem('halfNo',$halfNo);
 				});
 				alert('登入成功\\n\\n$halfName, 您好')
+				location.href = '../html/Cat_ShoppingStore.php';
 				</script>";
 			}else{
 				echo "<script>

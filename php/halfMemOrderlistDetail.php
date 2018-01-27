@@ -1,3 +1,8 @@
+<?php
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+?>
     <h4>訂單詳情(訂單編號<?php echo $_REQUEST["ORDER_NO"]?>)</h4>
     <table>
     <tr>
@@ -17,9 +22,8 @@ try {
             and o.HALF_NO = :halfNo
             and o.ORDER_NO = :orderNo";
     $product = $pdo->prepare($sql);
-    // $product->bindValue(":halfNo", $_REQUEST["halfNo"]);
+    $product->bindValue(":halfNo", $_SESSION["HALF_NO"]);
     $product->bindValue(":orderNo", $_REQUEST["ORDER_NO"]);
-    $product->bindValue(":halfNo", 1);
     $product->execute();
     while($productRow = $product->fetchObject()){;
 ?>   

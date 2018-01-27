@@ -65,7 +65,7 @@ try {
 							window.location.href = '../html/Cat_ShoppingStore.php';
 						});
 						alert('登入成功\\n\\n$memName, 您好')
-
+						location.href = '../html/Cat_ShoppingStore.php';
 					</script>";
 
 				}else{
