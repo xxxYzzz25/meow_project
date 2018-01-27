@@ -120,7 +120,7 @@
             display: inline-block;
             align-items: center;
         }
-        .ask{
+        .ask {
             display: none;
         }
         .smallask {
@@ -139,22 +139,35 @@
                 display: none;
             }
         }
-        .imgbox{
+        .imgbox {
             display: none;
         }
-        .smallbox{
+        .phone {
             display: block;
             #right,
             #left,
-            .center {
+                {
                 display: inline-block;
-                width: 30%;
+                width: 25%;
+                margin-top: -230px;
+                cursor: pointer;
                 img {
                     width: 100%;
                 }
             }
-            .center{
-                width: 25%;
+            #left {
+                margin-right: 150px;
+            }
+            #right {
+                margin-left: 150px;
+            }
+            .center {
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                img {
+                    width: 30%;
+                }
             }
         }
     }

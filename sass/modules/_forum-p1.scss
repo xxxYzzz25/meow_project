@@ -145,3 +145,27 @@ h2 {
   margin: 1%;
   text-align: right;
 }
+
+.reportBox{
+  width: 250px;
+  height: 160px;
+  padding: 15px;
+  background-color: rgb(231, 230, 230);
+  border-radius: 15px;
+  z-index: 99999;
+  position: fixed;
+  top: calc(50% - 80px);
+  left: calc(50% - 125px);
+  display: none;
+  box-shadow: 2px 2px 2px rgba(102, 102, 102, 0.7),0px 0px 3px rgba(102, 102, 102, 0.7);
+  table{
+    margin: auto;
+    input[type="button"]{
+      cursor: pointer;
+    }
+  }
+  td{
+    padding: 6px;
+    color: #333;
+  }
+}

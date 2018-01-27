@@ -380,17 +380,6 @@
                         <img src="images/answer.png" alt="answer cat">
                         <button id="know">我知道了!</button>
                     </div>
-                    <div class="smallbox">
-                        <div id="left">
-                            <img src="images/noticeGame/refrigerator_rwd.png" alt="refrigerator_rwd">
-                        </div>
-                        <div class="center" id="center">
-                            <img src="images/noticeGame/banana.png" alt="banana">
-                        </div>
-                        <div id="right">
-                            <img src="images/noticeGame/garbage_rwd.png" alt="garbage_rwd">
-                        </div>
-                    </div>
                     <div class="phone">
                         <div class="center" id="center">
                             <img src="images/noticeGame/banana.png" alt="banana">
@@ -503,6 +492,12 @@
 
                         <ul class="prod-list" id="prod-list">
                             <li class="prod-item">
+                                
+                            <form name="form1" action = "test1.html" method="POST" >
+			<input type="text" id="action" name="action" value="get"/>
+　　　　　　<!-- 用下列語法就運用超連結進行POST動作 -->
+			<a href="javascript:document.form1.submit();">click</a>
+		</form>
                                 <a href="./html/Cat_ShoppingStore.php?pd_class=pd_food">
                                     <div class="front hungry">
                                         <div class="prod-content"></div>

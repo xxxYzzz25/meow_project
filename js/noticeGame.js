@@ -143,11 +143,11 @@ function doFirst() {
                 answer: 'left'
             }, {
                 question: 'egg',
-                hint: '生雞蛋中可能含有沙門氏菌，極容易造成貓咪急性胃腸炎，給貓咪造成不小的痛苦。生雞蛋中含有天然的蛋白質抗生物素蛋白，貓咪過度吸收素蛋白會妨礙生物素（又名維生素B7或H）的吸收及功能發揮，偏偏生物素對於脂肪的新陳代謝、細胞生長和二氧化碳轉移方面的功能無可替代。',
+                hint: '生雞蛋中可能含有沙門氏菌，極容易造成貓咪急性胃腸炎，給貓咪造成不小的痛苦。',
                 answer: 'right'
             }, {
                 question: 'watermelon',
-                hint: '貓咪是可以吃一點西瓜的，但是貓咪吃西瓜是不吸收的。貓是肉食動物，吃水果是吸收不了的。別給吃太多就行了，還有剛從冰箱裡拿出來的東西別立刻給，一定要在外面放一會，要是涼的該拉肚子啦!',
+                hint: '貓咪是可以吃一點西瓜的，但是貓咪吃西瓜是不吸收的。貓是肉食動物，吃水果是吸收不了的。別給吃太多就行了!',
                 answer: 'left'
             }, {
                 question: 'cookie',
@@ -155,7 +155,7 @@ function doFirst() {
                 answer: 'right'
             }, {
                 question: 'milk',
-                hint: '很多貓咪在喝了牛奶或乳製品後造成下痢（腹瀉），原因是缺乏乳糖消化脢和乳糖酵素，以致於牛奶中的乳糖不能在腸道中發酵，無法被身體消化所致，而這些無法消化的乳糖又會造成細菌的繁殖，反而會吸收水份造成下痢，這樣的情況，跟人類的乳糖不耐症很類似。',
+                hint: '很多貓咪在喝了牛奶或乳製品後造成下痢（腹瀉），原因是缺乏乳糖消化脢和乳糖酵素，以致於牛奶中的乳糖不能在腸道中發酵，無法被身體消化所致。',
                 answer: 'left'
             }],
         };
@@ -233,7 +233,6 @@ function doFirst() {
             arr = arr.slice(0, length - 4); //圖片名字
 
             center.childNodes[1].setAttribute('src', 'images/noticeGame/' + obj.questions[count - 1].question + '.png');
-            console.log(center.childNodes[1]);
         }
 
         know.addEventListener('click', function know() {

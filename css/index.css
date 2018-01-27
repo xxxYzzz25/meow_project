@@ -1026,7 +1026,7 @@ footer {
     .noticegame .hintbox button {
       background-color: #e46d69;
       color: #fff;
-      padding: 10px 30px;
+      padding: 15px;
       border-radius: 10px;
       border: 2px solid #000;
       cursor: pointer;
@@ -1359,19 +1359,27 @@ footer {
     display: none; }
   .noticegame .imgbox {
     display: none; }
-  .noticegame .smallbox {
+  .noticegame .phone {
     display: block; }
-    .noticegame .smallbox #right,
-    .noticegame .smallbox #left,
-    .noticegame .smallbox .center {
+    .noticegame .phone #right,
+    .noticegame .phone #left {
       display: inline-block;
-      width: 30%; }
-      .noticegame .smallbox #right img,
-      .noticegame .smallbox #left img,
-      .noticegame .smallbox .center img {
+      width: 25%;
+      margin-top: -230px;
+      cursor: pointer; }
+      .noticegame .phone #right img,
+      .noticegame .phone #left img {
         width: 100%; }
-    .noticegame .smallbox .center {
-      width: 25%; }
+    .noticegame .phone #left {
+      margin-right: 150px; }
+    .noticegame .phone #right {
+      margin-left: 150px; }
+    .noticegame .phone .center {
+      display: block;
+      width: 100%;
+      margin: 0 auto; }
+      .noticegame .phone .center img {
+        width: 30%; }
   .shop .prod ul.prod-list {
     height: 80%;
     top: 0;
@@ -1392,6 +1400,10 @@ footer {
   .banner .search select,
   .banner .search input {
     font-size: 16px; }
+  .banner .search #searchBar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
   .game-point .game-point-top {
     display: block; }
     .game-point .game-point-top .game-qty-box {
@@ -1449,16 +1461,14 @@ footer {
       margin: 0 auto; }
       .noticegame .phone .center img {
         width: 40%; }
-  .noticegame .smallbox {
-    display: none; }
   .shop .prod {
     height: 70vh; }
     .shop .prod .arrowLeft {
       display: block;
-      top: 45vh; }
+      top: 20vh; }
     .shop .prod .arrowRight {
       display: block;
-      top: 45vh; }
+      top: 20vh; }
   .shop ul.prod-list {
     width: 400%;
     height: 70vh;

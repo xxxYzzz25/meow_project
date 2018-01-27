@@ -36,9 +36,10 @@ try {
         $products->bindValue(":tel", $_REQUEST["memtel"]);
         $products->bindValue(":address", $_REQUEST["memaddress"]);
         $products->execute();
-        echo "<center>會員資料修改成功</center><br>
-            <center>將在五秒後回到原網址</center><br>
-            <center><a id='backNext'>或者點此直接回到原網址</a></center>";
+        echo "  <script>
+                    alert('密碼沒修改\\n會員資料修改成功');
+                    window.location.href = '../html/member.php';
+                </script> ";
     }else{
         $sql = "update member set MEM_PSW=md5(:psw),
                                 MEM_NAME=:name,
@@ -52,9 +53,10 @@ try {
         $products->bindValue(":tel", $_REQUEST["memtel"]);
         $products->bindValue(":address", $_REQUEST["memaddress"]);
         $products->execute();
-        echo "<center>會員資料修改成功</center><br>
-            <center>將在五秒後回到原網址</center><br>
-            <center><a id='backNext'>或者點此直接回到原網址</a></center>";
+        echo "  <script>
+                    alert('密碼有修改\\n會員資料修改成功');
+                    window.location.href = '../html/member.php';
+                </script> ";
     }
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";

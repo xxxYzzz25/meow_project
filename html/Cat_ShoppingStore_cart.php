@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../css/Cat_ShoppingStore_cart.css">
     <script src="../js/wow.js"></script>
     <script src="../js/hb.js"></script>
-    <script src="../js/shoppingCart.js"></script>
+    
 
     <script>
         $(document).ready(function () {
@@ -214,18 +214,41 @@
                 </table>
             </div>
 
-            <form class="saleCard" action="Cat_ShoppingStore_cart.php" method="post">
-                是否使用遊戲折價卷？
-                <select name="saleCard" class="select" id="hi">
-                    <option value="0">不使用折價卷</option>
-                    <option value="50">使用 50 元折價卷</option>
-                    
-                </select>
-            </form>
+            <?php
 
+                try{
+                    require_once('../php/connectBD103G2.php');
+
+                    if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
+                        
+                        $who = (isset($_SESSION["MEM_NO"]) && !is_null($_SESSION["MEM_NO"])) ? "MEMBER" : "HALFWAY_MEMBER";
+                        $whoNo = (isset($_SESSION["MEM_NO"]) && !is_null($_SESSION["MEM_NO"])) ? $_SESSION["MEM_NO"] : $_SESSION["HALF_NO"];
+                        $whereNo = (isset($_SESSION["MEM_NO"]) && !is_null($_SESSION["MEM_NO"])) ? "MEM_NO" : "HALF_NO";
+                        $whoDiscount = (isset($_SESSION["MEM_NO"]) && !is_null($_SESSION["MEM_NO"])) ? "MEM_DISCOUNT" : "HALF_DISCOUNT";
+
+                        $sql = "select $whoDiscount from $who where $whereNo = $whoNo";
+                        $data = $pdo -> query($sql);
+                        $dataList = $data -> fetchObject();
+                        if($dataList -> $whoDiscount == '1'){
+                            echo "<form class='saleCard' action='Cat_ShoppingStore_cart.php' method='post'>
+                                    是否使用遊戲折價卷？
+                                    <select name='saleCard' id='selectDiscount' class='select'>
+                                        <option value='false'>不使用折價卷</option>
+                                        <option value='true'>使用 50 元折價卷</option>
+                                    </select>
+                                </form>";
+                        }
+                    }
+                }catch(PDOException $e){
+                    echo $e -> getLine();
+                    echo $e -> getMessage();
+                }
+            
+            ?>
+<!--  -->
             <div class="total" style="text-align:center;">
                 總共：
-                <span id="subtotal"></span> 元
+                <span id="subtotal">0</span> 元
             </div>
 
             <div class="confirm">
@@ -289,7 +312,7 @@
         </div>
     </footer>
 
-    
+    <script src="../js/shoppingCart.js"></script>
 
 </body>
 

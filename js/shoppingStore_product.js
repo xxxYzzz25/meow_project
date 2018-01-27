@@ -11,11 +11,12 @@ function doFirst(){
 			//console.log(list.length);
 			for(let i=0; i<list.length; i++){
 				//console.log(list[i].id);	
-				list[i].addEventListener('click', function(){
+				list[i].addEventListener('click', function(e){
 					//console.log(this);
 					let info = this.childNodes[1].value;
 					//console.log(this.id);
-					addItem(this.parentNode.id,info);
+					let self = e.target.id;
+					addItem(this.parentNode.id,info,self);
     				// localStorage.setItem('item',inputValue);
 					if(i ==1){
 						document.location.href='Cat_ShoppingStore_cart.php';
@@ -35,11 +36,14 @@ function doFirst(){
 
 
 
-function addItem(itemId,itemValue){
-
+function addItem(itemId,itemValue,self){
 	//存入storage
 	if(storage[itemId]){
-		alert('商品已在購物車裡囉！');
+		if(self == 'byNow'){
+			
+		}else{
+			alert('商品已在購物車裡囉！');
+		}
 	}else{
 		storage['addItemList'] += itemId + ', ';
 		storage[itemId] = itemValue; //storage.setItem(itemId,itemValue);

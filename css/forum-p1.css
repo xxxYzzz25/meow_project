@@ -388,6 +388,26 @@ h2 {
   margin: 1%;
   text-align: right; }
 
+.reportBox {
+  width: 250px;
+  height: 160px;
+  padding: 15px;
+  background-color: #e7e6e6;
+  border-radius: 15px;
+  z-index: 99999;
+  position: fixed;
+  top: calc(50% - 80px);
+  left: calc(50% - 125px);
+  display: none;
+  box-shadow: 2px 2px 2px rgba(102, 102, 102, 0.7), 0px 0px 3px rgba(102, 102, 102, 0.7); }
+  .reportBox table {
+    margin: auto; }
+    .reportBox table input[type="button"] {
+      cursor: pointer; }
+  .reportBox td {
+    padding: 6px;
+    color: #333; }
+
 .signUpLightboxBlack {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100vw;

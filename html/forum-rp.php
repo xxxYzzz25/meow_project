@@ -16,6 +16,32 @@
 	<script src="../js/hb.js"></script>
 </head>
 <body>
+	<div class="reportBox" id="reportBox">
+		<table>
+			<form action="#" method="post" id="reportForm">
+				<tr>
+					<td>
+						<label><input type="radio" name="reportType" value="仇恨言論、暴力">仇恨言論、暴力</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label><input type="radio" name="reportType" value="不當和冒犯性的內容">不當和冒犯性的內容</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label><input type="radio" name="reportType" value="涉及情色或種族歧視">涉及情色或種族歧視</label>
+					</td>
+				</tr>
+				<tr>
+					<td style="display:flex;justify-content:space-around;">
+						<input type="button" id="reportSubmit" value="提交檢舉"><input id="reportCancel" type="button" value="取消送出">
+					</td>
+				</tr>
+			</form>
+		</table>
+	</div>
 	<div class="signUpLightboxBlack" style="display:none;"></div>
     <div class="signUpLightbox" id="loginBox" style="display:none;">
         <i class="fa fa-times cancel"></i>
@@ -211,8 +237,9 @@
 				}
 				?>
 			<div class="post-ft">
-				<form action="../php/forum-report.php" class="reports" method="post">
+				<form action="../php/forum-report.php" id="reportIndex0" class="reports" method="post">
 					<input type="hidden" name="ARTICLE_NO" value="<?php echo $ARTICLE_NO ?>">
+					<input type="hidden" name="narrative">
 					<button type="submit" class="defaultBtn">檢舉</button>
 				</form>
 			</div>
@@ -229,7 +256,9 @@
 						order by me.MESSAGE_TIME";
 				$data = $pdo -> prepare($sql);
 				$data -> execute();
+				$index = 0;
 				while ($dataRow = $data -> fetchObject()) {
+				$index++;
 		?>	
 		<div class="container rebox">
 			<div class="post-ab">
@@ -243,8 +272,9 @@
 				<?php echo nl2br($dataRow -> MESSAGE_CONTENT); ?>
 			</div>
 			<div class="post-ft">
-				<form action="../php/forum-report.php" class="reports" method="post">
+				<form action="../php/forum-report.php" class="reports" id="<?php echo "reportIndex".$index ?>" method="post">
 					<input type="hidden" name="MESSAGE_NO" value="<?php echo $dataRow -> MESSAGE_NO ?>">
+					<input type="hidden" name="narrative">
 					<button class="defaultBtn">檢舉</button>
 				</form>
 			</div>
@@ -318,18 +348,43 @@
 			}
 			let textArea = document.getElementById('textArea');
 			let reports = document.querySelectorAll('.reports');
+			let reportBox = document.getElementById('reportBox');
+			let reportForm = document.forms['reportForm'];
+			let thisForm;
+			let types = reportForm.elements.reportType;
+
+
+			document.getElementById('reportSubmit').addEventListener('click',()=>{
+				reportBox.style.display = 'none';
+				thisForm.elements.narrative.value = types.value;
+				thisForm.submit();
+			});
+			document.getElementById('reportCancel').addEventListener('click',()=>{
+				reportBox.style.display = 'none';
+				for (const i of types) {
+					i.checked = false;
+				}
+			});
+			// console.log();
+			function showReportBox(e){
+				if(localStorage.getItem('halfNo') || localStorage.getItem('memNo')){
+
+					e.preventDefault();
+					thisForm = e.target.closest('form');
+					reportBox.style.display = 'block';
+
+				}else{
+					e.preventDefault();
+					alert('請先登入');
+					qq();
+				}
+			}
+
 			for (const i of reports) {
-				i.addEventListener('submit',function(e){
-					if(localStorage.getItem('halfNo') || localStorage.getItem('memNo')){
-						
-					}else{
-						e.preventDefault();
-						alert('請先登入');
-						qq();
-					}
-				});
+				i.addEventListener('submit',showReportBox);
 			}
 			textArea.addEventListener('focus',qq);
+
 		})
 
 

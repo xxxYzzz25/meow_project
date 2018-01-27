@@ -281,10 +281,7 @@
 									<!-- $1000 -->
 								</div>
 						
-								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-									加入購物車
-									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-								</span>
+								
 						
 							</div>
 						
@@ -342,10 +339,7 @@
 										<!-- $1000 -->
 									</div>
 						
-									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-										加入購物車
-										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-									</span>
+									
 						
 								</div>
 						
@@ -403,10 +397,7 @@
 										<!-- $1000 -->
 									</div>
 							
-									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-										加入購物車
-										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-									</span>
+									
 						
 								</div>
 						
@@ -464,10 +455,7 @@
 										<!-- $1000 -->
 									</div>
 							
-									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-										加入購物車
-										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-									</span>
+									
 						
 								</div>
 						
@@ -562,6 +550,7 @@
 		let pd_grass = document.getElementById("pd_grass");
 		let pd_home = document.getElementById("pd_home");
 		let pd_food = document.getElementById("pd_food");
+		let pd_all = document.getElementById("pd_all");
 
 		for( var i=0 ; i<type.length ; i++ ){
 			type[i].addEventListener("click" , getProducts , false);
@@ -593,6 +582,9 @@
 				case '4':
 					pd_play.click();
 					break;
+				default:
+					pd_all.click();
+					break;
 			}
 			$(window).scrollTop(0);
 		}
@@ -610,12 +602,13 @@
 		}
 		xhr.send( null );
 	}
-
+		let btnAll = document.getElementById("pd_all");
 		let btnHome = document.getElementById("btnHome");
 		let btnHungry = document.getElementById("btnHungry");
 		let btnGrass = document.getElementById("btnGrass");
 		let btnPlay = document.getElementById("btnPlay");
 
+		btnAll.addEventListener("click" , qqq);
 		btnHome.addEventListener("click" , qqq);
 		btnHungry.addEventListener("click" , qqq);
 		btnGrass.addEventListener("click" , qqq);

@@ -1,4 +1,9 @@
 <?php
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+?>
+<?php
 try {
     require_once "../php/connectBD103G2.php";
 
