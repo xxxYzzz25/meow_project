@@ -34,6 +34,7 @@ try {
                     }
                     $fileType = strrchr($_FILES['upCover']['name'], '.');
                     $from = $_FILES['upCover']['tmp_name'];
+                    $count = $count + 1;
                     $to = $dir . "/product" . $count . $fileType;
                     if(copy( $from, $to) ){
                         // 新增商品

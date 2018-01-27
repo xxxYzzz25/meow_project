@@ -40,7 +40,7 @@ try {
         
         // 設定每頁呈現內容
         $sql     = "select * from halfway_member
-                    where ";
+                    where HALF_BAN = 0 and";
     	if(!empty($searchLoc)){
             $arrLen = count($locArr[$searchLoc]);
             $sql .= "(";
@@ -103,7 +103,7 @@ try {
         $start = ($pageNo - 1) * $perPage;   
         
         // 設定每頁呈現內容
-        $sql = "select * from halfway_member  limit $start, $perPage";
+        $sql = "select * from halfway_member where HALF_BAN = 0 limit $start, $perPage";
         $halfway = $pdo->prepare($sql);
         $halfway->bindColumn("HALF_NO", $NO);
         $halfway->bindColumn("HALF_NAME", $NAME);
