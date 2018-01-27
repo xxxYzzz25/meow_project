@@ -213,12 +213,15 @@
                     $NO = $_REQUEST["PRODUCT_NO"];
                     try {
                         require_once("../php/connectBD103G2.php");
-                        $sql = "select * from PRODUCT where PRODUCT_NO = :NO";
+                        $sql = "select * from PRODUCT p
+                                left join product_pic pic 
+                                on pic.product_no = p.product_no
+                                where p.PRODUCT_NO = :NO";
                         $PRODUCT = $pdo->prepare($sql);
                         $PRODUCT->bindValue(":NO",$NO);
                         $PRODUCT->execute();
                         $PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
-                    
+                        
                         foreach( $PRODUCT as $i=>$PRODUCT){
                     ?>
                     
