@@ -494,10 +494,6 @@
                             <li class="prod-item">
                                 
                             <form name="form1" action = "test1.html" method="POST" >
-			<input type="text" id="action" name="action" value="get"/>
-　　　　　　<!-- 用下列語法就運用超連結進行POST動作 -->
-			<a href="javascript:document.form1.submit();">click</a>
-		</form>
                                 <a href="./html/Cat_ShoppingStore.php?pd_class=pd_food">
                                     <div class="front hungry">
                                         <div class="prod-content"></div>
