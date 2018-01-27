@@ -388,7 +388,8 @@ body {
   margin-left: 200px;
   line-height: 28px;
   letter-spacing: 3px;
-  font-size: 14px; }
+  font-size: 14px;
+  min-height: 100vh; }
 
 .wrapCenter {
   width: 70%;
