@@ -341,7 +341,7 @@
                     }
                 }
                 alert('購買完成，謝謝您的購買');
-                // window.location.href = './Cat_ShoppingStore.php';
+                window.location.href = './Cat_ShoppingStore.php';
             },dataInfo);
         
         }

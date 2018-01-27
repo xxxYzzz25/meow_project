@@ -17,7 +17,6 @@ function doFirst() {
 	Object.assign(newTable,{id: 'prodList'});
 	//每購買一個品項，就呼叫函數createCartList新增一個tr
 	subtotal = 0;
-	console.log(items);
 	for (var key in items) {
 		var itemInfo = storage.getItem(items[key]);
 		createCartList(items[key], itemInfo);
@@ -118,9 +117,18 @@ function doFirst() {
 	
 
 	function changeItemCount() {
+		let tr = this.parentNode.parentNode;
+		let prodNo = tr.childNodes[1].className;
+		let prodStr = localStorage.getItem(prodNo);
 		let inputValue = parseInt(this.value);
 		let itemTr = this.parentNode.parentNode.parentNode.childNodes;
 		let total = 0;
+		let newStr = prodStr.split('|');
+		newStr.pop();
+		newStr.push(this.value);
+		newStr = newStr.join('|');
+		localStorage.setItem(prodNo,newStr);
+
 		for (let i = 0; i < itemTr.length; i++) {
 			var cost = parseInt(itemTr[i].childNodes[2].textContent); //價錢
 			var amount = parseInt(itemTr[i].childNodes[3].firstChild.value); //數量
