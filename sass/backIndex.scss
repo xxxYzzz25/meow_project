@@ -1,42 +1,48 @@
 @import 'base/_var.scss';
 @import 'base/_reset.scss';
 @import 'base/_btn.scss';
+@import 'base/_boxsizing.scss';
 body {
     background-image: url('../images/back/backIMG.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-    height: 80vh;
+    height: 100vh;
     background-size: cover;
+    position: relative;
 }
 .block {
     text-align: center;
 }
 .loginBox {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
     width: 300px;
     margin: 0 auto;
-    margin-top: 20%;
     text-align: center;
     background-color: rgba(238, 238, 238, 0.9);
     border-radius: 10px;
+    padding: 15px;
     h1 {
         margin-top: 20px;
     }
     input {
-        margin: 20px auto;
+        margin: 20px 6px;
         outline: none;
+        
     }
-    input[type=submit] {
-        margin-top: 6px;
-        padding: 2px 12px;
-        font-size: $font-size-small;
-    }
+    // input[type=submit] {
+    //     margin-top: 6px;
+    //     padding: 2px 12px;
+    //     font-size: $font-size-small;
+    // }
 }
 @media screen and (max-width: 600px) {
     body {
         background-position: left center;
     }
-     .loginBox {
-        margin-top: 35%;
+    .loginBox {
     }
 }

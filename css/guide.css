@@ -127,3 +127,9 @@ body {
     text-align: center;
     border-radius: 50%;
     font-weight: 500; }
+
+@media all and (max-width: 767px) {
+  .guide .front img,
+  .guide .backed img {
+    width: 180px;
+    height: 180px; } }
