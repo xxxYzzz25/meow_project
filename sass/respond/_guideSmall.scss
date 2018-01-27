@@ -1,0 +1,11 @@
+@include respond-to(small) {
+    .guide {
+        .front,
+        .backed {
+            img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    }
+}

@@ -551,8 +551,7 @@
 		let pd_grass = document.getElementById("pd_grass");
 		let pd_home = document.getElementById("pd_home");
 		let pd_food = document.getElementById("pd_food");
-		let pd_all = document.getElementById("pd_all");
-
+		
 		for( var i=0 ; i<type.length ; i++ ){
 			type[i].addEventListener("click" , getProducts , false);
 			type[0].addEventListener("click" , function(){
@@ -583,9 +582,6 @@
 				case '4':
 					pd_play.click();
 					break;
-				default:
-					pd_all.click();
-					break;
 			}
 			$(window).scrollTop(0);
 		}
@@ -603,13 +599,14 @@
 		}
 		xhr.send( null );
 	}
-		let btnAll = document.getElementById("pd_all");
 		let btnHome = document.getElementById("btnHome");
 		let btnHungry = document.getElementById("btnHungry");
 		let btnGrass = document.getElementById("btnGrass");
 		let btnPlay = document.getElementById("btnPlay");
-
-		btnAll.addEventListener("click" , qqq);
+		let pd_all = document.getElementById("pd_all");
+		pd_all.addEventListener("click" ,()=>{
+			window.location.href = 'Cat_ShoppingStore.php';
+		});
 		btnHome.addEventListener("click" , qqq);
 		btnHungry.addEventListener("click" , qqq);
 		btnGrass.addEventListener("click" , qqq);
