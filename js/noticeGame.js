@@ -83,12 +83,12 @@ function doFirst() {
                     if (localStorage.getItem('memNo')) {
                         // 叫php寫入分數後轉址
                         let memNo = localStorage.getItem('memNo');
-                        window.location.href = `./php/discount.php?memNo=${memNo}&discount=${discount}`;
+                        window.location.href = `./php/discount.php?memNo=${memNo}&discount=1`;
 
                     } else if (localStorage.getItem('halfNo')) {
 
                         let halfNo = localStorage.getItem('halfNo');
-                        window.location.href = `./php/discount.php?halfNo=${halfNo}&discount=${discount}`;
+                        window.location.href = `./php/discount.php?halfNo=${halfNo}&discount=1`;
 
                     } else {
                         alert('請登入會員')

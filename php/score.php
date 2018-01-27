@@ -12,7 +12,7 @@
         $sql = "update member set mem_score = $score where mem_no = $memNo";
         //執行該指令
         $pdo->query($sql);
-        header("location:../html/catSearch.php");
+        header("Location:../html/catSearch.php");
     
     } catch (PDOException $e) {
         echo "行號: ", $e->getLine(), "<br>";
