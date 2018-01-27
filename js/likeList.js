@@ -6,7 +6,7 @@ window.addEventListener('load',()=>{
     
         
         let dataInfo = `pathName=${pathName}`;
-        let url = pathName === 'homepage.php' ? './php/showLikeData.php' : './php/showLikeData.php';
+        let url = pathName === 'homepage.php' ? './php/showLikeData.php' : '../php/showLikeData.php';
         let xhr = new XMLHttpRequest();
         xhr.open('post',url);
         xhr.onload = function(){

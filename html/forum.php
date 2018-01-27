@@ -19,7 +19,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 </head>
 <body>
 <div class="likeBoxBack" id="likeBoxBack"></div>
-    <div class="likeBox" id="likeBox">
+    <div class="likeBox" id="likeBox"></div>
 <div class="signUpLightboxBlack" style="display:none;"></div>
     <div class="signUpLightbox" id="loginBox" style="display:none;">
         <i class="fa fa-times cancel"></i>
@@ -497,7 +497,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 		});
 	</script>
 	<script src="../js/signIn.js"></script>
-	<script src="./js/likeList.js"></script>
+	<script src="../js/likeList.js"></script>
 </body>
 
 </html>

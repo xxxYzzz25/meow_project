@@ -22,7 +22,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 
 <body onload="getData('halfMeminfo.php');">
 <div class="likeBoxBack" id="likeBoxBack"></div>
-    <div class="likeBox" id="likeBox">
+    <div class="likeBox" id="likeBox"></div>
     <div class="signUpLightboxBlack"></div>
 <div class="signUpLightbox" id="loginBox">
     <i class="fa fa-times cancel"></i>
@@ -404,6 +404,6 @@ if (isset($_SESSION["MEM_NO"])) {
         });
     }
 </script>
-<script src="./js/likeList.js"></script>
+<script src="../js/likeList.js"></script>
 
 </html>
