@@ -44,11 +44,7 @@ try {
 		<div class='cost'>
 			$$PRODUCT_PRICE
 		</div>
-
-		<span id='pd$PRODUCT_NO' class='addButton'>
-			加入購物車
-			<input type='hidden' value='$PRODUCT_NAME|$PRODUCT_COVER|$PRODUCT_PRICE|1'>
-		</span>
+		
 	</div>";
 
 
