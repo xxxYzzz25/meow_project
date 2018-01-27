@@ -589,8 +589,8 @@ header ul li:nth-child(5):after {
 .right {
   margin-left: 200px;
   background-image: url(../images/marble.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-attachment: fixed; }
   .right:after {
     content: '';
     display: block;

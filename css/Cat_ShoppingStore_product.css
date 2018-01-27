@@ -379,16 +379,16 @@ header.active {
   transform: translateY(-6px) rotate(90deg); }
 
 body {
-  background-color: #eee;
-  background-image: url(../img/marble.jpg);
-  background-size: cover;
-  background-attachment: fixed; }
+  background-color: #eee; }
 
 .wrap {
   margin-left: 200px;
   line-height: 28px;
   letter-spacing: 3px;
-  font-size: 14px; }
+  font-size: 14px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(../images/grassBG.jpg); }
 
 .wrapCenter {
   width: 80%;

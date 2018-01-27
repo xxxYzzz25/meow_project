@@ -74,7 +74,7 @@ body {
     transform: perspective(600px) translateY(-50px) translateZ(100px); } }
 
 body {
-  background-image: url(../images/colorful.jpg);
+  background-image: url(../images/colorful2.jpg);
   background-size: cover; }
 
 .svg-space {

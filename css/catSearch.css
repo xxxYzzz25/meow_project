@@ -571,7 +571,9 @@ header.active {
       font-size: 14px; } }
 
 body {
-  background-image: url("../images/marble.jpg"); }
+  background-image: url(../images/marble.jpg);
+  background-size: cover;
+  background-attachment: fixed; }
 
 .right {
   width: calc(100% - 200px);

@@ -1,13 +1,16 @@
 body {
-	background-image: url(../img/marble.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+	
 }
 @include navNow(3);
 
 .wrap {
 	margin-left: 200px;
 	line-height: 22px;
+	background-image: url(../images/marble2.jpg);
+    background-size: cover;
+	background-attachment: fixed;
+	background-image: url(../images/grassBG.jpg);
+
 }
 
 .wrapCenter {
@@ -45,6 +48,7 @@ h2 {
 	text-align: center;
 	box-sizing: border-box;
 	border: 2px solid #333;
+	background-color: #eee;
 }
 
 .menuTitle {

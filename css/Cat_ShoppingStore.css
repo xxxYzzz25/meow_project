@@ -378,11 +378,6 @@ header.active {
   -o-transform: translateY(-6px) rotate(90deg);
   transform: translateY(-6px) rotate(90deg); }
 
-body {
-  background-image: url(../img/marble.jpg);
-  background-size: cover;
-  background-attachment: fixed; }
-
 header ul li:nth-child(3) {
   background-color: #fff;
   box-shadow: -3px 3px 5px rgba(63, 62, 62, 0.199); }
@@ -407,7 +402,11 @@ header ul li:nth-child(3):after {
 
 .wrap {
   margin-left: 200px;
-  line-height: 22px; }
+  line-height: 22px;
+  background-image: url(../images/marble2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(../images/grassBG.jpg); }
 
 .wrapCenter {
   letter-spacing: 3px;
@@ -438,7 +437,8 @@ h2 {
   width: 100%;
   text-align: center;
   box-sizing: border-box;
-  border: 2px solid #333; }
+  border: 2px solid #333;
+  background-color: #eee; }
 
 .menuTitle {
   display: inline-block;
