@@ -39,7 +39,7 @@ try {
         $products->bindValue(":head" , $_REQUEST["hwmemhead"]);
         $products->execute();
         echo "  <script>
-                    alert('中途會員修改成功');
+                    alert('中途會員資料修改成功');
                     window.location.href = '../html/halfMem.php';
                 </script> ";
     }else{
@@ -53,7 +53,7 @@ try {
         $products->bindValue(":head" , $_REQUEST["hwmemhead"]);
         $products->execute();
         echo "  <script>
-                    alert('中途會員修改成功');
+                    alert('中途會員資料修改成功');
                     window.location.href = '../html/halfMem.php';
                 </script> ";
     }
