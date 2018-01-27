@@ -20,6 +20,8 @@
 </head>
 
 <body onload="getData('memInfo.php');">
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 <div class="signUpLightboxBlack"></div>
 <div class="signUpLightbox" id="loginBox">
     <i class="fa fa-times cancel"></i>
@@ -286,4 +288,5 @@
         xhr.send(null);
     }
 </script>
+<script src="./js/likeList.js"></script>
 </html>

@@ -21,6 +21,8 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
     <script src="../js/hb.js"></script>
 </head>
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 <div class="signUpLightboxBlack">
 </div>
 <div class="signUpLightbox" id="loginBox">
@@ -480,6 +482,7 @@ echo "</div>";
         </div>
     </div>
 </footer>
+<script src="./js/likeList.js"></script>
 </body>
 
 </html>
