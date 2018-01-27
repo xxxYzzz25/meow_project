@@ -40,8 +40,7 @@ function addItem(itemId,itemValue,self){
 	//存入storage
 	if(storage[itemId]){
 		if(self == 'byNow'){
-			storage['addItemList'] += itemId + ', ';
-			storage[itemId] = itemValue; //storage.setItem(itemId,itemValue);
+			
 		}else{
 			alert('商品已在購物車裡囉！');
 		}
