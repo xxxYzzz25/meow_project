@@ -14,7 +14,7 @@
         $sql = "update $who set $whoDiscount = $score where mem_no = $no";
         //執行該指令
         $pdo->query($sql);
-        header("location:../html/Cat_ShoppingStore.php");
+        header("Location:../html/Cat_ShoppingStore.php");
     
     } catch (PDOException $e) {
         echo "行號: ", $e->getLine(), "<br>";

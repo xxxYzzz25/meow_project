@@ -81,9 +81,7 @@
         .smallask {
             display: block;
             margin: auto;
-            padding-right: 5%;
-            margin-bottom: 10px;
-            width: 60%;
+            width: 100%;
             img {
                 width: 100%;
                 margin: auto;
@@ -93,6 +91,9 @@
             #rightbox,
             #leftbox {
                 display: none;
+            }
+            .centerbox{
+                width: 70%;
             }
         }
         .imgbox {
