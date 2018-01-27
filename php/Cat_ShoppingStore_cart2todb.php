@@ -31,14 +31,14 @@ try {
         if(isset($_SESSION["HALF_NO"])==null){
             $who = "MEM_NO";
             $no = $_SESSION["MEM_NO"];
-        }elseif(isset($_SESSION["MEM_NO"])==null){
-                $who = "HALF_NO";
-                $no = $_SESSION["half_NO"];
+        }else if(isset($_SESSION["MEM_NO"])==null){
+            $who = "HALF_NO";
+            $no = $_SESSION["half_NO"];
         }
         
         if(isset($_REQUEST["discount"])){
-            $whoTable = $who == "MEM_NO" ? "MEMBER" : "HALFWAY_MEMBER";
-            $whoDiscount = $who == "MEM_NO" ? "MEM_DISCOUNT" : "HALF_DISCOUNT";
+            $whoTable = ($who == "MEM_NO") ? "MEMBER" : "HALFWAY_MEMBER";
+            $whoDiscount = ($who == "MEM_NO") ? "MEM_DISCOUNT" : "HALF_DISCOUNT";
             $sql = "update $whoTable set $whoDiscount = 2 where $who = $no";
             $pdo -> query($sql);
         }
