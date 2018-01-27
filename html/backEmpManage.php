@@ -96,8 +96,8 @@
                                 </select>
                             </td>
                             <td>
-                                <input id="ensureBtn" type="submit" value="確認新增">
-                                <input type="reset" value="清除內容">
+                                <input id="ensureBtn" type="submit" class="defaultBtn" value="確認新增">
+                                <input type="reset" class="defaultBtn" value="清除內容">
                             </td>
                         </tr>
                 </form>
