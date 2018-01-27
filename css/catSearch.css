@@ -326,8 +326,7 @@ header.active {
   color: #333;
   position: relative;
   overflow: hidden;
-  z-index: 2;
-  font-family: notoSans_r; }
+  z-index: 2; }
   .btn-more:hover {
     color: #fff; }
   .btn-more:before {
@@ -571,7 +570,9 @@ header.active {
       font-size: 14px; } }
 
 body {
-  background-image: url("../images/marble.jpg"); }
+  background-image: url(../images/marble.jpg);
+  background-size: cover;
+  background-attachment: fixed; }
 
 .right {
   width: calc(100% - 200px);

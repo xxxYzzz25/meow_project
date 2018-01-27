@@ -141,8 +141,7 @@ body {
   color: #333;
   position: relative;
   overflow: hidden;
-  z-index: 2;
-  font-family: notoSans_r; }
+  z-index: 2; }
   .btn-more:hover {
     color: #fff; }
   .btn-more:before {

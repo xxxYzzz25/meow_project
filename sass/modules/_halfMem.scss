@@ -3,8 +3,8 @@
     margin-left: 200px;
     @include afterClear;
     background-image: url(../images/marble.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     .bigImg {
         height: 40vh;
         background-image: url(../images/cutecatbg3.jpg);

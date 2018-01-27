@@ -367,7 +367,12 @@ try {
 
 			<div class="picture">
 				<img src="<?php echo $PATH ?>" alt="halfwaypic">
-			</div>
+            </div>
+            <script>
+                $(window).on('resize', function () {
+                    let x = $(window).width();
+                })
+            </script>
 
 <?php
 	}

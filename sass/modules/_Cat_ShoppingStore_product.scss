@@ -1,9 +1,8 @@
 body{
     background-color: #eee;
     
-    background-image: url(../img/marble.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+   
+
     
 }
 
@@ -12,6 +11,9 @@ body{
     line-height: 28px;
     letter-spacing: 3px;
     font-size: 14px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(../images/grassBG.jpg);
 }
 
 .wrapCenter{

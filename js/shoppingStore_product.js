@@ -17,7 +17,7 @@ function doFirst(){
 					//console.log(this.id);
 					let self = e.target.id;
 					addItem(this.parentNode.id,info,self);
-    				// localStorage.setItem('item',inputValue);
+					// localStorage.setItem('item',inputValue);
 					if(i ==1){
 						document.location.href='Cat_ShoppingStore_cart.php';
 					}

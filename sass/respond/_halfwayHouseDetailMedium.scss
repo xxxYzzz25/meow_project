@@ -5,29 +5,8 @@
     .right {
         padding: 0;
         margin: 0;
-        .banner {
-            .container {
-                .bigpic {
-                    animation: bb 20s linear infinite;
-                }
-                @keyframes bb {
-                    20% {
-                        background-image: url(../images/halfdetail7_resized.jpg);
-                    }
-                    40% {
-                        background-image: url(../images/halfdetail5.jpg);
-                    }
-                    60% {
-                        background-image: url(../images/halfdetail6.jpg);
-                    }
-                    80% {
-                        background-image: url(../images/halfdetail4.jpg);
-                    }
-                }
-            }
-        }
-        .halfwaypic{
-            display: none;
+        .breadcrumbs {
+            padding-top: 30px;
         }
         .cat {
             .container {
