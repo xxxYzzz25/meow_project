@@ -211,7 +211,7 @@
                 <span id="subtotal">0</span>
             </div>
             
-            <form action="../php/Cat_ShoppingStore_cart2todb/php" id="orderList" method="post">
+            <form action="../php/Cat_ShoppingStore_cart2todb.php" id="orderList" method="post">
                 <table class="info pay">
                     <tr>
                         <th>收件人姓名</th>
@@ -317,10 +317,29 @@
             let pay = orderList.elements.pay.value;
             let delivery = orderList.elements.delivery.value;
             let tel = orderList.elements.tel.value;
+            let dataInfo;
+            if(localStorage.getItem('discount')){
+                let discount = 'true';
+                dataInfo = `discount=${discount}&list=${json}&tel=${tel}&price=${price}&name=${name}&address=${address}&pay=${pay}&delivery=${delivery}`;
+            }else{
+                dataInfo = `list=${json}&tel=${tel}&price=${price}&name=${name}&address=${address}&pay=${pay}&delivery=${delivery}`;
+            }
 
-            let dataInfo = `list=${json}&tel=${tel}&price=${price}&name=${name}&address=${address}&pay=${pay}&delivery=${delivery}`;
             
             ajax(function(){
+                let prodNos = document.querySelectorAll('#prodList .itemHead');
+                if(localStorage.getItem('discount')){
+                    localStorage.removeItem('discount');
+                }
+                if(localStorage.getItem('addItemList')){
+                    localStorage.removeItem('addItemList');
+                }
+                for (const i of prodNos) {
+                    let prodNo = i.childNodes[1].className;
+                    if(localStorage.getItem(prodNo)){
+                        localStorage.removeItem(prodNo);
+                    }
+                }
                 window.location.href = './Cat_ShoppingStore.php';
             },dataInfo);
         

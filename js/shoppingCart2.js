@@ -8,7 +8,7 @@ function doFirst(){
 
 	newSection = document.createElement('section');
 	newTable = document.createElement('div');
-
+	Object.assign(newTable,{id: 'prodList'});
 	//每購買一個品項，就呼叫函數createCartList新增一個tr
 	subtotal = 0;
 	for(var key in items){

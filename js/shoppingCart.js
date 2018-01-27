@@ -4,21 +4,24 @@
 function doFirst() {
 	
 	var storage = localStorage;
+	if(storage.getItem('discount')){
+		storage.removeItem('discount');
+	}
 
-
-
+	
 	var itemString = storage.getItem('addItemList');
 	var items = itemString.substr(0, itemString.length - 2).split(', ');
-
+	
 	newSection = document.createElement('section');
 	newTable = document.createElement('div');
 	Object.assign(newTable,{id: 'prodList'});
 	//每購買一個品項，就呼叫函數createCartList新增一個tr
 	subtotal = 0;
+	console.log(items);
 	for (var key in items) {
 		var itemInfo = storage.getItem(items[key]);
 		createCartList(items[key], itemInfo);
-
+		
 		// var itemPrice = parseInt(itemInfo.split('|')[2]) * amount;
 		// 
 	}
@@ -152,20 +155,32 @@ function doFirst() {
 	}
 
 
-	let select = document.getElementById('hi')
-	select.addEventListener('change', function(){
-		let total =0;
-		for (var key in items) {
-			let itemInfo = storage.getItem(items[key]);
-			total+= parseInt( itemInfo.split('|')[2] ) * parseInt( itemInfo.split('|')[3] );
-		}
-		let subtotal = document.getElementById('subtotal');
-		
-		subtotal.textContent=total - parseInt(this.value);
-		
-	})
+	let select = document.getElementById('selectDiscount')
+	if(select){
+		select.addEventListener('change', function(){
+			let total =0;
+			for (var key in items) {
+				let itemInfo = storage.getItem(items[key]);
+				total+= parseInt( itemInfo.split('|')[2] ) * parseInt( itemInfo.split('|')[3] );
+			}
+			let subtotal = document.getElementById('subtotal');
+			if(this.value == 'false'){
+				subtotal.textContent=total
+			}else{
+				subtotal.textContent= total - 50;
+			}
+			
+		})
+	}
 
 	let checkout = document.getElementById('checkout');
+	if(document.getElementById('selectDiscount')){
+		let selectDiscount = document.getElementById('selectDiscount');
+		selectDiscount.addEventListener('change',(e)=>{
+			let discount = e.target.value;
+			localStorage.setItem('discount',discount);
+		});
+	}
 
 	checkout.addEventListener('click',(e)=>{
 		

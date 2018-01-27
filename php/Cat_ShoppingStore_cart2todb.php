@@ -35,6 +35,14 @@ try {
                 $who = "HALF_NO";
                 $no = $_SESSION["half_NO"];
         }
+        
+        if(isset($_REQUEST["discount"])){
+            $whoTable = $who == "MEM_NO" ? "MEMBER" : "HALFWAY_MEMBER";
+            $whoDiscount = $who == "MEM_NO" ? "MEM_DISCOUNT" : "HALF_DISCOUNT";
+            $sql = "update $whoTable set $whoDiscount = 2 where $who = $no";
+            $pdo -> query($sql);
+        }
+
         $sql1 = "insert into orderlist ($who,ORDER_PRICE,CUS_NAME,CUS_ADDRESS,CUS_TEL,ORDER_TIME,CUS_PAYMENT,CUS_RECIPIENT) 
                             VALUES ($no,:price,:name,:add,:tel,NOW(),:pay,:delivery)";
         $data = $pdo->prepare($sql1);

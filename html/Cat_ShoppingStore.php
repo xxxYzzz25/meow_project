@@ -281,10 +281,7 @@
 									<!-- $1000 -->
 								</div>
 						
-								<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-									加入購物車
-									<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-								</span>
+								
 						
 							</div>
 						
@@ -342,10 +339,7 @@
 										<!-- $1000 -->
 									</div>
 						
-									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-										加入購物車
-										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-									</span>
+									
 						
 								</div>
 						
@@ -403,10 +397,7 @@
 										<!-- $1000 -->
 									</div>
 							
-									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-										加入購物車
-										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-									</span>
+									
 						
 								</div>
 						
@@ -464,10 +455,7 @@
 										<!-- $1000 -->
 									</div>
 							
-									<span id="pd<?php echo $PRODUCT["PRODUCT_NO"] ?>" class="addButton">
-										加入購物車
-										<input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
-									</span>
+									
 						
 								</div>
 						
