@@ -33,6 +33,8 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
 </head>
 
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 <div class="signUpLightboxBlack"></div>
 <div class="signUpLightbox" id="loginBox">
     <i class="fa fa-times cancel"></i>
@@ -441,7 +443,7 @@ $catRow = $cats->fetchObject();
     </div>
 </footer>
 <script src="../js/cat/processBar.js"></script>
-
+<script src="./js/likeList.js"></script>
 </body>
 
 </html>

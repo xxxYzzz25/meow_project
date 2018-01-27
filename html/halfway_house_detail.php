@@ -24,6 +24,8 @@
 </head>
 
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 	<div class="signUpLightboxBlack"></div>
     <div class="signUpLightbox" id="loginBox">
         <i class="fa fa-times cancel"></i>
@@ -730,7 +732,8 @@ try {
 				</div>
 			</div>
 		</div>
-	</footer>
+    </footer>
+    <script src="./js/likeList.js"></script>
 </body>
 
 </html>

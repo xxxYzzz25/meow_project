@@ -14,6 +14,7 @@
 @import 'modules/_catSearch.scss';
 @import 'respond/_catSearchMedium.scss';
 @import 'respond/_catSearchSmall.scss';
+@import './modules/_likeBox.scss';
 @include navNow(1);
 @import './respond/_headerMedium.scss';
 @import './respond/_headerSmall.scss';

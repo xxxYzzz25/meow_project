@@ -1238,6 +1238,40 @@ footer {
       width: 80px;
       font-size: 14px; } }
 
+.likeBoxBack {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: none; }
+
+.likeBox {
+  width: 350px;
+  height: 600px;
+  background-color: #91989f;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1001;
+  top: calc(50% - 300px);
+  left: calc(50% - 175px);
+  margin: auto;
+  overflow-y: scroll;
+  padding: 15px;
+  display: none; }
+  .likeBox .likeItem {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    color: #eee; }
+    .likeBox .likeItem img {
+      max-width: 30%; }
+    .likeBox .likeItem .likeName a {
+      text-decoration: none;
+      color: #eee; }
+
 @media all and (max-width: 991px) {
   header {
     top: 0;

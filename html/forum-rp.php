@@ -16,6 +16,8 @@
 	<script src="../js/hb.js"></script>
 </head>
 <body>
+<div class="likeBoxBack" id="likeBoxBack"></div>
+    <div class="likeBox" id="likeBox">
 	<div class="reportBox" id="reportBox">
 		<table>
 			<form action="#" method="post" id="reportForm">
@@ -389,6 +391,6 @@
 
 
 	</script>
-
+<script src="./js/likeList.js"></script>
 </body>
 </html>
