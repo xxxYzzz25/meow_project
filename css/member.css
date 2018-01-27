@@ -275,7 +275,8 @@ header.active {
 footer {
   background-color: #f5eae3;
   margin-left: 200px;
-  padding: 15px; }
+  padding: 15px;
+  height: 15vh; }
   footer .follow {
     padding: 15px;
     display: flex;

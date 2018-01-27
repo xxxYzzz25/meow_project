@@ -573,7 +573,7 @@
         <script src="js/sliderKit.js"></script>
         <script src="js/sliderHalf.js"></script>
         <script src="js/signIndex.js"></script>
-        <script src="../js/likeList.js"></script>
+        <script src="./js/likeList.js"></script>
         <script>
             function showLogin() {
                 $('.signUpLightboxBlack').css({ 'display': 'block', 'top': '0' });
