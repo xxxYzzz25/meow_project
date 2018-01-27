@@ -77,13 +77,12 @@ function createCartList(itemKey,itemValue){
 	var tdItemCount = document.createElement('td');
 	tdItemCount.style.width = '15%';
 
-	var itemCount = document.createElement('input');
-	itemCount.type = 'number';
-	itemCount.min = 0;
-	itemCount.value = amount;
+	var itemCount = document.createElement('span');
+	var countText = document.createTextNode(amount);
+
 	itemCount.className = 'count';
+	itemCount.appendChild(countText);
 	// itemCount.id.style.width = '10';
-	itemCount.addEventListener('input', changeItemCount);
 
 	tdItemCount.appendChild(itemCount);
 	trItemList.appendChild(tdItemCount);
@@ -93,24 +92,6 @@ function createCartList(itemKey,itemValue){
 	subtotal += itemPrice;
 
 }
-
-
-
-function changeItemCount(){
-	let qty = this.value;
-	let table = this.parentNode.parentNode.parentNode;
-	let trs = table.childNodes;
-	let tr = this.parentNode.parentNode;
-	let td = tr.childNodes[2];
-	let subTotal = 0;
-	td.textContent = (qty * td.getAttribute('data-price'));
-	for (const value of trs) {
-		let num = parseInt(value.childNodes[2].textContent);
-		subTotal += num;
-	}
-	document.getElementById('subtotal').textContent = subTotal;
-}
-
 window.addEventListener('load', doFirst, false);
 
 

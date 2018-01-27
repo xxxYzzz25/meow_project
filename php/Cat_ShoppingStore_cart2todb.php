@@ -31,9 +31,9 @@ try {
         if(isset($_SESSION["HALF_NO"])==null){
             $who = "MEM_NO";
             $no = $_SESSION["MEM_NO"];
-        }elseif(isset($_SESSION["MEM_NO"])==null){
+        }else if(isset($_SESSION["MEM_NO"])==null){
                 $who = "HALF_NO";
-                $no = $_SESSION["half_NO"];
+                $no = $_SESSION["HALF_NO"];
         }
         
         if(isset($_REQUEST["discount"])){
@@ -71,14 +71,6 @@ try {
         }
 
     }
-    
-
-    
-
-
-    echo "<center>新增成功</center><br>
-        <center>將在五秒後回到原網址</center><br>
-        <center><a id='backNext'>或者點此直接回到原網址</a></center>";
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
