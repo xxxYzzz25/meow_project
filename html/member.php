@@ -14,6 +14,7 @@
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/signIn.js"></script>
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/member.css">
     <script src="../js/hb.js"></script>
 </head>

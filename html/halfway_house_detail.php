@@ -18,6 +18,7 @@
     <script src="../js/cat/like.js"></script>
 	<script src="../js/halfway/showlarge.js"></script>
 	<!-- <script src="../js/halfway/star.js"></script> -->
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/halfway_house_detail.css">
     <script src="../js/hb.js"></script>
 	<title>中途之家</title>

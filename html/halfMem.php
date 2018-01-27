@@ -15,6 +15,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/533f4a82f0.js"></script>
     <script src="../js/signIn.js"></script>
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/halfMem.css">
     <script src="../js/hb.js"></script>
 </head>
