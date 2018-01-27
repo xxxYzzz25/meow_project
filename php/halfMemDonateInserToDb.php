@@ -1,3 +1,8 @@
+<?php
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,26 +38,14 @@ try {
     $donate->bindValue(":memName", $_REQUEST["memName"]);
     $donate->bindValue(":price", $_REQUEST["price"]);
     $donate->execute();
-
-    echo "<center>新增成功</center><br>
-        <center>將在五秒後回到原網址</center><br>
-        <center><a id='backNext'>或者點此直接回到原網址</a></center>";
+    echo "  <script>
+                alert('新增成功');
+                window.location.href = '../html/halfMem.php';
+            </script> ";
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
 }
 ?>
-<script>
-    window.addEventListener('load', ()=>{
-        let back = document.getElementById('backNext')
-        setTimeout(function back(){
-            history.back()
-        }, 5000)
-        back.addEventListener('click', (e)=>{
-            e.preventDefault();
-            window.history.back()
-        })
-    })
-</script>
 </body>
 </html>

@@ -1,3 +1,8 @@
+<?php
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +48,10 @@ try {
 			$halfmem->bindValue(":no" , $_REQUEST["no"]);
 			$halfmem->bindValue(":halfpic" , $to);
 			$halfmem->execute();
-			echo "<center>照片新增成功</center>";
+			echo "  <script>
+						alert('照片新增成功');
+						window.location.href = '../html/halfMem.php';
+					</script> ";
 		}else{
 			echo "<center>上傳圖片至伺服器失敗</center>";
 		} 
@@ -87,25 +95,14 @@ try {
 	$halfmem->bindValue(":open" , $_REQUEST["open"]);
 	$halfmem->bindValue(":intro" , $_REQUEST["intro"]);
 	$halfmem->execute();
-	echo "<center>中途資料編輯成功</center><br>
-			<center>將在五秒後回到原網址</center><br>
-			<center><a id='backNext'>或者點此直接回到原網址</a></center>";
+	echo "  <script>
+                alert('中途資料編輯成功');
+                window.location.href = '../html/halfMem.php';
+            </script> ";
 	} catch (Exception $e) {
 	echo "錯誤原因 : " , $e->getMessage() , "<br>";
 	echo "錯誤行號 : " , $e->getLine() , "<br>"; 
 }
 ?>
-<script>
-    window.addEventListener('load', ()=>{
-        let back = document.getElementById('backNext')
-        setTimeout(function back(){
-            history.back()
-        }, 5000)
-        back.addEventListener('click', (e)=>{
-            e.preventDefault();
-            window.history.back()
-        })
-    })
-</script>
 </body>
 </html>

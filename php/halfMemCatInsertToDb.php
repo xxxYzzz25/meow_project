@@ -1,6 +1,7 @@
 <?php
-    ob_start();
-    session_start();
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,10 +65,10 @@ try {
                         $products->bindValue(":disadvantage", $_REQUEST["disadvantage"]);
                         $products->bindValue(":catpic", $to);
                         $products->execute();
-                        echo "<center>新增喵喵成功</center><br>
-                            <center>喵喵大頭貼圖片新增成功</center><br>
-                            <center>將在五秒後回到原網址</center><br>
-                            <center><a id='backNext'>或者點此直接回到原網址</a></center>";
+                        echo "  <script>
+                                    alert('新增喵喵成功');
+                                    window.location.href = '../html/halfMem.php';
+                                </script> ";
                     }else{
                         echo "<center>上傳圖片至伺服器失敗</center>";
                     }	
@@ -88,7 +89,10 @@ try {
                     echo "<center>error code : " , $_FILES["upCover"]["error"][$i] , "</center>";
             }	
         }else {
-            echo "<center>檔案格式錯誤須為jpg/gif/png/jpeg</center>";
+            echo "  <script>
+                        alert('檔案格式錯誤須為jpg/gif/png/jpeg');
+                        window.location.href = '../html/halfMem.php';
+                    </script> ";
         }
 	}
 } catch (Exception $e) {
@@ -96,17 +100,5 @@ try {
     echo "錯誤行號 : ", $e->getLine(), "<br>";
 }
 ?>
-<script>
-    window.addEventListener('load', ()=>{
-        let back = document.getElementById('backNext')
-        setTimeout(function back(){
-            history.back()
-        }, 5000)
-        back.addEventListener('click', (e)=>{
-            e.preventDefault();
-            window.history.back()
-        })
-    })
-</script>
 </body>
 </html>

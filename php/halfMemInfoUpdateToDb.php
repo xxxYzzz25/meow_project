@@ -1,3 +1,8 @@
+<?php
+ob_start();
+session_start();
+isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SESSION['HALF_NO'] = null;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +38,10 @@ try {
         $products->bindValue(":psw" , $_REQUEST["hwmempsw"]);
         $products->bindValue(":head" , $_REQUEST["hwmemhead"]);
         $products->execute();
-        echo "<center>修改成功</center><br>
-            <center>將在五秒後回到原網址</center><br>
-            <center><a id='backNext'>或者點此直接回到原網址</a></center>";
+        echo "  <script>
+                    alert('中途會員修改成功');
+                    window.location.href = '../html/halfMem.php';
+                </script> ";
     }else{
         $sql = "update halfway_member 
                 set HALF_PSW=md5(:psw), 
@@ -46,9 +52,10 @@ try {
         $products->bindValue(":psw" , $_REQUEST["hwmempsw"]);
         $products->bindValue(":head" , $_REQUEST["hwmemhead"]);
         $products->execute();
-        echo "<center>修改成功</center><br>
-            <center>將在五秒後回到原網址</center><br>
-            <center><a id='backNext'>或者點此直接回到原網址</a></center>";
+        echo "  <script>
+                    alert('中途會員修改成功');
+                    window.location.href = '../html/halfMem.php';
+                </script> ";
     }
 } catch (Exception $e) {
 	echo "錯誤原因 : " , $e->getMessage() , "<br>";
