@@ -9,7 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <title>商品詳情</title>
-
+    
+    <link rel="icon" type="image/png" href="../images/logo_icon.png" />
     <link rel="stylesheet" href="../css/animate.css">
 
     <link rel="stylesheet" href="../css/fontawesome.min.css">
