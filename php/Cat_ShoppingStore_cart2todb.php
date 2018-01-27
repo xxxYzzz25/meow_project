@@ -32,13 +32,13 @@ try {
             $who = "MEM_NO";
             $no = $_SESSION["MEM_NO"];
         }else if(isset($_SESSION["MEM_NO"])==null){
-            $who = "HALF_NO";
-            $no = $_SESSION["half_NO"];
+                $who = "HALF_NO";
+                $no = $_SESSION["HALF_NO"];
         }
         
         if(isset($_REQUEST["discount"])){
-            $whoTable = ($who == "MEM_NO") ? "MEMBER" : "HALFWAY_MEMBER";
-            $whoDiscount = ($who == "MEM_NO") ? "MEM_DISCOUNT" : "HALF_DISCOUNT";
+            $whoTable = $who == "MEM_NO" ? "MEMBER" : "HALFWAY_MEMBER";
+            $whoDiscount = $who == "MEM_NO" ? "MEM_DISCOUNT" : "HALF_DISCOUNT";
             $sql = "update $whoTable set $whoDiscount = 2 where $who = $no";
             $pdo -> query($sql);
         }
@@ -71,14 +71,6 @@ try {
         }
 
     }
-    
-
-    
-
-
-    echo "<center>新增成功</center><br>
-        <center>將在五秒後回到原網址</center><br>
-        <center><a id='backNext'>或者點此直接回到原網址</a></center>";
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";
