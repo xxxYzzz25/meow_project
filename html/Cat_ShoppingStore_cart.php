@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../css/Cat_ShoppingStore_cart.css">
     <script src="../js/wow.js"></script>
     <script src="../js/hb.js"></script>
-    <script src="../js/shoppingCart.js"></script>
+    
 
     <script>
         $(document).ready(function () {
@@ -225,7 +225,7 @@
 
             <div class="total" style="text-align:center;">
                 總共：
-                <span id="subtotal"></span> 元
+                <span id="subtotal">0</span> 元
             </div>
 
             <div class="confirm">
@@ -289,7 +289,7 @@
         </div>
     </footer>
 
-    
+    <script src="../js/shoppingCart.js"></script>
 
 </body>
 

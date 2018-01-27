@@ -253,7 +253,7 @@
                                     </span>
                     
                                     <!-- <a href="Cat_ShoppingStore_cart.html"> -->
-                                        <a style="text-decoration:none" class="addButton" href="./Cat_ShoppingStore_cart.php">
+                                        <a style="text-decoration:none" id="byNow" class="addButton cartBtn" href="./Cat_ShoppingStore_cart.php">
                                             直接購買
                                             <input type="hidden" value="<?php echo $PRODUCT["PRODUCT_NAME"],'|',$PRODUCT["PRODUCT_COVER"],'|',$PRODUCT["PRODUCT_PRICE"],'|1' ?>">
                                         </a>

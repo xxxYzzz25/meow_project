@@ -12,7 +12,7 @@ function doFirst() {
 
 	newSection = document.createElement('section');
 	newTable = document.createElement('div');
-
+	Object.assign(newTable,{id: 'prodList'});
 	//每購買一個品項，就呼叫函數createCartList新增一個tr
 	subtotal = 0;
 	for (var key in items) {
@@ -165,8 +165,35 @@ function doFirst() {
 		
 	})
 
+	let checkout = document.getElementById('checkout');
 
+	checkout.addEventListener('click',(e)=>{
+		
+		if(localStorage.getItem('memNo') || localStorage.getItem('halfNo')){
 
+			let prodNos = document.querySelectorAll('#prodList .itemHead');
+
+			for (const i of prodNos) {
+				let prodNo = i.childNodes[1].className;
+				let qty = i.childNodes[3].firstChild.value;
+				if(localStorage.getItem(prodNo)){
+					let prodDetail = localStorage.getItem(prodNo).split('|');
+					prodDetail.pop();
+					prodDetail.push(qty);
+					prodDetail = prodDetail.join('|');
+					localStorage.setItem(prodNo,prodDetail);
+				}
+			}
+
+		}else{
+			e.preventDefault();
+			alert('請先登入會員');
+			showLogin();
+		}
+	});
+	
+	
+			
 }
 
 
