@@ -591,10 +591,10 @@ header.active {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; }
-      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
+      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
         position: relative;
         top: 50%; }
-      .pick-kit ul li:nth-child(odd) .cat_list_bg a .cat_list .bubble {
+      .pick-kit ul li:nth-child(even) .cat_list_bg a .cat_list .bubble {
         position: relative;
         top: 10%; }
   .pick-kit .arrow {
