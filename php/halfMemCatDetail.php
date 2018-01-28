@@ -111,6 +111,7 @@ try {
             <tr>
                 <td colspan="2">
                     <button type="submit" class="defaultBtn">確定修改</button>
+                    <button type="reset" class="defaultBtn">清除重填</button>
                 </td>
             </tr>
         </table>

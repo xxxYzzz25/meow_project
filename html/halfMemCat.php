@@ -20,7 +20,7 @@ isset($_SESSION['HALF_NO']) ? $_SESSION['HALF_NO'] = $_SESSION['HALF_NO'] : $_SE
             <tr class="newEmpTR newEmpTROff">
                 <th>喵小孩出生年月*</th>
                 <td>
-                    <input type="text" onfocus="this.select()" name="date" required="required">
+                    <input type="text" onfocus="this.select()" name="date" required="required" placeholder="2017/09">
                 </td>
             </tr>
             <tr class="newEmpTR newEmpTROff">
