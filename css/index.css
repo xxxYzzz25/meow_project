@@ -626,6 +626,10 @@ header.active {
   font-size: 18px;
   color: #222222;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 3px 10px;
 }
 
 .banner .search .go {

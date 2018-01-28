@@ -229,7 +229,7 @@
                             <form action="./html/catSearch.php" id="searchBar" method="get">
                             <input type="hidden" name="searchBar" value="true">
                                 <select name="catColor" id="searchColor">
-                                    <option value="">毛色</option>
+                                    <option value="">毛色 ▾</option>
                                     <option value="黑白">黑白</option>
                                     <option value="虎斑">虎斑</option>
                                     <option value="橘白">橘白</option>
@@ -237,12 +237,12 @@
                                     <option value="黑色">黑色</option>
                                 </select>
                                 <select name="catSex" id="searchGender">
-                                    <option value="">性別</option>
+                                    <option value="">性別 ▾</option>
                                     <option value="0">男孩</option>
                                     <option value="1">女孩</option>
                                 </select>
                                 <select name="catLocation" id="searchLoc">
-                                    <option value="">地區</option>
+                                    <option value="">地區 ▾</option>
                                     <option value="north">北部</option>
                                     <option value="center">中部</option>
                                     <option value="south">南部</option>

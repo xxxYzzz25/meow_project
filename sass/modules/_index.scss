@@ -115,6 +115,10 @@
             font-size: $font-size-h4;
             color: #222222;
             cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 3px 10px;
         }
         .go {
             display: inline-block;

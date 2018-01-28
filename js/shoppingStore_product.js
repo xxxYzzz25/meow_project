@@ -45,6 +45,7 @@ function addItem(itemId,itemValue,self){
 			alert('商品已在購物車裡囉！');
 		}
 	}else{
+		alert('商品已加入購物車');
 		storage['addItemList'] += itemId + ', ';
 		storage[itemId] = itemValue; //storage.setItem(itemId,itemValue);
 	}

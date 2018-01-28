@@ -213,12 +213,22 @@
                     $NO = $_REQUEST["PRODUCT_NO"];
                     try {
                         require_once("../php/connectBD103G2.php");
-                        $sql = "select * from PRODUCT where PRODUCT_NO = :NO";
+                        $sql = "select * from PRODUCT
+                                where PRODUCT_NO = :NO";
                         $PRODUCT = $pdo->prepare($sql);
                         $PRODUCT->bindValue(":NO",$NO);
                         $PRODUCT->execute();
                         $PRODUCT = $PRODUCT->fetchAll(PDO::FETCH_ASSOC);
-                    
+                        $sql2 = "select pic.product_pic_path path from PRODUCT p
+                                left join product_pic pic 
+                                on pic.product_no = p.product_no
+                                where p.PRODUCT_NO = $NO";
+
+                        $PRODIMG = $pdo->query($sql2);
+                        $imgArr = [];
+                        while ($imgs = $PRODIMG -> fetchObject()) {
+                            array_push($imgArr,$imgs -> path);
+                        }
                         foreach( $PRODUCT as $i=>$PRODUCT){
                     ?>
                     
@@ -273,7 +283,14 @@
                     
                     <div class="productDetail wow zoomIn">
                         
-                        <img src="../img/detail1.jpg" alt="">
+                        <?php
+                        
+                            if(!is_null($imgArr[0])){
+                                $img1 = (string)$imgArr[0];
+                                echo "<img src='$img1' alt='product pic'>";
+                            }
+
+                        ?>
                     
                         <p>
                             產品規格<br>
@@ -286,7 +303,14 @@
                     
                         <br>
                     
-                        <img src="../img/detail3.jpg" alt=""> 
+                        <?php
+                        
+                            if(!is_null($imgArr[1])){
+                                $img2 = (string)$imgArr[1];
+                                echo "<img src='$img2' alt='product pic'>";
+                            }
+
+                        ?>
                     
                         <p>
                             產品敘述<br>
@@ -295,7 +319,14 @@
                     
                         <br>
                     
-                        <img src="../img/detail2.jpg" alt="">
+                        <?php
+                        
+                            if(!is_null($imgArr[2])){
+                                $img3 = (string)$imgArr[2];
+                                echo "<img src='$img3' alt='product pic'>";
+                            }
+
+                        ?>
                     
                     </div>
                     
