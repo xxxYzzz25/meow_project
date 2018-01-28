@@ -225,7 +225,7 @@
                                 where p.PRODUCT_NO = $NO";
 
                         $PRODIMG = $pdo->query($sql2);
-                        $imgArr = [];
+                        $imgArr = array();
                         while ($imgs = $PRODIMG -> fetchObject()) {
                             array_push($imgArr,$imgs -> path);
                         }
