@@ -93,7 +93,7 @@ VALUES
 	(15, 'Migo 貓咪蹭毛器', 455, '本產品採用的是高級毛刷，硬度適中，一般貓咪都適用，如果貓咪是從外面玩耍回家，您可以把產品放到門口，讓貓咪在刷門裡來回的走動，這樣就不怕貓咪把髒東西帶回家了。貓咪身上癢的時候可以拿出來，刷子可拆開另外清洗，在貓咪玩耍的同時還可以幫助清潔貓咪身上的髒東西，真是一舉兩得', 0, NULL, '台灣', NULL, '36 x 28.5 x 34 cm', '不銹鐵、高度地毯布', 4, '../images/productPic/15.jpg'),
 	(16, 'iCat 三角貓咪隧道', 790, '偷偷潛入、或者隱藏、或者玩躲貓貓。小小的迷宮，隧道有四個口，將引起貓咪挑戰的心情，也可減輕貓咪的身心壓力。收納簡單，折圓壓扁即可快速收納，重量超輕巧，任何人皆可收放自如，並且不佔空間。不僅耐抓，也方便清洗', 0, NULL, '日本', NULL, '直徑 25 cm、長 50 cm', '聚酯、聚酯、聚丙烯、鋼鐵、橡膠', 4, '../images/productPic/16.jpg'),
 	(17, 'TOMA 雞肉配方', 500, '優格天然零穀食譜，100％ 不含致敏穀源，能降低毛孩食物過敏的機率。特別添加天然田園蔬果， 除了提供豐富的礦物質與維生素外，更有多種天然的抗氧化物質增強抵抗力，再搭配優質腸道益生菌，使天然蔬果中的纖維素和菊苣根中的果寡糖這些益生質發揮腸道保健、幫助消化的功用。優格零穀天然美味，粒粒健康粒粒香，讓寶貝快樂品嚐，簡單過生活', 0, '2.5 磅', '加拿大', '濃縮雞肉、乾豌豆、乾鷹嘴豆、豌豆粉、豌豆蛋白質、纖維素粉、雞脂、天然調味料、乾燥甜菜根、濃縮鮭魚、濃縮火雞肉、乾燥番茄粕、鮭魚油', NULL, NULL, 1, '../images/productPic/17.jpg'),
-	(18, 'ROYAL老貓飼料', 550, '7 歲齡以上使用，符合老年貓的營養需求。 獨特的抗氧化配方延緩細胞老化，低磷和低鈉含量降低腎臟的負擔。特製顆粒，質地適合老貓咀嚼。天然膳食纖維促進腸胃蠕動，幫助毛球排出，天然糙米幫助維持良好消化吸收，強化 Omega 脂肪酸及牛磺酸，幫助維持心臟健康。', 0, '1.5 kg', '法國', '脫水禽肉、玉米、玉米粉、大麥、小麥、玉米麩質、動物脂肪、分離植物蛋白、水解動物蛋白、植物纖維、甜菜漿、礦物質、大豆油、魚油、蛋粉、洋車前子殼與籽、酵母菌、果寡糖、琉璃苣油', NULL, NULL, 1, '../images/productPic/18.jpg'),
+	(18, 'ROYAL 老貓飼料', 550, '7 歲齡以上使用，符合老年貓的營養需求。 獨特的抗氧化配方延緩細胞老化，低磷和低鈉含量降低腎臟的負擔。特製顆粒，質地適合老貓咀嚼。天然膳食纖維促進腸胃蠕動，幫助毛球排出，天然糙米幫助維持良好消化吸收，強化 Omega 脂肪酸及牛磺酸，幫助維持心臟健康。', 0, '1.5 kg', '法國', '脫水禽肉、玉米、玉米粉、大麥、小麥、玉米麩質、動物脂肪、分離植物蛋白、水解動物蛋白、植物纖維、甜菜漿、礦物質、大豆油、魚油、蛋粉、洋車前子殼與籽、酵母菌、果寡糖、琉璃苣油', NULL, NULL, 1, '../images/productPic/18.jpg'),
 	(19, 'AFU 單片貓抓板', 85, '台灣製造品質可靠安心耐用。強化集層紙板貼合而成，堅固紮實，耐磨損，耐用度是一般瓦楞紙的四倍。可減少80%的紙塵產生。貓咪磨爪最佳良器，精緻收編設計，耐抓耐咬耐磨損。', 0, NULL, '台灣', NULL, '30cm x 30cm x 3cm', '紙板', 2, '../images/productPic/19.jpg'),
 	(20, 'CREATE 造型貓抓板', 840, '可愛貓頭造型讓貓咪可捲曲身體窩著，超有安全感。抓磨、休息、睡覺，多元用途，實用又美觀。底部與四邊全是可抓材質，方便貓咪任何姿勢隨時隨地想抓就抓。厚度加倍，硬度加硬的瓦楞材質，耐磨耐用。內附貓草粉，引起貓咪興趣，提昇使用意願。', 0, NULL, '台灣', NULL, '35cm x 35cm x 15cm', '高密度瓦楞紙', 2, '../images/productPic/24.jpg'),
 	(21, 'GRS 貓草薄荷球', 90, '有機貓薄荷製成，不含化學添加物，可安心使用。貓咪咬健身球可以摩擦牙齒、達到清潔牙垢的功效。適合貓咪追逐攻擊或興奮的輕鬆紓壓耐咬耐玩。人類食用等級膠黏著，可安心食用，貓咪玩耍時會有掉屑情況，屬正常現象。貓咪可利用玩耍健身球而得到大量運動，消耗體能、增進食慾。', 0, NULL, '台灣', '有機貓薄荷、人類食用膠', '直徑 3.5cm', '', 3, '../images/productPic/20.jpg'),
@@ -452,17 +452,92 @@ VALUES
 
 
 
--- # Dump of table PRODUCT_PIC
--- # ------------------------------------------------------------
+# Dump of table PRODUCT_PIC
+# ------------------------------------------------------------
 
--- CREATE TABLE `PRODUCT_PIC` (
---   `PRODUCT_PIC_NO` int(10) NOT NULL AUTO_INCREMENT,
---   `PRODUCT_NO` int(10) NOT NULL,
---   `PRODUCT_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
---   PRIMARY KEY (`PRODUCT_PIC_NO`),
---   KEY `PRODUCT_NO` (`PRODUCT_NO`),
---   CONSTRAINT `product_pic_ibfk_1` FOREIGN KEY (`PRODUCT_NO`) REFERENCES `PRODUCT` (`PRODUCT_NO`) ON DELETE CASCADE ON UPDATE CASCADE
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `PRODUCT_PIC` (
+  `PRODUCT_PIC_NO` int(10) NOT NULL AUTO_INCREMENT,
+  `PRODUCT_NO` int(10) NOT NULL,
+  `PRODUCT_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`PRODUCT_PIC_NO`),
+  KEY `PRODUCT_NO` (`PRODUCT_NO`),
+  CONSTRAINT `product_pic_ibfk_1` FOREIGN KEY (`PRODUCT_NO`) REFERENCES `PRODUCT` (`PRODUCT_NO`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `PRODUCT_PIC` (`PRODUCT_PIC_NO`, `PRODUCT_NO`, `PRODUCT_PIC_PATH`)
+VALUES
+	(1, 1, '../img/detail/detail_food1.jpg'),
+	(2, 2, '../img/detail/detail_food1.jpg'),
+	(3, 3, '../img/detail/detail_food1.jpg'),
+	(4, 4, '../img/detail/detail_food1.jpg'),
+	(5, 17, '../img/detail/detail_food1.jpg'),
+	(6, 18, '../img/detail/detail_food1.jpg'),
+  (7, 1, '../img/detail/detail_food2.jpg'),
+	(8, 2, '../img/detail/detail_food2.jpg'),
+	(9, 3, '../img/detail/detail_food2.jpg'),
+	(10, 4, '../img/detail/detail_food2.jpg'),
+	(11, 17, '../img/detail/detail_food2.jpg'),
+	(12, 18, '../img/detail/detail_food2.jpg'),
+  (13, 1, '../img/detail/detail_food3.jpg'),
+	(14, 2, '../img/detail/detail_food3.jpg'),
+	(15, 3, '../img/detail/detail_food3.jpg'),
+	(16, 4, '../img/detail/detail_food3.jpg'),
+	(17, 17, '../img/detail/detail_food3.jpg'),
+	(18, 18, '../img/detail/detail_food3.jpg'),
+  (25, 5, '../img/detail/detail_home1.jpg'),
+	(26, 6, '../img/detail/detail_home1.jpg'),
+	(27, 7, '../img/detail/detail_home1.jpg'),
+	(28, 8, '../img/detail/detail_home1.jpg'),
+	(29, 19, '../img/detail/detail_home1.jpg'),
+	(30, 20, '../img/detail/detail_home1.jpg'),
+  (31, 5, '../img/detail/detail_home2.jpg'),
+	(32, 6, '../img/detail/detail_home2.jpg'),
+	(33, 7, '../img/detail/detail_home2.jpg'),
+	(34, 8, '../img/detail/detail_home2.jpg'),
+	(35, 19, '../img/detail/detail_home2.jpg'),
+	(36, 20, '../img/detail/detail_home2.jpg'),
+  (37, 5, '../img/detail/detail_home3.jpg'),
+	(38, 6, '../img/detail/detail_home3.jpg'),
+	(39, 7, '../img/detail/detail_home3.jpg'),
+	(40, 8, '../img/detail/detail_home3.jpg'),
+	(41, 19, '../img/detail/detail_home3.jpg'),
+	(42, 20, '../img/detail/detail_home3.jpg'),
+  (43, 9, '../img/detail/detail_grass1.jpg'),
+	(44, 10, '../img/detail/detail_grass1.jpg'),
+	(45, 11, '../img/detail/detail_grass1.jpg'),
+	(46, 12, '../img/detail/detail_grass1.jpg'),
+	(47, 21, '../img/detail/detail_grass1.jpg'),
+	(48, 22, '../img/detail/detail_grass1.jpg'),
+  (49, 9, '../img/detail/detail_grass2.jpg'),
+	(50, 10, '../img/detail/detail_grass2.jpg'),
+	(51, 11, '../img/detail/detail_grass2.jpg'),
+	(52, 12, '../img/detail/detail_grass2.jpg'),
+	(53, 21, '../img/detail/detail_grass2.jpg'),
+	(54, 22, '../img/detail/detail_grass2.jpg'),
+  (55, 9, '../img/detail/detail_grass3.jpg'),
+	(56, 10, '../img/detail/detail_grass3.jpg'),
+	(57, 11, '../img/detail/detail_grass3.jpg'),
+	(58, 12, '../img/detail/detail_grass3.jpg'),
+	(59, 21, '../img/detail/detail_grass3.jpg'),
+	(60, 22, '../img/detail/detail_grass3.jpg'),
+  (61, 13, '../img/detail/detail_play1.jpg'),
+	(62, 14, '../img/detail/detail_play1.jpg'),
+	(63, 15, '../img/detail/detail_play1.jpg'),
+	(64, 16, '../img/detail/detail_play1.jpg'),
+	(65, 23, '../img/detail/detail_play1.jpg'),
+	(66, 24, '../img/detail/detail_play1.jpg'),
+  (67, 13, '../img/detail/detail_play2.jpg'),
+	(68, 14, '../img/detail/detail_play2.jpg'),
+	(69, 15, '../img/detail/detail_play2.jpg'),
+	(70, 16, '../img/detail/detail_play2.jpg'),
+	(71, 23, '../img/detail/detail_play2.jpg'),
+	(72, 24, '../img/detail/detail_play2.jpg'),
+  (73, 13, '../img/detail/detail_play3.jpg'),
+	(74, 14, '../img/detail/detail_play3.jpg'),
+	(75, 15, '../img/detail/detail_play3.jpg'),
+	(76, 16, '../img/detail/detail_play3.jpg'),
+	(77, 23, '../img/detail/detail_play3.jpg'),
+	(78, 24, '../img/detail/detail_play3.jpg');
+
 
 
 # Dump of table EVALUATION
