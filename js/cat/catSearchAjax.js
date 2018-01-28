@@ -108,31 +108,32 @@ window.addEventListener('load', () => {
         }
     }
     function advancedSearch() {
-        var advancedSearch = document.getElementsByClassName('condition')
-        var color = new Array()
-        var location = new Array()
-        var gender = new Array()
+        let advancedSearch = document.getElementsByClassName('condition')
+        let color = new Array()
+        let location = new Array()
+        let gender = new Array()
         for (let i = 0, len = advancedSearch.length; i < len; i++) {
             advancedSearch[i].addEventListener('click', () => {
                 var name = advancedSearch[i].getAttribute('data-name')
                 var val = advancedSearch[i].getAttribute('data-val')
-                if (advancedSearch[i].className.match('conditionSelected')) {
-                    if (advancedSearch[i].getAttribute('data-name') == 'color') {
-                        removeByValue(color, val)
-                    } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
-                        removeByValue(location, val)
-                    } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
-                        removeByValue(gender, val)
-                    }
-                } else {
-                    if (advancedSearch[i].getAttribute('data-name') == 'color') {
+                if(!advancedSearch[i].classList.contains('conditionSelected')) {
+                    if (name == 'color') {
                         color.push(val)
-                    } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
+                    } else if (name == 'location') {
                         location.push(val)
-                    } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
+                    } else if (name == 'gender') {
                         gender.push(val)
                     }
+                }else if(advancedSearch[i].classList.contains('conditionSelected')) {
+                    if (name == 'color') {
+                        removeByValue(color, val)
+                    } else if (name == 'location') {
+                        removeByValue(location, val)
+                    } else if (name == 'gender') {
+                        removeByValue(gender, val)
+                    }
                 }
+                console.log("color=" + color + "&location=" + location + "&gender=" + gender );
                 getData("color=" + color + "&location=" + location + "&gender=" + gender )
             })
         }
