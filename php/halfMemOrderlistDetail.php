@@ -33,9 +33,11 @@ try {
         <td><?php echo $productRow->PRODUCT_PRICE?></td>
         <td><?php echo $productRow->COUNT?></td>
     </tr>
-    </table>
 <?php
     }
+?>
+    </table>
+<?php
 } catch (Exception $e) {
     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     echo "錯誤行號 : ", $e->getLine(), "<br>";

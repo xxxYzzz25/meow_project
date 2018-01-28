@@ -1,13 +1,11 @@
-body{
+body {
     background-color: #eee;
-    
     /* background-image: url(../img/marble.jpg);
     background-size: cover;
     background-attachment: fixed; */
 }
 
-
-.wrap{
+.wrap {
     margin-left: 200px;
     line-height: 28px;
     letter-spacing: 3px;
@@ -15,23 +13,22 @@ body{
     min-height: 100vh;
 }
 
-.wrapCenter{
-	width: 70%;
-	margin: auto;
+.wrapCenter {
+    width: 70%;
+    margin: auto;
 }
 
-@media only screen and (max-width: 991px){
-    .wrap{
+@media only screen and (max-width: 991px) {
+    .wrap {
         margin-left: 0;
     }
-
-    .wrapCenter{
+    .wrapCenter {
         width: 95%;
     }
 }
 
-h2{
-	text-align: center;
+h2 {
+    text-align: center;
     font-size: 36px;
     font-weight: bold;
     margin-top: 10px;
@@ -40,72 +37,80 @@ h2{
     letter-spacing: 15px;
     text-align: center;
     padding: 5%;
-	margin: 0;
+    margin: 0;
 }
 
-table{
+table {
     margin: 3% auto 0 auto;
 }
 
-.info{
+.info {
     background-color: #fff;
     margin-bottom: 5%;
 }
 
-.info th{
+.info th {
     width: 30%;
     padding: 2.5% 0 2.5% 2.5%;
 }
 
-.info input{
+.info input {
     width: 90%;
 }
 
-.mail input{
+.mail input {
     width: 3%;
 }
 
-.payWay input{
+.payWay input {
     width: 3%;
 }
 
-.itemHead{
-   
+.itemHead {
     margin-top: 0;
 }
-.itemHead td{
+
+.itemHead td {
     text-align: center;
     vertical-align: middle;
     border-bottom: 2px solid #333;
 }
 
-.itemHead td:nth-child(1){
+.itemHead td:nth-child(1) {
     text-align: left;
 }
 
-.confirm{
+.confirm {
     text-align: center;
     margin-top: 5%;
-    
 }
 
-td .confirm{
-    border-radius: 100px;
-    cursor: pointer;
-	letter-spacing: 3px;
-	padding: 2% 8% 2% 10%;
-    border: 2px solid #333333;
-	background-color: transparent;
-	color: #333;
+td {
+    text-align: center;
+    .confirm {
+        border-radius: 100px;
+        cursor: pointer;
+        letter-spacing: 3px;
+        padding: 1% 4%;
+        border: 2px solid #333333;
+        background-color: transparent;
+        color: #333;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        &:hover {
+            background-color: #EAAF88;
+            border: 2px solid #EAAF88;
+            color: #fff;
+        }
+    }
 }
 
-.pay{
+.pay {
     margin-top: 3%;
     margin-bottom: 10%;
 }
 
-
-.confirm a{
+.confirm a {
     text-decoration: none;
     border: 2px solid #333;
     border-radius: 100px;
@@ -114,31 +119,32 @@ td .confirm{
     color: #333;
 }
 
-.confirm a:hover{
+.confirm a:hover {
     background-color: #EAAF88;
     border: 2px solid #EAAF88;
     color: #fff;
 }
 
-table{
-  width: 100%;
+table {
+    width: 100%;
 }
 
-td img{
+td img {
     width: 80%;
     vertical-align: middle;
     margin: 10% 0;
 }
 
-p{
+p {
     text-align: left;
 }
 
-.count{
+.count {
     width: 50px;
 }
 
-.saleCard,.payCard{
+.saleCard,
+.payCard {
     padding: 4% 10%;
     border: 3px solid #EAAF88;
     background-color: rgba(255, 255, 255, 0.6);
@@ -146,12 +152,13 @@ p{
     margin: 5% 15%;
     text-align: center;
 }
-.select{
+
+.select {
     margin-left: 2%;
 }
 
-.delButton{
+.delButton {
     /* padding: 10%; */
-    border:2px solid #333;
+    border: 2px solid #333;
     border-radius: 100px;
 }
