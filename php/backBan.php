@@ -23,7 +23,8 @@
 			$sql = "update $part set audit_status = $reportVal where $colName = $artNo";
 			$statement = $pdo -> query( $sql );
 			$statement -> execute();
-			$part = explode("_",$part)[0];
+			$part = explode("_",$part);
+			$part = $part[0];
 
 			if($part == 'MESSAGE'){
 				$halfNo = $_REQUEST['halfNo'];
@@ -52,7 +53,8 @@
 			$sql = "update $part set audit_status = $reportVal where $colName = $artNo";
 			$statement = $pdo -> query( $sql );
 			$statement -> execute();
-			$part = explode("_",$part)[0];
+			$part = explode("_",$part);
+			$part = $part[0];
 
 			if($part == 'MESSAGE'){
 				$memNo = $_REQUEST['memNo'];
