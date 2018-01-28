@@ -13,7 +13,7 @@ try {
             from adoption a,cat c,member m
             where a.CAT_NO = c.CAT_NO 
             and a.MEM_NO = m.MEM_NO 
-            and c.HALF_NO =2
+            and c.HALF_NO = ?
             and (c.ADOPT_STATUS = 2 or c.ADOPT_STATUS = 1)
             order by ADOPT_DATE desc";
     $adopt = $pdo->prepare( $sql );

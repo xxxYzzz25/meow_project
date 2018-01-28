@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
         lineWidth = 20, // 圓形寬度
         fontSize = 30; // 字體大小
 
-    // 画圆
+    // 畫圓
     function circle(cx, cy, r) {
         ctx.beginPath();
         ctx.moveTo(cx + r, cy);
@@ -19,7 +19,7 @@ window.addEventListener('load', function () {
         ctx.stroke();
     }
 
-    // 画弧线
+    // 弧
     function sector(cx, cy, r, startAngle, endAngle, anti) {
         ctx.beginPath();
         ctx.moveTo(cx, cy + r);
