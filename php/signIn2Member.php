@@ -44,9 +44,7 @@ try {
 					//執行該指令
 					$pdo->query($sql);
 					echo "<script>
-						window.addEventListener('load',()=>{
-							localStorage.setItem('memNo',$memNo);
-						});
+						localStorage.setItem('memNo',$memNo);
 						alert('登入成功\\n\\n$memName, 您好')
 						window.location.href = '../html/catSearch.php';
 						</script>";
@@ -60,13 +58,11 @@ try {
 					//執行該指令
 					$pdo->query($sql);
 					echo "<script>
-						window.addEventListener('load',()=>{
-							localStorage.setItem('memNo',$memNo);
-							window.location.href = '../html/Cat_ShoppingStore.php';
-						});
+						localStorage.setItem('memNo',$memNo);
+						window.location.href = '../html/Cat_ShoppingStore.php';
 						alert('登入成功\\n\\n$memName, 您好')
 						location.href = '../html/Cat_ShoppingStore.php';
-					</script>";
+						</script>";
 
 				}else{
 					echo "<script>

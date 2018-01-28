@@ -109,22 +109,14 @@ window.addEventListener('load', () => {
     }
     function advancedSearch() {
         var advancedSearch = document.getElementsByClassName('condition')
-        var color = new Array
-        var location = new Array
-        var gender = new Array
+        var color = new Array()
+        var location = new Array()
+        var gender = new Array()
         for (let i = 0, len = advancedSearch.length; i < len; i++) {
             advancedSearch[i].addEventListener('click', () => {
                 var name = advancedSearch[i].getAttribute('data-name')
                 var val = advancedSearch[i].getAttribute('data-val')
                 if (advancedSearch[i].className.match('conditionSelected')) {
-                    if (advancedSearch[i].getAttribute('data-name') == 'color') {
-                        color.push(val)
-                    } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
-                        location.push(val)
-                    } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
-                        gender.push(val)
-                    }
-                } else {
                     if (advancedSearch[i].getAttribute('data-name') == 'color') {
                         removeByValue(color, val)
                     } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
@@ -132,13 +124,18 @@ window.addEventListener('load', () => {
                     } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
                         removeByValue(gender, val)
                     }
+                } else {
+                    if (advancedSearch[i].getAttribute('data-name') == 'color') {
+                        color.push(val)
+                    } else if (advancedSearch[i].getAttribute('data-name') == 'location') {
+                        location.push(val)
+                    } else if (advancedSearch[i].getAttribute('data-name') == 'gender') {
+                        gender.push(val)
+                    }
                 }
                 getData("color=" + color + "&location=" + location + "&gender=" + gender )
             })
         }
-        
-        // getDataJson(obj)
-        
     }
 
     function removeByValue(arr, val) {
