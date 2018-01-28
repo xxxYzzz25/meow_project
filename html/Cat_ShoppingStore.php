@@ -248,7 +248,7 @@
 					
 					<div class="typeBanner typeBanner1 wow zoomIn">
 						<a id="btnHungry" data-ohclass="1">前往
-							<b>喵喵肚子餓</b> ｜ 30 項商品</a>
+							<b>喵喵肚子餓</b> ｜ 6 項商品</a>
 					</div>
 
 				</div>
@@ -306,7 +306,7 @@
 									
 									<div class="typeBanner typeBanner2 wow zoomIn">
 										<a id="btnHome" data-ohclass="2">前往
-											<b>喵喵待在家</b> ｜ 46 項商品</a>
+											<b>喵喵待在家</b> ｜ 6 項商品</a>
 									</div>
 						
 								</div>
@@ -365,7 +365,7 @@
 									
 									<div class="typeBanner typeBanner3 wow zoomIn">
 										<a id="btnGrass" data-ohclass="3">前往
-											<b>精選喵草</b> ｜ 46 項商品</a>
+											<b>精選喵草</b> ｜ 6 項商品</a>
 									</div>
 						
 								</div>
@@ -423,7 +423,7 @@
 									
 									<div class="typeBanner typeBanner4 wow zoomIn">
 										<a id="btnPlay" data-ohclass="4">前往
-											<b>喵喵愛玩耍</b> ｜ 46 項商品</a>
+											<b>喵喵愛玩耍</b> ｜ 6 項商品</a>
 									</div>
 						
 								</div>
