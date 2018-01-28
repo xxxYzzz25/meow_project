@@ -24,11 +24,11 @@ CREATE TABLE `HALFWAY_MEMBER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `HALFWAY_MEMBER` (`HALF_NO`, `HALF_ID`, `HALF_PSW`, `HALF_NAME`, `HALF_HEAD`, `HALF_TEL`, `HALF_ADDRESS`, `HALF_AUDIT_STATUS`, `HALF_DISCOUNT`, `HALF_BAN`, `HALF_OPEN`, `HALF_COVER`, `HALF_INTRO`)
 VALUES
-	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '野喵中途咖啡', '董董', '0912345678', '新北市三重區集英路65號', 1, 1, 0, '12:00~21:00（周一公休）', '../images/halfMemberPic/Sara@gmail.com.jpg', '位在三重的「野喵中途咖啡」，是目前所有貓中途咖啡廳在網路上搜尋度最高的一家，開業也約有3年半的時間，這期間援助了150多隻貓咪找到家，在流浪動物中途來說是相當可觀的數字，「野喵中途咖啡」主要是由4個擁有強大的耐心與愛心的女生所開設的，她們將咖啡廳與貓咪中途之家相互結合，店內供應提供各式餐點，像是義大利麵、飯類等及咖啡飲品並販售貓咪相關周邊商品。'),
+	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '野喵中途咖啡', '董董', '0912345678', '新北市三重區集英路65號', 1, 0, 0, '12:00~21:00（周一公休）', '../images/halfMemberPic/Sara@gmail.com.jpg', '位在三重的「野喵中途咖啡」，是目前所有貓中途咖啡廳在網路上搜尋度最高的一家，開業也約有3年半的時間，這期間援助了150多隻貓咪找到家，在流浪動物中途來說是相當可觀的數字，「野喵中途咖啡」主要是由4個擁有強大的耐心與愛心的女生所開設的，她們將咖啡廳與貓咪中途之家相互結合，店內供應提供各式餐點，像是義大利麵、飯類等及咖啡飲品並販售貓咪相關周邊商品。'),
 	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '讀貓園-貓咪中途咖啡', '帥帥', '0912345678', '台北市大安區和平東路三段370號2樓', 1, 0, 0, '14:00~22:30（周一公休）', '../images/halfMemberPic/Handsome@gmail.com.jpg', '讀貓園裡面有幾個位子是像吧台一樣，面對待認養貓咪櫥窗。你可以和朋友、家人一起邊喝咖啡、邊吃著好吃的鬆餅，邊觀察貓咪的一舉一動。小貓咪喜歡縮在一起取暖睡覺，整窩睡到翻肚的小貓咪就在眼前，好像在肯亞草原冒險時在樹叢底下發現一整窩虎虎大睡的小獅子畫面一樣。看著貓咪們規律起伏的肚子一邊唸書、寫功課、想事情，有一種難以言語的安全感和平靜的幸福。'),
 	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', '雅風音樂貓咪中途咖啡餐廳', 'Silvia', '0229381380', '新北市文山區木新路三段50巷7號1樓', 1, 0, 0, '12:00~21:00（周一公休）', '../images/halfMemberPic/Silvia@gmail.com.jpg', '雅風音樂咖啡餐廳原本是林老師想要做為學生練習的場地，但因使用的期間不長，才轉變成為貓咪中途咖啡廳，希望幫助更多流浪貓找到溫暖的家，餐廳內沒有華麗的裝潢，木製的吧檯兼座位，加上幾張四人桌椅、貓咪跳台，就是流浪貓咪溫暖的中途之家，也是愛貓人士聚集的所在！'),
-	(4, 'rain@gmail.com', '96e79218965eb72c92a549dd5a330112', 'RAIN*S CAT', '林雨潔', '0977889912', '屏東縣瑞光路三段53號', 1, 0, 0, '尚未登記', '../images/halfMemberPic/rain@gmail.com.jpg', ''),
-	(5, 'gan@gmail.com', '96e79218965eb72c92a549dd5a330112', '貓極簡', '李璐璐', '0978493474', '台中市南區復興路二段7號', 1, 0, 0, '尚未登記', '../images/halfMemberPic/gan@gmail.com.jpg', '');
+	(4, 'rain@gmail.com', '96e79218965eb72c92a549dd5a330112', 'RAIN*S CAT', '林雨潔', '0977889912', '屏東市瑞光路三段53號', 1, 0, 0, '12:00~21:00（周一公休）', '../images/halfMemberPic/rain@gmail.com.jpg', ''),
+	(5, 'gan@gmail.com', '96e79218965eb72c92a549dd5a330112', '貓極簡', '李璐璐', '0978493474', '台中市南區復興路二段7號', 1, 0, 0, '12:00~21:00（周一公休）', '../images/halfMemberPic/gan@gmail.com.jpg', '');
 
 
 # Dump of table MEMBER
@@ -52,8 +52,8 @@ CREATE TABLE `MEMBER` (
 INSERT INTO `MEMBER` (`MEM_NO`, `MEM_ID`, `MEM_PSW`, `MEM_NAME`, `MEM_BIRTHDAY`, `MEM_TEL`, `MEM_ADDRESS`, `MEM_SCORE`, `MEM_PIC`, `MEM_DISCOUNT`, `MEM_BAN`)
 VALUES
 	(1, 'Sara@gmail.com', '96e79218965eb72c92a549dd5a330112', '董董', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/sara@gmail.com.jpg', 0, 0),
-	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', 5, '../images/memberPic/handsome@gmail.com.jpg', 0, 0),
-	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', 8, '../images/memberPic/silvia@gmail.com.jpg', 0, 0);
+	(2, 'Handsome@gmail.com', '96e79218965eb72c92a549dd5a330112', '帥帥', '1990-01-01', '0912345678', '中央大學資策會', 7, '../images/memberPic/handsome@gmail.com.jpg', 0, 0),
+	(3, 'Silvia@gmail.com', '96e79218965eb72c92a549dd5a330112', 'Silvia', '1990-01-01', '0912345678', '中央大學資策會', 6, '../images/memberPic/silvia@gmail.com.jpg', 0, 0);
 
 
 # Dump of table PRODUCT
@@ -231,21 +231,6 @@ VALUES
 	(9, 3, NULL, '尋找一款貓玩具', '大概三年前 買了一款玩具給剛領養回家的貓玩~ 但那時候卻不太玩那個玩具.. 就一直放著... 這半年開始 他突然喜歡上一直以來都被他冷落的玩具... 咬到中間的彈簧頂部都被咬斷了... 有打算買一個一模一樣的新玩具給他... 印象當初買的時候 在不同的寵物用品店都有看到這互動滾球玩具... 但好像就是個沒有特別品牌或特別包裝的玩具.... 現在各網路上 寵物用品購物網 找 都沒找到這個玩具.... 不曉得各位貓奴們 最近還有看過這款玩具嗎? 如還有看過的話麻煩告知. (台北市/網路購物 為主). 謝謝 \n', '2017-11-08 17:11:01', '2');
 
 
-
--- # Dump of table ARTICLE_PIC
--- # ------------------------------------------------------------
-
--- CREATE TABLE `ARTICLE_PIC` (
---   `ARTICLE_PIC_NO` int(10) NOT NULL AUTO_INCREMENT,
---   `ARTICLE_NO` int(10) NOT NULL,
---   `ARTICLE_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
---   PRIMARY KEY (`ARTICLE_PIC_NO`),
---   KEY `ARTICLE_NO` (`ARTICLE_NO`),
---   CONSTRAINT `article_pic_ibfk_1` FOREIGN KEY (`ARTICLE_NO`) REFERENCES `ARTICLE` (`ARTICLE_NO`) ON DELETE CASCADE ON UPDATE CASCADE
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
 # Dump of table ARTICLE_REPORT
 # ------------------------------------------------------------
 
@@ -265,21 +250,6 @@ CREATE TABLE `ARTICLE_REPORT` (
   CONSTRAINT `article_report_ibfk_2` FOREIGN KEY (`HALF_NO`) REFERENCES `HALFWAY_MEMBER` (`HALF_NO`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `article_report_ibfk_3` FOREIGN KEY (`ARTICLE_NO`) REFERENCES `ARTICLE` (`ARTICLE_NO`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
-
-
-
--- # Dump of table CAT_PIC
--- # ------------------------------------------------------------
-
--- CREATE TABLE `CAT_PIC` (
---   `CAT_PIC_NO` int(8) NOT NULL AUTO_INCREMENT,
---   `CAT_NO` int(6) NOT NULL,
---   `CAT_PIC_PATH` varchar(100) NOT NULL DEFAULT '',
---   PRIMARY KEY (`CAT_PIC_NO`),
---   KEY `CAT_NO` (`CAT_NO`),
---   CONSTRAINT `cat_pic_ibfk_1` FOREIGN KEY (`CAT_NO`) REFERENCES `CAT` (`CAT_NO`) ON DELETE CASCADE ON UPDATE CASCADE
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 
 # Dump of table DONATE
