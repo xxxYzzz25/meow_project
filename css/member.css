@@ -691,9 +691,9 @@ header ul li:nth-child(5):after {
             cursor: pointer; }
       .right .content .memOrderlist .odTable a {
         text-decoration: none;
-        color: #EAAF88; }
+        color: #0f71c2; }
         .right .content .memOrderlist .odTable a:hover {
-          color: #0f71c2; }
+          color: #EAAF88; }
 
 @media all and (max-width: 991px) {
   header {

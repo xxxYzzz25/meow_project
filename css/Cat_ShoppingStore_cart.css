@@ -448,14 +448,22 @@ table {
   text-align: center;
   margin-top: 5%; }
 
-td .confirm {
-  border-radius: 100px;
-  cursor: pointer;
-  letter-spacing: 3px;
-  padding: 2% 8% 2% 10%;
-  border: 2px solid #333333;
-  background-color: transparent;
-  color: #333; }
+td {
+  text-align: center; }
+  td .confirm {
+    border-radius: 100px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    padding: 1% 4%;
+    border: 2px solid #333333;
+    background-color: transparent;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 25px; }
+    td .confirm:hover {
+      background-color: #EAAF88;
+      border: 2px solid #EAAF88;
+      color: #fff; }
 
 .pay {
   margin-top: 3%;
@@ -488,7 +496,8 @@ p {
 .count {
   width: 50px; }
 
-.saleCard, .payCard {
+.saleCard,
+.payCard {
   padding: 4% 10%;
   border: 3px solid #EAAF88;
   background-color: rgba(255, 255, 255, 0.6);

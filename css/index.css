@@ -1006,7 +1006,7 @@ footer {
     .noticegame .boxcontainer .centerbox {
       margin-top: 50px; }
       .noticegame .boxcontainer .centerbox img {
-        width: 80%; }
+        width: 65%; }
   .noticegame .smallbox {
     display: none; }
   .noticegame .hintbox {
@@ -1473,7 +1473,8 @@ footer {
   .noticegame .smallask {
     display: block;
     margin: auto;
-    width: 100%; }
+    width: 100%;
+    padding-right: 0; }
     .noticegame .smallask img {
       width: 100%;
       margin: auto; }
@@ -1482,7 +1483,8 @@ footer {
     display: none; }
   .noticegame .boxcontainer .centerbox {
     width: 70%;
-    margin: 0; }
+    margin: 0;
+    margin-left: 25px; }
   .noticegame .imgbox {
     display: none; }
   .noticegame .phone {

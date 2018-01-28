@@ -20,8 +20,8 @@ try {
 	$statement->execute();
 	//檢查是否有此帳密
 	if ($statement->rowCount() === 0) { //帳密錯誤
-		echo "<script>alert('帳密錯誤 , 請重新登入')</script>";
-		header('location: ../html/backMemManage.php');
+		echo "<script>alert('帳密錯誤 , 請重新登入')
+		window.location.href = '../html/backIndex.html';</script>";
 	} else {//帳密存在
 		header('location: ../html/backMemManage.php');
 	}

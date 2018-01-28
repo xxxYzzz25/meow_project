@@ -78,7 +78,7 @@ function doFirst() {
             }
             if (num == 5) {
                 know.textContent = '恭喜您~全部答對囉! (獎品只能拿一次哦!)';
-                know.addEventListener('click', function () {
+                know.addEventListener('click', function (e) {
                     e.preventDefault;
                     if (localStorage.getItem('memNo')) {
                         // 叫php寫入分數後轉址
@@ -167,7 +167,7 @@ function doFirst() {
             }
             if (num == 5) {
                 know.textContent = '恭喜您~全部答對囉! (獎品只能拿一次哦!)';
-                know.addEventListener('click', function () {
+                know.addEventListener('click', function (e) {
                     e.preventDefault;
                     if (localStorage.getItem('memNo')) {
                         // 叫php寫入分數後轉址
@@ -217,8 +217,9 @@ function doFirst() {
             let arr = center.childNodes[1].src.split('/');
             arr = arr[arr.length - 1];
             arr = arr.slice(0, length - 4); //圖片名字
-
-            center.childNodes[1].setAttribute('src', 'images/noticeGame/' + obj.questions[count - 1].question + '.png');
+            if (num < 5) {
+                center.childNodes[1].setAttribute('src', 'images/noticeGame/' + obj.questions[count - 1].question + '.png');
+            }
         }
 
         know.addEventListener('click', function know() {

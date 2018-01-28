@@ -249,7 +249,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><button type="submit" class="confirm">確認購買</button></td>
+                        <td colspan="2"><button type="submit" class="confirm">確認購買</button></td>
                     </tr>
                 </table>
             </form>

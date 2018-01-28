@@ -43,7 +43,7 @@ try {
 			$locationAdv .= implode("%' or cat_location like '%", $locationArr);
 			$locationAdv .= "%')";
 		}else $locationAdv = null;
-		if (!empty($_GET['gender'])) {
+		if (!is_null($_GET['gender'])) {
 			$genderJS = $_GET['gender'];
 			$locationArr = explode(",", "$genderJS");
 			$genderAdv = "and (cat_sex like '%";
