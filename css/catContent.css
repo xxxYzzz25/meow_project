@@ -167,7 +167,7 @@ footer {
   background-color: #f5eae3;
   margin-left: 200px;
   padding: 15px;
-<<<<<<< HEAD
+  height: 15vh;
 }
 
 footer .follow {
@@ -212,38 +212,6 @@ footer span {
   top: -20px;
   padding: 10px;
 }
-=======
-  height: 15vh; }
-  footer .follow {
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-  footer nav {
-    margin: auto; }
-    footer nav ul {
-      display: flex;
-      justify-content: space-around; }
-      footer nav ul li {
-        width: 20%;
-        margin: 15px; }
-        footer nav ul li:hover {
-          transform: translateY(-3px);
-          transition: .35s; }
-        footer nav ul li a {
-          text-align: center;
-          border: 1px solid #333;
-          text-decoration: none;
-          color: #333;
-          display: block;
-          width: 100%;
-          padding: 15px; }
-  footer span {
-    display: inline-block;
-    position: relative;
-    top: -20px;
-    padding: 10px; }
->>>>>>> d538e9bd32ec35d895a19c22ee0a0b3c097c1cfe
 
 @media all and (max-width: 991px) {
   footer {
@@ -789,12 +757,13 @@ header.active {
 .right {
   width: calc(100% - 200px);
   margin-left: 200px;
+  padding-bottom: 100px;
+  background-color: #f5eedce5;
 }
 
 .right .container1 {
   width: 100%;
   position: relative;
-  margin-bottom: 100px;
   padding: 60px 50px 0;
 }
 
