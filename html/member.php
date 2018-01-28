@@ -155,7 +155,7 @@
             </a>
             <?php
                     if(isset($_SESSION["MEM_NO"]) || isset($_SESSION["HALF_NO"])){
-                        echo "<a href='../php/memberLogOut.php' id='loginBtn'>
+                        echo "<a href='../php/memberLogOut.php?memOut='true'' id='loginBtn'>
                             <i class='fa fa-sign-out fa-2x' aria-hidden='true'></i>
                             </a>";
                     }else{

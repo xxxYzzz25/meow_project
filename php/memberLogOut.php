@@ -17,6 +17,7 @@
 <body>
 	<?php
 		session_destroy();
+
 	?>
 	<script>
 		if(localStorage.getItem('memNo')){
@@ -29,8 +30,17 @@
 
 		}
 	</script>
-	<script>alert('已登出，歡迎再回來')</script>
-	<script>history.back()</script>
+	
+	<?php
+		if(isset($_REQUEST['memOut'])){
+			echo "<script>alert('已登出，歡迎再回來')</script>";
+			echo "<script>location.href = '../homepage.php'</script>";
+		}else{
+			echo "<script>alert('已登出，歡迎再回來')</script>";
+			echo "<script>history.back()</script>";
+		}
+	?>
+	
 
 </body>
 </html>
