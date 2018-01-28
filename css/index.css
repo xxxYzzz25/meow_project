@@ -446,7 +446,7 @@ header.active {
 
 .banner {
   height: 100vh;
-  background-image: url(../img/banner1.jpg);
+  background-image: url(../img/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left center;
@@ -454,7 +454,7 @@ header.active {
   justify-content: center;
   align-items: center;
   color: #fff;
-  text-shadow: 2px 2px 3px #333333; }
+  text-shadow: 2px 2px 3px #000; }
   .banner .findBox, .banner .waitBox {
     display: flex;
     justify-content: center;
@@ -485,6 +485,7 @@ header.active {
       text-align-last: center;
       padding: 3px 6px;
       font-size: 18px;
+      font-weight: lighter;
       color: #222222;
       cursor: pointer;
       -webkit-appearance: none;
@@ -503,7 +504,8 @@ header.active {
       letter-spacing: 2px;
       border-radius: 40px;
       padding: 5px 37.5px 5px 15px;
-      font-size: 18px; }
+      font-size: 18px;
+      font-weight: lighter; }
       .banner .search input:-moz-placeholder {
         color: #333; }
       .banner .search input::-webkit-input-placeholder {
