@@ -285,7 +285,7 @@
                         
                         <?php
                         
-                            if(!is_null($imgArr[0])){
+                            if(isset($imgArr[0])){
                                 $img1 = (string)$imgArr[0];
                                 echo "<img src='$img1' alt='product pic'>";
                             }
@@ -305,7 +305,7 @@
                     
                         <?php
                         
-                            if(!is_null($imgArr[1])){
+                            if(isset($imgArr[1])){
                                 $img2 = (string)$imgArr[1];
                                 echo "<img src='$img2' alt='product pic'>";
                             }
@@ -321,7 +321,7 @@
                     
                         <?php
                         
-                            if(!is_null($imgArr[2])){
+                            if(isset($imgArr[2])){
                                 $img3 = (string)$imgArr[2];
                                 echo "<img src='$img3' alt='product pic'>";
                             }
