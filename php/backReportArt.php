@@ -36,7 +36,7 @@ try {
         <tr>
             <td><a href='#'><?php echo $report_Row['article_title']; ?></a></td>
             <td><?php echo isset($report_Row['mem_name'])?$report_Row['mem_name']:$report_Row['half_name']; ?></td>
-            <td><textarea name="" id="" cols="30" rows="2" readonly="readonly"><?php echo $report_Row['article_report_narrative']; ?></textarea></td>
+            <td><span><?php echo $report_Row['article_report_narrative']; ?></span></td>
             <td>
                 <form action="../php/backBan.php" id="reportForm">
                     <input type="hidden" name="part" value="article_report">

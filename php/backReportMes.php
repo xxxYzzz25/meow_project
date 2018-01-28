@@ -34,9 +34,9 @@ try {
         foreach ($reportRow as $report_Row) {
 ?>
         <tr>
-            <td><textarea name="" id="" cols="30" rows="2" readonly="readonly"><?php echo $report_Row['message_content']; ?></textarea></td>
+            <td><textarea name="" id="" cols="30" rows="5"><?php echo $report_Row['message_content']; ?></textarea></td>
             <td><?php echo isset($report_Row['mem_name'])?$report_Row['mem_name']:$report_Row['half_name']; ?></td>
-            <td><textarea name="" id="" cols="30" rows="2" readonly="readonly"><?php echo $report_Row['message_report_narrative']; ?></textarea></td>
+            <td><span><?php echo $report_Row['message_report_narrative']; ?></span></td>
             <td>
                 <form action="../php/backBan.php" id="reportForm" method="post">
                     <input type="hidden" name="part" value="message_report">

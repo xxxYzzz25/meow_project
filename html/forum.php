@@ -423,7 +423,7 @@ isset($_SESSION['MEM_NO']) ? $_SESSION['MEM_NO'] = $_SESSION['MEM_NO'] : $_SESSI
 					<input type="hidden" id="no" name="" value="">
 				<div class="post-select" id="post-select">
 					<select name="ARTICLE_PART" required>
-						<option>選擇討論區</option>
+						<option></option>
 						<option value="1">飼養討論</option>
 						<option value="2">商品討論</option>
 						<option value="3">中途討論</option>
