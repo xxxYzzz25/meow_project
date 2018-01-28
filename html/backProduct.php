@@ -78,7 +78,7 @@
                         <tr class="newEmpTR newEmpTROff">
                             <th>商品名稱*</th>
                             <td>
-                                <input type="text" name="name" required="required">
+                                <input type="text" name="name" required="required" placeholder="英文-空格-中文(如:Friskies 雞肉罐頭)">
                             </td>
                         </tr>
                         <tr class="newEmpTR newEmpTROff">
