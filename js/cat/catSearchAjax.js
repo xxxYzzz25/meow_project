@@ -116,7 +116,7 @@ window.addEventListener('load', () => {
             advancedSearch[i].addEventListener('click', () => {
                 var name = advancedSearch[i].getAttribute('data-name')
                 var val = advancedSearch[i].getAttribute('data-val')
-                if(!advancedSearch[i].classList.contains('conditionSelected')) {
+                if(advancedSearch[i].classList.contains('conditionSelected')) {
                     if (name == 'color') {
                         color.push(val)
                     } else if (name == 'location') {
@@ -124,7 +124,7 @@ window.addEventListener('load', () => {
                     } else if (name == 'gender') {
                         gender.push(val)
                     }
-                }else if(advancedSearch[i].classList.contains('conditionSelected')) {
+                }else if(!advancedSearch[i].classList.contains('conditionSelected')) {
                     if (name == 'color') {
                         removeByValue(color, val)
                     } else if (name == 'location') {
@@ -133,7 +133,7 @@ window.addEventListener('load', () => {
                         removeByValue(gender, val)
                     }
                 }
-                console.log("color=" + color + "&location=" + location + "&gender=" + gender );
+                // console.log("color=" + color + "&location=" + location + "&gender=" + gender );
                 getData("color=" + color + "&location=" + location + "&gender=" + gender )
             })
         }
