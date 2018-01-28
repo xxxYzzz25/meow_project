@@ -1479,7 +1479,8 @@ footer {
   .noticegame .boxcontainer #leftbox {
     display: none; }
   .noticegame .boxcontainer .centerbox {
-    width: 70%; }
+    width: 70%;
+    margin: 0; }
   .noticegame .imgbox {
     display: none; }
   .noticegame .phone {
@@ -1488,18 +1489,19 @@ footer {
     .noticegame .phone #left {
       display: inline-block;
       width: 30%;
-      margin-top: -50px; }
+      margin-top: -70px; }
       .noticegame .phone #right img,
       .noticegame .phone #left img {
         width: 100%; }
     .noticegame .phone #left {
-      margin-right: 50px; }
+      margin-right: 55px; }
     .noticegame .phone #right {
-      margin-left: 50px; }
+      margin-left: 55px; }
     .noticegame .phone .center {
       display: block;
       width: 100%;
-      margin: 0 auto; }
+      margin: 0 auto;
+      margin-top: -30px; }
       .noticegame .phone .center img {
         width: 40%; }
   .shop .prod {
