@@ -11,6 +11,7 @@
 	$val = $_REQUEST['banVal'];
 	$artNo = $_REQUEST['artNo'];
 	$colName =  $part .= "_NO";
+	$part = $_REQUEST['part'];
 	
 	if ( isset($_REQUEST['halfNo']) ) {
 		try {//part 哪個檢舉表格 //
@@ -23,6 +24,7 @@
 			$statement = $pdo -> query( $sql );
 			$statement -> execute();
 			$part = explode("_",$part);
+			$part = $part[0];
 
 			if($part == 'MESSAGE'){
 				$halfNo = $_REQUEST['halfNo'];
@@ -35,8 +37,6 @@
 				$sql = "DELETE FROM $part WHERE half_no = $halfNo";
 				$pdo -> query($sql);
 			}
-			
-			
 			header('location:../html/backReport.php');
 		} catch (Exception $e) {
 			echo "錯誤原因 : " , $e->getMessage() , "<br>";
@@ -54,6 +54,7 @@
 			$statement = $pdo -> query( $sql );
 			$statement -> execute();
 			$part = explode("_",$part);
+			$part = $part[0];
 
 			if($part == 'MESSAGE'){
 				$memNo = $_REQUEST['memNo'];
@@ -70,7 +71,8 @@
 		} catch (Exception $e) {
 			echo "錯誤原因 : " , $e->getMessage() , "<br>";
 			echo "錯誤行號 : " , $e->getLine() , "<br>";
-    	    echo "異動失敗". $colName . $part;
+			echo "異動失敗";
+			print_r($part);
 		}
 	}
 		

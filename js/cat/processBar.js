@@ -1,15 +1,14 @@
 window.addEventListener('load', function () {
-    /* by www.geekwen.com */
     var canvas = document.getElementById("canvas"),
         ctx = canvas.getContext("2d"),
-        percent = (totalDonate / 2750) * 100, // 最终百分比
-        circleX = canvas.width / 2, // 中心x坐标
-        circleY = canvas.height / 2, // 中心y坐标
-        radius = 100, // 圆环半径
-        lineWidth = 20, // 圆形线条的宽度
-        fontSize = 30; // 字体大小
+        percent = (totalDonate / 2750) * 100, // 最終百分比
+        circleX = canvas.width / 2, // x座標
+        circleY = canvas.height / 2, // y座標
+        radius = 100, // 圓環半徑
+        lineWidth = 20, // 圓形寬度
+        fontSize = 30; // 字體大小
 
-    // 画圆
+    // 畫圓
     function circle(cx, cy, r) {
         ctx.beginPath();
         ctx.moveTo(cx + r, cy);
@@ -20,10 +19,10 @@ window.addEventListener('load', function () {
         ctx.stroke();
     }
 
-    // 画弧线
+    // 弧
     function sector(cx, cy, r, startAngle, endAngle, anti) {
         ctx.beginPath();
-        ctx.moveTo(cx, cy + r); // 从圆形底部开始画
+        ctx.moveTo(cx, cy + r);
         ctx.lineWidth = lineWidth;
 
         // 渐变色 - 可自定义
@@ -34,10 +33,10 @@ window.addEventListener('load', function () {
         linGrad.addColorStop(1.0, '#ffe6cf');
         ctx.strokeStyle = linGrad;
 
-        // 圆弧两端的样式
+        // 圓兩端的樣式
         ctx.lineCap = 'round';
 
-        // 圆弧
+        // 圓
         ctx.arc(
             cx, cy, r,
             startAngle * (Math.PI / 180.0) + (Math.PI / 2),
@@ -56,20 +55,20 @@ window.addEventListener('load', function () {
         // 清除canvas内容
         ctx.clearRect(0, 0, circleX * 2, circleY * 2);
 
-        // 中间的字
+        // 中間的字
         ctx.font = fontSize + 'px April';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillStyle = '#999';
+        ctx.fillStyle = '#333';
         ctx.fillText(parseFloat(process).toFixed(1) + '%', circleX, circleY);
 
-        // 圆形
+        // 圓形
         circle(circleX, circleY, radius);
 
-        // 圆弧
+        // 圓弧
         sector(circleX, circleY, radius, 0, process / 100 * 360);
 
-        // 控制结束时动画的速度
+        // 控制結束時動畫的速度
         if (process / percent > 0.90) {
             process += 0.30;
         } else if (process / percent > 0.80) {
@@ -81,7 +80,7 @@ window.addEventListener('load', function () {
         }
     }
 
-    var process = 0.0; // 进度
+    var process = 0.0; // 進度
     var circleLoading = window.setInterval(function () {
         loading();
     }, 16);

@@ -40,10 +40,10 @@ try {
         
         // 設定每頁呈現內容
         $sql     = "select * from halfway_member
-                    where HALF_BAN = 0 and";
+                    where half_ban = 0 ";
     	if(!empty($searchLoc)){
             $arrLen = count($locArr[$searchLoc]);
-            $sql .= "(";
+            $sql .= "and (";
             for($i = 0; $i < $arrLen ; $i++) {
                 if($i == $arrLen-1){
                     $temp = $locArr[$searchLoc][$i];
@@ -53,6 +53,8 @@ try {
                     $sql.="HALF_ADDRESS like '%$temp%' or ";
                 }
             }
+        }else{
+            $sql.= 'and ';
         }
         $sql .= "HALF_NAME like '%$searchName%'";
         $halfway = $pdo->prepare($sql);
